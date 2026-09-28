@@ -68,14 +68,18 @@
     <h2>Contatti</h2>
 
     <address>
-        <ul>
-            <li>
+        <dl>
+            <dt>Indirizzo</dt>
+            <dd>
                 <a href="https://maps.google.com/?q=Via+Stretta+5+54013+Fivizzano+MS" target="_blank" rel="noopener noreferrer">Via Stretta 5, 54013 Fivizzano (MS)</a>
-            </li>
-            <li><a href="tel:+393505363110">+39 350 536 3110</a></li>
-            <li><a href="mailto:info@filarmonicastradella.it">info@filarmonicastradella.it</a></li>
-            <li>PEC: <a href="mailto:filarmonicastradella@pec.it">filarmonicastradella@pec.it</a></li>
-        </ul>
+            </dd>
+            <dt>Telefono</dt>
+            <dd><a href="tel:+393505363110">+39 350 536 3110</a></dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:info@filarmonicastradella.it">info@filarmonicastradella.it</a></dd>
+            <dt>PEC</dt>
+            <dd><a href="mailto:filarmonicastradella@pec.it">filarmonicastradella@pec.it</a></dd>
+        </dl>
     </address>
 
     <nav aria-label="Social media">
@@ -88,14 +92,17 @@
         </ul>
     </nav>
 
-    <ul>
-        <li>Filarmonica Alessandro Stradella APS</li>
-        <li>C.F. 90021290458</li>
-        <li>RUNTS Repertorio n. 176207</li>
-        <li>
-            <a href="https://www.anbima.it/massacarrara/regionetoscana-massacarrara-unita-di-base" target="_blank" rel="noopener noreferrer">Affiliata ANBIMA APS</a>
-        </li>
-    </ul>
+    <p>Filarmonica Alessandro Stradella APS</p>
+    <dl>
+        <dt>Codice fiscale</dt>
+        <dd>90021290458</dd>
+        <dt>Iscrizione al RUNTS</dt>
+        <dd>Repertorio n. 176207</dd>
+        <dt>Affiliazione</dt>
+        <dd>
+            <a href="https://www.anbima.it/massacarrara/regionetoscana-massacarrara-unita-di-base" target="_blank" rel="noopener noreferrer">ANBIMA APS</a>
+        </dd>
+    </dl>
 
     <nav aria-label="Informazioni legali">
         <ul>
