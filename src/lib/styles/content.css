@@ -196,12 +196,32 @@ ol[tabindex="0"] {
 }
 
 :is(ul, ol)[tabindex="0"] > li {
-    flex: 0 0 min(22rem, 85%);
     scroll-snap-align: start;
 }
 
+/* Il carosello fotografico lascia intravedere un pezzetto della foto successiva, a invitare lo scorrimento */
 :is(ul, ol)[tabindex="0"]:has(img, video) > li {
-    flex-basis: min(16rem, 70%);
+    flex: 0 0 min(16rem, 70%);
+}
+
+/*
+ * Gli altri caroselli (eventi) mostrano sempre schede intere: 1, 2 o 3 secondo lo spazio, mai un
+ * pezzo di scheda troncato a un bordo. Le soglie sono le stesse dell'intestazione e del piè di pagina.
+ */
+:is(ul, ol)[tabindex="0"]:not(:has(img, video)) > li {
+    flex: 0 0 100%;
+}
+
+@media (min-width: 40rem) {
+    :is(ul, ol)[tabindex="0"]:not(:has(img, video)) > li {
+        flex-basis: calc((100% - var(--space-lg)) / 2);
+    }
+}
+
+@media (min-width: 64rem) {
+    :is(ul, ol)[tabindex="0"]:not(:has(img, video)) > li {
+        flex-basis: calc((100% - 2 * var(--space-lg)) / 3);
+    }
 }
 
 /* Le schede del carosello (non quelle fotografiche) hanno un bordo e uno sfondo pieno, angoli vivi */
