@@ -160,8 +160,9 @@ li > article > p[itemprop="description"] {
 
 /* Elenchi che scorrono in orizzontale: hanno tabindex per la tastiera */
 :is(ul, ol)[tabindex="0"] {
+    --carousel-gap: var(--space-2xl);
     display: flex;
-    gap: var(--space-2xl);
+    gap: var(--carousel-gap);
     padding: var(--space-2xs) var(--space-2xs) var(--space-md);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -208,15 +209,19 @@ ol[tabindex="0"] {
 
 /*
  * Gli altri caroselli (eventi) mostrano sempre schede intere: al massimo due per volta, mai un
- * pezzo di scheda troncato a un bordo.
+ * pezzo di scheda troncato a un bordo. Più spazio tra un evento e l'altro che nella galleria.
  */
+:is(ul, ol)[tabindex="0"]:not(:has(img, video)) {
+    --carousel-gap: var(--space-3xl);
+}
+
 :is(ul, ol)[tabindex="0"]:not(:has(img, video)) > li {
     flex: 0 0 100%;
 }
 
 @media (min-width: 28rem) {
     :is(ul, ol)[tabindex="0"]:not(:has(img, video)) > li {
-        flex-basis: calc((100% - var(--space-lg)) / 2);
+        flex-basis: calc((100% - var(--carousel-gap)) / 2);
     }
 }
 
