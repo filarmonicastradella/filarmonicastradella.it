@@ -4,6 +4,7 @@ export interface EventItem {
     description: string;
     location: string;
     start: string;
+    end: string;
     when: string;
     htmlLink: string;
 }
@@ -55,6 +56,7 @@ function toEventItem(evt: any): EventItem {
         description: stripTags(evt.description),
         location: evt.location ?? "",
         start: evt.start.dateTime || evt.start.date,
+        end: evt.end?.dateTime || evt.end?.date || "",
         when: formatEventTime(evt),
         htmlLink: evt.htmlLink ?? ""
     };

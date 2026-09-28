@@ -5,13 +5,18 @@
     let { event, level = 3 }: { event: EventItem; level?: 3 | 4 } = $props();
 </script>
 
-<article>
-    <p><time datetime={event.start}>{event.when}</time></p>
-    <svelte:element this={`h${level}`}><a href="/events/{event.id}">{event.summary}</a></svelte:element>
+<article itemscope itemtype="https://schema.org/Event">
+    <p><time itemprop="startDate" datetime={event.start}>{event.when}</time></p>
+    {#if event.end}
+        <meta itemprop="endDate" content={event.end} />
+    {/if}
+    <svelte:element this={`h${level}`}>
+        <a itemprop="url" href="/events/{event.id}"><span itemprop="name">{event.summary}</span></a>
+    </svelte:element>
     {#if event.description}
-        <p>{event.description}</p>
+        <p itemprop="description">{event.description}</p>
     {/if}
     {#if event.location}
-        <p>{event.location}</p>
+        <p itemprop="location">{event.location}</p>
     {/if}
 </article>

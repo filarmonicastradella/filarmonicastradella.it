@@ -32,6 +32,7 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 - Elenchi di elementi equivalenti in `<ul><li>`; date in `<time datetime>`; coppie etichetta/valore in `<dl>`; niente `<header>`/`<footer>`/`<address>` dentro i link né `div` usati solo per il layout.
 - Pagine non ancora pronte: `<h1>`, una riga di presentazione e "Pagina in costruzione: …"; bozze legali con il commento `<!-- BOZZA … -->` in testa da far verificare prima della pubblicazione.
 - Incorporazioni di terze parti (mappe): caricate solo su richiesta con un pulsante (`MapEmbed`), con il link diretto sempre visibile.
+- Elenchi in ordine cronologico in `<ol>`; eventi con microdati schema.org (`itemscope itemtype="https://schema.org/Event"`, `itemprop`), aree di stato come `<div role="status">` sempre presenti nella pagina; indici di sezione come `<nav>` con collegamenti interni.
 - Ogni pagina ha `<main id="contenuto">` (bersaglio del link "Salta al contenuto"), `<title>` e meta description.
 - Contenuti caricati dal browser: finché caricano si mostra solo un messaggio di caricamento (`role="status"`), mai contenuti parziali; un `<noscript>` spiega che serve JS.
 

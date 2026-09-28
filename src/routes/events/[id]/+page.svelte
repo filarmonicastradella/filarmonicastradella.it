@@ -36,24 +36,40 @@
 </svelte:head>
 
 <main id="contenuto">
-    {#if status === "loading"}
-        <p role="status">Caricamento dell'evento in corso…</p>
-    {:else if status === "error" || !event}
-        <h1>Evento non trovato</h1>
-        <p role="alert">L'evento richiesto non esiste più o non è stato possibile caricarlo.</p>
-    {:else}
-        <article>
-            <header>
-                <p><time datetime={event.start}>{event.when}</time></p>
-                <h1>{event.summary}</h1>
-                {#if event.location}
-                    <p>{event.location}</p>
-                {/if}
-            </header>
+    <h1>{status === "ready" && event ? event.summary : status === "error" ? "Evento non trovato" : "Evento"}</h1>
 
-            {#each event.description.split(/\n+/).filter(Boolean) as paragraph}
-                <p>{paragraph}</p>
-            {/each}
+    <div role="status">
+        {#if status === "loading"}
+            <p>Caricamento dell'evento in corso…</p>
+        {:else if status === "error" || !event}
+            <p>L'evento richiesto non esiste più o non è stato possibile caricarlo.</p>
+        {/if}
+    </div>
+
+    {#if status === "ready" && event}
+        <article itemscope itemtype="https://schema.org/Event">
+            <meta itemprop="name" content={event.summary} />
+            {#if event.end}
+                <meta itemprop="endDate" content={event.end} />
+            {/if}
+
+            <dl>
+                <dt>Quando</dt>
+                <dd><time itemprop="startDate" datetime={event.start}>{event.when}</time></dd>
+                {#if event.location}
+                    <dt>Dove</dt>
+                    <dd itemprop="location">{event.location}</dd>
+                {/if}
+            </dl>
+
+            {#if event.description}
+                <section aria-labelledby="descrizione-evento">
+                    <h2 id="descrizione-evento">Descrizione</h2>
+                    {#each event.description.split(/\n+/).filter(Boolean) as paragraph}
+                        <p itemprop="description">{paragraph}</p>
+                    {/each}
+                </section>
+            {/if}
 
             <ul>
                 {#if event.location}
