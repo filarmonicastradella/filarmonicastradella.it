@@ -3,7 +3,7 @@ export const navItems = [
     { title: "Formazioni", href: "/ensembles" },
     { title: "Eventi", href: "/events" },
     { title: "Notizie", href: "/news" },
-    { title: "Media", href: "/media" },
+    { title: "Mediateca", href: "/media" },
     { title: "Sostienici", href: "/support" },
     { title: "Trasparenza", href: "/transparency" },
     { title: "Contatti", href: "/contacts" }
