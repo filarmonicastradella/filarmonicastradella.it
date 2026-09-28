@@ -63,6 +63,8 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 - Route in inglese, una sola parola in minuscolo per ogni segmento (`/events`, `/news`, `/about/history`), senza trattini. Le etichette di navigazione restano in italiano. La mappa delle pagine è in `src/lib/navigation.js`.
 
 ### Flusso di lavoro
+- Rami: `main` è quello pubblicato (a ogni push e ogni 3 ore); il lavoro di stile (CSS) e di JS si fa sul ramo `stili` e si unisce a `main` solo dopo aver visto le pagine funzionare.
+- Punto fermo: il tag `contenuti-2026-09-28` segna il sito con tutti i contenuti e senza CSS/JS di rifinitura. Per lavorare da lì: `git switch -c prova contenuti-2026-09-28`. Per ripubblicarlo servirebbe riportare `main` a quel punto con dei commit di ripristino (`git revert`): l'ambiente `github-pages` accetta pubblicazioni solo dal ramo `main`, non dai tag. Per rilanciare la pubblicazione di `main`: `gh workflow run deploy.yml --ref main`.
 - Sito statico per GitHub Pages: la build deve passare prima del push, perché ogni push su `main` pubblica.
 - Commit piccoli e frequenti con il trailer `Co-Authored-By`; push a ogni passo concluso.
 - Verifiche con build, `svelte-check`, `html-validate` e `curl`; niente cicli di screenshot con Playwright.
