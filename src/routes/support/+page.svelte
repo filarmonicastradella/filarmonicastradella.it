@@ -28,5 +28,5 @@
         </li>
     </ul>
 
-    <p>Hai dubbi? Leggi le <a href="/support/faq">domande frequenti</a> o <a href="/contacts#scrivici">scrivici</a>.</p>
+    <p>Hai dubbi? Leggi le <a href="/support/faq">domande frequenti</a> o <a href="/contacts/write">scrivici</a>.</p>
 </main>

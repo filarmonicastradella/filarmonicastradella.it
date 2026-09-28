@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
 
-    // `id` è l'àncora opzionale per i collegamenti alla sezione (es. /contacts#scrivici).
+    // `id` è l'àncora opzionale per i collegamenti alla sezione (es. /contacts#sedi).
     let {
         title,
         id: anchor,
