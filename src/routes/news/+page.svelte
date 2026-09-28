@@ -1,5 +1,7 @@
 <script lang="ts">
-    import { news, formatNewsDate } from "$lib/news";
+    import NewsCard from "$lib/components/NewsCard.svelte";
+    import TimelineSections from "$lib/components/TimelineSections.svelte";
+    import { news } from "$lib/news";
 </script>
 
 <svelte:head>
@@ -8,21 +10,18 @@
 </svelte:head>
 
 <main id="contenuto">
-    <h1>Notizie</h1>
+    <header>
+        <h1>Notizie</h1>
+        <p>Le notizie dell'associazione, dalla più recente.</p>
+    </header>
 
     {#if news.length === 0}
         <p>Nessuna notizia pubblicata.</p>
     {:else}
-        <ul>
-            {#each news as post (post.slug)}
-                <li>
-                    <article>
-                        <p><time datetime={post.date}>{formatNewsDate(post.date)}</time></p>
-                        <h2><a href="/news/{post.slug}">{post.title}</a></h2>
-                        <p>{post.excerpt}</p>
-                    </article>
-                </li>
-            {/each}
-        </ul>
+        <TimelineSections items={news} date={(post) => post.date}>
+            {#snippet entry(post, level)}
+                <NewsCard {post} {level} />
+            {/snippet}
+        </TimelineSections>
     {/if}
 </main>

@@ -11,10 +11,10 @@
 </svelte:head>
 
 <main id="contenuto">
-    <article>
+    <article itemscope itemtype="https://schema.org/NewsArticle">
         <header>
-            <p><time datetime={data.post.date}>{formatNewsDate(data.post.date)}</time></p>
-            <h1>{data.post.title}</h1>
+            <p><time itemprop="datePublished" datetime={data.post.date}>{formatNewsDate(data.post.date)}</time></p>
+            <h1 itemprop="headline">{data.post.title}</h1>
         </header>
 
         <data.post.component />
