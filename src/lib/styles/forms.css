@@ -38,12 +38,12 @@ button[type="reset"]:hover:not(:disabled) {
     gap: var(--space-xs);
 }
 
-/* Pulsanti di scorrimento: pieni a riposo, granata al passaggio del mouse */
+/* Pulsanti di scorrimento: solo l'icona, senza bordo né sfondo, finché non ci si passa sopra */
 [role="group"] button {
     padding: var(--space-xs) var(--space-md);
-    border-color: var(--border);
-    background: var(--bg-surface);
-    color: var(--text-main);
+    border-color: transparent;
+    background: none;
+    color: var(--text-muted);
 }
 
 [role="group"] button:hover:not(:disabled) {

@@ -12,29 +12,41 @@
 
 <ul>
     <li>
-        <h2><a href="/about/history">Storia e origini</a></h2>
-        <p>Dal riconoscimento settecentesco alla Filarmonica di oggi.</p>
+        <a href="/about/history">
+            <h2>Storia e origini</h2>
+            <p>Dal riconoscimento settecentesco alla Filarmonica di oggi.</p>
+        </a>
     </li>
     <li>
-        <h2><a href="/about/mission">La nostra missione</a></h2>
-        <p>Lo scopo dell'associazione e le attività che svolge.</p>
+        <a href="/about/mission">
+            <h2>La nostra missione</h2>
+            <p>Lo scopo dell'associazione e le attività che svolge.</p>
+        </a>
     </li>
     <li>
-        <h2><a href="/about/board">Consiglio direttivo</a></h2>
-        <p>Le persone che amministrano l'associazione.</p>
+        <a href="/about/board">
+            <h2>Consiglio direttivo</h2>
+            <p>Le persone che amministrano l'associazione.</p>
+        </a>
     </li>
     <li>
-        <h2><a href="/about/locations">Le nostre sedi</a></h2>
-        <p>La sede legale e le sedi operative di Fivizzano e Serricciolo.</p>
+        <a href="/about/locations">
+            <h2>Le nostre sedi</h2>
+            <p>La sede legale e le sedi operative di Fivizzano e Serricciolo.</p>
+        </a>
     </li>
     <li>
-        <h2><a href="/about/partners">Partner</a></h2>
-        <p>Le associazioni con cui collaboriamo.</p>
+        <a href="/about/partners">
+            <h2>Partner</h2>
+            <p>Le associazioni con cui collaboriamo.</p>
+        </a>
     </li>
     <!-- Da riattivare quando ci sono i contenuti (rinominare _page.svelte in +page.svelte):
     <li>
-        <h2><a href="/about/achievements">Riconoscimenti e traguardi</a></h2>
-        <p>I riconoscimenti ricevuti e i traguardi raggiunti.</p>
+        <a href="/about/achievements">
+            <h2>Riconoscimenti e traguardi</h2>
+            <p>I riconoscimenti ricevuti e i traguardi raggiunti.</p>
+        </a>
     </li>
     -->
 </ul>

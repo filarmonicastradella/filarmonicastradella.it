@@ -12,22 +12,30 @@
 
 <ul>
     <li>
-        <h2><a href="/support/join">Diventa socio</a></h2>
-        <p>Entra a far parte della nostra grande famiglia musicale e partecipa alla vita dell'associazione.</p>
+        <a href="/support/join">
+            <h2>Diventa socio</h2>
+            <p>Entra a far parte della nostra grande famiglia musicale e partecipa alla vita dell'associazione.</p>
+        </a>
     </li>
     <li>
-        <h2><a href="/support/donate">Erogazioni liberali</a></h2>
-        <p>Un contributo libero tramite bonifico bancario, con le agevolazioni fiscali previste per le APS.</p>
+        <a href="/support/donate">
+            <h2>Erogazioni liberali</h2>
+            <p>Un contributo libero tramite bonifico bancario, con le agevolazioni fiscali previste per le APS.</p>
+        </a>
     </li>
     <!-- 5x1000: da riattivare quando l'associazione è beneficiaria.
     <li>
-        <h2><a href="/support/5x1000">5x1000</a></h2>
-        <p>Destinare il 5x1000 non costa nulla e sostiene le nostre attività.</p>
+        <a href="/support/5x1000">
+            <h2>5x1000</h2>
+            <p>Destinare il 5x1000 non costa nulla e sostiene le nostre attività.</p>
+        </a>
     </li>
     -->
     <li>
-        <h2><a href="/support/volunteer">Fai volontariato</a></h2>
-        <p>Dai una mano anche senza suonare uno strumento.</p>
+        <a href="/support/volunteer">
+            <h2>Fai volontariato</h2>
+            <p>Dai una mano anche senza suonare uno strumento.</p>
+        </a>
     </li>
 </ul>
 

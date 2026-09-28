@@ -12,11 +12,13 @@ main p {
     max-width: var(--measure);
 }
 
-:is(section, article, header, li, dd, figure) > * + * {
+/* "a" è nell'elenco perché il link ora avvolge tutta la scheda: i suoi figli si comportano come
+   quelli di li/article prima di questo cambiamento. */
+:is(section, article, header, li, dd, figure, a) > * + * {
     margin-block-start: var(--space-md);
 }
 
-:is(main, section, article, header, li) > :is(h1, h2, h3, h4, h5, h6):first-child {
+:is(main, section, article, header, li, a) > :is(h1, h2, h3, h4, h5, h6):first-child {
     margin-block-start: 0;
 }
 
@@ -24,12 +26,12 @@ main p {
     margin-block-start: var(--space-xl);
 }
 
-:is(li, article) > :is(h2, h3, h4) {
+:is(li, article, a) > :is(h2, h3, h4) {
     font-size: var(--font-size-xl);
 }
 
 /* Nelle schede il titolo occupa sempre una riga sola, così le schede si allineano */
-li > article > :is(h2, h3, h4) {
+li > article > a > :is(h2, h3, h4) {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -54,25 +56,16 @@ a[target="_blank"]:not(:has(> img, > svg))::after {
 }
 
 /* Nelle schede evento la data occupa sempre una riga sola: le date su più giorni si troncano */
-li > article[itemtype$="/Event"] > p:has(> time) {
+li > article[itemtype$="/Event"] > a > p:has(> time) {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
 /* Il luogo è più piccolo e chiaro del resto, come nel vecchio componente */
-li > article > p[itemprop="location"] {
+li > article > a > p[itemprop="location"] {
     font-size: var(--font-size-sm);
     color: var(--text-muted);
-}
-
-:is(h1, h2, h3, h4, h5, h6) a {
-    color: inherit;
-    text-decoration: none;
-}
-
-:is(h1, h2, h3, h4, h5, h6) a:hover {
-    color: var(--link);
 }
 
 /* Icone: seguono il colore del testo; l'etichetta accanto a un'icona resta per gli assistenti alla lettura */
@@ -107,7 +100,7 @@ nav ul {
 }
 
 /* Elenchi di schede: una griglia, riconosciuta da ciò che contiene */
-:is(ul, ol):has(> li > :is(article, h2, h3)) {
+:is(ul, ol):has(> li > :is(article, a)) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
     gap: var(--space-2xl);
@@ -115,13 +108,13 @@ nav ul {
     list-style: none;
 }
 
-:is(li:has(> :is(h2, h3)), li > article) {
+:is(li:has(> a), li > article) {
     padding-top: var(--space-md);
     border-top: 1px solid var(--border);
     transition: border-color var(--transition);
 }
 
-:is(li:has(> :is(h2, h3)), li > article):hover {
+:is(li:has(> a), li > article):hover {
     border-top-color: var(--link);
 }
 
@@ -132,12 +125,22 @@ li:has(> article) {
 li > article {
     display: flex;
     flex: 1;
-    flex-direction: column;
     min-width: 0;
 }
 
+/* Il link avvolge tutta la scheda: il testo cliccabile è "tutta la scheda", il nome del link per chi
+   usa lo screen reader è tutto il testo contenuto (titolo, descrizione, luogo). */
+:is(li > a, li > article > a) {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+    color: inherit;
+    text-decoration: none;
+}
+
 /* Il luogo dell'evento resta ancorato in fondo alla scheda, staccato da un filetto, e non supera due righe */
-li > article > p[itemprop="location"] {
+li > article > a > p[itemprop="location"] {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -149,7 +152,7 @@ li > article > p[itemprop="location"] {
 }
 
 /* Nelle schede la descrizione lunga (per esempio la scaletta di un concerto) si tronca sempre a 4 righe */
-li > article > p[itemprop="description"] {
+li > article > a > p[itemprop="description"] {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
@@ -226,12 +229,12 @@ ol[tabindex="0"] {
 }
 
 /* Nelle schede il titolo segue l'etichetta subito, senza lo spazio pensato per i sottotitoli in un testo lungo */
-li > article > :is(h2, h3, h4):not(:first-child) {
+li > article > a > :is(h2, h3, h4):not(:first-child) {
     margin-block-start: var(--space-xs);
 }
 
 /* Ritmo verticale del vecchio componente evento: meno spazio tra titolo e descrizione del testo comune */
-li > article > :is(h2, h3, h4) + p {
+li > article > a > :is(h2, h3, h4) + p {
     margin-block-start: var(--space-sm);
 }
 

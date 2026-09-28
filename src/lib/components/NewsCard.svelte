@@ -6,9 +6,9 @@
 </script>
 
 <article itemscope itemtype="https://schema.org/NewsArticle">
-    <p><time itemprop="datePublished" datetime={post.date}>{formatNewsDate(post.date)}</time></p>
-    <svelte:element this={`h${level}`}>
-        <a itemprop="url" href="/news/{post.slug}"><span itemprop="headline">{post.title}</span></a>
-    </svelte:element>
-    <p itemprop="description">{post.excerpt}</p>
+    <a itemprop="url" href="/news/{post.slug}">
+        <p><time itemprop="datePublished" datetime={post.date}>{formatNewsDate(post.date)}</time></p>
+        <svelte:element this={`h${level}`}><span itemprop="headline">{post.title}</span></svelte:element>
+        <p itemprop="description">{post.excerpt}</p>
+    </a>
 </article>

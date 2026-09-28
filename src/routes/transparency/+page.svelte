@@ -38,21 +38,29 @@
     <h2>Documenti</h2>
     <ul>
         <li>
-            <h3><a href="/transparency/statute">Statuto</a></h3>
-            <p>Scopi, associati, organi e regole di funzionamento dell'associazione.</p>
+            <a href="/transparency/statute">
+                <h3>Statuto</h3>
+                <p>Scopi, associati, organi e regole di funzionamento dell'associazione.</p>
+            </a>
         </li>
         <li>
-            <h3><a href="/transparency/contributions">Contributi pubblici ricevuti</a></h3>
-            <p>Contributi e vantaggi economici ricevuti da pubbliche amministrazioni.</p>
+            <a href="/transparency/contributions">
+                <h3>Contributi pubblici ricevuti</h3>
+                <p>Contributi e vantaggi economici ricevuti da pubbliche amministrazioni.</p>
+            </a>
         </li>
         <!-- Da riattivare quando ci sono i documenti (rinominare _page.svelte in +page.svelte):
         <li>
-            <h3><a href="/transparency/budgets">Rendiconti</a></h3>
-            <p>I rendiconti per cassa, approvati dall'assemblea.</p>
+            <a href="/transparency/budgets">
+                <h3>Rendiconti</h3>
+                <p>I rendiconti per cassa, approvati dall'assemblea.</p>
+            </a>
         </li>
         <li>
-            <h3><a href="/transparency/rules">Regolamenti</a></h3>
-            <p>I regolamenti interni che integrano lo statuto.</p>
+            <a href="/transparency/rules">
+                <h3>Regolamenti</h3>
+                <p>I regolamenti interni che integrano lo statuto.</p>
+            </a>
         </li>
         -->
     </ul>

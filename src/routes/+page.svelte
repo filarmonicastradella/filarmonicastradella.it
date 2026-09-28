@@ -42,22 +42,28 @@
     <h2>In primo piano</h2>
     <ul>
         <li>
-            <h3><a href="/ensembles">Gli Ensemble</a></h3>
-            <p>
-                Una concert band, una street band, un'orchestra con archi e un gruppo di musica antica e barocca: quattro ensemble per suonare insieme.
-            </p>
+            <a href="/ensembles">
+                <h3>Gli Ensemble</h3>
+                <p>
+                    Una concert band, una street band, un'orchestra con archi e un gruppo di musica antica e barocca: quattro ensemble per suonare insieme.
+                </p>
+            </a>
         </li>
         <li>
-            <h3><a href="/about/history">La Nostra Storia</a></h3>
-            <p>
-                Radici profonde che affondano nel 1777. Un viaggio attraverso i secoli tra cultura bandistica, strumenti storici e la memoria viva della nostra comunità.
-            </p>
+            <a href="/about/history">
+                <h3>La Nostra Storia</h3>
+                <p>
+                    Radici profonde che affondano nel 1777. Un viaggio attraverso i secoli tra cultura bandistica, strumenti storici e la memoria viva della nostra comunità.
+                </p>
+            </a>
         </li>
         <li>
-            <h3><a href="https://accademiastradella.it" target="_blank" rel="noopener noreferrer">Accademia Stradella</a></h3>
-            <p>
-                La scuola di musica è gestita da un'altra associazione, con cui collaboriamo. Corsi e iscrizioni sono sul suo sito.
-            </p>
+            <a href="https://accademiastradella.it" target="_blank" rel="noopener noreferrer">
+                <h3>Accademia Stradella</h3>
+                <p>
+                    La scuola di musica è gestita da un'altra associazione, con cui collaboriamo. Corsi e iscrizioni sono sul suo sito.
+                </p>
+            </a>
         </li>
     </ul>
 </section>
@@ -87,14 +93,16 @@
 
     <ul>
         <li>
-            <h3>Diventa socio</h3>
-            <p>Entra a far parte della nostra grande famiglia musicale, partecipa alla vita dell'associazione e supporta i nostri progetti formativi e concertistici.</p>
-            <p><a href="/support/join">Diventa socio</a></p>
+            <a href="/support/join">
+                <h3>Diventa socio</h3>
+                <p>Entra a far parte della nostra grande famiglia musicale, partecipa alla vita dell'associazione e supporta i nostri progetti formativi e concertistici.</p>
+            </a>
         </li>
         <li>
-            <h3>Erogazioni liberali</h3>
-            <p>Sostieni i nostri progetti con un contributo libero tramite bonifico bancario. Le erogazioni a favore delle APS godono delle agevolazioni fiscali previste dalla normativa vigente.</p>
-            <p><a href="/support/donate">Scopri come donare</a></p>
+            <a href="/support/donate">
+                <h3>Erogazioni liberali</h3>
+                <p>Sostieni i nostri progetti con un contributo libero tramite bonifico bancario. Le erogazioni a favore delle APS godono delle agevolazioni fiscali previste dalla normativa vigente.</p>
+            </a>
         </li>
         <!-- 5x1000: da riattivare quando l'associazione è beneficiaria (rinominare anche support/5x1000/_page.svelte in +page.svelte).
         <li>
