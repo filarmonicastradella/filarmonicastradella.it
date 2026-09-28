@@ -158,6 +158,15 @@ li > article > p[itemprop="description"] {
     scrollbar-width: thin;
 }
 
+/* Il carosello degli eventi ha i pulsanti di scorrimento: la barra si nasconde */
+ol[tabindex="0"] {
+    scrollbar-width: none;
+}
+
+ol[tabindex="0"]::-webkit-scrollbar {
+    display: none;
+}
+
 :is(ul, ol)[tabindex="0"] > li {
     flex: 0 0 min(22rem, 85%);
     scroll-snap-align: start;
