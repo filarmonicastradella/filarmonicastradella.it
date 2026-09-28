@@ -21,7 +21,7 @@
             </dl>
         </address>
 
-        <p><a href="/contacts/write">Scrivici tramite il modulo di contatto</a></p>
+        <p><a href="/contacts/message">Scrivici tramite il modulo di contatto</a></p>
     </Section>
 
     <nav aria-label="Social media">

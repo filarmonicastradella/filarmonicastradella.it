@@ -74,5 +74,5 @@
         </div>
     </dl>
 
-    <p>Non trovi la risposta? <a href="/contacts/write">Scrivici</a>.</p>
+    <p>Non trovi la risposta? <a href="/contacts/message">Scrivici</a>.</p>
 </main>

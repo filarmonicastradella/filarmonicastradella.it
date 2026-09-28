@@ -24,7 +24,7 @@
             <dt>Posta elettronica certificata</dt>
             <dd><a href="mailto:filarmonicastradella@pec.it">filarmonicastradella@pec.it</a></dd>
         </dl>
-        <p><a href="/contacts/write">Scrivici tramite il modulo di contatto</a></p>
+        <p><a href="/contacts/message">Scrivici tramite il modulo di contatto</a></p>
     </Section>
 
     <Section title="Uffici e presidenza">

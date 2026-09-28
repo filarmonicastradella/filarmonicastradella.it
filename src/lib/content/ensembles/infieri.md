@@ -16,4 +16,4 @@ Testo di presentazione della formazione: storia, repertorio e attività.
 
 ## Come contattarci
 
-Per informazioni scrivi tramite il [modulo di contatto](/contacts/write).
+Per informazioni scrivi tramite il [modulo di contatto](/contacts/message).
