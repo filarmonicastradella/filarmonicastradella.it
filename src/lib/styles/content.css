@@ -108,6 +108,28 @@ li::marker {
     box-shadow: var(--shadow);
 }
 
+/* Tutta la scheda è cliccabile: il link del titolo (o, nelle schede senza link nel titolo, l'ultimo link) si estende sull'intera scheda */
+:is(li:has(> :is(h2, h3)), li > article) {
+    position: relative;
+}
+
+:is(li:has(> :is(h2, h3)) > :is(h2, h3), li > article > :is(h2, h3, h4)) a::before,
+li:has(> h3):not(:has(> h3 a)) > p:last-child > a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+/* Il riquadro di focus circonda la scheda intera invece del solo titolo */
+:is(li:has(> :is(h2, h3)), li > article):has(a:focus-visible) {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+:is(li:has(> :is(h2, h3)), li > article) a:focus-visible {
+    outline: none;
+}
+
 li:has(> article) {
     display: flex;
 }
