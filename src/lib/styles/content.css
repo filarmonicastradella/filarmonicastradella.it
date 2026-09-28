@@ -56,9 +56,11 @@ a[target="_blank"]:not(:has(> img, > svg))::after {
     mask: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M7%207h10v10%22/%3E%3Cpath%20d%3D%22M7%2017%2017%207%22/%3E%3C/svg%3E') center / contain no-repeat;
 }
 
-/* Nelle schede evento la data occupa sempre due righe: le date su più giorni sono più lunghe */
+/* Nelle schede evento la data occupa sempre una riga sola: le date su più giorni si troncano */
 li > article[itemtype$="/Event"] > p:has(> time) {
-    min-height: calc(var(--line-height-body) * 2em);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 /* Orario e luogo delle schede evento: piccole icone decorative (Lucide clock/map-pin) */
@@ -150,8 +152,13 @@ li > article {
     flex-direction: column;
 }
 
-/* Il luogo dell'evento resta ancorato in fondo alla scheda, staccato da un filetto */
+/* Il luogo dell'evento resta ancorato in fondo alla scheda, staccato da un filetto, e non supera due righe */
 li > article > p[itemprop="location"] {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
     margin-block-start: auto;
     padding-block-start: var(--space-sm);
     border-block-start: 1px solid var(--border-soft);
@@ -214,8 +221,8 @@ ol[tabindex="0"] {
 }
 
 /*
- * Gli altri caroselli (eventi) mostrano sempre schede intere: 1, 2 o 3 secondo lo spazio, mai un
- * pezzo di scheda troncato a un bordo. Le soglie sono le stesse dell'intestazione e del piè di pagina.
+ * Gli altri caroselli (eventi) mostrano sempre schede intere: al massimo due per volta, mai un
+ * pezzo di scheda troncato a un bordo. La soglia è la stessa del piè di pagina.
  */
 :is(ul, ol)[tabindex="0"]:not(:has(img, video)) > li {
     flex: 0 0 100%;
@@ -224,12 +231,6 @@ ol[tabindex="0"] {
 @media (min-width: 40rem) {
     :is(ul, ol)[tabindex="0"]:not(:has(img, video)) > li {
         flex-basis: calc((100% - var(--space-lg)) / 2);
-    }
-}
-
-@media (min-width: 64rem) {
-    :is(ul, ol)[tabindex="0"]:not(:has(img, video)) > li {
-        flex-basis: calc((100% - 2 * var(--space-lg)) / 3);
     }
 }
 
@@ -244,6 +245,11 @@ ol[tabindex="0"] {
 /* Nelle schede il titolo segue l'etichetta subito, senza lo spazio pensato per i sottotitoli in un testo lungo */
 li > article > :is(h2, h3, h4):not(:first-child) {
     margin-block-start: var(--space-xs);
+}
+
+/* Ritmo verticale del vecchio componente evento: meno spazio tra titolo e descrizione del testo comune */
+li > article > :is(h2, h3, h4) + p {
+    margin-block-start: var(--space-sm);
 }
 
 :is(ul, ol)[tabindex="0"]:not(:has(img, video)) :is(li:has(> :is(h2, h3)), li > article):hover {
