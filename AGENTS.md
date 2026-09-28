@@ -45,7 +45,7 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 ### Struttura dei file
 - Componenti usati da una sola pagina accanto a quella pagina (`src/routes/`); componenti condivisi in `src/lib/components/`.
 - Logica di accesso ai dati in `src/lib/` (`events.ts`, `gallery.ts`, `news.ts`); contenuti Markdown in `src/lib/content/`.
-- Estrazione in componenti fatta per passi, con un commit per passo.
+- Sviluppo: una funzionalità nuova si scrive tutta in un unico file (pagina o componente) e si estrae in componenti o moduli solo quando il file diventa troppo lungo o complesso, non prima e non per semplice somiglianza tra due punti. Le estrazioni si fanno per passi, con un commit per passo.
 
 ### Dati
 - Dati esterni (Google Calendar, Instagram) letti dal browser, non copiati né pre-generati alla build. Le notizie sono file Markdown in `src/lib/content/news/`.
