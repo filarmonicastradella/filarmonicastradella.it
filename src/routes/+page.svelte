@@ -3,7 +3,10 @@
     import bgImage from "$lib/assets/wallpaper.jpg";
     import { fetchUpcomingEvents, type EventItem } from "$lib/events";
     import { fetchGallery, type GallerySlide } from "$lib/gallery";
+    import { news, formatNewsDate } from "$lib/news";
     import { dragScroll, scaleByDistance, trackScrollEdges } from "$lib/attachments";
+
+    const latestNews = news.slice(0, 3);
 
     type LoadStatus = "idle" | "loading" | "ready" | "error";
 
@@ -56,34 +59,6 @@
         const gap = parseFloat(getComputedStyle(eventsList).columnGap) || 24;
         eventsList.scrollBy({ left: direction * (item.offsetWidth + gap), behavior: "smooth" });
     };
-
-    // Ultime notizie (segnaposto)
-    const news = [
-        {
-            id: 1,
-            title: "Concerto d'Estate in Piazza della Verruca",
-            date: "2026-07-28",
-            excerpt: "Una serata indimenticabile all'insegna del grande repertorio bandistico e delle composizioni storiche della nostra tradizione.",
-            url: "/news/concerto-estate-2026"
-        },
-        {
-            id: 2,
-            title: "Apertura delle iscrizioni alla Scuola di Musica",
-            date: "2026-07-15",
-            excerpt: "Al via i corsi di strumento per l'anno accademico. Scopri l'offerta formativa per tutte le età e i laboratori orchestrali.",
-            url: "/news/apertura-corsi-musica"
-        },
-        {
-            id: 3,
-            title: "Rinnovo del Consiglio Direttivo APS",
-            date: "2026-06-30",
-            excerpt: "Pubblicati i verbali dell'assemblea generale e le cariche ufficiali per il triennio associativo in corso.",
-            url: "/news/rinnovo-consiglio-direttivo"
-        }
-    ];
-
-    const formatNewsDate = (date: string) =>
-        new Date(date).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Rome" });
 </script>
 
 <svelte:document onvisibilitychange={() => document.visibilityState === "visible" && loadEvents()} />
@@ -191,16 +166,16 @@
     <section aria-labelledby="notizie-heading">
         <h2 id="notizie-heading">Ultime notizie</h2>
 
-        {#if news.length === 0}
+        {#if latestNews.length === 0}
             <p>Nessuna notizia recente.</p>
         {:else}
             <ul>
-                {#each news as item (item.id)}
+                {#each latestNews as post (post.slug)}
                     <li>
                         <article>
-                            <p><time datetime={item.date}>{formatNewsDate(item.date)}</time></p>
-                            <h3><a href={item.url}>{item.title}</a></h3>
-                            <p>{item.excerpt}</p>
+                            <p><time datetime={post.date}>{formatNewsDate(post.date)}</time></p>
+                            <h3><a href="/news/{post.slug}">{post.title}</a></h3>
+                            <p>{post.excerpt}</p>
                         </article>
                     </li>
                 {/each}
