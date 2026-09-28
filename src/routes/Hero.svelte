@@ -9,5 +9,5 @@
         <p>Dal <strong>1777</strong> al <strong>{new Date().getFullYear()}</strong></p>
         <p>Custodi della <strong>tradizione</strong>, interpreti del <strong>futuro.</strong></p>
     </hgroup>
-    <p><a href="/support/join">Diventa socio</a></p>
+    <p><a href="/support/join">Unisciti a noi</a></p>
 </section>
