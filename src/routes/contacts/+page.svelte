@@ -29,7 +29,7 @@
         <p>Compila il modulo per inviarci un messaggio: ti risponderemo all'indirizzo email che indichi.</p>
 
         <form
-            action="https://formsubmit.co/47c75ae3189afeb17aa6672e17f0b7c6"
+            action="https://formsubmit.co/info@filarmonicastradella.it"
             method="POST"
         >
             <input type="hidden" name="_subject" value="Nuovo messaggio dal sito - Filarmonica Stradella" />
