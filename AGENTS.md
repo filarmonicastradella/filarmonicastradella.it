@@ -62,3 +62,4 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 
 ### Contenuti
 - L'associazione non dà rilievo a una figura di direttore: i direttori sono più di uno e sono considerati alla pari degli altri musicisti. Niente pagine, titoli o sezioni dedicati a un direttore; eventuali nomi compaiono nelle schede delle formazioni insieme agli altri componenti.
+- I segnaposto vanno scritti nella forma finale: link veri, dati nel formato definitivo, anche se per ora non puntano a niente o sono valori finti. Il segnaposto si segnala con un commento `SEGNAPOSTO` nell'HTML, non con un testo alternativo diverso dalla forma finale.
