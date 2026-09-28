@@ -12,6 +12,11 @@
     let { data } = $props();
 </script>
 
+<svelte:head>
+    <title>La storia della Filarmonica — Filarmonica Alessandro Stradella APS</title>
+    <meta name="description" content="Dal 1777 la storia della Filarmonica Alessandro Stradella di Fivizzano: origini, Ottocento, Novecento e oggi." />
+</svelte:head>
+
 <main id="contenuto">
     <article class="history-article">
         <header class="article-header">
