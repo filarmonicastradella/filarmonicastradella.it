@@ -132,7 +132,7 @@
         >
             <input type="hidden" name="_subject" value="Nuova richiesta di iscrizione - Filarmonica Stradella" />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="https://filarmonicastradella.it/" />
+            <input type="hidden" name="_next" value="https://filarmonicastradella.it/support/join/thanks" />
             <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
             <input type="hidden" name="tipo_richiedente" value={isMinorenne ? "Minorenne (iscrizione tramite genitore/tutore)" : "Maggiorenne"} />
 
