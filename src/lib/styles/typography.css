@@ -1,7 +1,7 @@
 /*
  * Sistema tipografico: Cormorant Garamond per i titoli, Montserrat per il testo.
  * Solo tipografia (font, dimensioni, pesi, interlinea, spaziatura): niente colori né layout.
- * Scala modulare con rapporto 1,25 (terza maggiore) su base 16px.
+ * Scala modulare con rapporto 1,25 (terza maggiore) su base 16px, in entrambe le direzioni.
  */
 
 :root {
@@ -13,8 +13,8 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
 
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
+    --font-size-xs: 0.64rem;
+    --font-size-sm: 0.8rem;
     --font-size-md: 1rem;
     --font-size-lg: 1.25rem;
     --font-size-xl: 1.563rem;
