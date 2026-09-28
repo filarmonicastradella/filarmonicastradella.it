@@ -49,6 +49,7 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 
 ### Dati
 - Dati esterni (Google Calendar, Instagram) letti dal browser, non copiati né pre-generati alla build. Le notizie sono file Markdown in `src/lib/content/news/`.
+- Pagine dinamiche che leggono i dati dal browser (`/events/[id]`): `prerender = false` e `ssr = false` in `+page.ts`; su GitHub Pages le serve il fallback `404.html`.
 - Route in inglese, una sola parola in minuscolo per ogni segmento (`/events`, `/news`, `/about/history`), senza trattini. Le etichette di navigazione restano in italiano. La mappa delle pagine è in `src/lib/navigation.js`.
 
 ### Flusso di lavoro

@@ -1,5 +1,6 @@
 <script lang="ts">
     import Section from "$lib/components/Section.svelte";
+    import EventCard from "$lib/components/EventCard.svelte";
     import { onMount } from "svelte";
     import { fetchUpcomingEvents, type EventItem } from "$lib/events";
     import { trackScrollEdges } from "$lib/attachments";
@@ -58,18 +59,7 @@
         <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
         <ul bind:this={eventsList} tabindex="0" aria-label="Elenco dei prossimi eventi" {@attach trackScrollEdges((e) => (edges = e))}>
             {#each events as evt (evt.id)}
-                <li>
-                    <article>
-                        <p><time datetime={evt.start}>{evt.when}</time></p>
-                        <h3><a href="/events/{evt.id}">{evt.summary}</a></h3>
-                        {#if evt.description}
-                            <p>{evt.description}</p>
-                        {/if}
-                        {#if evt.location}
-                            <p>{evt.location}</p>
-                        {/if}
-                    </article>
-                </li>
+                <li><EventCard event={evt} /></li>
             {/each}
         </ul>
     {/if}

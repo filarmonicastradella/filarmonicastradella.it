@@ -5,6 +5,7 @@ export interface EventItem {
     location: string;
     start: string;
     when: string;
+    htmlLink: string;
 }
 
 const CALENDAR_ID = "10769a48a48eab07981c5dc931bd2a4b4b629eae0cbfcc9a92c16f5391156d47@group.calendar.google.com";
@@ -17,7 +18,8 @@ const formatDay = (date: Date) =>
 const formatTime = (date: Date) =>
     date.toLocaleTimeString("it-IT", { hour: "2-digit", minute: "2-digit", timeZone: TIME_ZONE });
 
-const stripTags = (html?: string) => (html ? html.replace(/<[^>]*>?/gm, "").trim() : "");
+const stripTags = (html?: string) =>
+    html ? html.replace(/<br\s*\/?>|<\/p>/gi, "\n").replace(/<[^>]*>?/gm, "").trim() : "";
 
 function formatEventTime(evt: any): string {
     const startDate = new Date(evt.start.dateTime || evt.start.date);
@@ -44,25 +46,38 @@ function formatEventTime(evt: any): string {
     return `${startDay} ${formatTime(startDate)} - ${formatDay(endDate)} ${formatTime(endDate)}`;
 }
 
-export async function fetchUpcomingEvents(fetchFn: typeof fetch = fetch): Promise<EventItem[]> {
-    const params = new URLSearchParams({
-        key: CALENDAR_API_KEY,
-        timeMin: new Date().toISOString(),
-        maxResults: "10",
-        orderBy: "startTime",
-        singleEvents: "true"
-    });
-    const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?${params}`;
-    const res = await fetchFn(url);
-    if (!res.ok) throw new Error(`Calendar API: ${res.status}`);
-    const data = await res.json();
+const API_URL = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events`;
 
-    return (data.items ?? []).map((evt: any): EventItem => ({
+function toEventItem(evt: any): EventItem {
+    return {
         id: evt.id,
         summary: evt.summary ?? "",
         description: stripTags(evt.description),
         location: evt.location ?? "",
         start: evt.start.dateTime || evt.start.date,
-        when: formatEventTime(evt)
-    }));
+        when: formatEventTime(evt),
+        htmlLink: evt.htmlLink ?? ""
+    };
+}
+
+export async function fetchUpcomingEvents(fetchFn: typeof fetch = fetch, maxResults = 10): Promise<EventItem[]> {
+    const params = new URLSearchParams({
+        key: CALENDAR_API_KEY,
+        timeMin: new Date().toISOString(),
+        maxResults: String(maxResults),
+        orderBy: "startTime",
+        singleEvents: "true"
+    });
+    const res = await fetchFn(`${API_URL}?${params}`);
+    if (!res.ok) throw new Error(`Calendar API: ${res.status}`);
+    const data = await res.json();
+
+    return (data.items ?? []).map(toEventItem);
+}
+
+export async function fetchEvent(id: string, fetchFn: typeof fetch = fetch): Promise<EventItem> {
+    const res = await fetchFn(`${API_URL}/${encodeURIComponent(id)}?key=${CALENDAR_API_KEY}`);
+    if (!res.ok) throw new Error(`Calendar API: ${res.status}`);
+
+    return toEventItem(await res.json());
 }
