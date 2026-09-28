@@ -431,9 +431,16 @@ body > div > footer nav:has(svg) {
     grid-column: 1 / -1;
 }
 
+/* I social sono staccati dal resto del piè di pagina da un filetto */
+body > div > footer nav:has(svg) {
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--border-soft);
+}
+
 body > div > footer > p:last-child {
     margin: 0;
     color: var(--text-muted);
+    font-size: var(--font-size-xs);
     text-align: center;
 }
 
