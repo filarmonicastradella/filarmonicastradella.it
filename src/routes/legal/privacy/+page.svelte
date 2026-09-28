@@ -24,7 +24,7 @@
                 <dd>Il servizio che ospita il sito registra, come per ogni sito web, l'indirizzo IP e i dati tecnici della richiesta (pagina richiesta, data e ora, browser). Sono usati per il funzionamento e la sicurezza del sito. Il sito non usa strumenti di analisi statistica.</dd>
 
                 <dt>Comunicazioni</dt>
-                <dd>Se scrivi agli indirizzi dell'associazione, trattiamo i dati che ci fornisci (in genere nome, indirizzo email e contenuto del messaggio) solo per risponderti.</dd>
+                <dd>Se scrivi agli indirizzi dell'associazione o usi il modulo di contatto, trattiamo i dati che ci fornisci (nome, indirizzo email, motivo e contenuto del messaggio) solo per risponderti.</dd>
 
                 <dt>Richiesta di iscrizione come socio</dt>
                 <dd>Il modulo di iscrizione raccoglie i dati anagrafici, di residenza e di contatto del richiedente (o del minore e del genitore) per valutare la domanda e tenere il libro dei soci. Quando l'informativa specifica del modulo sarà definita verrà collegata qui.</dd>

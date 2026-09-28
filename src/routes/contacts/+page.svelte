@@ -25,6 +25,52 @@
         </dl>
     </Section>
 
+    <Section title="Scrivici" id="scrivici">
+        <p>Compila il modulo per inviarci un messaggio: ti risponderemo all'indirizzo email che indichi.</p>
+
+        <form
+            action="https://formsubmit.co/47c75ae3189afeb17aa6672e17f0b7c6"
+            method="POST"
+        >
+            <input type="hidden" name="_subject" value="Nuovo messaggio dal sito - Filarmonica Stradella" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://filarmonicastradella.it/contacts/thanks" />
+            <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
+
+            <p>
+                <label for="contatto-nome">Nome e cognome</label>
+                <input type="text" id="contatto-nome" name="nome" autocomplete="name" required minlength="2" maxlength="80" />
+            </p>
+
+            <p>
+                <label for="contatto-email">Indirizzo email</label>
+                <input type="email" id="contatto-email" name="email" autocomplete="email" required maxlength="120" />
+            </p>
+
+            <p>
+                <label for="contatto-motivo">Motivo del messaggio</label>
+                <select id="contatto-motivo" name="motivo" required>
+                    <option value="Informazioni generali">Informazioni generali</option>
+                    <option value="Iscrizione">Iscrizione</option>
+                    <option value="Eventi e ingaggi">Eventi e ingaggi</option>
+                    <option value="Altro">Altro</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="contatto-messaggio">Messaggio</label>
+                <textarea id="contatto-messaggio" name="messaggio" rows="6" required minlength="10" maxlength="2000"></textarea>
+            </p>
+
+            <p>
+                <input type="checkbox" id="contatto-privacy" name="consenso_privacy" value="Sì" required />
+                <label for="contatto-privacy">Ho letto l'<a href="/legal/privacy" target="_blank" rel="noopener noreferrer">informativa sulla privacy</a> e acconsento al trattamento dei dati per ricevere una risposta.</label>
+            </p>
+
+            <p><button type="submit">Invia il messaggio</button></p>
+        </form>
+    </Section>
+
     <Section title="Uffici e presidenza">
         <dl>
             <dt>Presidenza</dt>

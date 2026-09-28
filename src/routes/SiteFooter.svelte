@@ -19,6 +19,8 @@
                 <dd><a href="mailto:filarmonicastradella@pec.it">filarmonicastradella@pec.it</a></dd>
             </dl>
         </address>
+
+        <p><a href="/contacts#scrivici">Scrivici tramite il modulo di contatto</a></p>
     </Section>
 
     <nav aria-label="Social media">
