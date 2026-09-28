@@ -131,17 +131,17 @@ body > div > header button svg {
 }
 
 /* L'icona a due barre diventa una X quando il menu è aperto: le due linee si muovono */
-body > div > header button svg line {
+body > div > header button svg rect {
     transform-box: fill-box;
     transform-origin: center;
     transition: transform var(--transition-slow);
 }
 
-body > div > header:has(nav:popover-open) button svg line:nth-child(1) {
+body > div > header:has(nav:popover-open) button svg rect:nth-child(1) {
     transform: translateY(3px) rotate(45deg);
 }
 
-body > div > header:has(nav:popover-open) button svg line:nth-child(2) {
+body > div > header:has(nav:popover-open) button svg rect:nth-child(2) {
     transform: translateY(-3px) rotate(-45deg);
 }
 

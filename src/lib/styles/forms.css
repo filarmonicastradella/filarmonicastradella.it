@@ -60,6 +60,11 @@ button[type="reset"]:hover:not(:disabled) {
     padding: 0;
 }
 
+[role="group"] button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
 form {
     display: grid;
     gap: var(--space-lg);
