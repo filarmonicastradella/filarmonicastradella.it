@@ -1,6 +1,6 @@
 ---
-title: Banda
-summary: La formazione storica dell'associazione, legata alla tradizione bandistica.
+title: Stradella Facendo
+summary: Concert band, l'orchestra di fiati della Filarmonica.
 order: 1
 ---
 

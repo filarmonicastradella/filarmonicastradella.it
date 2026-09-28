@@ -5,13 +5,13 @@
 
 <svelte:head>
     <title>Ensemble e formazioni — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="Le formazioni musicali della Filarmonica Alessandro Stradella: banda, musica antica, musica sinfonica e progetti giovanili." />
+    <meta name="description" content="Le formazioni della Filarmonica Alessandro Stradella: Stradella Facendo, Streetella Band, Infieri e Filarmonici Dissonanti." />
 </svelte:head>
 
 <main id="contenuto">
     <h1>Ensemble e formazioni</h1>
     <p>
-        Dalla tradizione bandistica alla riscoperta della musica antica, fino alla musica sinfonica e ai progetti giovanili: una costellazione di gruppi aperti alla sperimentazione e ai progetti dei soci.
+        Una concert band, una street band, un'orchestra con archi e un gruppo di musica antica e barocca: quattro formazioni per suonare insieme.
     </p>
 
     <Section title="Le nostre formazioni">

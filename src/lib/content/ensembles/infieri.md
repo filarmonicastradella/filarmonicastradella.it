@@ -1,7 +1,7 @@
 ---
-title: Progetti giovanili
-summary: Gruppi e progetti aperti ai più giovani.
-order: 4
+title: Infieri
+summary: L'orchestra con archi.
+order: 3
 ---
 
 Pagina in costruzione: la scheda di questa formazione sarà pubblicata a breve.

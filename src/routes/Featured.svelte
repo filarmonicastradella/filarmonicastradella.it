@@ -7,7 +7,7 @@
         <li>
             <h3><a href="/about/ensembles">Gli Ensemble</a></h3>
             <p>
-                Dalla tradizione bandistica alla riscoperta della musica antica, fino alla musica sinfonica e ai progetti giovanili: una costellazione di gruppi aperti alla sperimentazione e ai progetti dei soci.
+                Una concert band, una street band, un'orchestra con archi e un gruppo di musica antica e barocca: quattro formazioni per suonare insieme.
             </p>
         </li>
         <li>
