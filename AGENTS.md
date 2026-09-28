@@ -54,6 +54,7 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 - Dati esterni (Google Calendar, feed Instagram di Behold) letti alla build da funzioni di caricamento del server (`+page.server.ts`, moduli in `src/lib/server/`), così finiscono già nell'HTML. Il sito si ricostruisce ogni 3 ore con una GitHub Action programmata, e a ogni push.
 - Chiavi e segreti mai nel codice: `GOOGLE_CALENDAR_API_KEY` sta in `.env` in locale (fuori dal repository, modello in `.env.example`) e nel segreto del repository su GitHub.
 - Se il calendario non risponde la build deve fallire (resta online l'ultima versione); il feed della galleria è accessorio e in caso di errore mostra un avviso.
+- Sedi e indirizzi in un solo punto, `src/lib/locations.ts` (sede legale in Via Stretta 5 e due sedi operative, Via Radda 7 a Fivizzano e Circolo Fantoni a Serricciolo): footer, contatti e pagina delle sedi li leggono da lì.
 - Le notizie (`src/lib/content/news/`) e le formazioni (`src/lib/content/ensembles/`) sono file Markdown con intestazione (titolo, riassunto, ordine); ogni file diventa una pagina generata alla build e il nome del file è lo slug dell'indirizzo (gli slug dei contenuti possono avere trattini).
 - Route in inglese, una sola parola in minuscolo per ogni segmento (`/events`, `/news`, `/about/history`), senza trattini. Le etichette di navigazione restano in italiano. La mappa delle pagine è in `src/lib/navigation.js`.
 

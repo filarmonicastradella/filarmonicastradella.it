@@ -1,5 +1,6 @@
 <script lang="ts">
     import Section from "$lib/components/Section.svelte";
+    import { legalSeat } from "$lib/locations";
 </script>
 
 <footer>
@@ -9,7 +10,7 @@
             <dl>
                 <dt>Indirizzo</dt>
                 <dd>
-                    <a href="https://maps.google.com/?q=Via+Stretta+5+54013+Fivizzano+MS" target="_blank" rel="noopener noreferrer">Via Stretta 5, 54013 Fivizzano (MS)</a>
+                    <a href={legalSeat.mapsHref} target="_blank" rel="noopener noreferrer">{legalSeat.address.join(", ")}</a>
                 </dd>
                 <dt>Telefono</dt>
                 <dd><a href="tel:+393505363110">+39 350 536 3110</a></dd>

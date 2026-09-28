@@ -14,7 +14,7 @@
 
         <section aria-labelledby="titolare-heading">
             <h2 id="titolare-heading">1. Titolare del trattamento</h2>
-            <p>Il titolare è la <strong>Filarmonica Alessandro Stradella APS</strong>, codice fiscale 90021290458, con sede a Fivizzano (MS). Per qualsiasi richiesta sui tuoi dati puoi scrivere a <a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a>.</p>
+            <p>Il titolare è la <strong>Filarmonica Alessandro Stradella APS</strong>, codice fiscale 90021290458, con sede legale in Via Stretta 5, 54013 Fivizzano (MS). Per qualsiasi richiesta sui tuoi dati puoi scrivere a <a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a>.</p>
         </section>
 
         <section aria-labelledby="dati-heading">

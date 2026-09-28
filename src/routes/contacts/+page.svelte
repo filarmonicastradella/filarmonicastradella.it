@@ -1,6 +1,7 @@
 <script lang="ts">
     import Section from "$lib/components/Section.svelte";
     import MapEmbed from "./MapEmbed.svelte";
+    import { legalSeat, operationalSeats } from "$lib/locations";
 </script>
 
 <svelte:head>
@@ -88,43 +89,27 @@
         </dl>
     </Section>
 
-    <Section title="Le nostre sedi">
+    <Section title="Le nostre sedi" id="sedi">
         <article>
-            <h3>Sede di Fivizzano</h3>
-
+            <h3>{legalSeat.name}</h3>
             <address>
-                Filarmonica Alessandro Stradella APS<br />
-                Via Radda 7<br />
-                54013 Fivizzano (MS)<br />
-                Italia
+                {#each legalSeat.address as line}{line}<br />{/each}
             </address>
-
-            <p>Sede dell'associazione, storicamente nota in gergo come "Sala Operaia", aperta in occasione di prove, eventi pubblici e sportelli informativi dedicati.</p>
-
-            <MapEmbed
-                title="Mappa della sede di Fivizzano"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2878.784404098921!2d10.1278!3d44.2375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d515364166299b%3A0x6b772421371cb14b!2sVia%20Radda%2C%207%2C%2054013%20Fivizzano%20MS!5e0!3m2!1sit!2sit!4v1710000000000!5m2!1sit!2sit"
-                href="https://maps.google.com/?q=Via+Radda+7,+54013+Fivizzano+MS"
-            />
+            <p>{legalSeat.description}</p>
+            <p><a href={legalSeat.mapsHref} target="_blank" rel="noopener noreferrer">Apri la mappa su Google Maps</a></p>
         </article>
 
-        <article>
-            <h3>Sede di Serricciolo</h3>
-
-            <address>
-                Circolo Culturale "Giovanni Fantoni"<br />
-                Via la Spezia 7<br />
-                54013 Serricciolo, Fivizzano (MS)<br />
-                Italia
-            </address>
-
-            <p>Sede dell'associazione, situata presso il Circolo Fantoni e attiva per le iniziative e gli incontri sul territorio.</p>
-
-            <MapEmbed
-                title="Mappa della sede di Serricciolo"
-                src="https://maps.google.com/maps?q=Via+la+Spezia+7,+Serricciolo,+Fivizzano+MS&output=embed"
-                href="https://maps.app.goo.gl/FYszuhGgyCZdf5zm6"
-            />
-        </article>
+        {#each operationalSeats as seat (seat.id)}
+            <article>
+                <h3>{seat.name}</h3>
+                <address>
+                    {#each seat.address as line}{line}<br />{/each}
+                </address>
+                <p>{seat.description}</p>
+                {#if seat.mapEmbed}
+                    <MapEmbed title="Mappa della {seat.name.toLowerCase()}" src={seat.mapEmbed} href={seat.mapsHref} />
+                {/if}
+            </article>
+        {/each}
     </Section>
 </main>

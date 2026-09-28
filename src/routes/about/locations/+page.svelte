@@ -1,31 +1,40 @@
+<script lang="ts">
+    import Section from "$lib/components/Section.svelte";
+    import { legalSeat, operationalSeats } from "$lib/locations";
+</script>
+
 <svelte:head>
     <title>Le nostre sedi — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="Le sedi della Filarmonica Alessandro Stradella APS a Fivizzano e Serricciolo." />
+    <meta name="description" content="La sede legale a Fivizzano e le sedi operative di Fivizzano e Serricciolo della Filarmonica Alessandro Stradella APS." />
 </svelte:head>
 
 <main id="contenuto">
-    <h1>Le nostre sedi</h1>
-    <p>L'associazione ha due sedi, a Fivizzano e a Serricciolo.</p>
+    <header>
+        <h1>Le nostre sedi</h1>
+        <p>L'associazione ha la sede legale a Fivizzano e due sedi operative, a Fivizzano e a Serricciolo.</p>
+    </header>
 
-    <ul>
-        <li>
-            <h2>Sede di Fivizzano</h2>
-            <address>
-                Via Radda 7<br />
-                54013 Fivizzano (MS)
-            </address>
-            <p>Storicamente nota in gergo come "Sala Operaia", aperta in occasione di prove, eventi pubblici e sportelli informativi dedicati.</p>
-        </li>
-        <li>
-            <h2>Sede di Serricciolo</h2>
-            <address>
-                Circolo Culturale "Giovanni Fantoni"<br />
-                Via la Spezia 7<br />
-                54013 Serricciolo, Fivizzano (MS)
-            </address>
-            <p>Presso il Circolo Fantoni, attiva per le iniziative e gli incontri sul territorio.</p>
-        </li>
-    </ul>
+    <Section title="Sede legale">
+        <address>
+            {#each legalSeat.address as line}{line}<br />{/each}
+        </address>
+        <p><a href={legalSeat.mapsHref} target="_blank" rel="noopener noreferrer">Apri la mappa su Google Maps</a></p>
+    </Section>
 
-    <p><a href="/contacts">Mappe e recapiti</a></p>
+    <Section title="Sedi operative">
+        <ul>
+            {#each operationalSeats as seat (seat.id)}
+                <li>
+                    <h3>{seat.name}</h3>
+                    <address>
+                        {#each seat.address as line}{line}<br />{/each}
+                    </address>
+                    <p>{seat.description}</p>
+                    <p><a href={seat.mapsHref} target="_blank" rel="noopener noreferrer">Apri la mappa su Google Maps</a></p>
+                </li>
+            {/each}
+        </ul>
+    </Section>
+
+    <p><a href="/contacts#sedi">Mappe e recapiti</a></p>
 </main>
