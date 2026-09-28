@@ -100,7 +100,7 @@ nav ul {
 }
 
 /* Elenchi di schede: una griglia, riconosciuta da ciò che contiene */
-:is(ul, ol):has(> li > :is(article, a)) {
+:is(ul, ol):has(> li > article, > li > a > :is(h2, h3, h4)) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
     gap: var(--space-2xl);
@@ -108,13 +108,13 @@ nav ul {
     list-style: none;
 }
 
-:is(li:has(> a), li > article) {
+:is(li:has(> a > :is(h2, h3, h4)), li > article) {
     padding-top: var(--space-md);
     border-top: 1px solid var(--border);
     transition: border-color var(--transition);
 }
 
-:is(li:has(> a), li > article):hover {
+:is(li:has(> a > :is(h2, h3, h4)), li > article):hover {
     border-top-color: var(--link);
 }
 
@@ -128,9 +128,10 @@ li > article {
     min-width: 0;
 }
 
-/* Il link avvolge tutta la scheda: il testo cliccabile è "tutta la scheda", il nome del link per chi
-   usa lo screen reader è tutto il testo contenuto (titolo, descrizione, luogo). */
-:is(li > a, li > article > a) {
+/* Il link della scheda (ha un titolo dentro, a differenza di un link qualunque in un elenco) avvolge
+   tutta la scheda: il testo cliccabile è "tutta la scheda", il nome del link per chi usa lo screen
+   reader è tutto il testo contenuto (titolo, descrizione, luogo). */
+:is(li > a:has(> :is(h2, h3, h4)), li > article > a) {
     display: flex;
     flex: 1;
     flex-direction: column;
