@@ -2,11 +2,11 @@
     import Figure from "./Figure.svelte";
 
     // Importazione degli asset da src/lib/assets/imgs/
-    import altaCappellaImg from "$lib/assets/imgs/alta_cappella.jpg";
-    import ottocentoImg from "$lib/assets/imgs/ottocento.jpg";
-    import anni30Img from "$lib/assets/imgs/anni_30.jpeg";
-    import anni80Img from "$lib/assets/imgs/anni_80.jpeg";
-    import oggiImg from "$lib/assets/imgs/oggi.jpg";
+    import altaCappellaImg from "$lib/assets/imgs/alta_cappella.jpg?enhanced&w=480;960;1600";
+    import ottocentoImg from "$lib/assets/imgs/ottocento.jpg?enhanced&w=480;960;1600";
+    import anni30Img from "$lib/assets/imgs/anni_30.jpeg?enhanced&w=480;960;1600";
+    import anni80Img from "$lib/assets/imgs/anni_80.jpeg?enhanced&w=480;960;1600";
+    import oggiImg from "$lib/assets/imgs/oggi.jpg?enhanced&w=480;960;1600";
 </script>
 
 <svelte:head>

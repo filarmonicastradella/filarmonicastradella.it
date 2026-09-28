@@ -1,5 +1,7 @@
 <script lang="ts">
-    let { src, alt, caption }: { src: string; alt: string; caption?: string } = $props();
+    import type { Picture } from "vite-imagetools";
+
+    let { src, alt, caption }: { src: Picture; alt: string; caption?: string } = $props();
 
     // Senza JS il link apre l'immagine a grandezza piena; con JS la mostra in una finestra.
     let dialog = $state<HTMLDialogElement>();
@@ -12,7 +14,8 @@
 </script>
 
 <figure>
-    <a href={src} onclick={openDialog}><img {src} {alt} loading="lazy" /></a>
+    <!-- svelte-ignore a11y_consider_explicit_label: il nome del link è l'alt dell'immagine, che il compilatore non vede dentro enhanced:img -->
+    <a href={src.img.src} onclick={openDialog}><enhanced:img {src} {alt} sizes="100vw" /></a>
     {#if caption}
         <figcaption>{caption}</figcaption>
     {/if}
@@ -20,7 +23,7 @@
 
 <dialog bind:this={dialog} closedby="any" aria-label={alt}>
     <figure>
-        <img {src} {alt} loading="lazy" />
+        <enhanced:img {src} {alt} sizes="100vw" />
         {#if caption}
             <figcaption>{caption}</figcaption>
         {/if}

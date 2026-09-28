@@ -10,12 +10,12 @@
     import SiteFooter from "./SiteFooter.svelte";
 
     // Cormorant Garamond — pesi specifici
-    import "@fontsource/cormorant-garamond/400.css";
-    import "@fontsource/cormorant-garamond/500.css";
-    import "@fontsource/cormorant-garamond/600.css";
-    import "@fontsource/cormorant-garamond/700.css";
-    import "@fontsource/cormorant-garamond/400-italic.css";
-    import "@fontsource/cormorant-garamond/700-italic.css";
+    import "@fontsource/cormorant-garamond/latin-400.css";
+    import "@fontsource/cormorant-garamond/latin-500.css";
+    import "@fontsource/cormorant-garamond/latin-600.css";
+    import "@fontsource/cormorant-garamond/latin-700.css";
+    import "@fontsource/cormorant-garamond/latin-400-italic.css";
+    import "@fontsource/cormorant-garamond/latin-700-italic.css";
 
     // Montserrat — variable
     import "@fontsource-variable/montserrat/wght.css";

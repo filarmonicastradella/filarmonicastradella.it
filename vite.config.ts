@@ -1,10 +1,12 @@
 import adapter from '@sveltejs/adapter-static';
+import { enhancedImages } from '@sveltejs/enhanced-img';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import { mdsvex } from 'mdsvex';
 
 export default defineConfig({
 	plugins: [
+		enhancedImages(),
 		sveltekit({
 			extensions: ['.svelte', '.md'],
 			preprocess: [mdsvex({ extensions: ['.md'] })],

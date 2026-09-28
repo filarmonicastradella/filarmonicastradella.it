@@ -342,7 +342,7 @@ main > section:has(> hgroup) {
     grid-column: full;
     min-height: calc(100svh - var(--header-height));
     padding: var(--space-3xl) var(--gutter);
-    background: var(--hero-overlay), url("../assets/wallpaper.jpg") center / cover;
+    background: var(--hero-overlay), url("../assets/wallpaper.webp") center / cover;
     color: var(--on-image);
     text-align: center;
 }
