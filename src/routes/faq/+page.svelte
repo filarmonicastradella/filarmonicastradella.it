@@ -6,7 +6,7 @@
 <main id="contenuto">
     <header>
         <h1>Domande frequenti</h1>
-        <p>Le risposte alle domande più comuni su iscrizioni, formazioni, eventi e sostegno all'associazione.</p>
+        <p>Le risposte alle domande più comuni su iscrizioni, ensemble, eventi e sostegno all'associazione.</p>
     </header>
 
     <dl itemscope itemtype="https://schema.org/FAQPage">
@@ -14,13 +14,13 @@
             <dt itemprop="name">Come si suona con la Filarmonica?</dt>
             <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
                 <span itemprop="text">
-                    Prima ci si iscrive come soci dell'associazione con la <a href="/support/join">richiesta di iscrizione</a>, poi si chiede di entrare nella formazione in cui si vuole suonare.
+                    Prima ci si iscrive come soci dell'associazione con la <a href="/support/join">richiesta di iscrizione</a>, poi si chiede di entrare nell'ensemble in cui si vuole suonare.
                 </span>
             </dd>
         </div>
 
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <dt itemprop="name">Quali formazioni ci sono?</dt>
+            <dt itemprop="name">Quali ensemble ci sono?</dt>
             <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
                 <span itemprop="text">
                     Stradella Facendo, Streetella Band, Infieri e Filarmonici Dissonanti: le presentiamo nella pagina <a href="/ensembles">Ensemble e formazioni</a>.

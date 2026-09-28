@@ -1,6 +1,6 @@
 export const navItems = [
     { title: "Associazione", href: "/about" },
-    { title: "Formazioni", href: "/ensembles" },
+    { title: "Ensemble", href: "/ensembles" },
     { title: "Eventi", href: "/events" },
     { title: "Notizie", href: "/news" },
     { title: "Mediateca", href: "/media" },

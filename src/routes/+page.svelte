@@ -43,7 +43,7 @@
             <li>
                 <h3><a href="/ensembles">Gli Ensemble</a></h3>
                 <p>
-                    Una concert band, una street band, un'orchestra con archi e un gruppo di musica antica e barocca: quattro formazioni per suonare insieme.
+                    Una concert band, una street band, un'orchestra con archi e un gruppo di musica antica e barocca: quattro ensemble per suonare insieme.
                 </p>
             </li>
             <li>

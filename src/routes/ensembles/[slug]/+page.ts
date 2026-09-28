@@ -6,6 +6,6 @@ export const entries: EntryGenerator = () => ensembles.map(({ slug }) => ({ slug
 
 export const load: PageLoad = ({ params }) => {
     const ensemble = ensembles.find(({ slug }) => slug === params.slug);
-    if (!ensemble) error(404, "Formazione non trovata");
+    if (!ensemble) error(404, "Ensemble non trovato");
     return { ensemble };
 };

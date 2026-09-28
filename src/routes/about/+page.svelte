@@ -40,5 +40,5 @@
         -->
     </ul>
 
-    <p>Le nostre <a href="/ensembles">formazioni</a> hanno una sezione propria.</p>
+    <p>I nostri <a href="/ensembles">ensemble</a> hanno una sezione propria.</p>
 </main>

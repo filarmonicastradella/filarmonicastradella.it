@@ -17,5 +17,5 @@
         <data.ensemble.component />
     </article>
 
-    <p><a href="/ensembles">Tutte le formazioni</a></p>
+    <p><a href="/ensembles">Tutti gli ensemble</a></p>
 </main>

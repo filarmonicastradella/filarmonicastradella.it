@@ -25,7 +25,7 @@
         <h2>Cosa facciamo</h2>
         <ul>
             <li>Formazione musicale: corsi di strumento e teoria, seminari e laboratori per ogni fascia d'età, in collaborazione con l'<a href="https://accademiastradella.it" target="_blank" rel="noopener noreferrer">Accademia Stradella</a>.</li>
-            <li>Musica d'insieme: gestiamo complessi bandistici, corali e di musica d'insieme. Le trovi nella pagina delle <a href="/ensembles">formazioni</a>.</li>
+            <li>Musica d'insieme: gestiamo complessi bandistici, corali e di musica d'insieme. Trovi i nostri <a href="/ensembles">ensemble</a> nella loro pagina.</li>
             <li>Concerti e cultura: organizziamo concerti, rassegne, concorsi e manifestazioni, anche con enti pubblici e privati. Le date sono nella pagina degli <a href="/events">eventi</a>.</li>
             <li>Scambi e gemellaggi musicali, per favorire l'aggregazione sociale e la crescita artistica di chi partecipa.</li>
             <li>Scuole e territorio: progetti musicali e formativi nelle scuole e nelle altre realtà del territorio.</li>

@@ -8,7 +8,7 @@ order: 1
 
 ## Presentazione
 
-Testo di presentazione della formazione: storia, repertorio e attività.
+Testo di presentazione dell'ensemble: storia, repertorio e attività.
 
 ## Musicisti
 
