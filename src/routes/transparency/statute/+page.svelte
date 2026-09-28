@@ -228,5 +228,5 @@
         </section>
     </article>
 
-    <p><a href="/legal/transparency">Torna ad Amministrazione trasparente</a></p>
+    <p><a href="/transparency">Torna ad Amministrazione trasparente</a></p>
 </main>

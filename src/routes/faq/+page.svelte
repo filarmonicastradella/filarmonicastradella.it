@@ -23,7 +23,7 @@
             <dt itemprop="name">Quali formazioni ci sono?</dt>
             <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
                 <span itemprop="text">
-                    Stradella Facendo, Streetella Band, Infieri e Filarmonici Dissonanti: le presentiamo nella pagina <a href="/about/ensembles">Ensemble e formazioni</a>.
+                    Stradella Facendo, Streetella Band, Infieri e Filarmonici Dissonanti: le presentiamo nella pagina <a href="/ensembles">Ensemble e formazioni</a>.
                 </span>
             </dd>
         </div>
@@ -50,7 +50,7 @@
             <dt itemprop="name">Come posso sostenere l'associazione?</dt>
             <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
                 <span itemprop="text">
-                    Iscrivendoti come socio, con una <a href="/support/donate">erogazione liberale</a> o destinando il <a href="/support/5x1000">5x1000</a>. Tutte le possibilità sono nella pagina <a href="/support">Sostienici</a>.
+                    Iscrivendoti come socio o con una <a href="/support/donate">erogazione liberale</a> (il 5x1000 verrà aggiunto quando saremo beneficiari). Tutte le possibilità sono nella pagina <a href="/support">Sostienici</a>.
                 </span>
             </dd>
         </div>

@@ -1,5 +1,6 @@
 <script lang="ts">
     import { legalSeat } from "$lib/locations";
+    import { organization } from "$lib/organization";
 </script>
 
 <footer>
@@ -17,7 +18,7 @@
                 <dt>Email</dt>
                 <dd><a href="mailto:info@filarmonicastradella.it">info@filarmonicastradella.it</a></dd>
                 <dt>PEC</dt>
-                <dd><a href="mailto:filarmonicastradella@pec.it">filarmonicastradella@pec.it</a></dd>
+                <dd><a href="mailto:{organization.pec}">{organization.pec}</a></dd>
             </dl>
         </address>
 
@@ -39,22 +40,23 @@
 
         <dl>
             <dt>Denominazione</dt>
-            <dd>Filarmonica Alessandro Stradella APS</dd>
+            <dd>{organization.name}</dd>
             <dt>Codice fiscale</dt>
-            <dd>90021290458</dd>
+            <dd>{organization.taxCode}</dd>
             <dt>Iscrizione al RUNTS</dt>
-            <dd>Repertorio n. 176207</dd>
+            <dd>{organization.runts}</dd>
             <dt>Affiliazione</dt>
             <dd>
-                <a href="https://www.anbima.it/massacarrara/regionetoscana-massacarrara-unita-di-base" target="_blank" rel="noopener noreferrer">ANBIMA APS</a>
+                <a href={organization.affiliation.href} target="_blank" rel="noopener noreferrer">{organization.affiliation.name}</a>
             </dd>
         </dl>
     </section>
 
-    <nav aria-label="Informazioni legali">
+    <nav aria-label="Informazioni">
         <ul>
             <li><a href="/legal/privacy">Informativa Privacy</a></li>
             <li><a href="/legal/cookies">Politica dei Cookie</a></li>
+            <li><a href="/faq">Domande frequenti</a></li>
         </ul>
     </nav>
 

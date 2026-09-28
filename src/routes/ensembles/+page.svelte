@@ -18,7 +18,7 @@
         <ul>
             {#each ensembles as ensemble (ensemble.slug)}
                 <li>
-                    <h3><a href="/about/ensembles/{ensemble.slug}">{ensemble.title}</a></h3>
+                    <h3><a href="/ensembles/{ensemble.slug}">{ensemble.title}</a></h3>
                     <p>{ensemble.summary}</p>
                 </li>
             {/each}
