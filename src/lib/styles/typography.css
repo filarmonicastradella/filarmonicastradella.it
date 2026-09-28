@@ -105,6 +105,7 @@ figcaption {
 }
 
 strong,
+time,
 dt,
 th {
     font-weight: var(--font-weight-semibold);
@@ -126,10 +127,14 @@ body > div > footer h2 {
     text-transform: uppercase;
 }
 
-time,
 dt,
 th {
     font-size: var(--font-size-sm);
+}
+
+/* Più piccolo delle etichette: più leggero da leggere in mezzo alle date senza sembrare gridato */
+time {
+    font-size: var(--font-size-xs);
 }
 
 abbr[title] {
