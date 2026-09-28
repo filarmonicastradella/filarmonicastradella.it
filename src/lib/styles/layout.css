@@ -354,7 +354,7 @@ main > section:has(> hgroup) a {
 }
 
 main > section:has(> hgroup) a:hover {
-    background: transparent;
+    background: var(--color-brand);
     color: var(--on-image);
 }
 
