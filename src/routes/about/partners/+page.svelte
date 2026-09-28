@@ -1,6 +1,6 @@
 <svelte:head>
     <title>Partner — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="Le associazioni con cui collabora la Filarmonica Alessandro Stradella APS: Medicea, Circolo Culturale Fantoni, Società di Mutuo Soccorso e Dal libro alla solidarietà." />
+    <meta name="description" content="Le associazioni con cui collabora la Filarmonica Alessandro Stradella APS: Medicea, Circolo Culturale Fantoni, Società di Mutuo Soccorso, Dal libro alla solidarietà e Associazione Mamme." />
 </svelte:head>
 
 <main id="contenuto">
@@ -28,6 +28,11 @@
         </li>
         <li>
             <h2>Dal libro alla solidarietà</h2>
+            <p>[Descrizione della collaborazione da inserire]</p>
+            <p><a href="https://www.example.org" target="_blank" rel="noopener noreferrer">[Sito web da inserire]</a></p>
+        </li>
+        <li>
+            <h2>Associazione Mamme</h2>
             <p>[Descrizione della collaborazione da inserire]</p>
             <p><a href="https://www.example.org" target="_blank" rel="noopener noreferrer">[Sito web da inserire]</a></p>
         </li>
