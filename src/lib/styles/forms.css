@@ -21,15 +21,13 @@ button:disabled {
     opacity: 0.5;
 }
 
-button[type="reset"],
-[role="group"] button {
+button[type="reset"] {
     border-color: var(--border);
     background: transparent;
     color: var(--link);
 }
 
-button[type="reset"]:hover:not(:disabled),
-[role="group"] button:hover:not(:disabled) {
+button[type="reset"]:hover:not(:disabled) {
     border-color: var(--link);
     background: transparent;
 }
@@ -40,8 +38,18 @@ button[type="reset"]:hover:not(:disabled),
     gap: var(--space-xs);
 }
 
+/* Pulsanti di scorrimento: pieni a riposo, granata al passaggio del mouse */
 [role="group"] button {
     padding: var(--space-xs) var(--space-md);
+    border-color: var(--border);
+    background: var(--bg-surface);
+    color: var(--text-main);
+}
+
+[role="group"] button:hover:not(:disabled) {
+    border-color: var(--color-brand);
+    background: var(--color-brand);
+    color: var(--on-image);
 }
 
 [role="group"] button:has(> svg) {

@@ -204,6 +204,17 @@ ol[tabindex="0"] {
     flex-basis: min(16rem, 70%);
 }
 
+/* Le schede del carosello (non quelle fotografiche) hanno un bordo e uno sfondo pieno, angoli vivi */
+:is(ul, ol)[tabindex="0"]:not(:has(img, video)) :is(li:has(> :is(h2, h3)), li > article) {
+    padding: var(--space-md);
+    border: 1px solid var(--border-soft);
+    background: var(--bg-surface);
+}
+
+:is(ul, ol)[tabindex="0"]:not(:has(img, video)) :is(li:has(> :is(h2, h3)), li > article):hover {
+    border-color: var(--link);
+}
+
 /* Indici di navigazione dentro le pagine */
 main nav ul {
     display: flex;
