@@ -59,3 +59,6 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 - Sito statico per GitHub Pages: la build deve passare prima del push, perché ogni push su `main` pubblica.
 - Commit piccoli e frequenti con il trailer `Co-Authored-By`; push a ogni passo concluso.
 - Verifiche con build, `svelte-check`, `html-validate` e `curl`; niente cicli di screenshot con Playwright.
+
+### Contenuti
+- L'associazione non dà rilievo a una figura di direttore: i direttori sono più di uno e sono considerati alla pari degli altri musicisti. Niente pagine, titoli o sezioni dedicati a un direttore; eventuali nomi compaiono nelle schede delle formazioni insieme agli altri componenti.
