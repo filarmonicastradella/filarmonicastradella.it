@@ -15,26 +15,26 @@
 
     <nav aria-label="Indice degli articoli">
         <ol>
-                <li><a href="#art-1">Art. 1 — Denominazione, sede e durata</a></li>
-                <li><a href="#art-2">Art. 2 — Scopo, finalità, attività</a></li>
-                <li><a href="#art-3">Art. 3 — Ammissione e numero degli associati</a></li>
-                <li><a href="#art-4">Art. 4 — Diritti e obblighi degli associati</a></li>
-                <li><a href="#art-5">Art. 5 — Perdita della qualifica di associato</a></li>
-                <li><a href="#art-6">Art. 6 — Organi</a></li>
-                <li><a href="#art-7">Art. 7 — Assemblea</a></li>
-                <li><a href="#art-8">Art. 8 — Organo di amministrazione</a></li>
-                <li><a href="#art-9">Art. 9 — Presidente</a></li>
-                <li><a href="#art-10">Art. 10 — Organo di controllo</a></li>
-                <li><a href="#art-11">Art. 11 — Revisione legale dei conti</a></li>
-                <li><a href="#art-12">Art. 12 — Patrimonio</a></li>
-                <li><a href="#art-13">Art. 13 — Divieto di distribuzione degli utili</a></li>
-                <li><a href="#art-14">Art. 14 — Risorse economiche</a></li>
-                <li><a href="#art-15">Art. 15 — Bilancio di esercizio</a></li>
-                <li><a href="#art-16">Art. 16 — Libri e Registro</a></li>
-                <li><a href="#art-17">Art. 17 — Volontari</a></li>
-                <li><a href="#art-18">Art. 18 — Lavoratori</a></li>
-                <li><a href="#art-19">Art. 19 — Scioglimento e devoluzione del patrimonio residuo</a></li>
-                <li><a href="#art-20">Art. 20 — Regolamenti interni</a></li>
+                <li><a href="#art-1">Denominazione, sede e durata</a></li>
+                <li><a href="#art-2">Scopo, finalità, attività</a></li>
+                <li><a href="#art-3">Ammissione e numero degli associati</a></li>
+                <li><a href="#art-4">Diritti e obblighi degli associati</a></li>
+                <li><a href="#art-5">Perdita della qualifica di associato</a></li>
+                <li><a href="#art-6">Organi</a></li>
+                <li><a href="#art-7">Assemblea</a></li>
+                <li><a href="#art-8">Organo di amministrazione</a></li>
+                <li><a href="#art-9">Presidente</a></li>
+                <li><a href="#art-10">Organo di controllo</a></li>
+                <li><a href="#art-11">Revisione legale dei conti</a></li>
+                <li><a href="#art-12">Patrimonio</a></li>
+                <li><a href="#art-13">Divieto di distribuzione degli utili</a></li>
+                <li><a href="#art-14">Risorse economiche</a></li>
+                <li><a href="#art-15">Bilancio di esercizio</a></li>
+                <li><a href="#art-16">Libri e Registro</a></li>
+                <li><a href="#art-17">Volontari</a></li>
+                <li><a href="#art-18">Lavoratori</a></li>
+                <li><a href="#art-19">Scioglimento e devoluzione del patrimonio residuo</a></li>
+                <li><a href="#art-20">Regolamenti interni</a></li>
         </ol>
     </nav>
 
