@@ -284,6 +284,35 @@ main > section + section {
     padding-top: var(--space-2xl);
 }
 
+/* Cambio di pagina: l'intestazione resta ferma, il resto sfuma con un leggero scorrimento */
+body > div > header {
+    view-transition-name: intestazione;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    ::view-transition-old(root) {
+        animation: uscita-pagina var(--transition-slow) both;
+    }
+
+    ::view-transition-new(root) {
+        animation: entrata-pagina var(--transition-slow) both;
+    }
+}
+
+@keyframes uscita-pagina {
+    to {
+        opacity: 0;
+        transform: translateY(-0.5rem);
+    }
+}
+
+@keyframes entrata-pagina {
+    from {
+        opacity: 0;
+        transform: translateY(0.5rem);
+    }
+}
+
 /* Il pezzo forte della landing: la sezione con il titolo principale a tutta larghezza */
 main > section:has(> hgroup) {
     display: grid;
