@@ -23,7 +23,7 @@
             <dt itemprop="name">Quali ensemble ci sono?</dt>
             <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
                 <span itemprop="text">
-                    Stradella Facendo, Streetella Band, Infieri e Filarmonici Dissonanti: le presentiamo nella pagina <a href="/ensembles">Ensemble e formazioni</a>.
+                    Stradella Facendo, Streetella Band, Infieri e Filarmonici Dissonanti: le presentiamo nella pagina <a href="/ensembles">Ensemble</a>.
                 </span>
             </dd>
         </div>
