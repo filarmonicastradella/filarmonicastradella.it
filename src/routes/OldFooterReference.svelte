@@ -91,7 +91,6 @@
 
             <ul class="footer-legal">
                 <li><a href="/legal/privacy">Informativa Privacy</a></li>
-                <span class="separator">•</span>
                 <li><a href="/legal/cookies">Politica dei Cookie</a></li>
             </ul>
 
@@ -241,6 +240,12 @@
         gap: var(--space-md);
         flex-wrap: wrap;
         font-size: var(--font-size-xs);
+    }
+
+    .footer-legal li + li::before {
+        content: "•";
+        margin-right: var(--space-md);
+        color: var(--border);
     }
 
     small {
