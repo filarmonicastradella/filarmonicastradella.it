@@ -20,6 +20,12 @@
 
     const capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 
+    interface MonthGroup {
+        month: string;
+        title: string;
+        items: EventItem[];
+    }
+
     // Eventi raggruppati per anno e poi per mese, nell'ordine in cui arrivano dal calendario.
     const years = $derived.by(() => {
         const byYear = new Map<string, Map<string, EventItem[]>>();
@@ -45,6 +51,18 @@
     <meta name="description" content="I prossimi concerti, le prove aperte e tutte le attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano." />
 </svelte:head>
 
+{#snippet monthList(months: MonthGroup[], level: 2 | 3)}
+    {#each months as { month, title, items } (month)}
+        <Section {title} {level}>
+            <ul>
+                {#each items as event (event.id)}
+                    <li><EventCard {event} level={level === 2 ? 3 : 4} /></li>
+                {/each}
+            </ul>
+        </Section>
+    {/each}
+{/snippet}
+
 <main id="contenuto">
     <header>
         <h1>Eventi</h1>
@@ -58,19 +76,16 @@
     {:else if status === "ready" && events.length === 0}
         <p>Al momento non ci sono eventi in programma. Torna a trovarci presto!</p>
     {:else if status === "ready"}
-        {#each years as { year, months } (year)}
-            <Section title={year}>
-                {#each months as { month, title, items } (month)}
-                    <Section {title} level={3}>
-                        <ul>
-                            {#each items as event (event.id)}
-                                <li><EventCard {event} level={4} /></li>
-                            {/each}
-                        </ul>
-                    </Section>
-                {/each}
-            </Section>
-        {/each}
+        <!-- Il titolo dell'anno serve solo quando gli eventi coprono più di un anno. -->
+        {#if years.length > 1}
+            {#each years as { year, months } (year)}
+                <Section title={year}>
+                    {@render monthList(months, 3)}
+                </Section>
+            {/each}
+        {:else}
+            {@render monthList(years[0].months, 2)}
+        {/if}
     {/if}
 
     <noscript>
