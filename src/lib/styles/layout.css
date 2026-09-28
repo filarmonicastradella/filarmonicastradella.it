@@ -401,15 +401,15 @@ main > section:has(> hgroup) a:hover {
 }
 
 /*
- * Piè di pagina: colonne a soglie esplicite, non auto-fit. Con auto-fit le colonne "fantasma"
- * non si eliminano quando un elemento (social, nota finale) attraversa l'intera riga con
- * grid-column: 1/-1, perché quell'elemento tocca comunque ogni colonna: il conteggio delle
- * colonne dipende dalla larghezza in modo imprevedibile e quell'elemento smette di essere
- * largo quanto il resto del piè di pagina.
+ * Piè di pagina: Flexbox, non Grid. Contatti/L'associazione/Informazioni si affiancano e vanno
+ * a capo da soli in base allo spazio; i social e la nota finale sono a riga intera con
+ * flex-basis: 100%. A differenza di una griglia, ogni elemento calcola la propria larghezza per
+ * conto proprio: un elemento a riga intera non dipende da quante colonne il browser sceglie di
+ * fare altrove, quindi non può più capitare che resti largo quanto una sola colonna.
  */
 body > div > footer {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--space-xl);
     margin-top: var(--space-3xl);
     padding: var(--space-2xl) var(--gutter);
@@ -418,16 +418,9 @@ body > div > footer {
     font-size: var(--font-size-sm);
 }
 
-@media (min-width: 40rem) {
-    body > div > footer {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 64rem) {
-    body > div > footer {
-        grid-template-columns: repeat(3, 1fr);
-    }
+body > div > footer > section,
+body > div > footer nav:not(:has(svg)) {
+    flex: 1 1 15rem;
 }
 
 body > div > footer h2 {
@@ -442,10 +435,10 @@ body > div > footer nav ul {
     gap: var(--space-2xs);
 }
 
-/* La nota finale e i social occupano una riga intera */
+/* La nota finale e i social occupano sempre una riga intera, per conto proprio */
 body > div > footer > p:last-child,
 body > div > footer nav:has(svg) {
-    grid-column: 1 / -1;
+    flex: 1 0 100%;
 }
 
 /* I social sono staccati dal resto del piè di pagina da un filetto */
