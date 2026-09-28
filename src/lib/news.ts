@@ -11,7 +11,7 @@ export interface NewsPost extends NewsMetadata {
     component: Component;
 }
 
-const modules = import.meta.glob<{ default: Component; metadata: NewsMetadata }>("/src/content/news/*.md", {
+const modules = import.meta.glob<{ default: Component; metadata: NewsMetadata }>("/src/lib/content/news/*.md", {
     eager: true
 });
 
