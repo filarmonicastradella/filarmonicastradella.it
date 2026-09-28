@@ -38,7 +38,7 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 
 ### CSS
 - Sistema tipografico in `src/lib/styles/typography.css` (token e regole degli elementi): Cormorant Garamond per i titoli, Montserrat per il testo, scala modulare 1,25, solo tipografia (niente colori né layout). I font sono importati in `+layout.svelte`.
-- Sistema di colori in `src/lib/styles/colors.css`: colore del marchio #701521 (`--color-primary-700`), scala primaria, neutri caldi, token semantici (testo, sfondi, bordi, collegamenti, azioni, stato) in tema chiaro e scuro automatico. Nel codice usare i token, mai valori esadecimali diretti.
+- Sistema di colori minimo in `src/lib/styles/colors.css`: marchio #701521 (`--color-brand`, con variante scura, tinta e variante chiara per il tema scuro), sei neutri e pochi token semantici (testo, sfondi, bordo, collegamenti, focus, azioni, errore), in tema chiaro e scuro automatico. Nel codice usare i token, mai valori esadecimali diretti; nuovi colori solo quando un elemento stilizzato ne ha bisogno.
 - Altro stile attivo per ora, in `+layout.svelte`: larghezza massima del contenuto (`body`, 65ch, centrata) e media contenuti nella colonna. Per il resto gli stili sono spenti di proposito: i blocchi `<style>` originali sono commentati e le versioni complete stanno in `.old-components/`. Si reintroducono gradualmente, partendo dai token in un file separato, senza valori fissi fuori dai token e senza stili inline.
 
 ### Svelte

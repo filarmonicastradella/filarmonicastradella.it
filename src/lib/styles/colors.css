@@ -1,56 +1,38 @@
 /*
- * Sistema di colori. Colore del marchio: #701521 (granata).
- * La scala primaria è generata dalla tinta del marchio (352°) e il 700 coincide con il marchio.
+ * Sistema di colori minimo. Colore del marchio: #701521 (granata).
  * Tema chiaro di base e tema scuro automatico (prefers-color-scheme).
- * Contrasti verificati (WCAG): testo e sfondo almeno 6:1, collegamenti e testo sul marchio almeno 4,5:1.
- * L'oro (--color-accent) è solo decorativo: sul chiaro non ha contrasto sufficiente per il testo.
+ * Contrasti verificati (WCAG): testo e sfondi oltre 6:1, collegamenti oltre 7:1,
+ * bordi dei campi almeno 3:1.
  */
 
 :root {
     color-scheme: light dark;
 
-    /* Scala primaria (marchio = 700) */
-    --color-primary-50: #f9f0f1;
-    --color-primary-100: #f5e0e3;
-    --color-primary-200: #edbfc5;
-    --color-primary-300: #e18e99;
-    --color-primary-400: #d45465;
-    --color-primary-500: #ba2c3e;
-    --color-primary-600: #941e2e;
-    --color-primary-700: #701521;
-    --color-primary-800: #570f19;
-    --color-primary-900: #3d0a11;
-
-    --color-brand: var(--color-primary-700);
-    --color-accent: #c98a2c;
+    /* Marchio */
+    --color-brand: #701521;
+    --color-brand-dark: #570f19;
+    --color-brand-tint: #f5e0e3;
+    --color-brand-light: #e18e99;
 
     /* Tema chiaro: neutri caldi */
     --bg-page: #fbf9f7;
     --bg-surface: #ffffff;
     --bg-subtle: #f4efe9;
-    --bg-hover: #ede6dd;
 
     --text-main: #1d1a18;
     --text-muted: #625c56;
-    --text-on-primary: #ffffff;
+    --border: #8a7f75;
 
-    --border-subtle: #f0eae1;
-    --border-medium: #e2d9cd;
-    --border-strong: #c2b5a3;
+    --link: var(--color-brand);
+    --link-hover: var(--color-brand-dark);
+    --focus-ring: var(--color-brand);
+    --selection: var(--color-brand-tint);
 
-    --link: var(--color-primary-700);
-    --link-hover: var(--color-primary-800);
-    --focus-ring: var(--color-primary-600);
-    --selection: var(--color-primary-100);
+    --action-bg: var(--color-brand);
+    --action-bg-hover: var(--color-brand-dark);
+    --action-text: #ffffff;
 
-    --action-bg: var(--color-primary-700);
-    --action-bg-hover: var(--color-primary-800);
-    --action-text: var(--text-on-primary);
-
-    --color-success: #2b7036;
-    --color-warning: #8a4a0b;
     --color-error: #b3261e;
-    --color-info: #1d5f8f;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -58,27 +40,17 @@
         --bg-page: #161211;
         --bg-surface: #1f1a19;
         --bg-subtle: #2a2321;
-        --bg-hover: #352c29;
 
         --text-main: #f4efec;
         --text-muted: #b8adaa;
+        --border: #7a6d68;
 
-        --border-subtle: #2f2826;
-        --border-medium: #403633;
-        --border-strong: #5c4f4b;
+        --link: var(--color-brand-light);
+        --link-hover: var(--color-brand-tint);
+        --focus-ring: var(--color-brand-light);
+        --selection: var(--color-brand-dark);
 
-        --link: var(--color-primary-300);
-        --link-hover: var(--color-primary-200);
-        --focus-ring: var(--color-primary-300);
-        --selection: var(--color-primary-800);
-
-        --action-bg: var(--color-primary-600);
-        --action-bg-hover: var(--color-primary-500);
-
-        --color-success: #7fd18b;
-        --color-warning: #f0b060;
         --color-error: #ff8f88;
-        --color-info: #7cc0ee;
     }
 }
 
@@ -106,7 +78,7 @@ a:hover {
 }
 
 hr {
-    border-color: var(--border-medium);
+    border-color: var(--border);
 }
 
 input,
@@ -114,5 +86,5 @@ select,
 textarea {
     color: var(--text-main);
     background-color: var(--bg-surface);
-    border: 1px solid var(--border-strong);
+    border: 1px solid var(--border);
 }
