@@ -9,23 +9,27 @@
         <p>Le associazioni con cui collaboriamo.</p>
     </header>
 
-    <!-- SEGNAPOSTO: sostituire i link (example.org) e le descrizioni con quelli veri. -->
+    <!-- SEGNAPOSTO: sostituire i testi tra parentesi quadre e i link (example.org) con quelli veri. -->
     <ul>
         <li>
-            <h2><a href="https://www.example.org" target="_blank" rel="noopener noreferrer">Medicea</a></h2>
-            <p>Descrizione della collaborazione.</p>
+            <h2>Medicea</h2>
+            <p>[Descrizione della collaborazione da inserire]</p>
+            <p><a href="https://www.example.org" target="_blank" rel="noopener noreferrer">[Sito web da inserire]</a></p>
         </li>
         <li>
-            <h2><a href="https://www.example.org" target="_blank" rel="noopener noreferrer">Circolo Culturale Fantoni</a></h2>
+            <h2>Circolo Culturale Fantoni</h2>
             <p>Ospita la nostra <a href="/about/locations">sede operativa di Serricciolo</a>.</p>
+            <p><a href="https://www.example.org" target="_blank" rel="noopener noreferrer">[Sito web da inserire]</a></p>
         </li>
         <li>
-            <h2><a href="https://www.example.org" target="_blank" rel="noopener noreferrer">Società di Mutuo Soccorso</a></h2>
-            <p>Descrizione della collaborazione.</p>
+            <h2>Società di Mutuo Soccorso</h2>
+            <p>[Descrizione della collaborazione da inserire]</p>
+            <p><a href="https://www.example.org" target="_blank" rel="noopener noreferrer">[Sito web da inserire]</a></p>
         </li>
         <li>
-            <h2><a href="https://www.example.org" target="_blank" rel="noopener noreferrer">Dal libro alla solidarietà</a></h2>
-            <p>Descrizione della collaborazione.</p>
+            <h2>Dal libro alla solidarietà</h2>
+            <p>[Descrizione della collaborazione da inserire]</p>
+            <p><a href="https://www.example.org" target="_blank" rel="noopener noreferrer">[Sito web da inserire]</a></p>
         </li>
     </ul>
 
