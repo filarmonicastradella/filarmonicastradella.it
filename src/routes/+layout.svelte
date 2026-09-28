@@ -29,6 +29,24 @@
 
 <SiteFooter />
 
+<style>
+    :global(body) {
+        max-width: 65ch;
+        margin-inline: auto;
+        padding-inline: 1rem;
+        overflow-wrap: break-word;
+    }
+
+    :global(img, video) {
+        max-width: 100%;
+        height: auto;
+    }
+
+    :global(iframe) {
+        max-width: 100%;
+    }
+</style>
+
 <!--
 <style>
     :global(:root) {
