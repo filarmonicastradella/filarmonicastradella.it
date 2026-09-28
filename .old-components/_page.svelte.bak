@@ -1,0 +1,149 @@
+<script>
+    import About from "./About.svelte";
+    import Featured from "./Featured.svelte";
+    import Footer from "./Footer.svelte";
+    import Hero from "./Hero.svelte";
+    import InstagramCarousel from "./InstagramCarousel.svelte";
+    import NavBar from "./NavBar.svelte";
+    import News from "./News.svelte";
+    import Support from "./Support.svelte";
+    import UpcompingEvents from "./UpcompingEvents.svelte";
+</script>
+
+<main>
+    <!-- <section aria-labelledby="hero-heading">
+        <h2 id="hero-heading">Musica dal cuore della città</h2>
+        <p>
+            Filarmonica Alessandro Stradella APS &mdash; portiamo la musica
+            nella nostra comunità.
+        </p>
+        <figure>
+            <img
+                src="/images/hero-concerto.jpg"
+                alt="La Filarmonica Alessandro Stradella durante un concerto"
+            />
+            <figcaption>Un momento di uno dei nostri concerti</figcaption>
+        </figure>
+        <p><a href="/events">Scopri il prossimo concerto</a></p>
+    </section> -->
+
+    <Hero />
+
+    <UpcompingEvents />
+
+    <About />
+
+    <Featured />
+
+    <!-- <section aria-labelledby="attivita-heading">
+        <h2 id="attivita-heading">Le nostre attività</h2>
+
+        <article>
+            <h3><a href="/about/ensembles">Ensemble e Banda</a></h3>
+            <p>Breve descrizione delle formazioni musicali.</p>
+        </article>
+
+        <article>
+            <h3><a href="/school/courses">Scuola di Musica</a></h3>
+            <p>Breve descrizione dei corsi offerti.</p>
+        </article>
+
+        <article>
+            <h3><a href="/events">Concerti e Rassegne</a></h3>
+            <p>Breve descrizione della stagione concertistica.</p>
+        </article>
+    </section> -->
+    <!-- 
+    <section aria-labelledby="notizie-heading">
+        <h2 id="notizie-heading">Ultime notizie</h2>
+
+        <article>
+            <h3><a href="/news/notizia-1">Titolo della notizia</a></h3>
+            <p>Data di pubblicazione</p>
+            <p>Breve estratto della notizia.</p>
+        </article>
+
+        <article>
+            <h3><a href="/news/notizia-2">Titolo della notizia</a></h3>
+            <p>Data di pubblicazione</p>
+            <p>Breve estratto della notizia.</p>
+        </article>
+
+        <article>
+            <h3><a href="/news/notizia-3">Titolo della notizia</a></h3>
+            <p>Data di pubblicazione</p>
+            <p>Breve estratto della notizia.</p>
+        </article>
+
+        <p><a href="/news">Vedi tutte le notizie</a></p>
+    </section> -->
+
+    <News />
+
+    <!-- <section aria-labelledby="galleria-heading">
+        <h2 id="galleria-heading">Momenti in musica</h2>
+
+        <figure>
+            <img src="/images/galleria-1.jpg" alt="Descrizione dell'immagine" />
+            <figcaption>Didascalia dell'immagine</figcaption>
+        </figure>
+
+        <figure>
+            <img src="/images/galleria-2.jpg" alt="Descrizione dell'immagine" />
+            <figcaption>Didascalia dell'immagine</figcaption>
+        </figure>
+
+        <figure>
+            <img src="/images/galleria-3.jpg" alt="Descrizione dell'immagine" />
+            <figcaption>Didascalia dell'immagine</figcaption>
+        </figure>
+
+        <p><a href="/media/photos">Guarda tutta la galleria</a></p>
+    </section> -->
+
+    <InstagramCarousel />
+
+    <!-- <section aria-labelledby="sostienici-heading">
+        <h2 id="sostienici-heading">Sostieni la Filarmonica</h2>
+        <p>
+            Spiegazione di come il sostegno di soci e donatori permette
+            all'associazione di continuare la propria attività.
+        </p>
+        <p><a href="/support/join">Diventa socio</a></p>
+        <p><a href="/support">Sostienici con il 5x1000</a></p>
+    </section> -->
+
+    <Support />
+</main>
+
+<!-- <footer>
+    <address>
+        Filarmonica Alessandro Stradella APS<br />
+        Indirizzo della sede<br />
+        Telefono: numero di telefono<br />
+        Email:
+        <a href="mailto:info@filarmonicastradella.it"
+            >info@filarmonicastradella.it</a
+        >
+    </address>
+
+    <nav aria-label="Social">
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+        </ul>
+    </nav>
+
+    <nav aria-label="Link legali">
+        <ul>
+            <li><a href="/legal/privacy">Privacy</a></li>
+            <li><a href="/legal/cookies">Cookie</a></li>
+            <li>
+                <a href="/legal/transparency">Amministrazione Trasparente</a>
+            </li>
+        </ul>
+    </nav>
+
+    <p>&copy; Filarmonica Alessandro Stradella APS</p>
+</footer> -->
