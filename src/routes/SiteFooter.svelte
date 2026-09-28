@@ -1,10 +1,10 @@
 <script lang="ts">
-    import Section from "$lib/components/Section.svelte";
     import { legalSeat } from "$lib/locations";
 </script>
 
 <footer>
-    <Section title="Contatti">
+    <section>
+        <h2>Contatti</h2>
 
         <address>
             <dl>
@@ -22,7 +22,7 @@
         </address>
 
         <p><a href="/contacts/message">Scrivici tramite il modulo di contatto</a></p>
-    </Section>
+    </section>
 
     <nav aria-label="Social media">
         <ul>
@@ -34,7 +34,8 @@
         </ul>
     </nav>
 
-    <Section title="L'associazione">
+    <section>
+        <h2>L'associazione</h2>
 
         <dl>
             <dt>Denominazione</dt>
@@ -48,7 +49,7 @@
                 <a href="https://www.anbima.it/massacarrara/regionetoscana-massacarrara-unita-di-base" target="_blank" rel="noopener noreferrer">ANBIMA APS</a>
             </dd>
         </dl>
-    </Section>
+    </section>
 
     <nav aria-label="Informazioni legali">
         <ul>

@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Section from "$lib/components/Section.svelte";
 
     const office = [
         { role: "Presidente e legale rappresentante", name: "Leonardo Orietti Del Duca" },
@@ -23,20 +22,22 @@
         </p>
     </header>
 
-    <Section title="Cariche">
+    <section>
+        <h2>Cariche</h2>
         <dl>
             {#each office as { role, name } (role)}
                 <dt>{role}</dt>
                 <dd>{name}</dd>
             {/each}
         </dl>
-    </Section>
+    </section>
 
-    <Section title="Consiglieri">
+    <section>
+        <h2>Consiglieri</h2>
         <ul>
             {#each members as name (name)}
                 <li>{name}</li>
             {/each}
         </ul>
-    </Section>
+    </section>
 </main>

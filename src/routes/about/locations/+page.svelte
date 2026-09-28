@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Section from "$lib/components/Section.svelte";
     import { legalSeat, operationalSeats } from "$lib/locations";
 </script>
 
@@ -14,14 +13,16 @@
         <p>L'associazione ha la sede legale a Fivizzano e due sedi operative, a Fivizzano e a Serricciolo.</p>
     </header>
 
-    <Section title="Sede legale">
+    <section>
+        <h2>Sede legale</h2>
         <address>
             {#each legalSeat.address as line}{line}<br />{/each}
         </address>
         <p><a href={legalSeat.mapsHref} target="_blank" rel="noopener noreferrer">Apri la mappa su Google Maps</a></p>
-    </Section>
+    </section>
 
-    <Section title="Sedi operative">
+    <section>
+        <h2>Sedi operative</h2>
         <ul>
             {#each operationalSeats as seat (seat.id)}
                 <li>
@@ -34,7 +35,7 @@
                 </li>
             {/each}
         </ul>
-    </Section>
+    </section>
 
     <p><a href="/contacts#sedi">Mappe e recapiti</a></p>
 </main>

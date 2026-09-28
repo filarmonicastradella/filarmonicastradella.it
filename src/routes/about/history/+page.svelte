@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Section from "$lib/components/Section.svelte";
     import Figure from "./Figure.svelte";
 
     // Importazione degli asset da src/lib/assets/imgs/
@@ -34,7 +33,8 @@
             </ol>
         </nav>
 
-        <Section title="Le origini nel Settecento e il riconoscimento sovrano" id="origini">
+        <section id="origini">
+            <h2>Le origini nel Settecento e il riconoscimento sovrano</h2>
             <p>
                 Fondata nel <time datetime="1777">1777</time> nel pieno del
                 fervore
@@ -76,9 +76,10 @@
                 alt="Formazione di Alta Cappella del XVIII secolo"
                 caption="Tipica formazione di Alta Cappella (XVIII secolo)."
             />
-        </Section>
+        </section>
 
-        <Section title="Il XIX secolo: la trasformazione in Banda Musicale" id="metamorfosi">
+        <section id="metamorfosi">
+            <h2>Il XIX secolo: la trasformazione in Banda Musicale</h2>
             <p>
                 Nel corso dell'Ottocento, il ruolo sociale della musica mutò
                 profondamente. Le accademie orchestrali da camera lasciarono
@@ -106,9 +107,10 @@
                 alt="Tipica formazione bandistica del XIX secolo"
                 caption="Tipica formazione bandistica del XIX secolo."
             />
-        </Section>
+        </section>
 
-        <Section title="Il Novecento: fusione, resilienza e grandi eventi" id="novecento">
+        <section id="novecento">
+            <h2>Il Novecento: fusione, resilienza e grandi eventi</h2>
             <p>
                 Il Novecento fu un secolo di coesione e forte resilienza. Dalla
                 fusione di due diverse bande cittadine attive nei primi del
@@ -143,9 +145,10 @@
                 alt="I musicisti della Filarmonica negli anni '30"
                 caption="I musicisti della Filarmonica negli anni '30."
             />
-        </Section>
+        </section>
 
-        <Section title="La nuova denominazione e il legame con Alessandro Stradella" id="denominazione">
+        <section id="denominazione">
+            <h2>La nuova denominazione e il legame con Alessandro Stradella</h2>
             <p>
                 Nel <time datetime="1996">1996</time> l'istituzione ha assunto
                 l'attuale nome in omaggio al grande compositore barocco
@@ -167,9 +170,10 @@
                 alt="I musicisti della Filarmonica negli anni '90"
                 caption="I musicisti della Filarmonica negli anni '90."
             />
-        </Section>
+        </section>
 
-        <Section title="La Filarmonica oggi: un polo musicale poliedrico" id="oggi">
+        <section id="oggi">
+            <h2>La Filarmonica oggi: un polo musicale poliedrico</h2>
             <p>
                 Fedele alle proprie radici ma aperta all'innovazione,
                 l'associazione si configura oggi come un polo musicale dinamico.
@@ -207,7 +211,7 @@
                 alt="L'InFieri Ensemble della Filarmonica in concerto"
                 caption="L'InFieri Ensemble della Filarmonica 'Alessandro Stradella' durante un'esibizione."
             />
-        </Section>
+        </section>
     </article>
 </main>
 

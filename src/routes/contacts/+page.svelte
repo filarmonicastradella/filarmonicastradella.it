@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Section from "$lib/components/Section.svelte";
     import MapEmbed from "./MapEmbed.svelte";
     import { legalSeat, operationalSeats } from "$lib/locations";
 </script>
@@ -15,7 +14,8 @@
         <p>Mettiti in contatto con noi per informazioni sulle iscrizioni, i corsi di musica e i nostri prossimi eventi, oppure vieni a trovarci nelle nostre sedi a Fivizzano e Serricciolo.</p>
     </header>
 
-    <Section title="Recapiti generali">
+    <section>
+        <h2>Recapiti generali</h2>
         <dl>
             <dt>Telefono</dt>
             <dd><a href="tel:+393505363110">+39 350 536 3110</a></dd>
@@ -25,9 +25,10 @@
             <dd><a href="mailto:filarmonicastradella@pec.it">filarmonicastradella@pec.it</a></dd>
         </dl>
         <p><a href="/contacts/message">Scrivici tramite il modulo di contatto</a></p>
-    </Section>
+    </section>
 
-    <Section title="Uffici e presidenza">
+    <section>
+        <h2>Uffici e presidenza</h2>
         <dl>
             <dt>Presidenza</dt>
             <dd><a href="mailto:presidente@filarmonicastradella.it">presidente@filarmonicastradella.it</a></dd>
@@ -42,9 +43,10 @@
             <dt>Webmaster</dt>
             <dd><a href="mailto:webmaster@filarmonicastradella.it">webmaster@filarmonicastradella.it</a></dd>
         </dl>
-    </Section>
+    </section>
 
-    <Section title="Le nostre sedi" id="sedi">
+    <section id="sedi">
+        <h2>Le nostre sedi</h2>
         <article>
             <h3>{legalSeat.name}</h3>
             <address>
@@ -66,5 +68,5 @@
                 {/if}
             </article>
         {/each}
-    </Section>
+    </section>
 </main>

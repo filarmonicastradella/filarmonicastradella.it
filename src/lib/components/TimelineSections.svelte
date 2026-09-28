@@ -1,6 +1,5 @@
 <script lang="ts" generics="T">
     import type { Snippet } from "svelte";
-    import Section from "./Section.svelte";
 
     // `items` va passato già nell'ordine voluto; `entry` riceve l'elemento e il livello del suo titolo.
     let {
@@ -45,13 +44,14 @@
 
 {#snippet monthList(year: string, months: MonthGroup[], level: 2 | 3)}
     {#each months as { month, title, items: monthItems } (month)}
-        <Section {title} {level} id="mese-{year}-{month}">
+        <section id="mese-{year}-{month}">
+            <svelte:element this={`h${level}`}>{title}</svelte:element>
             <ol>
                 {#each monthItems as item}
                     <li>{@render entry(item, level === 2 ? 3 : 4)}</li>
                 {/each}
             </ol>
-        </Section>
+        </section>
     {/each}
 {/snippet}
 
@@ -82,9 +82,10 @@
 <!-- Il titolo dell'anno serve solo quando gli elementi coprono più di un anno. -->
 {#if years.length > 1}
     {#each years as { year, months } (year)}
-        <Section title={year} id="anno-{year}">
+        <section id="anno-{year}">
+            <h2>{year}</h2>
             {@render monthList(year, months, 3)}
-        </Section>
+        </section>
     {/each}
 {:else if years.length === 1}
     {@render monthList(years[0].year, years[0].months, 2)}

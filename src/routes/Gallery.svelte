@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Section from "$lib/components/Section.svelte";
     import { dragScroll, scaleByDistance } from "$lib/attachments";
     import type { GallerySlide } from "$lib/gallery";
 
@@ -7,7 +6,8 @@
     let { slides }: { slides: GallerySlide[] | null } = $props();
 </script>
 
-<Section title="Momenti in musica">
+<section>
+    <h2>Momenti in musica</h2>
     {#if slides === null}
         <p>La galleria non è al momento disponibile. Puoi guardarla direttamente sul nostro profilo Instagram.</p>
     {:else}
@@ -36,4 +36,4 @@
     {/if}
 
     <p><a href="https://instagram.com/filarmonicastradella" target="_blank" rel="noopener noreferrer">Guarda tutto su Instagram</a></p>
-</Section>
+</section>

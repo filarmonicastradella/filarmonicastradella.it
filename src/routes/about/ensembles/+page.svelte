@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Section from "$lib/components/Section.svelte";
     import { ensembles } from "$lib/ensembles";
 </script>
 
@@ -14,7 +13,8 @@
         Una concert band, una street band, un'orchestra con archi e un gruppo di musica antica e barocca: quattro formazioni per suonare insieme.
     </p>
 
-    <Section title="Le nostre formazioni">
+    <section>
+        <h2>Le nostre formazioni</h2>
         <ul>
             {#each ensembles as ensemble (ensemble.slug)}
                 <li>
@@ -23,12 +23,13 @@
                 </li>
             {/each}
         </ul>
-    </Section>
+    </section>
 
-    <Section title="Come suonare con noi">
+    <section>
+        <h2>Come suonare con noi</h2>
         <ol>
             <li>Iscriviti come socio dell'associazione con la <a href="/support/join">richiesta di iscrizione</a>.</li>
             <li>Chiedi di entrare nella formazione in cui vuoi suonare.</li>
         </ol>
-    </Section>
+    </section>
 </main>

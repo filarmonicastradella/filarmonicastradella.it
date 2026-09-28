@@ -1,6 +1,5 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import Section from "$lib/components/Section.svelte";
     import EventCard from "$lib/components/EventCard.svelte";
     import { trackScrollEdges } from "$lib/attachments";
     import { hasNotEnded, type EventItem } from "$lib/events";
@@ -30,7 +29,8 @@
 
 <svelte:document onvisibilitychange={() => document.visibilityState === "visible" && (now = new Date())} />
 
-<Section title="Prossimi eventi">
+<section>
+    <h2>Prossimi eventi</h2>
     {#if events.length === 0}
         <p>Nessun evento in programma.</p>
     {:else}
@@ -50,4 +50,4 @@
     {/if}
 
     <p><a href="/events">Tutti gli eventi</a></p>
-</Section>
+</section>
