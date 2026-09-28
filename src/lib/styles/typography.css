@@ -27,7 +27,6 @@
     --line-height-body: 1.6;
 
     --letter-spacing-tight: -0.02em;
-    --letter-spacing-normal: 0;
     --letter-spacing-wide: 0.04em;
 }
 
@@ -36,7 +35,6 @@ body {
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-body);
-    letter-spacing: var(--letter-spacing-normal);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -61,6 +59,15 @@ h4,
 h5,
 h6 {
     margin-block: 1.5em 0.5em;
+}
+
+/* Titoletti: didascalie di tabella, legende dei moduli e domande delle FAQ hanno l'aspetto di un h4 */
+caption,
+legend,
+dl > div > dt {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
 }
 
 h1 {

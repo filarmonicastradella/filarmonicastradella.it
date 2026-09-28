@@ -85,7 +85,7 @@ nav ul {
 :is(ul, ol):has(> li > :is(article, h2, h3)) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
-    gap: var(--space-xl) var(--space-xl);
+    gap: var(--space-xl);
     padding: 0;
     list-style: none;
 }
@@ -154,10 +154,6 @@ ol[tabindex="0"] {
     scrollbar-width: none;
 }
 
-ol[tabindex="0"]::-webkit-scrollbar {
-    display: none;
-}
-
 :is(ul, ol)[tabindex="0"] > li {
     flex: 0 0 min(22rem, 85%);
     scroll-snap-align: start;
@@ -165,10 +161,6 @@ ol[tabindex="0"]::-webkit-scrollbar {
 
 :is(ul, ol)[tabindex="0"]:has(img, video) > li {
     flex-basis: min(16rem, 70%);
-    padding: 0;
-    border: 0;
-    background: none;
-    box-shadow: none;
 }
 
 /* Indici di navigazione dentro le pagine */
@@ -220,9 +212,6 @@ dl > div + div {
 
 dl > div > dt {
     color: var(--text-main);
-    font-family: var(--font-heading);
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
     letter-spacing: var(--letter-spacing-tight);
     text-transform: none;
 }
@@ -239,9 +228,6 @@ table {
 
 caption {
     padding-bottom: var(--space-sm);
-    font-family: var(--font-heading);
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
     text-align: left;
 }
 
@@ -256,7 +242,6 @@ td {
 img,
 video {
     display: block;
-    border-radius: var(--radius);
 }
 
 :is(ul, ol)[tabindex="0"] img,
@@ -284,7 +269,6 @@ dialog {
     max-width: min(92vw, 60rem);
     padding: var(--space-lg);
     border: 0;
-    border-radius: var(--radius-lg);
     background: var(--bg-surface);
     color: var(--text-main);
     box-shadow: var(--shadow);
