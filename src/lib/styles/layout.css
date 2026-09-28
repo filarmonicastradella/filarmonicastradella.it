@@ -335,7 +335,7 @@ main > section:has(> hgroup) {
     display: grid;
     align-content: center;
     justify-items: center;
-    gap: var(--space-lg);
+    gap: var(--space-2xl);
     grid-column: full;
     min-height: calc(100svh - var(--header-height));
     padding: var(--space-3xl) var(--gutter);
@@ -358,7 +358,7 @@ main > section:has(> hgroup) h1 {
 
 main > section:has(> hgroup) hgroup p {
     max-width: 40rem;
-    margin: var(--space-md) auto 0;
+    margin: var(--space-lg) auto 0;
     font-family: var(--font-heading);
     font-size: var(--font-size-xl);
     font-style: italic;
@@ -367,6 +367,7 @@ main > section:has(> hgroup) hgroup p {
 main > section:has(> hgroup) a {
     display: inline-block;
     color: var(--color-brand-tint);
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-semibold);
     text-decoration: underline;
     text-decoration-thickness: 2px;
