@@ -42,7 +42,7 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 - File in `src/lib/styles/`, caricati in `+layout.svelte`: `typography.css` (Cormorant Garamond per i titoli, Montserrat per il testo, scala modulare 1,25), `colors.css` (marchio #701521, neutri caldi, tema chiaro e scuro automatico), `layout.css` (token di spazio e misura, intestazione, contenuto, hero, piè di pagina), `content.css` (testo, elenchi, schede, tabelle, figure, finestre), `forms.css` (moduli e pulsanti). Nel codice usare i token (`var(--...)`), mai valori diretti.
 - SvelteKit avvolge l'app in un `div` senza aspetto: per questo i selettori di intestazione e piè di pagina sono `body > div > header` e `body > div > footer`.
 - Design: elegante, moderno, pulito e minimale; avorio caldo, granata come unico colore d'accento, titoli in serif, molto spazio bianco, bordi sottili, schede leggere.
-- Le vecchie versioni con stili per componente sono in `.old-components/`, solo come riferimento.
+- I vecchi stili per componente (in `.old-components/`) non vanno usati né consultati come modello: il design si costruisce da zero con questo sistema.
 
 ### Svelte
 - Svelte 5 idiomatico: rune (`$state`, `$state.raw` per dati solo riassegnati, `$derived`, `$props`), `{@attach}` per il comportamento sul DOM (in `$lib/attachments.ts`), `<svelte:window>`/`<svelte:document>` per gli eventi globali, `each` con chiave. Niente DOM imperativo, `setInterval` di polling o `$effect` per sincronizzare stato.
