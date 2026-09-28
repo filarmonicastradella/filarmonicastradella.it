@@ -45,7 +45,6 @@ export const navItems = [
             { label: "Contributi Pubblici Ricevuti", href: "/legal/contributions" },
             { label: "Informativa Privacy", href: "/legal/privacy" },
             { label: "Politica dei Cookie", href: "/legal/cookies" },
-            { label: "Termini e Condizioni", href: "/legal/terms" },
             { label: "Whistleblowing", href: "/legal/whistleblowing" },
             { label: "Accessibilità", href: "/legal/accessibility" }
         ]

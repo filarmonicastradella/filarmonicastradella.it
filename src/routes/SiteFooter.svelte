@@ -55,7 +55,6 @@
         <ul>
             <li><a href="/legal/privacy">Informativa Privacy</a></li>
             <li><a href="/legal/cookies">Politica dei Cookie</a></li>
-            <li><a href="/legal/terms">Termini e Condizioni</a></li>
         </ul>
     </nav>
 
