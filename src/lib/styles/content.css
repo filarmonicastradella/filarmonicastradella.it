@@ -90,44 +90,19 @@ li::marker {
 :is(ul, ol):has(> li > :is(article, h2, h3)) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
-    gap: var(--space-lg);
+    gap: var(--space-xl) var(--space-xl);
     padding: 0;
     list-style: none;
 }
 
 :is(li:has(> :is(h2, h3)), li > article) {
-    padding: var(--space-lg);
-    border: 1px solid var(--border-soft);
-    border-radius: var(--radius-lg);
-    background: var(--bg-surface);
-    transition: border-color var(--transition), box-shadow var(--transition);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border);
+    transition: border-color var(--transition);
 }
 
 :is(li:has(> :is(h2, h3)), li > article):hover {
-    border-color: var(--border);
-    box-shadow: var(--shadow);
-}
-
-/* Tutta la scheda è cliccabile: il link del titolo (o, nelle schede senza link nel titolo, l'ultimo link) si estende sull'intera scheda */
-:is(li:has(> :is(h2, h3)), li > article) {
-    position: relative;
-}
-
-:is(li:has(> :is(h2, h3)) > :is(h2, h3), li > article > :is(h2, h3, h4)) a::before,
-li:has(> h3):not(:has(> h3 a)) > p:last-child > a::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-}
-
-/* Il riquadro di focus circonda la scheda intera invece del solo titolo */
-:is(li:has(> :is(h2, h3)), li > article):has(a:focus-visible) {
-    outline: 2px solid var(--focus-ring);
-    outline-offset: 2px;
-}
-
-:is(li:has(> :is(h2, h3)), li > article) a:focus-visible {
-    outline: none;
+    border-top-color: var(--link);
 }
 
 li:has(> article) {
@@ -205,22 +180,20 @@ ol[tabindex="0"]::-webkit-scrollbar {
 main nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-xs);
+    gap: var(--space-xs) var(--space-lg);
     padding: 0;
     list-style: none;
 }
 
 main nav ul a {
-    display: inline-block;
-    padding: var(--space-2xs) var(--space-sm);
-    border: 1px solid var(--border-soft);
-    border-radius: 999px;
     font-size: var(--font-size-sm);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
     text-decoration: none;
 }
 
 main nav ul a:hover {
-    border-color: var(--link);
+    text-decoration: underline;
 }
 
 main nav ul ul {

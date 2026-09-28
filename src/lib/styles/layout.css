@@ -13,8 +13,8 @@
     --space-2xl: 3rem;
     --space-3xl: 5rem;
 
-    --radius: 0.5rem;
-    --radius-lg: 1rem;
+    --radius: 0;
+    --radius-lg: 0;
 
     --page-width: 72rem;
     --measure: 65ch;
@@ -167,7 +167,6 @@ main > header > p {
 
 main > section + section {
     padding-top: var(--space-2xl);
-    border-top: 1px solid var(--border-soft);
 }
 
 /* Il pezzo forte della landing: la sezione con il titolo principale a tutta larghezza */
