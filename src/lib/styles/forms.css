@@ -1,0 +1,128 @@
+/*
+ * Moduli e pulsanti. I campi si riconoscono dal tipo, i gruppi da fieldset e legend.
+ */
+
+button {
+    padding: 0.7rem 1.4rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    background: var(--action-bg);
+    color: var(--action-text);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+    transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+button:hover:not(:disabled) {
+    background: var(--action-bg-hover);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+button[type="reset"],
+[role="group"] button {
+    border-color: var(--border);
+    background: transparent;
+    color: var(--link);
+}
+
+button[type="reset"]:hover:not(:disabled),
+[role="group"] button:hover:not(:disabled) {
+    border-color: var(--link);
+    background: transparent;
+}
+
+[role="group"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+[role="group"] button {
+    padding: var(--space-xs) var(--space-md);
+}
+
+form {
+    display: grid;
+    gap: var(--space-lg);
+    max-width: 42rem;
+}
+
+form p {
+    margin: 0;
+    max-width: none;
+}
+
+fieldset {
+    display: grid;
+    gap: var(--space-md);
+    min-width: 0;
+    margin: 0;
+    padding: var(--space-lg);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+}
+
+legend {
+    padding-inline: var(--space-xs);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--space-2xs);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+input:not([type="checkbox"], [type="radio"], [type="hidden"]),
+select,
+textarea {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border-radius: var(--radius);
+    transition: border-color var(--transition);
+}
+
+input:not([type="checkbox"], [type="radio"], [type="hidden"]):focus,
+select:focus,
+textarea:focus {
+    border-color: var(--focus-ring);
+}
+
+textarea {
+    resize: vertical;
+}
+
+p:has(> input[type="checkbox"]) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: var(--space-sm);
+}
+
+p:has(> input[type="checkbox"]) label {
+    margin: 0;
+    font-weight: var(--font-weight-regular);
+}
+
+input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0.15rem 0 0;
+    accent-color: var(--color-brand);
+}
+
+form p:has(> button) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}

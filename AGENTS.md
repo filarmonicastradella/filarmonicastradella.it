@@ -37,9 +37,12 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 - Ogni pagina ha `<main id="contenuto">` (bersaglio del link "Salta al contenuto"), `<title>` e meta description.
 
 ### CSS
-- Sistema tipografico in `src/lib/styles/typography.css` (token e regole degli elementi): Cormorant Garamond per i titoli, Montserrat per il testo, scala modulare 1,25, solo tipografia (niente colori né layout). I font sono importati in `+layout.svelte`.
-- Sistema di colori minimo in `src/lib/styles/colors.css`: marchio #701521 (`--color-brand`, con variante scura, tinta e variante chiara per il tema scuro), sei neutri e pochi token semantici (testo, sfondi, bordo, collegamenti, focus, azioni, errore), in tema chiaro e scuro automatico. Nel codice usare i token, mai valori esadecimali diretti; nuovi colori solo quando un elemento stilizzato ne ha bisogno.
-- Altro stile attivo per ora, in `+layout.svelte`: larghezza massima del contenuto (`body`, 65ch, centrata) e media contenuti nella colonna. Per il resto gli stili sono spenti di proposito: i blocchi `<style>` originali sono commentati e le versioni complete stanno in `.old-components/`. Si reintroducono gradualmente, partendo dai token in un file separato, senza valori fissi fuori dai token e senza stili inline.
+
+- Il CSS è globale e generale, non per componente: si stila l'HTML semantico con selettori di elementi, ruoli, ARIA e microdati (per esempio `main > header`, `li:has(> article)`, `[role="group"]`, `ol[tabindex="0"]`). Niente classi né id, se non strettamente necessari e con nomi standard e comprensibili. Niente `<style>` nei componenti: ogni particolarità si risolve con le variabili.
+- File in `src/lib/styles/`, caricati in `+layout.svelte`: `typography.css` (Cormorant Garamond per i titoli, Montserrat per il testo, scala modulare 1,25), `colors.css` (marchio #701521, neutri caldi, tema chiaro e scuro automatico), `layout.css` (token di spazio e misura, intestazione, contenuto, hero, piè di pagina), `content.css` (testo, elenchi, schede, tabelle, figure, finestre), `forms.css` (moduli e pulsanti). Nel codice usare i token (`var(--...)`), mai valori diretti.
+- SvelteKit avvolge l'app in un `div` senza aspetto: per questo i selettori di intestazione e piè di pagina sono `body > div > header` e `body > div > footer`.
+- Design: elegante, moderno, pulito e minimale; avorio caldo, granata come unico colore d'accento, titoli in serif, molto spazio bianco, bordi sottili, schede leggere.
+- Le vecchie versioni con stili per componente sono in `.old-components/`, solo come riferimento.
 
 ### Svelte
 - Svelte 5 idiomatico: rune (`$state`, `$state.raw` per dati solo riassegnati, `$derived`, `$props`), `{@attach}` per il comportamento sul DOM (in `$lib/attachments.ts`), `<svelte:window>`/`<svelte:document>` per gli eventi globali, `each` con chiave. Niente DOM imperativo, `setInterval` di polling o `$effect` per sincronizzare stato.

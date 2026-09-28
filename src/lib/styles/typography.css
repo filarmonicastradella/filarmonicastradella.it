@@ -109,6 +109,8 @@ small {
 
 abbr[title] {
     letter-spacing: var(--letter-spacing-wide);
+    text-decoration: none;
+    cursor: help;
 }
 
 address {

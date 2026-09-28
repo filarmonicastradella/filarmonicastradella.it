@@ -12,8 +12,25 @@ const formatDay = (date: Date) =>
 const formatTime = (date: Date) =>
     date.toLocaleTimeString("it-IT", { hour: "2-digit", minute: "2-digit", timeZone: TIME_ZONE });
 
-const stripTags = (html?: string) =>
-    html ? html.replace(/<br\s*\/?>|<\/p>/gi, "\n").replace(/<[^>]*>?/gm, "").trim() : "";
+const ENTITIES: Record<string, string> = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " " };
+
+const decodeEntities = (text: string) =>
+    text.replace(/&(#\d+|#x[\da-f]+|[a-z]+);/gi, (match, entity: string) => {
+        if (entity[0] === "#") {
+            const code = entity[1].toLowerCase() === "x" ? parseInt(entity.slice(2), 16) : parseInt(entity.slice(1), 10);
+            return Number.isNaN(code) ? match : String.fromCodePoint(code);
+        }
+        return ENTITIES[entity.toLowerCase()] ?? match;
+    });
+
+// La descrizione del calendario può contenere HTML, anche con i simboli codificati (&lt;b&gt;).
+const stripTags = (html?: string) => {
+    if (!html) return "";
+    const withTags = html.replace(/&lt;(\/?[a-z][^&]*?)&gt;/gi, "<$1>");
+    const text = withTags.replace(/<br\s*\/?>|<\/p>|<\/li>|<\/div>/gi, "\n").replace(/<[^>]*>?/g, "");
+    // Alcune descrizioni contengono la sequenza "\n" scritta come testo: la trattiamo come un a capo.
+    return decodeEntities(text).replace(/\\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+};
 
 function formatEventTime(evt: any): string {
     const startDate = new Date(evt.start.dateTime || evt.start.date);

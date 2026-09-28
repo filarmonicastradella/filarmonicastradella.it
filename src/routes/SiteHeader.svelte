@@ -1,5 +1,6 @@
 <script lang="ts">
     import logoSvg from "$lib/assets/favicon.svg?raw";
+    import { page } from "$app/state";
     import { navItems } from "$lib/navigation";
 
     // Il file SVG dichiara una dimensione enorme (826×1382): senza CSS il logo occuperebbe tutta la pagina.
@@ -18,7 +19,7 @@
     <nav aria-label="Navigazione principale">
         <ul>
             {#each navItems as item (item.href)}
-                <li><a href={item.href}>{item.title}</a></li>
+                <li><a href={item.href} aria-current={page.url.pathname === item.href ? "page" : page.url.pathname.startsWith(item.href + "/") ? "true" : undefined}>{item.title}</a></li>
             {/each}
         </ul>
     </nav>

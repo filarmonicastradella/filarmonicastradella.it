@@ -22,6 +22,8 @@
     --text-main: #1d1a18;
     --text-muted: #625c56;
     --border: #8a7f75;
+    --border-soft: color-mix(in srgb, var(--border) 35%, transparent);
+    --on-image: #ffffff;
 
     --link: var(--color-brand);
     --link-hover: var(--color-brand-dark);

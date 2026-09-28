@@ -1,0 +1,261 @@
+/*
+ * Struttura della pagina (SvelteKit avvolge l'app in un div senza aspetto, per questo `body > div`): token di spazio e misura, intestazione, contenuto, piè di pagina.
+ * Solo selettori di elementi e attributi standard (ruoli, ARIA, microdati): niente classi né id.
+ */
+
+:root {
+    --space-2xs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 5rem;
+
+    --radius: 0.5rem;
+    --radius-lg: 1rem;
+
+    --page-width: 72rem;
+    --measure: 65ch;
+    --gutter: max(var(--space-md), calc((100% - var(--page-width)) / 2 + var(--space-md)));
+
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.05), 0 8px 24px rgb(0 0 0 / 0.06);
+    --transition: 150ms ease;
+    --hero-overlay: linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--color-brand-dark) 55%, transparent),
+        color-mix(in srgb, black 80%, transparent)
+    );
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 6rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+/* Link "Salta al contenuto": visibile solo con il focus */
+body > div > a[href="#contenuto"] {
+    position: absolute;
+    top: 0;
+    left: var(--space-md);
+    z-index: 100;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: 0 0 var(--radius) var(--radius);
+    background: var(--action-bg);
+    color: var(--action-text);
+    transform: translateY(-120%);
+}
+
+body > div > a[href="#contenuto"]:focus {
+    transform: none;
+}
+
+/* Intestazione del sito */
+body > div > header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-lg) var(--gutter) var(--space-md);
+    border-bottom: 1px solid var(--border-soft);
+    background: var(--bg-page);
+}
+
+body > div > header > a[href="/"] {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--text-main);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: 1.1;
+    text-decoration: none;
+}
+
+body > div > header > a[href="/"] svg {
+    width: auto;
+    height: 2rem;
+}
+
+body > div > header > a[href="/"] abbr {
+    color: var(--text-muted);
+    font-size: 0.75em;
+    font-weight: var(--font-weight-regular);
+    text-decoration: none;
+}
+
+body > div > header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2xs) var(--space-lg);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body > div > header nav a {
+    padding-block: var(--space-2xs);
+    border-bottom: 2px solid transparent;
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-wide);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color var(--transition), border-color var(--transition);
+}
+
+body > div > header nav a:hover,
+body > div > header nav a[aria-current] {
+    color: var(--text-main);
+    border-bottom-color: var(--link);
+}
+
+/* Contenuto: ogni figlio diretto di main è una fascia centrata */
+main {
+    flex: 1;
+    padding-block: var(--space-2xl) 0;
+}
+
+main > * {
+    max-width: var(--page-width);
+    margin-inline: auto;
+    padding-inline: var(--space-md);
+}
+
+main > * + * {
+    margin-block-start: var(--space-2xl);
+}
+
+main > header {
+    padding-block: var(--space-xl) 0;
+}
+
+main > header > p {
+    max-width: var(--measure);
+    color: var(--text-muted);
+    font-size: var(--font-size-lg);
+}
+
+main > section + section {
+    padding-top: var(--space-2xl);
+    border-top: 1px solid var(--border-soft);
+}
+
+/* Il pezzo forte della landing: la sezione con il titolo principale a tutta larghezza */
+main > section:has(> hgroup) {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: var(--space-lg);
+    max-width: none;
+    min-height: min(80svh, 46rem);
+    margin-block-start: calc(-1 * var(--space-2xl));
+    padding: var(--space-3xl) var(--gutter);
+    background: var(--hero-overlay), url("../assets/wallpaper.jpg") center / cover;
+    color: var(--on-image);
+    text-align: center;
+}
+
+main > section:has(> hgroup) + * {
+    margin-block-start: 0;
+    padding-top: var(--space-2xl);
+    border-top: 0;
+}
+
+main > section:has(> hgroup) h1 {
+    margin: 0;
+    color: inherit;
+    font-size: clamp(2.5rem, 6vw + 1rem, 5rem);
+}
+
+main > section:has(> hgroup) hgroup p {
+    max-width: 40rem;
+    margin: var(--space-md) auto 0;
+    font-size: var(--font-size-lg);
+}
+
+main > section:has(> hgroup) a {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 1px solid currentColor;
+    border-radius: var(--radius);
+    color: inherit;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-wide);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background var(--transition), color var(--transition);
+}
+
+main > section:has(> hgroup) a:hover {
+    background: var(--on-image);
+    color: var(--color-brand-dark);
+}
+
+/* Piè di pagina */
+body > div > footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-3xl);
+    padding: var(--space-2xl) var(--gutter);
+    border-top: 1px solid var(--border-soft);
+    background: var(--bg-subtle);
+    font-size: var(--font-size-sm);
+}
+
+body > div > footer h2 {
+    margin: 0 0 var(--space-sm);
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+}
+
+body > div > footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body > div > footer li + li {
+    margin-top: var(--space-2xs);
+}
+
+body > div > footer > p:last-child {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: var(--text-muted);
+}
