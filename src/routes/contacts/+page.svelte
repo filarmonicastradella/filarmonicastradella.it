@@ -1,17 +1,12 @@
-<script lang="ts">
-    import MapEmbed from "./MapEmbed.svelte";
-    import { legalSeat, operationalSeats } from "$lib/locations";
-</script>
-
 <svelte:head>
-    <title>Contatti e sedi — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="Recapiti, uffici e sedi della Filarmonica Alessandro Stradella APS a Fivizzano e Serricciolo." />
+    <title>Contatti — Filarmonica Alessandro Stradella APS</title>
+    <meta name="description" content="Recapiti e uffici della Filarmonica Alessandro Stradella APS." />
 </svelte:head>
 
 <main id="contenuto">
     <header>
-        <h1>Contatti e sedi</h1>
-        <p>Mettiti in contatto con noi per informazioni sulle iscrizioni, i corsi di musica e i nostri prossimi eventi, oppure vieni a trovarci nelle nostre sedi a Fivizzano e Serricciolo.</p>
+        <h1>Contatti</h1>
+        <p>Mettiti in contatto con noi per informazioni sulle iscrizioni, i corsi di musica e i nostri prossimi eventi, oppure vieni a trovarci nelle nostre sedi.</p>
     </header>
 
     <section>
@@ -46,28 +41,8 @@
         </dl>
     </section>
 
-    <section id="sedi">
-        <h2>Le nostre sedi</h2>
-        <article>
-            <h3>{legalSeat.name}</h3>
-            <address>
-                {#each legalSeat.address as line}{line}<br />{/each}
-            </address>
-            <p>{legalSeat.description}</p>
-            <p><a href={legalSeat.mapsHref} target="_blank" rel="noopener noreferrer">Apri la mappa su Google Maps</a></p>
-        </article>
-
-        {#each operationalSeats as seat (seat.id)}
-            <article>
-                <h3>{seat.name}</h3>
-                <address>
-                    {#each seat.address as line}{line}<br />{/each}
-                </address>
-                <p>{seat.description}</p>
-                {#if seat.mapEmbed}
-                    <MapEmbed title="Mappa della {seat.name.toLowerCase()}" src={seat.mapEmbed} href={seat.mapsHref} />
-                {/if}
-            </article>
-        {/each}
+    <section>
+        <h2>Sedi</h2>
+        <p>Indirizzi e mappe della sede legale e delle sedi operative sono nella pagina <a href="/about/locations">Le nostre sedi</a>.</p>
     </section>
 </main>

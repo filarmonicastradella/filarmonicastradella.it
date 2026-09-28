@@ -1,4 +1,5 @@
 <script lang="ts">
+    import MapEmbed from "./MapEmbed.svelte";
     import { legalSeat, operationalSeats } from "$lib/locations";
 </script>
 
@@ -31,11 +32,15 @@
                         {#each seat.address as line}{line}<br />{/each}
                     </address>
                     <p>{seat.description}</p>
-                    <p><a href={seat.mapsHref} target="_blank" rel="noopener noreferrer">Apri la mappa su Google Maps</a></p>
+                    {#if seat.mapEmbed}
+                        <MapEmbed title="Mappa della {seat.name.toLowerCase()}" src={seat.mapEmbed} href={seat.mapsHref} />
+                    {:else}
+                        <p><a href={seat.mapsHref} target="_blank" rel="noopener noreferrer">Apri la mappa su Google Maps</a></p>
+                    {/if}
                 </li>
             {/each}
         </ul>
     </section>
 
-    <p><a href="/contacts#sedi">Mappe e recapiti</a></p>
+    <p>Per scriverci o telefonarci vai ai <a href="/contacts">contatti</a>.</p>
 </main>

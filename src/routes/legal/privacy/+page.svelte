@@ -42,7 +42,7 @@
                 <dd>Forniscono foto e video della galleria, letti dal profilo Instagram dell'associazione: il tuo browser li scarica direttamente dai loro server.</dd>
 
                 <dt>Google Maps</dt>
-                <dd>Mostra le mappe delle sedi nella pagina dei contatti, solo se scegli di caricarle.</dd>
+                <dd>Mostra le mappe delle sedi nella pagina delle sedi, solo se scegli di caricarle.</dd>
 
                 <dt>formsubmit.co</dt>
                 <dd>Inoltra all'associazione, via email, i dati inseriti nei moduli.</dd>
