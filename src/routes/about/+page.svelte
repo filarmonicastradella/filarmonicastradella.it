@@ -28,14 +28,14 @@
             <h2><a href="/about/locations">Le nostre sedi</a></h2>
             <p>La sede legale e le sedi operative di Fivizzano e Serricciolo.</p>
         </li>
+        <li>
+            <h2><a href="/about/partners">Partner</a></h2>
+            <p>Le associazioni con cui collaboriamo.</p>
+        </li>
         <!-- Da riattivare quando ci sono i contenuti (rinominare _page.svelte in +page.svelte):
         <li>
             <h2><a href="/about/achievements">Riconoscimenti e traguardi</a></h2>
             <p>I riconoscimenti ricevuti e i traguardi raggiunti.</p>
-        </li>
-        <li>
-            <h2><a href="/about/partners">Partner e sostenitori</a></h2>
-            <p>Le realtà con cui collaboriamo.</p>
         </li>
         -->
     </ul>
