@@ -110,9 +110,10 @@ th {
     font-weight: var(--font-weight-semibold);
 }
 
+/* Sempre più piccolo del testo intorno, qualunque sia il contesto (a differenza di un token fisso) */
 small,
 figcaption {
-    font-size: var(--font-size-sm);
+    font-size: 0.85em;
 }
 
 /* Etichette in maiuscoletto: date, termini, intestazioni di tabella e del piè di pagina */
