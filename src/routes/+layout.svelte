@@ -1,8 +1,7 @@
 <script lang="ts">
     import favicon from "$lib/assets/favicon.svg";
-    import logoSvg from "$lib/assets/favicon.svg?raw";
-    import { afterNavigate } from "$app/navigation";
-    import { navItems } from "$lib/navigation";
+    import SiteHeader from "$lib/components/SiteHeader.svelte";
+    import SiteFooter from "$lib/components/SiteFooter.svelte";
 
     // Cormorant Garamond — pesi specifici
     import "@fontsource/cormorant-garamond/400.css";
@@ -16,13 +15,6 @@
     import "@fontsource-variable/montserrat/wght.css";
 
     let { children } = $props();
-
-    // Il menu è un <details> nativo: funziona senza JS. Con JS si richiude dopo la navigazione.
-    let menuOpen = $state(false);
-
-    afterNavigate(() => {
-        menuOpen = false;
-    });
 </script>
 
 <svelte:head>
@@ -31,96 +23,11 @@
 
 <a href="#contenuto">Salta al contenuto</a>
 
-<header>
-    <a href="/">
-        <span aria-hidden="true">{@html logoSvg}</span>
-        <span>Filarmonica Alessandro Stradella <abbr title="Associazione di Promozione Sociale">APS</abbr></span>
-    </a>
-
-    <nav aria-label="Navigazione principale">
-        <details bind:open={menuOpen}>
-            <summary>Menu</summary>
-            <ul>
-                {#each navItems as item}
-                    {#if "links" in item}
-                        <li>
-                            <details name="menu-accordion">
-                                <summary>{item.title}</summary>
-                                <ul>
-                                    {#each item.links as link}
-                                        <li><a href={link.href}>{link.label}</a></li>
-                                    {/each}
-                                </ul>
-                            </details>
-                        </li>
-                    {:else}
-                        <li><a href={item.href}>{item.title}</a></li>
-                    {/if}
-                {/each}
-            </ul>
-        </details>
-    </nav>
-</header>
+<SiteHeader />
 
 {@render children()}
 
-<footer>
-    <section aria-labelledby="footer-contatti-heading">
-        <h2 id="footer-contatti-heading">Contatti</h2>
-
-        <address>
-            <dl>
-                <dt>Indirizzo</dt>
-                <dd>
-                    <a href="https://maps.google.com/?q=Via+Stretta+5+54013+Fivizzano+MS" target="_blank" rel="noopener noreferrer">Via Stretta 5, 54013 Fivizzano (MS)</a>
-                </dd>
-                <dt>Telefono</dt>
-                <dd><a href="tel:+393505363110">+39 350 536 3110</a></dd>
-                <dt>Email</dt>
-                <dd><a href="mailto:info@filarmonicastradella.it">info@filarmonicastradella.it</a></dd>
-                <dt>PEC</dt>
-                <dd><a href="mailto:filarmonicastradella@pec.it">filarmonicastradella@pec.it</a></dd>
-            </dl>
-        </address>
-    </section>
-
-    <nav aria-label="Social media">
-        <ul>
-            <li><a href="https://instagram.com/filarmonicastradella" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            <li><a href="https://facebook.com/filarmonicastradella" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-            <li><a href="https://wa.me/393505363110" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-            <li><a href="https://youtube.com/@filarmonicastradella" target="_blank" rel="noopener noreferrer">YouTube</a></li>
-            <li><a href="https://tiktok.com/@filarmonicastradella" target="_blank" rel="noopener noreferrer">TikTok</a></li>
-        </ul>
-    </nav>
-
-    <section aria-labelledby="footer-associazione-heading">
-        <h2 id="footer-associazione-heading">L'associazione</h2>
-
-        <dl>
-            <dt>Denominazione</dt>
-            <dd>Filarmonica Alessandro Stradella APS</dd>
-            <dt>Codice fiscale</dt>
-            <dd>90021290458</dd>
-            <dt>Iscrizione al RUNTS</dt>
-            <dd>Repertorio n. 176207</dd>
-            <dt>Affiliazione</dt>
-            <dd>
-                <a href="https://www.anbima.it/massacarrara/regionetoscana-massacarrara-unita-di-base" target="_blank" rel="noopener noreferrer">ANBIMA APS</a>
-            </dd>
-        </dl>
-    </section>
-
-    <nav aria-label="Informazioni legali">
-        <ul>
-            <li><a href="/legal/privacy">Informativa Privacy</a></li>
-            <li><a href="/legal/cookies">Politica dei Cookie</a></li>
-            <li><a href="/legal/terms">Termini e Condizioni</a></li>
-        </ul>
-    </nav>
-
-    <p><small>&copy; {new Date().getFullYear()} Filarmonica Alessandro Stradella APS. Tutti i diritti riservati.</small></p>
-</footer>
+<SiteFooter />
 
 <!--
 <style>
