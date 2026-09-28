@@ -75,17 +75,16 @@ body > div > a[href="#contenuto"]:focus {
     transform: none;
 }
 
-/* Intestazione del sito */
+/* Intestazione del sito: su telefono una barra con logo e pulsante del menu, su schermi larghi logo e voci su due righe */
 body > div > header {
-    /* Resta fissata in alto ma con la riga del logo fuori schermo: scorrendo, rimane solo la barra del menu */
     position: sticky;
-    top: calc(-1 * (var(--space-lg) + 2rem + var(--space-sm)));
+    top: 0;
     z-index: 10;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-lg) var(--gutter) var(--space-md);
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--gutter);
     border-bottom: 1px solid var(--border-soft);
     background: var(--bg-page);
 }
@@ -114,22 +113,80 @@ body > div > header > a[href="/"] abbr {
     font-weight: var(--font-weight-regular);
 }
 
-body > div > header nav {
-    align-self: stretch;
-    min-width: 0;
+body > div > header button {
+    padding: var(--space-xs);
+    border: 0;
+    background: none;
+    color: var(--text-main);
 }
 
-/* Le voci stanno su una riga; se non ci stanno (telefono) la barra scorre di lato */
+body > div > header button:hover:not(:disabled) {
+    background: none;
+    color: var(--link);
+}
+
+/* Il menu è un popover: chiuso su telefono, aperto a tutto schermo con il pulsante */
+body > div > header nav:popover-open {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: var(--space-md) var(--gutter) var(--space-xl);
+    border: 0;
+    background: var(--bg-page);
+    color: var(--text-main);
+}
+
+body > div > header nav:popover-open > button {
+    align-self: flex-end;
+}
+
 body > div > header nav ul {
     display: flex;
-    justify-content: safe center;
-    gap: var(--space-lg);
-    overflow-x: auto;
-    scrollbar-width: none;
+    flex-direction: column;
+    gap: var(--space-md);
 }
 
-body > div > header nav li {
-    flex: none;
+body > div > header nav:popover-open a {
+    font-size: var(--font-size-lg);
+}
+
+@media (min-width: 48rem) {
+    body > div > header {
+        /* Scorrendo, la riga del logo esce dallo schermo e resta solo la barra del menu */
+        top: calc(-1 * (var(--space-lg) + 2rem + var(--space-sm)));
+        flex-direction: column;
+        gap: var(--space-sm);
+        padding-top: var(--space-lg);
+    }
+
+    body > div > header > button,
+    body > div > header nav > button {
+        display: none;
+    }
+
+    body > div > header nav[popover] {
+        display: block;
+        position: static;
+        align-self: stretch;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        overflow: visible;
+        background: none;
+    }
+
+    body > div > header nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--space-lg);
+    }
 }
 
 body > div > header nav a {
