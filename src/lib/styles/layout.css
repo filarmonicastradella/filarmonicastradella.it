@@ -403,7 +403,8 @@ main > section:has(> hgroup) a:hover {
 /* Piè di pagina */
 body > div > footer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 18rem));
+    justify-content: space-between;
     gap: var(--space-xl);
     margin-top: var(--space-3xl);
     padding: var(--space-2xl) var(--gutter);

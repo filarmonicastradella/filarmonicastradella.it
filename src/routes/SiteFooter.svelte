@@ -52,6 +52,7 @@
     </section>
 
     <nav aria-label="Informazioni">
+        <h2>Informazioni</h2>
         <ul>
             <li><a href="/legal/privacy">Informativa Privacy</a></li>
             <li><a href="/legal/cookies">Politica dei Cookie</a></li>
