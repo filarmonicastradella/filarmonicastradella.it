@@ -24,6 +24,3 @@ vite.config.ts.timestamp-*
 
 # Claude Code (impostazioni locali)
 /.claude/settings.local.json*
-
-# File vuoto creato per errore
-/a.html

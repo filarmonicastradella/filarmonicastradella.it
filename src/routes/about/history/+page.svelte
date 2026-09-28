@@ -179,7 +179,7 @@
                 l'associazione si configura oggi come un polo musicale dinamico.
                 Superando il tradizionale schema bandistico, la Filarmonica
                 gestisce molteplici ensemble d'eccellenza: un <strong
-                    ><a href="/about/ensembles/i-dissonanti"
+                    ><a href="/about/ensembles/filarmonici-dissonanti"
                         >Ensemble di Musica Antica</a
                     ></strong
                 >, un'<strong
@@ -188,13 +188,13 @@
                     ></strong
                 >, una
                 <strong
-                    ><a href="/about/ensembles/concert-band"
+                    ><a href="/about/ensembles/stradella-facendo"
                         >Concert Band</a
                     ></strong
                 >
                 e una
                 <strong
-                    ><a href="/about/ensembles/street-band">Street Band</a
+                    ><a href="/about/ensembles/streetella-band">Street Band</a
                     ></strong
                 >.
             </p>
