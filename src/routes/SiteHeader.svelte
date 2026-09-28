@@ -4,7 +4,10 @@
     import { navItems } from "$lib/navigation";
 
     // Il file SVG dichiara una dimensione enorme (826×1382): senza CSS il logo occuperebbe tutta la pagina.
-    const logo = logoSvg.replace('width="826" height="1382"', 'width="22" height="36"');
+    // Il nero diventa currentColor, così il logo prende il colore del collegamento che lo contiene.
+    const logo = logoSvg
+        .replace('width="826" height="1382"', 'width="22" height="36"')
+        .replaceAll('fill="black"', 'fill="currentColor"');
 
     // Il menu è un <details> nativo: funziona senza JS. Con JS si richiude dopo la navigazione.
     let menuOpen = $state(false);
