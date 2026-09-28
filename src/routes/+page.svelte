@@ -1,11 +1,11 @@
 <script lang="ts">
-    import Hero from "$lib/components/landing/Hero.svelte";
-    import UpcomingEvents from "$lib/components/landing/UpcomingEvents.svelte";
-    import About from "$lib/components/landing/About.svelte";
-    import Featured from "$lib/components/landing/Featured.svelte";
-    import LatestNews from "$lib/components/landing/LatestNews.svelte";
-    import Gallery from "$lib/components/landing/Gallery.svelte";
-    import Support from "$lib/components/landing/Support.svelte";
+    import Hero from "./Hero.svelte";
+    import UpcomingEvents from "./UpcomingEvents.svelte";
+    import About from "./About.svelte";
+    import Featured from "./Featured.svelte";
+    import LatestNews from "./LatestNews.svelte";
+    import Gallery from "./Gallery.svelte";
+    import Support from "./Support.svelte";
 </script>
 
 <svelte:head>

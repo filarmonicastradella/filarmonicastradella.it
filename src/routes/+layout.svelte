@@ -1,7 +1,7 @@
 <script lang="ts">
     import favicon from "$lib/assets/favicon.svg";
-    import SiteHeader from "$lib/components/SiteHeader.svelte";
-    import SiteFooter from "$lib/components/SiteFooter.svelte";
+    import SiteHeader from "./SiteHeader.svelte";
+    import SiteFooter from "./SiteFooter.svelte";
 
     // Cormorant Garamond — pesi specifici
     import "@fontsource/cormorant-garamond/400.css";
