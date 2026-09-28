@@ -207,8 +207,8 @@
 
         <Figure
             src={oggiImg}
-            alt="L'InFieri Ensemble della Filarmonica in concerto"
-            caption="L'InFieri Ensemble della Filarmonica 'Alessandro Stradella' durante un'esibizione."
+            alt="L'Orchestra Infieri della Filarmonica in concerto"
+            caption="L'Orchestra Infieri della Filarmonica 'Alessandro Stradella' durante un'esibizione."
         />
     </section>
 </article>

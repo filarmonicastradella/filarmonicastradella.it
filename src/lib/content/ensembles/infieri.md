@@ -1,5 +1,5 @@
 ---
-title: Infieri
+title: Orchestra Infieri
 summary: L'orchestra con archi.
 order: 3
 ---

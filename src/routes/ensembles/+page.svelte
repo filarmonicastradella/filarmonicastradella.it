@@ -4,7 +4,7 @@
 
 <svelte:head>
     <title>Ensemble — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="Gli ensemble della Filarmonica Alessandro Stradella: Stradella Facendo, Streetella Band, Infieri e Filarmonici Dissonanti." />
+    <meta name="description" content="Gli ensemble della Filarmonica Alessandro Stradella: Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti." />
 </svelte:head>
 
 <header>
