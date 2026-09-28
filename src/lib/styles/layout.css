@@ -128,23 +128,23 @@ body > div > header button:hover:not(:disabled) {
     color: var(--link);
 }
 
-/* L'hamburger diventa una X quando il menu è aperto: le tre linee dell'icona si muovono */
-body > div > header button svg path {
+body > div > header button svg {
+    display: block;
+}
+
+/* L'icona a due barre diventa una X quando il menu è aperto: le due linee si muovono */
+body > div > header button svg line {
     transform-box: fill-box;
     transform-origin: center;
-    transition: transform var(--transition-slow), opacity var(--transition-slow);
+    transition: transform var(--transition-slow);
 }
 
-body > div > header:has(nav:popover-open) button svg path:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+body > div > header:has(nav:popover-open) button svg line:nth-child(1) {
+    transform: translateY(3px) rotate(45deg);
 }
 
-body > div > header:has(nav:popover-open) button svg path:nth-child(2) {
-    opacity: 0;
-}
-
-body > div > header:has(nav:popover-open) button svg path:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+body > div > header:has(nav:popover-open) button svg line:nth-child(2) {
+    transform: translateY(-3px) rotate(-45deg);
 }
 
 /* Il menu è un popover: chiuso su telefono; aperto occupa lo schermo sotto la barra, con una breve comparsa */

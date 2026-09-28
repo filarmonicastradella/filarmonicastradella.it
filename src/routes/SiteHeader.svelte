@@ -1,6 +1,6 @@
 <script lang="ts">
     import logoSvg from "$lib/assets/favicon.svg?raw";
-    import Menu from "@lucide/svelte/icons/menu";
+    import Equal from "@lucide/svelte/icons/equal";
     import { afterNavigate } from "$app/navigation";
     import { page } from "$app/state";
     import { navItems } from "$lib/navigation";
@@ -25,7 +25,7 @@
         <span>Filarmonica Alessandro Stradella <abbr title="Associazione di Promozione Sociale">APS</abbr></span>
     </a>
 
-    <button type="button" popovertarget="menu"><Menu size={24} strokeWidth={1.5} aria-hidden="true" /> <span>Menu</span></button>
+    <button type="button" popovertarget="menu"><Equal size={40} strokeWidth={1.5} aria-hidden="true" /> <span>Menu</span></button>
 
     <nav id="menu" popover bind:this={menu} aria-label="Navigazione principale">
         <ul>
