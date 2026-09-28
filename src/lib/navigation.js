@@ -5,7 +5,6 @@ export const navItems = [
             { label: "Storia e Origini", href: "/about/history" },
             { label: "La Nostra Missione", href: "/about/mission" },
             { label: "Consiglio Direttivo", href: "/about/board" },
-            { label: "I Nostri Musicisti", href: "/about/musicians" },
             { label: "Ensembles e Formazioni", href: "/about/ensembles" },
             { label: "Le Nostre Sedi", href: "/about/locations" },
             { label: "Riconoscimenti e Traguardi", href: "/about/achievements" },
