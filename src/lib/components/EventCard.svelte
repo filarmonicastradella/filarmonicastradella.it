@@ -1,5 +1,4 @@
 <script lang="ts">
-    import mapPinIcon from "heroicons/24/solid/map-pin.svg?raw";
     import type { EventItem } from "$lib/events";
 
     // `level` è il livello del titolo, da scegliere in base a dove compare la scheda.
@@ -18,6 +17,6 @@
         <p itemprop="description">{event.description}</p>
     {/if}
     {#if event.location}
-        <p itemprop="location">{@html mapPinIcon}{event.location}</p>
+        <p itemprop="location">{event.location}</p>
     {/if}
 </article>

@@ -1,9 +1,5 @@
 <script lang="ts">
     import { siFacebook, siInstagram, siTiktok, siWhatsapp, siYoutube } from "simple-icons";
-    import mapPinIcon from "heroicons/24/solid/map-pin.svg?raw";
-    import phoneIcon from "heroicons/24/solid/phone.svg?raw";
-    import envelopeIcon from "heroicons/24/solid/envelope.svg?raw";
-    import shieldCheckIcon from "heroicons/24/solid/shield-check.svg?raw";
     import { legalSeat } from "$lib/locations";
     import { organization } from "$lib/organization";
 
@@ -37,14 +33,14 @@
             <dl>
                 <dt>Indirizzo</dt>
                 <dd>
-                    {@html mapPinIcon}<a href={legalSeat.mapsHref} target="_blank" rel="noopener noreferrer">{legalSeat.address.join(", ")}</a>
+                    <a href={legalSeat.mapsHref} target="_blank" rel="noopener noreferrer">{legalSeat.address.join(", ")}</a>
                 </dd>
                 <dt>Telefono</dt>
-                <dd>{@html phoneIcon}<a href="tel:+393505363110">+39 350 536 3110</a></dd>
+                <dd><a href="tel:+393505363110">+39 350 536 3110</a></dd>
                 <dt>Email</dt>
-                <dd>{@html envelopeIcon}<a href="mailto:info@filarmonicastradella.it">info@filarmonicastradella.it</a></dd>
+                <dd><a href="mailto:info@filarmonicastradella.it">info@filarmonicastradella.it</a></dd>
                 <dt>PEC</dt>
-                <dd>{@html shieldCheckIcon}<a href="mailto:{organization.pec}">{organization.pec}</a></dd>
+                <dd><a href="mailto:{organization.pec}">{organization.pec}</a></dd>
             </dl>
         </address>
     </section>

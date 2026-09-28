@@ -60,15 +60,6 @@ li > article[itemtype$="/Event"] > p:has(> time) {
     text-overflow: ellipsis;
 }
 
-/* Luogo delle schede evento: icona piena vera (non una maschera CSS, che a questa dimensione sfuma) */
-p[itemprop="location"] svg {
-    width: 0.9em;
-    height: 0.9em;
-    margin-right: 0.35em;
-    vertical-align: -0.125em;
-    fill: currentColor;
-}
-
 /* Il luogo è più piccolo e chiaro del resto, come nel vecchio componente */
 li > article > p[itemprop="location"] {
     font-size: var(--font-size-sm);
@@ -119,7 +110,7 @@ nav ul {
 :is(ul, ol):has(> li > :is(article, h2, h3)) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
-    gap: var(--space-xl);
+    gap: var(--space-2xl);
     padding: 0;
     list-style: none;
 }
@@ -229,11 +220,10 @@ ol[tabindex="0"] {
     }
 }
 
-/* Le schede del carosello (non quelle fotografiche) hanno un bordo e uno sfondo pieno, angoli vivi */
-:is(ul, ol)[tabindex="0"]:not(:has(img, video)) :is(li:has(> :is(h2, h3)), li > article) {
-    padding: var(--space-lg);
-    border: 1px solid var(--border-soft);
-    background: var(--bg-surface);
+/* Il carosello separa le schede con un filetto verticale e spazio, non con una scatola */
+:is(ul, ol)[tabindex="0"]:not(:has(img, video)) > li:not(:first-child) {
+    padding-inline-start: var(--space-xl);
+    border-inline-start: 1px solid var(--border-soft);
 }
 
 /* Nelle schede il titolo segue l'etichetta subito, senza lo spazio pensato per i sottotitoli in un testo lungo */

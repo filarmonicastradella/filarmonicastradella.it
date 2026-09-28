@@ -275,7 +275,7 @@ main > * {
 }
 
 main > * + * {
-    margin-block-start: var(--space-2xl);
+    margin-block-start: var(--space-3xl);
 }
 
 :is(main, article) > header > p {
@@ -465,15 +465,6 @@ body > div > footer dt {
 
 body > div > footer dt:first-child {
     margin-top: 0;
-}
-
-/* Recapiti: una piccola icona piena (Heroicons, svg vero) davanti a indirizzo, telefono, email e PEC */
-body > div > footer address dd svg {
-    width: 0.9em;
-    height: 0.9em;
-    margin-right: 0.35em;
-    vertical-align: -0.125em;
-    fill: var(--color-brand);
 }
 
 body > div > footer nav:has(svg) ul {
