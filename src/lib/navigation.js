@@ -44,7 +44,7 @@ export const navItems = [
             { label: "Rendiconti", href: "/legal/budgets" },
             { label: "Contributi Pubblici Ricevuti", href: "/legal/contributions" },
             { label: "Informativa Privacy", href: "/legal/privacy" },
-            { label: "Politica dei Cookie", href: "/legal/cookies" },
+            { label: "Politica dei Cookie", href: "/legal/cookies" }
         ]
     },
     { title: "Contatti", href: "/contacts" }
