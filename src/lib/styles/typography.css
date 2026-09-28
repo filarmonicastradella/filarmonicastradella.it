@@ -166,12 +166,16 @@ textarea {
     letter-spacing: inherit;
 }
 
-/* Comandi: pulsanti e collegamenti di navigazione */
+/* Comandi: pulsanti e collegamenti che agiscono, non che portano altrove nel sito */
 button,
-body > div > header nav a,
 main nav ul a,
 main > section:has(> hgroup) a {
     font-size: var(--font-size-sm);
     letter-spacing: var(--letter-spacing-wide);
     text-transform: uppercase;
+}
+
+/* Le voci del menu principale restano testo normale, non urlato come i comandi */
+body > div > header nav a {
+    font-size: var(--font-size-md);
 }

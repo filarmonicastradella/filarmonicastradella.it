@@ -194,17 +194,18 @@ body > div > header nav ul {
 
 body > div > header nav a {
     padding-block: var(--space-2xs);
-    border-bottom: 2px solid transparent;
     color: var(--text-muted);
     font-weight: var(--font-weight-medium);
-    text-decoration: none;
-    transition: color var(--transition), border-color var(--transition);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.3em;
+    transition: color var(--transition), text-decoration-color var(--transition);
 }
 
 body > div > header nav a:hover,
 body > div > header nav a[aria-current] {
     color: var(--text-main);
-    border-bottom-color: var(--link);
+    text-decoration-color: var(--link);
 }
 
 body > div > header nav:popover-open a {
