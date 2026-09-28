@@ -228,9 +228,8 @@
 
         <fieldset>
             <legend>{isMinorenne ? "Documento di identità del genitore" : "Documento di identità"}</legend>
-            <p>La copia del documento sostituisce la firma sulla richiesta di iscrizione. Da telefono si possono allegare due foto, una del fronte e una del retro.</p>
             <p>
-                <label for="documento_identita">Copia del documento (PDF, JPG o PNG; anche più di un file)</label>
+                <label for="documento_identita">Documento di identità (PDF, JPG o PNG)</label>
                 <input type="file" id="documento_identita" name="attachment" required multiple accept="application/pdf,image/jpeg,image/png" />
             </p>
         </fieldset>
