@@ -303,14 +303,12 @@ body > div > header {
 @keyframes uscita-pagina {
     to {
         opacity: 0;
-        transform: translateY(-0.5rem);
     }
 }
 
 @keyframes entrata-pagina {
     from {
         opacity: 0;
-        transform: translateY(0.5rem);
     }
 }
 
