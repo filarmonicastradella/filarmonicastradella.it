@@ -48,6 +48,15 @@ button[type="reset"]:hover:not(:disabled),
     padding: var(--space-xs) var(--space-md);
 }
 
+[role="group"] button:has(> svg) {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border-radius: 50%;
+}
+
 form {
     display: grid;
     gap: var(--space-lg);

@@ -1,6 +1,15 @@
 <script lang="ts">
+    import { siFacebook, siInstagram, siTiktok, siWhatsapp, siYoutube } from "simple-icons";
     import { legalSeat } from "$lib/locations";
     import { organization } from "$lib/organization";
+
+    const socials = [
+        { name: "Instagram", href: "https://instagram.com/filarmonicastradella", icon: siInstagram },
+        { name: "Facebook", href: "https://facebook.com/filarmonicastradella", icon: siFacebook },
+        { name: "WhatsApp", href: "https://wa.me/393505363110", icon: siWhatsapp },
+        { name: "YouTube", href: "https://youtube.com/@filarmonicastradella", icon: siYoutube },
+        { name: "TikTok", href: "https://tiktok.com/@filarmonicastradella", icon: siTiktok }
+    ];
 </script>
 
 <footer>
@@ -27,11 +36,14 @@
 
     <nav aria-label="Social media">
         <ul>
-            <li><a href="https://instagram.com/filarmonicastradella" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            <li><a href="https://facebook.com/filarmonicastradella" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-            <li><a href="https://wa.me/393505363110" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-            <li><a href="https://youtube.com/@filarmonicastradella" target="_blank" rel="noopener noreferrer">YouTube</a></li>
-            <li><a href="https://tiktok.com/@filarmonicastradella" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+            {#each socials as { name, href, icon } (name)}
+                <li>
+                    <a {href} target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d={icon.path} /></svg>
+                        <span>{name}</span>
+                    </a>
+                </li>
+            {/each}
         </ul>
     </nav>
 

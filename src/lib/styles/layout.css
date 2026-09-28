@@ -259,3 +259,46 @@ body > div > footer > p:last-child {
     margin: 0;
     color: var(--text-muted);
 }
+
+/* I dati del piè di pagina si leggono in colonna: etichetta sopra e valore sotto */
+body > div > footer dl {
+    display: block;
+}
+
+body > div > footer dt {
+    margin-top: var(--space-sm);
+    font-size: var(--font-size-xs);
+}
+
+body > div > footer dt:first-child {
+    margin-top: 0;
+}
+
+/* I social vanno su una riga a parte, prima della nota finale */
+body > div > footer nav[aria-label="Social media"] {
+    grid-column: 1 / -1;
+    order: 9;
+}
+
+body > div > footer > p:last-child {
+    order: 10;
+}
+
+body > div > footer nav[aria-label="Social media"] ul {
+    display: flex;
+    gap: var(--space-md);
+}
+
+body > div > footer nav[aria-label="Social media"] li + li {
+    margin-top: 0;
+}
+
+body > div > footer nav[aria-label="Social media"] a {
+    display: block;
+    color: var(--text-muted);
+    line-height: 0;
+}
+
+body > div > footer nav[aria-label="Social media"] a:hover {
+    color: var(--link);
+}
