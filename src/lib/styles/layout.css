@@ -22,6 +22,8 @@
 
     --shadow: 0 1px 2px rgb(0 0 0 / 0.05), 0 8px 24px rgb(0 0 0 / 0.06);
     --transition: 150ms ease;
+    --transition-slow: 300ms cubic-bezier(0.2, 0, 0, 1);
+    --bar: 4.5rem;
     --hero-overlay: linear-gradient(
         to bottom,
         color-mix(in srgb, var(--color-brand-dark) 55%, transparent),
@@ -84,7 +86,8 @@ body > div > header {
     align-items: center;
     justify-content: space-between;
     gap: var(--space-md);
-    padding: var(--space-md) var(--gutter);
+    height: var(--bar);
+    padding-inline: var(--gutter);
     border-bottom: 1px solid var(--border-soft);
     background: var(--bg-page);
 }
@@ -125,68 +128,69 @@ body > div > header button:hover:not(:disabled) {
     color: var(--link);
 }
 
-/* Il menu è un popover: chiuso su telefono, aperto a tutto schermo con il pulsante */
-body > div > header nav:popover-open {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xl);
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: var(--space-md) var(--gutter) var(--space-xl);
-    border: 0;
-    background: var(--bg-page);
-    color: var(--text-main);
+/* L'hamburger diventa una X quando il menu è aperto: le tre linee dell'icona si muovono */
+body > div > header button svg path {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform var(--transition-slow), opacity var(--transition-slow);
 }
 
-body > div > header nav:popover-open > button {
-    align-self: flex-end;
+body > div > header:has(nav:popover-open) button svg path:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+body > div > header:has(nav:popover-open) button svg path:nth-child(2) {
+    opacity: 0;
+}
+
+body > div > header:has(nav:popover-open) button svg path:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Il menu è un popover: chiuso su telefono; aperto occupa lo schermo sotto la barra, con una breve comparsa */
+body > div > header nav {
+    position: fixed;
+    inset: var(--bar) 0 0;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: var(--space-xl) var(--gutter);
+    border: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--bg-page);
+    color: var(--text-main);
+    opacity: 0;
+    transform: translateY(-0.75rem);
+    transition:
+        opacity var(--transition-slow),
+        transform var(--transition-slow),
+        display var(--transition-slow) allow-discrete,
+        overlay var(--transition-slow) allow-discrete;
+}
+
+body > div > header nav:popover-open {
+    display: block;
+    opacity: 1;
+    transform: none;
+}
+
+@starting-style {
+    body > div > header nav:popover-open {
+        opacity: 0;
+        transform: translateY(-0.75rem);
+    }
+}
+
+/* Con il menu aperto la pagina sotto non scorre */
+body:has(nav:popover-open) {
+    overflow: hidden;
 }
 
 body > div > header nav ul {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
-}
-
-body > div > header nav:popover-open a {
-    font-size: var(--font-size-lg);
-}
-
-@media (min-width: 48rem) {
-    body > div > header {
-        /* Scorrendo, la riga del logo esce dallo schermo e resta solo la barra del menu */
-        top: calc(-1 * (var(--space-lg) + 2rem + var(--space-sm)));
-        flex-direction: column;
-        gap: var(--space-sm);
-        padding-top: var(--space-lg);
-    }
-
-    body > div > header > button,
-    body > div > header nav > button {
-        display: none;
-    }
-
-    body > div > header nav[popover] {
-        display: block;
-        position: static;
-        align-self: stretch;
-        width: auto;
-        height: auto;
-        margin: 0;
-        padding: 0;
-        border: 0;
-        overflow: visible;
-        background: none;
-    }
-
-    body > div > header nav ul {
-        flex-direction: row;
-        justify-content: center;
-        gap: var(--space-lg);
-    }
 }
 
 body > div > header nav a {
@@ -202,6 +206,43 @@ body > div > header nav a:hover,
 body > div > header nav a[aria-current] {
     color: var(--text-main);
     border-bottom-color: var(--link);
+}
+
+body > div > header nav:popover-open a {
+    font-size: var(--font-size-lg);
+}
+
+@media (min-width: 48rem) {
+    body > div > header {
+        /* Scorrendo, la riga del logo esce dallo schermo e resta solo la barra del menu */
+        top: calc(-1 * (var(--space-lg) + 2rem + var(--space-sm)));
+        flex-direction: column;
+        gap: var(--space-sm);
+        height: auto;
+        padding-block: var(--space-lg) var(--space-md);
+    }
+
+    body > div > header > button {
+        display: none;
+    }
+
+    body > div > header nav {
+        display: block;
+        position: static;
+        align-self: stretch;
+        padding: 0;
+        overflow: visible;
+        background: none;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    body > div > header nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--space-lg);
+    }
 }
 
 /* Contenuto: una griglia con una colonna centrale di larghezza massima; solo la hero occupa tutta la larghezza */
