@@ -1,3 +1,8 @@
+<script lang="ts">
+    import Section from "$lib/components/Section.svelte";
+    import { ensembles } from "$lib/ensembles";
+</script>
+
 <svelte:head>
     <title>Ensemble e formazioni — Filarmonica Alessandro Stradella APS</title>
     <meta name="description" content="Le formazioni musicali della Filarmonica Alessandro Stradella: banda, musica antica, musica sinfonica e progetti giovanili." />
@@ -9,28 +14,16 @@
         Dalla tradizione bandistica alla riscoperta della musica antica, fino alla musica sinfonica e ai progetti giovanili: una costellazione di gruppi aperti alla sperimentazione e ai progetti dei soci.
     </p>
 
-    <section aria-labelledby="formazioni-heading">
-        <h2 id="formazioni-heading">Le nostre formazioni</h2>
+    <Section title="Le nostre formazioni">
         <ul>
-            <li>
-                <h3>Banda</h3>
-                <p>Descrizione in arrivo.</p>
-            </li>
-            <li>
-                <h3>Musica antica</h3>
-                <p>Descrizione in arrivo.</p>
-            </li>
-            <li>
-                <h3>Musica sinfonica</h3>
-                <p>Descrizione in arrivo.</p>
-            </li>
-            <li>
-                <h3>Progetti giovanili</h3>
-                <p>Descrizione in arrivo.</p>
-            </li>
+            {#each ensembles as ensemble (ensemble.slug)}
+                <li>
+                    <h3><a href="/about/ensembles/{ensemble.slug}">{ensemble.title}</a></h3>
+                    <p>{ensemble.summary}</p>
+                </li>
+            {/each}
         </ul>
-    </section>
+    </Section>
 
-    <p>Pagina in costruzione: le schede delle formazioni saranno pubblicate a breve.</p>
     <p><a href="/support/auditions">Suona con noi</a></p>
 </main>
