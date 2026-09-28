@@ -14,9 +14,8 @@
             <p>Lo statuto della Filarmonica Alessandro Stradella APS.</p>
         </header>
 
-        <!-- SEGNAPOSTO: caricare il PDF della copia vidimata e scansionata in static/documents/statuto.pdf, poi sostituire il testo con:
-        <a href="/documents/statuto.pdf" type="application/pdf">Scarica la copia vidimata e scansionata dello statuto (PDF)</a> -->
-        <p>La copia vidimata e scansionata dello statuto in formato PDF sarà disponibile a breve.</p>
+        <!-- SEGNAPOSTO: il file va caricato in static/documents/statuto.pdf. -->
+        <p><a href="/documents/statuto.pdf" type="application/pdf">Scarica la copia vidimata e scansionata dello statuto (PDF)</a></p>
 
         <nav aria-label="Indice degli articoli">
             <ol>
