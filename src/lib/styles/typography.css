@@ -103,7 +103,24 @@ th {
     font-weight: var(--font-weight-semibold);
 }
 
-small {
+small,
+figcaption {
+    font-size: var(--font-size-sm);
+}
+
+/* Etichette in maiuscoletto: date, termini, intestazioni di tabella e del piè di pagina */
+time,
+dt,
+th,
+body > div > footer h2 {
+    color: var(--text-muted);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+}
+
+time,
+dt,
+th {
     font-size: var(--font-size-sm);
 }
 
@@ -128,4 +145,14 @@ select,
 textarea {
     font: inherit;
     letter-spacing: inherit;
+}
+
+/* Comandi: pulsanti e collegamenti di navigazione */
+button,
+body > div > header nav a,
+main nav ul a,
+main > section:has(> hgroup) a {
+    font-size: var(--font-size-sm);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
 }

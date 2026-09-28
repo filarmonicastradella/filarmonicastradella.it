@@ -9,10 +9,7 @@ button {
     background: var(--action-bg);
     color: var(--action-text);
     cursor: pointer;
-    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
-    letter-spacing: var(--letter-spacing-wide);
-    text-transform: uppercase;
     transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
 
@@ -63,7 +60,6 @@ form {
 }
 
 form p {
-    margin: 0;
     max-width: none;
 }
 

@@ -28,13 +28,6 @@ main p {
     font-size: var(--font-size-xl);
 }
 
-time {
-    color: var(--text-muted);
-    font-size: var(--font-size-sm);
-    letter-spacing: var(--letter-spacing-wide);
-    text-transform: uppercase;
-}
-
 /* Collegamenti */
 a {
     text-decoration-thickness: 1px;
@@ -186,9 +179,6 @@ main nav ul {
 }
 
 main nav ul a {
-    font-size: var(--font-size-sm);
-    letter-spacing: var(--letter-spacing-wide);
-    text-transform: uppercase;
     text-decoration: none;
 }
 
@@ -211,13 +201,6 @@ dl {
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: var(--space-xs) var(--space-xl);
-}
-
-dt {
-    color: var(--text-muted);
-    font-size: var(--font-size-sm);
-    letter-spacing: var(--letter-spacing-wide);
-    text-transform: uppercase;
 }
 
 dd {
@@ -269,13 +252,6 @@ td {
     text-align: left;
 }
 
-th {
-    color: var(--text-muted);
-    font-size: var(--font-size-sm);
-    letter-spacing: var(--letter-spacing-wide);
-    text-transform: uppercase;
-}
-
 /* Immagini, video e didascalie */
 img,
 video {
@@ -292,7 +268,6 @@ video {
 
 figcaption {
     color: var(--text-muted);
-    font-size: var(--font-size-sm);
 }
 
 address {
