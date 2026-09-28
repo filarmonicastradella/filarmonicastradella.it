@@ -88,171 +88,169 @@
     </p>
 {/snippet}
 
-<main id="contenuto">
-    <header>
-        <h1>Richiesta di iscrizione</h1>
-        <p>Compila il modulo per richiedere l'adesione alla Filarmonica Alessandro Stradella APS. Per i minorenni l'iscrizione può essere richiesta online da un genitore o tutore.</p>
-        <p>
-            La quota associativa per il 2026 è di 12 euro; l'importo è stabilito ogni anno dall'assemblea. L'ammissione è deliberata dall'Organo di amministrazione e ti verrà comunicata all'indirizzo email indicato.
-        </p>
-    </header>
+<header>
+    <h1>Richiesta di iscrizione</h1>
+    <p>Compila il modulo per richiedere l'adesione alla Filarmonica Alessandro Stradella APS. Per i minorenni l'iscrizione può essere richiesta online da un genitore o tutore.</p>
+    <p>
+        La quota associativa per il 2026 è di 12 euro; l'importo è stabilito ogni anno dall'assemblea. L'ammissione è deliberata dall'Organo di amministrazione e ti verrà comunicata all'indirizzo email indicato.
+    </p>
+</header>
 
-    <form action="https://formsubmit.co/47c75ae3189afeb17aa6672e17f0b7c6" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="_subject" value="Nuova richiesta di iscrizione - Filarmonica Stradella" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_next" value="https://filarmonicastradella.it/support/join/thanks" />
-        <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
-        <input type="hidden" name="tipo_richiedente" value={isMinorenne ? "Minorenne (iscrizione tramite genitore/tutore)" : "Maggiorenne"} />
+<form action="https://formsubmit.co/47c75ae3189afeb17aa6672e17f0b7c6" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_subject" value="Nuova richiesta di iscrizione - Filarmonica Stradella" />
+    <input type="hidden" name="_template" value="table" />
+    <input type="hidden" name="_next" value="https://filarmonicastradella.it/support/join/thanks" />
+    <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
+    <input type="hidden" name="tipo_richiedente" value={isMinorenne ? "Minorenne (iscrizione tramite genitore/tutore)" : "Maggiorenne"} />
+
+    <fieldset>
+        <legend>{isMinorenne ? "Dati anagrafici del minore" : "Dati anagrafici del richiedente"}</legend>
+        {@render identityFields("", "", true)}
+    </fieldset>
+
+    {#if isTooYoung}
+        <p role="alert">
+            L'iscrizione online non è abilitata per i minori di 14 anni: <a href="/contacts">contattate l'associazione</a> per completare la pratica di persona.
+        </p>
+    {:else}
+        {#if isMinorenne}
+            <fieldset>
+                <legend>Dati anagrafici del genitore</legend>
+                {@render identityFields("genitore_", "genitore", false)}
+            </fieldset>
+        {/if}
 
         <fieldset>
-            <legend>{isMinorenne ? "Dati anagrafici del minore" : "Dati anagrafici del richiedente"}</legend>
-            {@render identityFields("", "", true)}
-        </fieldset>
-
-        {#if isTooYoung}
-            <p role="alert">
-                L'iscrizione online non è abilitata per i minori di 14 anni: <a href="/contacts">contattate l'associazione</a> per completare la pratica di persona.
-            </p>
-        {:else}
-            {#if isMinorenne}
-                <fieldset>
-                    <legend>Dati anagrafici del genitore</legend>
-                    {@render identityFields("genitore_", "genitore", false)}
-                </fieldset>
-            {/if}
-
-            <fieldset>
-                <legend>Residenza</legend>
-                {@render addressFields("residenza")}
-
-                <p>
-                    <input type="checkbox" id="domicilio_uguale_residenza" name="domicilio_uguale_residenza" bind:checked={domicilioUgualeResidenza} />
-                    <label for="domicilio_uguale_residenza">Il domicilio corrisponde alla residenza</label>
-                </p>
-            </fieldset>
-
-            {#if !domicilioUgualeResidenza}
-                <fieldset>
-                    <legend>Domicilio</legend>
-                    {@render addressFields("domicilio")}
-                </fieldset>
-            {/if}
-
-            <fieldset>
-                <legend>Contatti</legend>
-
-                <p>
-                    <label for="telefono">{isMinorenne ? "Telefono del genitore" : "Telefono"}</label>
-                    <input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="tel" required minlength="9" maxlength="15" />
-                </p>
-
-                <p>
-                    <label for="email">{isMinorenne ? "Email del genitore" : "Email"}</label>
-                    <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required maxlength="100" />
-                </p>
-
-                {#if isMinorenne}
-                    <p>
-                        <label for="telefono_minore">Telefono del minore</label>
-                        <input type="tel" id="telefono_minore" name="telefono_minore" autocomplete="off" inputmode="tel" minlength="9" maxlength="15" />
-                    </p>
-
-                    <p>
-                        <label for="email_minore">Email del minore</label>
-                        <input type="email" id="email_minore" name="email_minore" autocomplete="off" inputmode="email" maxlength="100" />
-                    </p>
-                {/if}
-            </fieldset>
-
-            <fieldset>
-                <legend>Dichiarazioni</legend>
-
-                <p>
-                    <input type="checkbox" id="privacy" name="privacy" required />
-                    <label for="privacy">
-                        Dichiaro di aver preso visione dell'<a href="/legal/privacy" target="_blank" rel="noopener noreferrer">informativa sulla privacy</a> e acconsento al trattamento dei miei dati personali per la gestione della richiesta di iscrizione.
-                    </label>
-                </p>
-
-                <p>
-                    <input type="checkbox" id="statuto" name="statuto" required />
-                    <label for="statuto">
-                        {#if isMinorenne}
-                            Dichiaro di conoscere e accettare lo <a href="/transparency/statute" target="_blank" rel="noopener noreferrer">statuto</a>, impegnandomi a rispettarlo anche per conto del minore.
-                        {:else}
-                            Dichiaro di conoscere e accettare lo <a href="/transparency/statute" target="_blank" rel="noopener noreferrer">statuto</a>, impegnandomi a rispettarlo.
-                        {/if}
-                    </label>
-                </p>
-
-                {#if isMinorenne}
-                    <p>
-                        <input type="checkbox" id="intesa_genitori" name="intesa_genitori" required />
-                        <label for="intesa_genitori">
-                            Dichiaro di agire d'intesa con l'altro genitore o tutore, manlevando l'associazione da eventuali contestazioni in caso contrario.
-                        </label>
-                    </p>
-
-                    <p>
-                        <input type="checkbox" id="autorizzazione_uscita" name="autorizzazione_uscita" required />
-                        <label for="autorizzazione_uscita">
-                            Autorizzo il minore ad allontanarsi autonomamente al termine delle attività istituzionali, esonerando l'associazione da ogni obbligo di vigilanza oltre tale orario.
-                        </label>
-                    </p>
-                {/if}
-            </fieldset>
-
-            <fieldset>
-                <legend>Consensi facoltativi</legend>
-
-                <p>
-                    <input type="checkbox" id="consenso_messaggi" name="consenso_messaggi" />
-                    <label for="consenso_messaggi">Acconsento alla ricezione di avvisi e comunicazioni organizzative tramite strumenti di messaggistica istantanea.</label>
-                </p>
-
-                <p>
-                    <input type="checkbox" id="consenso_email" name="consenso_email" />
-                    <label for="consenso_email">Acconsento alla ricezione di aggiornamenti sulle attività istituzionali all'indirizzo email indicato.</label>
-                </p>
-
-                <p>
-                    <input type="checkbox" id="consenso_immagini" name="consenso_immagini" />
-                    <label for="consenso_immagini">
-                        {#if isMinorenne}
-                            Ho letto la <a href="/legal/images" target="_blank" rel="noopener noreferrer">liberatoria per immagini e riprese video</a> e acconsento alla pubblicazione di immagini e riprese che ritraggono il minore, per finalità istituzionali e promozionali.
-                        {:else}
-                            Ho letto la <a href="/legal/images" target="_blank" rel="noopener noreferrer">liberatoria per immagini e riprese video</a> e acconsento alla pubblicazione di immagini e riprese che mi ritraggono, per finalità istituzionali e promozionali.
-                        {/if}
-                    </label>
-                </p>
-            </fieldset>
-
-            <fieldset>
-                <legend>{isMinorenne ? "Documento di identità del genitore" : "Documento di identità"}</legend>
-                <p>La copia del documento sostituisce la firma sulla richiesta di iscrizione.</p>
-                <p>
-                    <label for="documento_identita">Copia del documento (PDF, JPG o PNG)</label>
-                    <input type="file" id="documento_identita" name="attachment" required accept="application/pdf,image/jpeg,image/png" />
-                </p>
-            </fieldset>
+            <legend>Residenza</legend>
+            {@render addressFields("residenza")}
 
             <p>
-                <input type="checkbox" id="richiesta_iscrizione" name="richiesta_iscrizione" required />
-                <label for="richiesta_iscrizione">
+                <input type="checkbox" id="domicilio_uguale_residenza" name="domicilio_uguale_residenza" bind:checked={domicilioUgualeResidenza} />
+                <label for="domicilio_uguale_residenza">Il domicilio corrisponde alla residenza</label>
+            </p>
+        </fieldset>
+
+        {#if !domicilioUgualeResidenza}
+            <fieldset>
+                <legend>Domicilio</legend>
+                {@render addressFields("domicilio")}
+            </fieldset>
+        {/if}
+
+        <fieldset>
+            <legend>Contatti</legend>
+
+            <p>
+                <label for="telefono">{isMinorenne ? "Telefono del genitore" : "Telefono"}</label>
+                <input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="tel" required minlength="9" maxlength="15" />
+            </p>
+
+            <p>
+                <label for="email">{isMinorenne ? "Email del genitore" : "Email"}</label>
+                <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required maxlength="100" />
+            </p>
+
+            {#if isMinorenne}
+                <p>
+                    <label for="telefono_minore">Telefono del minore</label>
+                    <input type="tel" id="telefono_minore" name="telefono_minore" autocomplete="off" inputmode="tel" minlength="9" maxlength="15" />
+                </p>
+
+                <p>
+                    <label for="email_minore">Email del minore</label>
+                    <input type="email" id="email_minore" name="email_minore" autocomplete="off" inputmode="email" maxlength="100" />
+                </p>
+            {/if}
+        </fieldset>
+
+        <fieldset>
+            <legend>Dichiarazioni</legend>
+
+            <p>
+                <input type="checkbox" id="privacy" name="privacy" required />
+                <label for="privacy">
+                    Dichiaro di aver preso visione dell'<a href="/legal/privacy" target="_blank" rel="noopener noreferrer">informativa sulla privacy</a> e acconsento al trattamento dei miei dati personali per la gestione della richiesta di iscrizione.
+                </label>
+            </p>
+
+            <p>
+                <input type="checkbox" id="statuto" name="statuto" required />
+                <label for="statuto">
                     {#if isMinorenne}
-                        Chiedo, in qualità di genitore o tutore, l'iscrizione del minore sopra indicato come socio della Filarmonica Alessandro Stradella APS.
+                        Dichiaro di conoscere e accettare lo <a href="/transparency/statute" target="_blank" rel="noopener noreferrer">statuto</a>, impegnandomi a rispettarlo anche per conto del minore.
                     {:else}
-                        Chiedo la mia iscrizione come socio della Filarmonica Alessandro Stradella APS.
+                        Dichiaro di conoscere e accettare lo <a href="/transparency/statute" target="_blank" rel="noopener noreferrer">statuto</a>, impegnandomi a rispettarlo.
                     {/if}
                 </label>
             </p>
-        {/if}
 
-        <p>Tutti i campi sono obbligatori, salvo quelli indicati come facoltativi.</p>
+            {#if isMinorenne}
+                <p>
+                    <input type="checkbox" id="intesa_genitori" name="intesa_genitori" required />
+                    <label for="intesa_genitori">
+                        Dichiaro di agire d'intesa con l'altro genitore o tutore, manlevando l'associazione da eventuali contestazioni in caso contrario.
+                    </label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="autorizzazione_uscita" name="autorizzazione_uscita" required />
+                    <label for="autorizzazione_uscita">
+                        Autorizzo il minore ad allontanarsi autonomamente al termine delle attività istituzionali, esonerando l'associazione da ogni obbligo di vigilanza oltre tale orario.
+                    </label>
+                </p>
+            {/if}
+        </fieldset>
+
+        <fieldset>
+            <legend>Consensi facoltativi</legend>
+
+            <p>
+                <input type="checkbox" id="consenso_messaggi" name="consenso_messaggi" />
+                <label for="consenso_messaggi">Acconsento alla ricezione di avvisi e comunicazioni organizzative tramite strumenti di messaggistica istantanea.</label>
+            </p>
+
+            <p>
+                <input type="checkbox" id="consenso_email" name="consenso_email" />
+                <label for="consenso_email">Acconsento alla ricezione di aggiornamenti sulle attività istituzionali all'indirizzo email indicato.</label>
+            </p>
+
+            <p>
+                <input type="checkbox" id="consenso_immagini" name="consenso_immagini" />
+                <label for="consenso_immagini">
+                    {#if isMinorenne}
+                        Ho letto la <a href="/legal/images" target="_blank" rel="noopener noreferrer">liberatoria per immagini e riprese video</a> e acconsento alla pubblicazione di immagini e riprese che ritraggono il minore, per finalità istituzionali e promozionali.
+                    {:else}
+                        Ho letto la <a href="/legal/images" target="_blank" rel="noopener noreferrer">liberatoria per immagini e riprese video</a> e acconsento alla pubblicazione di immagini e riprese che mi ritraggono, per finalità istituzionali e promozionali.
+                    {/if}
+                </label>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>{isMinorenne ? "Documento di identità del genitore" : "Documento di identità"}</legend>
+            <p>La copia del documento sostituisce la firma sulla richiesta di iscrizione.</p>
+            <p>
+                <label for="documento_identita">Copia del documento (PDF, JPG o PNG)</label>
+                <input type="file" id="documento_identita" name="attachment" required accept="application/pdf,image/jpeg,image/png" />
+            </p>
+        </fieldset>
 
         <p>
-            <button type="reset">Cancella i campi</button>
-            <button type="submit" disabled={isTooYoung}>Invia la richiesta di iscrizione</button>
+            <input type="checkbox" id="richiesta_iscrizione" name="richiesta_iscrizione" required />
+            <label for="richiesta_iscrizione">
+                {#if isMinorenne}
+                    Chiedo, in qualità di genitore o tutore, l'iscrizione del minore sopra indicato come socio della Filarmonica Alessandro Stradella APS.
+                {:else}
+                    Chiedo la mia iscrizione come socio della Filarmonica Alessandro Stradella APS.
+                {/if}
+            </label>
         </p>
-    </form>
-</main>
+    {/if}
+
+    <p>Tutti i campi sono obbligatori, salvo quelli indicati come facoltativi.</p>
+
+    <p>
+        <button type="reset">Cancella i campi</button>
+        <button type="submit" disabled={isTooYoung}>Invia la richiesta di iscrizione</button>
+    </p>
+</form>

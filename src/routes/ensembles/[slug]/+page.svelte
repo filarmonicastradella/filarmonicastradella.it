@@ -9,13 +9,11 @@
     <meta name="description" content={data.ensemble.summary} />
 </svelte:head>
 
-<main id="contenuto">
-    <article>
-        <h1>{data.ensemble.title}</h1>
-        <p>{data.ensemble.summary}</p>
+<article>
+    <h1>{data.ensemble.title}</h1>
+    <p>{data.ensemble.summary}</p>
 
-        <data.ensemble.component />
-    </article>
+    <data.ensemble.component />
+</article>
 
-    <p><a href="/ensembles">Tutti gli ensemble</a></p>
-</main>
+<p><a href="/ensembles">Tutti gli ensemble</a></p>

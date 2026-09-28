@@ -21,19 +21,17 @@
     <meta name="description" content="I prossimi concerti, le prove aperte e tutte le attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano." />
 </svelte:head>
 
-<main id="contenuto">
-    <header>
-        <h1>Eventi</h1>
-        <p>Scopri i prossimi concerti, le prove aperte, i saggi e tutte le attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano.</p>
-    </header>
+<header>
+    <h1>Eventi</h1>
+    <p>Scopri i prossimi concerti, le prove aperte, i saggi e tutte le attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano.</p>
+</header>
 
-    {#if events.length === 0}
-        <p>Al momento non ci sono eventi in programma. Torna a trovarci presto!</p>
-    {:else}
-        <TimelineSections items={events} date={(event) => event.start}>
-            {#snippet entry(event, level)}
-                <EventCard {event} {level} />
-            {/snippet}
-        </TimelineSections>
-    {/if}
-</main>
+{#if events.length === 0}
+    <p>Al momento non ci sono eventi in programma. Torna a trovarci presto!</p>
+{:else}
+    <TimelineSections items={events} date={(event) => event.start}>
+        {#snippet entry(event, level)}
+            <EventCard {event} {level} />
+        {/snippet}
+    </TimelineSections>
+{/if}

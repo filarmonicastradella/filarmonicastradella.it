@@ -43,6 +43,8 @@
 
 <SiteHeader />
 
-{@render children()}
+<main id="contenuto">
+    {@render children()}
+</main>
 
 <SiteFooter />

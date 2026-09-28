@@ -10,15 +10,13 @@
     <meta name="description" content={data.post.excerpt} />
 </svelte:head>
 
-<main id="contenuto">
-    <article itemscope itemtype="https://schema.org/NewsArticle">
-        <header>
-            <p><time itemprop="datePublished" datetime={data.post.date}>{formatNewsDate(data.post.date)}</time></p>
-            <h1 itemprop="headline">{data.post.title}</h1>
-        </header>
+<article itemscope itemtype="https://schema.org/NewsArticle">
+    <header>
+        <p><time itemprop="datePublished" datetime={data.post.date}>{formatNewsDate(data.post.date)}</time></p>
+        <h1 itemprop="headline">{data.post.title}</h1>
+    </header>
 
-        <data.post.component />
-    </article>
+    <data.post.component />
+</article>
 
-    <p><a href="/news">Tutte le notizie</a></p>
-</main>
+<p><a href="/news">Tutte le notizie</a></p>
