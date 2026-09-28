@@ -7,9 +7,9 @@
 <main id="contenuto">
     <article>
         <header>
-            <p>Informativa sull'uso dei cookie, ai sensi del Provvedimento del Garante per la protezione dei dati personali n. 231 del 10 giugno 2021</p>
             <h1>Politica sui cookie</h1>
             <p>Questo sito non imposta cookie propri, non usa strumenti di analisi statistica e non profila i visitatori.</p>
+            <p>Informativa sull'uso dei cookie, ai sensi del Provvedimento del Garante per la protezione dei dati personali n. 231 del 10 giugno 2021</p>
         </header>
 
         <section aria-labelledby="cosa-heading">

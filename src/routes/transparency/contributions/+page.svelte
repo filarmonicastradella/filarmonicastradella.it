@@ -4,8 +4,10 @@
 </svelte:head>
 
 <main id="contenuto">
-    <h1>Contributi pubblici ricevuti</h1>
-    <p>Qui l'associazione pubblica l'elenco dei contributi, delle sovvenzioni e dei vantaggi economici ricevuti da pubbliche amministrazioni.</p>
+    <header>
+        <h1>Contributi pubblici ricevuti</h1>
+        <p>Qui l'associazione pubblica l'elenco dei contributi, delle sovvenzioni e dei vantaggi economici ricevuti da pubbliche amministrazioni.</p>
+    </header>
 
     <table>
         <caption>Contributi pubblici ricevuti</caption>

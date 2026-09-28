@@ -259,7 +259,7 @@ main {
         [content-end] minmax(var(--space-md), 1fr)
         [full-end];
     align-content: start;
-    padding-block: var(--space-2xl) 0;
+    padding-block: var(--space-3xl) 0;
 }
 
 main > * {
@@ -271,11 +271,7 @@ main > * + * {
     margin-block-start: var(--space-2xl);
 }
 
-main > header {
-    padding-block: var(--space-xl) 0;
-}
-
-main > header > p {
+:is(main, article) > header > p {
     max-width: var(--measure);
     color: var(--text-muted);
     font-size: var(--font-size-lg);
@@ -320,7 +316,7 @@ main > section:has(> hgroup) {
     gap: var(--space-lg);
     grid-column: full;
     min-height: calc(100svh - var(--header-height));
-    margin-block-start: calc(-1 * var(--space-2xl));
+    margin-block-start: calc(-1 * var(--space-3xl));
     padding: var(--space-3xl) var(--gutter);
     background: var(--hero-overlay), url("../assets/wallpaper.jpg") center / cover;
     color: var(--on-image);

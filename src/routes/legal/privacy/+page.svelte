@@ -7,9 +7,9 @@
 <main id="contenuto">
     <article>
         <header>
-            <p>Informativa ai sensi degli artt. 13 e 14 del Regolamento UE 2016/679 (GDPR)</p>
             <h1>Informativa sulla privacy</h1>
             <p>Questa informativa descrive quali dati personali tratta la Filarmonica Alessandro Stradella APS quando visiti questo sito, ci scrivi o compili un modulo.</p>
+            <p>Informativa ai sensi degli artt. 13 e 14 del Regolamento UE 2016/679 (GDPR)</p>
         </header>
 
         <section aria-labelledby="titolare-heading">

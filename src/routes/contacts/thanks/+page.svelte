@@ -4,7 +4,9 @@
 </svelte:head>
 
 <main id="contenuto">
-    <h1>Messaggio inviato</h1>
-    <p>Grazie per averci scritto: ti risponderemo il prima possibile all'indirizzo email che hai indicato.</p>
+    <header>
+        <h1>Messaggio inviato</h1>
+        <p>Grazie per averci scritto: ti risponderemo il prima possibile all'indirizzo email che hai indicato.</p>
+    </header>
     <p><a href="/">Torna alla pagina principale</a></p>
 </main>

@@ -8,10 +8,12 @@
 </svelte:head>
 
 <main id="contenuto">
-    <h1>Ensemble</h1>
-    <p>
-        Una concert band, una street band, un'orchestra con archi e un gruppo di musica antica e barocca: quattro ensemble per suonare insieme.
-    </p>
+    <header>
+        <h1>Ensemble</h1>
+        <p>
+            Una concert band, una street band, un'orchestra con archi e un gruppo di musica antica e barocca: quattro ensemble per suonare insieme.
+        </p>
+    </header>
 
     <section>
         <h2>I nostri ensemble</h2>

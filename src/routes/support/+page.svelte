@@ -4,10 +4,12 @@
 </svelte:head>
 
 <main id="contenuto">
-    <h1>Sostienici</h1>
-    <p>
-        Il sostegno di soci, amici e donatori è fondamentale per permettere all'associazione di continuare la propria attività musicale, promuovere la formazione dei giovani e custodire la nostra tradizione.
-    </p>
+    <header>
+        <h1>Sostienici</h1>
+        <p>
+            Il sostegno di soci, amici e donatori è fondamentale per permettere all'associazione di continuare la propria attività musicale, promuovere la formazione dei giovani e custodire la nostra tradizione.
+        </p>
+    </header>
 
     <ul>
         <li>
