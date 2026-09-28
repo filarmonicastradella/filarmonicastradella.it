@@ -288,7 +288,7 @@ main > section + section {
     padding-top: var(--space-2xl);
 }
 
-/* Cambio di pagina: l'intestazione resta ferma, il resto sfuma con un leggero scorrimento */
+/* Cambio di pagina: l'intestazione resta ferma, il resto sfuma */
 body > div > header {
     view-transition-name: intestazione;
 }
@@ -419,12 +419,18 @@ body > div > footer h2 {
     font-weight: var(--font-weight-semibold);
 }
 
-body > div > footer li + li {
-    margin-top: var(--space-2xs);
+body > div > footer nav ul {
+    display: grid;
+    gap: var(--space-2xs);
+}
+
+/* La nota finale e i social occupano una riga intera */
+body > div > footer > p:last-child,
+body > div > footer nav:has(svg) {
+    grid-column: 1 / -1;
 }
 
 body > div > footer > p:last-child {
-    grid-column: 1 / -1;
     margin: 0;
     color: var(--text-muted);
 }
@@ -443,31 +449,17 @@ body > div > footer dt:first-child {
     margin-top: 0;
 }
 
-/* I social vanno su una riga a parte, prima della nota finale */
-body > div > footer nav[aria-label="Social media"] {
-    grid-column: 1 / -1;
-    order: 9;
-}
-
-body > div > footer > p:last-child {
-    order: 10;
-}
-
-body > div > footer nav[aria-label="Social media"] ul {
+body > div > footer nav:has(svg) ul {
     display: flex;
     gap: var(--space-md);
 }
 
-body > div > footer nav[aria-label="Social media"] li + li {
-    margin-top: 0;
-}
-
-body > div > footer nav[aria-label="Social media"] a {
+body > div > footer nav:has(svg) a {
     display: block;
     color: var(--text-muted);
     line-height: 0;
 }
 
-body > div > footer nav[aria-label="Social media"] a:hover {
+body > div > footer nav:has(svg) a:hover {
     color: var(--link);
 }
