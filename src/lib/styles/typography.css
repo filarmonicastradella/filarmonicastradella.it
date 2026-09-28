@@ -21,6 +21,7 @@
     --font-size-2xl: 1.953rem;
     --font-size-3xl: 2.441rem;
     --font-size-4xl: 3.052rem;
+    --font-size-5xl: 3.815rem;
 
     --line-height-display: 1.05;
     --line-height-heading: 1.15;
@@ -49,8 +50,13 @@ h6 {
     font-family: var(--font-heading);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-heading);
-    letter-spacing: var(--letter-spacing-tight);
     text-wrap: balance;
+}
+
+/* La crenatura stretta si nota solo sui titoli grandi: sui piccoli toglie leggibilità */
+h1,
+h2 {
+    letter-spacing: var(--letter-spacing-tight);
 }
 
 h2,
@@ -71,13 +77,13 @@ dl > div > dt {
 }
 
 h1 {
-    font-size: clamp(2rem, 3.5vw + 1rem, var(--font-size-4xl));
+    font-size: clamp(2rem, 4vw + 1rem, var(--font-size-5xl));
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-display);
 }
 
 h2 {
-    font-size: clamp(1.625rem, 2.5vw + 1rem, var(--font-size-3xl));
+    font-size: clamp(1.625rem, 3vw + 1rem, var(--font-size-4xl));
 }
 
 h3 {
