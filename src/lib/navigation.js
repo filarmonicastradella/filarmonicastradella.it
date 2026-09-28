@@ -30,7 +30,6 @@ export const navItems = [
             { label: "Diventa Socio", href: "/support/join" },
             { label: "Erogazioni Liberali", href: "/support/donate" },
             { label: "5x1000", href: "/support/5x1000" },
-            { label: "Suona con Noi", href: "/support/auditions" },
             { label: "Fai Volontariato", href: "/support/volunteer" },
             { label: "Moduli e Iscrizioni", href: "/support/forms" },
             { label: "Regolamenti", href: "/support/rules" },

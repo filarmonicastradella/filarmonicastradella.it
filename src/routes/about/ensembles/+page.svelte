@@ -25,5 +25,10 @@
         </ul>
     </Section>
 
-    <p><a href="/support/auditions">Suona con noi</a></p>
+    <Section title="Come suonare con noi">
+        <ol>
+            <li>Iscriviti come socio dell'associazione con la <a href="/support/join">richiesta di iscrizione</a>.</li>
+            <li>Chiedi di entrare nella formazione in cui vuoi suonare.</li>
+        </ol>
+    </Section>
 </main>

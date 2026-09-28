@@ -1,6 +1,6 @@
 <svelte:head>
     <title>Sostienici — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="Tutti i modi per sostenere la Filarmonica Alessandro Stradella APS: iscriversi, donare, destinare il 5x1000, suonare o fare volontariato." />
+    <meta name="description" content="Tutti i modi per sostenere la Filarmonica Alessandro Stradella APS: iscriversi, donare, destinare il 5x1000 o fare volontariato." />
 </svelte:head>
 
 <main id="contenuto">
@@ -21,10 +21,6 @@
         <li>
             <h2><a href="/support/5x1000">5x1000</a></h2>
             <p>Destinare il 5x1000 non costa nulla e sostiene le nostre attività.</p>
-        </li>
-        <li>
-            <h2><a href="/support/auditions">Suona con noi</a></h2>
-            <p>Suoni uno strumento o vuoi iniziare? Entra nella banda e negli ensemble.</p>
         </li>
         <li>
             <h2><a href="/support/volunteer">Fai volontariato</a></h2>
