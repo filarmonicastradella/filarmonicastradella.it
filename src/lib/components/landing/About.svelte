@@ -1,5 +1,8 @@
-<section aria-labelledby="chi-siamo-heading">
-    <h2 id="chi-siamo-heading">Chi siamo</h2>
+<script lang="ts">
+    import Section from "$lib/components/Section.svelte";
+</script>
+
+<Section title="Chi siamo">
     <p>
         La Filarmonica Alessandro Stradella APS rappresenta un punto di riferimento storico e culturale per il territorio di Fivizzano e della Lunigiana. Custodiamo una tradizione secolare di musica e aggregazione, unendo la passione per il repertorio bandistico alla formazione di nuove generazioni di strumentisti.
     </p>
@@ -10,4 +13,4 @@
         <li><a href="/about/history">Scopri la nostra storia</a></li>
         <li><a href="/about/mission">La nostra missione</a></li>
     </ul>
-</section>
+</Section>

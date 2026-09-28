@@ -1,5 +1,8 @@
-<section aria-labelledby="sostienici-heading">
-    <h2 id="sostienici-heading">Sostieni la Filarmonica</h2>
+<script lang="ts">
+    import Section from "$lib/components/Section.svelte";
+</script>
+
+<Section title="Sostieni la Filarmonica">
     <p>
         Il sostegno di soci, amici e donatori è fondamentale per permettere all'associazione di continuare la propria attività musicale, promuovere la formazione dei giovani e custodire la nostra tradizione.
     </p>
@@ -23,4 +26,4 @@
         </li>
         -->
     </ul>
-</section>
+</Section>

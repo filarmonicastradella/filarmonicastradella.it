@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Section from "$lib/components/Section.svelte";
     import { onMount } from "svelte";
     import { fetchGallery, type GallerySlide } from "$lib/gallery";
     import { dragScroll, scaleByDistance } from "$lib/attachments";
@@ -18,8 +19,7 @@
     });
 </script>
 
-<section aria-labelledby="galleria-heading">
-    <h2 id="galleria-heading">Momenti in musica</h2>
+<Section title="Momenti in musica">
 
     {#if status === "loading"}
         <p role="status">Caricamento della galleria in corso…</p>
@@ -55,4 +55,4 @@
     </noscript>
 
     <p><a href="https://instagram.com/filarmonicastradella" target="_blank" rel="noopener noreferrer">Guarda tutto su Instagram</a></p>
-</section>
+</Section>

@@ -1,6 +1,9 @@
+<script lang="ts">
+    import Section from "$lib/components/Section.svelte";
+</script>
+
 <footer>
-    <section aria-labelledby="footer-contatti-heading">
-        <h2 id="footer-contatti-heading">Contatti</h2>
+    <Section title="Contatti">
 
         <address>
             <dl>
@@ -16,7 +19,7 @@
                 <dd><a href="mailto:filarmonicastradella@pec.it">filarmonicastradella@pec.it</a></dd>
             </dl>
         </address>
-    </section>
+    </Section>
 
     <nav aria-label="Social media">
         <ul>
@@ -28,8 +31,7 @@
         </ul>
     </nav>
 
-    <section aria-labelledby="footer-associazione-heading">
-        <h2 id="footer-associazione-heading">L'associazione</h2>
+    <Section title="L'associazione">
 
         <dl>
             <dt>Denominazione</dt>
@@ -43,7 +45,7 @@
                 <a href="https://www.anbima.it/massacarrara/regionetoscana-massacarrara-unita-di-base" target="_blank" rel="noopener noreferrer">ANBIMA APS</a>
             </dd>
         </dl>
-    </section>
+    </Section>
 
     <nav aria-label="Informazioni legali">
         <ul>

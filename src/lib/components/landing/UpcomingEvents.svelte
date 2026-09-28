@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Section from "$lib/components/Section.svelte";
     import { onMount } from "svelte";
     import { fetchUpcomingEvents, type EventItem } from "$lib/events";
     import { trackScrollEdges } from "$lib/attachments";
@@ -40,8 +41,7 @@
 
 <svelte:document onvisibilitychange={() => document.visibilityState === "visible" && loadEvents()} />
 
-<section aria-labelledby="eventi-heading">
-    <h2 id="eventi-heading">Prossimi eventi</h2>
+<Section title="Prossimi eventi">
 
     {#if status === "loading"}
         <p role="status">Caricamento degli eventi in corso…</p>
@@ -79,4 +79,4 @@
     </noscript>
 
     <p><a href="/events">Tutti gli eventi</a></p>
-</section>
+</Section>

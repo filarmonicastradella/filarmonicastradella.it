@@ -1,5 +1,8 @@
-<section aria-labelledby="in-primo-piano-heading">
-    <h2 id="in-primo-piano-heading">In primo piano</h2>
+<script lang="ts">
+    import Section from "$lib/components/Section.svelte";
+</script>
+
+<Section title="In primo piano">
     <ul>
         <li>
             <h3><a href="/about/ensembles">Gli Ensemble</a></h3>
@@ -20,4 +23,4 @@
             </p>
         </li>
     </ul>
-</section>
+</Section>
