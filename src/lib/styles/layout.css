@@ -400,17 +400,34 @@ main > section:has(> hgroup) a:hover {
     }
 }
 
-/* Piè di pagina */
+/*
+ * Piè di pagina: colonne a soglie esplicite, non auto-fit. Con auto-fit le colonne "fantasma"
+ * non si eliminano quando un elemento (social, nota finale) attraversa l'intera riga con
+ * grid-column: 1/-1, perché quell'elemento tocca comunque ogni colonna: il conteggio delle
+ * colonne dipende dalla larghezza in modo imprevedibile e quell'elemento smette di essere
+ * largo quanto il resto del piè di pagina.
+ */
 body > div > footer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 18rem));
-    justify-content: space-between;
+    grid-template-columns: 1fr;
     gap: var(--space-xl);
     margin-top: var(--space-3xl);
     padding: var(--space-2xl) var(--gutter);
     border-top: 1px solid var(--border-soft);
     background: var(--bg-subtle);
     font-size: var(--font-size-sm);
+}
+
+@media (min-width: 40rem) {
+    body > div > footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 64rem) {
+    body > div > footer {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 body > div > footer h2 {
