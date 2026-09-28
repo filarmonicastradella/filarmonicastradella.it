@@ -11,6 +11,12 @@
             </p>
         </li>
         <li>
+            <h3><a href="/about/history">La Nostra Storia</a></h3>
+            <p>
+                Radici profonde che affondano nel 1777. Un viaggio attraverso i secoli tra cultura bandistica, strumenti storici e la memoria viva della nostra comunità.
+            </p>
+        </li>
+        <li>
             <h3><a href="https://accademiastradella.it" target="_blank" rel="noopener noreferrer">Accademia Stradella</a></h3>
             <p>
                 La scuola di musica è gestita da un'altra associazione, con cui collaboriamo. Corsi e iscrizioni sono sul suo sito.

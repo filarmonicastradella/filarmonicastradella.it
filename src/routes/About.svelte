@@ -9,8 +9,5 @@
     <p>
         La nostra missione è mantenere viva la musica bandistica come bene comune: la suoniamo, la insegniamo alle nuove generazioni e la portiamo nelle piazze, nelle feste e nelle occasioni della nostra comunità.
     </p>
-    <ul>
-        <li><a href="/about/history">Scopri la nostra storia</a></li>
-        <li><a href="/about/mission">La nostra missione</a></li>
-    </ul>
+    <p><a href="/about/mission">La nostra missione</a></p>
 </Section>
