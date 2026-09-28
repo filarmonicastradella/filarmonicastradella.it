@@ -158,6 +158,27 @@ li > article > p[itemprop="description"] {
     scrollbar-width: thin;
 }
 
+/* I pulsanti di scorrimento stanno sulla riga del titolo, a destra */
+section:has(> [role="group"]) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+section:has(> [role="group"]) > * {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+section:has(> [role="group"]) > :is(h2, h3) {
+    grid-column: 1;
+}
+
+section:has(> [role="group"]) > [role="group"] {
+    grid-column: 2;
+}
+
 /* Il carosello degli eventi ha i pulsanti di scorrimento: la barra si nasconde */
 ol[tabindex="0"] {
     scrollbar-width: none;
