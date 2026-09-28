@@ -1,12 +1,13 @@
 <script lang="ts">
     import type { EventItem } from "$lib/events";
 
-    let { event }: { event: EventItem } = $props();
+    // `level` è il livello del titolo, da scegliere in base a dove compare la scheda.
+    let { event, level = 3 }: { event: EventItem; level?: 3 | 4 } = $props();
 </script>
 
 <article>
     <p><time datetime={event.start}>{event.when}</time></p>
-    <h3><a href="/events/{event.id}">{event.summary}</a></h3>
+    <svelte:element this={`h${level}`}><a href="/events/{event.id}">{event.summary}</a></svelte:element>
     {#if event.description}
         <p>{event.description}</p>
     {/if}

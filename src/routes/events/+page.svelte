@@ -18,18 +18,25 @@
         }
     });
 
-    // Eventi raggruppati per mese, nell'ordine in cui arrivano dal calendario.
-    const groups = $derived.by(() => {
-        const byMonth = new Map<string, EventItem[]>();
+    const capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
+
+    // Eventi raggruppati per anno e poi per mese, nell'ordine in cui arrivano dal calendario.
+    const years = $derived.by(() => {
+        const byYear = new Map<string, Map<string, EventItem[]>>();
         for (const event of events) {
-            const month = event.start.slice(0, 7);
-            byMonth.set(month, [...(byMonth.get(month) ?? []), event]);
+            const [year, month] = event.start.split("-");
+            const months = byYear.get(year) ?? new Map<string, EventItem[]>();
+            months.set(month, [...(months.get(month) ?? []), event]);
+            byYear.set(year, months);
         }
-        return [...byMonth].map(([month, items]) => {
-            const [year, monthNumber] = month.split("-").map(Number);
-            const title = new Date(year, monthNumber - 1).toLocaleDateString("it-IT", { month: "long", year: "numeric" });
-            return { month, title, items };
-        });
+        return [...byYear].map(([year, months]) => ({
+            year,
+            months: [...months].map(([month, items]) => ({
+                month,
+                title: capitalize(new Date(Number(year), Number(month) - 1).toLocaleDateString("it-IT", { month: "long" })),
+                items
+            }))
+        }));
     });
 </script>
 
@@ -51,13 +58,17 @@
     {:else if status === "ready" && events.length === 0}
         <p>Al momento non ci sono eventi in programma. Torna a trovarci presto!</p>
     {:else if status === "ready"}
-        {#each groups as group (group.month)}
-            <Section title={group.title}>
-                <ul>
-                    {#each group.items as event (event.id)}
-                        <li><EventCard {event} /></li>
-                    {/each}
-                </ul>
+        {#each years as { year, months } (year)}
+            <Section title={year}>
+                {#each months as { month, title, items } (month)}
+                    <Section {title} level={3}>
+                        <ul>
+                            {#each items as event (event.id)}
+                                <li><EventCard {event} level={4} /></li>
+                            {/each}
+                        </ul>
+                    </Section>
+                {/each}
             </Section>
         {/each}
     {/if}
