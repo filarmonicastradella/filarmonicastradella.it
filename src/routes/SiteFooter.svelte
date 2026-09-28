@@ -30,8 +30,6 @@
                 <dd><a href="mailto:{organization.pec}">{organization.pec}</a></dd>
             </dl>
         </address>
-
-        <p><a href="/contacts/message">Scrivici tramite il modulo di contatto</a></p>
     </section>
 
     <section>
