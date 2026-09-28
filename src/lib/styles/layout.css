@@ -12,6 +12,7 @@
     --space-xl: 2rem;
     --space-2xl: 3rem;
     --space-3xl: 5rem;
+    --space-4xl: 8rem;
 
     --page-width: 72rem;
     --measure: 65ch;
@@ -275,7 +276,7 @@ main > * {
 }
 
 main > * + * {
-    margin-block-start: var(--space-3xl);
+    margin-block-start: var(--space-4xl);
 }
 
 :is(main, article) > header > p {
