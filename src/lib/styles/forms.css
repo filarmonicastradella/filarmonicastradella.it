@@ -5,15 +5,15 @@
 button {
     padding: 0.7rem 1.4rem;
     border: 1px solid transparent;
-    background: var(--action-bg);
-    color: var(--action-text);
+    background: var(--color-brand);
+    color: var(--on-image);
     cursor: pointer;
     font-weight: var(--font-weight-semibold);
     transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
 
 button:hover:not(:disabled) {
-    background: var(--action-bg-hover);
+    background: var(--color-brand-dark);
 }
 
 button:disabled {
@@ -107,7 +107,7 @@ textarea {
 input:not([type="checkbox"], [type="radio"], [type="hidden"]):focus,
 select:focus,
 textarea:focus {
-    border-color: var(--focus-ring);
+    border-color: var(--link);
 }
 
 textarea {

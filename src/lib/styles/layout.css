@@ -66,8 +66,8 @@ body > div > a[href="#contenuto"] {
     left: var(--space-md);
     z-index: 100;
     padding: var(--space-xs) var(--space-md);
-    background: var(--action-bg);
-    color: var(--action-text);
+    background: var(--color-brand);
+    color: var(--on-image);
     transform: translateY(-120%);
 }
 
