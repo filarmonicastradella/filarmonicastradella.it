@@ -1,4 +1,5 @@
 <script lang="ts">
+    import "$lib/styles/typography.css";
     import favicon from "$lib/assets/favicon.svg";
     import SiteHeader from "./SiteHeader.svelte";
     import SiteFooter from "./SiteFooter.svelte";

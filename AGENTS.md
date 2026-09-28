@@ -37,7 +37,8 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 - Ogni pagina ha `<main id="contenuto">` (bersaglio del link "Salta al contenuto"), `<title>` e meta description.
 
 ### CSS
-- Unico stile attivo per ora, in `+layout.svelte`: larghezza massima del contenuto (`body`, 65ch, centrata) e media contenuti nella colonna. Per il resto gli stili sono spenti di proposito: i blocchi `<style>` originali sono commentati e le versioni complete stanno in `.old-components/`. Si reintroducono gradualmente, partendo dai token in un file separato, senza valori fissi fuori dai token e senza stili inline.
+- Sistema tipografico in `src/lib/styles/typography.css` (token e regole degli elementi): Cormorant Garamond per i titoli, Montserrat per il testo, scala modulare 1,25, solo tipografia (niente colori né layout). I font sono importati in `+layout.svelte`.
+- Altro stile attivo per ora, in `+layout.svelte`: larghezza massima del contenuto (`body`, 65ch, centrata) e media contenuti nella colonna. Per il resto gli stili sono spenti di proposito: i blocchi `<style>` originali sono commentati e le versioni complete stanno in `.old-components/`. Si reintroducono gradualmente, partendo dai token in un file separato, senza valori fissi fuori dai token e senza stili inline.
 
 ### Svelte
 - Svelte 5 idiomatico: rune (`$state`, `$state.raw` per dati solo riassegnati, `$derived`, `$props`), `{@attach}` per il comportamento sul DOM (in `$lib/attachments.ts`), `<svelte:window>`/`<svelte:document>` per gli eventi globali, `each` con chiave. Niente DOM imperativo, `setInterval` di polling o `$effect` per sincronizzare stato.

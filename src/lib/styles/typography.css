@@ -1,0 +1,129 @@
+/*
+ * Sistema tipografico: Cormorant Garamond per i titoli, Montserrat per il testo.
+ * Solo tipografia (font, dimensioni, pesi, interlinea, spaziatura): niente colori né layout.
+ * Scala modulare con rapporto 1,25 (terza maggiore) su base 16px.
+ */
+
+:root {
+    --font-heading: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Montserrat Variable", system-ui, -apple-system, sans-serif;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.563rem;
+    --font-size-2xl: 1.953rem;
+    --font-size-3xl: 2.441rem;
+    --font-size-4xl: 3.052rem;
+
+    --line-height-display: 1.05;
+    --line-height-heading: 1.15;
+    --line-height-body: 1.6;
+
+    --letter-spacing-tight: -0.02em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.04em;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-body);
+    letter-spacing: var(--letter-spacing-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Titoli */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-tight);
+    text-wrap: balance;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-block: 1.5em 0.5em;
+}
+
+h1 {
+    font-size: clamp(2rem, 3.5vw + 1rem, var(--font-size-4xl));
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-display);
+}
+
+h2 {
+    font-size: clamp(1.625rem, 2.5vw + 1rem, var(--font-size-3xl));
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+}
+
+h5 {
+    font-size: var(--font-size-lg);
+}
+
+h6 {
+    font-size: var(--font-size-md);
+}
+
+/* Testo */
+p,
+li,
+dd,
+figcaption {
+    text-wrap: pretty;
+}
+
+strong,
+dt,
+th {
+    font-weight: var(--font-weight-semibold);
+}
+
+small {
+    font-size: var(--font-size-sm);
+}
+
+abbr[title] {
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+address {
+    font-style: normal;
+}
+
+time {
+    font-variant-numeric: lining-nums;
+}
+
+/* I controlli dei moduli seguono la tipografia del testo */
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    letter-spacing: inherit;
+}
