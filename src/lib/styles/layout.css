@@ -366,17 +366,15 @@ main > section:has(> hgroup) hgroup p {
 
 main > section:has(> hgroup) a {
     display: inline-block;
-    padding: 0.75rem 2rem;
-    border: 1px solid currentColor;
     color: inherit;
     font-weight: var(--font-weight-semibold);
-    text-decoration: none;
-    transition: background var(--transition), color var(--transition);
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+    transition: opacity var(--transition);
 }
 
 main > section:has(> hgroup) a:hover {
-    background: var(--on-image);
-    color: var(--color-brand-dark);
+    opacity: 0.75;
 }
 
 /* Al caricamento la hero compare a scalare: titolo, frase e pulsante */
