@@ -19,7 +19,7 @@
         <h1>Consiglio direttivo</h1>
         <p>
             Il Consiglio direttivo è l'organo di amministrazione dell'associazione. È stato nominato il
-            <time datetime="2026-03-22">22 marzo 2026</time>.
+            <time datetime="2026-03-22">22 marzo 2026</time>. Il mandato dura un anno.
         </p>
     </header>
 
