@@ -13,6 +13,19 @@
 </script>
 
 <footer>
+    <nav aria-label="Social media">
+        <ul>
+            {#each socials as { name, href, icon } (name)}
+                <li>
+                    <a {href} target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d={icon.path} /></svg>
+                        <span>{name}</span>
+                    </a>
+                </li>
+            {/each}
+        </ul>
+    </nav>
+
     <section>
         <h2>Contatti</h2>
 
@@ -55,19 +68,6 @@
             <li><a href="/legal/privacy">Informativa Privacy</a></li>
             <li><a href="/legal/cookies">Politica dei Cookie</a></li>
             <li><a href="/faq">Domande frequenti</a></li>
-        </ul>
-    </nav>
-
-    <nav aria-label="Social media">
-        <ul>
-            {#each socials as { name, href, icon } (name)}
-                <li>
-                    <a {href} target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d={icon.path} /></svg>
-                        <span>{name}</span>
-                    </a>
-                </li>
-            {/each}
         </ul>
     </nav>
 

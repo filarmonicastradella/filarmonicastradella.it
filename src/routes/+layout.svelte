@@ -8,6 +8,7 @@
     import favicon from "$lib/assets/favicon.svg";
     import SiteHeader from "./SiteHeader.svelte";
     import SiteFooter from "./SiteFooter.svelte";
+    import OldFooterReference from "./OldFooterReference.svelte"; // TEMPORANEO: da togliere dopo il confronto
 
     // Cormorant Garamond — pesi specifici
     import "@fontsource/cormorant-garamond/latin-400.css";
@@ -47,4 +48,5 @@
     {@render children()}
 </main>
 
+<OldFooterReference />
 <SiteFooter />
