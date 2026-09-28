@@ -145,7 +145,16 @@ li:has(> article) {
 }
 
 li > article {
+    display: flex;
     flex: 1;
+    flex-direction: column;
+}
+
+/* Il luogo dell'evento resta ancorato in fondo alla scheda, staccato da un filetto */
+li > article > p[itemprop="location"] {
+    margin-block-start: auto;
+    padding-block-start: var(--space-sm);
+    border-block-start: 1px solid var(--border-soft);
 }
 
 /* Nelle schede la descrizione lunga (per esempio la scaletta di un concerto) si tronca sempre a 4 righe */
@@ -226,9 +235,15 @@ ol[tabindex="0"] {
 
 /* Le schede del carosello (non quelle fotografiche) hanno un bordo e uno sfondo pieno, angoli vivi */
 :is(ul, ol)[tabindex="0"]:not(:has(img, video)) :is(li:has(> :is(h2, h3)), li > article) {
-    padding: var(--space-md);
+    padding-block: var(--space-lg);
+    padding-inline: var(--space-md);
     border: 1px solid var(--border-soft);
     background: var(--bg-surface);
+}
+
+/* Nelle schede il titolo segue l'etichetta subito, senza lo spazio pensato per i sottotitoli in un testo lungo */
+li > article > :is(h2, h3, h4):not(:first-child) {
+    margin-block-start: var(--space-xs);
 }
 
 :is(ul, ol)[tabindex="0"]:not(:has(img, video)) :is(li:has(> :is(h2, h3)), li > article):hover {
