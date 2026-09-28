@@ -33,16 +33,13 @@
 
         <section aria-labelledby="terzi-heading">
             <h2 id="terzi-heading">3. Servizi di terze parti</h2>
-            <p>Alcune parti del sito usano servizi esterni. Quando li usi, il tuo browser invia loro almeno l'indirizzo IP:</p>
+            <p>Alcune parti del sito usano servizi esterni. Quando li usi, il tuo browser invia loro almeno l'indirizzo IP. L'elenco degli eventi, letto dal calendario di Google, viene invece preparato dal sito e non richiede nessun collegamento a Google da parte tua.</p>
             <dl>
                 <dt>GitHub Pages</dt>
                 <dd>Ospita il sito.</dd>
 
-                <dt>Google Calendar</dt>
-                <dd>Fornisce l'elenco degli eventi mostrato nelle pagine del sito.</dd>
-
                 <dt>Instagram e Behold</dt>
-                <dd>Forniscono foto e video della galleria, letti dal profilo Instagram dell'associazione.</dd>
+                <dd>Forniscono foto e video della galleria, letti dal profilo Instagram dell'associazione: il tuo browser li scarica direttamente dai loro server.</dd>
 
                 <dt>Google Maps</dt>
                 <dd>Mostra le mappe delle sedi nella pagina dei contatti, solo se scegli di caricarle.</dd>

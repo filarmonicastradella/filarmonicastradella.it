@@ -1,0 +1,4 @@
+import { getUpcomingEvents } from "$lib/server/calendar";
+import type { PageServerLoad } from "./$types";
+
+export const load: PageServerLoad = async () => ({ events: await getUpcomingEvents() });

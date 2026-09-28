@@ -6,6 +6,9 @@
     import LatestNews from "./LatestNews.svelte";
     import Gallery from "./Gallery.svelte";
     import Support from "./Support.svelte";
+    import type { PageProps } from "./$types";
+
+    let { data }: PageProps = $props();
 </script>
 
 <svelte:head>
@@ -15,10 +18,10 @@
 
 <main id="contenuto">
     <Hero />
-    <UpcomingEvents />
+    <UpcomingEvents events={data.events} />
     <About />
     <Featured />
     <LatestNews />
-    <Gallery />
+    <Gallery slides={data.gallery} />
     <Support />
 </main>

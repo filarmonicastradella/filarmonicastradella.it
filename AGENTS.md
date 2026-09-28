@@ -34,7 +34,6 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 - Incorporazioni di terze parti (mappe): caricate solo su richiesta con un pulsante (`MapEmbed`), con il link diretto sempre visibile.
 - Elenchi in ordine cronologico in `<ol>`; eventi con microdati schema.org (`itemscope itemtype="https://schema.org/Event"`, `itemprop`), aree di stato come `<div role="status">` sempre presenti nella pagina; indici di sezione come `<nav>` con collegamenti interni.
 - Ogni pagina ha `<main id="contenuto">` (bersaglio del link "Salta al contenuto"), `<title>` e meta description.
-- Contenuti caricati dal browser: finché caricano si mostra solo un messaggio di caricamento (`role="status"`), mai contenuti parziali; un `<noscript>` spiega che serve JS.
 
 ### CSS
 - Gli stili sono spenti di proposito: i blocchi `<style>` originali sono commentati e le versioni complete stanno in `.old-components/`. Si reintroducono gradualmente, partendo dai token in un file separato, senza valori fissi fuori dai token e senza stili inline.
@@ -49,8 +48,10 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 - Sviluppo: una funzionalità nuova si scrive tutta in un unico file (pagina o componente) e si estrae in componenti o moduli solo quando il file diventa troppo lungo o complesso, non prima e non per semplice somiglianza tra due punti. Le estrazioni si fanno per passi, con un commit per passo.
 
 ### Dati
-- Dati esterni (Google Calendar, Instagram) letti dal browser, non copiati né pre-generati alla build. Le notizie sono file Markdown in `src/lib/content/news/`.
-- Pagine dinamiche che leggono i dati dal browser (`/events/[id]`): `prerender = false` e `ssr = false` in `+page.ts`; su GitHub Pages le serve il fallback `404.html`.
+- Dati esterni (Google Calendar, feed Instagram di Behold) letti alla build da funzioni di caricamento del server (`+page.server.ts`, moduli in `src/lib/server/`), così finiscono già nell'HTML. Il sito si ricostruisce ogni 3 ore con una GitHub Action programmata, e a ogni push.
+- Chiavi e segreti mai nel codice: `GOOGLE_CALENDAR_API_KEY` sta in `.env` in locale (fuori dal repository, modello in `.env.example`) e nel segreto del repository su GitHub.
+- Se il calendario non risponde la build deve fallire (resta online l'ultima versione); il feed della galleria è accessorio e in caso di errore mostra un avviso.
+- Le notizie sono file Markdown in `src/lib/content/news/`.
 - Route in inglese, una sola parola in minuscolo per ogni segmento (`/events`, `/news`, `/about/history`), senza trattini. Le etichette di navigazione restano in italiano. La mappa delle pagine è in `src/lib/navigation.js`.
 
 ### Flusso di lavoro

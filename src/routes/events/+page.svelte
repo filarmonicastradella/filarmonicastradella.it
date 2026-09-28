@@ -1,22 +1,10 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-    import { fetchUpcomingEvents, type EventItem } from "$lib/events";
     import EventCard from "$lib/components/EventCard.svelte";
     import Section from "$lib/components/Section.svelte";
-    import type { LoadStatus } from "$lib/types/load-status";
+    import type { EventItem } from "$lib/events";
+    import type { PageProps } from "./$types";
 
-    let events = $state.raw<EventItem[]>([]);
-    let status = $state<LoadStatus>("idle");
-
-    onMount(async () => {
-        status = "loading";
-        try {
-            events = await fetchUpcomingEvents(fetch, 100);
-            status = "ready";
-        } catch {
-            status = "error";
-        }
-    });
+    let { data }: PageProps = $props();
 
     const capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 
@@ -29,7 +17,7 @@
     // Eventi raggruppati per anno e poi per mese, nell'ordine in cui arrivano dal calendario.
     const years = $derived.by(() => {
         const byYear = new Map<string, Map<string, EventItem[]>>();
-        for (const event of events) {
+        for (const event of data.events) {
             const [year, month] = event.start.split("-");
             const months = byYear.get(year) ?? new Map<string, EventItem[]>();
             months.set(month, [...(months.get(month) ?? []), event]);
@@ -74,17 +62,7 @@
         <p>Scopri i prossimi concerti, le prove aperte, i saggi e tutte le attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano.</p>
     </header>
 
-    <div role="status">
-        {#if status === "loading"}
-            <p>Caricamento degli eventi in corso…</p>
-        {:else if status === "error"}
-            <p>Non è stato possibile caricare gli eventi. Riprova più tardi.</p>
-        {:else if status === "ready" && events.length === 0}
-            <p>Al momento non ci sono eventi in programma. Torna a trovarci presto!</p>
-        {/if}
-    </div>
-
-    {#if status === "ready" && monthLinks.length > 1}
+    {#if monthLinks.length > 1}
         <nav aria-label="Vai al mese">
             <ul>
                 {#each monthLinks as { id, label } (id)}
@@ -94,7 +72,9 @@
         </nav>
     {/if}
 
-    {#if status === "ready" && events.length > 0}
+    {#if data.events.length === 0}
+        <p>Al momento non ci sono eventi in programma. Torna a trovarci presto!</p>
+    {:else}
         <!-- Il titolo dell'anno serve solo quando gli eventi coprono più di un anno. -->
         {#if years.length > 1}
             {#each years as { year, months } (year)}
@@ -106,8 +86,4 @@
             {@render monthList(years[0].year, years[0].months, 2)}
         {/if}
     {/if}
-
-    <noscript>
-        <p>Per vedere gli eventi è necessario abilitare JavaScript.</p>
-    </noscript>
 </main>

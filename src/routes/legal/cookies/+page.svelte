@@ -24,7 +24,7 @@
 
         <section aria-labelledby="terze-heading">
             <h2 id="terze-heading">3. Servizi di terze parti</h2>
-            <p>Alcune parti del sito caricano contenuti da servizi esterni: il calendario degli eventi (Google), le foto e i video della galleria (Instagram e Behold) e, solo se scegli di mostrarle, le mappe (Google Maps). Questi servizi ricevono il tuo indirizzo IP e potrebbero impostare propri cookie, secondo le loro politiche:</p>
+            <p>Alcune parti del sito caricano contenuti da servizi esterni: le foto e i video della galleria (Instagram e Behold) e, solo se scegli di mostrarle, le mappe (Google Maps). Questi servizi ricevono il tuo indirizzo IP e potrebbero impostare propri cookie, secondo le loro politiche:</p>
             <ul>
                 <li><a href="https://policies.google.com/technologies/cookies?hl=it" target="_blank" rel="noopener noreferrer">Cookie di Google</a></li>
                 <li><a href="https://www.instagram.com/legal/cookies/" target="_blank" rel="noopener noreferrer">Cookie di Instagram</a></li>

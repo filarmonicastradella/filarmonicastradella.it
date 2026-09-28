@@ -1,31 +1,16 @@
 <script lang="ts">
     import Section from "$lib/components/Section.svelte";
-    import { onMount } from "svelte";
-    import { fetchGallery, type GallerySlide } from "$lib/gallery";
     import { dragScroll, scaleByDistance } from "$lib/attachments";
-    import type { LoadStatus } from "$lib/types/load-status";
+    import type { GallerySlide } from "$lib/gallery";
 
-    let slides = $state.raw<GallerySlide[]>([]);
-    let status = $state<LoadStatus>("idle");
-
-    onMount(async () => {
-        status = "loading";
-        try {
-            slides = await fetchGallery();
-            status = "ready";
-        } catch {
-            status = "error";
-        }
-    });
+    // `null` quando il feed non era raggiungibile durante la build.
+    let { slides }: { slides: GallerySlide[] | null } = $props();
 </script>
 
 <Section title="Momenti in musica">
-
-    {#if status === "loading"}
-        <p role="status">Caricamento della galleria in corso…</p>
-    {:else if status === "error"}
-        <p role="alert">Non è stato possibile caricare la galleria. Puoi guardarla direttamente sul nostro profilo Instagram.</p>
-    {:else if status === "ready"}
+    {#if slides === null}
+        <p>La galleria non è al momento disponibile. Puoi guardarla direttamente sul nostro profilo Instagram.</p>
+    {:else}
         <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
         <ul tabindex="0" aria-label="Galleria di foto e video" {@attach dragScroll} {@attach scaleByDistance}>
             {#each slides as slide (slide.id)}
@@ -49,10 +34,6 @@
             {/each}
         </ul>
     {/if}
-
-    <noscript>
-        <p>Per vedere la galleria è necessario abilitare JavaScript.</p>
-    </noscript>
 
     <p><a href="https://instagram.com/filarmonicastradella" target="_blank" rel="noopener noreferrer">Guarda tutto su Instagram</a></p>
 </Section>
