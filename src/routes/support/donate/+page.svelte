@@ -39,9 +39,11 @@
         </p>
     </Section>
 
-    <!-- SEGNAPOSTO: altre modalità di donazione, se ce ne sono. -->
+    <!-- SEGNAPOSTO: modalità di donazione online (PayPal e simili), da attivare e collegare prima della pubblicazione. -->
     <Section title="Altri modi per donare">
-        <p>Le altre modalità di donazione saranno indicate qui.</p>
+        <ul>
+            <li>PayPal: disponibile a breve.</li>
+        </ul>
     </Section>
 
     <p><a href="/support/5x1000">Sostienici anche con il 5x1000</a></p>
