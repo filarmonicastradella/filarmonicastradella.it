@@ -3,6 +3,9 @@
     import { afterNavigate } from "$app/navigation";
     import { navItems } from "$lib/navigation";
 
+    // Il file SVG dichiara una dimensione enorme (826×1382): senza CSS il logo occuperebbe tutta la pagina.
+    const logo = logoSvg.replace('width="826" height="1382"', 'width="22" height="36"');
+
     // Il menu è un <details> nativo: funziona senza JS. Con JS si richiude dopo la navigazione.
     let menuOpen = $state(false);
 
@@ -13,7 +16,7 @@
 
 <header>
     <a href="/">
-        <span aria-hidden="true">{@html logoSvg}</span>
+        <span aria-hidden="true">{@html logo}</span>
         <span>Filarmonica Alessandro Stradella <abbr title="Associazione di Promozione Sociale">APS</abbr></span>
     </a>
 

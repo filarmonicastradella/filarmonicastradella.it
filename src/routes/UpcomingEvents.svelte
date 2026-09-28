@@ -3,14 +3,17 @@
     import Section from "$lib/components/Section.svelte";
     import EventCard from "$lib/components/EventCard.svelte";
     import { trackScrollEdges } from "$lib/attachments";
-    import type { EventItem } from "$lib/events";
+    import { hasNotEnded, type EventItem } from "$lib/events";
 
-    let { events }: { events: EventItem[] } = $props();
+    let { events: builtEvents }: { events: EventItem[] } = $props();
 
-    // I pulsanti di scorrimento servono solo con JS: senza, la lista si scorre da sola.
-    let enhanced = $state(false);
+    // Con JS si nascondono gli eventi già conclusi dalla build; i pulsanti di scorrimento servono solo con JS.
+    let now = $state<Date>();
+    const enhanced = $derived(now !== undefined);
+    const events = $derived(now ? builtEvents.filter((event) => hasNotEnded(event, now!)) : builtEvents);
+
     onMount(() => {
-        enhanced = true;
+        now = new Date();
     });
 
     let eventsList = $state<HTMLOListElement>();
@@ -24,6 +27,8 @@
         eventsList.scrollBy({ left: direction * (item.offsetWidth + gap), behavior: "smooth" });
     };
 </script>
+
+<svelte:document onvisibilitychange={() => document.visibilityState === "visible" && (now = new Date())} />
 
 <Section title="Prossimi eventi">
     {#if events.length === 0}
