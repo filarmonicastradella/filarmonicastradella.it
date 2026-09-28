@@ -216,11 +216,12 @@ body > div > header nav:popover-open a {
 @media (min-width: 64rem) {
     :root {
         --header-height: 8.25rem;
+        --bar-height: 3.6rem;
     }
 
     body > div > header {
-        /* Scorrendo, la riga del logo esce dallo schermo e resta solo la barra del menu */
-        top: calc(-1 * (var(--space-lg) + 2rem + var(--space-sm)));
+        /* Scorrendo, la riga del logo esce dallo schermo e resta solo la barra del menu: link centrati */
+        top: calc(var(--bar-height) - var(--header-height));
         flex-direction: column;
         gap: var(--space-sm);
         padding-block: var(--space-lg) var(--space-md);
