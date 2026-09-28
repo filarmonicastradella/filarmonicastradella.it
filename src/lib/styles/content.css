@@ -132,6 +132,7 @@ li > article > p[itemprop="description"] {
     padding: var(--space-2xs) var(--space-2xs) var(--space-md);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--space-2xs);
     scrollbar-width: thin;
 }
 
