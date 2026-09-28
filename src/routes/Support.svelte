@@ -18,12 +18,11 @@
             <p>Sostieni i nostri progetti con un contributo libero tramite bonifico bancario. Le erogazioni a favore delle APS godono delle agevolazioni fiscali previste dalla normativa vigente.</p>
             <p><a href="/support/donate">Scopri come donare</a></p>
         </li>
-        <!--
+        <!-- Da commentare prima della pubblicazione se l'associazione non è ancora beneficiaria del 5x1000. -->
         <li>
             <h3>Sostienici con il 5x1000</h3>
             <p>Dona il tuo 5x1000 alla Filarmonica Alessandro Stradella APS. Un piccolo gesto che non costa nulla ma che per noi fa una grande differenza.</p>
-            <p><a href="/support/donate">Scopri come fare</a></p>
+            <p><a href="/support/5x1000">Scopri come fare</a></p>
         </li>
-        -->
     </ul>
 </Section>

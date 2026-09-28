@@ -30,6 +30,8 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 - Il sito deve funzionare come HTML semantico anche senza CSS e senza JS: il JS aggiunge solo miglioramenti.
 - Landmark e sezioni con titolo: usare il componente `Section` (`$lib/components/Section.svelte`), che collega `h2` e `aria-labelledby` con `$props.id()`. Un solo `h1` per pagina; gerarchia dei titoli senza salti.
 - Elenchi di elementi equivalenti in `<ul><li>`; date in `<time datetime>`; coppie etichetta/valore in `<dl>`; niente `<header>`/`<footer>`/`<address>` dentro i link né `div` usati solo per il layout.
+- Pagine non ancora pronte: `<h1>`, una riga di presentazione e "Pagina in costruzione: …"; bozze legali con il commento `<!-- BOZZA … -->` in testa da far verificare prima della pubblicazione.
+- Incorporazioni di terze parti (mappe): caricate solo su richiesta con un pulsante (`MapEmbed`), con il link diretto sempre visibile.
 - Ogni pagina ha `<main id="contenuto">` (bersaglio del link "Salta al contenuto"), `<title>` e meta description.
 - Contenuti caricati dal browser: finché caricano si mostra solo un messaggio di caricamento (`role="status"`), mai contenuti parziali; un `<noscript>` spiega che serve JS.
 

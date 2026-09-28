@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Termini e condizioni — Filarmonica Alessandro Stradella APS</title>
+</svelte:head>
+
 <main id="contenuto">
     <article>
         <header>

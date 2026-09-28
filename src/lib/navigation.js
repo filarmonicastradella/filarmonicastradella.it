@@ -31,6 +31,7 @@ export const navItems = [
             { label: "Sostienici", href: "/support" },
             { label: "Diventa Socio", href: "/support/join" },
             { label: "Erogazioni Liberali", href: "/support/donate" },
+            { label: "5x1000", href: "/support/5x1000" },
             { label: "Suona con Noi", href: "/support/auditions" },
             { label: "Fai Volontariato", href: "/support/volunteer" },
             { label: "Moduli e Iscrizioni", href: "/support/forms" },
@@ -41,8 +42,10 @@ export const navItems = [
     {
         title: "Trasparenza",
         links: [
-            { label: "Statuto e Atto Costitutivo", href: "/legal/statute" },
+            { label: "Statuto", href: "/legal/statute" },
             { label: "Amministrazione Trasparente", href: "/legal/transparency" },
+            { label: "Bilanci e Rendiconti", href: "/legal/budgets" },
+            { label: "Contributi Pubblici Ricevuti", href: "/legal/contributions" },
             { label: "Informativa Privacy", href: "/legal/privacy" },
             { label: "Politica dei Cookie", href: "/legal/cookies" },
             { label: "Termini e Condizioni", href: "/legal/terms" },
