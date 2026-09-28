@@ -92,8 +92,9 @@
         </ul>
     </nav>
 
-    <p>Filarmonica Alessandro Stradella APS</p>
     <dl>
+        <dt>Denominazione</dt>
+        <dd>Filarmonica Alessandro Stradella APS</dd>
         <dt>Codice fiscale</dt>
         <dd>90021290458</dd>
         <dt>Iscrizione al RUNTS</dt>
