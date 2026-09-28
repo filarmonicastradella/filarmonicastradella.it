@@ -205,7 +205,7 @@ body > div > header nav a {
 body > div > header nav a:hover,
 body > div > header nav a[aria-current] {
     color: var(--text-main);
-    text-decoration-color: var(--link);
+    text-decoration-color: currentColor;
 }
 
 body > div > header nav:popover-open a {
