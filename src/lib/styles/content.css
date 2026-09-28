@@ -4,12 +4,7 @@
  */
 
 /* Testo */
-p,
-ul,
-ol,
-dl,
-figure,
-address {
+:where(p, ul, ol, dl, figure, address) {
     margin-block: 0;
 }
 
@@ -17,7 +12,7 @@ main p {
     max-width: var(--measure);
 }
 
-:is(main, section, article, header, li, dd, figure) > * + * {
+:is(section, article, header, li, dd, figure) > * + * {
     margin-block-start: var(--space-md);
 }
 

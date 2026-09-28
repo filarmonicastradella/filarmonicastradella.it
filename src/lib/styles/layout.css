@@ -18,7 +18,7 @@
 
     --page-width: 72rem;
     --measure: 65ch;
-    --gutter: max(var(--space-md), calc((100% - var(--page-width)) / 2 + var(--space-md)));
+    --gutter: max(var(--space-md), calc((100% - var(--page-width)) / 2));
 
     --shadow: 0 1px 2px rgb(0 0 0 / 0.05), 0 8px 24px rgb(0 0 0 / 0.06);
     --transition: 150ms ease;
@@ -139,16 +139,22 @@ body > div > header nav a[aria-current] {
     border-bottom-color: var(--link);
 }
 
-/* Contenuto: ogni figlio diretto di main è una fascia centrata */
+/* Contenuto: una griglia con una colonna centrale di larghezza massima; solo la hero occupa tutta la larghezza */
 main {
     flex: 1;
+    display: grid;
+    grid-template-columns:
+        [full-start] minmax(var(--space-md), 1fr)
+        [content-start] minmax(0, var(--page-width))
+        [content-end] minmax(var(--space-md), 1fr)
+        [full-end];
+    align-content: start;
     padding-block: var(--space-2xl) 0;
 }
 
 main > * {
-    max-width: var(--page-width);
-    margin-inline: auto;
-    padding-inline: var(--space-md);
+    grid-column: content;
+    min-width: 0;
 }
 
 main > * + * {
@@ -175,7 +181,7 @@ main > section:has(> hgroup) {
     align-content: center;
     justify-items: center;
     gap: var(--space-lg);
-    max-width: none;
+    grid-column: full;
     min-height: min(80svh, 46rem);
     margin-block-start: calc(-1 * var(--space-2xl));
     padding: var(--space-3xl) var(--gutter);
