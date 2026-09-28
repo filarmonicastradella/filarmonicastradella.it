@@ -116,9 +116,6 @@ body > div > header nav ul {
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--space-2xs) var(--space-lg);
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
 
 body > div > header nav a {
@@ -247,12 +244,6 @@ body > div > footer h2 {
     font-weight: var(--font-weight-semibold);
     letter-spacing: var(--letter-spacing-wide);
     text-transform: uppercase;
-}
-
-body > div > footer ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
 
 body > div > footer li + li {

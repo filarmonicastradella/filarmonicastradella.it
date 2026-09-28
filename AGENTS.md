@@ -46,6 +46,8 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 - Design: elegante, moderno, pulito e minimale; avorio caldo, granata come unico colore d'accento, titoli in serif, molto spazio bianco. Niente riquadri né angoli arrotondati (`--radius: 0`): la struttura la danno filetti sottili, spazio e tipografia; le schede hanno solo un filetto in alto.
 - I vecchi stili per componente (in `.old-components/`) non vanno usati né consultati come modello: il design si costruisce da zero con questo sistema.
 
+- Codice pulito e non ridondante: nessuna regola CSS ripetuta in più punti (se serve in più contesti va scritta una volta sola con un selettore generale), nessun attributo o ruolo ARIA che ripete ciò che l'elemento già è (per esempio `role="list"` su un `ul`), nessun elemento o file superfluo.
+
 ### Svelte
 - Svelte 5 idiomatico: rune (`$state`, `$state.raw` per dati solo riassegnati, `$derived`, `$props`), `{@attach}` per il comportamento sul DOM (in `$lib/attachments.ts`), `<svelte:window>`/`<svelte:document>` per gli eventi globali, `each` con chiave. Niente DOM imperativo, `setInterval` di polling o `$effect` per sincronizzare stato.
 - Usare le skill `svelte-code-writer` e `svelte-core-bestpractices` e controllare con `svelte-check` e `html-validate`.
