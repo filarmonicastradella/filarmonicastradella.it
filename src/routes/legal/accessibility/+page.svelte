@@ -1,11 +1,10 @@
 <svelte:head>
     <title>Accessibilità — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="La dichiarazione di accessibilità del sito della Filarmonica Alessandro Stradella APS." />
+    <meta name="description" content="Il sito della Filarmonica Alessandro Stradella APS e come segnalare difficoltà di accesso." />
 </svelte:head>
 
 <main id="contenuto">
     <h1>Accessibilità</h1>
-    <p>La dichiarazione di accessibilità del sito della Filarmonica Alessandro Stradella APS.</p>
-
-    <p>Pagina in costruzione: i contenuti saranno pubblicati a breve.</p>
+    <p>Abbiamo cercato di rendere questo sito utilizzabile da tutti, anche con strumenti di lettura assistita e senza fogli di stile o JavaScript.</p>
+    <p>Se incontri difficoltà nell'uso del sito, <a href="/contacts#scrivici">scrivici</a> indicando la pagina e il problema.</p>
 </main>

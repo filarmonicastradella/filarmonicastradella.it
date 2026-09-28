@@ -11,5 +11,4 @@
         <li><a href="/support/join">Richiesta di iscrizione come socio</a></li>
     </ul>
 
-    <p>Pagina in costruzione: i contenuti saranno pubblicati a breve.</p>
 </main>

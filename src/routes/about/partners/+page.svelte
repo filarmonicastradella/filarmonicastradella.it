@@ -12,7 +12,10 @@
             <h2><a href="https://accademiastradella.it" target="_blank" rel="noopener noreferrer">Accademia Stradella</a></h2>
             <p>Gestisce la scuola di musica, con cui collaboriamo.</p>
         </li>
+        <!-- SEGNAPOSTO: altri partner e sostenitori, con il loro sito. -->
+        <li>
+            <h2><a href="https://www.example.org" target="_blank" rel="noopener noreferrer">Nome del partner</a></h2>
+            <p>Descrizione della collaborazione o del sostegno.</p>
+        </li>
     </ul>
-
-    <p>Pagina in costruzione: i contenuti saranno pubblicati a breve.</p>
 </main>

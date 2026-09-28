@@ -7,5 +7,14 @@
     <h1>Interviste</h1>
     <p>Le interviste ai musicisti e alle persone della Filarmonica Alessandro Stradella.</p>
 
-    <p>Pagina in costruzione: i contenuti saranno pubblicati a breve.</p>
+    <!-- SEGNAPOSTO: sostituire con le interviste vere, dalla più recente. -->
+    <ol>
+        <li>
+            <article>
+                <p><time datetime="2026-01-01">1 gennaio 2026</time></p>
+                <h2><a href="https://www.example.org/intervista" target="_blank" rel="noopener noreferrer">Titolo dell'intervista</a></h2>
+                <p>Testata o canale e breve descrizione.</p>
+            </article>
+        </li>
+    </ol>
 </main>

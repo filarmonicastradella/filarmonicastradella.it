@@ -10,10 +10,9 @@
     <nav aria-label="Documenti di trasparenza">
         <ul>
             <li><a href="/legal/statute">Statuto</a></li>
-            <li><a href="/legal/budgets">Bilanci e rendiconti</a></li>
+            <li><a href="/legal/budgets">Rendiconti</a></li>
             <li><a href="/legal/contributions">Contributi pubblici ricevuti</a></li>
         </ul>
     </nav>
 
-    <p>Pagina in costruzione: i contenuti saranno pubblicati a breve.</p>
 </main>

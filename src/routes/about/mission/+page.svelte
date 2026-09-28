@@ -18,6 +18,5 @@
         </ul>
     </section>
 
-    <p>Pagina in costruzione: il testo completo della missione sarà pubblicato a breve.</p>
     <p><a href="/about/history">Scopri la nostra storia</a></p>
 </main>

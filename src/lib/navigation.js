@@ -41,7 +41,7 @@ export const navItems = [
         links: [
             { label: "Statuto", href: "/legal/statute" },
             { label: "Amministrazione Trasparente", href: "/legal/transparency" },
-            { label: "Bilanci e Rendiconti", href: "/legal/budgets" },
+            { label: "Rendiconti", href: "/legal/budgets" },
             { label: "Contributi Pubblici Ricevuti", href: "/legal/contributions" },
             { label: "Informativa Privacy", href: "/legal/privacy" },
             { label: "Politica dei Cookie", href: "/legal/cookies" },

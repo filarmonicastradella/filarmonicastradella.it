@@ -39,10 +39,10 @@
         </p>
     </Section>
 
-    <!-- SEGNAPOSTO: modalità di donazione online (PayPal e simili), da attivare e collegare prima della pubblicazione. -->
+    <!-- SEGNAPOSTO: sostituire hosted_button_id con il codice del pulsante PayPal dell'associazione. -->
     <Section title="Altri modi per donare">
         <ul>
-            <li>PayPal: disponibile a breve.</li>
+            <li><a href="https://www.paypal.com/donate/?hosted_button_id=SEGNAPOSTO" target="_blank" rel="noopener noreferrer">Dona con PayPal</a></li>
         </ul>
     </Section>
 

@@ -5,7 +5,8 @@
 
 <main id="contenuto">
     <h1>Whistleblowing</h1>
-    <p>Come segnalare in modo riservato eventuali irregolarità riguardanti l'associazione.</p>
+    <p>Puoi segnalare in modo riservato eventuali irregolarità riguardanti l'associazione.</p>
 
-    <p>Pagina in costruzione: i contenuti saranno pubblicati a breve.</p>
+    <!-- SEGNAPOSTO: sostituire con il canale di segnalazione vero. -->
+    <p>Invia la segnalazione a <a href="mailto:segnalazioni@filarmonicastradella.it">segnalazioni@filarmonicastradella.it</a>.</p>
 </main>

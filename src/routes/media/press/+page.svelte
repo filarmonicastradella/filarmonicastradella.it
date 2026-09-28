@@ -7,5 +7,14 @@
     <h1>Rassegna stampa</h1>
     <p>Gli articoli e i servizi che parlano della Filarmonica Alessandro Stradella.</p>
 
-    <p>Pagina in costruzione: i contenuti saranno pubblicati a breve.</p>
+    <!-- SEGNAPOSTO: sostituire con gli articoli veri, dal più recente. -->
+    <ol>
+        <li>
+            <article>
+                <p><time datetime="2026-01-01">1 gennaio 2026</time></p>
+                <h2><a href="https://www.example.org/articolo" target="_blank" rel="noopener noreferrer">Titolo dell'articolo</a></h2>
+                <p>Nome della testata.</p>
+            </article>
+        </li>
+    </ol>
 </main>

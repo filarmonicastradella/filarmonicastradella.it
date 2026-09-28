@@ -5,7 +5,10 @@
 
 <main id="contenuto">
     <h1>Regolamenti</h1>
-    <p>I regolamenti dell'associazione e delle sue attività.</p>
+    <p>I regolamenti interni integrano lo statuto e disciplinano l'organizzazione e il funzionamento delle attività dell'associazione.</p>
 
-    <p>Pagina in costruzione: i contenuti saranno pubblicati a breve.</p>
+    <!-- SEGNAPOSTO: caricare i file in static/documents/regolamenti/ e aggiornare l'elenco. -->
+    <ul>
+        <li><a href="/documents/regolamenti/regolamento-interno.pdf" type="application/pdf">Regolamento interno (PDF)</a></li>
+    </ul>
 </main>

@@ -5,7 +5,6 @@
 
 <main id="contenuto">
     <h1>Fai volontariato</h1>
-    <p>Come dare una mano all'associazione, anche senza suonare uno strumento.</p>
-
-    <p>Pagina in costruzione: i contenuti saranno pubblicati a breve.</p>
+    <p>Puoi dare una mano all'associazione anche senza suonare uno strumento: l'attività dei nostri volontari è personale, spontanea e gratuita, e sono assicurati come previsto dalla legge.</p>
+    <p><a href="/contacts#scrivici">Scrivici per dare la tua disponibilità</a></p>
 </main>
