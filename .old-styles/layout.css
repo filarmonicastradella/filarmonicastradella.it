@@ -1,0 +1,488 @@
+/*
+ * Struttura della pagina (SvelteKit avvolge l'app in un div senza aspetto, per questo `body > div`): token di spazio e misura, intestazione, contenuto, piè di pagina.
+ * Solo selettori di elementi e attributi standard (ruoli, ARIA, microdati): niente classi né id.
+ */
+
+:root {
+    --space-2xs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 5rem;
+    --space-4xl: 8rem;
+
+    --page-width: 72rem;
+    --measure: 65ch;
+    --gutter: max(var(--space-md), calc((100% - var(--page-width)) / 2));
+
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.05), 0 8px 24px rgb(0 0 0 / 0.06);
+    --transition: 150ms ease;
+    --transition-slow: 300ms cubic-bezier(0.2, 0, 0, 1);
+    --reveal: 900ms cubic-bezier(0.2, 0, 0, 1);
+    --bar-height: 4.5rem;
+    --header-height: var(--bar-height);
+    --hero-overlay: linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--color-brand-dark) 55%, transparent),
+        color-mix(in srgb, black 80%, transparent)
+    );
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 6rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+/* Link "Salta al contenuto": visibile solo con il focus */
+body > div > a[href="#contenuto"] {
+    position: absolute;
+    top: 0;
+    left: var(--space-md);
+    z-index: 100;
+    padding: var(--space-xs) var(--space-md);
+    background: var(--color-brand);
+    color: var(--on-image);
+    transform: translateY(-120%);
+}
+
+body > div > a[href="#contenuto"]:focus {
+    transform: none;
+}
+
+/* Intestazione del sito: su telefono una barra con logo e pulsante del menu, su schermi larghi logo e voci su due righe */
+body > div > header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    height: var(--bar-height);
+    padding-inline: var(--gutter);
+    border-bottom: 1px solid var(--border-soft);
+    background: var(--bg-page);
+}
+
+body > div > header > a[href="/"] {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--text-main);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: 1.1;
+    text-decoration: none;
+}
+
+body > div > header > a[href="/"] svg {
+    width: auto;
+    height: 3rem;
+}
+
+body > div > header > a[href="/"] abbr {
+    color: var(--text-muted);
+    font-size: 0.75em;
+    font-weight: var(--font-weight-regular);
+}
+
+body > div > header button {
+    padding: var(--space-xs);
+    border: 0;
+    background: none;
+    color: var(--text-main);
+}
+
+body > div > header button:hover:not(:disabled) {
+    background: none;
+    color: var(--link);
+}
+
+body > div > header button svg {
+    display: block;
+}
+
+/* L'icona a due barre diventa una X quando il menu è aperto: le due linee si muovono */
+body > div > header button svg rect {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform var(--transition-slow);
+}
+
+body > div > header:has(nav:popover-open) button svg rect:nth-child(1) {
+    transform: translateY(3px) rotate(45deg);
+}
+
+body > div > header:has(nav:popover-open) button svg rect:nth-child(2) {
+    transform: translateY(-3px) rotate(-45deg);
+}
+
+/* Il menu è un popover: chiuso su telefono; aperto occupa lo schermo sotto la barra, con una breve comparsa */
+body > div > header nav {
+    position: fixed;
+    inset: var(--bar-height) 0 0;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: var(--space-xl) var(--gutter);
+    border: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--bg-page);
+    color: var(--text-main);
+    opacity: 0;
+    transform: translateY(-0.75rem);
+    transition:
+        opacity var(--transition-slow),
+        transform var(--transition-slow),
+        display var(--transition-slow) allow-discrete,
+        overlay var(--transition-slow) allow-discrete;
+}
+
+body > div > header nav:popover-open {
+    display: block;
+    opacity: 1;
+    transform: none;
+}
+
+@starting-style {
+    body > div > header nav:popover-open {
+        opacity: 0;
+        transform: translateY(-0.75rem);
+    }
+}
+
+/* Con il menu aperto la pagina sotto non scorre */
+body:has(nav:popover-open) {
+    overflow: hidden;
+}
+
+body > div > header nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+body > div > header nav a {
+    padding-block: var(--space-2xs);
+    color: var(--text-muted);
+    font-weight: var(--font-weight-medium);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.3em;
+    transition: color var(--transition), text-decoration-color var(--transition);
+}
+
+body > div > header nav a:hover,
+body > div > header nav a[aria-current] {
+    color: var(--text-main);
+    text-decoration-color: currentColor;
+}
+
+body > div > header nav:popover-open a {
+    font-size: var(--font-size-lg);
+}
+
+@media (min-width: 64rem) {
+    /* Due barre una sopra l'altra: il logo scorre via, la barra del menu resta appiccicata */
+    :root {
+        --header-height: calc(2 * var(--bar-height));
+    }
+
+    body > div > header {
+        display: contents;
+    }
+
+    body > div > header > a[href="/"] {
+        align-self: center;
+        height: var(--bar-height);
+    }
+
+    body > div > header > button {
+        display: none;
+    }
+
+    body > div > header nav {
+        display: flex;
+        position: sticky;
+        inset: 0 auto auto;
+        z-index: 10;
+        align-items: center;
+        justify-content: center;
+        height: var(--bar-height);
+        padding: 0 var(--gutter);
+        border-bottom: 1px solid var(--border-soft);
+        overflow: visible;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    body > div > header nav ul {
+        flex-direction: row;
+        gap: var(--space-lg);
+    }
+}
+
+/* Contenuto: una griglia con una colonna centrale di larghezza massima; solo la hero occupa tutta la larghezza */
+main {
+    flex: 1;
+    display: grid;
+    grid-template-columns:
+        [full-start] minmax(var(--space-md), 1fr)
+        [content-start] minmax(0, var(--page-width))
+        [content-end] minmax(var(--space-md), 1fr)
+        [full-end];
+    align-content: start;
+    padding-block: var(--space-3xl) 0;
+}
+
+/* La hero parte subito sotto l'intestazione */
+main:has(> section > hgroup) {
+    padding-block-start: 0;
+}
+
+main > * {
+    grid-column: content;
+    min-width: 0;
+}
+
+main > * + * {
+    margin-block-start: var(--space-4xl);
+}
+
+:is(main, article) > header > p {
+    max-width: var(--measure);
+    color: var(--text-muted);
+    font-size: var(--font-size-lg);
+}
+
+main > section + section {
+    padding-top: var(--space-2xl);
+}
+
+/* Cambio di pagina: l'intestazione resta ferma, il resto sfuma */
+body > div > header {
+    view-transition-name: intestazione;
+}
+
+@media (min-width: 64rem) {
+    body > div > header {
+        view-transition-name: none;
+    }
+
+    body > div > header > a[href="/"] {
+        view-transition-name: logotipo;
+    }
+
+    body > div > header nav {
+        view-transition-name: menu;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    ::view-transition-old(root) {
+        animation: uscita-pagina var(--transition-slow) both;
+    }
+
+    ::view-transition-new(root) {
+        animation: entrata-pagina var(--transition-slow) both;
+    }
+}
+
+@keyframes uscita-pagina {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes entrata-pagina {
+    from {
+        opacity: 0;
+    }
+}
+
+/* Il pezzo forte della landing: la sezione con il titolo principale a tutta larghezza */
+main > section:has(> hgroup) {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: var(--space-2xl);
+    grid-column: full;
+    min-height: calc(100svh - var(--header-height));
+    padding: var(--space-3xl) var(--gutter);
+    background: var(--hero-overlay), url("../assets/wallpaper.webp") center / cover;
+    color: var(--on-image);
+    text-align: center;
+}
+
+main > section:has(> hgroup) + * {
+    margin-block-start: 0;
+    padding-top: var(--space-4xl);
+    border-top: 0;
+}
+
+main > section:has(> hgroup) h1 {
+    margin: 0;
+    color: inherit;
+    font-size: clamp(2.5rem, 6vw + 1rem, 5rem);
+}
+
+main > section:has(> hgroup) hgroup p {
+    max-width: 40rem;
+    margin: var(--space-lg) auto 0;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-style: italic;
+}
+
+main > section:has(> hgroup) a {
+    display: inline-block;
+    color: var(--color-brand-tint);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3em;
+    transition: color var(--transition);
+}
+
+main > section:has(> hgroup) a:hover {
+    color: var(--on-image);
+}
+
+/* Al caricamento la hero compare a scalare: titolo, frase e pulsante */
+@media (prefers-reduced-motion: no-preference) {
+    main > section:has(> hgroup) h1,
+    main > section:has(> hgroup) hgroup p,
+    main > section:has(> hgroup) > p {
+        animation: comparsa var(--reveal) both;
+    }
+
+    main > section:has(> hgroup) hgroup p {
+        animation-delay: 150ms;
+    }
+
+    main > section:has(> hgroup) > p {
+        animation-delay: 300ms;
+    }
+}
+
+@keyframes comparsa {
+    from {
+        opacity: 0;
+        transform: translateY(1.5rem);
+    }
+}
+
+/*
+ * Piè di pagina: Flexbox, non Grid. Contatti/L'associazione/Informazioni si affiancano e vanno
+ * a capo da soli in base allo spazio; i social e la nota finale sono a riga intera con
+ * flex-basis: 100%. A differenza di una griglia, ogni elemento calcola la propria larghezza per
+ * conto proprio: un elemento a riga intera non dipende da quante colonne il browser sceglie di
+ * fare altrove, quindi non può più capitare che resti largo quanto una sola colonna.
+ */
+body > div > footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xl);
+    margin-top: var(--space-3xl);
+    padding: var(--space-2xl) var(--gutter);
+    border-top: 1px solid var(--border-soft);
+    background: var(--bg-subtle);
+    font-size: var(--font-size-sm);
+}
+
+body > div > footer > section,
+body > div > footer nav:not(:has(svg)) {
+    flex: 1 1 15rem;
+}
+
+body > div > footer h2 {
+    margin: 0 0 var(--space-sm);
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+}
+
+body > div > footer nav ul {
+    display: grid;
+    gap: var(--space-2xs);
+}
+
+/* La nota finale e i social occupano sempre una riga intera, per conto proprio */
+body > div > footer > p:last-child,
+body > div > footer nav:has(svg) {
+    flex: 1 0 100%;
+}
+
+/* I social sono staccati dal resto del piè di pagina da un filetto */
+body > div > footer nav:has(svg) {
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--border-soft);
+}
+
+body > div > footer > p:last-child {
+    margin: 0;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* I dati del piè di pagina si leggono in colonna: etichetta sopra e valore sotto */
+body > div > footer dl {
+    display: block;
+}
+
+body > div > footer dt {
+    margin-top: var(--space-sm);
+    font-size: var(--font-size-xs);
+}
+
+body > div > footer dt:first-child {
+    margin-top: 0;
+}
+
+body > div > footer nav:has(svg) ul {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+}
+
+body > div > footer nav:has(svg) a {
+    display: block;
+    color: var(--text-muted);
+    line-height: 0;
+}
+
+body > div > footer nav:has(svg) a:hover {
+    color: var(--link);
+}

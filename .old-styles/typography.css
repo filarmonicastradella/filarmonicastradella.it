@@ -1,0 +1,181 @@
+/*
+ * Sistema tipografico: Cormorant Garamond per i titoli, Montserrat per il testo.
+ * Solo tipografia (font, dimensioni, pesi, interlinea, spaziatura): niente colori né layout.
+ * Scala modulare con rapporto 1,25 (terza maggiore) su base 16px, in entrambe le direzioni.
+ */
+
+:root {
+    --font-heading: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Montserrat Variable", system-ui, -apple-system, sans-serif;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --font-size-xs: 0.64rem;
+    --font-size-sm: 0.8rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.563rem;
+    --font-size-2xl: 1.953rem;
+    --font-size-3xl: 2.441rem;
+    --font-size-4xl: 3.052rem;
+    --font-size-5xl: 3.815rem;
+
+    --line-height-display: 1.05;
+    --line-height-heading: 1.15;
+    --line-height-body: 1.6;
+
+    --letter-spacing-tight: -0.02em;
+    --letter-spacing-wide: 0.04em;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Titoli */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    text-wrap: balance;
+}
+
+/* La crenatura stretta si nota solo sui titoli grandi: sui piccoli toglie leggibilità */
+h1,
+h2 {
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-block: 1.5em 0.5em;
+}
+
+/* Titoletti: didascalie di tabella, legende dei moduli e domande delle FAQ hanno l'aspetto di un h4 */
+caption,
+legend,
+dl > div > dt {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw + 1rem, var(--font-size-5xl));
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-display);
+}
+
+h2 {
+    font-size: clamp(1.625rem, 3vw + 1rem, var(--font-size-4xl));
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+}
+
+h5 {
+    font-size: var(--font-size-lg);
+}
+
+h6 {
+    font-size: var(--font-size-md);
+}
+
+/* Testo */
+p,
+li,
+dd,
+figcaption {
+    text-wrap: pretty;
+}
+
+strong,
+time,
+dt,
+th {
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Sempre più piccolo del testo intorno, qualunque sia il contesto (a differenza di un token fisso) */
+small,
+figcaption {
+    font-size: 0.85em;
+}
+
+/* Etichette in maiuscoletto: date, termini, intestazioni di tabella e del piè di pagina */
+time,
+dt,
+th,
+body > div > footer h2 {
+    color: var(--text-muted);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+}
+
+dt,
+th {
+    font-size: var(--font-size-sm);
+}
+
+/* Più piccolo delle etichette: più leggero da leggere in mezzo alle date senza sembrare gridato */
+time {
+    font-size: var(--font-size-xs);
+}
+
+abbr[title] {
+    letter-spacing: var(--letter-spacing-wide);
+    text-decoration: none;
+    cursor: help;
+}
+
+address {
+    font-style: normal;
+}
+
+time {
+    font-variant-numeric: lining-nums;
+}
+
+/* I controlli dei moduli seguono la tipografia del testo */
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    letter-spacing: inherit;
+}
+
+/* Comandi: pulsanti e collegamenti che agiscono, non che portano altrove nel sito */
+button,
+main nav ul a,
+main > section:has(> hgroup) a {
+    font-size: var(--font-size-sm);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+}
+
+/* Le voci del menu principale restano testo normale, non urlato come i comandi */
+body > div > header nav a {
+    font-size: var(--font-size-md);
+}
