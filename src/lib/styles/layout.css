@@ -347,7 +347,7 @@ main > section:has(> hgroup) {
 
 main > section:has(> hgroup) + * {
     margin-block-start: 0;
-    padding-top: var(--space-2xl);
+    padding-top: var(--space-4xl);
     border-top: 0;
 }
 
