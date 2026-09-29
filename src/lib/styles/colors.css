@@ -17,7 +17,7 @@
     /* Tema chiaro: neutri caldi */
     --bg-page: #fbf9f7;
     --bg-surface: #ffffff;
-    --bg-subtle: #f4efe9;
+    --bg-subtle: #f1efea;
 
     --text-main: #1d1a18;
     --text-muted: #625c56;
@@ -34,7 +34,7 @@
     :root {
         --bg-page: #161211;
         --bg-surface: #1f1a19;
-        --bg-subtle: #2a2321;
+        --bg-subtle: #292523;
 
         --text-main: #f4efec;
         --text-muted: #b8adaa;
