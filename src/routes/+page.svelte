@@ -1,6 +1,6 @@
 <script lang="ts">
     import UpcomingEvents from "./UpcomingEvents.svelte";
-    import OldEventsCarouselReference from "./OldEventsCarouselReference.svelte"; // TEMPORANEO: confronto visivo
+    // import OldEventsCarouselReference from "./OldEventsCarouselReference.svelte"; // TEMPORANEO: confronto concluso
     import Gallery from "./Gallery.svelte";
     import NewsCard from "$lib/components/NewsCard.svelte";
     import { news } from "$lib/news";
@@ -24,7 +24,7 @@
     <p><a href="/support/join">Unisciti a noi</a></p>
 </section>
 
-<OldEventsCarouselReference events={data.events} />
+<!-- <OldEventsCarouselReference events={data.events} /> -->
 <UpcomingEvents events={data.events} />
 
 <section>
