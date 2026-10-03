@@ -50,3 +50,18 @@
 
 <!-- <OldFooterReference /> -->
 <SiteFooter />
+
+<style>
+    /* Visibile solo quando riceve il focus da tastiera: chi naviga con Tab salta subito al contenuto */
+    a[href="#contenuto"] {
+        position: absolute;
+        top: var(--space-sm);
+        left: var(--space-sm);
+        padding: var(--space-xs) var(--space-md);
+        transform: translateY(-150%);
+    }
+
+    a[href="#contenuto"]:focus {
+        transform: none;
+    }
+</style>

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Hero from "./Hero.svelte";
     import UpcomingEvents from "./UpcomingEvents.svelte";
     // import OldEventsCarouselReference from "./OldEventsCarouselReference.svelte"; // TEMPORANEO: confronto concluso
     import Gallery from "./Gallery.svelte";
@@ -16,13 +17,7 @@
     <meta name="description" content="Filarmonica Alessandro Stradella APS: banda e scuola di musica di Fivizzano, in Lunigiana, dal 1777. Concerti, eventi, notizie e come sostenerci." />
 </svelte:head>
 
-<section>
-    <hgroup>
-        <h1>Filarmonica Alessandro Stradella <abbr title="Associazione di Promozione Sociale">APS</abbr></h1>
-        <p>Dal <strong>1777</strong> al <strong>{new Date().getFullYear()}</strong>: custodi della <strong>tradizione</strong>, interpreti del <strong>futuro</strong>.</p>
-    </hgroup>
-    <p><a href="/support/join">Unisciti a noi</a></p>
-</section>
+<Hero />
 
 <!-- <OldEventsCarouselReference events={data.events} /> -->
 <UpcomingEvents events={data.events} />

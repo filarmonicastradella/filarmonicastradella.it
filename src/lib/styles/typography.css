@@ -1,0 +1,159 @@
+/*
+ * Sistema tipografico: Cormorant Garamond per i titoli, Montserrat per il testo.
+ * Solo tipografia (font, dimensioni, pesi, interlinea, spaziatura): niente colori né layout.
+ * Scala modulare con rapporto 1,333 (quarta giusta) su base 16px, in entrambe le direzioni.
+ */
+
+:root {
+    --font-heading: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Montserrat Variable", system-ui, -apple-system, sans-serif;
+
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --font-size-xs: 0.563rem;
+    --font-size-sm: 0.75rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.333rem;
+    --font-size-xl: 1.778rem;
+    --font-size-2xl: 2.37rem;
+    --font-size-3xl: 3.16rem;
+    --font-size-4xl: 4.214rem;
+    --font-size-5xl: 5.619rem;
+
+    /* Gradini intermedi, radice quadrata del rapporto: stesso passo, risoluzione doppia */
+    --font-size-md-lg: 1.155rem;
+    --font-size-lg-xl: 1.54rem;
+    --font-size-xl-2xl: 2.053rem;
+    --font-size-2xl-3xl: 2.737rem;
+    --font-size-3xl-4xl: 3.649rem;
+    --font-size-4xl-5xl: 4.866rem;
+
+    --line-height-display: 1.05;
+    --line-height-heading: 1.15;
+    --line-height-body: 1.65;
+
+    --letter-spacing-tight: -0.02em;
+    --letter-spacing-wide: 0.04em;
+
+    /* Lunghezza di riga comoda per il testo scorrevole */
+    --measure: 68ch;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Titoli: peso semibold per tutti, non bold — più raffinato su un serif a questa scala */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    text-wrap: balance;
+}
+
+/* La crenatura stretta si nota solo sui titoli grandi: sui piccoli toglie leggibilità */
+h1,
+h2 {
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+h1 {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-display);
+}
+
+h2 {
+    font-size: var(--font-size-xl-2xl);
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+}
+
+h4 {
+    font-size: var(--font-size-lg-xl);
+}
+
+h5 {
+    font-size: var(--font-size-lg);
+}
+
+h6 {
+    font-size: var(--font-size-md-lg);
+}
+
+/* Testo */
+main p {
+    max-width: var(--measure);
+}
+
+p,
+li,
+dd,
+figcaption {
+    text-wrap: pretty;
+}
+
+strong,
+dt,
+th {
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Sempre più piccolo del testo intorno, qualunque sia il contesto */
+small,
+figcaption {
+    font-size: 0.85em;
+}
+
+/*
+ * Etichette: maiuscole rimpicciolite dal browser (font-variant-caps), non testo in maiuscolo pieno.
+ * Né Cormorant Garamond né Montserrat hanno un vero maiuscoletto disegnato (nessuna delle due ha
+ * la feature OpenType "smcp"): il risultato è sintetizzato, ma resta più discreto del maiuscolo pieno.
+ */
+time,
+dt,
+th,
+body > div > footer h2 {
+    color: var(--text-muted);
+    font-variant-caps: small-caps;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+time,
+dt,
+th {
+    font-size: var(--font-size-sm);
+}
+
+abbr[title] {
+    letter-spacing: var(--letter-spacing-wide);
+    text-decoration: none;
+    cursor: help;
+}
+
+address {
+    font-style: normal;
+}
+
+/* I controlli dei moduli seguono la tipografia del testo */
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    letter-spacing: inherit;
+}
+

@@ -40,3 +40,47 @@
         </ul>
     </nav>
 </header>
+
+<style>
+    /* Solo spazio e allineamento: niente colori, bordi o sfondi finché non arrivano gli altri file */
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-sm);
+        height: var(--header-height);
+        padding-inline: var(--space-lg);
+    }
+
+    header > a {
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
+    }
+
+    header > a span svg {
+        height: 2rem;
+        width: auto;
+    }
+
+    button {
+        padding: var(--space-2xs);
+    }
+
+    /* Il menu è un popover: chiuso finché non si apre, poi occupa lo schermo sotto la barra */
+    nav {
+        position: fixed;
+        inset: var(--header-height) 0 0;
+        margin: 0;
+        padding: var(--space-xl) var(--space-lg);
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+</style>
