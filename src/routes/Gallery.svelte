@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { dragScroll, scaleByDistance } from "$lib/attachments";
+    import { dragScroll } from "$lib/attachments";
     import type { GallerySlide } from "$lib/gallery";
 
     // `null` quando il feed non era raggiungibile durante la build.
@@ -12,7 +12,7 @@
         <p>La galleria non è al momento disponibile. Puoi guardarla direttamente sul nostro profilo Instagram.</p>
     {:else}
         <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
-        <ul tabindex="0" aria-label="Galleria di foto e video" {@attach dragScroll} {@attach scaleByDistance}>
+        <ul tabindex="0" aria-label="Galleria di foto e video" {@attach dragScroll}>
             {#each slides as slide (slide.id)}
                 <li>
                     {#if slide.mediaType === "VIDEO"}
@@ -62,7 +62,7 @@
         cursor: grabbing;
     }
 
-    /* Centrate, come il rimpicciolimento di scaleByDistance, che parte dal centro della striscia */
+    /* Lo scorrimento si ferma con una foto al centro */
     li {
         flex: none;
         inline-size: clamp(13rem, 60vw, 18rem);

@@ -49,34 +49,3 @@ export const dragScroll: Attachment<HTMLElement> = (node) => {
         node.removeEventListener("dragstart", onDragStart);
     };
 };
-
-/**
- * Riduce appena i figli in base alla distanza dal centro del contenitore (fino a 0,92, senza
- * sfumarli). Con il movimento ridotto non trasforma nulla (docs/DESIGN.md, Movimento).
- */
-export const scaleByDistance: Attachment<HTMLElement> = (node) => {
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const MIN_SCALE = 0.92;
-
-    const update = () => {
-        const { left, width } = node.getBoundingClientRect();
-        const center = left + width / 2;
-
-        for (const child of node.children) {
-            const rect = child.getBoundingClientRect();
-            const distance = Math.min(1, Math.abs(center - (rect.left + rect.width / 2)) / (width / 2));
-            (child as HTMLElement).style.scale = String(1 - distance * (1 - MIN_SCALE));
-        }
-    };
-
-    update();
-    node.addEventListener("scroll", update, { passive: true });
-    const resizeObserver = new ResizeObserver(update);
-    resizeObserver.observe(node);
-
-    return () => {
-        node.removeEventListener("scroll", update);
-        resizeObserver.disconnect();
-    };
-};
