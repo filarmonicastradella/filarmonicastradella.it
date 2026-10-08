@@ -58,7 +58,9 @@
             <dt>Codice fiscale</dt>
             <dd>{organization.taxCode}</dd>
             <dt>Iscrizione al RUNTS</dt>
-            <dd>{organization.runts}</dd>
+            <dd>
+                <a href={organization.runts.href} target="_blank" rel="noopener noreferrer">{organization.runts.name}</a>
+            </dd>
             <dt>Affiliazione</dt>
             <dd>
                 <a href={organization.affiliation.href} target="_blank" rel="noopener noreferrer">{organization.affiliation.name}</a>

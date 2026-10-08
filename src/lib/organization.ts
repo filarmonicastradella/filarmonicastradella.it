@@ -2,7 +2,11 @@
 export const organization = {
     name: "Filarmonica Alessandro Stradella APS",
     taxCode: "90021290458",
-    runts: "Repertorio n. 176207",
+    // Il RUNTS non ha un indirizzo diretto per la scheda di un ente: il link porta alla ricerca pubblica
+    runts: {
+        name: "Repertorio n. 176207",
+        href: "https://servizi.lavoro.gov.it/runts/it-it/Ricerca-enti"
+    },
     pec: "filarmonicastradella@pec.it",
     affiliation: {
         name: "ANBIMA APS",
