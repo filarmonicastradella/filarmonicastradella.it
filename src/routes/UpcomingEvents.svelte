@@ -1,32 +1,17 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import chevronLeftIcon from "heroicons/24/solid/chevron-left.svg?raw";
-    import chevronRightIcon from "heroicons/24/solid/chevron-right.svg?raw";
     import EventCard from "$lib/components/EventCard.svelte";
-    import { trackScrollEdges } from "$lib/attachments";
     import { hasNotEnded, type EventItem } from "$lib/events";
 
     let { events: builtEvents }: { events: EventItem[] } = $props();
 
-    // Con JS si nascondono gli eventi già conclusi dalla build; i pulsanti di scorrimento servono solo con JS.
+    // Con JS si nascondono gli eventi già conclusi dalla build (la pagina resta in cache fino a 3 ore).
     let now = $state<Date>();
-    const enhanced = $derived(now !== undefined);
-    const events = $derived(now ? builtEvents.filter((event) => hasNotEnded(event, now!)) : builtEvents);
+    const events = $derived((now ? builtEvents.filter((event) => hasNotEnded(event, now!)) : builtEvents).slice(0, 2));
 
     onMount(() => {
         now = new Date();
     });
-
-    let eventsList = $state<HTMLOListElement>();
-    let edges = $state({ canScrollStart: false, canScrollEnd: false });
-
-    const scrollEvents = (direction: number) => {
-        if (!eventsList) return;
-        const item = eventsList.querySelector("li");
-        if (!item) return;
-        const gap = parseFloat(getComputedStyle(eventsList).columnGap) || 24;
-        eventsList.scrollBy({ left: direction * (item.offsetWidth + gap), behavior: "smooth" });
-    };
 </script>
 
 <svelte:document onvisibilitychange={() => document.visibilityState === "visible" && (now = new Date())} />
@@ -36,15 +21,7 @@
     {#if events.length === 0}
         <p>Nessun evento in programma.</p>
     {:else}
-        {#if enhanced}
-            <div role="group" aria-label="Scorrimento eventi">
-                <button type="button" onclick={() => scrollEvents(-1)} disabled={!edges.canScrollStart}>{@html chevronLeftIcon} <span>Eventi precedenti</span></button>
-                <button type="button" onclick={() => scrollEvents(1)} disabled={!edges.canScrollEnd}>{@html chevronRightIcon} <span>Eventi successivi</span></button>
-            </div>
-        {/if}
-
-        <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
-        <ol bind:this={eventsList} tabindex="0" aria-label="Elenco dei prossimi eventi" {@attach trackScrollEdges((e) => (edges = e))}>
+        <ol>
             {#each events as event (event.id)}
                 <li><EventCard {event} /></li>
             {/each}

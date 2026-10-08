@@ -20,3 +20,18 @@
         {/if}
     </a>
 </article>
+
+<style>
+    /*
+     * In un elenco verticale (anche su desktop) le schede non devono più allinearsi tra loro: titolo,
+     * data e luogo scorrono liberi su quante righe servono. Resta solo un tetto massimo alla
+     * descrizione, che per qualche evento è lunghissima (l'intero programma del concerto).
+     */
+    [itemprop="description"] {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>

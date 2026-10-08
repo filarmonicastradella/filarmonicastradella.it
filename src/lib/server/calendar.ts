@@ -39,7 +39,7 @@ function formatEventTime(evt: any): string {
     const startDay = formatDay(startDate);
 
     if (!endValue) {
-        return isAllDay ? startDay : `${startDay} • ${formatTime(startDate)}`;
+        return isAllDay ? startDay : `${startDay} ${formatTime(startDate)}`;
     }
 
     const endDate = new Date(endValue);
@@ -51,7 +51,7 @@ function formatEventTime(evt: any): string {
     }
 
     if (startDay === formatDay(endDate)) {
-        return `${startDay} • ${formatTime(startDate)} - ${formatTime(endDate)}`;
+        return `${startDay} ${formatTime(startDate)} - ${formatTime(endDate)}`;
     }
 
     return `${startDay} ${formatTime(startDate)} - ${formatDay(endDate)} ${formatTime(endDate)}`;

@@ -1,10 +1,10 @@
 /*
- * Struttura della pagina: solo i token di spazio, condivisi da tutto il sito, e le regole generali
- * usate in più di una pagina o componente. Le particolarità di un singolo componente stanno nel suo
- * file (per esempio src/routes/Hero.svelte), non qui.
+ * Struttura della pagina: token di spazio e di misura, condivisi da tutto il sito.
+ * Qui solo variabili: le regole concrete (reset, centraggio, ritmo verticale...) le scrive chi legge.
  */
 
 :root {
+    /* Scala di spazio: ogni gradino circa 1,5× il precedente */
     --space-3xs: 0.25rem;
     --space-2xs: 0.5rem;
     --space-xs: 0.75rem;
@@ -16,13 +16,16 @@
     --space-3xl: 6rem;
     --space-4xl: 8rem;
 
-    /* Usata sia dall'intestazione (la propria altezza) sia dalla hero (per riempire lo schermo sotto di lei) */
+    /* Altezza dell'intestazione (usata anche da chi deve lasciarle spazio o risalire sotto di lei) */
     --header-height: 4.5rem;
+
+    /* Larghezza massima dei contenuti: oltre non si estendono, restano centrati */
+    --content-max-width: 100ch;
 }
 
-/* Il padding entra nella larghezza/altezza dichiarata, non si aggiunge sopra */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+
+main > section,
+header,
+footer {
+    padding-inline: max(var(--space-lg), calc((100% - var(--content-max-width)) / 2));
 }

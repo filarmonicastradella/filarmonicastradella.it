@@ -18,8 +18,8 @@
     import "@fontsource/cormorant-garamond/latin-400-italic.css";
     import "@fontsource/cormorant-garamond/latin-700-italic.css";
 
-    // Montserrat — variable
-    import "@fontsource-variable/montserrat/wght.css";
+    // Plus Jakarta Sans — variable
+    import "@fontsource-variable/plus-jakarta-sans/wght.css";
 
     let { children } = $props();
 
