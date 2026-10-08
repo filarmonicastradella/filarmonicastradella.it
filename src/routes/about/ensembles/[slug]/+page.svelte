@@ -16,4 +16,4 @@
     <data.ensemble.component />
 </article>
 
-<p><a href="/ensembles">Tutti gli ensemble</a></p>
+<p><a href="/about/ensembles">Tutti gli ensemble</a></p>

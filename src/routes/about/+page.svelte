@@ -1,6 +1,6 @@
 <svelte:head>
     <title>L'associazione — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="Chi è la Filarmonica Alessandro Stradella APS: la storia, la missione, il Consiglio direttivo e le sedi." />
+    <meta name="description" content="Chi è la Filarmonica Alessandro Stradella APS: la storia e le origini dell'associazione." />
 </svelte:head>
 
 <header>
@@ -17,6 +17,7 @@
             <p>Dal riconoscimento settecentesco alla Filarmonica di oggi.</p>
         </a>
     </li>
+    <!-- Da riattivare quando pronte (rinominare _page.svelte in +page.svelte in ciascuna cartella):
     <li>
         <a href="/about/mission">
             <h2>La nostra missione</h2>
@@ -41,7 +42,6 @@
             <p>Le associazioni con cui collaboriamo.</p>
         </a>
     </li>
-    <!-- Da riattivare quando ci sono i contenuti (rinominare _page.svelte in +page.svelte):
     <li>
         <a href="/about/achievements">
             <h2>Riconoscimenti e traguardi</h2>
@@ -51,4 +51,4 @@
     -->
 </ul>
 
-<p>I nostri <a href="/ensembles">ensemble</a> hanno una sezione propria.</p>
+<!-- <p>I nostri <a href="/about/ensembles">ensemble</a> hanno una sezione propria.</p> -->

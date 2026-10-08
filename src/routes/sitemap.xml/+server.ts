@@ -19,7 +19,7 @@ export const GET: RequestHandler = async () => {
 
     const paths = [
         ...pages,
-        ...ensembles.map(({ slug }) => `/ensembles/${slug}`),
+        ...ensembles.map(({ slug }) => `/about/ensembles/${slug}`),
         ...news.map(({ slug }) => `/news/${slug}`),
         ...events.map(({ id }) => `/events/${id}`)
     ];

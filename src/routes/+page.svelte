@@ -30,20 +30,22 @@
     <p>
         La nostra missione è mantenere viva la musica bandistica come bene comune: la suoniamo, la insegniamo alle nuove generazioni e la portiamo nelle piazze, nelle feste e nelle occasioni della nostra comunità.
     </p>
-    <p><a href="/about/mission">La nostra missione</a></p>
+    <!-- <p><a href="/about/mission">La nostra missione</a></p> -->
 </section>
 
 <section>
     <h2>In primo piano</h2>
     <ul>
+        <!-- Da riattivare insieme a /about/ensembles:
         <li>
-            <a href="/ensembles">
+            <a href="/about/ensembles">
                 <h3>Gli Ensemble</h3>
                 <p>
                     Una concert band, una street band, un'orchestra con archi e un gruppo di musica antica e barocca: quattro ensemble per suonare insieme.
                 </p>
             </a>
         </li>
+        -->
         <li>
             <a href="/about/history">
                 <h3>La Nostra Storia</h3>
