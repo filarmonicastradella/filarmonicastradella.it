@@ -85,14 +85,23 @@ Il vettoriale di riferimento è `src/lib/assets/favicon.svg` (disegnato a mano, 
 - **La mezzaluna** (eventi importanti): la forma della mezzaluna come finestra per la foto. Solo per inaugurazione di stagione, gala, anniversari.
 - **Il filetto**: breve linea bordeaux (spessore 2 px) per separare titolo e firma.
 
-## 7. Fotografia
+## 7. Iconografia
+
+- **Un solo set:** Heroicons, in una sola variante per tutto il sito. Unica eccezione: Simple Icons, solo per i loghi dei social, sempre monocromatici (mai i colori originali dei marchi).
+- **Solo funzionali:** un'icona indica un'azione o una destinazione (aprire il menu, link esterno, freccia di rimando, social). Mai decorative, mai strumenti musicali.
+- **Colore:** sempre `currentColor`, cioè quello del testo che accompagnano; nessun colore proprio.
+- **Dimensione:** 1 em accanto al testo; 1,25 rem nei pulsanti e nei social; mai oltre 24 px.
+- **Accessibilità:** sempre con `aria-hidden` e una parola accanto che dice la stessa cosa; l'icona non è mai l'unica etichetta.
+- **Niente emoji**, né al posto delle icone né accanto.
+
+## 8. Fotografia
 
 - **Sì:** luce di scena, fondi scuri, dettagli (mani, ance, archi, respiro), ritratti con sguardo in camera, luoghi storici della Lunigiana.
 - **No:** foto di gruppo in fila, flash diretto, transenne e gazebo, scatti mossi o sgranati.
 - **Trattamento standard sui social:** duotone inchiostro e bordeaux. Bianco e nero quando la qualità è disomogenea. Colore pieno solo per foto professionali.
 - Prevedere un servizio fotografico professionale all'anno.
 
-## 8. Componenti
+## 9. Componenti
 
 **Regole comuni**
 - Margini pari a 1/12 del lato corto.
@@ -116,7 +125,7 @@ Il vettoriale di riferimento è `src/lib/assets/favicon.svg` (disegnato a mano, 
 - Apertura della homepage: occhiello, titolo display con una parola in corsivo bordeaux, sottotitolo, pulsante primario a sinistra su carta; foto in duotone a destra; corde sul confine.
 - Colonne di testo al massimo 40 rem.
 
-## 9. Tono di voce
+## 10. Tono di voce
 
 **Competenti ma accoglienti.** Come un direttore che presenta il concerto al pubblico.
 
