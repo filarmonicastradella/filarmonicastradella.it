@@ -75,34 +75,3 @@ export const scaleByDistance: Attachment<HTMLElement> = (node) => {
         resizeObserver.disconnect();
     };
 };
-
-export interface ScrollEdges {
-    canScrollStart: boolean;
-    canScrollEnd: boolean;
-}
-
-/** Comunica se la lista può scorrere ancora all'inizio o alla fine. */
-export const trackScrollEdges =
-    (onChange: (edges: ScrollEdges) => void): Attachment<HTMLElement> =>
-    (node) => {
-        const update = () => {
-            const { scrollLeft, scrollWidth, clientWidth } = node;
-            onChange({
-                canScrollStart: scrollLeft > 1,
-                canScrollEnd: scrollLeft < scrollWidth - clientWidth - 1
-            });
-        };
-
-        update();
-        node.addEventListener("scroll", update, { passive: true });
-        const resizeObserver = new ResizeObserver(update);
-        resizeObserver.observe(node);
-        const mutationObserver = new MutationObserver(update);
-        mutationObserver.observe(node, { childList: true });
-
-        return () => {
-            node.removeEventListener("scroll", update);
-            resizeObserver.disconnect();
-            mutationObserver.disconnect();
-        };
-    };
