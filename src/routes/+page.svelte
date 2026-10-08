@@ -3,13 +3,13 @@
     import UpcomingEvents from "./UpcomingEvents.svelte";
     // import OldEventsCarouselReference from "./OldEventsCarouselReference.svelte"; // TEMPORANEO: confronto concluso
     import Gallery from "./Gallery.svelte";
-    import NewsCard from "$lib/components/NewsCard.svelte";
-    import { news } from "$lib/news";
+    // import NewsCard from "$lib/components/NewsCard.svelte"; // con "Ultime notizie", commentata sotto
+    // import { news } from "$lib/news";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
 
-    const latestNews = news.slice(0, 3);
+    // const latestNews = news.slice(0, 3);
 </script>
 
 <svelte:head>
@@ -22,6 +22,19 @@
 <!-- <OldEventsCarouselReference events={data.events} /> -->
 <UpcomingEvents events={data.events} />
 
+<!-- BOZZA: testo provvisorio nel tono di docs/DESIGN.md, da confermare -->
+<section>
+    <h2>Chi siamo</h2>
+    <p>
+        Dal 1777 la Filarmonica fa musica a Fivizzano, nel cuore della Lunigiana: una <a href="/about/history">storia</a> lunga quasi due secoli e mezzo. Oggi riunisce più formazioni, dall'orchestra di fiati alla musica antica, e suona per la sua comunità tutto l'anno.
+    </p>
+    <p>
+        I corsi di musica sono dell'<a href="https://accademiastradella.it" target="_blank" rel="noopener noreferrer">Accademia Stradella</a>, l'associazione con cui collaboriamo.
+    </p>
+    <p><a href="/about">Scopri l'associazione</a></p>
+</section>
+
+<!-- Home alleggerita il 9/10/2026: versione precedente di "Chi siamo", sostituita dalla bozza sopra.
 <section>
     <h2>Chi siamo</h2>
     <p>
@@ -30,13 +43,16 @@
     <p>
         La nostra missione è mantenere viva la musica bandistica come bene comune: la suoniamo, la insegniamo alle nuove generazioni e la portiamo nelle piazze, nelle feste e nelle occasioni della nostra comunità.
     </p>
-    <!-- <p><a href="/about/mission">La nostra missione</a></p> -->
+    <p><a href="/about/mission">La nostra missione</a></p>
 </section>
+-->
 
+<!-- Home alleggerita il 9/10/2026: "In primo piano" (assorbito da "Chi siamo") e "Ultime notizie"
+     (da riattivare insieme a /news, oggi disattivata). Commenti annidati resi con [...].
 <section>
     <h2>In primo piano</h2>
     <ul>
-        <!-- Da riattivare insieme a /about/ensembles:
+        [Da riattivare insieme a /about/ensembles:
         <li>
             <a href="/about/ensembles">
                 <h3>Gli Ensemble</h3>
@@ -45,7 +61,7 @@
                 </p>
             </a>
         </li>
-        -->
+        ]
         <li>
             <a href="/about/history">
                 <h3>La Nostra Storia</h3>
@@ -79,9 +95,17 @@
 
     <p><a href="/news">Tutte le notizie</a></p>
 </section>
+-->
 
 <Gallery slides={data.gallery} />
 
+<section>
+    <h2>Sostieni la Filarmonica</h2>
+    <p>Puoi diventare socio o fare una donazione: ogni contributo va alla musica, agli strumenti e ai giovani che iniziano a suonare.</p>
+    <p><a href="/support">Come sostenerci</a></p>
+</section>
+
+<!-- Home alleggerita il 9/10/2026: versione precedente, con le schede già presenti in /support.
 <section>
     <h2>Sostieni la Filarmonica</h2>
     <p>
@@ -101,12 +125,13 @@
                 <p>Sostieni i nostri progetti con un contributo libero tramite bonifico bancario. Le erogazioni a favore delle APS godono delle agevolazioni fiscali previste dalla normativa vigente.</p>
             </a>
         </li>
-        <!-- 5x1000: da riattivare quando l'associazione è beneficiaria (rinominare anche support/5x1000/_page.svelte in +page.svelte).
+        [5x1000: da riattivare quando l'associazione è beneficiaria (rinominare anche support/5x1000/_page.svelte in +page.svelte).
         <li>
             <h3>Sostienici con il 5x1000</h3>
             <p>Dona il tuo 5x1000 alla Filarmonica Alessandro Stradella APS. Un piccolo gesto che non costa nulla ma che per noi fa una grande differenza.</p>
             <p><a href="/support/5x1000">Scopri come fare</a></p>
         </li>
-        -->
+        ]
     </ul>
 </section>
+-->
