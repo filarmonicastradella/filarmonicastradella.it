@@ -120,7 +120,7 @@ Il vettoriale di riferimento è `src/lib/assets/favicon.svg` (disegnato a mano, 
 **Sito**
 - Intestazione: logo orizzontale a sinistra, massimo cinque voci di menu, un solo pulsante pieno bordeaux per l'azione principale.
 - Pulsante primario: fondo bordeaux, testo carta. Secondario: contorno inchiostro 1 px.
-- Schede (eventi, notizie, rimandi): fondo `--bg-raised`, bordo sottile `--border`, angoli `--radius`, nessuna ombra; il bordo diventa bordeaux al passaggio del mouse.
+- Schede (eventi, notizie, rimandi): nessun riquadro e nessun fondo, solo un filetto in alto (`--rule-width` in `--border`) che diventa bordeaux (`--accent`) al passaggio del mouse o al tocco, insieme al titolo. Scelte il 9/10/2026 al posto delle card bordate: più coerenti con corde e filetti, più editoriali e più pulite nel tema scuro.
 - Card evento: giorno grande in Cormorant bordeaux, mese in occhiello, titolo in Cormorant 600, orario e luogo in didascalia.
 - Apertura della homepage: occhiello, titolo display con una parola in corsivo bordeaux, sottotitolo, pulsante primario a sinistra su carta; foto in duotone a destra; corde sul confine.
 - Colonne di testo al massimo 40 rem.

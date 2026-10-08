@@ -88,13 +88,13 @@ main li + li {
 /* ─────────────── Schede ───────────────
  * Una scheda è un elemento di elenco il cui link avvolge un titolo (AGENTS.md): direttamente
  * (<li><a><h3>) o dentro un articolo con microdati (<li><article><a><h3>).
- * Design system: fondo rialzato, bordo sottile, angoli quasi vivi, nessuna ombra; in griglia,
- * tutte della stessa altezza.
+ * Design system: nessun riquadro né fondo, solo un filetto in alto che diventa bordeaux al passaggio
+ * del mouse, insieme al titolo; in griglia, tutte della stessa altezza.
  */
 :is(ul, ol):has(> li > a > :is(h2, h3, h4), > li > article > a > :is(h2, h3, h4)) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
-    gap: var(--space-5);
+    gap: var(--space-7) var(--space-6);
     padding: 0;
     list-style: none;
 }
@@ -114,10 +114,8 @@ li > article {
     gap: var(--space-3);
     box-sizing: border-box;
     block-size: 100%;
-    padding: var(--space-5);
-    border: var(--border-width) solid var(--border);
-    border-radius: var(--radius);
-    background-color: var(--bg-raised);
+    padding-block-start: var(--space-5);
+    border-block-start: var(--rule-width) solid var(--border);
     color: var(--text);
     text-decoration: none;
     transition: border-color var(--duration) var(--ease);
@@ -132,7 +130,7 @@ li > article {
 }
 
 :is(li > a, li > article > a):has(> :is(h2, h3, h4)):hover {
-    border-color: var(--accent);
+    border-block-start-color: var(--accent);
 }
 
 :is(li > a, li > article > a):has(> :is(h2, h3, h4)):hover > :is(h2, h3, h4) {
@@ -152,7 +150,7 @@ li > a > h2 {
 :is(li > a, li > article > a):has(> :is(h2, h3, h4))[target="_blank"]::after {
     position: absolute;
     inset-block-start: var(--space-5);
-    inset-inline-end: var(--space-5);
+    inset-inline-end: 0;
     margin: 0;
 }
 

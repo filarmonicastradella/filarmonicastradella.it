@@ -64,7 +64,6 @@
     [itemprop="location"] {
         margin-block-start: auto;
         padding-block-start: var(--space-3);
-        border-block-start: var(--border-width) solid var(--border);
         color: var(--text-muted);
         font-size: var(--fs-small);
     }
