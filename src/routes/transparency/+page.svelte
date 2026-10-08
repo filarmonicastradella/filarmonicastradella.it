@@ -20,7 +20,7 @@
         <dd>{organization.name}</dd>
         <dt>Codice fiscale</dt>
         <dd>{organization.taxCode}</dd>
-        <dt>Iscrizione al RUNTS</dt>
+        <dt><abbr title="Registro unico nazionale del Terzo settore">RUNTS</abbr></dt>
         <dd>
             <a href={organization.runts.href} target="_blank" rel="noopener noreferrer">{organization.runts.name}</a>
         </dd>
