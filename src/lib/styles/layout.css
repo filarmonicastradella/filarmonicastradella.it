@@ -1,31 +1,179 @@
 /*
- * Struttura della pagina: token di spazio e di misura, condivisi da tutto il sito.
- * Qui solo variabili: le regole concrete (reset, centraggio, ritmo verticale...) le scrive chi legge.
+ * Struttura — design system della Filarmonica (docs/DESIGN.md): spaziature, contenitori, forma,
+ * movimento (stessi nomi del tokens.css di riferimento), più l'altezza dell'intestazione del sito.
+ * Qui anche il motivo delle corde, scritto una volta sola.
  */
 
 :root {
-    /* Scala di spazio: ogni gradino circa 1,5× il precedente */
-    --space-3xs: 0.25rem;
-    --space-2xs: 0.5rem;
-    --space-xs: 0.75rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 2rem;
-    --space-xl: 3rem;
-    --space-2xl: 4rem;
-    --space-3xl: 6rem;
-    --space-4xl: 8rem;
+    /* Spaziature, scala 4px */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: 6rem;
+    --space-10: 8rem;
 
-    /* Altezza dell'intestazione (usata anche da chi deve lasciarle spazio o risalire sotto di lei) */
+    /* Contenitori */
+    --container: 72rem;
+    --container-text: 40rem; /* massimo per colonne di testo */
+    --gutter: clamp(1rem, 4vw, 2.5rem);
+    --page-inline: max(var(--gutter), calc((100% - var(--container)) / 2));
     --header-height: 4.5rem;
 
-    /* Larghezza massima dei contenuti: oltre non si estendono, restano centrati */
-    --content-max-width: 100ch;
+    /* Forma: angoli quasi vivi, editoria e non app */
+    --radius: 2px;
+    --radius-round: 999px;
+    --border-width: 1px;
+    --rule-width: 2px;
+
+    /* Motivo "corde": tre linee verticali come le corde della lira */
+    --corde-gap: 8px;
+    --corde-width: 2px;
+
+    /* Movimento */
+    --ease: cubic-bezier(0.2, 0, 0, 1);
+    --duration: 180ms;
 }
 
+html {
+    scroll-padding-block-start: calc(var(--header-height) + var(--space-5));
+}
 
-main > section,
-header,
-footer {
-    padding-inline: max(var(--space-lg), calc((100% - var(--content-max-width)) / 2));
+body {
+    margin: 0;
+}
+
+/* L'intestazione del sito è "fixed" (SiteHeader.svelte): lo spazio lo riserva il contenuto */
+main {
+    padding-block: var(--header-height) var(--space-9);
+    padding-inline: var(--page-inline);
+}
+
+main > * + :is(section, article, nav, ul, ol, dl, form),
+main > header + * {
+    margin-block-start: var(--space-9);
+}
+
+main > :is(section, article, header) > * + * {
+    margin-block: var(--space-5) 0;
+}
+
+main > :is(section, article) > :is(h1, h2) + * {
+    margin-block-start: var(--space-6);
+}
+
+/*
+ * Le corde: tre linee a tutta altezza, disegnate con tre gradienti affiancati su uno pseudo-elemento,
+ * senza elementi in più nel markup. Chi le usa imposta solo la posizione.
+ */
+main > header::after,
+body > div > footer::before {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    inline-size: calc(var(--corde-gap) * 2 + var(--corde-width) * 3);
+    background:
+        linear-gradient(var(--corde-color), var(--corde-color)) left / var(--corde-width) 100% no-repeat,
+        linear-gradient(var(--corde-color), var(--corde-color)) center / var(--corde-width) 100% no-repeat,
+        linear-gradient(var(--corde-color), var(--corde-color)) right / var(--corde-width) 100% no-repeat;
+    pointer-events: none;
+}
+
+/* Intestazione di pagina: titolo grande, presentazione, corde sul lato destro */
+main > header {
+    position: relative;
+    padding-block: var(--space-9) var(--space-6);
+    padding-inline-end: var(--space-10);
+}
+
+main > header::after {
+    inset-inline-end: 0;
+}
+
+main > header h1 {
+    font-size: var(--fs-display);
+    line-height: var(--lh-display);
+}
+
+main > header > p {
+    color: var(--text-muted);
+    font-size: var(--fs-lead);
+}
+
+/* Piè di pagina: superficie inchiostro (colors.css), corde sul margine destro */
+body > div > footer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: var(--space-7) var(--space-6);
+    padding-block: var(--space-9) var(--space-7);
+    padding-inline: var(--page-inline) calc(var(--page-inline) + var(--space-8));
+}
+
+body > div > footer::before {
+    inset-inline-end: var(--gutter);
+}
+
+body > div > footer h2 {
+    margin-block-end: var(--space-5);
+    font-size: var(--fs-h3);
+}
+
+body > div > footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body > div > footer li + li {
+    margin-block-start: var(--space-2);
+}
+
+body > div > footer a {
+    color: var(--text);
+}
+
+body > div > footer a:hover {
+    color: var(--accent-hover);
+}
+
+body > div > footer dd {
+    margin: var(--space-1) 0 var(--space-4);
+}
+
+body > div > footer > :is(nav:first-child, p:last-child) {
+    grid-column: 1 / -1;
+}
+
+body > div > footer > nav:first-child ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4) var(--space-6);
+}
+
+body > div > footer > nav:first-child li + li {
+    margin: 0;
+}
+
+body > div > footer > nav:first-child a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+}
+
+body > div > footer > nav:first-child svg {
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+}
+
+body > div > footer > p:last-child {
+    margin: 0;
+    padding-block-start: var(--space-5);
+    border-block-start: var(--border-width) solid var(--border);
+    color: var(--text-muted);
 }

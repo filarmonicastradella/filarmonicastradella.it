@@ -1,56 +1,47 @@
 /*
- * Sistema tipografico: Cormorant Garamond per i titoli, Montserrat per il testo.
- * Solo tipografia (font, dimensioni, pesi, interlinea, spaziatura): niente colori né layout.
- * Scala modulare con rapporto 1,333 (quarta giusta) su base 16px, in entrambe le direzioni.
+ * Tipografia — design system della Filarmonica (docs/DESIGN.md), stessi nomi del tokens.css di riferimento.
+ * Cormorant Garamond solo per i titoli da 24px in su (pesi 500 e 600); Plus Jakarta Sans per tutto il
+ * resto. Un solo titolo per composizione, con al massimo una parola in corsivo bordeaux (<em>).
  */
 
 :root {
-    --font-heading: "Cormorant Garamond", Georgia, serif;
-    --font-body: "Montserrat Variable", system-ui, -apple-system, sans-serif;
+    --font-display: "Cormorant Garamond", Cormorant, Garamond, "Times New Roman", serif;
+    --font-text: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
-    --font-weight-regular: 400;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
+    --fs-display: clamp(3rem, 2rem + 5vw, 4.5rem); /* 48→72 */
+    --fs-h1: clamp(2.25rem, 1.75rem + 2.5vw, 2.75rem); /* 36→44 */
+    --fs-h2: clamp(1.75rem, 1.5rem + 1vw, 1.875rem); /* 28→30 */
+    --fs-h3: 1.5rem; /* 24 */
+    --fs-lead: 1.125rem; /* 18: presentazione sotto i titoli di pagina */
+    --fs-body: 1rem; /* 16 */
+    --fs-small: 0.8125rem; /* 13 */
+    --fs-eyebrow: 0.75rem; /* 12, maiuscolo spaziato */
+    --fs-button: 0.875rem; /* 14 */
 
-    --font-size-xs: 0.563rem;
-    --font-size-sm: 0.75rem;
-    --font-size-md: 1rem;
-    --font-size-lg: 1.333rem;
-    --font-size-xl: 1.778rem;
-    --font-size-2xl: 2.37rem;
-    --font-size-3xl: 3.16rem;
-    --font-size-4xl: 4.214rem;
-    --font-size-5xl: 5.619rem;
+    --lh-display: 1;
+    --lh-heading: 1.1;
+    --lh-body: 1.6;
 
-    /* Gradini intermedi, radice quadrata del rapporto: stesso passo, risoluzione doppia */
-    --font-size-md-lg: 1.155rem;
-    --font-size-lg-xl: 1.54rem;
-    --font-size-xl-2xl: 2.053rem;
-    --font-size-2xl-3xl: 2.737rem;
-    --font-size-3xl-4xl: 3.649rem;
-    --font-size-4xl-5xl: 4.866rem;
+    --fw-display: 500;
+    --fw-heading: 600;
+    --fw-text: 400;
+    --fw-text-medium: 500;
+    --fw-text-strong: 600;
 
-    --line-height-display: 1.05;
-    --line-height-heading: 1.15;
-    --line-height-body: 1.65;
-
-    --letter-spacing-tight: -0.02em;
-    --letter-spacing-wide: 0.04em;
-
-    /* Lunghezza di riga comoda per il testo scorrevole */
-    --measure: 68ch;
+    --tracking-eyebrow: 0.16em;
+    --tracking-firma: 0.12em;
+    --tracking-tight: -0.01em;
 }
 
 body {
-    font-family: var(--font-body);
-    font-size: var(--font-size-md);
-    font-weight: var(--font-weight-regular);
-    line-height: var(--line-height-body);
+    font-family: var(--font-text);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-text);
+    line-height: var(--lh-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Titoli: peso semibold per tutti, non bold — più raffinato su un serif a questa scala */
 h1,
 h2,
 h3,
@@ -58,46 +49,37 @@ h4,
 h5,
 h6 {
     margin: 0;
-    font-family: var(--font-heading);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-heading);
+    font-family: var(--font-display);
+    font-weight: var(--fw-heading);
+    line-height: var(--lh-heading);
+    letter-spacing: var(--tracking-tight);
     text-wrap: balance;
 }
 
-/* La crenatura stretta si nota solo sui titoli grandi: sui piccoli toglie leggibilità */
-h1,
-h2 {
-    letter-spacing: var(--letter-spacing-tight);
-}
-
 h1 {
-    font-size: var(--font-size-2xl);
-    line-height: var(--line-height-display);
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-display);
 }
 
 h2 {
-    font-size: var(--font-size-xl-2xl);
+    font-size: var(--fs-h2);
 }
 
-h3 {
-    font-size: var(--font-size-xl);
-}
-
-h4 {
-    font-size: var(--font-size-lg-xl);
-}
-
-h5 {
-    font-size: var(--font-size-lg);
-}
-
+h3,
+h4,
+h5,
 h6 {
-    font-size: var(--font-size-md-lg);
+    font-size: var(--fs-h3);
 }
 
-/* Testo */
+/* Il gesto distintivo del marchio: una parola del titolo in corsivo bordeaux */
+:is(h1, h2, h3) em {
+    color: var(--text-brand);
+    font-weight: var(--fw-display);
+}
+
 main p {
-    max-width: var(--measure);
+    max-width: var(--container-text);
 }
 
 p,
@@ -108,40 +90,47 @@ figcaption {
 }
 
 strong,
-dt,
 th {
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--fw-text-strong);
 }
 
-/* Sempre più piccolo del testo intorno, qualunque sia il contesto */
 small,
 figcaption {
-    font-size: 0.85em;
+    font-size: var(--fs-small);
 }
 
-/*
- * Etichette: maiuscole rimpicciolite dal browser (font-variant-caps), non testo in maiuscolo pieno.
- * Né Cormorant Garamond né Montserrat hanno un vero maiuscoletto disegnato (nessuna delle due ha
- * la feature OpenType "smcp"): il risultato è sintetizzato, ma resta più discreto del maiuscolo pieno.
- */
-time,
-dt,
-th,
-body > div > footer h2 {
+figcaption {
     color: var(--text-muted);
-    text-transform: uppercase;
-    font-variant-caps: small-caps;
-    letter-spacing: var(--letter-spacing-wide);
 }
 
+/* Occhielli: date, etichette, voci delle coppie etichetta/valore */
 time,
 dt,
 th {
-    font-size: var(--font-size-sm);
+    font-family: var(--font-text);
+    font-size: var(--fs-eyebrow);
+    font-weight: var(--fw-text-strong);
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+}
+
+time {
+    color: var(--text-brand);
+}
+
+dt,
+th {
+    color: var(--text-muted);
+}
+
+/* Cormorant ha numeri "antichi": per date, orari, prezzi e tabelle servono quelli allineati */
+time,
+td,
+dd {
+    font-variant-numeric: lining-nums tabular-nums;
 }
 
 abbr[title] {
-    letter-spacing: var(--letter-spacing-wide);
     text-decoration: none;
     cursor: help;
 }
@@ -150,7 +139,6 @@ address {
     font-style: normal;
 }
 
-/* I controlli dei moduli seguono la tipografia del testo */
 button,
 input,
 select,
@@ -158,4 +146,3 @@ textarea {
     font: inherit;
     letter-spacing: inherit;
 }
-

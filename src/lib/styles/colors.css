@@ -1,3 +1,103 @@
 /*
- * Colori: marchio, neutri, temi chiaro/scuro automatico (ancora da scrivere).
+ * Colori — design system della Filarmonica (docs/DESIGN.md), stessi nomi del tokens.css di riferimento.
+ * Due livelli: la tavolozza (--color-*, valori fissi) e i ruoli (--bg, --text, --accent...), gli unici
+ * da usare nelle regole. Il tema scuro cambia solo i ruoli e segue l'impostazione del dispositivo.
+ * Contrasti verificati WCAG AA (rapporto sul fondo del ruolo).
  */
+
+:root {
+    color-scheme: light dark;
+
+    /* ── Colori di marca ── */
+    --color-bordeaux: #701521; /* principale: logo, titoli, azioni */
+    --color-bordeaux-notte: #480c15; /* fondi pieni scuri, hover */
+    --color-cipria: #ebd9da; /* fondi tenui, testo su bordeaux */
+    --color-rosa-velluto: #c98891; /* parola accento su fondo scuro */
+    --color-carta: #f6f1ea; /* sfondo principale */
+    --color-inchiostro: #1e1a1b; /* testo, fondi scuri */
+    --color-pietra: #6e6668; /* testo secondario */
+    --color-sabbia: #e8e2db; /* separatori, fondi neutri */
+    --color-nebbia: #b9b0b2; /* testo secondario su fondo scuro */
+    --color-bianco: #ffffff;
+    --color-ottone: #b08a4e; /* SOLO edizioni speciali (gala, 250°) */
+
+    /* ── Ruoli, tema chiaro ── */
+    --bg: var(--color-carta);
+    --bg-raised: var(--color-bianco);
+    --bg-inverse: var(--color-inchiostro);
+    --bg-brand: var(--color-bordeaux);
+    --text: var(--color-inchiostro); /* 15,3:1 */
+    --text-muted: var(--color-pietra); /* 5:1 */
+    --text-inverse: var(--color-carta);
+    --text-brand: var(--color-bordeaux); /* 10,3:1 */
+    --accent: var(--color-bordeaux);
+    --accent-hover: var(--color-bordeaux-notte);
+    --on-accent: var(--color-carta); /* 10,3:1 */
+    --border: var(--color-sabbia);
+    --border-strong: var(--color-inchiostro);
+    --focus-ring: var(--color-bordeaux);
+    --corde-color: var(--color-bordeaux);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: var(--color-inchiostro);
+        --bg-raised: #2a2425;
+        --bg-inverse: var(--color-bordeaux-notte);
+        --text: var(--color-carta);
+        --text-muted: var(--color-nebbia); /* 8,1:1 */
+        /* Il bordeaux sul fondo scuro non si legge: testo, link e azioni passano al rosa velluto */
+        --text-brand: var(--color-rosa-velluto); /* 6:1 */
+        --accent: var(--color-rosa-velluto);
+        --accent-hover: var(--color-cipria);
+        --on-accent: var(--color-inchiostro); /* 6:1 */
+        --border: color-mix(in oklab, var(--color-carta) 16%, var(--color-inchiostro));
+        --border-strong: var(--color-carta);
+        --focus-ring: var(--color-rosa-velluto);
+        --corde-color: var(--color-rosa-velluto);
+    }
+}
+
+/*
+ * Superfici scure fisse (piè di pagina, sezioni a fondo pieno): come nel design system,
+ * si attivano con data-surface e i ruoli si adattano da soli.
+ */
+[data-surface="inchiostro"],
+body > div > footer {
+    --bg: var(--bg-inverse);
+    --text: var(--color-carta);
+    --text-muted: var(--color-nebbia);
+    --text-brand: var(--color-rosa-velluto);
+    --accent: var(--color-carta);
+    --accent-hover: var(--color-cipria);
+    --on-accent: var(--color-inchiostro);
+    --border: color-mix(in oklab, var(--color-carta) 18%, transparent);
+    --corde-color: var(--color-cipria);
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+[data-surface="bordeaux"] {
+    --bg: var(--color-bordeaux);
+    --text: var(--color-carta);
+    --text-muted: var(--color-cipria);
+    --text-brand: var(--color-cipria);
+    --accent: var(--color-carta);
+    --accent-hover: var(--color-cipria);
+    --on-accent: var(--color-bordeaux);
+    --border: color-mix(in oklab, var(--color-carta) 25%, transparent);
+    --corde-color: var(--color-cipria);
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+html {
+    background-color: var(--bg);
+    color: var(--text);
+    accent-color: var(--accent);
+}
+
+::selection {
+    background-color: var(--color-cipria);
+    color: var(--color-inchiostro);
+}
