@@ -3,9 +3,12 @@ import { enhancedImages } from '@sveltejs/enhanced-img';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import { mdsvex } from 'mdsvex';
+import Icons from 'unplugin-icons/vite';
 
 export default defineConfig({
 	plugins: [
+		// Icone Iconify come componenti Svelte, impacchettate alla build: nessuna richiesta esterna a runtime.
+		Icons({ compiler: 'svelte' }),
 		enhancedImages(),
 		sveltekit({
 			extensions: ['.svelte', '.md'],

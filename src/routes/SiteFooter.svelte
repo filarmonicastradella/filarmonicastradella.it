@@ -1,24 +1,28 @@
 <script lang="ts">
-    import { siFacebook, siInstagram, siTiktok, siWhatsapp, siYoutube } from "simple-icons";
+    import InstagramIcon from "~icons/simple-icons/instagram";
+    import FacebookIcon from "~icons/simple-icons/facebook";
+    import WhatsappIcon from "~icons/simple-icons/whatsapp";
+    import YoutubeIcon from "~icons/simple-icons/youtube";
+    import TiktokIcon from "~icons/simple-icons/tiktok";
     import { legalSeat } from "$lib/locations";
     import { organization } from "$lib/organization";
 
     const socials = [
-        { name: "Instagram", href: "https://instagram.com/filarmonicastradella", icon: siInstagram },
-        { name: "Facebook", href: "https://facebook.com/filarmonicastradella", icon: siFacebook },
-        { name: "WhatsApp", href: "https://wa.me/393505363110", icon: siWhatsapp },
-        { name: "YouTube", href: "https://youtube.com/@filarmonicastradella", icon: siYoutube },
-        { name: "TikTok", href: "https://tiktok.com/@filarmonicastradella", icon: siTiktok }
+        { name: "Instagram", href: "https://instagram.com/filarmonicastradella", Icon: InstagramIcon },
+        { name: "Facebook", href: "https://facebook.com/filarmonicastradella", Icon: FacebookIcon },
+        { name: "WhatsApp", href: "https://wa.me/393505363110", Icon: WhatsappIcon },
+        { name: "YouTube", href: "https://youtube.com/@filarmonicastradella", Icon: YoutubeIcon },
+        { name: "TikTok", href: "https://tiktok.com/@filarmonicastradella", Icon: TiktokIcon }
     ];
 </script>
 
 <footer>
     <nav aria-label="Social media">
         <ul>
-            {#each socials as { name, href, icon } (name)}
+            {#each socials as { name, href, Icon } (name)}
                 <li>
                     <a {href} target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d={icon.path} /></svg>
+                        <Icon aria-hidden="true" />
                         <span>{name}</span>
                     </a>
                 </li>
