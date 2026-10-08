@@ -1,3 +1,297 @@
 /*
- * Testo dentro le pagine: paragrafi, elenchi, schede, tabelle, figure, finestre (ancora da scrivere).
+ * Contenuti delle pagine: collegamenti, elenchi, schede, coppie etichetta/valore, tabelle,
+ * figure, finestre, indici di sezione. Selettori di elementi, ruoli e microdati (AGENTS.md).
  */
+
+:root {
+    /* Freccia dei link esterni (Heroicons 20 solid, arrow-up-right) usata come maschera */
+    --icon-external: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill-rule='evenodd' d='M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06'/%3E%3C/svg%3E");
+    /* Freccia dei rimandi interni (Heroicons 20 solid, arrow-right) */
+    --icon-next: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill-rule='evenodd' d='M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10'/%3E%3C/svg%3E");
+}
+
+/* Collegamenti nel testo: colore del marchio, sottolineatura sottile e distante dalle lettere */
+a {
+    color: var(--text-brand);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    transition: color var(--duration) var(--ease);
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+:focus-visible {
+    outline: var(--rule-width) solid var(--focus-ring);
+    outline-offset: var(--rule-width);
+}
+
+/* Ogni link esterno ha la sua freccia, senza toccare il markup */
+a[target="_blank"]::after {
+    content: "";
+    display: inline-block;
+    inline-size: 0.8em;
+    block-size: 0.8em;
+    margin-inline-start: 0.2em;
+    vertical-align: -0.05em;
+    background-color: currentColor;
+    mask: var(--icon-external) center / contain no-repeat;
+}
+
+/* Le icone dei social e le immagini parlano da sole: niente freccia */
+body > div > footer > nav:first-child a::after,
+a[target="_blank"]:has(img)::after {
+    content: none;
+}
+
+/*
+ * Rimando a fine sezione ("Tutti gli eventi", "Tutte le notizie"): un paragrafo con un solo link
+ * interno, in coda a una sezione o alla pagina. Si presenta come un'etichetta con la freccia.
+ */
+main :is(section, article) > p:last-child > a:only-child:not([target]),
+main > p:last-child > a:only-child:not([target]) {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--fs-eyebrow);
+    font-weight: var(--fw-text-strong);
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+main :is(section, article) > p:last-child > a:only-child:not([target])::after,
+main > p:last-child > a:only-child:not([target])::after {
+    content: "";
+    inline-size: 1rem;
+    block-size: 1rem;
+    background-color: currentColor;
+    mask: var(--icon-next) center / contain no-repeat;
+    transition: translate var(--duration) var(--ease);
+}
+
+main :is(section, article) > p:last-child > a:only-child:not([target]):hover::after,
+main > p:last-child > a:only-child:not([target]):hover::after {
+    translate: 0.25rem 0;
+}
+
+/* Elenchi nel testo */
+main :is(ul, ol) {
+    padding-inline-start: var(--space-5);
+}
+
+main li + li {
+    margin-block-start: var(--space-2);
+}
+
+/* ─────────────── Schede ───────────────
+ * Una scheda è un elemento di elenco il cui link avvolge un titolo (AGENTS.md): direttamente
+ * (<li><a><h3>) o dentro un articolo con microdati (<li><article><a><h3>).
+ * Design system: fondo rialzato, bordo sottile, angoli quasi vivi, nessuna ombra; in griglia,
+ * tutte della stessa altezza.
+ */
+:is(ul, ol):has(> li > a > :is(h2, h3, h4), > li > article > a > :is(h2, h3, h4)) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-5);
+    padding: 0;
+    list-style: none;
+}
+
+:is(ul, ol):has(> li > a > :is(h2, h3, h4), > li > article > a > :is(h2, h3, h4)) > li {
+    margin: 0;
+}
+
+li > article {
+    block-size: 100%;
+}
+
+:is(li > a, li > article > a):has(> :is(h2, h3, h4)) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    box-sizing: border-box;
+    block-size: 100%;
+    padding: var(--space-5);
+    border: var(--border-width) solid var(--border);
+    border-radius: var(--radius);
+    background-color: var(--bg-raised);
+    color: var(--text);
+    text-decoration: none;
+    transition: border-color var(--duration) var(--ease);
+}
+
+:is(li > a, li > article > a):has(> :is(h2, h3, h4)) > * {
+    margin: 0;
+}
+
+:is(li > a, li > article > a):has(> :is(h2, h3, h4)) > p:not(:has(time)) {
+    color: var(--text-muted);
+}
+
+:is(li > a, li > article > a):has(> :is(h2, h3, h4)):hover {
+    border-color: var(--accent);
+}
+
+:is(li > a, li > article > a):has(> :is(h2, h3, h4)):hover > :is(h2, h3, h4) {
+    color: var(--text-brand);
+}
+
+/* Le pagine hub hanno titoli di scheda h2: stessa misura delle altre schede */
+li > a > h2 {
+    font-size: var(--fs-h3);
+}
+
+/* Nelle schede che portano fuori dal sito la freccia sta nell'angolo, non in coda al testo */
+:is(li > a, li > article > a):has(> :is(h2, h3, h4))[target="_blank"] {
+    padding-inline-end: var(--space-7);
+}
+
+:is(li > a, li > article > a):has(> :is(h2, h3, h4))[target="_blank"]::after {
+    position: absolute;
+    inset-block-start: var(--space-5);
+    inset-inline-end: var(--space-5);
+    margin: 0;
+}
+
+/* ─────────────── Coppie etichetta/valore ─────────────── */
+dl {
+    margin: 0;
+}
+
+dd {
+    margin: var(--space-1) 0 var(--space-4);
+}
+
+/* Domande frequenti: la domanda è un titolo, non un'etichetta */
+dl[itemtype$="FAQPage"] > div {
+    padding-block: var(--space-5);
+    border-block-start: var(--border-width) solid var(--border);
+}
+
+dl[itemtype$="FAQPage"] dt {
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-heading);
+    line-height: var(--lh-heading);
+    letter-spacing: var(--tracking-tight);
+    text-transform: none;
+    color: var(--text);
+}
+
+dl[itemtype$="FAQPage"] dd {
+    max-width: var(--container-text);
+    margin: var(--space-3) 0 0;
+}
+
+/* ─────────────── Indice di sezione (TimelineSections) ─────────────── */
+main > nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-5);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+main > nav li + li {
+    margin: 0;
+}
+
+main > nav a {
+    font-size: var(--fs-eyebrow);
+    font-weight: var(--fw-text-strong);
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+main > nav li > ul {
+    margin-block-start: var(--space-2);
+}
+
+/* Mesi e anni: titolo con il filetto, come le sezioni */
+main section[id^="mese-"] > :is(h2, h3),
+main section[id^="anno-"] > h2 {
+    margin-block-end: var(--space-5);
+}
+
+main section[id^="mese-"] + section[id^="mese-"],
+main section[id^="anno-"] + section[id^="anno-"] {
+    margin-block-start: var(--space-8);
+}
+
+/* ─────────────── Tabelle ─────────────── */
+table {
+    inline-size: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: var(--space-3) var(--space-4) var(--space-3) 0;
+    border-block-end: var(--border-width) solid var(--border);
+    text-align: start;
+    vertical-align: top;
+}
+
+/* ─────────────── Figure e immagini ─────────────── */
+img,
+video {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    margin-block-start: var(--space-3);
+}
+
+blockquote {
+    margin: 0;
+    padding-inline-start: var(--space-5);
+    border-inline-start: var(--rule-width) solid var(--text-brand);
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    line-height: var(--lh-heading);
+}
+
+hr {
+    block-size: 0;
+    margin-block: var(--space-7);
+    border: 0;
+    border-block-start: var(--border-width) solid var(--border);
+}
+
+/* ─────────────── Finestre ─────────────── */
+dialog {
+    max-inline-size: min(90vw, var(--container));
+    padding: var(--space-5);
+    border: 0;
+    border-radius: var(--radius);
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+dialog::backdrop {
+    background-color: color-mix(in oklab, var(--color-inchiostro) 80%, transparent);
+}
+
+/* Aree di stato: sempre presenti, visibili solo quando hanno un messaggio */
+[role="status"]:empty {
+    display: none;
+}
+
+[role="status"]:not(:empty) {
+    padding: var(--space-4) var(--space-5);
+    border: var(--border-width) solid var(--border);
+    border-inline-start: var(--rule-width) solid var(--accent);
+    border-radius: var(--radius);
+    background-color: var(--bg-raised);
+}

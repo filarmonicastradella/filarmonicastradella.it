@@ -1,3 +1,125 @@
 /*
- * Moduli e pulsanti (ancora da scrivere).
+ * Pulsanti e moduli — design system della Filarmonica (docs/DESIGN.md).
+ * Primario: fondo bordeaux, testo carta, uno solo per schermata. Secondario: contorno inchiostro.
+ * Campi: fondo rialzato e bordo sottile come le schede, angoli quasi vivi.
  */
+
+button,
+input[type="submit"],
+input[type="button"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    border: var(--border-width) solid var(--accent);
+    border-radius: var(--radius);
+    background-color: var(--accent);
+    color: var(--on-accent);
+    font-size: var(--fs-button);
+    font-weight: var(--fw-text-strong);
+    line-height: 1.2;
+    cursor: pointer;
+    transition:
+        background-color var(--duration) var(--ease),
+        border-color var(--duration) var(--ease),
+        color var(--duration) var(--ease);
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    border-color: var(--accent-hover);
+    background-color: var(--accent-hover);
+}
+
+/* Secondario: azioni di servizio nel contenuto (chiudere una finestra, caricare una mappa) */
+form[method="dialog"] button,
+main button[type="button"] {
+    border-color: var(--border-strong);
+    background-color: transparent;
+    color: var(--text);
+}
+
+form[method="dialog"] button:hover,
+main button[type="button"]:hover {
+    border-color: var(--text-brand);
+    background-color: transparent;
+    color: var(--text-brand);
+}
+
+form {
+    max-inline-size: var(--container-text);
+}
+
+form > p {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin: 0 0 var(--space-5);
+}
+
+label {
+    font-size: var(--fs-small);
+    font-weight: var(--fw-text-strong);
+}
+
+input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="hidden"]),
+select,
+textarea {
+    box-sizing: border-box;
+    inline-size: 100%;
+    padding: var(--space-3) var(--space-4);
+    border: var(--border-width) solid var(--border);
+    border-radius: var(--radius);
+    background-color: var(--bg-raised);
+    color: var(--text);
+    transition: border-color var(--duration) var(--ease);
+}
+
+input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="hidden"]):hover,
+select:hover,
+textarea:hover {
+    border-color: var(--text-muted);
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    border-color: var(--accent);
+}
+
+/* Il consenso: casella e testo sulla stessa riga */
+form > p:has(> input[type="checkbox"]) {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+form > p > input[type="checkbox"] {
+    flex-shrink: 0;
+    inline-size: 1.1rem;
+    block-size: 1.1rem;
+    margin-block-start: 0.2em;
+}
+
+form > p > input[type="checkbox"] + label {
+    font-weight: var(--fw-text);
+}
+
+fieldset {
+    margin: 0 0 var(--space-5);
+    padding: 0;
+    border: 0;
+}
+
+legend {
+    margin-block-end: var(--space-4);
+    padding: 0;
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-heading);
+}
