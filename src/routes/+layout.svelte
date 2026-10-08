@@ -5,18 +5,15 @@
     import "$lib/styles/content.css";
     import "$lib/styles/forms.css";
     import { onNavigate } from "$app/navigation";
-    import favicon from "$lib/assets/favicon.svg";
+    import favicon from "$lib/assets/icon.svg";
     import SiteHeader from "./SiteHeader.svelte";
     import SiteFooter from "./SiteFooter.svelte";
     // import OldFooterReference from "./OldFooterReference.svelte"; // TEMPORANEO: confronto visivo concluso, da togliere del tutto
 
-    // Cormorant Garamond — pesi specifici
-    import "@fontsource/cormorant-garamond/latin-400.css";
+    // Cormorant Garamond: solo i pesi del design system (500, 600 e il corsivo 500 per la parola evidenziata)
     import "@fontsource/cormorant-garamond/latin-500.css";
     import "@fontsource/cormorant-garamond/latin-600.css";
-    import "@fontsource/cormorant-garamond/latin-700.css";
-    import "@fontsource/cormorant-garamond/latin-400-italic.css";
-    import "@fontsource/cormorant-garamond/latin-700-italic.css";
+    import "@fontsource/cormorant-garamond/latin-500-italic.css";
 
     // Plus Jakarta Sans — variable
     import "@fontsource-variable/plus-jakarta-sans/wght.css";
@@ -55,9 +52,12 @@
     /* Visibile solo quando riceve il focus da tastiera: chi naviga con Tab salta subito al contenuto */
     a[href="#contenuto"] {
         position: absolute;
-        top: var(--space-sm);
-        left: var(--space-sm);
-        padding: var(--space-xs) var(--space-md);
+        z-index: 20;
+        top: var(--space-4);
+        left: var(--space-4);
+        padding: var(--space-3) var(--space-5);
+        background-color: var(--accent);
+        color: var(--on-accent);
         transform: translateY(-150%);
     }
 

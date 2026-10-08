@@ -8,16 +8,6 @@
 
     const isActive = (href: string) => (page.url.pathname === href ? "page" : page.url.pathname.startsWith(href + "/") ? "true" : undefined);
 
-    // Transizione custom basata sull'altezza, totalmente opaca (nessuna dissolvenza): misura l'altezza
-    // naturale dell'elemento e la anima da 0 a quel valore, tagliando il contenuto nel frattempo.
-    function expand(node: HTMLElement, { duration = 250 } = {}) {
-        const height = node.offsetHeight;
-        return {
-            duration,
-            css: (t: number) => `overflow: hidden; height: ${t * height}px; opacity: 1;`
-        };
-    }
-
     // Il menu si chiude dopo una navigazione (senza JS la pagina si ricarica e si chiude da sola).
     afterNavigate(() => onClose?.());
 
@@ -27,71 +17,56 @@
     });
 </script>
 
-{#if open}
-    <nav aria-label="Navigazione principale" transition:expand={{ duration: 250 }}>
-        <ul>
-            {#each navItems as item (item.href)}
-                <li>
-                    {#if item.children}
-                        <details name="menu-section">
-                            <summary>
-                                <ChevronDownIcon aria-hidden="true" />
-                                {item.title}
-                            </summary>
-                            <ul>
-                                <li><a href={item.href} aria-current={isActive(item.href)}>Panoramica</a></li>
-                                {#each item.children as child (child.href)}
-                                    <li><a href={child.href} aria-current={isActive(child.href)}>{child.title}</a></li>
-                                {/each}
-                            </ul>
-                        </details>
-                    {:else}
-                        <a href={item.href} aria-current={isActive(item.href)}>{item.title}</a>
-                    {/if}
-                </li>
-            {/each}
-        </ul>
-    </nav>
-{/if}
+<nav aria-label="Navigazione principale" data-open={open || undefined}>
+    <ul>
+        {#each navItems as item (item.href)}
+            <li>
+                {#if item.children}
+                    <details name="menu-section">
+                        <summary>
+                            {item.title}
+                            <ChevronDownIcon aria-hidden="true" />
+                        </summary>
+                        <ul>
+                            <li><a href={item.href} aria-current={isActive(item.href)}>Panoramica</a></li>
+                            {#each item.children as child (child.href)}
+                                <li><a href={child.href} aria-current={isActive(child.href)}>{child.title}</a></li>
+                            {/each}
+                        </ul>
+                    </details>
+                {:else}
+                    <a href={item.href} aria-current={isActive(item.href)}>{item.title}</a>
+                {/if}
+            </li>
+        {/each}
+    </ul>
+</nav>
 
 <style>
-    /*
-     * Occupa lo schermo sotto la barra. Il padding orizzontale è lo stesso calcolo di "main"/
-     * dell'intestazione (layout.css): così il contenuto del menu si allinea agli stessi margini del
-     * resto della pagina, non a un valore a sé.
-     */
-    nav {
-        position: fixed;
-        inset: var(--header-height) 0 0;
-        margin: 0;
-        padding-block: var(--space-xl);
-        padding-inline: max(var(--space-lg), calc((100% - var(--content-max-width)) / 2));
-        overflow-y: auto;
-    }
-
     nav ul {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-sm);
         margin: 0;
         padding: 0;
         list-style: none;
     }
 
-    /* Stesso trattamento dei titoli veri (h1-h6 in typography.css): peso semibold, non regular */
-    nav > ul > li > a,
+    a,
+    summary {
+        color: var(--text);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* La pagina corrente, la sezione in cui ci si trova e il passaggio del mouse nel colore del marchio */
+    a[aria-current],
+    a:hover,
+    summary:hover {
+        color: var(--text-brand);
+    }
+
     summary {
         display: flex;
         align-items: center;
-        gap: var(--space-sm);
-        font-family: var(--font-heading);
-        font-size: var(--font-size-xl-2xl);
-        font-weight: var(--font-weight-semibold);
-    }
-
-    /* Una voce con pagine figlie si apre sul posto (<details> nativo, nessun JS necessario) */
-    summary {
-        cursor: pointer;
+        gap: var(--space-2);
         list-style: none;
     }
 
@@ -99,41 +74,121 @@
         display: none;
     }
 
-    /*
-     * ":global()": ChevronDownIcon è un componente Svelte a sé (icona Iconify, impacchettata alla
-     * build), non un elemento scritto direttamente in questo template — la classe di scoping non
-     * raggiunge il suo <svg> interno, serve dire esplicitamente di matcharlo comunque.
-     * Dimensione esplicita (non "1em"): l'icona non deve scalare con il testo del titolo.
-     */
+    /* ":global()": l'icona è un componente a sé, la classe di scoping non raggiunge il suo <svg> */
     summary :global(svg) {
-        width: var(--font-size-xl);
-        height: var(--font-size-xl);
         flex-shrink: 0;
-        transition: transform 0.2s ease;
+        width: 1em;
+        height: 1em;
+        transition: transform var(--duration) var(--ease);
     }
 
     details[open] summary :global(svg) {
         transform: rotate(180deg);
     }
 
-    @media (prefers-reduced-motion: reduce) {
+    /*
+     * Sotto i 64rem: pannello a tutto schermo sotto la barra, aperto dal pulsante a due barre.
+     * Voci grandi in Cormorant, pagine figlie in Jakarta sotto la voce.
+     */
+    @media (max-width: 63.999rem) {
+        nav {
+            display: none;
+            position: fixed;
+            inset: var(--header-height) 0 0;
+            padding-block: var(--space-7);
+            padding-inline: var(--page-inline);
+            overflow-y: auto;
+            background-color: var(--bg);
+        }
+
+        nav[data-open] {
+            display: block;
+        }
+
+        nav > ul {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        nav > ul > li > a,
+        summary {
+            font-family: var(--font-display);
+            font-size: var(--fs-h1);
+            font-weight: var(--fw-display);
+            line-height: var(--lh-heading);
+        }
+
         summary :global(svg) {
-            transition: none;
+            width: 0.6em;
+            height: 0.6em;
+        }
+
+        details ul {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+            margin-block-start: var(--space-3);
+        }
+
+        details ul a {
+            color: var(--text-muted);
+            font-size: var(--fs-lead);
         }
     }
 
-    /*
-     * Le pagine figlie si allineano sotto il testo del titolo, non sotto la sua icona: il rientro è
-     * la larghezza dell'icona più lo spazio che la separa dal testo (stesso "gap" del titolo sopra).
-     */
-    details ul {
-        gap: var(--space-2xs);
-        margin-block-start: var(--space-xs);
-        padding-inline-start: calc(var(--font-size-xl) + var(--space-sm));
+    /* Da 64rem: voci in linea nell'intestazione; le pagine figlie si aprono in un riquadro sotto la voce */
+    @media (min-width: 64rem) {
+        nav {
+            margin-inline-start: auto;
+        }
+
+        nav > ul {
+            display: flex;
+            align-items: center;
+            gap: var(--space-6);
+        }
+
+        nav > ul > li > a,
+        summary {
+            font-size: var(--fs-small);
+            font-weight: var(--fw-text-medium);
+        }
+
+        details {
+            position: relative;
+        }
+
+        details ul {
+            position: absolute;
+            top: calc(100% + var(--space-4));
+            left: calc(-1 * var(--space-4));
+            min-width: 14rem;
+            padding: var(--space-3) var(--space-4);
+            border: var(--border-width) solid var(--border);
+            border-radius: var(--radius);
+            background-color: var(--bg-raised);
+        }
+
+        details ul li + li {
+            margin-block-start: var(--space-2);
+        }
+
+        details ul a {
+            font-size: var(--fs-small);
+        }
     }
 
-    details ul a {
-        display: block;
-        font-size: var(--font-size-md-lg);
+    @media (max-width: 63.999rem) and (prefers-reduced-motion: no-preference) {
+        nav[data-open] {
+            animation: apertura var(--duration) var(--ease);
+        }
+    }
+
+    @keyframes apertura {
+        from {
+            opacity: 0;
+            transform: translateY(calc(-1 * var(--space-4)));
+        }
     }
 </style>

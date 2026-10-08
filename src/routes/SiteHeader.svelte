@@ -1,6 +1,5 @@
 <script lang="ts">
     import logoSvg from "$lib/assets/favicon.svg?raw";
-    import { page } from "$app/state";
     import SiteMenu from "./SiteMenu.svelte";
 
     // Il file SVG dichiara una dimensione enorme (826×1382): senza CSS il logo occuperebbe tutta la pagina.
@@ -9,17 +8,14 @@
         .replace('width="826" height="1382"', 'width="22" height="36"')
         .replaceAll('fill="black"', 'fill="currentColor"');
 
-    // Solo nella landing l'intestazione nasce trasparente sopra la hero (vedi stile sotto).
-    const isHome = $derived(page.url.pathname === "/");
-
-    // Stato del menu: niente popover nativo, come nel vecchio sito. Il bottone non fa nulla senza JS.
+    // Menu a scomparsa sotto i 64rem; da 64rem le voci sono sempre visibili in linea.
     let open = $state(false);
 </script>
 
-<header data-home={isHome || undefined}>
+<header>
     <a href="/">
         <span aria-hidden="true">{@html logo}</span>
-        <span>Filarmonica Alessandro Stradella <abbr title="Associazione di Promozione Sociale">APS</abbr></span>
+        <span><span>Filarmonica</span> Alessandro Stradella</span>
     </a>
 
     <button
@@ -33,79 +29,92 @@
     </button>
 
     <SiteMenu {open} onClose={() => (open = false)} />
+
+    <p><a href="/support/join">Unisciti a noi</a></p>
 </header>
 
 <style>
     /*
-     * "fixed" e non "sticky": deve poter galleggiare sopra la hero (trasparente) invece di riservare
-     * il proprio spazio nel flusso — quello spazio lo riserva "main" (vedi layout.css).
-     * Sfondo provvisorio (bianco): i colori definitivi arriveranno con colors.css.
+     * "fixed": resta in vista scorrendo; lo spazio nel flusso lo riserva "main" (layout.css).
+     * Design system: logotipo orizzontale a sinistra (simbolo, occhiello FILARMONICA, nome), voci di
+     * menu in linea e un solo pulsante pieno per l'azione principale.
      */
     header {
         display: flex;
         position: fixed;
+        z-index: 10;
         top: 0;
         inset-inline: 0;
         align-items: center;
         justify-content: space-between;
-        gap: var(--space-sm);
+        gap: var(--space-6);
         height: var(--header-height);
-        background-color: white;
-    }
-
-    /*
-     * Nella landing nasce trasparente sopra la hero scura (testo chiaro) e torna opaca (testo normale)
-     * quando la hero esce dalla vista: "view-timeline-name: --hero" è dichiarato lì (Hero.svelte).
-     * Senza supporto per le scroll-driven animations resta semplicemente opaca fin da subito: sicura
-     * e leggibile, l'effetto "vede sopra la hero" è solo un miglioramento, non una base necessaria.
-     */
-    @supports (view-timeline-name: --t) {
-        header[data-home] {
-            background-color: transparent;
-            color: #f5efe6;
-            /* "auto": senza durata esplicita un'animazione guidata dallo scroll avrebbe durata 0 e nessun effetto */
-            animation: diventa-opaca auto linear both;
-            animation-timeline: --hero;
-            animation-range: exit;
-        }
-    }
-
-    @keyframes diventa-opaca {
-        to {
-            background-color: white;
-            color: inherit;
-        }
+        padding-inline: var(--page-inline);
+        border-block-end: var(--border-width) solid var(--border);
+        background-color: var(--bg);
+        color: var(--text);
     }
 
     header > a {
         display: flex;
         align-items: center;
-        gap: var(--space-sm);
+        gap: var(--space-3);
+        color: var(--text-brand);
+        text-decoration: none;
     }
 
-    /* Nome dell'associazione in Garamond come i titoli, non nel font del corpo del testo */
-    header > a span:last-child {
-        font-family: var(--font-heading);
-        font-size: var(--font-size-lg);
-        font-weight: var(--font-weight-semibold);
-    }
-
-    /*
-     * ":global()": il logo arriva via {@html} (stringa grezza), Svelte non può aggiungergli la classe
-     * di scoping. Senza :global() la regola non matcherebbe mai l'svg reale — qui il risultato era
-     * casualmente giusto lo stesso, perché la stringa del logo ha già width/height scritti a mano
-     * (22×36, vedi sopra), ma la regola in sé non ha mai fatto nulla finché non si tocca quel valore.
-     */
+    /* ":global()": il logo arriva via {@html}, Svelte non può aggiungergli la classe di scoping */
     header > a span :global(svg) {
         height: 2.5rem;
         width: auto;
     }
 
-    /*
-     * Due barre semplici (non un <svg>): niente stranezze di transform-origin su elementi SVG tra
-     * browser (causa più probabile dei problemi avuti con l'icona disegnata a mano in precedenza) —
-     * su un elemento normale ruotare intorno al proprio centro è prevedibile ovunque.
-     */
+    header > a > span:last-child {
+        display: flex;
+        flex-direction: column;
+        color: var(--text);
+        font-family: var(--font-display);
+        font-size: var(--fs-h3);
+        font-weight: var(--fw-display);
+        line-height: 1;
+    }
+
+    /* L'occhiello FILARMONICA del logotipo */
+    header > a > span:last-child > span {
+        margin-block-end: var(--space-1);
+        color: var(--text-brand);
+        font-family: var(--font-text);
+        font-size: 0.625rem;
+        font-weight: var(--fw-text-strong);
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+    }
+
+    /* Il pulsante d'azione: solo da 64rem (sotto, la stessa pagina è nel menu, sotto Sostienici) */
+    header > p {
+        display: none;
+        margin: 0;
+    }
+
+    header > p a {
+        display: inline-block;
+        padding: var(--space-2) var(--space-5);
+        border: var(--border-width) solid var(--accent);
+        border-radius: var(--radius);
+        background-color: var(--accent);
+        color: var(--on-accent);
+        font-size: var(--fs-button);
+        font-weight: var(--fw-text-strong);
+        text-decoration: none;
+        transition: background-color var(--duration) var(--ease);
+    }
+
+    header > p a:hover {
+        border-color: var(--accent-hover);
+        background-color: var(--accent-hover);
+    }
+
+    /* Due barre semplici (non un <svg>): ruotare un elemento normale intorno al centro è prevedibile ovunque */
     button {
         display: flex;
         flex-direction: column;
@@ -116,15 +125,28 @@
         appearance: none;
         background: none;
         border: none;
+        color: inherit;
+    }
+
+    button:hover {
+        background: none;
     }
 
     button span {
         display: block;
         width: 100%;
-        height: 2px;
+        height: var(--rule-width);
         background-color: currentColor;
         transform-origin: center;
-        transition: transform 0.2s ease;
+        transition: transform var(--duration) var(--ease);
+    }
+
+    button[aria-expanded="true"] span:first-child {
+        transform: translateY(10.5px) rotate(-45deg);
+    }
+
+    button[aria-expanded="true"] span:last-child {
+        transform: translateY(-10.5px) rotate(45deg);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -133,12 +155,13 @@
         }
     }
 
-    /* Le due barre diventano una X quando il menu è aperto: lo stato è sul bottone stesso, "aria-expanded" */
-    button[aria-expanded="true"] span:first-child {
-        transform: translateY(10.5px) rotate(-45deg);
-    }
+    @media (min-width: 64rem) {
+        button {
+            display: none;
+        }
 
-    button[aria-expanded="true"] span:last-child {
-        transform: translateY(-10.5px) rotate(45deg);
+        header > p {
+            display: block;
+        }
     }
 </style>

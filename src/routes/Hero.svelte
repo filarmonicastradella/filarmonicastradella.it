@@ -4,8 +4,8 @@
 
 <header style="--hero-image: url({wallpaper})">
     <hgroup>
-        <h1>Filarmonica Alessandro Stradella <abbr title="Associazione di Promozione Sociale">APS</abbr></h1>
         <p>Dal 1777 al {new Date().getFullYear()}</p>
+        <h1>Filarmonica <em>Alessandro Stradella</em></h1>
         <p>Custodi della <strong>tradizione</strong>, interpreti del <strong>futuro</strong>.</p>
     </hgroup>
     <p><a href="/support/join">Unisciti a noi</a></p>
@@ -13,107 +13,139 @@
 
 <style>
     /*
-     * A tutta larghezza anche se "main" ha un limite: si "sfonda" fuori da quel contenitore con la
-     * tecnica standard (width:100vw + margine negativo), invece di un div di layout solo per questo.
-     * Colore del testo provvisorio (bianco caldo): i colori definitivi arriveranno con colors.css.
-     *
-     * Occupa tutto lo schermo (non più 100svh meno l'intestazione): l'intestazione ora galleggia
-     * sopra di lei (position: fixed, trasparente), quindi la hero deve risalire sotto di lei con un
-     * margine negativo pari alla sua altezza, altrimenti il padding-block-start aggiunto a "main"
-     * (necessario perché l'intestazione non riserva più spazio nel flusso) la spingerebbe in basso.
-     *
-     * "view-timeline-name" dichiara questo elemento come riferimento temporale di scorrimento: la
-     * topbar (SiteHeader.svelte) lo usa per sapere quando la hero è uscita dalla vista e diventare
-     * opaca, senza JS.
+     * Apertura della landing come nel design system: testo su carta a sinistra, foto virata verso
+     * inchiostro e bordeaux (il trattamento "duotone") a destra, le corde sul confine tra le due.
+     * La foto è uno sfondo su uno pseudo-elemento: nessun elemento in più nel markup.
+     * Sotto i 48rem la foto diventa una fascia in alto e il testo scorre sotto.
      */
     header {
+        --split: 45%;
+        /* "main" ha già i margini della pagina: la hero li scavalca per arrivare ai bordi dello schermo */
+        --edge: max(var(--gutter), calc((100vw - var(--container)) / 2));
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: var(--space-7);
+        min-height: calc(100svh - var(--header-height));
         width: 100vw;
-        min-height: 100svh;
-        margin-block-start: calc(-1 * var(--header-height));
-        padding-block: var(--space-4xl);
-        padding-inline: var(--space-lg);
         margin-inline: calc(50% - 50vw);
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--hero-image);
+        padding-block: var(--space-9);
+        padding-inline: var(--edge) calc(var(--split) + var(--space-8));
+        box-sizing: border-box;
+    }
+
+    header::before {
+        content: "";
+        position: absolute;
+        inset-block: 0;
+        inset-inline-end: 0;
+        inline-size: var(--split);
+        background-image:
+            linear-gradient(
+                color-mix(in srgb, var(--color-bordeaux-notte) 45%, transparent),
+                color-mix(in srgb, var(--color-inchiostro) 55%, transparent)
+            ),
+            var(--hero-image);
         background-position: center;
         background-size: cover;
-        color: #f5efe6;
-        text-align: center;
-        view-timeline-name: --hero;
-        view-timeline-axis: block;
+        filter: grayscale(0.6);
     }
 
-    /*
-     * La larghezza massima è in "ch" sull'h1 stesso, non su hgroup: così segue la sua dimensione
-     * del font (che cresce con lo schermo via clamp) invece di restare fissa mentre il testo si
-     * ingrandisce, cosa che a schermi larghi spezzava le righe più del necessario.
-     */
-    h1 {
-        max-width: 20ch;
-        margin-inline: auto;
-        font-size: clamp(2.5rem, 4vw + 1.5rem, var(--font-size-5xl));
-        line-height: var(--line-height-display);
+    /* Le corde (layout.css) sul confine tra testo e foto */
+    header::after {
+        inset-inline-end: calc(var(--split) + var(--space-6));
     }
 
-    /*
-     * La data, in maiuscolo come le altre etichette del sito (time/dt/th in typography.css).
-     * "margin-inline: auto" è necessario perché "main p" (typography.css) dà un max-width senza
-     * centrare: sotto quella larghezza non cambia nulla, sopra lascerebbe il testo ancorato a
-     * sinistra invece che al centro (il testo dentro è centrato, ma non la "scatola" del paragrafo).
-     */
-    hgroup p:first-of-type {
-        margin-block-start: var(--space-sm);
-        margin-inline: auto;
-        font-size: var(--font-size-sm);
+    hgroup {
+        margin: 0;
+    }
+
+    hgroup > * {
+        margin: 0;
+    }
+
+    /* Occhiello sopra il titolo */
+    hgroup p:first-child {
+        color: var(--text-brand);
+        font-size: var(--fs-eyebrow);
+        font-weight: var(--fw-text-strong);
+        letter-spacing: var(--tracking-eyebrow);
         text-transform: uppercase;
-        letter-spacing: var(--letter-spacing-wide);
-        opacity: 0.8;
     }
 
-    hgroup p:last-of-type {
-        max-width: 32rem;
-        margin-block-start: var(--space-xs);
-        margin-inline: auto;
-        font-family: var(--font-heading);
-        font-size: var(--font-size-xl);
-        font-style: italic;
-        /* Senza questa riga eredita l'interlinea 1,65 del corpo del testo, pensata per paragrafi lunghi:
-           su una riga sola lascia troppo spazio sopra il testo */
-        line-height: var(--line-height-heading);
+    h1 {
+        margin-block-start: var(--space-4);
+        font-size: var(--fs-display);
+        font-weight: var(--fw-display);
+        line-height: var(--lh-display);
     }
 
-    /* Stesso motivo di "hgroup p:first-of-type" sopra: "main p" dà un max-width senza centrare */
+    h1 em {
+        display: block;
+    }
+
+    hgroup p:last-child {
+        margin-block-start: var(--space-5);
+        color: var(--text-muted);
+        font-size: var(--fs-lead);
+    }
+
+    hgroup p:last-child strong {
+        color: var(--text);
+    }
+
     header > p {
-        margin-block: var(--space-xl) 0;
-        margin-inline: auto;
+        margin: 0;
     }
 
-    /* Bottone "fantasma": solo un filetto, coerente con "niente riquadri pieni" del resto del sito */
+    /* Pulsante primario del design system */
     header > p a {
         display: inline-block;
-        padding: var(--space-sm) var(--space-xl);
-        border: 1px solid currentColor;
+        padding: var(--space-3) var(--space-5);
+        border: var(--border-width) solid var(--accent);
+        border-radius: var(--radius);
+        background-color: var(--accent);
+        color: var(--on-accent);
+        font-size: var(--fs-button);
+        font-weight: var(--fw-text-strong);
         text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: var(--letter-spacing-wide);
-        font-size: var(--font-size-sm);
-        font-weight: var(--font-weight-semibold);
+        transition: background-color var(--duration) var(--ease);
     }
 
-    /*
-     * Comparsa dal basso: animazione CSS pura, non una transizione Svelte — parte da sola quando
-     * l'elemento compare nella pagina, funziona anche senza JS e il contenuto resta nell'HTML
-     * prerenderato alla build (a differenza di un {#if mounted} pilotato da onMount).
-     */
+    header > p a:hover {
+        border-color: var(--accent-hover);
+        background-color: var(--accent-hover);
+    }
+
+    @media (max-width: 48rem) {
+        header {
+            justify-content: flex-start;
+            min-height: 0;
+            padding-block: calc(40svh + var(--space-7)) var(--space-8);
+            padding-inline: var(--edge) calc(var(--edge) + var(--space-7));
+        }
+
+        header::before {
+            inset-block-end: auto;
+            inline-size: 100%;
+            block-size: 40svh;
+        }
+
+        header::after {
+            inset-block-start: 40svh;
+            inset-inline-end: var(--edge);
+        }
+    }
+
+    /* Comparsa dal basso: animazione CSS pura, funziona anche senza JS */
     @media (prefers-reduced-motion: no-preference) {
         hgroup {
-            animation: comparsa 0.9s cubic-bezier(0.2, 0, 0, 1) both;
+            animation: comparsa 0.9s var(--ease) both;
         }
 
         header > p {
-            animation: comparsa 0.9s cubic-bezier(0.2, 0, 0, 1) 0.15s both;
+            animation: comparsa 0.9s var(--ease) 0.15s both;
         }
     }
 
