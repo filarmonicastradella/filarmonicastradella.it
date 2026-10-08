@@ -138,7 +138,8 @@
         height: var(--rule-width);
         background-color: currentColor;
         transform-origin: center;
-        transition: transform var(--duration) var(--ease);
+        /* Stessa durata del pannello del menu, che si apre e si chiude insieme alla X */
+        transition: transform var(--duration-slow) var(--ease);
     }
 
     button[aria-expanded="true"] span:first-child {

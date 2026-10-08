@@ -34,9 +34,11 @@
     --corde-gap: 8px;
     --corde-width: 2px;
 
-    /* Movimento */
+    /* Movimento (docs/DESIGN.md): accompagna, non si esibisce */
     --ease: cubic-bezier(0.2, 0, 0, 1);
-    --duration: 180ms;
+    --duration: 180ms; /* colori, passaggio del mouse */
+    --duration-slow: 300ms; /* menu, riquadri, finestre, cambio di pagina */
+    --duration-entrance: 700ms; /* solo comparse della prima schermata */
 }
 
 html {
@@ -176,4 +178,42 @@ body > div > footer > p:last-child {
     padding-block-start: var(--space-5);
     border-block-start: var(--border-width) solid var(--border);
     color: var(--text-muted);
+}
+
+/*
+ * Cambio di pagina con le View Transitions (onNavigate in +layout.svelte): l'intestazione del sito ha
+ * un nome suo e resta ferma, il resto della pagina sfuma e la nuova sale appena. Con il movimento
+ * ridotto le View Transitions non partono proprio.
+ */
+body > div > header {
+    view-transition-name: intestazione;
+}
+
+::view-transition-old(intestazione) {
+    display: none;
+}
+
+::view-transition-new(intestazione) {
+    animation: none;
+}
+
+::view-transition-old(root) {
+    animation: pagina-esce var(--duration-slow) var(--ease) both;
+}
+
+::view-transition-new(root) {
+    animation: pagina-entra var(--duration-slow) var(--ease) both;
+}
+
+@keyframes pagina-esce {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes pagina-entra {
+    from {
+        opacity: 0;
+        translate: 0 var(--space-2);
+    }
 }

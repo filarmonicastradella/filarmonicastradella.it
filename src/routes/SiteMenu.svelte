@@ -44,7 +44,9 @@
 
     /*
      * Sotto i 64rem: pannello a tutto schermo sotto la barra, aperto dal pulsante a due barre.
-     * Voci grandi in Cormorant.
+     * Voci grandi in Cormorant. Apertura e chiusura simmetriche: il pannello sfuma e scende (o risale)
+     * di poco; "allow-discrete" ritarda il passaggio a "display: none" fino alla fine della chiusura,
+     * "@starting-style" dà il punto di partenza all'apertura.
      */
     @media (max-width: 63.999rem) {
         nav {
@@ -55,10 +57,25 @@
             padding-inline: var(--page-inline);
             overflow-y: auto;
             background-color: var(--bg);
+            opacity: 0;
+            translate: 0 calc(-1 * var(--shift));
+            transition:
+                opacity var(--duration-slow) var(--ease),
+                translate var(--duration-slow) var(--ease),
+                display var(--duration-slow) allow-discrete;
         }
 
         nav[data-open] {
             display: block;
+            opacity: 1;
+            translate: 0;
+        }
+
+        @starting-style {
+            nav[data-open] {
+                opacity: 0;
+                translate: 0 calc(-1 * var(--shift));
+            }
         }
 
         ul {
@@ -93,16 +110,14 @@
         }
     }
 
-    @media (max-width: 63.999rem) and (prefers-reduced-motion: no-preference) {
-        nav[data-open] {
-            animation: apertura var(--duration) var(--ease);
-        }
+    /* Spostamento dell'apertura; con il movimento ridotto resta solo la dissolvenza */
+    nav {
+        --shift: var(--space-4);
     }
 
-    @keyframes apertura {
-        from {
-            opacity: 0;
-            transform: translateY(calc(-1 * var(--space-4)));
+    @media (prefers-reduced-motion: reduce) {
+        nav {
+            --shift: 0;
         }
     }
 </style>

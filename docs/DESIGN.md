@@ -94,14 +94,30 @@ Il vettoriale di riferimento è `src/lib/assets/favicon.svg` (disegnato a mano, 
 - **Accessibilità:** sempre con `aria-hidden` e una parola accanto che dice la stessa cosa; l'icona non è mai l'unica etichetta.
 - **Niente emoji**, né al posto delle icone né accanto.
 
-## 8. Fotografia
+## 8. Movimento
+
+Il movimento accompagna, non si esibisce.
+
+| Token | Durata | Uso |
+|---|---|---|
+| `--duration` | 180 ms | Colori, passaggio del mouse |
+| `--duration-slow` | 300 ms | Menu, riquadri, finestre, cambio di pagina |
+| `--duration-entrance` | 700 ms | Solo le comparse della prima schermata |
+
+- **Andamento:** sempre `--ease`, mai rimbalzi.
+- **Cosa si anima:** solo opacità, spostamenti brevi (al massimo 1,5 rem) e colori. Mai dimensioni o layout.
+- **Sì:** la comparsa dell'apertura in homepage; una dissolvenza breve tra le pagine con le View Transitions, con l'intestazione del sito ferma.
+- **No:** animazioni allo scorrimento, parallasse, caroselli automatici, autoplay, contatori.
+- **Movimento ridotto:** con `prefers-reduced-motion` niente spostamenti; restano al massimo le dissolvenze.
+
+## 9. Fotografia
 
 - **Sì:** luce di scena, fondi scuri, dettagli (mani, ance, archi, respiro), ritratti con sguardo in camera, luoghi storici della Lunigiana.
 - **No:** foto di gruppo in fila, flash diretto, transenne e gazebo, scatti mossi o sgranati.
 - **Trattamento standard sui social:** duotone inchiostro e bordeaux. Bianco e nero quando la qualità è disomogenea. Colore pieno solo per foto professionali.
 - Prevedere un servizio fotografico professionale all'anno.
 
-## 9. Componenti
+## 10. Componenti
 
 **Regole comuni**
 - Margini pari a 1/12 del lato corto.
@@ -125,7 +141,7 @@ Il vettoriale di riferimento è `src/lib/assets/favicon.svg` (disegnato a mano, 
 - Apertura della homepage: occhiello, titolo display con una parola in corsivo bordeaux, sottotitolo, pulsante primario a sinistra su carta; foto in duotone a destra; corde sul confine.
 - Colonne di testo al massimo 40 rem.
 
-## 10. Tono di voce
+## 11. Tono di voce
 
 **Competenti ma accoglienti.** Come un direttore che presenta il concerto al pubblico.
 

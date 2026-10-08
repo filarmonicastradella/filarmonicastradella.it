@@ -138,21 +138,71 @@
         }
     }
 
-    /* Comparsa dal basso: animazione CSS pura, funziona anche senza JS */
+    /*
+     * Comparsa della prima schermata (docs/DESIGN.md, Movimento), in CSS puro, funziona anche senza JS:
+     * la foto sfuma, poi occhiello, titolo, sottotitolo e pulsante salgono uno dopo l'altro, e per ultime
+     * le corde si tendono dall'alto in basso. Con il movimento ridotto resta solo la dissolvenza.
+     */
+    header {
+        --stagger: 80ms; /* scarto tra un elemento e il successivo */
+        --shift: var(--space-5); /* 1,5rem, il massimo ammesso */
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        header {
+            --shift: 0;
+        }
+    }
+
+    header::before {
+        animation: dissolvenza var(--duration-entrance) var(--ease) both;
+    }
+
+    /* Le corde si scoprono con clip-path: nessun cambio di dimensioni né di layout */
     @media (prefers-reduced-motion: no-preference) {
-        hgroup {
-            animation: comparsa 0.9s var(--ease) both;
+        header::after {
+            animation: corde var(--duration-entrance) var(--ease) calc(var(--stagger) * 3) both;
+        }
+    }
+
+    /* "--order": posizione nella sequenza (il ritardo sta nella stessa dichiarazione dell'animazione) */
+    hgroup > *,
+    header > p {
+        animation: comparsa var(--duration-entrance) var(--ease) calc(var(--stagger) * var(--order, 0)) both;
+    }
+
+    h1 {
+        --order: 1;
+    }
+
+    hgroup p:last-child {
+        --order: 2;
+    }
+
+    header > p {
+        --order: 3;
+    }
+
+    @keyframes dissolvenza {
+        from {
+            opacity: 0;
+        }
+    }
+
+    @keyframes corde {
+        from {
+            clip-path: inset(0 0 100% 0);
         }
 
-        header > p {
-            animation: comparsa 0.9s var(--ease) 0.15s both;
+        to {
+            clip-path: inset(0);
         }
     }
 
     @keyframes comparsa {
         from {
             opacity: 0;
-            transform: translateY(1.5rem);
+            translate: 0 var(--shift);
         }
     }
 </style>
