@@ -24,7 +24,6 @@
         <dt>Codice fiscale</dt>
         <dd>{organization.taxCode}</dd>
         <dt>Contatto per la privacy</dt>
-        <!-- SEGNAPOSTO: verificare che l'indirizzo esista e chi lo legge. -->
         <dd><a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a></dd>
     </dl>
 </section>
