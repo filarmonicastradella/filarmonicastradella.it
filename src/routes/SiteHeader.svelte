@@ -83,8 +83,8 @@
 
     /* ":global()": il logo arriva via {@html}, Svelte non può aggiungergli la classe di scoping */
     header > a span :global(svg) {
-        height: 2.5rem;
-        width: auto;
+        block-size: var(--logo-height);
+        inline-size: auto;
     }
 
     header > a > span:last-child {
@@ -94,7 +94,7 @@
         font-family: var(--font-display);
         font-size: var(--fs-h3);
         font-weight: var(--fw-display);
-        line-height: 1;
+        line-height: var(--lh-display);
     }
 
     /* L'occhiello FILARMONICA del logotipo */
@@ -102,9 +102,9 @@
         margin-block-end: var(--space-1);
         color: var(--text-brand);
         font-family: var(--font-text);
-        font-size: 0.625rem;
+        font-size: var(--fs-logo-eyebrow);
         font-weight: var(--fw-text-strong);
-        letter-spacing: 0.24em;
+        letter-spacing: var(--tracking-logo);
         text-transform: uppercase;
     }
 

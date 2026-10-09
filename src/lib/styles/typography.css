@@ -17,6 +17,7 @@
     --fs-small: 0.8125rem; /* 13 */
     --fs-eyebrow: 0.75rem; /* 12, maiuscolo spaziato */
     --fs-button: 0.875rem; /* 14 */
+    --fs-logo-eyebrow: 0.625rem; /* 10: l'occhiello FILARMONICA del logotipo, più piccolo degli altri */
 
     --lh-display: 1;
     --lh-heading: 1.1;
@@ -30,6 +31,7 @@
 
     --tracking-eyebrow: 0.16em;
     --tracking-firma: 0.12em;
+    --tracking-logo: 0.24em; /* l'occhiello del logotipo, più spaziato */
     --tracking-tight: -0.01em;
 }
 

@@ -23,6 +23,7 @@
     --gutter: clamp(1rem, 4vw, 2.5rem);
     --page-inline: max(var(--gutter), calc((100% - var(--container)) / 2));
     --header-height: 4.5rem;
+    --logo-height: 2.5rem; /* il simbolo del logotipo nell'intestazione */
 
     /* Forma: angoli quasi vivi, editoria e non app */
     --radius: 2px;
