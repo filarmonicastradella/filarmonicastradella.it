@@ -1,75 +1,115 @@
+<script lang="ts">
+    import { organization } from "$lib/organization";
+    import { legalSeat } from "$lib/locations";
+</script>
+
 <svelte:head>
-    <title>Informativa sulla privacy — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="Come la Filarmonica Alessandro Stradella APS tratta i dati personali di chi visita il sito e di chi ci scrive." />
+    <title>Informativa privacy — Filarmonica Alessandro Stradella APS</title>
+    <meta name="description" content="Quali dati personali tratta la Filarmonica Alessandro Stradella APS, perché, per quanto tempo e come esercitare i tuoi diritti." />
 </svelte:head>
 
 <!-- BOZZA da far verificare a un consulente privacy prima della pubblicazione. -->
-<article>
-    <header>
-        <h1>Informativa sulla privacy</h1>
-        <p>Questa informativa descrive quali dati personali tratta la Filarmonica Alessandro Stradella APS quando visiti questo sito, ci scrivi o compili un modulo.</p>
-        <p>Informativa ai sensi degli artt. 13 e 14 del Regolamento UE 2016/679 (GDPR)</p>
-    </header>
+<header>
+    <h1>Informativa privacy</h1>
+    <p>Quali dati personali trattiamo quando visiti il sito, ci scrivi o chiedi di iscriverti, e come puoi controllarli.</p>
+</header>
 
-    <section aria-labelledby="titolare-heading">
-        <h2 id="titolare-heading">1. Titolare del trattamento</h2>
-        <p>Il titolare è la <strong>Filarmonica Alessandro Stradella APS</strong>, codice fiscale 90021290458, con sede legale in Via Stretta 5, 54013 Fivizzano (MS). Per qualsiasi richiesta sui tuoi dati puoi scrivere a <a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a>.</p>
-    </section>
+<section>
+    <h2>Chi è il titolare</h2>
+    <dl>
+        <dt>Titolare del trattamento</dt>
+        <dd>{organization.name}</dd>
+        <dt>Sede legale</dt>
+        <dd>{legalSeat.address.join(", ")}</dd>
+        <dt>Codice fiscale</dt>
+        <dd>{organization.taxCode}</dd>
+        <dt>Contatto per la privacy</dt>
+        <!-- SEGNAPOSTO: verificare che l'indirizzo esista e chi lo legge. -->
+        <dd><a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a></dd>
+    </dl>
+</section>
 
-    <section aria-labelledby="dati-heading">
-        <h2 id="dati-heading">2. Dati trattati e finalità</h2>
-        <dl>
-            <dt>Dati di navigazione</dt>
-            <dd>Il servizio che ospita il sito registra, come per ogni sito web, l'indirizzo IP e i dati tecnici della richiesta (pagina richiesta, data e ora, browser). Sono usati per il funzionamento e la sicurezza del sito. Il sito non usa strumenti di analisi statistica.</dd>
+<section>
+    <h2>Quali dati e perché</h2>
+    <dl>
+        <dt>Visita del sito</dt>
+        <dd>
+            Il servizio che ospita il sito registra i dati tecnici di ogni richiesta (indirizzo IP, pagina, data e ora, browser), per farlo funzionare e
+            proteggerlo. Base giuridica: il nostro legittimo interesse (art. 6.1.f GDPR).
+        </dd>
+        <dt>Messaggi</dt>
+        <dd>
+            Se ci scrivi per email o con il modulo di contatto, usiamo nome, indirizzo email, motivo e testo del messaggio solo per risponderti. Base
+            giuridica: la tua richiesta (art. 6.1.b).
+        </dd>
+        <dt>Richiesta di iscrizione</dt>
+        <dd>
+            Dati anagrafici, residenza e domicilio, recapiti e documento di identità; per i minori anche i dati del genitore o tutore. Servono a valutare la
+            domanda e a tenere il libro dei soci. Base giuridica: il rapporto associativo (art. 6.1.b) e gli obblighi di legge (art. 6.1.c).
+        </dd>
+        <dt>Consensi facoltativi</dt>
+        <dd>
+            Comunicazioni via email o messaggistica e uso delle immagini, solo se li accetti nel modulo di iscrizione. Base giuridica: il tuo consenso (art.
+            6.1.a), che puoi revocare in qualsiasi momento.
+        </dd>
+    </dl>
+    <p>
+        I dati segnati come obbligatori nei moduli servono a risponderti o a valutare l'iscrizione: senza, non possiamo farlo. I consensi facoltativi non
+        cambiano l'esito della domanda. Non prendiamo decisioni automatizzate e non facciamo profilazione.
+    </p>
+</section>
 
-            <dt>Comunicazioni</dt>
-            <dd>Se scrivi agli indirizzi dell'associazione o usi il modulo di contatto, trattiamo i dati che ci fornisci (nome, indirizzo email, motivo e contenuto del messaggio) solo per risponderti.</dd>
+<section>
+    <h2>Chi li riceve</h2>
+    <p>
+        All'interno dell'associazione solo le persone incaricate (consiglio direttivo, segreteria, tesoreria). All'esterno, i fornitori dei servizi che il
+        sito usa, ciascuno per la sua parte:
+    </p>
+    <dl>
+        <dt>GitHub</dt>
+        <dd>ospita il sito.</dd>
+        <dt>formsubmit.co</dt>
+        <dd>inoltra via email all'associazione i dati dei moduli di contatto e di iscrizione.</dd>
+        <dt>Behold e Instagram</dt>
+        <dd>forniscono le foto della galleria, che il tuo browser scarica dai loro server.</dd>
+    </dl>
+    <p>
+        Il calendario degli eventi viene letto da Google quando il sito viene preparato, non durante la tua visita: Google non riceve i tuoi dati. I dati
+        non vengono venduti né diffusi.
+    </p>
+    <!-- SEGNAPOSTO: verificare per ciascun fornitore la sede e la base del trasferimento. -->
+    <p>
+        Alcuni fornitori hanno sede negli Stati Uniti. Il trasferimento avviene sulla base della decisione di adeguatezza UE-USA (Data Privacy Framework)
+        o delle clausole contrattuali standard approvate dalla Commissione europea (artt. 45 e 46 GDPR).
+    </p>
+</section>
 
-            <dt>Richiesta di iscrizione come socio</dt>
-            <dd>Il modulo di iscrizione raccoglie i dati anagrafici, di residenza e di contatto del richiedente (o del minore e del genitore) per valutare la domanda e tenere il libro dei soci. Quando l'informativa specifica del modulo sarà definita verrà collegata qui.</dd>
-        </dl>
-    </section>
+<section>
+    <h2>Per quanto tempo</h2>
+    <!-- SEGNAPOSTO: tempi di conservazione proposti, da decidere con il consiglio direttivo e il consulente. -->
+    <dl>
+        <dt>Messaggi</dt>
+        <dd>il tempo necessario a rispondere, e comunque non oltre 12 mesi.</dd>
+        <dt>Domande di iscrizione non accolte</dt>
+        <dd>cancellate entro 3 mesi dalla decisione.</dd>
+        <dt>Dati dei soci</dt>
+        <dd>per tutta la durata dell'iscrizione e per i 10 anni successivi, come richiesto per i libri sociali e la documentazione contabile.</dd>
+        <dt>Dati tecnici di navigazione</dt>
+        <dd>secondo le regole del servizio che ospita il sito.</dd>
+    </dl>
+</section>
 
-    <section aria-labelledby="terzi-heading">
-        <h2 id="terzi-heading">3. Servizi di terze parti</h2>
-        <p>Alcune parti del sito usano servizi esterni. Quando li usi, il tuo browser invia loro almeno l'indirizzo IP. L'elenco degli eventi, letto dal calendario di Google, viene invece preparato dal sito e non richiede nessun collegamento a Google da parte tua.</p>
-        <dl>
-            <dt>GitHub Pages</dt>
-            <dd>Ospita il sito.</dd>
+<section>
+    <h2>I tuoi diritti</h2>
+    <p>
+        Puoi chiederci in qualsiasi momento di vedere i tuoi dati, correggerli, cancellarli, limitarne l'uso o riceverli in un formato leggibile, e puoi
+        opporti al trattamento (artt. 15-22 GDPR). Puoi revocare un consenso quando vuoi: vale da quel momento in poi. Scrivi a
+        <a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a>.
+    </p>
+    <p>
+        Se ritieni che i tuoi dati siano trattati in modo scorretto, puoi presentare reclamo al
+        <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">Garante per la protezione dei dati personali</a>.
+    </p>
+</section>
 
-            <dt>Instagram e Behold</dt>
-            <dd>Forniscono foto e video della galleria, letti dal profilo Instagram dell'associazione: il tuo browser li scarica direttamente dai loro server.</dd>
-
-            <dt>Google Maps</dt>
-            <dd>Mostra le mappe delle sedi nella pagina delle sedi, solo se scegli di caricarle.</dd>
-
-            <dt>formsubmit.co</dt>
-            <dd>Inoltra all'associazione, via email, i dati inseriti nei moduli.</dd>
-        </dl>
-        <p>Alcuni di questi fornitori hanno sede fuori dall'Unione Europea, in particolare negli Stati Uniti. Ciascuno tratta i dati come titolare autonomo o come responsabile, secondo la propria informativa.</p>
-    </section>
-
-    <section aria-labelledby="base-heading">
-        <h2 id="base-heading">4. Base giuridica</h2>
-        <ul>
-            <li>Esecuzione di una tua richiesta, come una risposta a un messaggio o la valutazione della domanda di iscrizione (art. 6, par. 1, lett. b).</li>
-            <li>Obblighi di legge, come la tenuta del libro dei soci (art. 6, par. 1, lett. c).</li>
-            <li>Legittimo interesse dell'associazione alla sicurezza e al funzionamento del sito (art. 6, par. 1, lett. f).</li>
-            <li>Consenso, quando richiesto e solo per i trattamenti facoltativi (art. 6, par. 1, lett. a).</li>
-        </ul>
-    </section>
-
-    <section aria-labelledby="conservazione-heading">
-        <h2 id="conservazione-heading">5. Conservazione</h2>
-        <p>Conserviamo i dati per il tempo necessario alle finalità indicate. I messaggi si conservano finché serve a gestire la richiesta. I dati dei soci si conservano per la durata dell'iscrizione e per il tempo richiesto dagli obblighi di legge.</p>
-    </section>
-
-    <section aria-labelledby="diritti-heading">
-        <h2 id="diritti-heading">6. I tuoi diritti</h2>
-        <p>Puoi chiedere l'accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione del trattamento e la portabilità, e opporti al trattamento (artt. 15-22 del GDPR). Scrivi a <a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a>. Hai anche il diritto di presentare reclamo al <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">Garante per la protezione dei dati personali</a>.</p>
-    </section>
-
-    <footer>
-        <p><small>Ultimo aggiornamento: settembre 2026</small></p>
-    </footer>
-</article>
+<p><small>Informativa ai sensi dell'art. 13 del Regolamento UE 2016/679 (GDPR). Ultimo aggiornamento: <time datetime="2026-10">ottobre 2026</time>.</small></p>
