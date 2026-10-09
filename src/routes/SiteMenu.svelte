@@ -2,17 +2,16 @@
     import { afterNavigate } from "$app/navigation";
     import { page } from "$app/state";
     import { navItems } from "$lib/navigation";
-
-    let { open = false, onClose }: { open?: boolean; onClose?: () => void } = $props();
+    import { menu } from "$lib/menu.svelte";
 
     const isActive = (href: string) => (page.url.pathname === href ? "page" : page.url.pathname.startsWith(href + "/") ? "true" : undefined);
 
-    // Il menu si chiude dopo una navigazione (senza JS la pagina si ricarica e si chiude da sola).
-    afterNavigate(() => onClose?.());
+    // Il menu si chiude anche dopo una navigazione che non è partita da lui (indietro, avanti).
+    afterNavigate(() => (menu.open = false));
 </script>
 
 <!-- "--i": posizione nella sequenza con cui le voci compaiono all'apertura -->
-<nav aria-label="Navigazione principale" data-open={open || undefined}>
+<nav aria-label="Navigazione principale" data-open={menu.open || undefined}>
     <ul>
         {#each navItems as item, i (item.href)}
             <li style:--i={i}><a href={item.href} aria-current={isActive(item.href)}>{item.title}</a></li>

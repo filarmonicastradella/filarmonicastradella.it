@@ -1,15 +1,13 @@
 <script lang="ts">
     import logoSvg from "$lib/assets/favicon.svg?raw";
     import SiteMenu from "./SiteMenu.svelte";
+    import { menu } from "$lib/menu.svelte";
 
     // Il file SVG dichiara una dimensione enorme (826×1382): senza CSS il logo occuperebbe tutta la pagina.
     // Il nero diventa currentColor, così il logo prende il colore del collegamento che lo contiene.
     const logo = logoSvg
         .replace('width="826" height="1382"', 'width="22" height="36"')
         .replaceAll('fill="black"', 'fill="currentColor"');
-
-    // Menu a scomparsa sotto i 64rem; da 64rem le voci sono sempre visibili in linea.
-    let open = $state(false);
 </script>
 
 <header>
@@ -20,16 +18,17 @@
 
     <button
         type="button"
-        aria-expanded={open}
-        aria-label={open ? "Chiudi menu" : "Apri menu"}
-        onclick={() => (open = !open)}
+        aria-expanded={menu.open}
+        aria-label={menu.open ? "Chiudi menu" : "Apri menu"}
+        onclick={() => (menu.open = !menu.open)}
     >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
     </button>
 
-    <SiteMenu {open} onClose={() => (open = false)} />
+    <!-- Menu a scomparsa sotto i 64rem; da 64rem le voci sono sempre visibili in linea -->
+    <SiteMenu />
 </header>
 
 <style>

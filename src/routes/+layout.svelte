@@ -5,6 +5,7 @@
     import "$lib/styles/content.css";
     import "$lib/styles/forms.css";
     import { onNavigate } from "$app/navigation";
+    import { menu } from "$lib/menu.svelte";
     import favicon from "$lib/assets/icon.svg";
     import SiteHeader from "./SiteHeader.svelte";
     import SiteFooter from "./SiteFooter.svelte";
@@ -20,9 +21,19 @@
 
     let { children } = $props();
 
+    const reducedMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Durata della chiusura del menu: due tempi di --duration-slow (corde che risalgono, poi pulsante e pannello).
+    const menuClosing = () => (reducedMotion() ? 0 : parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--duration-slow")) * 2);
+
     // Cambio di pagina animato con le View Transitions (dove il browser le supporta; il CSS descrive l'animazione).
-    onNavigate((navigation) => {
-        if (!document.startViewTransition || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    onNavigate(async (navigation) => {
+        // Dal menu aperto: prima il menu si chiude con la sua animazione, poi parte il cambio di pagina.
+        if (menu.open) {
+            menu.open = false;
+            await new Promise((resolve) => setTimeout(resolve, menuClosing()));
+        }
+        if (!document.startViewTransition || reducedMotion()) return;
 
         return new Promise((resolve) => {
             document.startViewTransition(async () => {
