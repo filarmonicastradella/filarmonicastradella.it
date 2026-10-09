@@ -93,7 +93,8 @@ main li + li {
  */
 :is(ul, ol):has(> li > a > :is(h2, h3, h4), > li > article > a > :is(h2, h3, h4)) {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    /* auto-fit: con meno schede di quante ne stanno in una riga, quelle presenti si dividono tutta la larghezza */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
     gap: var(--space-7) var(--space-6);
     padding: 0;
     list-style: none;
