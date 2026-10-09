@@ -1,11 +1,11 @@
 import { getUpcomingEvents } from "$lib/server/calendar";
 import { ensembles } from "$lib/ensembles";
 import { news } from "$lib/news";
+import { organization } from "$lib/organization";
 import type { RequestHandler } from "./$types";
 
 export const prerender = true;
 
-const SITE = "https://filarmonicastradella.it";
 
 // Pagine che non vanno nella mappa: conferme di invio e pagine con parametri (aggiunte sotto).
 const EXCLUDED = /\/thanks$|\[/;
@@ -26,7 +26,7 @@ export const GET: RequestHandler = async () => {
 
     const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[...new Set(paths)].sort().map((path) => `    <url><loc>${SITE}${path === "/" ? "/" : path}</loc></url>`).join("\n")}
+${[...new Set(paths)].sort().map((path) => `    <url><loc>${organization.url}${path === "/" ? "/" : path}</loc></url>`).join("\n")}
 </urlset>
 `;
 

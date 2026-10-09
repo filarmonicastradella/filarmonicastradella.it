@@ -3,20 +3,16 @@
     import FacebookIcon from "~icons/simple-icons/facebook";
     import WhatsappIcon from "~icons/simple-icons/whatsapp";
     import YoutubeIcon from "~icons/simple-icons/youtube";
-    // import TiktokIcon from "~icons/simple-icons/tiktok"; // da riattivare quando ci sarà il profilo TikTok
+    // import TiktokIcon from "~icons/simple-icons/tiktok"; // da riattivare con il profilo TikTok (organization.ts e icons qui sotto)
     import { legalSeat } from "$lib/locations";
     import { organization } from "$lib/organization";
 
     // "inert" quando il menu aperto copre la pagina (+layout.svelte).
     let { inert = false }: { inert?: boolean } = $props();
 
-    const socials = [
-        { name: "Instagram", href: "https://instagram.com/filarmonicastradella", Icon: InstagramIcon },
-        { name: "Facebook", href: "https://facebook.com/filarmonicastradella", Icon: FacebookIcon },
-        { name: "WhatsApp", href: "https://wa.me/393505363110", Icon: WhatsappIcon },
-        { name: "YouTube", href: "https://youtube.com/@filarmonicastradella", Icon: YoutubeIcon },
-        // { name: "TikTok", href: "https://tiktok.com/@filarmonicastradella", Icon: TiktokIcon } // da riattivare insieme all'import
-    ];
+    // Gli indirizzi dei profili sono in organization.ts; qui solo l'icona di ciascuno.
+    const icons = { Instagram: InstagramIcon, Facebook: FacebookIcon, WhatsApp: WhatsappIcon, YouTube: YoutubeIcon };
+    const socials = organization.socials.map((social) => ({ ...social, Icon: icons[social.name as keyof typeof icons] }));
 </script>
 
 <footer {inert}>

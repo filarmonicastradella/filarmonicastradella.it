@@ -5,9 +5,32 @@
     import Gallery from "./Gallery.svelte";
     // import NewsCard from "$lib/components/NewsCard.svelte"; // con "Ultime notizie", commentata sotto
     // import { news } from "$lib/news";
+    import { legalSeat } from "$lib/locations";
+    import { organization } from "$lib/organization";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
+
+    // Dati strutturati dell'associazione per i motori di ricerca: un ente non profit (NGO, sottotipo di
+    // Organization). Le formazioni, quando avranno le loro pagine, saranno MusicGroup con parentOrganization.
+    const [street, place] = legalSeat.address;
+    const [, postalCode, locality, region] = place.match(/^(\d{5}) (.+) \((\w+)\)$/) ?? [];
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        name: organization.name,
+        alternateName: "Filarmonica Alessandro Stradella",
+        url: organization.url,
+        logo: `${organization.url}/logo.png`,
+        image: `${organization.url}/anteprima.jpg`,
+        foundingDate: organization.foundingYear,
+        address: { "@type": "PostalAddress", streetAddress: street, postalCode, addressLocality: locality, addressRegion: region, addressCountry: "IT" },
+        email: organization.email,
+        telephone: organization.phone,
+        taxID: organization.taxCode,
+        memberOf: { "@type": "Organization", name: organization.affiliation.name, url: organization.affiliation.href },
+        sameAs: organization.socials.filter(({ profile }) => profile).map(({ href }) => href)
+    };
 
     // const latestNews = news.slice(0, 3);
 </script>
@@ -15,6 +38,7 @@
 <svelte:head>
     <title>Filarmonica Alessandro Stradella APS — Fivizzano dal 1777</title>
     <meta name="description" content="Filarmonica Alessandro Stradella APS, a Fivizzano in Lunigiana dal 1777: concerti, calendario degli eventi e come sostenerci." />
+    {@html `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`}
 </svelte:head>
 
 <Hero />

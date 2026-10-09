@@ -6,6 +6,8 @@
     import "$lib/styles/forms.css";
     import { onNavigate } from "$app/navigation";
     import { menu } from "$lib/menu.svelte";
+    import { page } from "$app/state";
+    import { organization } from "$lib/organization";
     import favicon from "$lib/assets/icon.svg";
     import SiteHeader from "./SiteHeader.svelte";
     import SiteFooter from "./SiteFooter.svelte";
@@ -42,8 +44,23 @@
     });
 </script>
 
+<!--
+    Per motori di ricerca e anteprime dei link: l'indirizzo canonico della pagina (sempre senza "www") e
+    un'immagine unica per le condivisioni. Titolo e descrizione delle anteprime vengono dal <title> e dalla
+    meta description di ogni pagina.
+-->
 <svelte:head>
     <link rel="icon" href={favicon} />
+    <link rel="canonical" href={organization.url + page.url.pathname} />
+    <meta property="og:site_name" content={organization.name} />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={organization.url + page.url.pathname} />
+    <meta property="og:image" content="{organization.url}/anteprima.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="I musicisti della Filarmonica in concerto" />
+    <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <a href="#contenuto">Salta al contenuto</a>
