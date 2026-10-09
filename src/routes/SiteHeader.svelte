@@ -26,6 +26,7 @@
     >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
     </button>
 
     <SiteMenu {open} onClose={() => (open = false)} />
@@ -89,26 +90,30 @@
     }
 
     /*
-     * Due barre semplici (non un <svg>): ruotare un elemento normale intorno al centro è prevedibile ovunque.
-     * L'area da toccare è un quadrato di --space-7 (48px, più dei 44 consigliati); le barre restano piccole
-     * al centro e il margine negativo le tiene allineate al bordo della pagina come prima.
+     * Il pulsante del menu sono tre corde distese (tre span, non un <svg>): stesso spessore e stessa distanza
+     * delle corde di layout.css, così formano un quadrato grande quanto --corde-span. Aprendo il menu il
+     * pulsante ruota di 90° e prende il colore delle corde: diventa la cima delle corde del pannello, che
+     * scendono proprio da lì (SiteMenu.svelte). L'area da toccare è un quadrato di --space-7 (48px); il
+     * margine negativo tiene le linee allineate al bordo della pagina e centrate sopra le corde.
      */
     button {
-        --bars-width: var(--space-6);
-        --bars-distance: calc(var(--space-5) - var(--space-1)); /* da una barra all'altra */
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: calc(var(--bars-distance) - var(--rule-width));
+        gap: var(--corde-gap);
         inline-size: var(--space-7);
         block-size: var(--space-7);
-        margin-inline-end: calc((var(--bars-width) - var(--space-7)) / 2);
+        margin-inline-end: calc((var(--corde-span) - var(--space-7)) / 2);
         padding: 0;
         appearance: none;
         background: none;
         border: none;
         color: inherit;
+        /* Stessa durata del pannello del menu, che si apre e si chiude insieme */
+        transition:
+            rotate var(--duration-slow) var(--ease),
+            color var(--duration-slow) var(--ease);
     }
 
     button:hover {
@@ -117,26 +122,20 @@
 
     button span {
         display: block;
-        inline-size: var(--bars-width);
-        block-size: var(--rule-width);
+        inline-size: var(--corde-span);
+        block-size: var(--corde-width);
         background-color: currentColor;
-        transform-origin: center;
-        /* Stessa durata del pannello del menu, che si apre e si chiude insieme alla X */
-        transition: transform var(--duration-slow) var(--ease);
     }
 
-    /* La X: unica rotazione del sito, eccezione prevista dal design system (Movimento) */
-    button[aria-expanded="true"] span:first-child {
-        transform: translateY(calc(var(--bars-distance) / 2)) rotate(-45deg);
-    }
-
-    button[aria-expanded="true"] span:last-child {
-        transform: translateY(calc(var(--bars-distance) / -2)) rotate(45deg);
+    /* Unica rotazione del sito, eccezione prevista dal design system (Movimento) */
+    button[aria-expanded="true"] {
+        rotate: 90deg;
+        color: var(--corde-color);
     }
 
     @media (prefers-reduced-motion: reduce) {
-        button span {
-            transition: none;
+        button {
+            transition: color var(--duration-slow) var(--ease);
         }
     }
 

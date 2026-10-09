@@ -184,10 +184,10 @@
         animation: dissolvenza var(--duration-entrance) var(--ease) both;
     }
 
-    /* Le corde si scoprono con clip-path: nessun cambio di dimensioni né di layout */
+    /* Le corde si tendono dall'alto in basso (keyframe "corde-scendono" in layout.css) */
     @media (prefers-reduced-motion: no-preference) {
         header::after {
-            animation: corde var(--duration-entrance) var(--ease) calc(var(--stagger) * 3) both;
+            animation: corde-scendono var(--duration-entrance) var(--ease) calc(var(--stagger) * 3) both;
         }
     }
 
@@ -212,16 +212,6 @@
     @keyframes dissolvenza {
         from {
             opacity: 0;
-        }
-    }
-
-    @keyframes corde {
-        from {
-            clip-path: inset(0 0 100% 0);
-        }
-
-        to {
-            clip-path: inset(0);
         }
     }
 

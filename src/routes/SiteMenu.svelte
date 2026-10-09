@@ -99,6 +99,11 @@
             inset-inline-end: var(--page-inline);
         }
 
+        /* Le corde scendono dal pulsante del menu, che si è appena girato a formarne la cima */
+        nav[data-open]::after {
+            animation: corde-scendono var(--duration-slow) var(--ease) both;
+        }
+
         li,
         p {
             transition:
@@ -144,6 +149,10 @@
     @media (max-width: 63.999rem) and (prefers-reduced-motion: reduce) {
         nav {
             --shift: 0;
+        }
+
+        nav[data-open]::after {
+            animation: none;
         }
     }
 
