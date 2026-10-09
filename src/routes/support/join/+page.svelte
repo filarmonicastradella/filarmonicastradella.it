@@ -90,10 +90,7 @@
 
 <header>
     <h1>Richiesta di iscrizione</h1>
-    <p>Compila il modulo per richiedere l'adesione alla Filarmonica Alessandro Stradella APS. Per i minorenni l'iscrizione può essere richiesta online da un genitore o tutore.</p>
-    <p>
-        La quota associativa per il 2026 è di 12 euro; l'importo è stabilito ogni anno dall'assemblea. L'ammissione è deliberata dall'Organo di amministrazione e ti verrà comunicata all'indirizzo email indicato.
-    </p>
+    <p>Compila il modulo per richiedere l'adesione alla Filarmonica Alessandro Stradella APS. L'esito ti verrà comunicato all'indirizzo email indicato. Per i minorenni l'iscrizione può essere richiesta online da un genitore o tutore.</p>
 </header>
 
 <form action="https://formsubmit.co/47c75ae3189afeb17aa6672e17f0b7c6" method="POST" enctype="multipart/form-data">
