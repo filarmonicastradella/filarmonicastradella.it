@@ -70,7 +70,7 @@
 
     /*
      * Sotto i 64rem: pannello a tutto schermo sotto la barra, aperto dal pulsante a due barre, con le voci
-     * in colonna e il pulsante in fondo. All'apertura il pannello sfuma e le voci salgono appena, una dopo
+     * in colonna, il pulsante in fondo e le corde (layout.css) sul margine destro, sotto il pulsante del menu. All'apertura il pannello sfuma e le voci salgono appena, una dopo
      * l'altra; alla chiusura tutto sfuma insieme. "allow-discrete" rimanda "display: none" alla fine della
      * chiusura, "@starting-style" dà il punto di partenza all'apertura.
      */
@@ -81,7 +81,7 @@
             position: fixed;
             inset: var(--header-height) 0 0;
             padding-block: var(--space-7);
-            padding-inline: var(--page-inline);
+            padding-inline: var(--page-inline) calc(var(--page-inline) + var(--corde-span) + var(--space-6));
             overflow-y: auto;
             background-color: var(--bg);
             opacity: 0;
@@ -93,6 +93,10 @@
         nav[data-open] {
             display: block;
             opacity: 1;
+        }
+
+        nav::after {
+            inset-inline-end: var(--page-inline);
         }
 
         li,
@@ -145,6 +149,10 @@
 
     /* Da 64rem: voci in linea nell'intestazione e il pulsante alla loro destra */
     @media (min-width: 64rem) {
+        nav::after {
+            content: none;
+        }
+
         nav {
             display: flex;
             align-items: center;

@@ -102,6 +102,7 @@ main > :is(section, article) > :is(h1, h2) + * {
  * senza elementi in più nel markup. Chi le usa imposta solo la posizione.
  */
 main > header::after,
+body > div > header > nav::after,
 body > div > footer::before {
     content: "";
     position: absolute;
