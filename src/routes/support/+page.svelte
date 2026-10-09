@@ -31,12 +31,14 @@
         </a>
     </li>
     -->
+    <!-- Da riattivare insieme a /support/volunteer (rinominare _page.svelte in +page.svelte):
     <li>
         <a href="/support/volunteer">
             <h2>Fai volontariato</h2>
             <p>Dai una mano anche senza suonare uno strumento.</p>
         </a>
     </li>
+    -->
 </ul>
 
 <p>Hai dubbi? <a href="/contacts/message">Scrivici</a>.</p>
