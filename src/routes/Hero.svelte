@@ -16,7 +16,8 @@
      * Apertura della landing come nel design system: testo su carta a sinistra, foto virata verso
      * inchiostro e bordeaux (il trattamento "duotone") a destra, le corde sul confine tra le due.
      * La foto è uno sfondo su uno pseudo-elemento: nessun elemento in più nel markup.
-     * Sotto i 48rem la foto diventa una fascia in alto e il testo scorre sotto.
+     * Sotto i 64rem la foto diventa una fascia in alto e il testo scorre sotto: più stretta, la colonna
+     * di testo accanto alla foto non conterrebbe il titolo, che finirebbe sotto le corde.
      */
     header {
         --split: 45%;
@@ -119,11 +120,11 @@
     }
 
     /*
-     * Sotto i 48rem: la hero è alta quanto lo schermo meno l'intestazione. Il testo prende lo spazio che
+     * Sotto i 64rem: la hero è alta quanto lo schermo meno l'intestazione. Il testo prende lo spazio che
      * gli serve, la foto riempie quello che resta sopra (mai meno di un quarto dello schermo), le corde
      * scendono accanto al testo. Foto e corde diventano elementi della griglia invece che sovrapposti.
      */
-    @media (max-width: 48rem) {
+    @media (max-width: 63.999rem) {
         header {
             display: grid;
             grid-template-columns: minmax(0, 1fr) auto;

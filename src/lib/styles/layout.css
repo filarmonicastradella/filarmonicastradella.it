@@ -33,6 +33,7 @@
     /* Motivo "corde": tre linee verticali come le corde della lira */
     --corde-gap: 8px;
     --corde-width: 2px;
+    --corde-span: calc(var(--corde-gap) * 2 + var(--corde-width) * 3); /* ingombro delle tre corde */
 
     /* Movimento (docs/DESIGN.md): accompagna, non si esibisce */
     --ease: cubic-bezier(0.2, 0, 0, 1);
@@ -104,7 +105,7 @@ body > div > footer::before {
     content: "";
     position: absolute;
     inset-block: 0;
-    inline-size: calc(var(--corde-gap) * 2 + var(--corde-width) * 3);
+    inline-size: var(--corde-span);
     background:
         linear-gradient(var(--corde-color), var(--corde-color)) left / var(--corde-width) 100% no-repeat,
         linear-gradient(var(--corde-color), var(--corde-color)) center / var(--corde-width) 100% no-repeat,
@@ -116,7 +117,8 @@ body > div > footer::before {
 main > header {
     position: relative;
     padding-block: var(--space-9) var(--space-6);
-    padding-inline-end: var(--space-10);
+    /* Lo spazio delle corde più un margine: il titolo non ci arriva mai sopra */
+    padding-inline-end: calc(var(--corde-span) + var(--space-6));
 }
 
 main > header::after {
