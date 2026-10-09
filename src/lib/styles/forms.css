@@ -57,12 +57,15 @@ form {
     max-inline-size: var(--container-text);
 }
 
-/* Un campo: etichetta sopra, controllo sotto (anche dentro i gruppi) */
 form p {
+    margin: 0 0 var(--space-5);
+}
+
+/* Un campo: etichetta sopra, controllo sotto (anche dentro i gruppi). I paragrafi di solo testo restano testo */
+form p:has(> label, > input, > select, > textarea) {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
-    margin: 0 0 var(--space-5);
 }
 
 /* Le azioni in fondo al modulo: in riga, il pulsante principale per primo */
@@ -113,13 +116,13 @@ input[type="radio"] {
     accent-color: var(--accent);
 }
 
-form p:has(> input[type="checkbox"]) {
+form p:has(> input[type="checkbox"], > input[type="radio"]) {
     flex-direction: row;
     align-items: flex-start;
     gap: var(--space-3);
 }
 
-form p > input[type="checkbox"] {
+form p > input:is([type="checkbox"], [type="radio"]) {
     flex-shrink: 0;
     inline-size: var(--space-5);
     block-size: var(--space-5);
@@ -127,7 +130,7 @@ form p > input[type="checkbox"] {
 }
 
 /* Il testo di una casella è una frase, non un'etichetta: dimensione e peso del testo normale */
-form p > input[type="checkbox"] + label {
+form p > input:is([type="checkbox"], [type="radio"]) + label {
     font-size: var(--fs-body);
     font-weight: var(--fw-text);
 }
@@ -163,4 +166,28 @@ legend {
     font-family: var(--font-display);
     font-size: var(--fs-h3);
     font-weight: var(--fw-heading);
+}
+
+/*
+ * Un gruppo dentro un gruppo (le scelte di una domanda, per esempio acconsento / non acconsento):
+ * il titolo è una domanda in testo normale e le scelte stanno sulla stessa riga.
+ */
+fieldset fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-6);
+    margin-block-end: var(--space-5);
+}
+
+fieldset fieldset > legend {
+    margin-block-end: var(--space-3);
+    padding: 0;
+    border: 0;
+    font-family: var(--font-text);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-text-strong);
+}
+
+fieldset fieldset > p {
+    margin: 0;
 }

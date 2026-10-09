@@ -17,6 +17,16 @@
     });
 
     const isMinorenne = $derived(age !== null && age < 18);
+
+    // I canali della liberatoria per immagini, voce ed esecuzioni (/legal/images): una scelta per ciascuno.
+    const imageChannels = [
+        { name: "immagini_archivio", label: "Archivio interno e documentazione delle attività" },
+        { name: "immagini_sito", label: "Sito internet dell'associazione" },
+        { name: "immagini_social", label: "Canali social ufficiali" },
+        { name: "immagini_stampa", label: "Materiale a stampa e comunicazioni alla stampa" },
+        { name: "immagini_video", label: "Registrazioni dei concerti su piattaforme di condivisione" },
+        { name: "immagini_enti", label: "Documentazione per enti finanziatori, scuole e pubbliche amministrazioni" }
+    ];
     const isTooYoung = $derived(age !== null && age < 14);
 
     type InputEvent = Event & { currentTarget: EventTarget & HTMLInputElement };
@@ -211,16 +221,28 @@
                 <label for="consenso_email">Acconsento alla ricezione di aggiornamenti sulle attività istituzionali all'indirizzo email indicato.</label>
             </p>
 
+        </fieldset>
+
+        <fieldset>
+            <legend>{isMinorenne ? "Immagini, voce ed esecuzioni del minore" : "Immagini, voce ed esecuzioni"}</legend>
             <p>
-                <input type="checkbox" id="consenso_immagini" name="consenso_immagini" />
-                <label for="consenso_immagini">
-                    {#if isMinorenne}
-                        Ho letto la <a href="/legal/images" target="_blank" rel="noopener noreferrer">liberatoria per immagini e riprese video</a> e acconsento alla pubblicazione di immagini e riprese che ritraggono il minore, per finalità istituzionali e promozionali.
-                    {:else}
-                        Ho letto la <a href="/legal/images" target="_blank" rel="noopener noreferrer">liberatoria per immagini e riprese video</a> e acconsento alla pubblicazione di immagini e riprese che mi ritraggono, per finalità istituzionali e promozionali.
-                    {/if}
-                </label>
+                Scegli canale per canale dopo aver letto la
+                <a href="/legal/images" target="_blank" rel="noopener noreferrer">liberatoria per immagini, voce ed esecuzioni</a>. È un consenso
+                separato: puoi rispondere «non acconsento» a tutto e l'iscrizione non cambia.
             </p>
+            {#each imageChannels as { name, label } (name)}
+                <fieldset>
+                    <legend>{label}</legend>
+                    <p>
+                        <input type="radio" id="{name}_si" {name} value="Acconsento" required />
+                        <label for="{name}_si">Acconsento</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="{name}_no" {name} value="Non acconsento" />
+                        <label for="{name}_no">Non acconsento</label>
+                    </p>
+                </fieldset>
+            {/each}
         </fieldset>
 
         <fieldset>
@@ -256,25 +278,27 @@
      * tutta la riga.
      */
     @media (min-width: 40rem) {
-        fieldset {
+        form > fieldset {
             display: grid;
             grid-template-columns: repeat(6, minmax(0, 1fr));
             column-gap: var(--space-4);
         }
 
-        fieldset > p {
+        form > fieldset > p {
             grid-column: span 3;
         }
 
-        fieldset > p:has(> [id$="_cap"], > [id$="_civico"]) {
+        form > fieldset > p:has(> [id$="_cap"], > [id$="_civico"]) {
             grid-column: span 2;
         }
 
-        fieldset > p:has(> [id$="_comune"], > [id$="_via"]) {
+        form > fieldset > p:has(> [id$="_comune"], > [id$="_via"]) {
             grid-column: span 4;
         }
 
-        fieldset > p:has(> input[type="checkbox"], > input[type="file"]) {
+        form > fieldset > p:has(> input[type="checkbox"], > input[type="file"]),
+        form > fieldset > p:not(:has(> input, > select, > textarea)),
+        form > fieldset > fieldset {
             grid-column: 1 / -1;
         }
     }
