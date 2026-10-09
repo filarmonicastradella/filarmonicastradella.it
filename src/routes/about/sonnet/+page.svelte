@@ -1,3 +1,9 @@
+<script lang="ts">
+    // La scansione del foglio, in più misure per la pagina e intera per chi vuole leggerla da vicino.
+    import sonettoImg from "$lib/assets/imgs/sonetto.jpg?enhanced&w=400;640;800;1280;1600";
+    import sonettoFull from "$lib/assets/imgs/sonetto.jpg?url";
+</script>
+
 <svelte:head>
     <title>Sonetto per Santa Cecilia, 1789 — Filarmonica Alessandro Stradella APS</title>
     <meta
@@ -22,6 +28,17 @@
         Il sonetto racconta Cecilia nel giorno delle nozze: mentre fuori suonano le trombe della festa, lei prega in una cella di restare pura, e un angelo
         le annuncia il martirio e la palma che la attende in cielo.
     </p>
+    <figure>
+        <!-- svelte-ignore a11y_consider_explicit_label: il nome del link è l'alt dell'immagine, che il compilatore non vede dentro enhanced:img -->
+        <a href={sonettoFull}>
+            <enhanced:img
+                src={sonettoImg}
+                alt="Il foglio a stampa del 1789: il titolo in grandi lettere, un putto in volo con il cartiglio «Sonetto», la dedica, le quattro strofe e la firma degli Accademici Dissonanti"
+                sizes="(min-width: 40rem) 40rem, 100vw"
+            />
+        </a>
+        <figcaption>Il foglio originale, stampato a Massa nel 1789. Tocca l'immagine per vederla a grandezza piena.</figcaption>
+    </figure>
 </section>
 
 <!-- Trascrizione fedele del foglio, con la grafia e la punteggiatura dell'originale -->

@@ -84,28 +84,28 @@ main > :is(section, article) > :is(h1, h2) + * {
 }
 
 /*
- * Sezioni di solo testo (titolo e paragrafi): da 64rem il titolo va a sinistra e il testo a destra,
+ * Sezioni di testo e immagini (titolo, paragrafi, figure): da 64rem il titolo va a sinistra e il resto a destra,
  * così la sezione è larga quanto le griglie senza allungare le righe oltre --container-text.
  */
 @media (min-width: 64rem) {
-    main > section:not(:has(> :not(h2, p))) {
+    main > section:not(:has(> :not(h2, p, figure))) {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
         column-gap: var(--space-6);
         align-items: start;
     }
 
-    main > section:not(:has(> :not(h2, p))) > * {
+    main > section:not(:has(> :not(h2, p, figure))) > * {
         grid-column: 2;
     }
 
-    main > section:not(:has(> :not(h2, p))) > h2 {
+    main > section:not(:has(> :not(h2, p, figure))) > h2 {
         grid-column: 1;
         grid-row: 1;
         margin: 0;
     }
 
-    main > section:not(:has(> :not(h2, p))) > h2 + * {
+    main > section:not(:has(> :not(h2, p, figure))) > h2 + * {
         margin-block-start: 0;
     }
 }
