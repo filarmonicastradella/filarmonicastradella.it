@@ -62,21 +62,19 @@ main > p:last-child > a:only-child:not([target]) {
     letter-spacing: var(--tracking-eyebrow);
     text-transform: uppercase;
     text-decoration: none;
-}
 
-main :is(section, article) > p:last-child > a:only-child:not([target])::after,
-main > p:last-child > a:only-child:not([target])::after {
-    content: "";
-    inline-size: 1rem;
-    block-size: 1rem;
-    background-color: currentColor;
-    mask: var(--icon-next) center / contain no-repeat;
-    transition: translate var(--duration) var(--ease);
-}
+    &::after {
+        content: "";
+        inline-size: var(--space-4);
+        block-size: var(--space-4);
+        background-color: currentColor;
+        mask: var(--icon-next) center / contain no-repeat;
+        transition: translate var(--duration) var(--ease);
+    }
 
-main :is(section, article) > p:last-child > a:only-child:not([target]):hover::after,
-main > p:last-child > a:only-child:not([target]):hover::after {
-    translate: 0.25rem 0;
+    &:hover::after {
+        translate: var(--space-1) 0;
+    }
 }
 
 /* Elenchi nel testo */
@@ -97,13 +95,13 @@ main li + li {
 :is(ul, ol):has(> li > a > :is(h2, h3, h4), > li > article > a > :is(h2, h3, h4)) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
-    gap: var(--space-7) var(--space-6);
+    gap: var(--gap-grid);
     padding: 0;
     list-style: none;
-}
 
-:is(ul, ol):has(> li > a > :is(h2, h3, h4), > li > article > a > :is(h2, h3, h4)) > li {
-    margin: 0;
+    & > li {
+        margin: 0;
+    }
 }
 
 li > article {
@@ -122,39 +120,39 @@ li > article {
     color: var(--text);
     text-decoration: none;
     transition: border-color var(--duration) var(--ease);
-}
 
-:is(li > a, li > article > a):has(> :is(h2, h3, h4)) > * {
-    margin: 0;
-}
+    & > * {
+        margin: 0;
+    }
 
-:is(li > a, li > article > a):has(> :is(h2, h3, h4)) > p:not(:has(time)) {
-    color: var(--text-muted);
-}
+    & > p:not(:has(time)) {
+        color: var(--text-muted);
+    }
 
-:is(li > a, li > article > a):has(> :is(h2, h3, h4)):hover {
-    border-block-start-color: var(--accent);
-}
+    &:hover {
+        border-block-start-color: var(--accent);
+    }
 
-:is(li > a, li > article > a):has(> :is(h2, h3, h4)):hover > :is(h2, h3, h4) {
-    color: var(--text-brand);
+    &:hover > :is(h2, h3, h4) {
+        color: var(--text-brand);
+    }
+
+    /* Nelle schede che portano fuori dal sito la freccia sta nell'angolo, non in coda al testo */
+    &[target="_blank"] {
+        padding-inline-end: var(--space-7);
+    }
+
+    &[target="_blank"]::after {
+        position: absolute;
+        inset-block-start: var(--space-5);
+        inset-inline-end: 0;
+        margin: 0;
+    }
 }
 
 /* Le pagine hub hanno titoli di scheda h2: stessa misura delle altre schede */
 li > a > h2 {
     font-size: var(--fs-h3);
-}
-
-/* Nelle schede che portano fuori dal sito la freccia sta nell'angolo, non in coda al testo */
-:is(li > a, li > article > a):has(> :is(h2, h3, h4))[target="_blank"] {
-    padding-inline-end: var(--space-7);
-}
-
-:is(li > a, li > article > a):has(> :is(h2, h3, h4))[target="_blank"]::after {
-    position: absolute;
-    inset-block-start: var(--space-5);
-    inset-inline-end: 0;
-    margin: 0;
 }
 
 /* ─────────────── Coppie etichetta/valore ─────────────── */

@@ -62,7 +62,7 @@
     ul {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
-        gap: var(--space-7) var(--space-6);
+        gap: var(--gap-grid);
         padding: 0;
         list-style: none;
     }

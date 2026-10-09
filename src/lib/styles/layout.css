@@ -16,6 +16,7 @@
     --space-8: 4rem;
     --space-9: 6rem;
     --space-10: 8rem;
+    --gap-grid: var(--space-7) var(--space-6); /* tra le schede e le foto in griglia */
 
     /* Contenitori */
     --container: 64rem; /* contenitore raccolto, da rivista: il testo a 40rem non lascia troppo vuoto a destra */
