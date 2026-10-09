@@ -7,7 +7,7 @@
 
     // Con JS si nascondono gli eventi già conclusi dalla build (la pagina resta in cache fino a 3 ore).
     let now = $state<Date>();
-    const events = $derived((now ? builtEvents.filter((event) => hasNotEnded(event, now!)) : builtEvents).slice(0, 2));
+    const events = $derived((now ? builtEvents.filter((event) => hasNotEnded(event, now!)) : builtEvents).slice(0, 3));
 
     onMount(() => {
         now = new Date();

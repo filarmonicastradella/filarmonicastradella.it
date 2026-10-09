@@ -18,7 +18,7 @@
     --space-10: 8rem;
 
     /* Contenitori */
-    --container: 72rem;
+    --container: 64rem; /* contenitore raccolto, da rivista: il testo a 40rem non lascia troppo vuoto a destra */
     --container-text: 40rem; /* massimo per colonne di testo */
     --gutter: clamp(1rem, 4vw, 2.5rem);
     --page-inline: max(var(--gutter), calc((100% - var(--container)) / 2));
@@ -66,6 +66,33 @@ main > :is(section, article, header) > * + * {
 
 main > :is(section, article) > :is(h1, h2) + * {
     margin-block-start: var(--space-6);
+}
+
+/*
+ * Sezioni di solo testo (titolo e paragrafi): da 64rem il titolo va a sinistra e il testo a destra,
+ * così la sezione è larga quanto le griglie senza allungare le righe oltre --container-text.
+ */
+@media (min-width: 64rem) {
+    main > section:not(:has(> :not(h2, p))) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
+        column-gap: var(--space-6);
+        align-items: start;
+    }
+
+    main > section:not(:has(> :not(h2, p))) > * {
+        grid-column: 2;
+    }
+
+    main > section:not(:has(> :not(h2, p))) > h2 {
+        grid-column: 1;
+        grid-row: 1;
+        margin: 0;
+    }
+
+    main > section:not(:has(> :not(h2, p))) > h2 + * {
+        margin-block-start: 0;
+    }
 }
 
 /*
