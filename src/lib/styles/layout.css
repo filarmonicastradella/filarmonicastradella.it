@@ -52,9 +52,20 @@ body {
 }
 
 /* L'intestazione del sito è "fixed" (SiteHeader.svelte): lo spazio lo riserva il contenuto */
+/*
+ * "main" è una griglia: una colonna centrale per il contenuto e due colonne di margine larghe
+ * --page-inline. Ogni elemento sta nella colonna centrale; chi deve arrivare ai bordi dello schermo
+ * (la hero) occupa tutta la riga con "grid-column: full", senza calcoli su 100vw, che comprende la
+ * barra di scorrimento e farebbe sporgere la pagina.
+ */
 main {
+    display: grid;
+    grid-template-columns: [full-start] var(--page-inline) [content-start] minmax(0, 1fr) [content-end] var(--page-inline) [full-end];
     padding-block: var(--header-height) var(--space-9);
-    padding-inline: var(--page-inline);
+}
+
+main > * {
+    grid-column: content;
 }
 
 main > * + :is(section, article, nav, ul, ol, dl, form),

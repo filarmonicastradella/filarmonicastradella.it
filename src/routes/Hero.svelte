@@ -14,28 +14,26 @@
 <style>
     /*
      * Apertura della landing come nel design system: testo su carta a sinistra, foto virata verso
-     * inchiostro e bordeaux (il trattamento "duotone") a destra, le corde sul confine tra le due.
+     * inchiostro e bordeaux (il trattamento "duotone") a destra, le corde sopra la foto nello stesso punto
+     * di tutte le altre corde del sito (il bordo destro del contenitore), nel colore chiaro delle superfici scure.
      * La foto è uno sfondo su uno pseudo-elemento: nessun elemento in più nel markup.
      * Sotto i 64rem la foto diventa una fascia in alto e il testo scorre sotto: più stretta, la colonna
      * di testo accanto alla foto non conterrebbe il titolo, che finirebbe sotto le corde.
      */
     header {
         /*
-         * In vw e non in %: la stessa misura serve al padding (dove % si riferirebbe a "main") e alla
-         * posizione di foto e corde (dove si riferirebbe alla hero). Con % le due non coincidevano e le
-         * corde finivano sopra il testo su alcune larghezze. La hero è larga 100vw, quindi 45vw è il 45%.
+         * La hero occupa tutta la riga della griglia di "main" (layout.css): è larga quanto la pagina, e
+         * le percentuali di padding e posizioni si riferiscono tutte alla stessa larghezza.
          */
-        --split: 45vw;
-        /* "main" ha già i margini della pagina: la hero li scavalca per arrivare ai bordi dello schermo */
-        --edge: max(var(--gutter), calc((100vw - var(--container)) / 2));
+        --split: 45%;
+        --edge: var(--page-inline);
+        grid-column: full;
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: var(--space-7);
         min-height: calc(100svh - var(--header-height));
-        width: 100vw;
-        margin-inline: calc(50% - 50vw);
         padding-block: var(--space-9);
         padding-inline: var(--edge) calc(var(--split) + var(--space-8));
         box-sizing: border-box;
@@ -58,9 +56,10 @@
         filter: grayscale(0.6);
     }
 
-    /* Le corde (layout.css) sul confine tra testo e foto */
+    /* Le corde (layout.css) dove sono in tutto il sito, sopra la foto: chiare, come sulle superfici scure */
     header::after {
-        inset-inline-end: calc(var(--split) + var(--space-6));
+        --corde-color: var(--color-cipria);
+        inset-inline-end: var(--edge);
     }
 
     hgroup {
@@ -126,8 +125,9 @@
 
     /*
      * Sotto i 64rem: la hero è alta quanto lo schermo meno l'intestazione. Il testo prende lo spazio che
-     * gli serve, la foto riempie quello che resta sopra (mai meno di un quarto dello schermo), le corde
-     * scendono accanto al testo. Foto e corde diventano elementi della griglia invece che sovrapposti.
+     * gli serve, la foto riempie quello che resta sopra (mai meno di un quarto dello schermo). Le corde
+     * scendono senza interruzioni sul bordo destro: chiare sulla foto (disegnate come livelli del suo
+     * sfondo) e poi del loro colore accanto al testo. Foto e corde diventano elementi della griglia.
      */
     @media (max-width: 63.999rem) {
         header {
@@ -140,9 +140,20 @@
         }
 
         header::before {
+            --line: linear-gradient(var(--color-cipria), var(--color-cipria));
+            --step: calc(var(--corde-gap) + var(--corde-width));
             position: static;
             grid-column: 1 / -1;
             inline-size: auto;
+            background:
+                var(--line) right var(--edge) top 0 / var(--corde-width) 100% no-repeat,
+                var(--line) right calc(var(--edge) + var(--step)) top 0 / var(--corde-width) 100% no-repeat,
+                var(--line) right calc(var(--edge) + var(--step) * 2) top 0 / var(--corde-width) 100% no-repeat,
+                linear-gradient(
+                    color-mix(in srgb, var(--color-bordeaux-notte) 45%, transparent),
+                    color-mix(in srgb, var(--color-inchiostro) 55%, transparent)
+                ),
+                var(--hero-image) center / cover;
             margin-inline: calc(-1 * var(--edge));
             margin-block-end: var(--space-6);
         }
@@ -159,7 +170,10 @@
         }
 
         header::after {
+            /* Accanto al testo, su carta: tornano del colore normale e partono dal fondo della foto */
+            --corde-color: inherit;
             position: static;
+            margin-block-start: calc(-1 * var(--space-6));
             grid-column: 2;
             grid-row: 2 / 4;
         }
