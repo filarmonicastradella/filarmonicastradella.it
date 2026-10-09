@@ -17,6 +17,12 @@
             <p>Dal riconoscimento settecentesco alla Filarmonica di oggi.</p>
         </a>
     </li>
+    <li>
+        <a href="/about/sonnet">
+            <h2>Sonetto per Santa Cecilia, 1789</h2>
+            <p>Il foglio a stampa degli Accademici Dissonanti per la patrona dei musicisti.</p>
+        </a>
+    </li>
     <!-- Da riattivare quando pronte (rinominare _page.svelte in +page.svelte in ciascuna cartella):
     <li>
         <a href="/about/mission">

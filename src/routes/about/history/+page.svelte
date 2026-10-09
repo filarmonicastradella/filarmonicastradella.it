@@ -39,7 +39,8 @@
     <p>
         Per la «Filarmonica di Canto e Suono» il riconoscimento arriva il <time datetime="1779-08-03">3 agosto 1779</time>, con l'approvazione
         dell'Auditore Fiscale di Firenze. Nel <time datetime="1780-11">novembre 1780</time> il gruppo tiene un concerto solenne per la festa di Santa
-        Cecilia.
+        Cecilia, patrona dei musicisti, che nel <time datetime="1789">1789</time> gli Accademici Dissonanti celebrano con un
+        <a href="/about/sonnet">sonetto a stampa</a>.
     </p>
     <figure>
         <enhanced:img src={altaCappellaImg} alt="Musicisti di una formazione di alta cappella" {sizes} />
