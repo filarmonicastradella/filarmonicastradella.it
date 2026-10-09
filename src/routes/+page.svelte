@@ -14,7 +14,7 @@
 
 <svelte:head>
     <title>Filarmonica Alessandro Stradella APS — Fivizzano dal 1777</title>
-    <meta name="description" content="Filarmonica Alessandro Stradella APS: banda e scuola di musica di Fivizzano, in Lunigiana, dal 1777. Concerti, eventi, notizie e come sostenerci." />
+    <meta name="description" content="Filarmonica Alessandro Stradella APS, a Fivizzano in Lunigiana dal 1777: concerti, calendario degli eventi e come sostenerci." />
 </svelte:head>
 
 <Hero />
@@ -26,11 +26,9 @@
 <section>
     <h2>Chi siamo</h2>
     <p>
-        Dal 1777 la Filarmonica fa musica a Fivizzano, nel cuore della Lunigiana: una <a href="/about/history">storia</a> lunga quasi due secoli e mezzo. Oggi riunisce più formazioni, dall'orchestra di fiati alla musica antica, e suona per la sua comunità tutto l'anno.
+        Dal 1777 la Filarmonica fa musica a Fivizzano, in Lunigiana: una storia lunga quasi due secoli e mezzo. Oggi riunisce quattro formazioni (orchestra, orchestra di fiati, musica antica e street band) e porta il suo repertorio nelle sale e nelle piazze del territorio.
     </p>
-    <p>
-        I corsi di musica sono dell'<a href="https://accademiastradella.it" target="_blank" rel="noopener noreferrer">Accademia Stradella</a>, l'associazione con cui collaboriamo.
-    </p>
+    <p>Musica fatta sul serio, aperta a chi ascolta e a chi vuole suonare con noi.</p>
     <p><a href="/about">Scopri l'associazione</a></p>
 </section>
 
