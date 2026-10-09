@@ -155,11 +155,13 @@ body > div > footer {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
     gap: var(--space-7) var(--space-6);
     padding-block: var(--space-9) var(--space-7);
-    padding-inline: var(--page-inline) calc(var(--page-inline) + var(--space-8));
+    /* Come l'intestazione di pagina: lo spazio delle corde più un margine */
+    padding-inline: var(--page-inline) calc(var(--page-inline) + var(--corde-span) + var(--space-6));
 }
 
+/* Sul bordo destro del contenitore, alla stessa distanza dal margine delle corde dell'intestazione di pagina e del menu */
 body > div > footer::before {
-    inset-inline-end: var(--gutter);
+    inset-inline-end: var(--page-inline);
 }
 
 body > div > footer h2 {
