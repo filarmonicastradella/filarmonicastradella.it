@@ -92,9 +92,11 @@
         flex-direction: column;
         color: var(--text);
         font-family: var(--font-display);
-        font-size: var(--fs-h3);
+        /* Su schermi stretti "Alessandro Stradella" a --fs-h3 andava a capo, 3 righe con l'occhiello: troppo alte per l'intestazione */
+        font-size: clamp(1.125rem, 4vw + 0.5rem, var(--fs-h3));
         font-weight: var(--fw-display);
         line-height: var(--lh-display);
+        white-space: nowrap;
     }
 
     /* L'occhiello FILARMONICA del logotipo */

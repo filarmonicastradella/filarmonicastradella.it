@@ -86,16 +86,17 @@
             overflow-y: auto;
             background-color: var(--bg);
             visibility: hidden;
-            opacity: 0;
-            /* Chiusura: il pannello aspetta che le corde siano risalite, poi sfuma e infine si nasconde */
+            /* Si espande verso il basso come un'estensione della topbar, non una dissolvenza: stessa tecnica delle corde sotto */
+            clip-path: inset(0 0 100% 0);
+            /* Chiusura: il pannello aspetta che le corde siano risalite, poi si ritrae e infine si nasconde */
             transition:
-                opacity var(--duration-slow) var(--ease) var(--duration-slow),
+                clip-path var(--duration-slow) var(--ease) var(--duration-slow),
                 visibility 0s linear calc(var(--duration-slow) * 2);
         }
 
         nav[data-open] {
             visibility: visible;
-            opacity: 1;
+            clip-path: inset(0);
             transition-delay: 0s;
         }
 
