@@ -58,11 +58,7 @@
     }
 }
 
-/*
- * Superfici scure fisse (piè di pagina, sezioni a fondo pieno): come nel design system,
- * si attivano con data-surface e i ruoli si adattano da soli.
- */
-[data-surface="inchiostro"],
+/* Il piè di pagina è una superficie scura fissa: i ruoli dei colori si adattano da soli */
 body > div > footer {
     --bg: var(--bg-inverse);
     --text: var(--color-carta);
@@ -72,20 +68,6 @@ body > div > footer {
     --accent-hover: var(--color-cipria);
     --on-accent: var(--color-inchiostro);
     --border: color-mix(in oklab, var(--color-carta) 18%, transparent);
-    --corde-color: var(--color-cipria);
-    background-color: var(--bg);
-    color: var(--text);
-}
-
-[data-surface="bordeaux"] {
-    --bg: var(--color-bordeaux);
-    --text: var(--color-carta);
-    --text-muted: var(--color-cipria);
-    --text-brand: var(--color-cipria);
-    --accent: var(--color-carta);
-    --accent-hover: var(--color-cipria);
-    --on-accent: var(--color-bordeaux);
-    --border: color-mix(in oklab, var(--color-carta) 25%, transparent);
     --corde-color: var(--color-cipria);
     background-color: var(--bg);
     color: var(--text);
