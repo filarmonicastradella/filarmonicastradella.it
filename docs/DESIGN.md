@@ -141,6 +141,7 @@ Il movimento accompagna, non si esibisce.
 - Card evento: ogni informazione una volta sola. La data in occhiello bordeaux sopra il titolo ("sab 10 ottobre"; per più giorni "lun 7 – mar 8 dicembre"), il titolo in Cormorant 600, la descrizione, e in fondo una didascalia con ora di inizio e luogo ("ore 21 · Teatro degli Impavidi"). Ogni parte ha un numero fisso di righe, così nella griglia tutto è allineato: data e didascalia una, titolo due, descrizione tre; il resto si interrompe con i puntini e si legge nella pagina dell'evento, insieme all'ora di fine.
 - Apertura della homepage: occhiello, titolo display con una parola in corsivo bordeaux, sottotitolo, pulsante primario a sinistra su carta; foto in duotone a destra; corde sopra la foto, nello stesso punto di tutte le altre corde del sito (il bordo destro del contenitore), in colore chiaro.
 - Colonne di testo al massimo 40 rem.
+- Sezioni da leggere (testo, immagini, elenchi di testo ed elenchi etichetta/valore): su schermo largo, da 64 rem, il titolo sta a sinistra e il contenuto a destra, nella colonna da 40 rem; così la sezione è larga quanto le griglie senza allungare le righe. Le sezioni con griglie di schede o di foto tengono il titolo sopra e usano tutta la larghezza.
 
 ## 11. Tono di voce
 
