@@ -77,28 +77,31 @@
      * finito il giro, le corde scendono da lì. Chiusura, al contrario: prima le corde risalgono nel
      * pulsante, poi il pulsante torna orizzontale mentre il pannello sfuma. Le transizioni hanno il
      * ritardo nello stato di arrivo: quello aperto per l'apertura, quello chiuso per la chiusura.
-     * "allow-discrete" rimanda "display: none" alla fine della chiusura, "@starting-style" dà il punto di
-     * partenza all'apertura.
      */
     @media (max-width: 63.999rem) {
+        /*
+         * Il pannello è sempre nella pagina ma nascosto con "visibility" (fuori anche dalla tastiera e
+         * dagli screen reader): a differenza di "display", si può ritardare con una transizione in tutti
+         * i browser, così sparisce solo alla fine della chiusura.
+         */
         nav {
             --shift: var(--space-3);
-            display: none;
             position: fixed;
             inset: 0;
             padding-block: calc(var(--header-height) + var(--space-7)) var(--space-7);
             padding-inline: var(--page-inline) calc(var(--page-inline) + var(--corde-span) + var(--space-6));
             overflow-y: auto;
             background-color: var(--bg);
+            visibility: hidden;
             opacity: 0;
-            /* Chiusura: il pannello aspetta che le corde siano risalite */
+            /* Chiusura: il pannello aspetta che le corde siano risalite, poi sfuma e infine si nasconde */
             transition:
                 opacity var(--duration-slow) var(--ease) var(--duration-slow),
-                display var(--duration-slow) allow-discrete var(--duration-slow);
+                visibility 0s linear calc(var(--duration-slow) * 2);
         }
 
         nav[data-open] {
-            display: block;
+            visibility: visible;
             opacity: 1;
             transition-delay: 0s;
         }
@@ -118,30 +121,23 @@
             transition-delay: var(--duration-slow);
         }
 
+        /* Voci e pulsante: chiusi aspettano sotto, trasparenti; all'apertura salgono uno dopo l'altro */
         li,
         p {
+            opacity: 0;
+            translate: 0 var(--shift);
             transition:
-                opacity var(--duration-slow) var(--ease),
-                translate var(--duration-slow) var(--ease);
+                opacity var(--duration-slow) var(--ease) var(--duration-slow),
+                translate 0s linear calc(var(--duration-slow) * 2);
         }
 
         nav[data-open] :is(li, p) {
+            opacity: 1;
+            translate: 0;
+            transition:
+                opacity var(--duration-slow) var(--ease),
+                translate var(--duration-slow) var(--ease);
             transition-delay: calc(var(--i) * var(--stagger) / 2);
-        }
-
-        @starting-style {
-            nav[data-open] {
-                opacity: 0;
-            }
-
-            nav[data-open]::after {
-                clip-path: inset(0 0 100% 0);
-            }
-
-            nav[data-open] :is(li, p) {
-                opacity: 0;
-                translate: 0 var(--shift);
-            }
         }
 
         ul {
