@@ -73,8 +73,10 @@
      * (layout.css) sul margine destro. Il pannello copre anche l'intestazione, di cui restano sopra solo
      * logo e pulsante del menu (SiteHeader.svelte): intestazione e pannello sono una sola superficie, senza
      * il filetto di separazione, e le corde partono dal fondo del pulsante del menu, collegate a lui.
-     * All'apertura il pannello sfuma e le voci salgono appena, una dopo l'altra, mentre il pulsante si
-     * gira; finito il giro, le corde scendono da lì. Alla chiusura tutto sfuma insieme.
+     * Apertura: il pannello sfuma e le voci salgono appena, una dopo l'altra, mentre il pulsante si gira;
+     * finito il giro, le corde scendono da lì. Chiusura, al contrario: prima le corde risalgono nel
+     * pulsante, poi il pulsante torna orizzontale mentre il pannello sfuma. Le transizioni hanno il
+     * ritardo nello stato di arrivo: quello aperto per l'apertura, quello chiuso per la chiusura.
      * "allow-discrete" rimanda "display: none" alla fine della chiusura, "@starting-style" dà il punto di
      * partenza all'apertura.
      */
@@ -89,25 +91,31 @@
             overflow-y: auto;
             background-color: var(--bg);
             opacity: 0;
+            /* Chiusura: il pannello aspetta che le corde siano risalite */
             transition:
-                opacity var(--duration-slow) var(--ease),
-                display var(--duration-slow) allow-discrete;
+                opacity var(--duration-slow) var(--ease) var(--duration-slow),
+                display var(--duration-slow) allow-discrete var(--duration-slow);
         }
 
         nav[data-open] {
             display: block;
             opacity: 1;
+            transition-delay: 0s;
         }
 
         /* Dal fondo del pulsante del menu, centrato nell'intestazione, fino in fondo allo schermo */
         nav::after {
             inset-block-start: calc((var(--header-height) + var(--corde-span)) / 2);
             inset-inline-end: var(--page-inline);
+            /* Ritratte nel pulsante; alla chiusura risalgono subito */
+            clip-path: inset(0 0 100% 0);
+            transition: clip-path var(--duration-slow) var(--ease);
         }
 
-        /* Le corde scendono quando il pulsante ha finito di girarsi (stessa durata, poi il loro turno) */
+        /* All'apertura scendono quando il pulsante ha finito di girarsi */
         nav[data-open]::after {
-            animation: corde-scendono var(--duration-slow) var(--ease) var(--duration-slow) both;
+            clip-path: inset(0);
+            transition-delay: var(--duration-slow);
         }
 
         li,
@@ -124,6 +132,10 @@
         @starting-style {
             nav[data-open] {
                 opacity: 0;
+            }
+
+            nav[data-open]::after {
+                clip-path: inset(0 0 100% 0);
             }
 
             nav[data-open] :is(li, p) {
@@ -157,8 +169,13 @@
             --shift: 0;
         }
 
-        nav[data-open]::after {
-            animation: none;
+        nav,
+        nav::after {
+            transition-delay: 0s;
+        }
+
+        nav::after {
+            transition-duration: 0s;
         }
     }
 

@@ -117,10 +117,10 @@
         background: none;
         border: none;
         color: inherit;
-        /* Stessa durata del pannello del menu, che si apre e si chiude insieme */
+        /* Stessa durata del pannello del menu. Alla chiusura il giro aspetta che le corde siano risalite */
         transition:
-            rotate var(--duration-slow) var(--ease),
-            color var(--duration-slow) var(--ease);
+            rotate var(--duration-slow) var(--ease) var(--duration-slow),
+            color var(--duration-slow) var(--ease) var(--duration-slow);
     }
 
     button:hover {
@@ -138,6 +138,7 @@
     button[aria-expanded="true"] {
         rotate: 90deg;
         color: var(--corde-color);
+        transition-delay: 0s;
     }
 
     @media (prefers-reduced-motion: reduce) {
