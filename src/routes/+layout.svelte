@@ -11,7 +11,6 @@
     import favicon from "$lib/assets/icon.svg";
     import SiteHeader from "./SiteHeader.svelte";
     import SiteFooter from "./SiteFooter.svelte";
-    // import OldFooterReference from "./OldFooterReference.svelte"; // TEMPORANEO: confronto visivo concluso, da togliere del tutto
 
     // Cormorant Garamond: solo i pesi del design system (500, 600 e il corsivo 500 per la parola evidenziata)
     import "@fontsource/cormorant-garamond/latin-500.css";
@@ -77,8 +76,6 @@
 <main id="contenuto" inert={menu.open}>
     {@render children()}
 </main>
-
-<!-- <OldFooterReference /> -->
 <SiteFooter inert={menu.open} />
 
 <style>

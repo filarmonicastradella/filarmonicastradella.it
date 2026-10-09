@@ -1,7 +1,6 @@
 <script lang="ts">
     import Hero from "./Hero.svelte";
     import UpcomingEvents from "./UpcomingEvents.svelte";
-    // import OldEventsCarouselReference from "./OldEventsCarouselReference.svelte"; // TEMPORANEO: confronto concluso
     import Gallery from "./Gallery.svelte";
     // import NewsCard from "$lib/components/NewsCard.svelte"; // con "Ultime notizie", commentata sotto
     // import { news } from "$lib/news";
@@ -46,7 +45,6 @@
 
 <Hero />
 
-<!-- <OldEventsCarouselReference events={data.events} /> -->
 <UpcomingEvents events={data.events} />
 
 <!-- BOZZA: testo provvisorio nel tono di docs/DESIGN.md, da confermare -->
