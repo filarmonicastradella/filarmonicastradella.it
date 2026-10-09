@@ -8,10 +8,15 @@
 
     // Il menu si chiude anche dopo una navigazione che non è partita da lui (indietro, avanti).
     afterNavigate(() => (menu.open = false));
+
+    // Aprendo il pannello su telefono il focus va sulla prima voce, così la tastiera parte da lì.
+    const focusFirstItem = (nav: HTMLElement) => {
+        if (menu.open && matchMedia("(max-width: 63.999rem)").matches) nav.querySelector("a")?.focus();
+    };
 </script>
 
 <!-- "--i": posizione nella sequenza con cui le voci compaiono all'apertura -->
-<nav aria-label="Navigazione principale" data-open={menu.open || undefined}>
+<nav aria-label="Navigazione principale" data-open={menu.open || undefined} {@attach focusFirstItem}>
     <ul>
         {#each navItems as item, i (item.href)}
             <li style:--i={i}><a href={item.href} aria-current={isActive(item.href)}>{item.title}</a></li>

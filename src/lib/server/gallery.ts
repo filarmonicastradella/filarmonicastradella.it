@@ -5,8 +5,11 @@ const INSTAGRAM_FEED_URL = "https://feeds.behold.so/1nxUxyt6x5qBVeEHpHNS";
 const ALT_MAX_LENGTH = 140;
 
 function toSlide(media: BeholdChildMedia, post: BeholdPost): GallerySlide {
+    // Il testo alternativo è la prima frase della didascalia del post (di solito dice che cosa mostra la foto),
+    // tagliata a una parola intera se è troppo lunga.
     const caption = (post.prunedCaption ?? "").trim();
-    const alt = caption.length > ALT_MAX_LENGTH ? `${caption.slice(0, ALT_MAX_LENGTH).trimEnd()}…` : caption;
+    const firstSentence = caption.split(/(?<=[.!?])\s/)[0];
+    const alt = firstSentence.length > ALT_MAX_LENGTH ? `${firstSentence.slice(0, ALT_MAX_LENGTH).replace(/\s+\S*$/, "")}…` : firstSentence;
     const sizes = media.sizes ? [media.sizes.small, media.sizes.medium, media.sizes.large] : [];
     const dominant = media.colorPalette?.dominant;
 

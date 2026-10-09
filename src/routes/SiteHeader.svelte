@@ -8,7 +8,17 @@
     const logo = logoSvg
         .replace('width="826" height="1382"', 'width="22" height="36"')
         .replaceAll('fill="black"', 'fill="currentColor"');
+
+    // Con il menu aperto, Esc lo chiude e riporta il focus sul pulsante.
+    let toggle = $state<HTMLButtonElement>();
+    const closeOnEscape = (event: KeyboardEvent) => {
+        if (event.key !== "Escape" || !menu.open) return;
+        menu.open = false;
+        toggle?.focus();
+    };
 </script>
+
+<svelte:window onkeydown={closeOnEscape} />
 
 <header>
     <a href="/">
@@ -17,16 +27,17 @@
     </a>
 
     <!-- Il nome del pulsante è la parola visibile, "Menu" o "Chiudi"; le tre corde sono solo il segno -->
-    <button type="button" aria-expanded={menu.open} onclick={() => (menu.open = !menu.open)}>
+    <button type="button" aria-expanded={menu.open} onclick={() => (menu.open = !menu.open)} bind:this={toggle}>
         <span>
             <span aria-hidden={menu.open}>Menu</span>
             <span aria-hidden={!menu.open}>Chiudi</span>
         </span>
-        <span aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
+        <!-- Le tre corde: 22×22 come --corde-span (linee da 2 a 10 di distanza), agganciate ai pixel dello schermo -->
+        <svg aria-hidden="true" viewBox="0 0 22 22" shape-rendering="crispEdges">
+            <rect width="22" height="2" />
+            <rect y="10" width="22" height="2" />
+            <rect y="20" width="22" height="2" />
+        </svg>
     </button>
 
     <!-- Menu a scomparsa sotto i 64rem; da 64rem le voci sono sempre visibili in linea -->
@@ -98,8 +109,7 @@
     }
 
     /*
-     * Il pulsante del menu: una parola in occhiello ("Menu", "Chiudi") e tre corde distese (tre span, non un
-     * <svg>), con lo stesso spessore e la stessa distanza delle corde di layout.css, così formano un quadrato
+     * Il pulsante del menu: una parola in occhiello ("Menu", "Chiudi") e tre corde distese, con lo stesso spessore e la stessa distanza delle corde di layout.css, così formano un quadrato
      * grande quanto --corde-span. Aprendo il menu le corde ruotano di 90° e il pulsante prende il colore delle
      * corde: diventano la cima delle corde del pannello, che scendono proprio da lì (SiteMenu.svelte), mentre
      * la parola sfuma da "Menu" a "Chiudi". Le corde stanno al centro di un quadrato di --space-7 (48px);
@@ -152,36 +162,28 @@
         opacity: 0;
     }
 
-    /* Le corde */
-    button > span:last-child {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: var(--corde-gap);
-        inline-size: var(--space-7);
-        block-size: var(--space-7);
+    /*
+     * Le corde: un SVG con "crispEdges", che aggancia le linee ai pixel dello schermo, così restano dello
+     * stesso spessore anche sui display con densità non intera (125%, 150%…). Il padding lo centra in un
+     * quadrato di --space-7, che ruota intorno al suo centro.
+     */
+    button > svg {
+        box-sizing: content-box;
+        inline-size: var(--corde-span);
+        block-size: var(--corde-span);
+        padding: calc((var(--space-7) - var(--corde-span)) / 2);
+        fill: currentColor;
         transition: rotate var(--duration-slow) var(--ease) var(--duration-slow);
     }
 
-    /*
-     * Ogni linea è un bordo e non un fondo: i bordi si allineano sempre ai pixel dello schermo, così sui
-     * display con densità non intera (125%, 150%…) le tre linee restano dello stesso spessore.
-     */
-    button > span:last-child > span {
-        display: block;
-        inline-size: var(--corde-span);
-        border-block-start: var(--corde-width) solid currentColor;
-    }
-
     /* Unica rotazione del sito, eccezione prevista dal design system (Movimento) */
-    button[aria-expanded="true"] > span:last-child {
+    button[aria-expanded="true"] > svg {
         rotate: 90deg;
         transition-delay: 0s;
     }
 
     @media (prefers-reduced-motion: reduce) {
-        button > span:last-child {
+        button > svg {
             transition: none;
         }
     }

@@ -7,6 +7,9 @@
     import { legalSeat } from "$lib/locations";
     import { organization } from "$lib/organization";
 
+    // "inert" quando il menu aperto copre la pagina (+layout.svelte).
+    let { inert = false }: { inert?: boolean } = $props();
+
     const socials = [
         { name: "Instagram", href: "https://instagram.com/filarmonicastradella", Icon: InstagramIcon },
         { name: "Facebook", href: "https://facebook.com/filarmonicastradella", Icon: FacebookIcon },
@@ -16,7 +19,7 @@
     ];
 </script>
 
-<footer>
+<footer {inert}>
     <nav aria-label="Social media">
         <ul>
             {#each socials as { name, href, Icon } (name)}

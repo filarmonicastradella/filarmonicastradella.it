@@ -23,15 +23,13 @@
 
     const reducedMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // Durata della chiusura del menu: due tempi di --duration-slow (corde che risalgono, poi pulsante e pannello).
-    const menuClosing = () => (reducedMotion() ? 0 : parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--duration-slow")) * 2);
-
     // Cambio di pagina animato con le View Transitions (dove il browser le supporta; il CSS descrive l'animazione).
-    onNavigate(async (navigation) => {
-        // Dal menu aperto: prima il menu si chiude con la sua animazione, poi parte il cambio di pagina.
+    onNavigate((navigation) => {
+        // Dal menu aperto basta la sua chiusura: la nuova pagina si carica subito dietro il pannello, ancora
+        // coperta mentre le corde risalgono, e il pannello sfumando la scopre. Niente dissolvenza in più.
         if (menu.open) {
             menu.open = false;
-            await new Promise((resolve) => setTimeout(resolve, menuClosing()));
+            return;
         }
         if (!document.startViewTransition || reducedMotion()) return;
 
@@ -52,12 +50,13 @@
 
 <SiteHeader />
 
-<main id="contenuto">
+<!-- Con il menu aperto il resto della pagina, coperto dal pannello, non si raggiunge con la tastiera -->
+<main id="contenuto" inert={menu.open}>
     {@render children()}
 </main>
 
 <!-- <OldFooterReference /> -->
-<SiteFooter />
+<SiteFooter inert={menu.open} />
 
 <style>
     /* Visibile solo quando riceve il focus da tastiera: chi naviga con Tab salta subito al contenuto */

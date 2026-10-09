@@ -27,9 +27,12 @@ a:hover {
     outline-offset: var(--rule-width);
 }
 
-/* Ogni link esterno ha la sua freccia, senza toccare il markup */
+/*
+ * Ogni link esterno ha la sua freccia, senza toccare il markup. La freccia ha un testo alternativo, che
+ * gli screen reader leggono: chi non la vede sa comunque che il link apre una nuova scheda.
+ */
 a[target="_blank"]::after {
-    content: "";
+    content: "" / " (si apre in una nuova scheda)";
     display: inline-block;
     inline-size: 0.8em;
     block-size: 0.8em;

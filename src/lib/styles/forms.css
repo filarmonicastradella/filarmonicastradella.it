@@ -110,6 +110,14 @@ textarea:focus-visible {
     border-color: var(--accent);
 }
 
+/* Un campo compilato in modo non valido (solo dopo che lo si è toccato): bordo più spesso nel colore del marchio */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+    border-color: var(--text-brand);
+    box-shadow: inset 0 0 0 var(--border-width) var(--text-brand);
+}
+
 /* Le caselle: nel colore del marchio, grandi abbastanza da toccare, allineate alla prima riga del testo */
 input[type="checkbox"],
 input[type="radio"] {
