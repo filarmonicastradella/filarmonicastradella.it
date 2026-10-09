@@ -68,12 +68,15 @@
         </dl>
     </section>
 
-    <nav aria-label="Informazioni">
-        <h2>Informazioni</h2>
+    <nav aria-label="Trasparenza">
+        <h2>Trasparenza</h2>
         <ul>
-            <li><a href="/legal/privacy">Informativa Privacy</a></li>
-            <li><a href="/legal/cookies">Politica dei Cookie</a></li>
+            <li><a href="/transparency">Amministrazione trasparente</a></li>
+            <li><a href="/legal/privacy">Informativa privacy</a></li>
+            <li><a href="/legal/cookies">Cookie</a></li>
+            <!-- Da riattivare insieme a /faq (rinominare faq/_page.svelte in +page.svelte):
             <li><a href="/faq">Domande frequenti</a></li>
+            -->
         </ul>
     </nav>
 

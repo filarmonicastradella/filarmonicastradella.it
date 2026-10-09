@@ -39,4 +39,7 @@
     </li>
 </ul>
 
+<p>Hai dubbi? <a href="/contacts/message">Scrivici</a>.</p>
+<!-- Da riattivare insieme a /faq:
 <p>Hai dubbi? Leggi le <a href="/faq">domande frequenti</a> o <a href="/contacts/message">scrivici</a>.</p>
+-->
