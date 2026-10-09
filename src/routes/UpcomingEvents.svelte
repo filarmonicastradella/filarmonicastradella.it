@@ -30,3 +30,10 @@
 
     <p><a href="/events">Tutti gli eventi</a></p>
 </section>
+
+<style>
+    /* In home i prossimi eventi riempiono la riga: se sono meno di tre, si dividono tutta la larghezza */
+    ol {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    }
+</style>
