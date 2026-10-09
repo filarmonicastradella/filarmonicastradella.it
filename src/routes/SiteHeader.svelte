@@ -29,8 +29,6 @@
     </button>
 
     <SiteMenu {open} onClose={() => (open = false)} />
-
-    <p><a href="/support/join">Unisciti a noi</a></p>
 </header>
 
 <style>
@@ -90,37 +88,22 @@
         text-transform: uppercase;
     }
 
-    /* Il pulsante d'azione: solo da 64rem (sotto, la stessa pagina è nel menu, sotto Sostienici) */
-    header > p {
-        display: none;
-        margin: 0;
-    }
-
-    header > p a {
-        display: inline-block;
-        padding: var(--space-2) var(--space-5);
-        border: var(--border-width) solid var(--accent);
-        border-radius: var(--radius);
-        background-color: var(--accent);
-        color: var(--on-accent);
-        font-size: var(--fs-button);
-        font-weight: var(--fw-text-strong);
-        text-decoration: none;
-        transition: background-color var(--duration) var(--ease);
-    }
-
-    header > p a:hover {
-        border-color: var(--accent-hover);
-        background-color: var(--accent-hover);
-    }
-
-    /* Due barre semplici (non un <svg>): ruotare un elemento normale intorno al centro è prevedibile ovunque */
+    /*
+     * Due barre semplici (non un <svg>): ruotare un elemento normale intorno al centro è prevedibile ovunque.
+     * L'area da toccare è un quadrato di --space-7 (48px, più dei 44 consigliati); le barre restano piccole
+     * al centro e il margine negativo le tiene allineate al bordo della pagina come prima.
+     */
     button {
+        --bars-width: var(--space-6);
+        --bars-distance: calc(var(--space-5) - var(--space-1)); /* da una barra all'altra */
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 23px;
+        align-items: center;
+        justify-content: center;
+        gap: calc(var(--bars-distance) - var(--rule-width));
+        inline-size: var(--space-7);
+        block-size: var(--space-7);
+        margin-inline-end: calc((var(--bars-width) - var(--space-7)) / 2);
         padding: 0;
         appearance: none;
         background: none;
@@ -134,20 +117,21 @@
 
     button span {
         display: block;
-        width: 100%;
-        height: var(--rule-width);
+        inline-size: var(--bars-width);
+        block-size: var(--rule-width);
         background-color: currentColor;
         transform-origin: center;
         /* Stessa durata del pannello del menu, che si apre e si chiude insieme alla X */
         transition: transform var(--duration-slow) var(--ease);
     }
 
+    /* La X: unica rotazione del sito, eccezione prevista dal design system (Movimento) */
     button[aria-expanded="true"] span:first-child {
-        transform: translateY(10.5px) rotate(-45deg);
+        transform: translateY(calc(var(--bars-distance) / 2)) rotate(-45deg);
     }
 
     button[aria-expanded="true"] span:last-child {
-        transform: translateY(-10.5px) rotate(45deg);
+        transform: translateY(calc(var(--bars-distance) / -2)) rotate(45deg);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -159,10 +143,6 @@
     @media (min-width: 64rem) {
         button {
             display: none;
-        }
-
-        header > p {
-            display: block;
         }
     }
 </style>

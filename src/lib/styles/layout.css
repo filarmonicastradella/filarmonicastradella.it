@@ -40,6 +40,7 @@
     --duration: 180ms; /* colori, passaggio del mouse */
     --duration-slow: 300ms; /* menu, riquadri, finestre, cambio di pagina */
     --duration-entrance: 700ms; /* solo comparse della prima schermata */
+    --stagger: 80ms; /* scarto tra elementi che compaiono in sequenza (apertura, menu) */
 }
 
 html {

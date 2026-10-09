@@ -9,19 +9,17 @@
 
     // Il menu si chiude dopo una navigazione (senza JS la pagina si ricarica e si chiude da sola).
     afterNavigate(() => onClose?.());
-
-    // A menu aperto il contenuto dietro non deve scorrere.
-    $effect(() => {
-        document.body.style.overflow = open ? "hidden" : "";
-    });
 </script>
 
+<!-- "--i": posizione nella sequenza con cui le voci compaiono all'apertura -->
 <nav aria-label="Navigazione principale" data-open={open || undefined}>
     <ul>
-        {#each navItems as item (item.href)}
-            <li><a href={item.href} aria-current={isActive(item.href)}>{item.title}</a></li>
+        {#each navItems as item, i (item.href)}
+            <li style:--i={i}><a href={item.href} aria-current={isActive(item.href)}>{item.title}</a></li>
         {/each}
     </ul>
+    <!-- L'azione principale del sito: in linea da 64rem, in fondo al pannello sotto -->
+    <p style:--i={navItems.length}><a href="/support/join">Unisciti a noi</a></p>
 </nav>
 
 <style>
@@ -31,25 +29,54 @@
         list-style: none;
     }
 
-    a {
+    li + li {
+        margin: 0;
+    }
+
+    ul a {
         color: var(--text);
+        font-weight: var(--fw-text-medium);
         text-decoration: none;
     }
 
     /* La pagina corrente, la sezione in cui ci si trova e il passaggio del mouse nel colore del marchio */
-    a[aria-current],
-    a:hover {
+    ul a[aria-current],
+    ul a:hover {
         color: var(--text-brand);
     }
 
+    p {
+        margin: 0;
+    }
+
+    /* Pulsante primario del design system */
+    p a {
+        display: inline-block;
+        padding: var(--space-2) var(--space-5);
+        border: var(--border-width) solid var(--accent);
+        border-radius: var(--radius);
+        background-color: var(--accent);
+        color: var(--on-accent);
+        font-size: var(--fs-button);
+        font-weight: var(--fw-text-strong);
+        text-decoration: none;
+        transition: background-color var(--duration) var(--ease);
+    }
+
+    p a:hover {
+        border-color: var(--accent-hover);
+        background-color: var(--accent-hover);
+    }
+
     /*
-     * Sotto i 64rem: pannello a tutto schermo sotto la barra, aperto dal pulsante a due barre.
-     * Voci grandi in Cormorant. Apertura e chiusura simmetriche: il pannello sfuma e scende (o risale)
-     * di poco; "allow-discrete" ritarda il passaggio a "display: none" fino alla fine della chiusura,
-     * "@starting-style" dà il punto di partenza all'apertura.
+     * Sotto i 64rem: pannello a tutto schermo sotto la barra, aperto dal pulsante a due barre, con le voci
+     * in colonna e il pulsante in fondo. All'apertura il pannello sfuma e le voci salgono appena, una dopo
+     * l'altra; alla chiusura tutto sfuma insieme. "allow-discrete" rimanda "display: none" alla fine della
+     * chiusura, "@starting-style" dà il punto di partenza all'apertura.
      */
     @media (max-width: 63.999rem) {
         nav {
+            --shift: var(--space-3);
             display: none;
             position: fixed;
             inset: var(--header-height) 0 0;
@@ -58,43 +85,70 @@
             overflow-y: auto;
             background-color: var(--bg);
             opacity: 0;
-            translate: 0 calc(-1 * var(--shift));
             transition:
                 opacity var(--duration-slow) var(--ease),
-                translate var(--duration-slow) var(--ease),
                 display var(--duration-slow) allow-discrete;
         }
 
         nav[data-open] {
             display: block;
             opacity: 1;
-            translate: 0;
+        }
+
+        li,
+        p {
+            transition:
+                opacity var(--duration-slow) var(--ease),
+                translate var(--duration-slow) var(--ease);
+        }
+
+        nav[data-open] :is(li, p) {
+            transition-delay: calc(var(--i) * var(--stagger) / 2);
         }
 
         @starting-style {
             nav[data-open] {
                 opacity: 0;
-                translate: 0 calc(-1 * var(--shift));
+            }
+
+            nav[data-open] :is(li, p) {
+                opacity: 0;
+                translate: 0 var(--shift);
             }
         }
 
         ul {
             display: flex;
             flex-direction: column;
-            gap: var(--space-4);
+            gap: var(--space-5);
         }
 
-        nav a {
-            font-family: var(--font-display);
-            font-size: var(--fs-h1);
-            font-weight: var(--fw-display);
-            line-height: var(--lh-heading);
+        ul a {
+            font-size: var(--fs-h3);
+        }
+
+        p {
+            margin-block-start: var(--space-7);
+        }
+
+        /* A menu aperto la pagina dietro non scorre */
+        :global(html:has(nav[data-open])) {
+            overflow: hidden;
         }
     }
 
-    /* Da 64rem: voci in linea nell'intestazione */
+    @media (max-width: 63.999rem) and (prefers-reduced-motion: reduce) {
+        nav {
+            --shift: 0;
+        }
+    }
+
+    /* Da 64rem: voci in linea nell'intestazione e il pulsante alla loro destra */
     @media (min-width: 64rem) {
         nav {
+            display: flex;
+            align-items: center;
+            gap: var(--space-6);
             margin-inline-start: auto;
         }
 
@@ -104,20 +158,8 @@
             gap: var(--space-6);
         }
 
-        nav a {
+        ul a {
             font-size: var(--fs-small);
-            font-weight: var(--fw-text-medium);
-        }
-    }
-
-    /* Spostamento dell'apertura; con il movimento ridotto resta solo la dissolvenza */
-    nav {
-        --shift: var(--space-4);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        nav {
-            --shift: 0;
         }
     }
 </style>

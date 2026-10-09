@@ -103,9 +103,10 @@ Il movimento accompagna, non si esibisce.
 | `--duration` | 180 ms | Colori, passaggio del mouse |
 | `--duration-slow` | 300 ms | Menu, riquadri, finestre, cambio di pagina |
 | `--duration-entrance` | 700 ms | Solo le comparse della prima schermata |
+| `--stagger` | 80 ms | Scarto tra elementi che compaiono in sequenza (apertura, voci del menu a metà) |
 
 - **Andamento:** sempre `--ease`, mai rimbalzi.
-- **Cosa si anima:** solo opacità, spostamenti brevi (al massimo 1,5 rem) e colori. Mai dimensioni o layout.
+- **Cosa si anima:** solo opacità, spostamenti brevi (al massimo 1,5 rem) e colori. Mai dimensioni o layout. Unica eccezione: le due barre del pulsante del menu, che ruotano per formare la X.
 - **Sì:** la comparsa dell'apertura in homepage; una dissolvenza breve tra le pagine con le View Transitions, con l'intestazione del sito ferma.
 - **No:** animazioni allo scorrimento, parallasse, caroselli automatici, autoplay, contatori.
 - **Movimento ridotto:** con `prefers-reduced-motion` niente spostamenti; restano al massimo le dissolvenze.

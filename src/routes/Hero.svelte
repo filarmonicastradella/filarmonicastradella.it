@@ -20,7 +20,12 @@
      * di testo accanto alla foto non conterrebbe il titolo, che finirebbe sotto le corde.
      */
     header {
-        --split: 45%;
+        /*
+         * In vw e non in %: la stessa misura serve al padding (dove % si riferirebbe a "main") e alla
+         * posizione di foto e corde (dove si riferirebbe alla hero). Con % le due non coincidevano e le
+         * corde finivano sopra il testo su alcune larghezze. La hero è larga 100vw, quindi 45vw è il 45%.
+         */
+        --split: 45vw;
         /* "main" ha già i margini della pagina: la hero li scavalca per arrivare ai bordi dello schermo */
         --edge: max(var(--gutter), calc((100vw - var(--container)) / 2));
         position: relative;
@@ -166,7 +171,6 @@
      * le corde si tendono dall'alto in basso. Con il movimento ridotto resta solo la dissolvenza.
      */
     header {
-        --stagger: 80ms; /* scarto tra un elemento e il successivo */
         --shift: var(--space-5); /* 1,5rem, il massimo ammesso */
     }
 
