@@ -28,7 +28,6 @@
     <p>
         Dal 1777 la Filarmonica fa musica a Fivizzano, in Lunigiana: una storia lunga quasi due secoli e mezzo. Oggi riunisce quattro formazioni (orchestra, orchestra di fiati, musica antica e street band) e porta il suo repertorio nelle sale e nelle piazze del territorio.
     </p>
-    <p>Musica fatta sul serio, aperta a chi ascolta e a chi vuole suonare con noi.</p>
     <p><a href="/about">Scopri l'associazione</a></p>
 </section>
 
