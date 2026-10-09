@@ -10,7 +10,6 @@
     </p>
 </header>
 
-<!-- SEGNAPOSTO: banca ricavata dal codice ABI 06230 dell'IBAN, da confermare. -->
 <section>
     <h2>Dati per il bonifico</h2>
     <dl>
