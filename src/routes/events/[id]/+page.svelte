@@ -53,11 +53,9 @@
 {#if paragraphs.length > 0}
     <section id="evento-descrizione">
         <h2>L'evento</h2>
-        <div itemprop="description">
-            {#each paragraphs as paragraph, i (i)}
-                <p>{paragraph}</p>
-            {/each}
-        </div>
+        {#each paragraphs as paragraph, i (i)}
+            <p itemprop="description">{paragraph}</p>
+        {/each}
     </section>
 {/if}
 
@@ -65,7 +63,7 @@
 
 <style>
     /* Gli a capo del calendario restano a capo */
-    [itemprop="description"] p {
+    [itemprop="description"] {
         white-space: pre-line;
     }
 </style>
