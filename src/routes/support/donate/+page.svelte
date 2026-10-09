@@ -10,16 +10,16 @@
     </p>
 </header>
 
-<!-- SEGNAPOSTO: IBAN, banca e causale da sostituire con i dati veri prima della pubblicazione. -->
+<!-- SEGNAPOSTO: banca ricavata dal codice ABI 06230 dell'IBAN, da confermare. -->
 <section>
     <h2>Dati per il bonifico</h2>
     <dl>
         <dt>Beneficiario</dt>
         <dd>Filarmonica Alessandro Stradella APS</dd>
         <dt>IBAN</dt>
-        <dd>IT00 X000 0000 0000 0000 0000 000</dd>
+        <dd>IT52 Z062 3069 9130 0003 0649 193</dd>
         <dt>Banca</dt>
-        <dd>Nome della banca</dd>
+        <dd>Crédit Agricole Italia</dd>
         <dt>Causale</dt>
         <dd>Erogazione liberale, con il tuo nome e cognome</dd>
     </dl>
