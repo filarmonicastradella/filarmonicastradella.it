@@ -18,15 +18,6 @@
 
     const isMinorenne = $derived(age !== null && age < 18);
 
-    // I canali della liberatoria per immagini, voce ed esecuzioni (/legal/images): una scelta per ciascuno.
-    const imageChannels = [
-        { name: "immagini_archivio", label: "Archivio interno e documentazione delle attività" },
-        { name: "immagini_sito", label: "Sito internet dell'associazione" },
-        { name: "immagini_social", label: "Canali social ufficiali" },
-        { name: "immagini_stampa", label: "Materiale a stampa e comunicazioni alla stampa" },
-        { name: "immagini_video", label: "Registrazioni dei concerti su piattaforme di condivisione" },
-        { name: "immagini_enti", label: "Documentazione per enti finanziatori, scuole e pubbliche amministrazioni" }
-    ];
     const isTooYoung = $derived(age !== null && age < 14);
 
     type InputEvent = Event & { currentTarget: EventTarget & HTMLInputElement };
@@ -221,28 +212,14 @@
                 <label for="consenso_email">Acconsento alla ricezione di aggiornamenti sulle attività istituzionali all'indirizzo email indicato.</label>
             </p>
 
-        </fieldset>
-
-        <fieldset>
-            <legend>{isMinorenne ? "Immagini, voce ed esecuzioni del minore" : "Immagini, voce ed esecuzioni"}</legend>
             <p>
-                Scegli canale per canale dopo aver letto la
-                <a href="/legal/images" target="_blank" rel="noopener noreferrer">liberatoria per immagini, voce ed esecuzioni</a>. È un consenso
-                separato: puoi rispondere «non acconsento» a tutto e l'iscrizione non cambia.
+                <input type="checkbox" id="consenso_immagini" name="consenso_immagini" />
+                <label for="consenso_immagini">
+                    Ho letto la <a href="/legal/images" target="_blank" rel="noopener noreferrer">liberatoria per immagini, voce ed esecuzioni</a> e
+                    {isMinorenne ? "autorizzo l'uso di foto e riprese del minore" : "autorizzo l'uso di foto e riprese che mi ritraggono"} sui canali indicati,
+                    per finalità istituzionali e promozionali.
+                </label>
             </p>
-            {#each imageChannels as { name, label } (name)}
-                <fieldset>
-                    <legend>{label}</legend>
-                    <p>
-                        <input type="radio" id="{name}_si" {name} value="Acconsento" required />
-                        <label for="{name}_si">Acconsento</label>
-                    </p>
-                    <p>
-                        <input type="radio" id="{name}_no" {name} value="Non acconsento" />
-                        <label for="{name}_no">Non acconsento</label>
-                    </p>
-                </fieldset>
-            {/each}
         </fieldset>
 
         <fieldset>
@@ -297,8 +274,7 @@
         }
 
         form > fieldset > p:has(> input[type="checkbox"], > input[type="file"]),
-        form > fieldset > p:not(:has(> input, > select, > textarea)),
-        form > fieldset > fieldset {
+        form > fieldset > p:not(:has(> input, > select, > textarea)) {
             grid-column: 1 / -1;
         }
     }

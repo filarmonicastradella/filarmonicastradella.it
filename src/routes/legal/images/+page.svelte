@@ -30,7 +30,10 @@
 
 <section>
     <h2>Dove possono essere usate</h2>
-    <p>Scegli canale per canale: puoi acconsentire ad alcuni e non ad altri.</p>
+    <p>
+        Con il modulo di iscrizione online il consenso vale per tutti questi canali. Se preferisci escluderne qualcuno, scrivici in qualsiasi momento,
+        oppure scegli canale per canale firmando la liberatoria su carta.
+    </p>
     <ul>
         <li>Archivio interno e documentazione delle attività</li>
         <li>Sito internet dell'associazione</li>

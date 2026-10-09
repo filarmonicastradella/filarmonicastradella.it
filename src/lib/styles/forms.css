@@ -167,27 +167,3 @@ legend {
     font-size: var(--fs-h3);
     font-weight: var(--fw-heading);
 }
-
-/*
- * Un gruppo dentro un gruppo (le scelte di una domanda, per esempio acconsento / non acconsento):
- * il titolo è una domanda in testo normale e le scelte stanno sulla stessa riga.
- */
-fieldset fieldset {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2) var(--space-6);
-    margin-block-end: var(--space-5);
-}
-
-fieldset fieldset > legend {
-    margin-block-end: var(--space-3);
-    padding: 0;
-    border: 0;
-    font-family: var(--font-text);
-    font-size: var(--fs-body);
-    font-weight: var(--fw-text-strong);
-}
-
-fieldset fieldset > p {
-    margin: 0;
-}
