@@ -37,7 +37,10 @@
         margin: 0;
     }
 
+    /* Il margine interno porta l'area da cliccare ad almeno 24px di altezza (WCAG 2.2, dimensione dei bersagli) */
     ul a {
+        display: inline-block;
+        padding-block: var(--space-1);
         color: var(--text);
         font-weight: var(--fw-text-medium);
         text-decoration: none;
