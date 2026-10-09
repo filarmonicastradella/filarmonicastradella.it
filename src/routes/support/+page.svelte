@@ -41,7 +41,6 @@
     -->
 </ul>
 
-<p>Hai dubbi? <a href="/contacts/message">Scrivici</a>.</p>
-<!-- Da riattivare insieme a /faq:
+<!-- Tolto il 9/10/2026; con /faq riattivata si può rimettere:
 <p>Hai dubbi? Leggi le <a href="/faq">domande frequenti</a> o <a href="/contacts/message">scrivici</a>.</p>
 -->
