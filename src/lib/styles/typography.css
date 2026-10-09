@@ -105,8 +105,11 @@ figcaption {
     color: var(--text-muted);
 }
 
-/* Occhielli: date, etichette, voci delle coppie etichetta/valore */
-time,
+/*
+ * Occhielli: le date in testa a schede e articoli (un paragrafo con la sola data, riconoscibile dai
+ * microdati), le etichette e le voci delle coppie etichetta/valore. Le date dentro un testo restano testo.
+ */
+p > time[itemprop],
 dt,
 th {
     font-family: var(--font-text);
@@ -116,7 +119,7 @@ th {
     text-transform: uppercase;
 }
 
-time {
+p > time[itemprop] {
     color: var(--text-brand);
 }
 
