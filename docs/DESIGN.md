@@ -137,7 +137,7 @@ Il movimento accompagna, non si esibisce.
 - Intestazione: logo orizzontale a sinistra, massimo cinque voci di menu, un solo pulsante pieno bordeaux per l'azione principale.
 - Pulsante primario: fondo bordeaux, testo carta. Secondario: contorno inchiostro 1 px.
 - Schede (eventi, notizie, rimandi): nessun riquadro e nessun fondo, solo un filetto in alto (`--rule-width` in `--border`) che diventa bordeaux (`--accent`) al passaggio del mouse o al tocco, insieme al titolo. Scelte il 9/10/2026 al posto delle card bordate: più coerenti con corde e filetti, più editoriali e più pulite nel tema scuro.
-- Card evento: giorno grande in Cormorant bordeaux, mese in occhiello, titolo in Cormorant 600, orario e luogo in didascalia.
+- Card evento: ogni informazione una volta sola. La data in occhiello bordeaux sopra il titolo ("sab 10 ottobre"; per più giorni "lun 7 – mar 8 dicembre"), il titolo in Cormorant 600, la descrizione, e in fondo una didascalia con ora di inizio e luogo ("ore 21 · Teatro degli Impavidi"). Ogni parte ha un numero fisso di righe, così nella griglia tutto è allineato: data e didascalia una, titolo due, descrizione tre; il resto si interrompe con i puntini e si legge nella pagina dell'evento, insieme all'ora di fine.
 - Apertura della homepage: occhiello, titolo display con una parola in corsivo bordeaux, sottotitolo, pulsante primario a sinistra su carta; foto in duotone a destra; corde sul confine.
 - Colonne di testo al massimo 40 rem.
 
