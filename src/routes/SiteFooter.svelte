@@ -3,7 +3,7 @@
     import FacebookIcon from "~icons/simple-icons/facebook";
     import WhatsappIcon from "~icons/simple-icons/whatsapp";
     import YoutubeIcon from "~icons/simple-icons/youtube";
-    import TiktokIcon from "~icons/simple-icons/tiktok";
+    // import TiktokIcon from "~icons/simple-icons/tiktok"; // da riattivare quando ci sarà il profilo TikTok
     import { legalSeat } from "$lib/locations";
     import { organization } from "$lib/organization";
 
@@ -12,7 +12,7 @@
         { name: "Facebook", href: "https://facebook.com/filarmonicastradella", Icon: FacebookIcon },
         { name: "WhatsApp", href: "https://wa.me/393505363110", Icon: WhatsappIcon },
         { name: "YouTube", href: "https://youtube.com/@filarmonicastradella", Icon: YoutubeIcon },
-        { name: "TikTok", href: "https://tiktok.com/@filarmonicastradella", Icon: TiktokIcon }
+        // { name: "TikTok", href: "https://tiktok.com/@filarmonicastradella", Icon: TiktokIcon } // da riattivare insieme all'import
     ];
 </script>
 
