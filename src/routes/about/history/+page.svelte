@@ -14,201 +14,199 @@
     <meta name="description" content="Dal 1777 la storia della Filarmonica Alessandro Stradella di Fivizzano: origini, Ottocento, Novecento e oggi." />
 </svelte:head>
 
-<article>
-    <header>
-        <h1>La Storia della Filarmonica</h1>
-        <p>
-            Due secoli di cultura nel cuore della Lunigiana
-        </p>
-    </header>
+<header>
+    <h1>La Storia della Filarmonica</h1>
+    <p>
+        Due secoli di cultura nel cuore della Lunigiana
+    </p>
+</header>
 
-    <nav aria-label="Indice delle sezioni">
-        <ol>
-            <li><a href="#origini">Le origini nel Settecento e il riconoscimento sovrano</a></li>
-            <li><a href="#metamorfosi">Il XIX secolo: la trasformazione in Banda Musicale</a></li>
-            <li><a href="#novecento">Il Novecento: fusione, resilienza e grandi eventi</a></li>
-            <li><a href="#denominazione">La nuova denominazione e il legame con Alessandro Stradella</a></li>
-            <li><a href="#oggi">La Filarmonica oggi: un polo musicale poliedrico</a></li>
-        </ol>
-    </nav>
+<nav aria-label="Indice delle sezioni">
+    <ol>
+        <li><a href="#origini">Le origini nel Settecento e il riconoscimento sovrano</a></li>
+        <li><a href="#metamorfosi">Il XIX secolo: la trasformazione in Banda Musicale</a></li>
+        <li><a href="#novecento">Il Novecento: fusione, resilienza e grandi eventi</a></li>
+        <li><a href="#denominazione">La nuova denominazione e il legame con Alessandro Stradella</a></li>
+        <li><a href="#oggi">La Filarmonica oggi: un polo musicale poliedrico</a></li>
+    </ol>
+</nav>
 
-    <section id="origini">
-        <h2>Le origini nel Settecento e il riconoscimento sovrano</h2>
-        <p>
-            Fondata nel <time datetime="1777">1777</time> nel pieno del
-            fervore
-            <a
-                href="https://it.wikipedia.org/wiki/Illuminismo"
+<section id="origini">
+    <h2>Le origini nel Settecento e il riconoscimento sovrano</h2>
+    <p>
+        Fondata nel <time datetime="1777">1777</time> nel pieno del
+        fervore
+        <a
+            href="https://it.wikipedia.org/wiki/Illuminismo"
+            target="_blank"
+            rel="noopener noreferrer">illuminista</a
+        >, la
+        <strong>Filarmonica "Alessandro Stradella"</strong> di Fivizzano
+        è una delle istituzioni musicali più antiche della Toscana. Nei
+        suoi primi anni, la compagine dovette adattarsi alle riforme
+        granducali di
+        <a
+            href="https://it.wikipedia.org/wiki/Pietro_Leopoldo_d'Asburgo-Lorena"
+            target="_blank"
+            rel="noopener noreferrer">Pietro Leopoldo</a
+        >, che smantellarono le antiche corporazioni e introdussero un
+        rigido iter di riconoscimento formale per ogni sodalizio.
+    </p>
+    <p>
+        Il processo si concluse il <time datetime="1779-08-03"
+            >3 agosto 1779</time
+        >
+        con l'approvazione ufficiale della "Filarmonica di Canto e
+        Suono" da parte dell'Auditore Fiscale di Firenze. La vitalità
+        del gruppo emerse fin da subito, con il concerto solenne tenutosi
+        il
+        <time datetime="1781-01-04">4 gennaio 1781</time> per la festa
+        di
+        <a
+            href="https://it.wikipedia.org/wiki/Santa_Cecilia"
+            target="_blank"
+            rel="noopener noreferrer">Santa Cecilia</a
+        >.
+    </p>
+
+    <Figure
+        src={altaCappellaImg}
+        alt="Formazione di Alta Cappella del XVIII secolo"
+        caption="Tipica formazione di Alta Cappella (XVIII secolo)."
+    />
+</section>
+
+<section id="metamorfosi">
+    <h2>Il XIX secolo: la trasformazione in Banda Musicale</h2>
+    <p>
+        Nel corso dell'Ottocento, il ruolo sociale della musica mutò
+        profondamente. Le accademie orchestrali da camera lasciarono
+        spazio alla diffusione dei <strong>complessi bandistici</strong
+        >, ideali per accompagnare le cerimonie pubbliche e le
+        esibizioni all'aperto.
+    </p>
+    <p>
+        Per rispondere a questa esigenza di rappresentanza civica, il
+        <time datetime="1831-08-24">24 agosto 1831</time> il Granduca di
+        Toscana elevò ufficialmente il nucleo filarmonico al rango di
+        <strong
+            ><a
+                href="https://it.wikipedia.org/wiki/Banda_musicale"
                 target="_blank"
-                rel="noopener noreferrer">illuminista</a
-            >, la
-            <strong>Filarmonica "Alessandro Stradella"</strong> di Fivizzano
-            è una delle istituzioni musicali più antiche della Toscana. Nei
-            suoi primi anni, la compagine dovette adattarsi alle riforme
-            granducali di
-            <a
-                href="https://it.wikipedia.org/wiki/Pietro_Leopoldo_d'Asburgo-Lorena"
+                rel="noopener noreferrer">Banda Musicale</a
+            ></strong
+        >. Ai membri fu concessa un'uniforme speciale, sancendo il loro
+        status di rappresentanti ufficiali dell'immagine pubblica
+        fivizzanese.
+    </p>
+
+    <Figure
+        src={ottocentoImg}
+        alt="Tipica formazione bandistica del XIX secolo"
+        caption="Tipica formazione bandistica del XIX secolo."
+    />
+</section>
+
+<section id="novecento">
+    <h2>Il Novecento: fusione, resilienza e grandi eventi</h2>
+    <p>
+        Il Novecento fu un secolo di coesione e forte resilienza. Dalla
+        fusione di due diverse bande cittadine attive nei primi del
+        secolo, avvenuta attorno agli anni '20, nacque la struttura
+        moderna. Nonostante il devastante terremoto del <time datetime="1934-06">giugno 1934</time> e i
+        successivi conflitti, l'attività proseguì sotto l'<strong
+            ><a
+                href="https://it.wikipedia.org/wiki/Dopolavoro"
                 target="_blank"
-                rel="noopener noreferrer">Pietro Leopoldo</a
-            >, che smantellarono le antiche corporazioni e introdussero un
-            rigido iter di riconoscimento formale per ogni sodalizio.
-        </p>
-        <p>
-            Il processo si concluse il <time datetime="1779-08-03"
-                >3 agosto 1779</time
-            >
-            con l'approvazione ufficiale della "Filarmonica di Canto e
-            Suono" da parte dell'Auditore Fiscale di Firenze. La vitalità
-            del gruppo emerse fin da subito, con il concerto solenne tenutosi
-            il
-            <time datetime="1781-01-04">4 gennaio 1781</time> per la festa
-            di
-            <a
-                href="https://it.wikipedia.org/wiki/Santa_Cecilia"
+                rel="noopener noreferrer">Opera Nazionale Dopolavoro</a
+            ></strong
+        >
+        a partire dall'
+        <time datetime="1934-11-11">11 novembre 1934</time>.
+    </p>
+    <p>
+        Nel secondo dopoguerra, Fivizzano tornò a essere un punto di
+        riferimento territoriale: l'<time datetime="1970-01-11"
+            >11 gennaio 1970</time
+        >
+        ospitò un importantissimo convegno delle bande di Lunigiana e
+        Garfagnana, seguito pochi mesi dopo, il
+        <time datetime="1970-07-19">19 luglio 1970</time>,
+        dall'inaugurazione del primo
+        <strong>Concorso Bandistico "Città di Fivizzano"</strong>. Il
+        traguardo dei 210 anni fu celebrato nel
+        <time datetime="1987-06">giugno 1987</time>.
+    </p>
+
+    <Figure
+        src={anni30Img}
+        alt="I musicisti della Filarmonica negli anni '30"
+        caption="I musicisti della Filarmonica negli anni '30."
+    />
+</section>
+
+<section id="denominazione">
+    <h2>La nuova denominazione e il legame con Alessandro Stradella</h2>
+    <p>
+        Nel <time datetime="1996">1996</time> l'istituzione ha assunto
+        l'attuale nome in omaggio al grande compositore barocco
+        <strong
+            ><a
+                href="https://it.wikipedia.org/wiki/Alessandro_Stradella"
                 target="_blank"
-                rel="noopener noreferrer">Santa Cecilia</a
-            >.
-        </p>
+                rel="noopener noreferrer">Alessandro Stradella</a
+            ></strong
+        >, la cui famiglia era originaria di Fivizzano. Oggi il borgo
+        custodisce la memoria del musicista nella storica
+        <em>"Casa degli Stradella"</em>, nei pressi delle mura medicee,
+        commemorata da una targa apposta nel
+        <time datetime="1997">1997</time>.
+    </p>
 
-        <Figure
-            src={altaCappellaImg}
-            alt="Formazione di Alta Cappella del XVIII secolo"
-            caption="Tipica formazione di Alta Cappella (XVIII secolo)."
-        />
-    </section>
+    <Figure
+        src={anni80Img}
+        alt="I musicisti della Filarmonica negli anni '90"
+        caption="I musicisti della Filarmonica negli anni '90."
+    />
+</section>
 
-    <section id="metamorfosi">
-        <h2>Il XIX secolo: la trasformazione in Banda Musicale</h2>
-        <p>
-            Nel corso dell'Ottocento, il ruolo sociale della musica mutò
-            profondamente. Le accademie orchestrali da camera lasciarono
-            spazio alla diffusione dei <strong>complessi bandistici</strong
-            >, ideali per accompagnare le cerimonie pubbliche e le
-            esibizioni all'aperto.
-        </p>
-        <p>
-            Per rispondere a questa esigenza di rappresentanza civica, il
-            <time datetime="1831-08-24">24 agosto 1831</time> il Granduca di
-            Toscana elevò ufficialmente il nucleo filarmonico al rango di
-            <strong
-                ><a
-                    href="https://it.wikipedia.org/wiki/Banda_musicale"
-                    target="_blank"
-                    rel="noopener noreferrer">Banda Musicale</a
-                ></strong
-            >. Ai membri fu concessa un'uniforme speciale, sancendo il loro
-            status di rappresentanti ufficiali dell'immagine pubblica
-            fivizzanese.
-        </p>
+<section id="oggi">
+    <h2>La Filarmonica oggi: un polo musicale poliedrico</h2>
+    <p>
+        Fedele alle proprie radici ma aperta all'innovazione,
+        l'associazione si configura oggi come un polo musicale dinamico.
+        Superando il tradizionale schema bandistico, la Filarmonica
+        gestisce molteplici ensemble d'eccellenza: un <strong
+            ><a href="/about/ensembles/filarmonici-dissonanti"
+                >Ensemble di Musica Antica</a
+            ></strong
+        >, un'<strong
+            ><a href="/about/ensembles/infieri"
+                >Orchestra d'Archi</a
+            ></strong
+        >, una
+        <strong
+            ><a href="/about/ensembles/stradella-facendo"
+                >Concert Band</a
+            ></strong
+        >
+        e una
+        <strong
+            ><a href="/about/ensembles/streetella-band">Street Band</a
+            ></strong
+        >.
+    </p>
+    <p>
+        Attraverso percorsi formativi mirati e la collaborazione
+        costante con le scuole, la
+        <strong>Filarmonica "Alessandro Stradella"</strong> continua a essere
+        il motore della vita culturale fivizzanese, unendo la ricerca storica
+        e il futuro della musica.
+    </p>
 
-        <Figure
-            src={ottocentoImg}
-            alt="Tipica formazione bandistica del XIX secolo"
-            caption="Tipica formazione bandistica del XIX secolo."
-        />
-    </section>
-
-    <section id="novecento">
-        <h2>Il Novecento: fusione, resilienza e grandi eventi</h2>
-        <p>
-            Il Novecento fu un secolo di coesione e forte resilienza. Dalla
-            fusione di due diverse bande cittadine attive nei primi del
-            secolo, avvenuta attorno agli anni '20, nacque la struttura
-            moderna. Nonostante il devastante terremoto del <time datetime="1934-06">giugno 1934</time> e i
-            successivi conflitti, l'attività proseguì sotto l'<strong
-                ><a
-                    href="https://it.wikipedia.org/wiki/Dopolavoro"
-                    target="_blank"
-                    rel="noopener noreferrer">Opera Nazionale Dopolavoro</a
-                ></strong
-            >
-            a partire dall'
-            <time datetime="1934-11-11">11 novembre 1934</time>.
-        </p>
-        <p>
-            Nel secondo dopoguerra, Fivizzano tornò a essere un punto di
-            riferimento territoriale: l'<time datetime="1970-01-11"
-                >11 gennaio 1970</time
-            >
-            ospitò un importantissimo convegno delle bande di Lunigiana e
-            Garfagnana, seguito pochi mesi dopo, il
-            <time datetime="1970-07-19">19 luglio 1970</time>,
-            dall'inaugurazione del primo
-            <strong>Concorso Bandistico "Città di Fivizzano"</strong>. Il
-            traguardo dei 210 anni fu celebrato nel
-            <time datetime="1987-06">giugno 1987</time>.
-        </p>
-
-        <Figure
-            src={anni30Img}
-            alt="I musicisti della Filarmonica negli anni '30"
-            caption="I musicisti della Filarmonica negli anni '30."
-        />
-    </section>
-
-    <section id="denominazione">
-        <h2>La nuova denominazione e il legame con Alessandro Stradella</h2>
-        <p>
-            Nel <time datetime="1996">1996</time> l'istituzione ha assunto
-            l'attuale nome in omaggio al grande compositore barocco
-            <strong
-                ><a
-                    href="https://it.wikipedia.org/wiki/Alessandro_Stradella"
-                    target="_blank"
-                    rel="noopener noreferrer">Alessandro Stradella</a
-                ></strong
-            >, la cui famiglia era originaria di Fivizzano. Oggi il borgo
-            custodisce la memoria del musicista nella storica
-            <em>"Casa degli Stradella"</em>, nei pressi delle mura medicee,
-            commemorata da una targa apposta nel
-            <time datetime="1997">1997</time>.
-        </p>
-
-        <Figure
-            src={anni80Img}
-            alt="I musicisti della Filarmonica negli anni '90"
-            caption="I musicisti della Filarmonica negli anni '90."
-        />
-    </section>
-
-    <section id="oggi">
-        <h2>La Filarmonica oggi: un polo musicale poliedrico</h2>
-        <p>
-            Fedele alle proprie radici ma aperta all'innovazione,
-            l'associazione si configura oggi come un polo musicale dinamico.
-            Superando il tradizionale schema bandistico, la Filarmonica
-            gestisce molteplici ensemble d'eccellenza: un <strong
-                ><a href="/about/ensembles/filarmonici-dissonanti"
-                    >Ensemble di Musica Antica</a
-                ></strong
-            >, un'<strong
-                ><a href="/about/ensembles/infieri"
-                    >Orchestra d'Archi</a
-                ></strong
-            >, una
-            <strong
-                ><a href="/about/ensembles/stradella-facendo"
-                    >Concert Band</a
-                ></strong
-            >
-            e una
-            <strong
-                ><a href="/about/ensembles/streetella-band">Street Band</a
-                ></strong
-            >.
-        </p>
-        <p>
-            Attraverso percorsi formativi mirati e la collaborazione
-            costante con le scuole, la
-            <strong>Filarmonica "Alessandro Stradella"</strong> continua a essere
-            il motore della vita culturale fivizzanese, unendo la ricerca storica
-            e il futuro della musica.
-        </p>
-
-        <Figure
-            src={oggiImg}
-            alt="L'Orchestra Infieri della Filarmonica in concerto"
-            caption="L'Orchestra Infieri della Filarmonica 'Alessandro Stradella' durante un'esibizione."
-        />
-    </section>
-</article>
+    <Figure
+        src={oggiImg}
+        alt="L'Orchestra Infieri della Filarmonica in concerto"
+        caption="L'Orchestra Infieri della Filarmonica 'Alessandro Stradella' durante un'esibizione."
+    />
+</section>

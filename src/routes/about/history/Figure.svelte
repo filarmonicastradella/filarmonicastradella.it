@@ -4,6 +4,7 @@
     let { src, alt, caption }: { src: Picture; alt: string; caption?: string } = $props();
 
     // Senza JS il link apre l'immagine a grandezza piena; con JS la mostra in una finestra.
+    // "sizes": nella pagina la figura è larga quanto la colonna di testo (40rem), nella finestra fino al contenitore.
     let dialog = $state<HTMLDialogElement>();
 
     function openDialog(event: MouseEvent) {
@@ -15,7 +16,7 @@
 
 <figure>
     <!-- svelte-ignore a11y_consider_explicit_label: il nome del link è l'alt dell'immagine, che il compilatore non vede dentro enhanced:img -->
-    <a href={src.img.src} onclick={openDialog}><enhanced:img {src} {alt} sizes="100vw" /></a>
+    <a href={src.img.src} onclick={openDialog}><enhanced:img {src} {alt} sizes="(min-width: 40rem) 40rem, 100vw" /></a>
     {#if caption}
         <figcaption>{caption}</figcaption>
     {/if}
@@ -23,7 +24,7 @@
 
 <dialog bind:this={dialog} closedby="any" aria-label={alt}>
     <figure>
-        <enhanced:img {src} {alt} sizes="100vw" />
+        <enhanced:img {src} {alt} sizes="(min-width: 71rem) 64rem, 90vw" />
         {#if caption}
             <figcaption>{caption}</figcaption>
         {/if}

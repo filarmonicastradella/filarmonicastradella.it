@@ -11,12 +11,20 @@ export interface BeholdSizes {
   full: BeholdMediaSize;
 }
 
+// Colori estratti dalla foto, come "r,g,b"
+export interface BeholdColorPalette {
+  dominant?: string;
+  muted?: string;
+  vibrant?: string;
+}
+
 export interface BeholdChildMedia {
   id: string;
   mediaType: 'IMAGE' | 'VIDEO';
   mediaUrl: string;
   thumbnailUrl?: string;
   sizes?: BeholdSizes;
+  colorPalette?: BeholdColorPalette;
 }
 
 export interface BeholdPost extends BeholdChildMedia {

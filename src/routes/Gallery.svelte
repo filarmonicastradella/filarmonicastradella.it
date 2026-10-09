@@ -10,24 +10,38 @@
     <h2>Momenti in musica</h2>
     {#if slides === null}
         <p>La galleria non è al momento disponibile. Puoi guardarla direttamente sul nostro profilo Instagram.</p>
-    {:else}
+    {:else if slides.length > 0}
         <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
         <ul tabindex="0" aria-label="Galleria di foto e video" {@attach dragScroll}>
             {#each slides as slide (slide.id)}
-                <li>
+                <!-- Il colore dominante della foto fa da fondo finché l'immagine non arriva -->
+                <li style:background-color={slide.color}>
                     {#if slide.mediaType === "VIDEO"}
-                        <figure>
-                            <!-- svelte-ignore a11y_media_has_caption -->
-                            <video src={slide.mediaUrl} poster={slide.thumbnailUrl} controls preload="none" playsinline>
-                                <a href={slide.mediaUrl}>Scarica il video</a>
-                            </video>
-                            <figcaption>
-                                <a href={slide.permalink} target="_blank" rel="noopener noreferrer">{slide.alt} (Instagram)</a>
-                            </figcaption>
-                        </figure>
+                        <!-- Mai in riproduzione automatica (docs/DESIGN.md, Movimento) -->
+                        <!-- svelte-ignore a11y_media_has_caption -->
+                        <video
+                            src={slide.mediaUrl}
+                            poster={slide.thumbnailUrl}
+                            width={slide.width}
+                            height={slide.height}
+                            aria-label={slide.alt}
+                            controls
+                            preload="none"
+                            playsinline
+                        >
+                            <a href={slide.mediaUrl}>Scarica il video</a>
+                        </video>
                     {:else}
                         <a href={slide.permalink} target="_blank" rel="noopener noreferrer">
-                            <img src={slide.imageUrl} alt={slide.alt} loading="lazy" />
+                            <img
+                                src={slide.imageUrl}
+                                srcset={slide.srcset}
+                                sizes="(min-width: 30rem) 18rem, 60vw"
+                                width={slide.width}
+                                height={slide.height}
+                                alt={slide.alt}
+                                loading="lazy"
+                            />
                         </a>
                     {/if}
                 </li>
@@ -67,6 +81,7 @@
         flex: none;
         inline-size: clamp(13rem, 60vw, 18rem);
         margin: 0;
+        border-radius: var(--radius);
         scroll-snap-align: center;
     }
 
@@ -79,16 +94,5 @@
         inline-size: 100%;
         aspect-ratio: 4 / 5;
         object-fit: cover;
-        border-radius: var(--radius);
-        background-color: var(--bg-raised);
-    }
-
-    /* La didascalia dei video è il testo del post: al massimo due righe */
-    figcaption {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        overflow: hidden;
     }
 </style>

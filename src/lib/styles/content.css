@@ -184,8 +184,8 @@ dl[itemtype$="FAQPage"] dd {
     margin: var(--space-3) 0 0;
 }
 
-/* ─────────────── Indice di sezione (TimelineSections) ─────────────── */
-main > nav ul {
+/* ─────────────── Indice di sezione (TimelineSections, pagine lunghe come la Storia) ─────────────── */
+main > nav :is(ul, ol) {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2) var(--space-5);
@@ -241,10 +241,21 @@ video {
     display: block;
     max-inline-size: 100%;
     block-size: auto;
+    border-radius: var(--radius);
 }
 
 figure {
     margin: 0;
+}
+
+/* Le figure nel testo sono larghe quanto la colonna di testo, tutte uguali e allineate ai paragrafi */
+main :is(section, article) > figure,
+main > figure {
+    max-inline-size: var(--container-text);
+}
+
+figure img {
+    inline-size: 100%;
 }
 
 figcaption {
