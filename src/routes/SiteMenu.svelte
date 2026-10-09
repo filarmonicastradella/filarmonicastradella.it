@@ -69,18 +69,22 @@
     }
 
     /*
-     * Sotto i 64rem: pannello a tutto schermo sotto la barra, aperto dal pulsante a due barre, con le voci
-     * in colonna, il pulsante in fondo e le corde (layout.css) sul margine destro, sotto il pulsante del menu. All'apertura il pannello sfuma e le voci salgono appena, una dopo
-     * l'altra; alla chiusura tutto sfuma insieme. "allow-discrete" rimanda "display: none" alla fine della
-     * chiusura, "@starting-style" dà il punto di partenza all'apertura.
+     * Sotto i 64rem: pannello a tutto schermo, con le voci in colonna, il pulsante in fondo e le corde
+     * (layout.css) sul margine destro. Il pannello copre anche l'intestazione, di cui restano sopra solo
+     * logo e pulsante del menu (SiteHeader.svelte): intestazione e pannello sono una sola superficie, senza
+     * il filetto di separazione, e le corde partono dal fondo del pulsante del menu, collegate a lui.
+     * All'apertura il pannello sfuma e le voci salgono appena, una dopo l'altra, mentre il pulsante si
+     * gira; finito il giro, le corde scendono da lì. Alla chiusura tutto sfuma insieme.
+     * "allow-discrete" rimanda "display: none" alla fine della chiusura, "@starting-style" dà il punto di
+     * partenza all'apertura.
      */
     @media (max-width: 63.999rem) {
         nav {
             --shift: var(--space-3);
             display: none;
             position: fixed;
-            inset: var(--header-height) 0 0;
-            padding-block: var(--space-7);
+            inset: 0;
+            padding-block: calc(var(--header-height) + var(--space-7)) var(--space-7);
             padding-inline: var(--page-inline) calc(var(--page-inline) + var(--corde-span) + var(--space-6));
             overflow-y: auto;
             background-color: var(--bg);
@@ -95,13 +99,15 @@
             opacity: 1;
         }
 
+        /* Dal fondo del pulsante del menu, centrato nell'intestazione, fino in fondo allo schermo */
         nav::after {
+            inset-block-start: calc((var(--header-height) + var(--corde-span)) / 2);
             inset-inline-end: var(--page-inline);
         }
 
-        /* Le corde scendono dal pulsante del menu, che si è appena girato a formarne la cima */
+        /* Le corde scendono quando il pulsante ha finito di girarsi (stessa durata, poi il loro turno) */
         nav[data-open]::after {
-            animation: corde-scendono var(--duration-slow) var(--ease) both;
+            animation: corde-scendono var(--duration-slow) var(--ease) var(--duration-slow) both;
         }
 
         li,

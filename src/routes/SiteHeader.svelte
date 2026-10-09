@@ -54,6 +54,13 @@
         color: var(--text);
     }
 
+    /* Logo e pulsante del menu restano sopra il pannello del menu aperto, che copre l'intestazione */
+    header > a,
+    button {
+        position: relative;
+        z-index: 1;
+    }
+
     header > a {
         display: flex;
         align-items: center;
