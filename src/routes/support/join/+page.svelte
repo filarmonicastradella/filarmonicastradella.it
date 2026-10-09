@@ -149,12 +149,12 @@
 
             {#if isMinorenne}
                 <p>
-                    <label for="telefono_minore">Telefono del minore</label>
+                    <label for="telefono_minore">Telefono del minore (facoltativo)</label>
                     <input type="tel" id="telefono_minore" name="telefono_minore" autocomplete="off" inputmode="tel" minlength="9" maxlength="15" />
                 </p>
 
                 <p>
-                    <label for="email_minore">Email del minore</label>
+                    <label for="email_minore">Email del minore (facoltativo)</label>
                     <input type="email" id="email_minore" name="email_minore" autocomplete="off" inputmode="email" maxlength="100" />
                 </p>
             {/if}
@@ -174,9 +174,9 @@
                 <input type="checkbox" id="statuto" name="statuto" required />
                 <label for="statuto">
                     {#if isMinorenne}
-                        Dichiaro di conoscere e accettare lo <a href="/transparency/statute" target="_blank" rel="noopener noreferrer">statuto</a>, impegnandomi a rispettarlo anche per conto del minore.
+                        Dichiaro di conoscere e accettare lo <a href="/documents/statuto.pdf" target="_blank" rel="noopener noreferrer">statuto</a> (PDF), impegnandomi a rispettarlo anche per conto del minore.
                     {:else}
-                        Dichiaro di conoscere e accettare lo <a href="/transparency/statute" target="_blank" rel="noopener noreferrer">statuto</a>, impegnandomi a rispettarlo.
+                        Dichiaro di conoscere e accettare lo <a href="/documents/statuto.pdf" target="_blank" rel="noopener noreferrer">statuto</a> (PDF), impegnandomi a rispettarlo.
                     {/if}
                 </label>
             </p>
@@ -243,10 +243,39 @@
         </p>
     {/if}
 
-    <p>Tutti i campi sono obbligatori, salvo quelli indicati come facoltativi.</p>
-
     <p>
-        <button type="reset">Cancella i campi</button>
         <button type="submit" disabled={isTooYoung}>Invia la richiesta di iscrizione</button>
+        <button type="reset">Cancella i campi</button>
     </p>
 </form>
+
+<style>
+    /*
+     * Da 40rem i campi brevi si affiancano: una griglia di sei colonne in cui ogni campo ne occupa tre,
+     * i campi corti (CAP, numero civico) due e quelli lunghi (comune, via) quattro. Caselle e file su
+     * tutta la riga.
+     */
+    @media (min-width: 40rem) {
+        fieldset {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            column-gap: var(--space-4);
+        }
+
+        fieldset > p {
+            grid-column: span 3;
+        }
+
+        fieldset > p:has(> [id$="_cap"], > [id$="_civico"]) {
+            grid-column: span 2;
+        }
+
+        fieldset > p:has(> [id$="_comune"], > [id$="_via"]) {
+            grid-column: span 4;
+        }
+
+        fieldset > p:has(> input[type="checkbox"], > input[type="file"]) {
+            grid-column: 1 / -1;
+        }
+    }
+</style>
