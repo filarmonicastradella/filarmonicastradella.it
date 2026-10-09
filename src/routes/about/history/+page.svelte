@@ -1,10 +1,10 @@
 <script lang="ts">
-    // Foto della pagina, in più misure: il browser sceglie quella adatta alla colonna di testo (40rem).
-    import altaCappellaImg from "$lib/assets/imgs/alta_cappella.jpg?enhanced&w=480;960;1600";
-    import ottocentoImg from "$lib/assets/imgs/ottocento.jpg?enhanced&w=480;960;1600";
-    import anni30Img from "$lib/assets/imgs/anni_30.jpeg?enhanced&w=480;960;1600";
-    import anni80Img from "$lib/assets/imgs/anni_80.jpeg?enhanced&w=480;960;1600";
-    import oggiImg from "$lib/assets/imgs/oggi.jpg?enhanced&w=480;960;1600";
+    // Foto della pagina, in più misure: il browser sceglie quella adatta alla colonna di testo (40rem) e allo schermo.
+    import altaCappellaImg from "$lib/assets/imgs/alta_cappella.jpg?enhanced&w=400;640;800;1280;1600";
+    import ottocentoImg from "$lib/assets/imgs/ottocento.jpg?enhanced&w=400;640;800;1280;1600";
+    import anni30Img from "$lib/assets/imgs/anni_30.jpeg?enhanced&w=400;640;800;1280;1600";
+    import anni80Img from "$lib/assets/imgs/anni_80.jpeg?enhanced&w=400;640;800;1280;1600";
+    import oggiImg from "$lib/assets/imgs/oggi.jpg?enhanced&w=400;640;800;1280;1600";
 
     const sizes = "(min-width: 40rem) 40rem, 100vw";
 </script>
@@ -58,7 +58,7 @@
         concede ai musicisti un'uniforme: da allora rappresentano la città nelle occasioni pubbliche.
     </p>
     <figure>
-        <enhanced:img src={ottocentoImg} alt="Musicisti di una banda dell'Ottocento in uniforme" {sizes} />
+        <enhanced:img src={ottocentoImg} alt="Musicisti di una banda dell'Ottocento in uniforme" {sizes} loading="lazy" />
         <figcaption>Una formazione di fiati dell'Ottocento.</figcaption>
     </figure>
 </section>
@@ -76,7 +76,7 @@
         Fivizzano». Nel <time datetime="1987-06">giugno 1987</time> la Filarmonica festeggia 210 anni.
     </p>
     <figure>
-        <enhanced:img src={anni30Img} alt="Foto di gruppo dei musicisti della Filarmonica con i loro strumenti" {sizes} />
+        <enhanced:img src={anni30Img} alt="Foto di gruppo dei musicisti della Filarmonica con i loro strumenti" {sizes} loading="lazy" />
         <figcaption>I musicisti della Filarmonica negli anni Trenta.</figcaption>
     </figure>
 </section>
@@ -91,7 +91,7 @@
     </p>
     <figure>
         <!-- SEGNAPOSTO: il file si chiama anni_80 ma la didascalia dice anni Novanta: verificare il decennio. -->
-        <enhanced:img src={anni80Img} alt="Foto di gruppo dei musicisti della Filarmonica" {sizes} />
+        <enhanced:img src={anni80Img} alt="Foto di gruppo dei musicisti della Filarmonica" {sizes} loading="lazy" />
         <figcaption>I musicisti della Filarmonica negli anni Novanta.</figcaption>
     </figure>
 </section>
@@ -109,7 +109,7 @@
     </p>
     -->
     <figure>
-        <enhanced:img src={oggiImg} alt="L'orchestra Infieri in concerto" {sizes} />
+        <enhanced:img src={oggiImg} alt="L'orchestra Infieri in concerto" {sizes} loading="lazy" />
         <figcaption>L'orchestra Infieri della Filarmonica in concerto.</figcaption>
     </figure>
 </section>

@@ -22,6 +22,9 @@ export default defineConfig({
 
 			adapter: adapter({ fallback: '404.html' }),
 
+			// Il CSS è poco (circa 9 kB compressi): incorporato nell'HTML non blocca la prima visualizzazione
+			inlineStyleThreshold: Infinity,
+
 			// Le voci di navigazione puntano a pagine non ancora create: avvisa invece di far fallire la build.
 			prerender: { handleHttpError: 'warn' }
 		})

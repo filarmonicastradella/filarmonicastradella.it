@@ -38,7 +38,7 @@
                             <img
                                 src={slide.imageUrl}
                                 srcset={slide.srcset}
-                                sizes="(min-width: 64rem) 20rem, 100vw"
+                                sizes="(min-width: 64rem) 20rem, (min-width: 40rem) 50vw, calc(100vw - 2rem)"
                                 width={slide.width}
                                 height={slide.height}
                                 alt={slide.alt}

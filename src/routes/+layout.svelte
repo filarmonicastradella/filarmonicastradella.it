@@ -21,6 +21,10 @@
     // Plus Jakarta Sans — variable
     import "@fontsource-variable/plus-jakarta-sans/wght.css";
 
+    // I caratteri della prima schermata, richiesti subito invece che dopo il CSS (stessi file dei fogli qui sopra)
+    import jakartaFont from "@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2?url";
+    import cormorantFont from "@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff2?url";
+
     let { children } = $props();
 
     const reducedMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -51,6 +55,8 @@
 -->
 <svelte:head>
     <link rel="icon" href={favicon} />
+    <link rel="preload" href={jakartaFont} as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href={cormorantFont} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="canonical" href={organization.url + page.url.pathname} />
     <meta property="og:site_name" content={organization.name} />
     <meta property="og:locale" content="it_IT" />

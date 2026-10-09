@@ -6,6 +6,8 @@
     // import NewsCard from "$lib/components/NewsCard.svelte"; // con "Ultime notizie", commentata sotto
     // import { news } from "$lib/news";
     import { legalSeat } from "$lib/locations";
+    // Il corsivo serve solo al titolo della home: richiesto subito, solo qui
+    import cormorantItalicFont from "@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-italic.woff2?url";
     import { organization } from "$lib/organization";
     import type { PageProps } from "./$types";
 
@@ -38,6 +40,7 @@
 <svelte:head>
     <title>Filarmonica Alessandro Stradella APS — Fivizzano dal 1777</title>
     <meta name="description" content="Filarmonica Alessandro Stradella APS, a Fivizzano in Lunigiana dal 1777: concerti, calendario degli eventi e come sostenerci." />
+    <link rel="preload" href={cormorantItalicFont} as="font" type="font/woff2" crossorigin="anonymous" />
     {@html `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`}
 </svelte:head>
 

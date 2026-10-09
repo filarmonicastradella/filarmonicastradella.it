@@ -2,6 +2,11 @@
     import wallpaper from "$lib/assets/wallpaper.webp";
 </script>
 
+<!-- La foto è uno sfondo CSS, che il browser scoprirebbe tardi: è l'elemento più grande della prima schermata, la chiede subito -->
+<svelte:head>
+    <link rel="preload" href={wallpaper} as="image" fetchpriority="high" />
+</svelte:head>
+
 <header style="--hero-image: url({wallpaper})">
     <hgroup>
         <p>Fivizzano · dal 1777</p>
