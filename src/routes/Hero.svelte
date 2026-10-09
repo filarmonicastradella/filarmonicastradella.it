@@ -4,7 +4,7 @@
 
 <header style="--hero-image: url({wallpaper})">
     <hgroup>
-        <p>Dal 1777 al {new Date().getFullYear()}</p>
+        <p>Fivizzano · dal 1777</p>
         <h1>Filarmonica <em>Alessandro Stradella</em></h1>
         <p>Custodi della <strong>tradizione</strong>, interpreti del <strong>futuro</strong>.</p>
     </hgroup>
@@ -118,23 +118,44 @@
         background-color: var(--accent-hover);
     }
 
+    /*
+     * Sotto i 48rem: la hero è alta quanto lo schermo meno l'intestazione. Il testo prende lo spazio che
+     * gli serve, la foto riempie quello che resta sopra (mai meno di un quarto dello schermo), le corde
+     * scendono accanto al testo. Foto e corde diventano elementi della griglia invece che sovrapposti.
+     */
     @media (max-width: 48rem) {
         header {
-            justify-content: flex-start;
-            min-height: 0;
-            padding-block: calc(40svh + var(--space-7)) var(--space-8);
-            padding-inline: var(--edge) calc(var(--edge) + var(--space-7));
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            grid-template-rows: minmax(25svh, 1fr) auto auto;
+            gap: 0 var(--space-6);
+            padding-block: 0 var(--space-7);
+            padding-inline: var(--edge);
         }
 
         header::before {
-            inset-block-end: auto;
-            inline-size: 100%;
-            block-size: 40svh;
+            position: static;
+            grid-column: 1 / -1;
+            inline-size: auto;
+            margin-inline: calc(-1 * var(--edge));
+            margin-block-end: var(--space-6);
+        }
+
+        hgroup {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        header > p {
+            grid-column: 1;
+            grid-row: 3;
+            margin-block-start: var(--space-6);
         }
 
         header::after {
-            inset-block-start: 40svh;
-            inset-inline-end: var(--edge);
+            position: static;
+            grid-column: 2;
+            grid-row: 2 / 4;
         }
     }
 
