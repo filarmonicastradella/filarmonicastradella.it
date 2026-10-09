@@ -1,49 +1,71 @@
 <script lang="ts">
+    import { eventDate, eventPlace, eventTime } from "$lib/events";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
     const event = $derived(data.event);
+
+    const date = $derived(eventDate(event));
+    const time = $derived(eventTime(event));
+    const place = $derived(eventPlace(event));
+    const summary = $derived([time, place].filter(Boolean).join(" · "));
+    // La descrizione del calendario: i paragrafi sono separati da una riga vuota, le righe singole (programma,
+    // musicisti) restano una sotto l'altra.
+    const paragraphs = $derived(event.description.split(/\n\s*\n/).map((text) => text.trim()).filter(Boolean));
 </script>
 
 <svelte:head>
     <title>{event.summary} — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content={event.location ? `${event.when} — ${event.location}` : event.when} />
+    <meta name="description" content={[date, summary].filter(Boolean).join(", ")} />
 </svelte:head>
 
-<article itemscope itemtype="https://schema.org/Event">
-    <h1 itemprop="name">{event.summary}</h1>
+<!--
+    L'intestazione è come quella delle altre pagine; i microdati dell'evento la collegano, con "itemref", alle
+    sezioni con i dettagli e la descrizione.
+-->
+<header itemscope itemtype="https://schema.org/Event" itemref="evento-dettagli evento-descrizione">
+    <p><time itemprop="startDate" datetime={event.start}>{date}</time></p>
     {#if event.end}
         <meta itemprop="endDate" content={event.end} />
     {/if}
+    <h1 itemprop="name">{event.summary}</h1>
+    {#if summary}
+        <p>{summary}</p>
+    {/if}
+</header>
 
+<section id="evento-dettagli">
+    <h2>Quando e dove</h2>
     <dl>
         <dt>Quando</dt>
-        <dd><time itemprop="startDate" datetime={event.start}>{event.when}</time></dd>
+        <dd>{event.when}</dd>
         {#if event.location}
             <dt>Dove</dt>
             <dd itemprop="location">{event.location}</dd>
+            <dd><a href="https://maps.google.com/?q={encodeURIComponent(event.location)}" target="_blank" rel="noopener noreferrer">Apri in Google Maps</a></dd>
         {/if}
     </dl>
-
-    {#if event.description}
-        <section aria-labelledby="descrizione-evento">
-            <h2 id="descrizione-evento">Descrizione</h2>
-            {#each event.description.split(/\n+/).filter(Boolean) as paragraph}
-                <p itemprop="description">{paragraph}</p>
-            {/each}
-        </section>
+    {#if event.htmlLink}
+        <p><a href={event.htmlLink} target="_blank" rel="noopener noreferrer">Apri in Google Calendar</a></p>
     {/if}
+</section>
 
-    <ul>
-        {#if event.location}
-            <li>
-                <a href="https://maps.google.com/?q={encodeURIComponent(event.location)}" target="_blank" rel="noopener noreferrer">Apri il luogo su Google Maps</a>
-            </li>
-        {/if}
-        {#if event.htmlLink}
-            <li><a href={event.htmlLink} target="_blank" rel="noopener noreferrer">Aggiungi a Google Calendar</a></li>
-        {/if}
-    </ul>
-</article>
+{#if paragraphs.length > 0}
+    <section id="evento-descrizione">
+        <h2>L'evento</h2>
+        <div itemprop="description">
+            {#each paragraphs as paragraph, i (i)}
+                <p>{paragraph}</p>
+            {/each}
+        </div>
+    </section>
+{/if}
 
-<p><a href="/events">Tutti gli eventi</a></p>
+<p><a href="/events">Tutto il calendario</a></p>
+
+<style>
+    /* Gli a capo del calendario restano a capo */
+    [itemprop="description"] p {
+        white-space: pre-line;
+    }
+</style>

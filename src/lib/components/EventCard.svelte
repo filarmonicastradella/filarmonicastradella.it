@@ -1,37 +1,12 @@
 <script lang="ts">
-    import type { EventItem } from "$lib/events";
+    import { eventDate, eventPlace, eventTime, type EventItem } from "$lib/events";
 
     // `level` è il livello del titolo, da scegliere in base a dove compare la scheda.
     let { event, level = 3 }: { event: EventItem; level?: 3 | 4 } = $props();
 
-    // Tutto nel fuso di Fivizzano, qualunque sia quello di chi guarda.
-    const timeZone = "Europe/Rome";
-    const format = (date: Date, options: Intl.DateTimeFormatOptions) => date.toLocaleDateString("it-IT", { timeZone, ...options });
-    const dayKey = (date: Date) => date.toLocaleDateString("en-CA", { timeZone }); // AAAA-MM-GG, per confrontare i giorni
-
-    // Le date "tutto il giorno" non hanno orario e finiscono il giorno dopo l'ultimo (fine esclusa).
-    const allDay = $derived(!event.start.includes("T"));
-    const start = $derived(new Date(event.start));
-    const lastDay = $derived(event.end ? new Date(new Date(event.end).getTime() - (allDay ? 86_400_000 : 0)) : start);
-
-    // Data in occhiello sopra il titolo: "sab 10 ottobre"; se dura più giorni "lun 7 – mar 8 dicembre".
-    const sameDay = $derived(dayKey(lastDay) === dayKey(start));
-    const sameMonth = $derived(dayKey(lastDay).slice(0, 7) === dayKey(start).slice(0, 7));
-    const date = $derived.by(() => {
-        const last = format(lastDay, { weekday: "short", day: "numeric", month: "long" });
-        if (sameDay) return last;
-        const first = format(start, sameMonth ? { weekday: "short", day: "numeric" } : { weekday: "short", day: "numeric", month: "long" });
-        return `${first} – ${last}`;
-    });
-
-    // Didascalia: ora di inizio ("ore 21", "ore 20.30") e luogo.
-    const time = $derived.by(() => {
-        if (allDay) return "";
-        const [hour, minute] = start.toLocaleTimeString("it-IT", { timeZone, hour: "numeric", minute: "2-digit" }).split(/[.:]/);
-        return minute === "00" ? `ore ${hour}` : `ore ${hour}.${minute}`;
-    });
-    // Il calendario dà spesso l'indirizzo completo: nella scheda basta il nome del luogo, il resto è nella pagina dell'evento.
-    const place = $derived(event.location.split(",")[0].trim());
+    const date = $derived(eventDate(event));
+    const time = $derived(eventTime(event));
+    const place = $derived(eventPlace(event));
     const separator = $derived(time && place ? " · " : "");
 </script>
 
