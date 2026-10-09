@@ -58,12 +58,19 @@
         inset-inline: 0;
         align-items: center;
         justify-content: space-between;
-        gap: var(--space-6);
+        gap: var(--space-3);
         height: var(--header-height);
         padding-inline: var(--page-inline);
         border-block-end: var(--border-width) solid var(--border);
         background-color: var(--bg);
         color: var(--text);
+    }
+
+    /* Più respiro quando c'è spazio: sotto, lo spazio serve al logotipo e al bottone */
+    @media (min-width: 26rem) {
+        header {
+            gap: var(--space-6);
+        }
     }
 
     /* Logo e pulsante del menu restano sopra il pannello del menu aperto, che copre l'intestazione */
@@ -93,7 +100,7 @@
         color: var(--text);
         font-family: var(--font-display);
         /* Su schermi stretti "Alessandro Stradella" a --fs-h3 andava a capo, 3 righe con l'occhiello: troppo alte per l'intestazione */
-        font-size: clamp(1.125rem, 4vw + 0.5rem, var(--fs-h3));
+        font-size: clamp(0.8125rem, 4vw, var(--fs-h3));
         font-weight: var(--fw-display);
         line-height: var(--lh-display);
         white-space: nowrap;
