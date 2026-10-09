@@ -1,8 +1,6 @@
 <script lang="ts">
-    // La scansione del foglio (ridotta a 2000px, quanto basta per leggerla da vicino): in più misure per la
-    // pagina e intera per chi tocca l'immagine.
-    import sonettoImg from "$lib/assets/imgs/sonetto.jpg?enhanced&w=400;640;800;1280;1600";
-    import sonettoFull from "$lib/assets/imgs/sonetto.jpg?url";
+    // Il fregio inciso del foglio, ripassato a vettori da una scansione: un solo tratto, nessuna fotografia.
+    import puttoImg from "$lib/assets/imgs/putto-sonetto.svg";
 </script>
 
 <svelte:head>
@@ -33,18 +31,6 @@
         Il sonetto racconta Cecilia nel giorno delle nozze: mentre fuori suonano le trombe della festa, lei prega in una cella di restare pura, e un angelo
         le annuncia il martirio e la palma che la attende in cielo.
     </p>
-    <figure>
-        <!-- svelte-ignore a11y_consider_explicit_label: il nome del link è l'alt dell'immagine, che il compilatore non vede dentro enhanced:img -->
-        <a href={sonettoFull}>
-            <enhanced:img
-                src={sonettoImg}
-                alt="Il foglio a stampa del 1789: il titolo in grandi lettere, un putto in volo con il cartiglio «Sonetto», la dedica, le quattro strofe e la firma degli Accademici Dissonanti"
-                sizes="(min-width: 40rem) 40rem, 100vw"
-                loading="lazy"
-            />
-        </a>
-        <figcaption>Il foglio originale, stampato a Massa nel 1789. Tocca l'immagine per vederla a grandezza piena.</figcaption>
-    </figure>
 </section>
 
 <!-- Trascrizione fedele del foglio, con la grafia e la punteggiatura dell'originale -->
@@ -57,7 +43,15 @@
         vergine e martire<br />
         singolar patrona dell'Accademia Filarmonica de i Dissonanti di Fivizzano
     </p>
-    <p><em>[Incisione: un putto in volo con un cartiglio, una tromba, una palma e rami d'alloro]</em></p>
+    <figure>
+        <img
+            src={puttoImg}
+            alt="Un putto in volo regge un cartiglio con la scritta «Sonetto», tra una tromba, una palma e rami d'alloro"
+            width="400"
+            height="263"
+            loading="lazy"
+        />
+    </figure>
     <p>Sonetto</p>
     <p>
         dedicato al degnissimo principe della medesima, sua eccellenza<br />
@@ -66,28 +60,30 @@
     </p>
 
     <!-- Le quattro strofe: due quartine e due terzine -->
-    <p>
-        Delle tube nuziali al suon profano<br />
-        Echeggiavan di fior sparse le mura,<br />
-        Mentre Sposa dolente al guardo umano<br />
-        S' ascondeva CECILIA in cella oscura,
-    </p>
-    <p>
-        Ed umil giunta l' una all' altra mano,<br />
-        Signor, cantava, mia delizia, e cura,<br />
-        Se tua son io, rendi ogn' insulto vano,<br />
-        E a Te mi serba immacolata, e pura.
-    </p>
-    <p>
-        Non temèr; pria, che il dì giunga alla meta<br />
-        Te, lo Sposo, e il German dal fragil velo<br />
-        Sciolti sarete, e all' universo esempio.
-    </p>
-    <p>
-        Un' Angiol disse; e alla Donzella lieta<br />
-        Della salvezza altrui, del proprio scempio,<br />
-        Volò la palma a preparar nel Cielo.
-    </p>
+    <blockquote>
+        <p>
+            Delle tube nuziali al suon profano<br />
+            Echeggiavan di fior sparse le mura,<br />
+            Mentre Sposa dolente al guardo umano<br />
+            S' ascondeva CECILIA in cella oscura,
+        </p>
+        <p>
+            Ed umil giunta l' una all' altra mano,<br />
+            Signor, cantava, mia delizia, e cura,<br />
+            Se tua son io, rendi ogn' insulto vano,<br />
+            E a Te mi serba immacolata, e pura.
+        </p>
+        <p>
+            Non temèr; pria, che il dì giunga alla meta<br />
+            Te, lo Sposo, e il German dal fragil velo<br />
+            Sciolti sarete, e all' universo esempio.
+        </p>
+        <p>
+            Un' Angiol disse; e alla Donzella lieta<br />
+            Della salvezza altrui, del proprio scempio,<br />
+            Volò la palma a preparar nel Cielo.
+        </p>
+    </blockquote>
 
     <p>
         In atto di ossequio<br />
@@ -97,14 +93,15 @@
     <p><small>Nell'originale «Emanuelle» è scritto con due l.</small></p>
 </section>
 
-<p><a href="/about/history">La storia della Filarmonica</a></p>
+<p><a href="/documents/sonetto.jpg" type="image/jpeg">La scansione del foglio originale</a> (JPEG), stampato a Massa nel 1789.</p>
 
 <style>
     /*
      * La trascrizione impaginata come il foglio: frontespizio, dedica e note di stampa in occhiello, il titolo
-     * «Sonetto» in Cormorant, le strofe in testo più grande con lo spazio tra una strofa e l'altra.
+     * «Sonetto» in Cormorant, le strofe nel <blockquote> più grandi e staccate, con un filetto sopra e sotto a
+     * isolarle dal resto.
      */
-    section:last-of-type > p:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(9), :nth-of-type(10)) {
+    section:last-of-type > p:is(:nth-of-type(1), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5)) {
         color: var(--text-muted);
         font-size: var(--fs-eyebrow);
         font-weight: var(--fw-text-strong);
@@ -112,7 +109,7 @@
         text-transform: uppercase;
     }
 
-    section:last-of-type > p:nth-of-type(3) {
+    section:last-of-type > p:nth-of-type(2) {
         font-family: var(--font-display);
         font-size: var(--fs-h3);
         font-weight: var(--fw-heading);
@@ -120,7 +117,37 @@
         text-transform: uppercase;
     }
 
-    section:last-of-type > p:nth-of-type(n + 5):nth-of-type(-n + 8) {
+    /*
+     * Il fregio, dentro un <figure> (altrimenti un <img> nudo esce dalla lista degli elementi ammessi
+     * in layout.css e la sezione perde il layout a due colonne). Niente margin-inline:auto — il testo
+     * della pagina è allineato a sinistra (max-width senza centrare), non al centro di una colonna più
+     * larga: centrare l'immagine la sfalsava rispetto al testo. Resta quindi a sinistra, come i paragrafi intorno.
+     */
+    section:last-of-type > figure > img {
+        display: block;
+        inline-size: min(100%, 16rem);
+        block-size: auto;
+    }
+
+    /* Inchiostro chiaro su sfondo scuro: il fregio è tracciato in un colore fisso, non in currentColor */
+    @media (prefers-color-scheme: dark) {
+        section:last-of-type > figure > img {
+            filter: invert(1);
+        }
+    }
+
+    blockquote {
+        margin: var(--space-6) 0;
+        padding-block: var(--space-5);
+        border-block: var(--border-width) solid var(--border);
+    }
+
+    blockquote p {
         font-size: var(--fs-lead);
+        font-style: italic;
+    }
+
+    blockquote p + p {
+        margin-block-start: var(--space-5);
     }
 </style>

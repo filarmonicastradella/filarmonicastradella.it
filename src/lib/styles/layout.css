@@ -84,13 +84,13 @@ main > :is(section, article) > :is(h1, h2) + * {
 }
 
 /*
- * Sezioni da leggere: titolo, paragrafi, figure, elenchi etichetta/valore ed elenchi di testo. Da 64rem il titolo
- * va a sinistra e il resto a destra, così la sezione è larga quanto le griglie senza allungare le righe oltre
- * --container-text. Restano con il titolo sopra le sezioni con griglie di schede o di foto (elenchi i cui
- * elementi sono link, articoli, video o figure), che hanno bisogno di tutta la larghezza.
+ * Sezioni da leggere: titolo, paragrafi, citazioni, figure, elenchi etichetta/valore ed elenchi di testo. Da
+ * 64rem il titolo va a sinistra e il resto a destra, così la sezione è larga quanto le griglie senza allungare
+ * le righe oltre --container-text. Restano con il titolo sopra le sezioni con griglie di schede o di foto
+ * (elenchi i cui elementi sono link, articoli, video o figure), che hanno bisogno di tutta la larghezza.
  */
 @media (min-width: 64rem) {
-    main > section:not(:has(> :not(h2, p, figure, dl, ul, ol))):not(:has(> :is(ul, ol) > li > :is(a, article, video, figure))) {
+    main > section:not(:has(> :not(h2, p, blockquote, figure, dl, ul, ol))):not(:has(> :is(ul, ol) > li > :is(a, article, video, figure))) {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
         column-gap: var(--space-6);

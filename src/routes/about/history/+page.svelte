@@ -39,9 +39,7 @@
     <p>
         Per la «Filarmonica di Canto e Suono» il riconoscimento arriva il <time datetime="1779-08-03">3 agosto 1779</time>, con l'approvazione
         dell'Auditore Fiscale di Firenze. Nel <time datetime="1780-11">novembre 1780</time> il gruppo tiene un concerto solenne per la festa di Santa
-        Cecilia, patrona dei musicisti. La stessa festa, nel <time datetime="1789">1789</time>, è celebrata con un
-        <a href="/about/sonnet">sonetto a stampa</a> dall'Accademia Filarmonica dei Dissonanti, un'altra realtà musicale di Fivizzano: non sappiamo
-        con certezza che rapporto avesse con la Filarmonica, ma è probabile che le due fossero intrecciate, con musicisti e attività in comune.
+        Cecilia, patrona dei musicisti.
     </p>
     <figure>
         <enhanced:img src={altaCappellaImg} alt="Musicisti di una formazione di alta cappella" {sizes} />
