@@ -1,19 +1,21 @@
 <script lang="ts">
-    import { dragScroll } from "$lib/attachments";
     import type { GallerySlide } from "$lib/gallery";
 
     // `null` quando il feed non era raggiungibile durante la build.
     let { slides }: { slides: GallerySlide[] | null } = $props();
+
+    // Una griglia fissa con le ultime foto, senza scorrimento: le altre sono su Instagram.
+    const SHOWN = 6;
+    const shown = $derived(slides?.slice(0, SHOWN) ?? []);
 </script>
 
 <section>
     <h2>Momenti in musica</h2>
     {#if slides === null}
         <p>La galleria non è al momento disponibile. Puoi guardarla direttamente sul nostro profilo Instagram.</p>
-    {:else if slides.length > 0}
-        <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
-        <ul tabindex="0" aria-label="Galleria di foto e video" {@attach dragScroll}>
-            {#each slides as slide (slide.id)}
+    {:else if shown.length > 0}
+        <ul>
+            {#each shown as slide (slide.id)}
                 <!-- Il colore dominante della foto fa da fondo finché l'immagine non arriva -->
                 <li style:background-color={slide.color}>
                     {#if slide.mediaType === "VIDEO"}
@@ -36,7 +38,7 @@
                             <img
                                 src={slide.imageUrl}
                                 srcset={slide.srcset}
-                                sizes="(min-width: 30rem) 18rem, 60vw"
+                                sizes="(min-width: 64rem) 21rem, (min-width: 40rem) 33vw, 50vw"
                                 width={slide.width}
                                 height={slide.height}
                                 alt={slide.alt}
@@ -54,35 +56,26 @@
 
 <style>
     /*
-     * Striscia orizzontale di foto e video: si scorre con la rotella, il dito, la tastiera (la lista
-     * riceve il focus) o trascinando con il mouse (dragScroll). Formato 4:5 come i post social
+     * Griglia fissa di foto: due colonne su telefono, tre da 40rem. Formato 4:5 come i post social
      * (docs/DESIGN.md), angoli quasi vivi, nessuna cornice.
      */
     ul {
-        display: flex;
-        align-items: start;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: var(--space-4);
-        padding: 0 0 var(--space-4);
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: thin;
-        scrollbar-color: var(--border) transparent;
+        padding: 0;
         list-style: none;
-        cursor: grab;
     }
 
-    ul:active {
-        cursor: grabbing;
+    @media (min-width: 40rem) {
+        ul {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
     }
 
-    /* Lo scorrimento si ferma con una foto al centro */
     li {
-        flex: none;
-        inline-size: clamp(13rem, 60vw, 18rem);
         margin: 0;
         border-radius: var(--radius);
-        scroll-snap-align: center;
     }
 
     a:has(img) {
