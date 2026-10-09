@@ -56,23 +56,9 @@
         margin: 0;
     }
 
-    /* Pulsante primario del design system */
+    /* Il pulsante principale (forms.css), un po' più basso dentro l'intestazione */
     p a {
-        display: inline-block;
-        padding: var(--space-2) var(--space-5);
-        border: var(--border-width) solid var(--accent);
-        border-radius: var(--radius);
-        background-color: var(--accent);
-        color: var(--on-accent);
-        font-size: var(--fs-button);
-        font-weight: var(--fw-text-strong);
-        text-decoration: none;
-        transition: background-color var(--duration) var(--ease);
-    }
-
-    p a:hover {
-        border-color: var(--accent-hover);
-        background-color: var(--accent-hover);
+        padding-block: var(--space-2);
     }
 
     /*

@@ -109,25 +109,6 @@
         margin: 0;
     }
 
-    /* Pulsante primario del design system */
-    header > p a {
-        display: inline-block;
-        padding: var(--space-3) var(--space-5);
-        border: var(--border-width) solid var(--accent);
-        border-radius: var(--radius);
-        background-color: var(--accent);
-        color: var(--on-accent);
-        font-size: var(--fs-button);
-        font-weight: var(--fw-text-strong);
-        text-decoration: none;
-        transition: background-color var(--duration) var(--ease);
-    }
-
-    header > p a:hover {
-        border-color: var(--accent-hover);
-        background-color: var(--accent-hover);
-    }
-
     /*
      * Sotto i 64rem: la hero è alta quanto lo schermo meno l'intestazione. Il testo prende lo spazio che
      * gli serve, la foto riempie quello che resta sopra (mai meno di un quarto dello schermo). Le corde

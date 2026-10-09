@@ -1,12 +1,15 @@
 /*
  * Pulsanti e moduli — design system della Filarmonica (docs/DESIGN.md).
- * Primario: fondo bordeaux, testo carta, uno solo per schermata. Secondario: contorno inchiostro.
+ * Primario: fondo bordeaux, testo carta, uno solo per schermata; lo hanno anche i link d'azione (il
+ * pulsante "Unisciti a noi" della hero e del menu: l'unico link in un paragrafo dell'intestazione).
+ * Secondario: contorno inchiostro.
  * Campi: fondo rialzato e bordo sottile come le schede, angoli quasi vivi.
  */
 
 button,
 input[type="submit"],
-input[type="button"] {
+input[type="button"],
+:is(main > header, body > div > header nav) > p > a:only-child {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -19,6 +22,7 @@ input[type="button"] {
     font-size: var(--fs-button);
     font-weight: var(--fw-text-strong);
     line-height: 1.2;
+    text-decoration: none;
     cursor: pointer;
     transition:
         background-color var(--duration) var(--ease),
@@ -28,9 +32,11 @@ input[type="button"] {
 
 button:hover,
 input[type="submit"]:hover,
-input[type="button"]:hover {
+input[type="button"]:hover,
+:is(main > header, body > div > header nav) > p > a:only-child:hover {
     border-color: var(--accent-hover);
     background-color: var(--accent-hover);
+    color: var(--on-accent);
 }
 
 /* Secondario: azioni di servizio (caricare una mappa, svuotare un modulo, scegliere un file) */
