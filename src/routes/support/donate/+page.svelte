@@ -35,13 +35,14 @@
     </p>
 </section>
 
-<!-- SEGNAPOSTO: sostituire hosted_button_id con il codice del pulsante PayPal dell'associazione. -->
+<!-- Da riattivare quando ci sarà il pulsante PayPal dell'associazione (sostituire hosted_button_id):
 <section>
     <h2>Altri modi per donare</h2>
     <ul>
         <li><a href="https://www.paypal.com/donate/?hosted_button_id=SEGNAPOSTO" target="_blank" rel="noopener noreferrer">Dona con PayPal</a></li>
     </ul>
 </section>
+-->
 
 <!-- 5x1000: da riattivare quando l'associazione è beneficiaria.
 <p><a href="/support/5x1000">Sostienici anche con il 5x1000</a></p>
