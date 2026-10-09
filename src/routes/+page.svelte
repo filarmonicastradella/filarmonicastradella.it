@@ -20,7 +20,7 @@
 <Hero />
 
 <!-- <OldEventsCarouselReference events={data.events} /> -->
-<UpcomingEvents events={data.events} />
+<UpcomingEvents />
 
 <!-- BOZZA: testo provvisorio nel tono di docs/DESIGN.md, da confermare -->
 <section>

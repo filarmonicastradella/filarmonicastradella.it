@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Ricostruzione periodica: aggiorna eventi e galleria, che si leggono alla build.
+  # Ricostruzione periodica: aggiorna la galleria, che si legge alla build (gli eventi si caricano nel browser).
   schedule:
     - cron: "0 */3 * * *"
 
@@ -29,7 +29,8 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          GOOGLE_CALENDAR_API_KEY: ${{ secrets.GOOGLE_CALENDAR_API_KEY }}
+          # Chiave pubblica (finisce nel codice del sito), limitata su Google Cloud alla Calendar API e al dominio
+          PUBLIC_GOOGLE_CALENDAR_API_KEY: ${{ vars.PUBLIC_GOOGLE_CALENDAR_API_KEY }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build

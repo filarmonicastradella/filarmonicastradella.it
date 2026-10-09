@@ -1,19 +1,11 @@
-import { getUpcomingEvents } from "$lib/server/calendar";
 import { fetchGallery } from "$lib/server/gallery";
 import type { PageServerLoad } from "./$types";
 
-const LANDING_EVENTS = 10;
-
-export const load: PageServerLoad = async () => {
-    // Se il calendario non risponde la build fallisce e resta online l'ultima versione buona.
-    // La galleria invece è accessoria: se manca, la pagina mostra un avviso.
-    const [events, gallery] = await Promise.all([
-        getUpcomingEvents(),
-        fetchGallery().catch((error) => {
-            console.warn("Galleria Instagram non disponibile:", error);
-            return null;
-        })
-    ]);
-
-    return { events: events.slice(0, LANDING_EVENTS), gallery };
-};
+// La galleria si legge alla build ed è accessoria: se il feed non risponde, la pagina mostra un avviso.
+// Gli eventi invece si caricano nel browser (UpcomingEvents.svelte).
+export const load: PageServerLoad = async () => ({
+    gallery: await fetchGallery().catch((error) => {
+        console.warn("Galleria Instagram non disponibile:", error);
+        return null;
+    })
+});

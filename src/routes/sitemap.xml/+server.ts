@@ -1,4 +1,3 @@
-import { getUpcomingEvents } from "$lib/server/calendar";
 import { ensembles } from "$lib/ensembles";
 import { news } from "$lib/news";
 import type { RequestHandler } from "./$types";
@@ -15,13 +14,10 @@ const pages = Object.keys(import.meta.glob("/src/routes/**/+page.svelte"))
     .filter((path) => !EXCLUDED.test(path));
 
 export const GET: RequestHandler = async () => {
-    const events = await getUpcomingEvents();
-
     const paths = [
         ...pages,
         ...ensembles.map(({ slug }) => `/about/ensembles/${slug}`),
-        ...news.map(({ slug }) => `/news/${slug}`),
-        ...events.map(({ id }) => `/events/${id}`)
+        ...news.map(({ slug }) => `/news/${slug}`)
     ];
 
     const body = `<?xml version="1.0" encoding="UTF-8"?>
