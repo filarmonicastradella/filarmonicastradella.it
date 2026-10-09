@@ -1,38 +1,26 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import EventCard from "$lib/components/EventCard.svelte";
-    import { calendarUrl, fetchUpcomingEvents } from "$lib/calendar";
-    import type { EventItem } from "$lib/events";
+    import { hasNotEnded, type EventItem } from "$lib/events";
 
-    // Gli eventi si chiedono a Google Calendar a ogni visita: `null` finché non arrivano.
-    let events = $state.raw<EventItem[] | null>(null);
-    let loading = $state(false);
-    let failed = $state(false);
+    let { events: builtEvents }: { events: EventItem[] } = $props();
+
+    // Con JS si nascondono gli eventi già conclusi dalla build (la pagina resta in cache fino a 3 ore).
+    let now = $state<Date>();
+    const events = $derived((now ? builtEvents.filter((event) => hasNotEnded(event, now!)) : builtEvents).slice(0, 3));
 
     onMount(() => {
-        loading = true;
-        fetchUpcomingEvents()
-            .then((all) => (events = all.slice(0, 3)))
-            .catch(() => (failed = true))
-            .finally(() => (loading = false));
+        now = new Date();
     });
 </script>
 
+<svelte:document onvisibilitychange={() => document.visibilityState === "visible" && (now = new Date())} />
+
 <section>
     <h2>Prossimi eventi</h2>
-    <div role="status">
-        {#if loading}
-            Caricamento del calendario…
-        {:else if failed}
-            Non riusciamo a caricare il calendario in questo momento: <a href={calendarUrl} target="_blank" rel="noopener noreferrer">guardalo su Google Calendar</a>.
-        {:else if events?.length === 0}
-            Nessun evento in programma.
-        {/if}
-    </div>
-    <noscript>
-        <p>Il calendario si carica con JavaScript: <a href={calendarUrl} target="_blank" rel="noopener noreferrer">guardalo su Google Calendar</a>.</p>
-    </noscript>
-    {#if events?.length}
+    {#if events.length === 0}
+        <p>Nessun evento in programma.</p>
+    {:else}
         <ol>
             {#each events as event (event.id)}
                 <li><EventCard {event} /></li>

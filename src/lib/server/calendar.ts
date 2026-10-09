@@ -1,14 +1,10 @@
-// Eventi letti dal browser a ogni visita, direttamente da Google Calendar. La chiave è pubblica per forza
-// (sta nel codice del sito): su Google Cloud è limitata alla sola Calendar API e al dominio del sito.
-import { PUBLIC_GOOGLE_CALENDAR_API_KEY } from "$env/static/public";
+import { GOOGLE_CALENDAR_API_KEY } from "$env/static/private";
 import type { EventItem } from "$lib/events";
 
 const CALENDAR_ID = "10769a48a48eab07981c5dc931bd2a4b4b629eae0cbfcc9a92c16f5391156d47@group.calendar.google.com";
 const TIME_ZONE = "Europe/Rome";
 const API_URL = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events`;
-
-/** Il calendario pubblico su Google: il rimando quando il sito non riesce a caricarlo, o senza JavaScript. */
-export const calendarUrl = `https://calendar.google.com/calendar/embed?src=${encodeURIComponent(CALENDAR_ID)}&ctz=Europe%2FRome`;
+const CACHE_MS = 60_000;
 
 const formatDay = (date: Date) =>
     date.toLocaleDateString("it-IT", { weekday: "short", day: "numeric", month: "short", timeZone: TIME_ZONE });
@@ -74,10 +70,9 @@ function toEventItem(evt: any): EventItem {
     };
 }
 
-/** I prossimi eventi, dal più vicino: quelli in corso compresi, quelli finiti esclusi. */
-export async function fetchUpcomingEvents(): Promise<EventItem[]> {
+async function fetchUpcomingEvents(): Promise<EventItem[]> {
     const params = new URLSearchParams({
-        key: PUBLIC_GOOGLE_CALENDAR_API_KEY,
+        key: GOOGLE_CALENDAR_API_KEY,
         timeMin: new Date().toISOString(),
         maxResults: "250",
         orderBy: "startTime",
@@ -90,13 +85,14 @@ export async function fetchUpcomingEvents(): Promise<EventItem[]> {
     return (data.items ?? []).map(toEventItem);
 }
 
-/** Un singolo evento; `null` se non esiste (o è stato tolto dal calendario). */
-export async function fetchEvent(id: string): Promise<EventItem | null> {
-    const params = new URLSearchParams({ key: PUBLIC_GOOGLE_CALENDAR_API_KEY });
-    const res = await fetch(`${API_URL}/${encodeURIComponent(id)}?${params}`);
-    if (res.status === 404 || res.status === 410) return null;
-    if (!res.ok) throw new Error(`Google Calendar API: ${res.status}`);
-    const data = await res.json();
+// Le pagine della stessa build condividono una sola richiesta al calendario.
+let cache: { at: number; events: Promise<EventItem[]> } | undefined;
 
-    return data.status === "cancelled" ? null : toEventItem(data);
+export function getUpcomingEvents(): Promise<EventItem[]> {
+    if (!cache || Date.now() - cache.at > CACHE_MS) {
+        const events = fetchUpcomingEvents();
+        events.catch(() => (cache = undefined));
+        cache = { at: Date.now(), events };
+    }
+    return cache.events;
 }

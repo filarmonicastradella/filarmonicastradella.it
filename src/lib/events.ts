@@ -9,6 +9,9 @@ export interface EventItem {
     htmlLink: string;
 }
 
+// Un evento è ancora da mostrare finché non è finito (le date "tutto il giorno" finiscono il giorno dopo).
+export const hasNotEnded = (event: EventItem, now: Date) => new Date(event.end || event.start).getTime() > now.getTime();
+
 // Date e orari sempre nel fuso di Fivizzano, qualunque sia quello di chi guarda.
 const timeZone = "Europe/Rome";
 const format = (date: Date, options: Intl.DateTimeFormatOptions) => date.toLocaleDateString("it-IT", { timeZone, ...options });
