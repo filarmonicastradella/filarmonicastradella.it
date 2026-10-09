@@ -20,7 +20,7 @@
         <dt>Banca</dt>
         <dd>Crédit Agricole Italia</dd>
         <dt>Causale</dt>
-        <dd>Erogazione liberale, con il tuo nome e cognome</dd>
+        <dd>Erogazione liberale, con il tuo nome, cognome e codice fiscale</dd>
     </dl>
 </section>
 
