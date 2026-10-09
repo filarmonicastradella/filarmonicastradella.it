@@ -16,15 +16,17 @@
         <span><span>Filarmonica</span> Alessandro Stradella</span>
     </a>
 
-    <button
-        type="button"
-        aria-expanded={menu.open}
-        aria-label={menu.open ? "Chiudi menu" : "Apri menu"}
-        onclick={() => (menu.open = !menu.open)}
-    >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+    <!-- Il nome del pulsante è la parola visibile, "Menu" o "Chiudi"; le tre corde sono solo il segno -->
+    <button type="button" aria-expanded={menu.open} onclick={() => (menu.open = !menu.open)}>
+        <span>
+            <span aria-hidden={menu.open}>Menu</span>
+            <span aria-hidden={!menu.open}>Chiudi</span>
+        </span>
+        <span aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
     </button>
 
     <!-- Menu a scomparsa sotto i 64rem; da 64rem le voci sono sempre visibili in linea -->
@@ -96,13 +98,62 @@
     }
 
     /*
-     * Il pulsante del menu sono tre corde distese (tre span, non un <svg>): stesso spessore e stessa distanza
-     * delle corde di layout.css, così formano un quadrato grande quanto --corde-span. Aprendo il menu il
-     * pulsante ruota di 90° e prende il colore delle corde: diventa la cima delle corde del pannello, che
-     * scendono proprio da lì (SiteMenu.svelte). L'area da toccare è un quadrato di --space-7 (48px); il
-     * margine negativo tiene le linee allineate al bordo della pagina e centrate sopra le corde.
+     * Il pulsante del menu: una parola in occhiello ("Menu", "Chiudi") e tre corde distese (tre span, non un
+     * <svg>), con lo stesso spessore e la stessa distanza delle corde di layout.css, così formano un quadrato
+     * grande quanto --corde-span. Aprendo il menu le corde ruotano di 90° e il pulsante prende il colore delle
+     * corde: diventano la cima delle corde del pannello, che scendono proprio da lì (SiteMenu.svelte), mentre
+     * la parola sfuma da "Menu" a "Chiudi". Le corde stanno al centro di un quadrato di --space-7 (48px);
+     * il margine negativo le tiene allineate al bordo della pagina e centrate sopra le corde del pannello.
      */
     button {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        margin-inline-end: calc((var(--corde-span) - var(--space-7)) / 2);
+        padding: 0;
+        appearance: none;
+        background: none;
+        border: none;
+        color: inherit;
+        /* Stessa durata del pannello del menu. Alla chiusura tutto aspetta che le corde siano risalite */
+        transition: color var(--duration-slow) var(--ease) var(--duration-slow);
+    }
+
+    button:hover {
+        background: none;
+    }
+
+    button[aria-expanded="true"] {
+        color: var(--corde-color);
+        transition-delay: 0s;
+    }
+
+    /* La parola: le due versioni nella stessa cella della griglia, così il cambio non sposta niente */
+    button > span:first-child {
+        display: grid;
+        justify-items: end;
+        font-size: var(--fs-eyebrow);
+        font-weight: var(--fw-text-strong);
+        letter-spacing: var(--tracking-eyebrow);
+        text-transform: uppercase;
+    }
+
+    button > span:first-child > span {
+        grid-area: 1 / 1;
+        transition: opacity var(--duration-slow) var(--ease) var(--duration-slow);
+    }
+
+    button[aria-expanded="true"] > span:first-child > span {
+        transition-delay: 0s;
+    }
+
+    button[aria-expanded="false"] > span:first-child > span:last-child,
+    button[aria-expanded="true"] > span:first-child > span:first-child {
+        opacity: 0;
+    }
+
+    /* Le corde */
+    button > span:last-child {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -110,39 +161,28 @@
         gap: var(--corde-gap);
         inline-size: var(--space-7);
         block-size: var(--space-7);
-        margin-inline-end: calc((var(--corde-span) - var(--space-7)) / 2);
-        padding: 0;
-        appearance: none;
-        background: none;
-        border: none;
-        color: inherit;
-        /* Stessa durata del pannello del menu. Alla chiusura il giro aspetta che le corde siano risalite */
-        transition:
-            rotate var(--duration-slow) var(--ease) var(--duration-slow),
-            color var(--duration-slow) var(--ease) var(--duration-slow);
+        transition: rotate var(--duration-slow) var(--ease) var(--duration-slow);
     }
 
-    button:hover {
-        background: none;
-    }
-
-    button span {
+    /*
+     * Ogni linea è un bordo e non un fondo: i bordi si allineano sempre ai pixel dello schermo, così sui
+     * display con densità non intera (125%, 150%…) le tre linee restano dello stesso spessore.
+     */
+    button > span:last-child > span {
         display: block;
         inline-size: var(--corde-span);
-        block-size: var(--corde-width);
-        background-color: currentColor;
+        border-block-start: var(--corde-width) solid currentColor;
     }
 
     /* Unica rotazione del sito, eccezione prevista dal design system (Movimento) */
-    button[aria-expanded="true"] {
+    button[aria-expanded="true"] > span:last-child {
         rotate: 90deg;
-        color: var(--corde-color);
         transition-delay: 0s;
     }
 
     @media (prefers-reduced-motion: reduce) {
-        button {
-            transition: color var(--duration-slow) var(--ease);
+        button > span:last-child {
+            transition: none;
         }
     }
 
