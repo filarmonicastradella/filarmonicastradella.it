@@ -4,8 +4,8 @@
     // `null` quando il feed non era raggiungibile durante la build.
     let { slides }: { slides: GallerySlide[] | null } = $props();
 
-    // Una griglia fissa con le ultime foto, senza scorrimento: le altre sono su Instagram.
-    const SHOWN = 6;
+    // Le ultime tre foto, in riga come i prossimi eventi: le altre sono su Instagram.
+    const SHOWN = 3;
     const shown = $derived(slides?.slice(0, SHOWN) ?? []);
 </script>
 
@@ -38,7 +38,7 @@
                             <img
                                 src={slide.imageUrl}
                                 srcset={slide.srcset}
-                                sizes="(min-width: 64rem) 21rem, (min-width: 40rem) 33vw, 50vw"
+                                sizes="(min-width: 64rem) 20rem, 100vw"
                                 width={slide.width}
                                 height={slide.height}
                                 alt={slide.alt}
@@ -56,21 +56,15 @@
 
 <style>
     /*
-     * Griglia fissa di foto: due colonne su telefono, tre da 40rem. Formato 4:5 come i post social
-     * (docs/DESIGN.md), angoli quasi vivi, nessuna cornice.
+     * Tre foto in riga, con la stessa griglia dei prossimi eventi: una sotto l'altra su telefono, tre in
+     * riga quando c'è spazio. Formato 4:5 come i post social (docs/DESIGN.md), angoli quasi vivi.
      */
     ul {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--space-4);
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+        gap: var(--space-7) var(--space-6);
         padding: 0;
         list-style: none;
-    }
-
-    @media (min-width: 40rem) {
-        ul {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
     }
 
     li {
