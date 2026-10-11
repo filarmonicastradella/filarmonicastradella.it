@@ -84,6 +84,8 @@
             padding-block: calc(var(--header-height) + var(--space-7)) var(--space-7);
             padding-inline: var(--page-inline) calc(var(--page-inline) + var(--corde-span) + var(--space-6));
             overflow-y: auto;
+            /* Sta già sul fondo vero di "nav" (inset: 0): il clip-path la scopre solo a espansione finita */
+            border-block-end: var(--border-width) solid var(--border);
             background-color: var(--bg);
             visibility: hidden;
             /* Si espande verso il basso come un'estensione della topbar, non una dissolvenza: stessa tecnica delle corde sotto */

@@ -100,7 +100,7 @@
         color: var(--text);
         font-family: var(--font-display);
         /* Su schermi stretti "Alessandro Stradella" a --fs-h3 andava a capo, 3 righe con l'occhiello: troppo alte per l'intestazione */
-        font-size: clamp(0.8125rem, 4vw, var(--fs-h3));
+        font-size: clamp(0.875rem, 4vw, var(--fs-h3));
         font-weight: var(--fw-display);
         line-height: var(--lh-display);
         white-space: nowrap;
@@ -111,7 +111,8 @@
         margin-block-end: var(--space-1);
         color: var(--text-brand);
         font-family: var(--font-text);
-        font-size: var(--fs-logo-eyebrow);
+        /* Si restringe un po' anche lei, così il nome sotto non deve farsi così piccolo da solo */
+        font-size: clamp(0.5625rem, 1.5vw, var(--fs-logo-eyebrow));
         font-weight: var(--fw-text-strong);
         letter-spacing: var(--tracking-logo);
         text-transform: uppercase;
