@@ -33,6 +33,7 @@
                 <option value="Informazioni generali">Informazioni generali</option>
                 <option value="Iscrizione">Iscrizione</option>
                 <option value="Eventi e ingaggi">Eventi e ingaggi</option>
+                <option value="Materiale storico">Materiale storico</option>
                 <option value="Altro">Altro</option>
             </select>
         </p>
