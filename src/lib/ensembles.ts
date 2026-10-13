@@ -4,6 +4,8 @@ interface EnsembleMetadata {
     title: string;
     summary: string;
     order: number;
+    /** L'organico: gli strumenti divisi per sezione (legni, ottoni, archi...) */
+    lineup: { name: string; instruments: string[] }[];
 }
 
 export interface Ensemble extends EnsembleMetadata {

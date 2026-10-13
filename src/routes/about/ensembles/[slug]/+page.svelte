@@ -2,18 +2,42 @@
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
+    const ensemble = $derived(data.ensemble);
 </script>
 
 <svelte:head>
-    <title>{data.ensemble.title} — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content={data.ensemble.summary} />
+    <title>{ensemble.title} — Filarmonica Alessandro Stradella APS</title>
+    <meta name="description" content={ensemble.summary} />
 </svelte:head>
 
-<article>
-    <h1>{data.ensemble.title}</h1>
-    <p>{data.ensemble.summary}</p>
+<header itemscope itemtype="https://schema.org/MusicGroup">
+    <h1 itemprop="name">{ensemble.title}</h1>
+    <p itemprop="description">{ensemble.summary}</p>
+</header>
 
-    <data.ensemble.component />
-</article>
+<section>
+    <h2>Presentazione</h2>
+    <ensemble.component />
+</section>
+
+<section>
+    <h2>Organico</h2>
+    <dl>
+        {#each ensemble.lineup as { name, instruments } (name)}
+            <dt>{name}</dt>
+            {#each instruments as instrument (instrument)}
+                <dd>{instrument}</dd>
+            {/each}
+        {/each}
+    </dl>
+</section>
+
+<section>
+    <h2>Suona con noi</h2>
+    <p>
+        Per suonare in questo ensemble iscriviti alla Filarmonica con la <a href="/support/join">richiesta di iscrizione</a>, poi chiedi di entrare
+        nell'ensemble. Per domande su strumenti, livello e prove scrivici dal <a href="/contacts/message">modulo di contatto</a>.
+    </p>
+</section>
 
 <p><a href="/about/ensembles">Tutti gli ensemble</a></p>
