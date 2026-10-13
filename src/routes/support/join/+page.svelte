@@ -94,7 +94,7 @@
     <p>Compila il modulo per richiedere l'adesione alla Filarmonica Alessandro Stradella APS. L'esito ti verrà comunicato all'indirizzo email indicato. Per i minorenni l'iscrizione può essere richiesta online da un genitore o tutore.</p>
 </header>
 
-<form action="https://formsubmit.co/47c75ae3189afeb17aa6672e17f0b7c6" method="POST" enctype="multipart/form-data">
+<form action="https://formsubmit.co/segreteria@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_subject" value="Nuova richiesta di iscrizione - Filarmonica Stradella" />
     <input type="hidden" name="_template" value="table" />
     <input type="hidden" name="_next" value="https://filarmonicastradella.it/support/join/thanks" />
