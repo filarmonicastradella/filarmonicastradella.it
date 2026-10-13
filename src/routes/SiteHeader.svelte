@@ -3,11 +3,10 @@
     import SiteMenu from "./SiteMenu.svelte";
     import { menu } from "$lib/menu.svelte";
 
-    // Il file SVG dichiara una dimensione enorme (826×1382): senza CSS il logo occuperebbe tutta la pagina.
-    // Il nero diventa currentColor, così il logo prende il colore del collegamento che lo contiene.
-    const logo = logoSvg
-        .replace('width="826" height="1382"', 'width="22" height="36"')
-        .replaceAll('fill="black"', 'fill="currentColor"');
+    // Il file SVG dichiara una dimensione enorme (875×1382): senza CSS il logo occuperebbe tutta la pagina.
+    // Solo l'altezza: la larghezza la ricava il browser dal viewBox, così il simbolo non si deforma.
+    // Il bordeaux diventa currentColor, così il logo prende il colore del collegamento che lo contiene.
+    const logo = logoSvg.replace('width="875" height="1382"', 'height="36"').replaceAll('fill="#701521"', 'fill="currentColor"');
 
     // Con il menu aperto, Esc lo chiude e riporta il focus sul pulsante.
     let toggle = $state<HTMLButtonElement>();

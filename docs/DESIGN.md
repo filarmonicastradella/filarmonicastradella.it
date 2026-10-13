@@ -1,6 +1,6 @@
 # Design system — Filarmonica Alessandro Stradella
 
-Riferimento unico per grafiche, stampa, social e sito. Versione 1.1, ottobre 2026.
+Riferimento unico per grafiche, stampa, social e sito. Versione 1.2, ottobre 2026.
 
 **È la regola**: il sito è HTML semantico che si veste con questo sistema, non il contrario. Nel codice i token hanno gli stessi nomi di questo documento e del design system pubblicato (`src/lib/styles/colors.css`, `typography.css`, `layout.css`); nelle regole si usano solo i ruoli (`--bg`, `--text`, `--text-brand`, `--accent`...), mai i valori.
 
@@ -65,7 +65,9 @@ Contrasti verificati (tutti conformi WCAG AA): bordeaux su carta 10,3:1, bordeau
 
 Il simbolo è una lira sormontata dalla mezzaluna, emblema della Lunigiana e di Fivizzano. Il logotipo usa "FILARMONICA" come occhiello in Jakarta, "Alessandro Stradella" in Cormorant, e la firma "Fivizzano · dal 1777" in Jakarta maiuscolo spaziato.
 
-Il vettoriale di riferimento è `src/lib/assets/favicon.svg` (disegnato a mano, simmetrico); la favicon del sito è `src/lib/assets/icon.svg`, simbolo carta su quadrato bordeaux.
+Il vettoriale di riferimento è `src/lib/assets/favicon.svg`, la favicon del sito è `src/lib/assets/icon.svg` (simbolo carta su quadrato bordeaux arrotondato) e `static/logo.png` è la stessa icona a 512 px per i motori di ricerca. I file originali sono nel kit di marca (cartella `01 Simbolo`).
+
+**Simbolo v1.2** (13/10/2026): simmetrico per costruzione, conca inferiore allargata del 7%, griglia regolarizzata, corde con terminali a pallino (laterali più alte, centrale più bassa). Il logotipo non cambia: il nome di Stradella resta protagonista, cambia solo il simbolo accanto. Nel sito si fissa solo l'altezza del simbolo, mai larghezza e altezza insieme, così non si deforma.
 
 **Versioni**
 - Verticale: locandine, copertine, striscioni.
@@ -82,6 +84,13 @@ Il vettoriale di riferimento è `src/lib/assets/favicon.svg` (disegnato a mano, 
 ## 6. Elementi grafici
 
 - **Le corde** (elemento base): tre linee verticali sottili e parallele, sempre a tutta altezza, su un lato della composizione. Presenti in quasi tutti i formati.
+- **I pallini sulle corde** (dalla v1.2): terminali a pallino che richiamano il simbolo.
+  - Solo dove le corde finiscono visibilmente dentro la pagina (per esempio corde che scendono dall'alto e si fermano sopra o accanto al titolo; nella story, corde che scendono sul simbolo). Mai sulle corde a tutta altezza, sui filetti, sul filetto in alto delle schede, né vicino a pulsanti, menu e caroselli: sul web i pallini sembrano indicatori di navigazione.
+  - Al massimo una volta per schermata.
+  - Sempre sfasati come nel simbolo: la corda centrale finisce più in basso delle laterali, in qualunque direzione vadano le corde. Con corde che scendono, i tre capi formano una freccia verso il titolo.
+  - Sfasatura fissa, non proporzionale alla lunghezza: circa 20 px (`--corde-dot-offset`). Pallino di circa 6 px (`--corde-dot-size`, circa 3 volte lo spessore della corda), dello stesso colore della corda.
+  - Nel sito: le corde delle intestazioni di pagina (`main > header:has(> h1)` in `layout.css`); non la hero della home, dove le corde sono a tutta altezza e su telefono finiscono accanto al pulsante.
+  - **Eccezione, la timeline della storia:** i pallini possono marcare le date su una corda (1777, 1779, 1831, 1996…). Lì sono dati, non decorazione: stanno sulle date, senza sfasatura.
 - **La mezzaluna** (eventi importanti): la forma della mezzaluna come finestra per la foto. Solo per inaugurazione di stagione, gala, anniversari.
 - **Il filetto**: breve linea bordeaux (spessore 2 px) per separare titolo e firma.
 

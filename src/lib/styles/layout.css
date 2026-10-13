@@ -36,6 +36,8 @@
     --corde-gap: 8px;
     --corde-width: 2px;
     --corde-span: calc(var(--corde-gap) * 2 + var(--corde-width) * 3); /* ingombro delle tre corde */
+    --corde-dot-size: 6px; /* terminali a pallino, circa 3 volte lo spessore della corda */
+    --corde-dot-offset: 20px; /* quanto la corda centrale finisce più in basso delle laterali, fisso */
 
     /* Movimento (docs/DESIGN.md): accompagna, non si esibisce */
     --ease: cubic-bezier(0.2, 0, 0, 1);
@@ -128,6 +130,30 @@ body > div > footer::before {
         linear-gradient(var(--corde-color), var(--corde-color)) center / var(--corde-width) 100% no-repeat,
         linear-gradient(var(--corde-color), var(--corde-color)) right / var(--corde-width) 100% no-repeat;
     pointer-events: none;
+}
+
+/*
+ * Corde con i terminali a pallino, come nel simbolo (docs/DESIGN.md, Elementi grafici): solo dove le
+ * corde finiscono visibilmente dentro la pagina, mai a tutta altezza né vicino a pulsanti e menu. La
+ * corda centrale finisce più in basso delle laterali: i tre capi formano una freccia verso il basso.
+ * Il riquadro si allarga di mezzo pallino per lato (--pad), così i pallini non vengono tagliati, e il
+ * margine negativo lascia le corde nello stesso punto di sempre.
+ */
+main > header:has(> h1)::after {
+    --pad: calc((var(--corde-dot-size) - var(--corde-width)) / 2);
+    --step: calc(var(--corde-gap) + var(--corde-width));
+    --line: linear-gradient(var(--corde-color), var(--corde-color));
+    --dot: radial-gradient(closest-side, var(--corde-color) 90%, transparent);
+    --side: calc(100% - var(--corde-dot-offset) - var(--corde-dot-size) / 2);
+    inline-size: calc(var(--corde-span) + var(--pad) * 2);
+    margin-inline-end: calc(var(--pad) * -1);
+    background:
+        var(--line) left var(--pad) top 0 / var(--corde-width) var(--side) no-repeat,
+        var(--line) left calc(var(--pad) + var(--step)) top 0 / var(--corde-width) calc(100% - var(--corde-dot-size) / 2) no-repeat,
+        var(--line) left calc(var(--pad) + var(--step) * 2) top 0 / var(--corde-width) var(--side) no-repeat,
+        var(--dot) left 0 bottom var(--corde-dot-offset) / var(--corde-dot-size) var(--corde-dot-size) no-repeat,
+        var(--dot) left var(--step) bottom 0 / var(--corde-dot-size) var(--corde-dot-size) no-repeat,
+        var(--dot) left calc(var(--step) * 2) bottom var(--corde-dot-offset) / var(--corde-dot-size) var(--corde-dot-size) no-repeat;
 }
 
 /* Le corde che si tendono dall'alto in basso (apertura della home, pannello del menu): clip-path le scopre senza cambiarne dimensioni né layout */
