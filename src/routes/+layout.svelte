@@ -54,6 +54,7 @@
 -->
 <svelte:head>
     <link rel="icon" href={favicon} />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preload" href={jakartaFont} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href={cormorantFont} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="canonical" href={organization.url + page.url.pathname} />
