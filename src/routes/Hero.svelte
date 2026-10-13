@@ -61,9 +61,13 @@
         filter: grayscale(0.6);
     }
 
-    /* Le corde (layout.css) dove sono in tutto il sito, sopra la foto: chiare, come sulle superfici scure */
+    /*
+     * Le corde (layout.css) dove sono in tutto il sito, sopra la foto: chiare, come sulle superfici scure.
+     * Scendono dall'alto e si fermano all'altezza del fondo del testo, con i terminali a pallino.
+     */
     header::after {
         --corde-color: var(--color-cipria);
+        inset-block-end: var(--space-9);
         inset-inline-end: var(--edge);
     }
 
@@ -112,29 +116,23 @@
     /*
      * Sotto i 64rem: la hero è alta quanto lo schermo meno l'intestazione. Il testo prende lo spazio che
      * gli serve, la foto riempie quello che resta sopra (mai meno di un quarto dello schermo). Le corde
-     * scendono senza interruzioni sul bordo destro: chiare sulla foto (disegnate come livelli del suo
-     * sfondo) e poi del loro colore accanto al testo. Foto e corde diventano elementi della griglia.
+     * scendono sulla foto e si fermano sul suo bordo, sopra il titolo, lontane dal pulsante. Foto e
+     * corde diventano elementi della stessa riga della griglia.
      */
     @media (max-width: 63.999rem) {
         header {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
+            grid-template-columns: minmax(0, 1fr);
             grid-template-rows: minmax(25svh, 1fr) auto auto;
-            gap: 0 var(--space-6);
             padding-block: 0 var(--space-7);
             padding-inline: var(--edge);
         }
 
         header::before {
-            --line: linear-gradient(var(--color-cipria), var(--color-cipria));
-            --step: calc(var(--corde-gap) + var(--corde-width));
             position: static;
-            grid-column: 1 / -1;
+            grid-row: 1;
             inline-size: auto;
             background:
-                var(--line) right var(--edge) top 0 / var(--corde-width) 100% no-repeat,
-                var(--line) right calc(var(--edge) + var(--step)) top 0 / var(--corde-width) 100% no-repeat,
-                var(--line) right calc(var(--edge) + var(--step) * 2) top 0 / var(--corde-width) 100% no-repeat,
                 linear-gradient(
                     color-mix(in srgb, var(--color-bordeaux-notte) 45%, transparent),
                     color-mix(in srgb, var(--color-inchiostro) 55%, transparent)
@@ -145,23 +143,19 @@
         }
 
         hgroup {
-            grid-column: 1;
             grid-row: 2;
         }
 
         header > p {
-            grid-column: 1;
             grid-row: 3;
             margin-block-start: var(--space-6);
         }
 
         header::after {
-            /* Accanto al testo, su carta: tornano del colore normale e partono dal fondo della foto */
-            --corde-color: inherit;
             position: static;
-            margin-block-start: calc(-1 * var(--space-6));
-            grid-column: 2;
-            grid-row: 2 / 4;
+            grid-row: 1;
+            justify-self: end;
+            margin-block-end: var(--space-6);
         }
     }
 

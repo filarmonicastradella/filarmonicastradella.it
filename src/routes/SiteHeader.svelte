@@ -31,10 +31,13 @@
             <span aria-hidden={menu.open}>Menu</span>
             <span aria-hidden={!menu.open}>Chiudi</span>
         </span>
-        <!-- Le tre corde: 22×22 come --corde-span (linee da 2 a 10 di distanza), agganciate ai pixel dello schermo -->
+        <!--
+            Le tre corde: 22×22 come --corde-span (linee da 2 a 10 di distanza), agganciate ai pixel dello schermo.
+            La centrale comincia 4 px dopo: girato il pulsante, la sua cima resta più in basso, come nel simbolo.
+        -->
         <svg aria-hidden="true" viewBox="0 0 22 22" shape-rendering="crispEdges">
             <rect width="22" height="2" />
-            <rect y="10" width="22" height="2" />
+            <rect x="4" y="10" width="18" height="2" />
             <rect y="20" width="22" height="2" />
         </svg>
     </button>

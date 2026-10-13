@@ -83,13 +83,14 @@ Il vettoriale di riferimento è `src/lib/assets/favicon.svg`, la favicon del sit
 
 ## 6. Elementi grafici
 
-- **Le corde** (elemento base): tre linee verticali sottili e parallele, sempre a tutta altezza, su un lato della composizione. Presenti in quasi tutti i formati.
+- **Le corde** (elemento base): tre linee verticali sottili e parallele, su un lato della composizione. Presenti in quasi tutti i formati. Di norma a tutta altezza; dove finiscono dentro la composizione hanno i terminali a pallino (sotto).
 - **I pallini sulle corde** (dalla v1.2): terminali a pallino che richiamano il simbolo.
   - Solo dove le corde finiscono visibilmente dentro la pagina (per esempio corde che scendono dall'alto e si fermano sopra o accanto al titolo; nella story, corde che scendono sul simbolo). Mai sulle corde a tutta altezza, sui filetti, sul filetto in alto delle schede, né vicino a pulsanti, menu e caroselli: sul web i pallini sembrano indicatori di navigazione.
   - Al massimo una volta per schermata.
   - Sempre sfasati come nel simbolo: la corda centrale finisce più in basso delle laterali, in qualunque direzione vadano le corde. Con corde che scendono, i tre capi formano una freccia verso il titolo.
   - Sfasatura fissa, non proporzionale alla lunghezza: circa 20 px (`--corde-dot-offset`). Pallino di circa 6 px (`--corde-dot-size`, circa 3 volte lo spessore della corda), dello stesso colore della corda.
-  - Nel sito: le corde delle intestazioni di pagina (`main > header:has(> h1)` in `layout.css`); non la hero della home, dove le corde sono a tutta altezza e su telefono finiscono accanto al pulsante.
+  - Nel sito (`layout.css`): scendono e finiscono a freccia nelle intestazioni di pagina e nella hero della home (sulla foto; su telefono si fermano sul bordo della foto, sopra il titolo, lontane dal pulsante); salgono dal fondo della pagina e finiscono a coppa, come nella lira, nel piè di pagina. Le corde del pannello del menu restano a tutta altezza, senza pallini.
+  - Il pulsante del menu non ha pallini, ma ha la stessa sfasatura in piccolo: la barra centrale comincia 4 px dopo le altre, così, girata di 90° all'apertura, la sua cima resta più in basso come nel simbolo. Nell'icona la sfasatura è proporzionata ai 22 px del pulsante, non i 20 px delle corde.
   - **Eccezione, la timeline della storia:** i pallini possono marcare le date su una corda (1777, 1779, 1831, 1996…). Lì sono dati, non decorazione: stanno sulle date, senza sfasatura.
 - **La mezzaluna** (eventi importanti): la forma della mezzaluna come finestra per la foto. Solo per inaugurazione di stagione, gala, anniversari.
 - **Il filetto**: breve linea bordeaux (spessore 2 px) per separare titolo e firma.
@@ -148,7 +149,7 @@ Il movimento accompagna, non si esibisce.
 - Pulsante primario: fondo bordeaux, testo carta. Secondario: contorno inchiostro 1 px.
 - Schede (eventi, notizie, rimandi): nessun riquadro e nessun fondo, solo un filetto in alto (`--rule-width` in `--border`) che diventa bordeaux (`--accent`) al passaggio del mouse o al tocco, insieme al titolo. Scelte il 9/10/2026 al posto delle card bordate: più coerenti con corde e filetti, più editoriali e più pulite nel tema scuro.
 - Card evento: ogni informazione una volta sola. La data in occhiello bordeaux sopra il titolo ("sab 10 ottobre"; per più giorni "lun 7 – mar 8 dicembre"), il titolo in Cormorant 600, la descrizione, e in fondo una didascalia con ora di inizio e luogo ("ore 21 · Teatro degli Impavidi"). Ogni parte ha un numero fisso di righe, così nella griglia tutto è allineato: data e didascalia una, titolo due, descrizione tre; il resto si interrompe con i puntini e si legge nella pagina dell'evento, insieme all'ora di fine.
-- Apertura della homepage: occhiello, titolo display con una parola in corsivo bordeaux, sottotitolo, pulsante primario a sinistra su carta; foto in duotone a destra; corde sopra la foto, nello stesso punto di tutte le altre corde del sito (il bordo destro del contenitore), in colore chiaro.
+- Apertura della homepage: occhiello, titolo display con una parola in corsivo bordeaux, sottotitolo, pulsante primario a sinistra su carta; foto in duotone a destra; corde sopra la foto, nello stesso punto di tutte le altre corde del sito (il bordo destro del contenitore), in colore chiaro, che scendono dall'alto e si fermano con i terminali a pallino.
 - Colonne di testo al massimo 40 rem.
 - Sezioni da leggere (testo, immagini, elenchi di testo ed elenchi etichetta/valore): su schermo largo, da 64 rem, il titolo sta a sinistra e il contenuto a destra, nella colonna da 40 rem; così la sezione è larga quanto le griglie senza allungare le righe. Le sezioni con griglie di schede o di foto tengono il titolo sopra e usano tutta la larghezza.
 
