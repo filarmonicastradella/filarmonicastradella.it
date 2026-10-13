@@ -2,9 +2,14 @@
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
     const topics = [
         { name: "Informazioni generali", mailbox: "info" },
-        { name: "Iscrizione", mailbox: "segreteria" },
+        { name: "Iscrizione e quote", mailbox: "segreteria" },
         { name: "Eventi e ingaggi", mailbox: "info" },
+        { name: "Donazioni e ricevute", mailbox: "tesoreria" },
+        { name: "Collaborazioni, enti e sponsor", mailbox: "presidente" },
+        { name: "Stampa e media", mailbox: "presidente" },
         { name: "Materiale storico", mailbox: "info" },
+        { name: "Privacy e dati personali", mailbox: "privacy" },
+        { name: "Problemi con il sito", mailbox: "webmaster" },
         { name: "Altro", mailbox: "info" }
     ];
     let topic = $state(topics[0].name);
