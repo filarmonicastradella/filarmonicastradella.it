@@ -149,6 +149,9 @@ body > div > footer::before {
     --dot-size: var(--corde-dot-size) var(--corde-dot-size);
     --short: calc(100% - var(--corde-dot-offset) - var(--corde-dot-size) / 2);
     --long: calc(100% - var(--corde-dot-size) / 2);
+    /* Una corda per lunghezza: chi le usa può colorarle in due tratti (hero) */
+    --line-short: var(--line);
+    --line-long: var(--line);
     inline-size: calc(var(--corde-span) + var(--pad) * 2);
     margin-inline-end: calc(var(--pad) * -1);
 }
@@ -156,9 +159,9 @@ body > div > footer::before {
 /* Scendono: laterali più corte, centrale più lunga */
 main > header::after {
     background:
-        var(--line) left var(--pad) top 0 / var(--corde-width) var(--short) no-repeat,
-        var(--line) left calc(var(--pad) + var(--step)) top 0 / var(--corde-width) var(--long) no-repeat,
-        var(--line) left calc(var(--pad) + var(--step) * 2) top 0 / var(--corde-width) var(--short) no-repeat,
+        var(--line-short) left var(--pad) top 0 / var(--corde-width) var(--short) no-repeat,
+        var(--line-long) left calc(var(--pad) + var(--step)) top 0 / var(--corde-width) var(--long) no-repeat,
+        var(--line-short) left calc(var(--pad) + var(--step) * 2) top 0 / var(--corde-width) var(--short) no-repeat,
         var(--dot) left 0 bottom var(--corde-dot-offset) / var(--dot-size) no-repeat,
         var(--dot) left var(--step) bottom 0 / var(--dot-size) no-repeat,
         var(--dot) left calc(var(--step) * 2) bottom var(--corde-dot-offset) / var(--dot-size) no-repeat;
@@ -167,9 +170,9 @@ main > header::after {
 /* Salgono: laterali più lunghe, centrale più corta */
 body > div > footer::before {
     background:
-        var(--line) left var(--pad) bottom 0 / var(--corde-width) var(--long) no-repeat,
-        var(--line) left calc(var(--pad) + var(--step)) bottom 0 / var(--corde-width) var(--short) no-repeat,
-        var(--line) left calc(var(--pad) + var(--step) * 2) bottom 0 / var(--corde-width) var(--long) no-repeat,
+        var(--line-long) left var(--pad) bottom 0 / var(--corde-width) var(--long) no-repeat,
+        var(--line-short) left calc(var(--pad) + var(--step)) bottom 0 / var(--corde-width) var(--short) no-repeat,
+        var(--line-long) left calc(var(--pad) + var(--step) * 2) bottom 0 / var(--corde-width) var(--long) no-repeat,
         var(--dot) left 0 top 0 / var(--dot-size) no-repeat,
         var(--dot) left var(--step) top var(--corde-dot-offset) / var(--dot-size) no-repeat,
         var(--dot) left calc(var(--step) * 2) top 0 / var(--dot-size) no-repeat;

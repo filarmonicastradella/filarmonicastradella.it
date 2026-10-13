@@ -116,8 +116,8 @@
     /*
      * Sotto i 64rem: la hero è alta quanto lo schermo meno l'intestazione. Il testo prende lo spazio che
      * gli serve, la foto riempie quello che resta sopra (mai meno di un quarto dello schermo). Le corde
-     * scendono sulla foto e si fermano sul suo bordo, sopra il titolo, lontane dal pulsante. Foto e
-     * corde diventano elementi della stessa riga della griglia.
+     * attraversano la foto e si fermano appena sotto, accanto all'occhiello, lontane dal pulsante. Foto e
+     * corde diventano elementi della stessa cella della griglia.
      */
     @media (max-width: 63.999rem) {
         header {
@@ -130,7 +130,7 @@
 
         header::before {
             position: static;
-            grid-row: 1;
+            grid-area: 1 / 1;
             inline-size: auto;
             background:
                 linear-gradient(
@@ -151,11 +151,28 @@
             margin-block-start: var(--space-6);
         }
 
+        /*
+         * Nella stessa cella della foto, sopra (con la sola riga il browser le metterebbe in una colonna
+         * nuova). Attraversano la foto in colore chiaro, ne escono di --below e sulla carta tornano del
+         * loro colore, pallini compresi: finiscono accanto all'occhiello, a freccia verso il titolo.
+         * Ogni tratto chiaro si ferma sul bordo della foto, misurato dal fondo della sua corda.
+         */
         header::after {
+            --corde-color: inherit;
+            --below: var(--space-8);
+            --line-long: linear-gradient(
+                var(--color-cipria) calc(100% - var(--below) + var(--corde-dot-size) / 2),
+                var(--corde-color) 0
+            );
+            --line-short: linear-gradient(
+                var(--color-cipria) calc(100% - var(--below) + var(--corde-dot-offset) + var(--corde-dot-size) / 2),
+                var(--corde-color) 0
+            );
             position: static;
-            grid-row: 1;
+            grid-area: 1 / 1;
             justify-self: end;
-            margin-block-end: var(--space-6);
+            /* La cella finisce --space-6 sotto la foto (il suo margine): le corde ne escono di --below */
+            margin-block-end: calc(var(--space-6) - var(--below));
         }
     }
 
