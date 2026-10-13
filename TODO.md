@@ -21,7 +21,7 @@ Oggi sono `_page.svelte` (SvelteKit le ignora). Per ognuna: rinominare in `+page
 - Home (`+page.svelte`): testo di presentazione provvisorio (BOZZA, tono coerente col design system ma da confermare).
 - `support/donate`: link PayPal con `hosted_button_id=SEGNAPOSTO` — serve l'ID vero del pulsante di donazione.
 - `about/history`: didascalia foto anni 80/90 da verificare (il file si chiama `anni_80` ma la didascalia dice "anni Novanta").
-- Ensemble (`src/lib/content/ensembles/*.md`, 4 file): dati segnaposto da confermare con i gruppi.
+- Ensemble (`src/lib/content/ensembles/*.md`): presentazioni e organico ripresi dal vecchio sito, da far rileggere ai gruppi. Mancano i musicisti (tolti i nomi segnaposto): aggiungerli solo con il loro consenso, magari anche i giorni delle prove.
 - `legal/privacy`: sede e base giuridica del trasferimento dati per ciascun fornitore esterno; tempi di conservazione (da decidere col consiglio direttivo e il consulente).
 
 ## Bozze legali da far verificare da un consulente prima della pubblicazione
