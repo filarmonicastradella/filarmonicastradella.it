@@ -102,12 +102,10 @@
         Oggi la Filarmonica riunisce quattro formazioni: un'orchestra d'archi, una concert band, un ensemble di musica antica e una street band. Dal
         repertorio barocco alle marce per la strada, porta la musica nelle sale e nelle piazze della Lunigiana.
     </p>
-    <!-- Da riattivare insieme alle pagine delle formazioni (/about/ensembles): i nomi diventano link.
     <p>
         <a href="/about/ensembles/infieri">Orchestra d'archi</a>, <a href="/about/ensembles/stradella-facendo">Concert band</a>,
         <a href="/about/ensembles/filarmonici-dissonanti">Ensemble di musica antica</a>, <a href="/about/ensembles/streetella-band">Street band</a>.
     </p>
-    -->
     <figure>
         <enhanced:img src={oggiImg} alt="L'orchestra Infieri in concerto" {sizes} loading="lazy" />
         <figcaption>L'orchestra Infieri della Filarmonica in concerto.</figcaption>

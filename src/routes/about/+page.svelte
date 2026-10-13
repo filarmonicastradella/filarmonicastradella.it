@@ -1,6 +1,6 @@
 <svelte:head>
     <title>L'associazione — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="Chi è la Filarmonica Alessandro Stradella APS: la storia e le origini dell'associazione." />
+    <meta name="description" content="Chi è la Filarmonica Alessandro Stradella APS: la storia, le origini e gli ensemble dell'associazione." />
 </svelte:head>
 
 <header>
@@ -15,6 +15,12 @@
         <a href="/about/history">
             <h2>Storia e origini</h2>
             <p>Dal riconoscimento settecentesco alla Filarmonica di oggi.</p>
+        </a>
+    </li>
+    <li>
+        <a href="/about/ensembles">
+            <h2>Ensemble</h2>
+            <p>Una concert band, una street band, un'orchestra con archi e un gruppo di musica antica e barocca.</p>
         </a>
     </li>
     <li>
@@ -56,5 +62,3 @@
     </li>
     -->
 </ul>
-
-<!-- <p>I nostri <a href="/about/ensembles">ensemble</a> hanno una sezione propria.</p> -->
