@@ -1,3 +1,16 @@
+<script lang="ts">
+    // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
+    const topics = [
+        { name: "Informazioni generali", mailbox: "info" },
+        { name: "Iscrizione", mailbox: "segreteria" },
+        { name: "Eventi e ingaggi", mailbox: "info" },
+        { name: "Materiale storico", mailbox: "info" },
+        { name: "Altro", mailbox: "info" }
+    ];
+    let topic = $state(topics[0].name);
+    const mailbox = $derived(topics.find(({ name }) => name === topic)?.mailbox ?? "info");
+</script>
+
 <svelte:head>
     <title>Scrivici — Filarmonica Alessandro Stradella APS</title>
     <meta name="description" content="Scrivi alla Filarmonica Alessandro Stradella APS: compila il modulo e ti risponderemo all'indirizzo email che indichi." />
@@ -8,10 +21,12 @@
     <p>Compila il modulo per inviarci un messaggio: ti risponderemo all'indirizzo email che indichi.</p>
 </header>
 
-<form
-        action="https://formsubmit.co/info@filarmonicastradella.it"
-        method="POST"
-    >
+<p>
+    Per segnalazioni sulla tutela dei minori non usare questo modulo: scrivi direttamente a
+    <a href="mailto:safeguarding@filarmonicastradella.it">safeguarding@filarmonicastradella.it</a>.
+</p>
+
+<form action="https://formsubmit.co/{mailbox}@filarmonicastradella.it" method="POST">
         <input type="hidden" name="_subject" value="Nuovo messaggio dal sito - Filarmonica Stradella" />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_next" value="https://filarmonicastradella.it/contacts/thanks" />
@@ -29,12 +44,10 @@
 
         <p>
             <label for="contatto-motivo">Motivo del messaggio</label>
-            <select id="contatto-motivo" name="motivo" required>
-                <option value="Informazioni generali">Informazioni generali</option>
-                <option value="Iscrizione">Iscrizione</option>
-                <option value="Eventi e ingaggi">Eventi e ingaggi</option>
-                <option value="Materiale storico">Materiale storico</option>
-                <option value="Altro">Altro</option>
+            <select id="contatto-motivo" name="motivo" required bind:value={topic}>
+                {#each topics as { name } (name)}
+                    <option value={name}>{name}</option>
+                {/each}
             </select>
         </p>
 
