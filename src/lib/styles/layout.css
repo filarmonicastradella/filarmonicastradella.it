@@ -141,6 +141,7 @@ body > div > footer::before {
  * margine negativo lascia le corde nello stesso punto di sempre.
  */
 main > header::after,
+body > div > header > nav::after,
 body > div > footer::before {
     --pad: calc((var(--corde-dot-size) - var(--corde-width)) / 2);
     --step: calc(var(--corde-gap) + var(--corde-width));
@@ -157,7 +158,8 @@ body > div > footer::before {
 }
 
 /* Scendono: laterali più corte, centrale più lunga */
-main > header::after {
+main > header::after,
+body > div > header > nav::after {
     background:
         var(--line-short) left var(--pad) top 0 / var(--corde-width) var(--short) no-repeat,
         var(--line-long) left calc(var(--pad) + var(--step)) top 0 / var(--corde-width) var(--long) no-repeat,

@@ -103,8 +103,9 @@
         }
 
         /* Dal fondo del pulsante del menu, centrato nell'intestazione, fino in fondo allo schermo */
+        /* Si fermano prima del fondo dello schermo, con i terminali a pallino (layout.css) */
         nav::after {
-            inset-block-start: calc((var(--header-height) + var(--corde-span)) / 2);
+            inset-block: calc((var(--header-height) + var(--corde-span)) / 2) var(--space-9);
             inset-inline-end: var(--page-inline);
             /* Ritratte nel pulsante; alla chiusura risalgono subito */
             clip-path: inset(0 0 100% 0);
