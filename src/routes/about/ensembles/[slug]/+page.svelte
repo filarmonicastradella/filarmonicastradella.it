@@ -34,10 +34,7 @@
 
 <section>
     <h2>Suona con noi</h2>
-    <p>
-        Per suonare in questo ensemble iscriviti alla Filarmonica con la <a href="/support/join">richiesta di iscrizione</a>, poi chiedi di entrare
-        nell'ensemble. Per domande su strumenti, livello e prove scrivici dal <a href="/contacts/message">modulo di contatto</a>.
-    </p>
+    <p>Per suonare in questo ensemble iscriviti alla Filarmonica con la <a href="/support/join">richiesta di iscrizione</a>.</p>
 </section>
 
 <p><a href="/about/ensembles">Tutti gli ensemble</a></p>
