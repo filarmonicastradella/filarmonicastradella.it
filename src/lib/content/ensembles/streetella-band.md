@@ -1,16 +1,43 @@
 ---
 title: Streetella Band
-summary: Marching band e street band, per suonare in strada e in movimento.
+summary: "La street band della Filarmonica: musica in movimento, tra l'energia della festa e l'impatto sonoro di una formazione itinerante."
 order: 2
 ---
 
-<!-- SEGNAPOSTO: testo di presentazione, musicisti e recapiti da sostituire con quelli veri. -->
+<!-- Testi ripresi dal vecchio sito (~/Projects/filarmonica, src/lib/data/ensembles.js), adattati ai nomi attuali. -->
 
 ## Presentazione
 
-Testo di presentazione dell'ensemble: storia, repertorio e attività.
+La Streetella Band rappresenta l'anima più festosa e dinamica della Filarmonica, pensata per animazioni itineranti, eventi all'aperto e momenti di festa vissuti a stretto contatto con il pubblico.
+
+Composta da musicisti che eseguono il repertorio mentre sono in movimento, la formazione unisce la tradizione dei fiati alla dimensione performativa e itinerante, dove l'aspetto musicale si integra con la presenza scenica e la coordinazione del gruppo in spazi aperti.
+
+Il repertorio comprende musica della tradizione, brani moderni e ritmi coinvolgenti pensati per valorizzare l'impatto sonoro e dare vita a esibizioni che mantengono un carattere popolare e comunitario.
+
+La Streetella Band è così un punto di incontro tra energia collettiva e animazione dal vivo, con un'identità solida e immediatamente riconoscibile.
+
+## Organico
+
+### Legni
+
+- Flauto e ottavino
+- Clarinetto (tutti i tagli)
+- Sassofono (tutti i tagli)
+
+### Ottoni
+
+- Tromba e corno
+- Flicorni (tutti i tagli)
+- Trombone e sousafono
+
+### Percussioni da marcia
+
+- Rullante e glockenspiel
+- Grancassa e piatti
 
 ## Musicisti
+
+<!-- SEGNAPOSTO: musicisti da sostituire con quelli veri, con il loro consenso. -->
 
 - **Strumento:** Nome Cognome
 

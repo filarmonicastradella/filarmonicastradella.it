@@ -99,11 +99,11 @@
 <section id="oggi">
     <h2>Oggi</h2>
     <p>
-        Oggi la Filarmonica riunisce quattro formazioni: un'orchestra d'archi, una concert band, un ensemble di musica antica e una street band. Dal
+        Oggi la Filarmonica riunisce quattro formazioni: un'orchestra sinfonica giovanile, una concert band, un ensemble di musica antica e una street band. Dal
         repertorio barocco alle marce per la strada, porta la musica nelle sale e nelle piazze della Lunigiana.
     </p>
     <p>
-        <a href="/about/ensembles/infieri">Orchestra d'archi</a>, <a href="/about/ensembles/stradella-facendo">Concert band</a>,
+        <a href="/about/ensembles/infieri">Orchestra sinfonica giovanile</a>, <a href="/about/ensembles/stradella-facendo">Concert band</a>,
         <a href="/about/ensembles/filarmonici-dissonanti">Ensemble di musica antica</a>, <a href="/about/ensembles/streetella-band">Street band</a>.
     </p>
     <figure>

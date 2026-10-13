@@ -20,7 +20,7 @@
     <li>
         <a href="/about/ensembles">
             <h2>Ensemble</h2>
-            <p>Una concert band, una street band, un'orchestra con archi e un gruppo di musica antica e barocca.</p>
+            <p>Una concert band, una street band, un'orchestra sinfonica giovanile e un gruppo di musica antica e barocca.</p>
         </a>
     </li>
     <li>
