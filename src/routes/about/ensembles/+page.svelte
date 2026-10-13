@@ -14,19 +14,16 @@
     </p>
 </header>
 
-<section>
-    <h2>I nostri ensemble</h2>
-    <ul>
-        {#each ensembles as ensemble (ensemble.slug)}
-            <li>
-                <a href="/about/ensembles/{ensemble.slug}">
-                    <h3>{ensemble.title}</h3>
-                    <p>{ensemble.summary}</p>
-                </a>
-            </li>
-        {/each}
-    </ul>
-</section>
+<ul>
+    {#each ensembles as ensemble (ensemble.slug)}
+        <li>
+            <a href="/about/ensembles/{ensemble.slug}">
+                <h2>{ensemble.title}</h2>
+                <p>{ensemble.summary}</p>
+            </a>
+        </li>
+    {/each}
+</ul>
 
 <section>
     <h2>Come suonare con noi</h2>
