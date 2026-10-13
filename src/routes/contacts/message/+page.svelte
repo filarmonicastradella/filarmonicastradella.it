@@ -26,11 +26,6 @@
     <p>Compila il modulo per inviarci un messaggio: ti risponderemo all'indirizzo email che indichi.</p>
 </header>
 
-<p>
-    Per segnalazioni sulla tutela dei minori non usare questo modulo: scrivi direttamente a
-    <a href="mailto:safeguarding@filarmonicastradella.it">safeguarding@filarmonicastradella.it</a>.
-</p>
-
 <form action="https://formsubmit.co/{mailbox}@filarmonicastradella.it" method="POST">
         <input type="hidden" name="_subject" value="Nuovo messaggio dal sito - Filarmonica Stradella" />
         <input type="hidden" name="_template" value="table" />
