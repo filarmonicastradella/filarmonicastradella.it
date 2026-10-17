@@ -1,4 +1,7 @@
 <script lang="ts">
+    import { browser } from "$app/environment";
+    import { page } from "$app/state";
+
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
     const topics = [
         { name: "Informazioni generali", mailbox: "info" },
@@ -12,7 +15,9 @@
         { name: "Problemi con il sito", mailbox: "webmaster" },
         { name: "Altro", mailbox: "info" }
     ];
-    let topic = $state(topics[0].name);
+    // Un link può scegliere il motivo con "?motivo=..." (per esempio dalla pagina degli ingaggi); in prerender non c'è l'indirizzo
+    const requested = browser ? page.url.searchParams.get("motivo") : null;
+    let topic = $state(topics.find(({ name }) => name === requested)?.name ?? topics[0].name);
     const mailbox = $derived(topics.find(({ name }) => name === topic)?.mailbox ?? "info");
 </script>
 

@@ -2,6 +2,10 @@
 title: Stradella Facendo
 summary: "La concert band della Filarmonica, dedicata al repertorio da concerto e alla cura del dettaglio sonoro."
 order: 1
+occasions:
+    - "Concerti in teatri, chiese e sale"
+    - "Rassegne e stagioni concertistiche"
+    - "Cerimonie e ricorrenze ufficiali"
 lineup:
     - name: Legni
       instruments:

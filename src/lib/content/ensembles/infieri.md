@@ -2,6 +2,9 @@
 title: Orchestra Infieri
 summary: "Il progetto sinfonico dedicato agli studenti e ai giovani musicisti, per vivere l'esperienza dell'orchestra."
 order: 3
+occasions:
+    - "Concerti sinfonici in teatri e auditorium"
+    - "Programmi di grandi classici e colonne sonore"
 lineup:
     - name: Archi
       instruments:

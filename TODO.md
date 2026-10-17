@@ -65,6 +65,8 @@ Nuovi musicisti (`support/volunteer`):
 
 ## Altri punti aperti
 
+- Pagina degli ingaggi (`/booking`): sostituire i segnaposto di «Cosa serve sapere» (zona, preavviso, esigenze tecniche, costi) e far confermare ai gruppi le occasioni di ogni ensemble (`occasions` nei file Markdown). Più avanti: «Dove abbiamo suonato» con gli eventi passati più importanti, e decidere se mettere «Ingaggi» nel menu (il design system ammette fino a cinque voci).
+
 - Foto delle formazioni (ci sono già, da scegliere): una per ensemble nella sua pagina, in duotone come la hero, e usata anche come anteprima Open Graph della pagina (oggi tutte le pagine condividono `anteprima.jpg`). Poi foto vere per eventi e notizie quando ci sono. Niente copertine sulle pagine di servizio (contatti, moduli, informative).
 
 - Modulo di adesione (`support/join`): non indica come e quando versare la quota associativa (oggi dice solo "l'esito ti verrà comunicato via email") — manca l'istruzione di pagamento.

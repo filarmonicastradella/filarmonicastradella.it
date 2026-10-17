@@ -35,3 +35,5 @@
         {/snippet}
     </TimelineSections>
 {/if}
+
+<p>Vuoi la Filarmonica al tuo evento? <a href="/booking">Scopri come richiederla</a>.</p>
