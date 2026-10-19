@@ -17,8 +17,8 @@
     <p>
         Alessandro Stradella è uno dei compositori più importanti del Seicento italiano: scrisse cantate, oratori, opere e musica strumentale, tra cui
         l'oratorio <i>San Giovanni Battista</i>. Nacque a Bologna il <time datetime="1643-07-03">3 luglio 1643</time>, dove la famiglia, che viveva a
-        Nepi, si era rifugiata durante la guerra di Castro<sup><a href="#fonte-1" id="rimando-1a" aria-label="Fonte 1">1</a></sup>. Crebbe a Roma, lavorò per le grandi famiglie romane e poi a Genova, dove morì il
-        <time datetime="1682-02-25">25 febbraio 1682</time>, ucciso in un agguato per motivi mai chiariti<sup><a href="#fonte-1" id="rimando-1b" aria-label="Fonte 1">1</a></sup>.
+        Nepi, si era rifugiata durante la guerra di Castro<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1a" aria-label="Fonte 1">1</a></sup>. Crebbe a Roma, lavorò per le grandi famiglie romane e poi a Genova, dove morì il
+        <time datetime="1682-02-25">25 febbraio 1682</time>, ucciso in un agguato per motivi mai chiariti<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1b" aria-label="Fonte 1">1</a></sup>.
     </p>
     <p>
         La sua vita avventurosa ha ispirato romanzi, melodrammi e perfino un film. Per conoscerla meglio c'è la sua
@@ -33,12 +33,12 @@
     <p>
         Gli Stradella erano una famiglia nobile di Fivizzano. Fu un fivizzanese, Alessio, a portarla lontano: educato nel convento degli agostiniani
         del paese, entrò nell'ordine a Genova e divenne uno dei predicatori più stimati del suo tempo. Partecipò al Concilio di Trento e insegnò teologia
-        a Roma, dove tra i suoi allievi ci fu Filippo Neri<sup><a href="#fonte-2" id="rimando-2a" aria-label="Fonte 2">2</a></sup>. Il <time datetime="1575-07-20">20 luglio 1575</time> papa Gregorio XIII lo nominò vescovo di
-        Nepi e Sutri, e il fratello Fulvio lo seguì a Nepi, dove si sposò e mise radici<sup><a href="#fonte-3" id="rimando-3a" aria-label="Fonte 3">3</a></sup>.
+        a Roma, dove tra i suoi allievi ci fu Filippo Neri<sup><a href="#fonte-2" role="doc-noteref" id="rimando-2a" aria-label="Fonte 2">2</a></sup>. Il <time datetime="1575-07-20">20 luglio 1575</time> papa Gregorio XIII lo nominò vescovo di
+        Nepi e Sutri, e il fratello Fulvio lo seguì a Nepi, dove si sposò e mise radici<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3a" aria-label="Fonte 3">3</a></sup>.
     </p>
     <p>
         Nel <time datetime="1580">1580</time> Alessio fu nominato nunzio apostolico a Graz. Durante il viaggio si fermò a Fivizzano, dove morì il
-        <time datetime="1580-08-27">27 agosto</time>: fu sepolto nella chiesa agostiniana di San Giovanni, oggi scomparsa<sup><a href="#fonte-2" id="rimando-2b" aria-label="Fonte 2">2</a></sup>.
+        <time datetime="1580-08-27">27 agosto</time>: fu sepolto nella chiesa agostiniana di San Giovanni, oggi scomparsa<sup><a href="#fonte-2" role="doc-noteref" id="rimando-2b" aria-label="Fonte 2">2</a></sup>.
     </p>
     <dl>
         <dt>Alessio</dt>
@@ -61,23 +61,23 @@
     </p>
 </section>
 
-<section>
-    <h2>Fonti</h2>
+<section role="doc-endnotes" aria-labelledby="fonti">
+    <h2 id="fonti">Fonti</h2>
     <ol>
         <li id="fonte-1">
             Andrea Garavaglia,
             <a href="https://www.treccani.it/enciclopedia/alessandro-stradella_(Dizionario-Biografico)/" target="_blank" rel="noopener noreferrer"
                 >Stradella, Alessandro</a
-            >, Dizionario Biografico degli Italiani, vol. 94, 2019. Torna al testo: <a href="#rimando-1a" aria-label="Torna al rimando a">a</a>, <a href="#rimando-1b" aria-label="Torna al rimando b">b</a>
+            >, Dizionario Biografico degli Italiani, vol. 94, 2019. Torna al testo: <a role="doc-backlink" href="#rimando-1a" aria-label="Torna al rimando a">a</a>, <a role="doc-backlink" href="#rimando-1b" aria-label="Torna al rimando b">b</a>
         </li>
         <li id="fonte-2">
             <a href="https://it.wikipedia.org/wiki/Alessio_Stradella" target="_blank" rel="noopener noreferrer">Alessio Stradella</a>, Wikipedia.
-            Torna al testo: <a href="#rimando-2a" aria-label="Torna al rimando a">a</a>, <a href="#rimando-2b" aria-label="Torna al rimando b">b</a>
+            Torna al testo: <a role="doc-backlink" href="#rimando-2a" aria-label="Torna al rimando a">a</a>, <a role="doc-backlink" href="#rimando-2b" aria-label="Torna al rimando b">b</a>
         </li>
         <li id="fonte-3">
             Saverio Franchi, <a href="https://www.gentedituscia.it/stradella-alessio/" target="_blank" rel="noopener noreferrer">Stradella Alessio</a>
             e <a href="https://www.gentedituscia.it/stradella-alessandro/" target="_blank" rel="noopener noreferrer">Stradella Alessandro</a>,
-            Dizionario Storico Biografico della Tuscia. <a href="#rimando-3a">Torna al testo</a>
+            Dizionario Storico Biografico della Tuscia. <a role="doc-backlink" href="#rimando-3a">Torna al testo</a>
         </li>
     </ol>
 </section>
