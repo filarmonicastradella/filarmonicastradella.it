@@ -41,6 +41,18 @@
         dell'Auditore Fiscale di Firenze. Nel <time datetime="1780-11">novembre 1780</time> il gruppo tiene un concerto solenne per la festa di Santa
         Cecilia, patrona dei musicisti.
     </p>
+    <p>
+        In quegli anni la Filarmonica è un'accademia, l'Accademia de' Filarmonici Dissonanti, promossa dal conte Odoardo Fantoni: un circolo di nobili e
+        dilettanti guidato da un «principe», carica ricoperta tra gli altri dal marchese Carlo Emanuele Malaspina di Fosdinovo. Il motto inciso sui suoi
+        diplomi spiega il nome: «Le dissonanze in un accordo solo». Gli Accademici suonano e cantano nelle grandi feste del paese, spesso con musiche
+        composte e dirette da don Antonio Lamberti, maestro di cappella di scuola napoletana e membro dell'Accademia: nell'aprile
+        <time datetime="1781-04">1781</time> la Gazzetta Toscana ricorda la musica «fatta eseguire dagli Accademici Filarmonici» per le esequie
+        dell'imperatrice Maria Teresa.
+    </p>
+    <p>
+        Nel <time datetime="1872">1872</time> la statistica ufficiale del Regno d'Italia la conterà tra le quattro accademie filarmoniche più antiche del
+        Paese, accanto a Santa Cecilia di Roma, alla Filarmonica di Bologna e all'Accademia di Alba.
+    </p>
     <figure>
         <enhanced:img src={altaCappellaImg} alt="Musicisti di una formazione di alta cappella" {sizes} />
         <figcaption>Una formazione di alta cappella, tipica del Settecento.</figcaption>

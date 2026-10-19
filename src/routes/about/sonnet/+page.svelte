@@ -24,8 +24,10 @@
         di Stefano Frediani.
     </p>
     <p>
-        Non sappiamo con certezza che rapporto avessero i Dissonanti con la Filarmonica, attiva a Fivizzano negli stessi anni: l'ipotesi è che le due
-        realtà fossero intrecciate, con musicisti e attività in comune.
+        I Dissonanti sono la Filarmonica stessa, nella sua forma settecentesca di accademia. Lo confermano le fonti dell'Ottocento: nel
+        <time datetime="1872">1872</time> la statistica ufficiale del Regno d'Italia ricorda l'Accademia filarmonica di Fivizzano, «fondata nel 1779 dal
+        Cav. Odoardo Fantoni», e nel <time datetime="1887">1887</time> la Gazzetta musicale di Milano la chiama ancora «Società Filarmonica dei Dissonanti
+        di Fivizzano, fondata nel 1779».
     </p>
     <p>
         Il sonetto racconta Cecilia nel giorno delle nozze: mentre fuori suonano le trombe della festa, lei prega in una cella di restare pura, e un angelo
