@@ -65,6 +65,8 @@ Nuovi musicisti (`support/volunteer`):
 
 ## Altri punti aperti
 
+- Pagina su Alessandro Stradella (`/about/stradella`): chi era in breve, la famiglia e Fivizzano, la Casa degli Stradella e la targa del 1997, perché il nome nel 1996. Da scrivere solo dopo la ricerca sul legame Stradella-Fivizzano (Vault, «Storia - piano di ricerca», punto 7: De Carlo, Opera omnia, Dizionario della Tuscia). Con la stessa ricerca verificare le frasi già presenti nella Storia, sezione «Il nome».
+
 - Orchestra Infieri: rivedere il testo della pagina dopo la riscrittura del 19/10 («orchestra mista») e le occasioni nella pagina degli ingaggi.
 
 - Pagina degli ingaggi (`/booking`): sostituire i segnaposto di «Cosa serve sapere» (zona, preavviso, esigenze tecniche, costi) e far confermare ai gruppi le occasioni di ogni ensemble (`occasions` nei file Markdown). Più avanti: «Dove abbiamo suonato» con gli eventi passati più importanti, e decidere se mettere «Ingaggi» nel menu (il design system ammette fino a cinque voci).
