@@ -51,7 +51,7 @@
 <section>
     <h2>Chi siamo</h2>
     <p>
-        Dal 1777 la Filarmonica fa musica a Fivizzano, in Lunigiana: una storia lunga quasi due secoli e mezzo. Oggi riunisce quattro formazioni (orchestra, orchestra di fiati, musica antica e street band) e porta il suo repertorio nelle sale e nelle piazze del territorio.
+        Dal 1777 la Filarmonica fa musica a Fivizzano, in Lunigiana: una storia lunga quasi due secoli e mezzo. Oggi riunisce quattro formazioni (Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti) e porta il suo repertorio nelle sale e nelle piazze del territorio.
     </p>
     <p><a href="/about">Scopri l'associazione</a></p>
 </section>
@@ -79,7 +79,7 @@
             <a href="/about/ensembles">
                 <h3>Gli Ensemble</h3>
                 <p>
-                    Una concert band, una street band, un'orchestra sinfonica giovanile e un gruppo di musica antica e barocca: quattro ensemble per suonare insieme.
+                    Quattro formazioni per suonare insieme: Stradella Facendo, la nostra orchestra di fiati; la Streetella Band; l'Orchestra Infieri; i Filarmonici Dissonanti.
                 </p>
             </a>
         </li>

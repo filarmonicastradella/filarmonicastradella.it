@@ -10,7 +10,8 @@
 <header>
     <h1>Ensemble</h1>
     <p>
-        Una concert band, una street band, un'orchestra sinfonica giovanile e un gruppo di musica antica e barocca: quattro ensemble per suonare insieme.
+        Quattro formazioni per suonare insieme: Stradella Facendo, la nostra orchestra di fiati; la Streetella Band; l'Orchestra Infieri; i Filarmonici
+        Dissonanti.
     </p>
 </header>
 

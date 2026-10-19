@@ -89,6 +89,10 @@
         barocco la cui famiglia era originaria di Fivizzano. In paese la Casa degli Stradella, vicino alle mura medicee, lo ricorda con una targa posta nel
         <time datetime="1997">1997</time>.
     </p>
+    <p>
+        Dalla fine degli anni Novanta l'attività si interrompe e per quasi trent'anni la Filarmonica resta in silenzio. Nel
+        <time datetime="2026">2026</time> viene rifondata, per offrire a ragazzi e adulti del territorio un luogo dove continuare a suonare insieme.
+    </p>
     <figure>
         <!-- SEGNAPOSTO: il file si chiama anni_80 ma la didascalia dice anni Novanta: verificare il decennio. -->
         <enhanced:img src={anni80Img} alt="Foto di gruppo dei musicisti della Filarmonica" {sizes} loading="lazy" />
@@ -99,12 +103,13 @@
 <section id="oggi">
     <h2>Oggi</h2>
     <p>
-        Oggi la Filarmonica riunisce quattro formazioni: un'orchestra sinfonica giovanile, una concert band, un ensemble di musica antica e una street band. Dal
+        Oggi la Filarmonica riunisce quattro formazioni: Stradella Facendo, la nostra orchestra di fiati; la Streetella Band; l'Orchestra Infieri; i
+        Filarmonici Dissonanti. Dal
         repertorio barocco alle marce per la strada, porta la musica nelle sale e nelle piazze della Lunigiana.
     </p>
     <p>
-        <a href="/about/ensembles/infieri">Orchestra sinfonica giovanile</a>, <a href="/about/ensembles/stradella-facendo">Concert band</a>,
-        <a href="/about/ensembles/filarmonici-dissonanti">Ensemble di musica antica</a>, <a href="/about/ensembles/streetella-band">Street band</a>.
+        <a href="/about/ensembles/stradella-facendo">Stradella Facendo</a>, <a href="/about/ensembles/streetella-band">Streetella Band</a>,
+        <a href="/about/ensembles/infieri">Orchestra Infieri</a>, <a href="/about/ensembles/filarmonici-dissonanti">Filarmonici Dissonanti</a>.
     </p>
     <figure>
         <enhanced:img src={oggiImg} alt="L'orchestra Infieri in concerto" {sizes} loading="lazy" />

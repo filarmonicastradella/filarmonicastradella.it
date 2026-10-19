@@ -1,20 +1,34 @@
 <svelte:head>
     <title>Sostienici — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="Tutti i modi per sostenere la Filarmonica Alessandro Stradella APS: iscriversi, donare o fare volontariato." />
+    <meta name="description" content="Come sostenere la Filarmonica Alessandro Stradella APS, iscrivendoti o con una donazione, e che cosa coprono quote e donazioni." />
 </svelte:head>
 
 <header>
     <h1>Sostienici</h1>
     <p>
-        Il sostegno di soci, amici e donatori è fondamentale per permettere all'associazione di continuare la propria attività musicale, promuovere la formazione dei giovani e custodire la nostra tradizione.
+        Suonare costa, e chi suona da solo lo sa bene. Con le quote dei soci e le donazioni la Filarmonica si fa carico di ciò che un singolo musicista
+        difficilmente potrebbe sostenere.
     </p>
 </header>
+
+<section>
+    <h2>Che cosa copre il tuo sostegno</h2>
+    <ul>
+        <li>Lo strumento, per chi non ne ha uno suo.</li>
+        <li>Le parti e il materiale di cartoleria.</li>
+        <li>La sala prove e il suo riscaldamento.</li>
+        <li>L'impianto audio.</li>
+        <li>I diritti SIAE dei concerti.</li>
+        <li>L'assicurazione dei soci.</li>
+    </ul>
+    <p>Mettendo insieme le risorse di tutti, ognuno può dedicarsi a ciò che conta: suonare. E ogni euro resta qui, nelle persone.</p>
+</section>
 
 <ul>
     <li>
         <a href="/support/join">
             <h2>Diventa socio</h2>
-            <p>Entra a far parte della nostra grande famiglia musicale e partecipa alla vita dell'associazione.</p>
+            <p>Con la quota annuale di 12 € entri nell'associazione e puoi suonare nelle nostre formazioni.</p>
         </a>
     </li>
     <li>

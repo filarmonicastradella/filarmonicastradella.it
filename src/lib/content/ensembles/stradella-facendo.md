@@ -1,6 +1,6 @@
 ---
 title: Stradella Facendo
-summary: "La concert band della Filarmonica, dedicata al repertorio da concerto e alla cura del dettaglio sonoro."
+summary: "L'orchestra di fiati della Filarmonica, dedicata al repertorio da concerto e alla cura del dettaglio sonoro."
 order: 1
 occasions:
     - "Concerti in teatri, chiese e sale"
@@ -24,6 +24,6 @@ lineup:
           - Timpani e altre percussioni
 ---
 
-Stradella Facendo è la concert band della Filarmonica, dedicata all'esecuzione di repertorio da concerto, pensato per l'ascolto in contesti formali e in spazi chiusi o comunque predisposti all'esecuzione musicale in condizioni acustiche controllate. A differenza delle formazioni itineranti, si concentra esclusivamente sulla dimensione musicale, con una struttura stabile sul palco che permette maggiore attenzione al dettaglio sonoro, all'equilibrio tra le sezioni e alla qualità interpretativa.
+Stradella Facendo è l'orchestra di fiati della Filarmonica, dedicata all'esecuzione di repertorio da concerto, pensato per l'ascolto in contesti formali e in spazi chiusi o comunque predisposti all'esecuzione musicale in condizioni acustiche controllate. A differenza delle formazioni itineranti, si concentra esclusivamente sulla dimensione musicale, con una struttura stabile sul palco che permette maggiore attenzione al dettaglio sonoro, all'equilibrio tra le sezioni e alla qualità interpretativa.
 
 Il repertorio è ampio e variegato: comprende trascrizioni di musica classica, composizioni originali per orchestra di fiati, brani contemporanei e arrangiamenti di musica moderna. L'obiettivo è valorizzare le possibilità espressive dell'orchestra di fiati, offrendo programmi musicali di alto livello artistico. Stradella Facendo rappresenta il cuore dell'attività concertistica della Filarmonica.
