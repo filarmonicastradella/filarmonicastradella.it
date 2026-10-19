@@ -77,7 +77,7 @@
         [Da riattivare insieme a /about/ensembles:
         <li>
             <a href="/about/ensembles">
-                <h3>Gli Ensemble</h3>
+                <h3>Le nostre formazioni</h3>
                 <p>
                     Quattro formazioni per suonare insieme: Stradella Facendo, la nostra orchestra di fiati; la Streetella Band; l'Orchestra Infieri; i Filarmonici Dissonanti.
                 </p>

@@ -31,7 +31,7 @@
     </li>
     <li>
         <a href="/about/ensembles">
-            <h2>Ensemble</h2>
+            <h2>Le nostre formazioni</h2>
             <p>Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti.</p>
         </a>
     </li>

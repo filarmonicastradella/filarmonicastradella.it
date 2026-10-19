@@ -3,12 +3,12 @@
 </script>
 
 <svelte:head>
-    <title>Ensemble — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="Gli ensemble della Filarmonica Alessandro Stradella: Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti." />
+    <title>Le nostre formazioni — Filarmonica Alessandro Stradella APS</title>
+    <meta name="description" content="Le formazioni della Filarmonica Alessandro Stradella: Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti." />
 </svelte:head>
 
 <header>
-    <h1>Ensemble</h1>
+    <h1>Le nostre formazioni</h1>
     <p>
         Quattro formazioni per suonare insieme: Stradella Facendo, la nostra orchestra di fiati; la Streetella Band; l'Orchestra Infieri; i Filarmonici
         Dissonanti.
