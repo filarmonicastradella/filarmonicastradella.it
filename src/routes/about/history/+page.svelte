@@ -47,8 +47,13 @@
         diplomi spiega il nome: «Le dissonanze in un accordo solo»<sup><a href="#fonte-4" role="doc-noteref" id="rimando-4a" aria-label="Fonte 4">4</a></sup>. Gli Accademici suonano e cantano nelle grandi feste del paese, spesso con musiche
         composte e dirette da don Antonio Lamberti, maestro di cappella di scuola napoletana e membro dell'Accademia<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5a" aria-label="Fonte 5">5</a></sup>: nell'aprile
         <time datetime="1781-04">1781</time> la Gazzetta Toscana ricorda la musica «fatta eseguire dagli Accademici Filarmonici» per le esequie
-        dell'imperatrice Maria Teresa<sup><a href="#fonte-6" role="doc-noteref" id="rimando-6a" aria-label="Fonte 6">6</a></sup>. Di quegli anni resta anche un <a href="/about/sonnet">sonetto a stampa per Santa Cecilia</a>, del
-        <time datetime="1789">1789</time>.
+        dell'imperatrice Maria Teresa<sup><a href="#fonte-6" role="doc-noteref" id="rimando-6a" aria-label="Fonte 6">6</a></sup>.
+    </p>
+    <p>
+        Il <time datetime="1786-07-15">15 luglio 1786</time> lo stesso Pietro Leopoldo, in visita a Fivizzano, ascolta nella chiesa parrocchiale il
+        Te Deum «accompagnato con scelta, e nuova Musica dagli Accademici Filarmonici»<sup><a href="#fonte-7" role="doc-noteref" id="rimando-7a" aria-label="Fonte 7">7</a></sup>. Il <time datetime="1789-05-03">3 maggio
+        1789</time>, per la festa di Santa Cecilia, l'Accademia esegue una Messa di Giuseppe Sarti diretta dal giovane maestro di cappella Angiolo
+        Battaglia, e distribuisce il <a href="/about/sonnet">sonetto a stampa</a> che è arrivato fino a noi<sup><a href="#fonte-8" role="doc-noteref" id="rimando-8a" aria-label="Fonte 8">8</a></sup>.
     </p>
     <p>
         Nel <time datetime="1872">1872</time> la statistica ufficiale del Regno d'Italia la conterà tra le quattro accademie filarmoniche più antiche del
@@ -81,12 +86,12 @@
     <p>
         Intorno agli anni Venti due bande attive in paese si uniscono e danno alla Filarmonica la sua forma moderna. L'attività continua anche dopo il
         terremoto del <time datetime="1934-06">giugno 1934</time> e negli anni della guerra, dall'<time datetime="1934-11-11">11 novembre 1934</time>
-        sotto l'Opera Nazionale Dopolavoro<sup><a href="#fonte-7" role="doc-noteref" id="rimando-7a" aria-label="Fonte 7">7</a></sup>.
+        sotto l'Opera Nazionale Dopolavoro<sup><a href="#fonte-9" role="doc-noteref" id="rimando-9a" aria-label="Fonte 9">9</a></sup>.
     </p>
     <p>
         Nel dopoguerra Fivizzano torna un punto di riferimento: l'<time datetime="1970-01-11">11 gennaio 1970</time> ospita il convegno delle bande di
         Lunigiana e Garfagnana e il <time datetime="1970-07-19">19 luglio</time> dello stesso anno inaugura il primo Concorso bandistico «Città di
-        Fivizzano»<sup><a href="#fonte-7" role="doc-noteref" id="rimando-7b" aria-label="Fonte 7">7</a></sup>. Nel <time datetime="1987-06">giugno 1987</time> la Filarmonica festeggia 210 anni<sup><a href="#fonte-7" role="doc-noteref" id="rimando-7c" aria-label="Fonte 7">7</a></sup>.
+        Fivizzano»<sup><a href="#fonte-9" role="doc-noteref" id="rimando-9b" aria-label="Fonte 9">9</a></sup>. Nel <time datetime="1987-06">giugno 1987</time> la Filarmonica festeggia 210 anni<sup><a href="#fonte-9" role="doc-noteref" id="rimando-9c" aria-label="Fonte 9">9</a></sup>.
     </p>
     <figure>
         <enhanced:img src={anni30Img} alt="Foto di gruppo dei musicisti della Filarmonica con i loro strumenti" {sizes} loading="lazy" />
@@ -97,10 +102,11 @@
 <section id="nome">
     <h2>Il nome</h2>
     <p>
-        Nel <time datetime="1996">1996</time> la Filarmonica prende il nome di
+        Alla fine degli anni Novanta la Filarmonica prende il nome di
         <a href="/about/stradella">Alessandro Stradella</a>, il compositore
-        barocco la cui famiglia era originaria di Fivizzano. In paese la Casa degli Stradella, vicino alle mura medicee, lo ricorda con una targa posta nel
-        <time datetime="1997">1997</time>.
+        barocco la cui famiglia era originaria di Fivizzano. Il <time datetime="1997-12-06">6 dicembre 1997</time> la Filarmonica e il Comune dedicano
+        a Stradella una giornata di studio e di musica, «Le origini ritrovate». In paese la Casa degli Stradella, vicino alle mura medicee, lo ricorda
+        con una targa posta nello stesso anno.
     </p>
     <p>
         Dalla fine degli anni Novanta l'attività si interrompe e per quasi trent'anni la Filarmonica resta in silenzio. Nel
@@ -151,7 +157,9 @@
         <li id="fonte-4">Rino Barbieri, <i>Il Teatro-Cinema di Fivizzano. Note per una rinascita</i>. <a role="doc-backlink" href="#rimando-4a">Torna al testo</a></li>
         <li id="fonte-5"><i>Cronaca di Fivizzano dal 1799 al 1833</i> e <i>Contributo alla vita di Giovanni Fantoni</i>. <a role="doc-backlink" href="#rimando-5a">Torna al testo</a></li>
         <li id="fonte-6"><i>Gazzetta Toscana</i>, tomo XVI, 1781. <a role="doc-backlink" href="#rimando-6a">Torna al testo</a></li>
-        <li id="fonte-7">lunigiana.net, <i>Cento anni in Lunigiana</i>. Torna al testo: <a role="doc-backlink" href="#rimando-7a" aria-label="Torna al rimando a">a</a>, <a role="doc-backlink" href="#rimando-7b" aria-label="Torna al rimando b">b</a>, <a role="doc-backlink" href="#rimando-7c" aria-label="Torna al rimando c">c</a></li>
+        <li id="fonte-7"><i>Gazzetta Toscana</i>, tomo XXI, 1786, corrispondenza «Fivizzano 18 luglio». <a role="doc-backlink" href="#rimando-7a">Torna al testo</a></li>
+        <li id="fonte-8"><i>Gazzetta Toscana</i>, tomo XXIV, 1789, corrispondenza «Fivizzano 3 maggio». <a role="doc-backlink" href="#rimando-8a">Torna al testo</a></li>
+        <li id="fonte-9">lunigiana.net, <i>Cento anni in Lunigiana</i>. Torna al testo: <a role="doc-backlink" href="#rimando-9a" aria-label="Torna al rimando a">a</a>, <a role="doc-backlink" href="#rimando-9b" aria-label="Torna al rimando b">b</a>, <a role="doc-backlink" href="#rimando-9c" aria-label="Torna al rimando c">c</a></li>
     </ol>
     <p>
         Per approfondire: Duino Ceschi, <i>Giovanni Fantoni e l'Accademia di Belle Arti di Carrara […] e le Accademie Letteraria Lunense e dei

@@ -65,7 +65,7 @@ Nuovi musicisti (`support/volunteer`):
 
 ## Altri punti aperti
 
-- Storia: le fonti in fondo vengono dal Vault («Storia - fonti.md», da verificare sugli originali). Senza fonte restano il concerto per Santa Cecilia del novembre 1780, l'unione di due bande negli anni Venti e il nome del 1996 (solo bandamusicale.it): trovare la fonte o sfumare.
+- Storia: le fonti in fondo vengono dal Vault («Storia - fonti.md», da verificare sugli originali). Senza fonte restano l'unione di due bande negli anni Venti (solo bandamusicale.it) e la data del nome Stradella: bandamusicale.it dice 1996, ma la locandina del 6 dicembre 1997 porta ancora «Società Filarmonica Fivizzano», quindi per ora il testo dice «alla fine degli anni Novanta». Trovare la fonte (verbale, statuto, giornale) e precisare.
 
 - Pagina su Alessandro Stradella (`/about/stradella`): creata il 19/10 su Dizionario Biografico degli Italiani (Garavaglia 2019), Wikipedia e Dizionario della Tuscia. Nascita: Bologna, 3 luglio 1643 (atto di battesimo, Mingozzi 2018), non Nepi 1639. Eventuali approfondimenti: Gerini 1829, pp. 136-137 (Alessio); Gianturco 2007.
 

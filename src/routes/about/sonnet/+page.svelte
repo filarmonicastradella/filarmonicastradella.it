@@ -24,6 +24,12 @@
         di Stefano Frediani.
     </p>
     <p>
+        La festa si tenne il <time datetime="1789-05-03">3 maggio 1789</time> nella chiesa prepositurale di Fivizzano. La Gazzetta Toscana racconta che
+        l'Accademia eseguì «la Messa composta dal celebre Sig. Sarti», cioè Giuseppe Sarti, e i Vespri «di scelta Musica», sotto la direzione del
+        giovane maestro di cappella Angiolo Battaglia, e che durante la festa «vennero dispensati dei Sonetti analoghi», dedicati al marchese di
+        Fosdinovo, «attual degnissimo Capo dell'Accademia». Il nostro foglio è uno di quei sonetti.
+    </p>
+    <p>
         I Dissonanti sono la Filarmonica stessa, nella sua forma settecentesca di accademia. Lo confermano le fonti dell'Ottocento: nel
         <time datetime="1872">1872</time> la statistica ufficiale del Regno d'Italia ricorda l'Accademia filarmonica di Fivizzano, «fondata nel 1779 dal
         Cav. Odoardo Fantoni», e nel <time datetime="1887">1887</time> la Gazzetta musicale di Milano la chiama ancora «Società Filarmonica dei Dissonanti
