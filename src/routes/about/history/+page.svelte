@@ -38,21 +38,21 @@
     </p>
     <p>
         Per la «Filarmonica di Canto e Suono» il riconoscimento arriva il <time datetime="1779-08-03">3 agosto 1779</time>, con l'approvazione
-        dell'Auditore Fiscale di Firenze. Nel <time datetime="1780-11">novembre 1780</time> il gruppo tiene un concerto solenne per la festa di Santa
+        dell'Auditore Fiscale di Firenze<sup><a href="#fonte-1" id="rimando-1a" aria-label="Fonte 1">1</a></sup>. Il <time datetime="1781-02-04">4 febbraio 1781</time> il gruppo tiene un concerto solenne per la festa di Santa
         Cecilia, patrona dei musicisti.
     </p>
     <p>
-        In quegli anni la Filarmonica è un'accademia, l'Accademia de' Filarmonici Dissonanti, promossa dal conte Odoardo Fantoni: un circolo di nobili e
+        In quegli anni la Filarmonica è un'accademia, l'Accademia de' Filarmonici Dissonanti<sup><a href="#fonte-2" id="rimando-2a" aria-label="Fonte 2">2</a></sup>, promossa dal conte Odoardo Fantoni<sup><a href="#fonte-3" id="rimando-3a" aria-label="Fonte 3">3</a></sup>: un circolo di nobili e
         dilettanti guidato da un «principe», carica ricoperta tra gli altri dal marchese Carlo Emanuele Malaspina di Fosdinovo. Il motto inciso sui suoi
-        diplomi spiega il nome: «Le dissonanze in un accordo solo». Gli Accademici suonano e cantano nelle grandi feste del paese, spesso con musiche
-        composte e dirette da don Antonio Lamberti, maestro di cappella di scuola napoletana e membro dell'Accademia: nell'aprile
+        diplomi spiega il nome: «Le dissonanze in un accordo solo»<sup><a href="#fonte-4" id="rimando-4a" aria-label="Fonte 4">4</a></sup>. Gli Accademici suonano e cantano nelle grandi feste del paese, spesso con musiche
+        composte e dirette da don Antonio Lamberti, maestro di cappella di scuola napoletana e membro dell'Accademia<sup><a href="#fonte-5" id="rimando-5a" aria-label="Fonte 5">5</a></sup>: nell'aprile
         <time datetime="1781-04">1781</time> la Gazzetta Toscana ricorda la musica «fatta eseguire dagli Accademici Filarmonici» per le esequie
-        dell'imperatrice Maria Teresa. Di quegli anni resta anche un <a href="/about/sonnet">sonetto a stampa per Santa Cecilia</a>, del
+        dell'imperatrice Maria Teresa<sup><a href="#fonte-6" id="rimando-6a" aria-label="Fonte 6">6</a></sup>. Di quegli anni resta anche un <a href="/about/sonnet">sonetto a stampa per Santa Cecilia</a>, del
         <time datetime="1789">1789</time>.
     </p>
     <p>
         Nel <time datetime="1872">1872</time> la statistica ufficiale del Regno d'Italia la conterà tra le quattro accademie filarmoniche più antiche del
-        Paese, accanto a Santa Cecilia di Roma, alla Filarmonica di Bologna e all'Accademia di Alba.
+        Paese, accanto a Santa Cecilia di Roma, alla Filarmonica di Bologna e all'Accademia di Alba<sup><a href="#fonte-3" id="rimando-3b" aria-label="Fonte 3">3</a></sup>.
     </p>
     <figure>
         <enhanced:img src={altaCappellaImg} alt="Musicisti di una formazione di alta cappella" {sizes} />
@@ -68,7 +68,7 @@
     </p>
     <p>
         Il <time datetime="1831-08-24">24 agosto 1831</time> il granduca di Toscana riconosce la Filarmonica come banda musicale ufficiale di Fivizzano e
-        concede ai musicisti un'uniforme: da allora rappresentano la città nelle occasioni pubbliche.
+        concede ai musicisti un'uniforme<sup><a href="#fonte-1" id="rimando-1b" aria-label="Fonte 1">1</a></sup>: da allora rappresentano la città nelle occasioni pubbliche.
     </p>
     <figure>
         <enhanced:img src={ottocentoImg} alt="Musicisti di una banda dell'Ottocento in uniforme" {sizes} loading="lazy" />
@@ -81,12 +81,12 @@
     <p>
         Intorno agli anni Venti due bande attive in paese si uniscono e danno alla Filarmonica la sua forma moderna. L'attività continua anche dopo il
         terremoto del <time datetime="1934-06">giugno 1934</time> e negli anni della guerra, dall'<time datetime="1934-11-11">11 novembre 1934</time>
-        sotto l'Opera Nazionale Dopolavoro.
+        sotto l'Opera Nazionale Dopolavoro<sup><a href="#fonte-7" id="rimando-7a" aria-label="Fonte 7">7</a></sup>.
     </p>
     <p>
         Nel dopoguerra Fivizzano torna un punto di riferimento: l'<time datetime="1970-01-11">11 gennaio 1970</time> ospita il convegno delle bande di
         Lunigiana e Garfagnana e il <time datetime="1970-07-19">19 luglio</time> dello stesso anno inaugura il primo Concorso bandistico «Città di
-        Fivizzano». Nel <time datetime="1987-06">giugno 1987</time> la Filarmonica festeggia 210 anni.
+        Fivizzano»<sup><a href="#fonte-7" id="rimando-7b" aria-label="Fonte 7">7</a></sup>. Nel <time datetime="1987-06">giugno 1987</time> la Filarmonica festeggia 210 anni<sup><a href="#fonte-7" id="rimando-7c" aria-label="Fonte 7">7</a></sup>.
     </p>
     <figure>
         <enhanced:img src={anni30Img} alt="Foto di gruppo dei musicisti della Filarmonica con i loro strumenti" {sizes} loading="lazy" />
@@ -141,20 +141,20 @@
 
 <section>
     <h2>Fonti</h2>
-    <ul>
-        <li>
+    <ol>
+        <li id="fonte-1">
             Prospetto della Società Filarmonica, 1839: Archivio di Stato di Massa, sezione di Pontremoli, <i>Affari diversi di Governo</i>, 1839,
-            vol. 61, citato in Marco Angella, <i>Musica e teatro a Pontremoli nel secondo periodo lorenese</i>.
+            vol. 61, citato in Marco Angella, <i>Musica e teatro a Pontremoli nel secondo periodo lorenese</i>. Torna al testo: <a href="#rimando-1a" aria-label="Torna al rimando a">a</a>, <a href="#rimando-1b" aria-label="Torna al rimando b">b</a>
         </li>
-        <li><i>Gazzetta Toscana</i>, tomo XVI, 1781.</li>
-        <li><i>Istituti e società musicali in Italia</i>, Statistica del Regno d'Italia, dati del 1871-72.</li>
-        <li><i>Gazzetta musicale di Milano</i>, 1887.</li>
-        <li><i>Cronaca di Fivizzano dal 1799 al 1833</i> e <i>Contributo alla vita di Giovanni Fantoni</i>.</li>
-        <li>Rino Barbieri, <i>Il Teatro-Cinema di Fivizzano. Note per una rinascita</i>.</li>
-        <li>lunigiana.net, <i>Cento anni in Lunigiana</i>.</li>
-        <li>
-            Per approfondire: Duino Ceschi, <i>Giovanni Fantoni e l'Accademia di Belle Arti di Carrara […] e le Accademie Letteraria Lunense e dei
-            Filarmonici Dissonanti di Fivizzano</i>, in <i>Atti e Memorie dell'Accademia Aruntica di Carrara</i>, vol. I, 1995, pp. 35-67.
-        </li>
-    </ul>
+        <li id="fonte-2"><i>Gazzetta musicale di Milano</i>, 1887. <a href="#rimando-2a">Torna al testo</a></li>
+        <li id="fonte-3"><i>Istituti e società musicali in Italia</i>, Statistica del Regno d'Italia, dati del 1871-72. Torna al testo: <a href="#rimando-3a" aria-label="Torna al rimando a">a</a>, <a href="#rimando-3b" aria-label="Torna al rimando b">b</a></li>
+        <li id="fonte-4">Rino Barbieri, <i>Il Teatro-Cinema di Fivizzano. Note per una rinascita</i>. <a href="#rimando-4a">Torna al testo</a></li>
+        <li id="fonte-5"><i>Cronaca di Fivizzano dal 1799 al 1833</i> e <i>Contributo alla vita di Giovanni Fantoni</i>. <a href="#rimando-5a">Torna al testo</a></li>
+        <li id="fonte-6"><i>Gazzetta Toscana</i>, tomo XVI, 1781. <a href="#rimando-6a">Torna al testo</a></li>
+        <li id="fonte-7">lunigiana.net, <i>Cento anni in Lunigiana</i>. Torna al testo: <a href="#rimando-7a" aria-label="Torna al rimando a">a</a>, <a href="#rimando-7b" aria-label="Torna al rimando b">b</a>, <a href="#rimando-7c" aria-label="Torna al rimando c">c</a></li>
+    </ol>
+    <p>
+        Per approfondire: Duino Ceschi, <i>Giovanni Fantoni e l'Accademia di Belle Arti di Carrara […] e le Accademie Letteraria Lunense e dei
+        Filarmonici Dissonanti di Fivizzano</i>, in <i>Atti e Memorie dell'Accademia Aruntica di Carrara</i>, vol. I, 1995, pp. 35-67.
+    </p>
 </section>

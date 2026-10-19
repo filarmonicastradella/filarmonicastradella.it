@@ -86,6 +86,22 @@ main li + li {
     margin-block-start: var(--space-2);
 }
 
+/*
+ * Note con le fonti: il numero in apice porta alla fonte nell'elenco numerato in fondo alla pagina, e da lì un
+ * link riporta al testo. L'apice non allarga l'interlinea; la fonte appena raggiunta prende il colore del marchio.
+ */
+sup {
+    line-height: 0;
+}
+
+sup > a {
+    text-decoration: none;
+}
+
+li:target {
+    color: var(--text-brand);
+}
+
 /* ─────────────── Schede ───────────────
  * Una scheda è un elemento di elenco il cui link avvolge un titolo (AGENTS.md): direttamente
  * (<li><a><h3>) o dentro un articolo con microdati (<li><article><a><h3>).
