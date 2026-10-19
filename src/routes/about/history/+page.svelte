@@ -47,7 +47,8 @@
         diplomi spiega il nome: «Le dissonanze in un accordo solo». Gli Accademici suonano e cantano nelle grandi feste del paese, spesso con musiche
         composte e dirette da don Antonio Lamberti, maestro di cappella di scuola napoletana e membro dell'Accademia: nell'aprile
         <time datetime="1781-04">1781</time> la Gazzetta Toscana ricorda la musica «fatta eseguire dagli Accademici Filarmonici» per le esequie
-        dell'imperatrice Maria Teresa.
+        dell'imperatrice Maria Teresa. Di quegli anni resta anche un <a href="/about/sonnet">sonetto a stampa per Santa Cecilia</a>, del
+        <time datetime="1789">1789</time>.
     </p>
     <p>
         Nel <time datetime="1872">1872</time> la statistica ufficiale del Regno d'Italia la conterà tra le quattro accademie filarmoniche più antiche del
