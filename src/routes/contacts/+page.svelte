@@ -16,7 +16,7 @@
     <h2>Recapiti</h2>
     <dl>
         <dt>Telefono</dt>
-        <dd><a href="tel:+393505363110">+39 350 536 3110</a></dd>
+        <dd><a href="tel:+393505363110">+39&nbsp;350&nbsp;536&nbsp;3110</a></dd>
         <dt>Email</dt>
         <dd><a href="mailto:info@filarmonicastradella.it">info@filarmonicastradella.it</a></dd>
         <dt>PEC</dt>

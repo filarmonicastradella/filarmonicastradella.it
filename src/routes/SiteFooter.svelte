@@ -39,7 +39,7 @@
                     <a href={legalSeat.mapsHref} target="_blank" rel="noopener noreferrer">{legalSeat.address.join(", ")}</a>
                 </dd>
                 <dt>Telefono</dt>
-                <dd><a href="tel:+393505363110">+39 350 536 3110</a></dd>
+                <dd><a href="tel:+393505363110">+39&nbsp;350&nbsp;536&nbsp;3110</a></dd>
                 <dt>Email</dt>
                 <dd><a href="mailto:info@filarmonicastradella.it">info@filarmonicastradella.it</a></dd>
                 <dt>PEC</dt>
