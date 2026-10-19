@@ -138,3 +138,23 @@
         accordiamo per l'invio o per farne una copia.
     </p>
 </section>
+
+<section>
+    <h2>Fonti</h2>
+    <ul>
+        <li>
+            Prospetto della Società Filarmonica, 1839: Archivio di Stato di Massa, sezione di Pontremoli, <i>Affari diversi di Governo</i>, 1839,
+            vol. 61, citato in Marco Angella, <i>Musica e teatro a Pontremoli nel secondo periodo lorenese</i>.
+        </li>
+        <li><i>Gazzetta Toscana</i>, tomo XVI, 1781.</li>
+        <li><i>Istituti e società musicali in Italia</i>, Statistica del Regno d'Italia, dati del 1871-72.</li>
+        <li><i>Gazzetta musicale di Milano</i>, 1887.</li>
+        <li><i>Cronaca di Fivizzano dal 1799 al 1833</i> e <i>Contributo alla vita di Giovanni Fantoni</i>.</li>
+        <li>Rino Barbieri, <i>Il Teatro-Cinema di Fivizzano. Note per una rinascita</i>.</li>
+        <li>lunigiana.net, <i>Cento anni in Lunigiana</i>.</li>
+        <li>
+            Per approfondire: Duino Ceschi, <i>Giovanni Fantoni e l'Accademia di Belle Arti di Carrara […] e le Accademie Letteraria Lunense e dei
+            Filarmonici Dissonanti di Fivizzano</i>, in <i>Atti e Memorie dell'Accademia Aruntica di Carrara</i>, vol. I, 1995, pp. 35-67.
+        </li>
+    </ul>
+</section>
