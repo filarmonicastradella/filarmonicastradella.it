@@ -60,9 +60,9 @@
     <p>
         Il <time datetime="1997-12-06">6 dicembre 1997</time> la Società Filarmonica Fivizzano e il Comune, con la Fondazione Cassa di Risparmio di
         Carrara, gli dedicarono una giornata intera: «Alessandro Stradella e la Musica Barocca. Le origini ritrovate». Il pomeriggio, a Palazzo Coiari,
-        una conferenza con Carolyn Gianturco, la studiosa che più di tutti ha fatto conoscere Stradella, e Patrizia Radicchi, che aveva ideato e diretto
-        il progetto; la sera, nella chiesa prepositurale, un concerto di musica barocca con Valeria Baiano (soprano), Renata Sfrisio (violino
-        barocco), Riccardo Martini (violoncello barocco) e Amelia Isabella Bianchi (cembalo)<sup><a href="#fonte-4" role="doc-noteref" id="rimando-4a" aria-label="Fonte 4">4</a></sup>.
+        una conferenza con Carolyn Gianturco, la studiosa che più di tutti ha fatto conoscere Stradella, e Patrizia Radicchi, che su invito della Gianturco aveva ricostruito il ramo
+        fivizzanese della famiglia<sup><a href="#fonte-4" role="doc-noteref" id="rimando-4a" aria-label="Fonte 4">4</a></sup> e aveva ideato e diretto il progetto; la sera, nella chiesa prepositurale, un concerto di musica barocca con Valeria Baiano (soprano), Renata Sfrisio (violino
+        barocco), Riccardo Martini (violoncello barocco) e Amelia Isabella Bianchi (cembalo)<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5a" aria-label="Fonte 5">5</a></sup>.
     </p>
     <p>
         In paese la Casa degli Stradella, vicino alle mura medicee, lo ricorda con una targa posta nello stesso anno. Il resto della
@@ -89,7 +89,10 @@
             Dizionario Storico Biografico della Tuscia. <a role="doc-backlink" href="#rimando-3a">Torna al testo</a>
         </li>
         <li id="fonte-4">
-            Locandina «Alessandro Stradella e la Musica Barocca. Le origini ritrovate», Fivizzano, 6 dicembre 1997. <a role="doc-backlink" href="#rimando-4a">Torna al testo</a>
+            Carolyn Gianturco, <i>Alessandro Stradella, 1639-1682: his life and music</i>, Oxford, Clarendon Press, 1994, ringraziamenti. <a role="doc-backlink" href="#rimando-4a">Torna al testo</a>
+        </li>
+        <li id="fonte-5">
+            Locandina «Alessandro Stradella e la Musica Barocca. Le origini ritrovate», Fivizzano, 6 dicembre 1997. <a role="doc-backlink" href="#rimando-5a">Torna al testo</a>
         </li>
     </ol>
 </section>
