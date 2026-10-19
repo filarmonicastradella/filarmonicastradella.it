@@ -1,4 +1,4 @@
-<!-- Fonti: Dizionario Biografico degli Italiani (A. Garavaglia, 2019), Wikipedia (voce Alessio Stradella), Dizionario Storico Biografico della Tuscia (S. Franchi) -->
+<!-- Fonti: Dizionario Biografico degli Italiani (A. Garavaglia, 2019), Wikipedia (voce Alessio Stradella), Dizionario Storico Biografico della Tuscia (S. Franchi), locandina del 6 dicembre 1997 -->
 <svelte:head>
     <title>Alessandro Stradella — Filarmonica Alessandro Stradella APS</title>
     <meta
@@ -55,8 +55,17 @@
 <section>
     <h2>Il nome della Filarmonica</h2>
     <p>
-        Nel <time datetime="1996">1996</time> la Filarmonica ha preso il nome di Alessandro Stradella, il compositore con le radici a Fivizzano. In
-        paese la Casa degli Stradella, vicino alle mura medicee, lo ricorda con una targa posta nel <time datetime="1997">1997</time>. Il resto della
+        Alla fine degli anni Novanta la Filarmonica ha preso il nome di Alessandro Stradella, il compositore con le radici a Fivizzano.
+    </p>
+    <p>
+        Il <time datetime="1997-12-06">6 dicembre 1997</time> la Società Filarmonica Fivizzano e il Comune, con la Fondazione Cassa di Risparmio di
+        Carrara, gli dedicarono una giornata intera: «Alessandro Stradella e la Musica Barocca. Le origini ritrovate». Il pomeriggio, a Palazzo Coiari,
+        una conferenza con Carolyn Gianturco, la studiosa che più di tutti ha fatto conoscere Stradella, e Patrizia Radicchi, che aveva ideato e diretto
+        il progetto; la sera, nella chiesa prepositurale, un concerto di musica barocca con Valeria Baiano (soprano), Renata Sfrisio (violino
+        barocco), Riccardo Martini (violoncello barocco) e Amelia Isabella Bianchi (cembalo)<sup><a href="#fonte-4" role="doc-noteref" id="rimando-4a" aria-label="Fonte 4">4</a></sup>.
+    </p>
+    <p>
+        In paese la Casa degli Stradella, vicino alle mura medicee, lo ricorda con una targa posta nello stesso anno. Il resto della
         nostra storia è nella pagina <a href="/about/history">La storia</a>.
     </p>
 </section>
@@ -78,6 +87,9 @@
             Saverio Franchi, <a href="https://www.gentedituscia.it/stradella-alessio/" target="_blank" rel="noopener noreferrer">Stradella Alessio</a>
             e <a href="https://www.gentedituscia.it/stradella-alessandro/" target="_blank" rel="noopener noreferrer">Stradella Alessandro</a>,
             Dizionario Storico Biografico della Tuscia. <a role="doc-backlink" href="#rimando-3a">Torna al testo</a>
+        </li>
+        <li id="fonte-4">
+            Locandina «Alessandro Stradella e la Musica Barocca. Le origini ritrovate», Fivizzano, 6 dicembre 1997. <a role="doc-backlink" href="#rimando-4a">Torna al testo</a>
         </li>
     </ol>
 </section>
