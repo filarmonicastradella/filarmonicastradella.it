@@ -24,6 +24,12 @@
         </a>
     </li>
     <li>
+        <a href="/about/stradella">
+            <h2>Alessandro Stradella</h2>
+            <p>Il compositore che dà il nome alla Filarmonica e la sua famiglia di Fivizzano.</p>
+        </a>
+    </li>
+    <li>
         <a href="/about/ensembles">
             <h2>Ensemble</h2>
             <p>Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti.</p>

@@ -65,7 +65,7 @@ Nuovi musicisti (`support/volunteer`):
 
 ## Altri punti aperti
 
-- Pagina su Alessandro Stradella (`/about/stradella`): chi era in breve, la famiglia e Fivizzano, la Casa degli Stradella e la targa del 1997, perché il nome nel 1996. Da scrivere solo dopo la ricerca sul legame Stradella-Fivizzano (Vault, «Storia - piano di ricerca», punto 7: De Carlo, Opera omnia, Dizionario della Tuscia). Con la stessa ricerca verificare le frasi già presenti nella Storia, sezione «Il nome».
+- Pagina su Alessandro Stradella (`/about/stradella`): creata il 19/10 su Dizionario Biografico degli Italiani (Garavaglia 2019), Wikipedia e Dizionario della Tuscia. Nascita: Bologna, 3 luglio 1643 (atto di battesimo, Mingozzi 2018), non Nepi 1639. Eventuali approfondimenti: Gerini 1829, pp. 136-137 (Alessio); Gianturco 2007.
 
 - Orchestra Infieri: rivedere il testo della pagina dopo la riscrittura del 19/10 («orchestra mista») e le occasioni nella pagina degli ingaggi.
 

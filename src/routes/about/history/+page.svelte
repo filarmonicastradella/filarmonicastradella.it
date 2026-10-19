@@ -98,7 +98,7 @@
     <h2>Il nome</h2>
     <p>
         Nel <time datetime="1996">1996</time> la Filarmonica prende il nome di
-        <a href="https://it.wikipedia.org/wiki/Alessandro_Stradella" target="_blank" rel="noopener noreferrer">Alessandro Stradella</a>, il compositore
+        <a href="/about/stradella">Alessandro Stradella</a>, il compositore
         barocco la cui famiglia era originaria di Fivizzano. In paese la Casa degli Stradella, vicino alle mura medicee, lo ricorda con una targa posta nel
         <time datetime="1997">1997</time>.
     </p>
