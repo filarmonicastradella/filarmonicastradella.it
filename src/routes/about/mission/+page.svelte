@@ -27,10 +27,6 @@
         18 anni, e accanto ai più giovani suonano musicisti con decenni di esperienza. Siamo un'associazione di promozione sociale autonoma, iscritta al
         RUNTS e affiliata ad ANBIMA, e lavoriamo con il sostegno del Comune di Fivizzano.
     </p>
-</section>
-
-<section>
-    <h2>Perché siamo rinati</h2>
     <p>
         Nel nostro territorio ci sono insegnanti qualificati e giovani motivati, ma molti ragazzi che hanno studiato uno strumento smettono di suonare
         perché non trovano un luogo dove continuare. La Filarmonica è stata rifondata per essere quel luogo, aperto a ragazzi e adulti insieme, dove la
@@ -47,20 +43,12 @@
         ci sono studenti, lavoratori, pensionati, ragazzi del paese: gente che fa quello che può, e che lo fa con passione. Per questo la Filarmonica è al
         servizio di chi suona, e il concerto non è il fine ma il frutto di un percorso fatto insieme.
     </p>
-</section>
-
-<section>
-    <h2>Una porta aperta</h2>
     <p>
-        Per far parte della Filarmonica basta <a href="/support/join">iscriversi all'associazione</a>, con una quota annuale di 12 €; da soci si può
-        chiedere di entrare nelle formazioni, ognuna con i propri requisiti. L'associazione si fa carico di ciò che un musicista da solo difficilmente
-        potrebbe sostenere, dallo strumento alla sala prove, così ognuno può dedicarsi a ciò che conta: suonare. E soprattutto offriamo ciò che nessuna
-        quota può comprare: un gruppo di persone con cui fare musica.
+        Da noi i titoli di studio restano fuori dalla porta. Facciamo musica con impegno ma senza perfezionismo, in un ambiente sereno dove ci si
+        rispetta e si cresce insieme: chi sa di più accompagna chi sa di meno, e ognuno ha il diritto di imparare e anche quello di insegnare. Quando
+        qualcosa non va cerchiamo il problema nel modo in cui ci organizziamo, non nelle persone; per questo ci siamo dati regole semplici, trasparenti e
+        condivise.
     </p>
-</section>
-
-<section>
-    <h2>Una comunità, non un servizio</h2>
     <p>
         Siamo un'associazione, non un'accademia. A chi entra chiediamo di esserci: di partecipare ad almeno metà delle attività, che siano concerti,
         prove o momenti di vita associativa. Ognuno dà qualcosa, e insieme teniamo in piedi qualcosa che appartiene a tutti. Tutto si regge sul
@@ -69,17 +57,13 @@
 </section>
 
 <section>
-    <h2>Come stiamo insieme</h2>
+    <h2>Come funziona</h2>
     <p>
-        Da noi i titoli di studio restano fuori dalla porta. Facciamo musica con impegno ma senza perfezionismo, in un ambiente sereno dove ci si
-        rispetta e si cresce insieme: chi sa di più accompagna chi sa di meno, e ognuno ha il diritto di imparare e anche quello di insegnare. Quando
-        qualcosa non va cerchiamo il problema nel modo in cui ci organizziamo, non nelle persone; per questo ci siamo dati regole semplici, trasparenti e
-        condivise.
+        Per far parte della Filarmonica basta <a href="/support/join">iscriversi all'associazione</a>, con una quota annuale di 12 €; da soci si può
+        chiedere di entrare nelle formazioni, ognuna con i propri requisiti. L'associazione si fa carico di ciò che un musicista da solo difficilmente
+        potrebbe sostenere, dallo strumento alla sala prove, così ognuno può dedicarsi a ciò che conta: suonare. E soprattutto offriamo ciò che nessuna
+        quota può comprare: un gruppo di persone con cui fare musica.
     </p>
-</section>
-
-<section>
-    <h2>Decidiamo insieme</h2>
     <p>
         Il repertorio nasce dai musicisti: i componenti propongono i brani e i direttori scelgono da quella lista cosa preparare per ogni stagione. I
         direttori sono più di uno e sono musicisti come gli altri: li nomina il Consiglio Direttivo dopo aver consultato i componenti di ogni formazione, e
@@ -97,10 +81,6 @@
         religiosi, ma collaboriamo con le realtà musicali amiche della Lunigiana, le facciamo conoscere e mettiamo in contatto chi vuole suonare con chi
         ha bisogno di musicisti: chi suona con uno strumento della Filarmonica può usarlo anche con loro.
     </p>
-</section>
-
-<section>
-    <h2>Dove vogliamo arrivare</h2>
     <p>
         Sogniamo una Filarmonica con più musicisti e più giovani, e una rete di realtà musicali della Lunigiana che collaborano e si sostengono a
         vicenda: una comunità in cui suonare sia normale, alla portata di tutti, e in cui ogni euro e ogni ora investiti restino qui, nelle persone.
