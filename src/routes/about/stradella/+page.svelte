@@ -14,7 +14,7 @@
 </svelte:head>
 
 <!-- Nella fascia si tiene la parte con il titolo e il nome -->
-<header style="--cover-placeholder: url({serenataPlaceholder}); --cover-position: center 33%">
+<header style="--cover-placeholder: url({serenataPlaceholder}); --cover-position: center 33%; --cover-archive: 1">
     <h1>Alessandro Stradella</h1>
     <p>Il compositore del Seicento che dà il nome alla Filarmonica, e la sua famiglia di Fivizzano.</p>
     <enhanced:img

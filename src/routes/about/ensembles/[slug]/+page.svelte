@@ -10,9 +10,17 @@
     <meta name="description" content={ensemble.summary} />
 </svelte:head>
 
-<header itemscope itemtype="https://schema.org/MusicGroup">
+<header
+    itemscope
+    itemtype="https://schema.org/MusicGroup"
+    style:--cover-placeholder={ensemble.coverImage && `url(${ensemble.coverImage.placeholder})`}
+    style:--cover-position={ensemble.cover?.position}
+>
     <h1 itemprop="name">{ensemble.title}</h1>
     <p itemprop="description">{ensemble.summary}</p>
+    {#if ensemble.coverImage && ensemble.cover}
+        <enhanced:img src={ensemble.coverImage.picture} alt={ensemble.cover.alt} sizes="100vw" fetchpriority="high" itemprop="image" />
+    {/if}
 </header>
 
 <section>
@@ -41,5 +49,9 @@
     <h2>Al tuo evento</h2>
     <p>Vuoi questo ensemble a un concerto, una festa o una cerimonia? <a href="/booking">Scopri come richiederlo</a>.</p>
 </section>
+
+{#if ensemble.coverImage && ensemble.cover}
+    <p>Foto di copertina: © {ensemble.cover.credit}.</p>
+{/if}
 
 <p><a href="/about/ensembles">Tutti gli ensemble</a></p>

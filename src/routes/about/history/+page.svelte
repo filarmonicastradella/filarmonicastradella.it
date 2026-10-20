@@ -17,7 +17,7 @@
 </svelte:head>
 
 <!-- Nella fascia la foto si taglia dal basso: meglio perdere le gambe di chi è seduto che le teste della fila in alto -->
-<header style="--cover-placeholder: url({anni30Placeholder}); --cover-position: top">
+<header style="--cover-placeholder: url({anni30Placeholder}); --cover-position: top; --cover-archive: 1">
     <h1>La storia</h1>
     <p>Dal 1777 a oggi: quasi due secoli e mezzo di musica a Fivizzano.</p>
     <enhanced:img

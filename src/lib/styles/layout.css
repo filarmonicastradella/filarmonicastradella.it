@@ -222,9 +222,11 @@ main > header:has(> picture)::after {
 }
 
 /*
- * In bianco e nero (docs/DESIGN.md, Fotografia). Sotto la foto c'è la sua anteprima sfocata, incorporata
- * nella pagina e indicata dalla pagina stessa in --cover-placeholder: compare subito, e la foto vera ci si
- * posa sopra quando è arrivata. Il trattamento sta sul <picture>, così vale per tutte e due.
+ * Trattamento (docs/DESIGN.md, Fotografia): le foto a colori in duotone, quasi desaturate e con un velo dal
+ * bordeaux notte all'inchiostro; quelle d'archivio in bianco e nero, senza velo, se la pagina lo indica con
+ * --cover-archive: 1 (0, il valore di base, è il duotone). Sotto la foto c'è la sua anteprima sfocata,
+ * incorporata nella pagina e indicata dalla pagina stessa in --cover-placeholder: compare subito, e la foto
+ * vera ci si posa sopra quando è arrivata. Il trattamento sta sul <picture>, così vale per tutte e due.
  */
 main > header > picture {
     position: absolute;
@@ -234,13 +236,13 @@ main > header > picture {
     /* È posizionata: il margine tra gli elementi dell'intestazione la sposterebbe */
     margin: 0;
     background: var(--cover-placeholder) var(--cover-position, center) / cover;
-    filter: grayscale(1) contrast(1.1);
+    filter: grayscale(calc(0.6 + 0.4 * var(--cover-archive, 0))) contrast(calc(1 + 0.1 * var(--cover-archive, 0)));
 }
 
 /*
  * La foto sta "dietro" la pagina: la carta, sopra e sotto, le proietta un'ombra morbida, come una finestra
- * incassata. Ombra ferma, nessun movimento (docs/DESIGN.md, Movimento: niente parallasse). In --cover-shade
- * perché chi aggiunge un velo alla foto (la hero) possa sovrapporlo all'ombra.
+ * incassata. Ombra ferma, nessun movimento (docs/DESIGN.md, Movimento: niente parallasse). Sopra il velo
+ * del duotone.
  */
 main > header:has(> picture) {
     /* Ombra corta e leggera, come di un foglio vicino: più scura sul bordo, svanita in poco spazio */
@@ -248,16 +250,20 @@ main > header:has(> picture) {
         color-mix(in srgb, var(--color-inchiostro) 20%, transparent),
         color-mix(in srgb, var(--color-inchiostro) 6%, transparent) var(--space-2),
         transparent var(--space-5);
-    --cover-shade:
-        linear-gradient(var(--cover-shade-stops)),
-        linear-gradient(to top, var(--cover-shade-stops));
+    --cover-veil-strength: calc(1 - var(--cover-archive, 0));
 }
 
 main > header > picture::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: var(--cover-shade);
+    background:
+        linear-gradient(var(--cover-shade-stops)),
+        linear-gradient(to top, var(--cover-shade-stops)),
+        linear-gradient(
+            color-mix(in srgb, var(--color-bordeaux-notte) calc(45% * var(--cover-veil-strength)), transparent),
+            color-mix(in srgb, var(--color-inchiostro) calc(55% * var(--cover-veil-strength)), transparent)
+        );
 }
 
 /* Il testo alternativo resta per chi usa uno screen reader, ma non si vede scritto mentre la foto si carica */

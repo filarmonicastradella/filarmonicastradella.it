@@ -6,7 +6,7 @@
 
 <!--
     Apertura della home: l'intestazione con foto di tutte le pagine (layout.css, copertina), con la fascia
-    più alta, l'occhiello, il titolo in corpo display, la foto in duotone e la comparsa della prima schermata.
+    più alta, l'occhiello, il titolo in corpo display e la comparsa della prima schermata.
 -->
 <header style="--cover-placeholder: url({wallpaperPlaceholder})">
     <hgroup>
@@ -114,24 +114,6 @@
 
     header > p {
         margin-block-start: var(--space-7);
-    }
-
-    /*
-     * Duotone inchiostro e bordeaux (docs/DESIGN.md, Fotografia): la foto a colori quasi desaturata,
-     * con sopra un velo dal bordeaux notte all'inchiostro.
-     */
-    header > :global(picture) {
-        filter: grayscale(0.6);
-    }
-
-    /* Il velo sotto l'ombra della carta (layout.css) */
-    header > :global(picture)::after {
-        background:
-            var(--cover-shade),
-            linear-gradient(
-                color-mix(in srgb, var(--color-bordeaux-notte) 45%, transparent),
-                color-mix(in srgb, var(--color-inchiostro) 55%, transparent)
-            );
     }
 
     /*
