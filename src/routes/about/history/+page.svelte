@@ -17,6 +17,12 @@
 <header>
     <h1>La storia</h1>
     <p>Dal 1777 a oggi: quasi due secoli e mezzo di musica a Fivizzano.</p>
+    <enhanced:img
+        src={anni30Img}
+        alt="I musicisti della Filarmonica negli anni Trenta, in posa con i loro strumenti"
+        sizes="(min-width: 64rem) 45vw, 100vw"
+        fetchpriority="high"
+    />
 </header>
 
 <nav aria-label="Indice della pagina">
@@ -93,10 +99,6 @@
         Lunigiana e Garfagnana e il <time datetime="1970-07-19">19 luglio</time> dello stesso anno inaugura il primo Concorso bandistico «Città di
         Fivizzano»<sup><a href="#fonte-9" role="doc-noteref" id="rimando-9b" aria-label="Fonte 9">9</a></sup>. Nel <time datetime="1987-06">giugno 1987</time> la Filarmonica festeggia 210 anni<sup><a href="#fonte-9" role="doc-noteref" id="rimando-9c" aria-label="Fonte 9">9</a></sup>.
     </p>
-    <figure>
-        <enhanced:img src={anni30Img} alt="Foto di gruppo dei musicisti della Filarmonica con i loro strumenti" {sizes} loading="lazy" />
-        <figcaption>I musicisti della Filarmonica negli anni Trenta.</figcaption>
-    </figure>
 </section>
 
 <section id="nome">
