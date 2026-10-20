@@ -6,6 +6,7 @@
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
     import anni30Placeholder from "$lib/assets/imgs/anni_30.jpeg?w=24&blur=2&format=webp&inline";
     import anni80Img from "$lib/assets/imgs/anni_80.jpeg?enhanced&w=400;640;800;1280;1600";
+    import anni90CorteoImg from "$lib/assets/imgs/anni_90_corteo.jpeg?enhanced&w=400;640;800;1280;1600";
     import oggiImg from "$lib/assets/imgs/oggi.jpg?enhanced&w=400;640;800;1280;1600";
 
     const sizes = "(min-width: 40rem) 40rem, 100vw";
@@ -121,6 +122,16 @@
         <!-- SEGNAPOSTO: il file si chiama anni_80 ma la didascalia dice anni Novanta: verificare il decennio. -->
         <enhanced:img src={anni80Img} alt="Foto di gruppo dei musicisti della Filarmonica" {sizes} loading="lazy" />
         <figcaption>I musicisti della Filarmonica negli anni Novanta.</figcaption>
+    </figure>
+    <figure>
+        <!-- SEGNAPOSTO: luogo, occasione e anno da verificare (stessa serie d'archivio della foto sopra). -->
+        <enhanced:img
+            src={anni90CorteoImg}
+            alt="La Filarmonica in corteo in una via stretta del paese, in camicia bianca e pantaloni neri: clarinetti e flauto davanti, poi sassofoni e ottoni, dietro un corteo di bambine vestite di bianco e di persone"
+            {sizes}
+            loading="lazy"
+        />
+        <figcaption>La Filarmonica in corteo per le vie del paese, anni Novanta.</figcaption>
     </figure>
 </section>
 
