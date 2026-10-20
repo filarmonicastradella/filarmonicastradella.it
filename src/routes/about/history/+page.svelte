@@ -3,6 +3,8 @@
     import altaCappellaImg from "$lib/assets/imgs/alta_cappella.jpg?enhanced&w=400;640;800;1280;1600";
     import ottocentoImg from "$lib/assets/imgs/ottocento.jpg?enhanced&w=400;640;800;1280;1600";
     import anni30Img from "$lib/assets/imgs/anni_30.jpeg?enhanced&w=400;640;800;1280;1600";
+    // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
+    import anni30Placeholder from "$lib/assets/imgs/anni_30.jpeg?w=24&blur=2&format=webp&inline";
     import anni80Img from "$lib/assets/imgs/anni_80.jpeg?enhanced&w=400;640;800;1280;1600";
     import oggiImg from "$lib/assets/imgs/oggi.jpg?enhanced&w=400;640;800;1280;1600";
 
@@ -14,7 +16,7 @@
     <meta name="description" content="La storia della Filarmonica Alessandro Stradella dal 1777 a oggi: le origini, l'Ottocento, il Novecento, il nome e le formazioni di oggi." />
 </svelte:head>
 
-<header>
+<header style="--cover-placeholder: url({anni30Placeholder})">
     <h1>La storia</h1>
     <p>Dal 1777 a oggi: quasi due secoli e mezzo di musica a Fivizzano.</p>
     <enhanced:img

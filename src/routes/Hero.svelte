@@ -1,12 +1,14 @@
 <script lang="ts">
     import wallpaper from "$lib/assets/wallpaper.webp?enhanced";
+    // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
+    import wallpaperPlaceholder from "$lib/assets/wallpaper.webp?w=24&blur=2&format=webp&inline";
 </script>
 
 <!--
     Apertura della home: è l'intestazione con foto di tutte le pagine (layout.css, copertina), con in più
     l'occhiello, il titolo in corpo display e la comparsa della prima schermata.
 -->
-<header>
+<header style="--cover-placeholder: url({wallpaperPlaceholder})">
     <hgroup>
         <p>Fivizzano · dal 1777</p>
         <h1>Filarmonica <em>Alessandro Stradella</em></h1>
@@ -17,20 +19,16 @@
     <enhanced:img
         src={wallpaper}
         alt="Violinisti in concerto"
-        sizes="(min-width: 64rem) 29rem, 100vw"
+        sizes="(min-width: 64rem) 45vw, 100vw"
         fetchpriority="high"
     />
 </header>
 
 <style>
-    /*
-     * Da 64rem la prima schermata è tutta dell'apertura, e il titolo in corpo display ha bisogno di più
-     * spazio della colonna dei titoli: la foto si stringe a poco meno di metà del contenitore.
-     */
+    /* Il titolo in corpo display ha bisogno di più spazio della colonna dei titoli: la foto si stringe */
     @media (min-width: 64rem) {
         header {
-            --cover-inline-size: calc((100% - var(--page-inline) * 2) * 0.45);
-            min-block-size: calc(100svh - var(--header-height));
+            --cover-inline-size: 45%;
         }
     }
 
@@ -74,7 +72,7 @@
      * Duotone inchiostro e bordeaux (docs/DESIGN.md, Fotografia): la foto a colori quasi desaturata,
      * con sopra un velo dal bordeaux notte all'inchiostro.
      */
-    header > :global(picture) > :global(img) {
+    header > :global(picture) {
         filter: grayscale(0.6);
     }
 
@@ -90,8 +88,8 @@
 
     /*
      * Comparsa della prima schermata (docs/DESIGN.md, Movimento), in CSS puro, funziona anche senza JS:
-     * la foto sfuma, poi occhiello, titolo, sottotitolo e pulsante salgono uno dopo l'altro, e per ultime
-     * le corde si tendono dall'alto in basso. Con il movimento ridotto resta solo la dissolvenza.
+     * la foto sfuma, poi occhiello, titolo, sottotitolo e pulsante salgono uno dopo l'altro. Con il
+     * movimento ridotto resta solo la dissolvenza.
      */
     header {
         --shift: var(--space-5); /* 1,5rem, il massimo ammesso */
@@ -105,13 +103,6 @@
 
     header > :global(picture) {
         animation: dissolvenza var(--duration-entrance) var(--ease) both;
-    }
-
-    /* Le corde si tendono dall'alto in basso (keyframe "corde-scendono" in layout.css) */
-    @media (prefers-reduced-motion: no-preference) {
-        header::after {
-            animation: corde-scendono var(--duration-entrance) var(--ease) calc(var(--stagger) * 3) both;
-        }
     }
 
     /* "--order": posizione nella sequenza (il ritardo sta nella stessa dichiarazione dell'animazione) */

@@ -182,17 +182,6 @@ body > div > footer::before {
         var(--dot) left calc(var(--step) * 2) top 0 / var(--dot-size) no-repeat;
 }
 
-/* Le corde che si tendono dall'alto in basso (apertura della home, pannello del menu): clip-path le scopre senza cambiarne dimensioni né layout */
-@keyframes corde-scendono {
-    from {
-        clip-path: inset(0 0 100% 0);
-    }
-
-    to {
-        clip-path: inset(0);
-    }
-}
-
 /* Intestazione di pagina: titolo grande, presentazione, corde sul lato destro */
 main > header {
     position: relative;
@@ -220,17 +209,25 @@ main > header > p {
  * dopo il testo, così senza CSS si legge prima il titolo. L'intestazione occupa tutta la riga di "main":
  * sotto i 64rem la foto è una fascia in alto, a tutta larghezza, e il testo scorre sotto; da 64rem segue la
  * griglia delle sezioni da leggere, con titolo e presentazione nella colonna di sinistra e la foto che
- * comincia con la colonna di testo (--container-text). Le corde stanno sempre sulla carta, mai sulla foto,
- * e nello stesso punto di tutte le altre corde del sito, il bordo destro del contenitore: su telefono sotto
- * la foto, accanto al titolo; da 64rem accanto alla foto, che finisce poco prima.
+ * comincia con la colonna di testo (--container-text) e arriva al bordo dello schermo. Qui le corde non ci
+ * sono: l'elemento forte della composizione è la foto.
  */
 main > header:has(> picture) {
     --cover-inline-size: 100%;
     grid-column: full;
     padding-block-start: calc(var(--cover-block-size) + var(--space-7));
-    padding-inline: var(--page-inline) calc(var(--page-inline) + var(--corde-span) + var(--space-6));
+    padding-inline: var(--page-inline);
 }
 
+main > header:has(> picture)::after {
+    content: none;
+}
+
+/*
+ * In bianco e nero (docs/DESIGN.md, Fotografia). Sotto la foto c'è la sua anteprima sfocata, incorporata
+ * nella pagina e indicata dalla pagina stessa in --cover-placeholder: compare subito, e la foto vera ci si
+ * posa sopra quando è arrivata. Il trattamento sta sul <picture>, così vale per tutte e due.
+ */
 main > header > picture {
     position: absolute;
     inset-block-start: 0;
@@ -239,46 +236,34 @@ main > header > picture {
     block-size: var(--cover-block-size);
     /* È posizionata: il margine tra gli elementi dell'intestazione la sposterebbe */
     margin: 0;
+    background: var(--cover-placeholder) center / cover;
+    filter: grayscale(1) contrast(1.1);
 }
 
-/* In bianco e nero (docs/DESIGN.md, Fotografia) */
+/* Il testo alternativo resta per chi usa uno screen reader, ma non si vede scritto mentre la foto si carica */
 main > header > picture > img {
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
     border-radius: 0;
-    filter: grayscale(1) contrast(1.1);
-}
-
-/* Sotto la foto, accanto al titolo */
-main > header:has(> picture)::after {
-    inset-block-start: var(--cover-block-size);
-    inset-inline-end: var(--page-inline);
+    color: transparent;
 }
 
 @media (min-width: 64rem) {
     main > header:has(> picture) {
-        /* Dove finisce la foto, contando dal bordo dello schermo: lascia il posto alle corde */
-        --cover-end: calc(var(--page-inline) + var(--corde-span) + var(--space-6));
-        /* Dalla colonna di testo delle sezioni fino alle corde */
-        --cover-inline-size: calc(var(--container-text) - var(--corde-span) - var(--space-6));
+        /* Dalla colonna di testo delle sezioni al bordo dello schermo */
+        --cover-inline-size: calc(var(--container-text) + var(--page-inline));
         display: flex;
         flex-direction: column;
         justify-content: center;
         box-sizing: border-box;
         min-block-size: var(--cover-min-block-size);
         padding-block: var(--space-9);
-        padding-inline-end: calc(var(--cover-end) + var(--cover-inline-size) + var(--space-6));
+        padding-inline-end: calc(var(--cover-inline-size) + var(--space-6));
     }
 
     main > header > picture {
-        inset-inline-end: var(--cover-end);
         block-size: 100%;
-    }
-
-    /* Accanto alla foto: scendono dall'alto e finiscono prima del fondo */
-    main > header:has(> picture)::after {
-        inset-block: 0 var(--space-9);
     }
 }
 
