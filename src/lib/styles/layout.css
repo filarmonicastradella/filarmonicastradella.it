@@ -243,9 +243,14 @@ main > header > picture {
  * perché chi aggiunge un velo alla foto (la hero) possa sovrapporlo all'ombra.
  */
 main > header:has(> picture) {
+    /* Ombra corta e netta, come di un foglio vicino: scura sul bordo, quasi svanita dopo pochi pixel */
+    --cover-shade-stops:
+        color-mix(in srgb, var(--color-inchiostro) 55%, transparent),
+        color-mix(in srgb, var(--color-inchiostro) 20%, transparent) var(--space-1),
+        transparent var(--space-4);
     --cover-shade:
-        linear-gradient(color-mix(in srgb, var(--color-inchiostro) 45%, transparent), transparent var(--space-6)),
-        linear-gradient(to top, color-mix(in srgb, var(--color-inchiostro) 45%, transparent), transparent var(--space-6));
+        linear-gradient(var(--cover-shade-stops)),
+        linear-gradient(to top, var(--cover-shade-stops));
 }
 
 main > header > picture::after {
