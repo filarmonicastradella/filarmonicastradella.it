@@ -1,4 +1,10 @@
 <!-- Fonti: Dizionario Biografico degli Italiani (A. Garavaglia, 2019), Wikipedia (voce Alessio Stradella), Dizionario Storico Biografico della Tuscia (S. Franchi), locandina del 6 dicembre 1997 -->
+<script lang="ts">
+    // Copertina: il frontespizio della Serenata a 3, in più misure, e la sua anteprima sfocata
+    import serenataImg from "$lib/assets/imgs/serenata-stradella.jpg?enhanced&w=400;640;800;1280;1600";
+    import serenataPlaceholder from "$lib/assets/imgs/serenata-stradella.jpg?w=24&blur=2&format=webp&inline";
+</script>
+
 <svelte:head>
     <title>Alessandro Stradella — Filarmonica Alessandro Stradella APS</title>
     <meta
@@ -7,9 +13,16 @@
     />
 </svelte:head>
 
-<header>
+<!-- Nella fascia si tiene la parte con il titolo e il nome -->
+<header style="--cover-placeholder: url({serenataPlaceholder}); --cover-position: center 33%">
     <h1>Alessandro Stradella</h1>
     <p>Il compositore del Seicento che dà il nome alla Filarmonica, e la sua famiglia di Fivizzano.</p>
+    <enhanced:img
+        src={serenataImg}
+        alt="Frontespizio manoscritto della «Serenata a 3 con stromenti del Sig.r Alessandro Stradella», copia del Settecento"
+        sizes="100vw"
+        fetchpriority="high"
+    />
 </header>
 
 <section>
@@ -95,4 +108,10 @@
             Locandina «Alessandro Stradella e la Musica Barocca. Le origini ritrovate», Fivizzano, 6 dicembre 1997. <a role="doc-backlink" href="#rimando-5a">Torna al testo</a>
         </li>
     </ol>
+    <p>
+        Immagine di copertina: frontespizio della
+        <a href="https://gallica.bnf.fr/ark:/12148/btv1b10886345f/f2.item" target="_blank" rel="noopener noreferrer"
+            ><i>Serenata a 3 con stromenti del signor Alessandro Stradella</i></a
+        >, copia manoscritta del Settecento, Bibliothèque nationale de France, département de la Musique, RES VS-1397. Pubblico dominio.
+    </p>
 </section>
