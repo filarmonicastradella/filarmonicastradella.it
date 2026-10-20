@@ -25,8 +25,40 @@
 </header>
 
 <style>
+    /*
+     * L'apertura è alta una schermata: il testo prende lo spazio che gli serve e la foto riempie il resto
+     * (mai meno di 12rem). La fascia diventa una riga della griglia invece di stare sopra l'imbottitura.
+     */
     header {
-        --cover-block-size: clamp(15rem, 55svh, 36rem);
+        display: grid;
+        grid-template-rows: minmax(12rem, 1fr) auto auto;
+        min-block-size: calc(100svh - var(--header-height));
+        box-sizing: border-box;
+        padding-block-start: 0;
+        padding-inline: 0;
+    }
+
+    /* La foto va da bordo a bordo, il testo rientra nel contenitore */
+    hgroup,
+    header > p {
+        padding-inline: var(--page-inline);
+    }
+
+    header > :global(picture) {
+        position: relative;
+        grid-row: 1;
+        inset: auto;
+        block-size: auto;
+    }
+
+    /* Fuori dal flusso, così non è la foto a decidere l'altezza della riga */
+    header > :global(picture) > :global(img) {
+        position: absolute;
+        inset: 0;
+    }
+
+    hgroup {
+        margin-block-start: var(--space-7);
     }
 
     hgroup > * {
