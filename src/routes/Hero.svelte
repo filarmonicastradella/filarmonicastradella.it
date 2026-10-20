@@ -124,14 +124,14 @@
         filter: grayscale(0.6);
     }
 
+    /* Il velo sotto l'ombra della carta (layout.css) */
     header > :global(picture)::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-            color-mix(in srgb, var(--color-bordeaux-notte) 45%, transparent),
-            color-mix(in srgb, var(--color-inchiostro) 55%, transparent)
-        );
+        background:
+            var(--cover-shade),
+            linear-gradient(
+                color-mix(in srgb, var(--color-bordeaux-notte) 45%, transparent),
+                color-mix(in srgb, var(--color-inchiostro) 55%, transparent)
+            );
     }
 
     /*

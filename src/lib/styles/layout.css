@@ -237,6 +237,24 @@ main > header > picture {
     filter: grayscale(1) contrast(1.1);
 }
 
+/*
+ * La foto sta "dietro" la pagina: la carta, sopra e sotto, le proietta un'ombra morbida, come una finestra
+ * incassata. Ombra ferma, nessun movimento (docs/DESIGN.md, Movimento: niente parallasse). In --cover-shade
+ * perché chi aggiunge un velo alla foto (la hero) possa sovrapporlo all'ombra.
+ */
+main > header:has(> picture) {
+    --cover-shade:
+        linear-gradient(color-mix(in srgb, var(--color-inchiostro) 45%, transparent), transparent var(--space-6)),
+        linear-gradient(to top, color-mix(in srgb, var(--color-inchiostro) 45%, transparent), transparent var(--space-6));
+}
+
+main > header > picture::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--cover-shade);
+}
+
 /* Il testo alternativo resta per chi usa uno screen reader, ma non si vede scritto mentre la foto si carica */
 main > header > picture > img {
     inline-size: 100%;
