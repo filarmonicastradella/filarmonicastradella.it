@@ -25,6 +25,9 @@
     --page-inline: max(var(--gutter), calc((100% - var(--container)) / 2));
     --header-height: 4.5rem;
     --logo-height: 2.5rem; /* il simbolo del logotipo nell'intestazione */
+    --cover-block-size: clamp(12rem, 40svh, 20rem); /* fascia della foto di copertina, sotto i 64rem */
+    --cover-min-block-size: 28rem; /* altezza minima dell'intestazione con foto, da 64rem */
+    --cover-split: 45%; /* larghezza della foto di copertina, da 64rem */
 
     /* Forma: angoli quasi vivi, editoria e non app */
     --radius: 2px;
@@ -211,6 +214,66 @@ main > header h1 {
 main > header > p {
     color: var(--text-muted);
     font-size: var(--fs-lead);
+}
+
+/*
+ * Intestazione con foto, la copertina (docs/DESIGN.md, Sito): la foto è un <picture> nell'intestazione,
+ * dopo il testo, così senza CSS si legge prima il titolo. L'intestazione occupa tutta la riga di "main":
+ * sotto i 64rem la foto è una fascia in alto, a tutta larghezza, e il testo scorre sotto; da 64rem il testo
+ * sta a sinistra e la foto a destra fino al bordo dello schermo. Le corde, chiare come sulle superfici
+ * scure, restano sul bordo destro del contenitore e finiscono dentro la foto.
+ */
+main > header:has(> picture) {
+    grid-column: full;
+    padding-block-start: calc(var(--cover-block-size) + var(--space-7));
+    padding-inline: var(--page-inline);
+}
+
+main > header > picture {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 0;
+    block-size: var(--cover-block-size);
+}
+
+/* In bianco e nero e un po' scurita (docs/DESIGN.md, Fotografia), perché le corde chiare si vedano */
+main > header > picture > img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    filter: grayscale(1) brightness(0.8);
+}
+
+main > header:has(> picture)::after {
+    --corde-color: var(--color-cipria);
+    inset-block-end: auto;
+    inset-inline-end: var(--page-inline);
+    block-size: calc(var(--cover-block-size) - var(--space-6));
+}
+
+@media (min-width: 64rem) {
+    main > header:has(> picture) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+        min-block-size: var(--cover-min-block-size);
+        padding-block: var(--space-9);
+        padding-inline-end: calc(var(--cover-split) + var(--space-8));
+    }
+
+    main > header > picture {
+        inset-block: 0;
+        inset-inline-start: auto;
+        inline-size: var(--cover-split);
+        block-size: auto;
+    }
+
+    main > header:has(> picture)::after {
+        inset-block-end: var(--space-7);
+        block-size: auto;
+    }
 }
 
 /* Piè di pagina: superficie inchiostro (colors.css), corde sul margine destro */
