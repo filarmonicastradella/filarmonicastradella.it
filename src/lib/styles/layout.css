@@ -245,8 +245,8 @@ main > header > picture {
 main > header:has(> picture) {
     /* Ombra corta e leggera, come di un foglio vicino: più scura sul bordo, svanita in poco spazio */
     --cover-shade-stops:
-        color-mix(in srgb, var(--color-inchiostro) 35%, transparent),
-        color-mix(in srgb, var(--color-inchiostro) 12%, transparent) var(--space-2),
+        color-mix(in srgb, var(--color-inchiostro) 20%, transparent),
+        color-mix(in srgb, var(--color-inchiostro) 6%, transparent) var(--space-2),
         transparent var(--space-5);
     --cover-shade:
         linear-gradient(var(--cover-shade-stops)),
