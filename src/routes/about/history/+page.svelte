@@ -20,7 +20,7 @@
     <enhanced:img
         src={anni30Img}
         alt="I musicisti della Filarmonica negli anni Trenta, in posa con i loro strumenti"
-        sizes="(min-width: 64rem) 45vw, 100vw"
+        sizes="(min-width: 64rem) calc(40rem + (100vw - 64rem) / 2), 100vw"
         fetchpriority="high"
     />
 </header>
