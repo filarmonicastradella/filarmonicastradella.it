@@ -1,78 +1,37 @@
 <script lang="ts">
-    import wallpaper from "$lib/assets/wallpaper.webp";
+    import wallpaper from "$lib/assets/wallpaper.webp?enhanced";
 </script>
 
-<!-- La foto è uno sfondo CSS, che il browser scoprirebbe tardi: è l'elemento più grande della prima schermata, la chiede subito -->
-<svelte:head>
-    <link rel="preload" href={wallpaper} as="image" fetchpriority="high" />
-</svelte:head>
-
-<header style="--hero-image: url({wallpaper})">
+<!--
+    Apertura della home: è l'intestazione con foto di tutte le pagine (layout.css, copertina), con in più
+    l'occhiello, il titolo in corpo display e la comparsa della prima schermata.
+-->
+<header>
     <hgroup>
         <p>Fivizzano · dal 1777</p>
         <h1>Filarmonica <em>Alessandro Stradella</em></h1>
         <p>Custodi della <strong>tradizione</strong>, interpreti del <strong>futuro</strong>.</p>
     </hgroup>
     <p><a href="/support/join">Unisciti a noi</a></p>
+    <!-- SEGNAPOSTO: foto di repertorio, da sostituire con una foto della Filarmonica (docs/DESIGN.md: solo foto nostre) -->
+    <enhanced:img
+        src={wallpaper}
+        alt="Violinisti in concerto"
+        sizes="(min-width: 64rem) 29rem, 100vw"
+        fetchpriority="high"
+    />
 </header>
 
 <style>
     /*
-     * Apertura della landing come nel design system: testo su carta a sinistra, foto virata verso
-     * inchiostro e bordeaux (il trattamento "duotone") a destra, le corde sopra la foto nello stesso punto
-     * di tutte le altre corde del sito (il bordo destro del contenitore), nel colore chiaro delle superfici scure.
-     * La foto è uno sfondo su uno pseudo-elemento: nessun elemento in più nel markup.
-     * Sotto i 64rem la foto diventa una fascia in alto e il testo scorre sotto: più stretta, la colonna
-     * di testo accanto alla foto non conterrebbe il titolo, che finirebbe sotto le corde.
+     * Da 64rem la prima schermata è tutta dell'apertura, e il titolo in corpo display ha bisogno di più
+     * spazio della colonna dei titoli: la foto si stringe a poco meno di metà del contenitore.
      */
-    header {
-        /*
-         * La hero occupa tutta la riga della griglia di "main" (layout.css): è larga quanto la pagina, e
-         * le percentuali di padding e posizioni si riferiscono tutte alla stessa larghezza.
-         */
-        --split: 45%;
-        --edge: var(--page-inline);
-        grid-column: full;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: var(--space-7);
-        min-height: calc(100svh - var(--header-height));
-        padding-block: var(--space-9);
-        padding-inline: var(--edge) calc(var(--split) + var(--space-8));
-        box-sizing: border-box;
-    }
-
-    header::before {
-        content: "";
-        position: absolute;
-        inset-block: 0;
-        inset-inline-end: 0;
-        inline-size: var(--split);
-        background-image:
-            linear-gradient(
-                color-mix(in srgb, var(--color-bordeaux-notte) 45%, transparent),
-                color-mix(in srgb, var(--color-inchiostro) 55%, transparent)
-            ),
-            var(--hero-image);
-        background-position: center;
-        background-size: cover;
-        filter: grayscale(0.6);
-    }
-
-    /*
-     * Le corde (layout.css) dove sono in tutto il sito, sopra la foto: chiare, come sulle superfici scure.
-     * Scendono dall'alto e si fermano all'altezza del fondo del testo, con i terminali a pallino.
-     */
-    header::after {
-        --corde-color: var(--color-cipria);
-        inset-block-end: var(--space-9);
-        inset-inline-end: var(--edge);
-    }
-
-    hgroup {
-        margin: 0;
+    @media (min-width: 64rem) {
+        header {
+            --cover-inline-size: calc((100% - var(--page-inline) * 2) * 0.45);
+            min-block-size: calc(100svh - var(--header-height));
+        }
     }
 
     hgroup > * {
@@ -90,9 +49,7 @@
 
     h1 {
         margin-block-start: var(--space-4);
-        font-size: var(--fs-display);
         font-weight: var(--fw-display);
-        line-height: var(--lh-display);
     }
 
     h1 em {
@@ -110,70 +67,25 @@
     }
 
     header > p {
-        margin: 0;
+        margin-block-start: var(--space-7);
     }
 
     /*
-     * Sotto i 64rem: la hero è alta quanto lo schermo meno l'intestazione. Il testo prende lo spazio che
-     * gli serve, la foto riempie quello che resta sopra (mai meno di un quarto dello schermo). Le corde
-     * attraversano la foto e si fermano appena sotto, accanto all'occhiello, lontane dal pulsante. Foto e
-     * corde diventano elementi della stessa cella della griglia.
+     * Duotone inchiostro e bordeaux (docs/DESIGN.md, Fotografia): la foto a colori quasi desaturata,
+     * con sopra un velo dal bordeaux notte all'inchiostro.
      */
-    @media (max-width: 63.999rem) {
-        header {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr);
-            grid-template-rows: minmax(25svh, 1fr) auto auto;
-            padding-block: 0 var(--space-7);
-            padding-inline: var(--edge);
-        }
+    header > :global(picture) > :global(img) {
+        filter: grayscale(0.6);
+    }
 
-        header::before {
-            position: static;
-            grid-area: 1 / 1;
-            inline-size: auto;
-            background:
-                linear-gradient(
-                    color-mix(in srgb, var(--color-bordeaux-notte) 45%, transparent),
-                    color-mix(in srgb, var(--color-inchiostro) 55%, transparent)
-                ),
-                var(--hero-image) center / cover;
-            margin-inline: calc(-1 * var(--edge));
-            margin-block-end: var(--space-6);
-        }
-
-        hgroup {
-            grid-row: 2;
-        }
-
-        header > p {
-            grid-row: 3;
-            margin-block-start: var(--space-6);
-        }
-
-        /*
-         * Nella stessa cella della foto, sopra (con la sola riga il browser le metterebbe in una colonna
-         * nuova). Attraversano la foto in colore chiaro, ne escono di --below e sulla carta tornano del
-         * loro colore, pallini compresi: finiscono accanto all'occhiello, a freccia verso il titolo.
-         * Ogni tratto chiaro si ferma sul bordo della foto, misurato dal fondo della sua corda.
-         */
-        header::after {
-            --corde-color: inherit;
-            --below: var(--space-8);
-            --line-long: linear-gradient(
-                var(--color-cipria) calc(100% - var(--below) + var(--corde-dot-size) / 2),
-                var(--corde-color) 0
-            );
-            --line-short: linear-gradient(
-                var(--color-cipria) calc(100% - var(--below) + var(--corde-dot-offset) + var(--corde-dot-size) / 2),
-                var(--corde-color) 0
-            );
-            position: static;
-            grid-area: 1 / 1;
-            justify-self: end;
-            /* La cella finisce --space-6 sotto la foto (il suo margine): le corde ne escono di --below */
-            margin-block-end: calc(var(--space-6) - var(--below));
-        }
+    header > :global(picture)::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            color-mix(in srgb, var(--color-bordeaux-notte) 45%, transparent),
+            color-mix(in srgb, var(--color-inchiostro) 55%, transparent)
+        );
     }
 
     /*
@@ -191,7 +103,7 @@
         }
     }
 
-    header::before {
+    header > :global(picture) {
         animation: dissolvenza var(--duration-entrance) var(--ease) both;
     }
 

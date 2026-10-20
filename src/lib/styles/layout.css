@@ -220,8 +220,9 @@ main > header > p {
  * dopo il testo, così senza CSS si legge prima il titolo. L'intestazione occupa tutta la riga di "main":
  * sotto i 64rem la foto è una fascia in alto, a tutta larghezza, e il testo scorre sotto; da 64rem segue la
  * griglia delle sezioni da leggere, con titolo e presentazione nella colonna di sinistra e la foto che
- * comincia con la colonna di testo (--container-text) e arriva al bordo dello schermo. Le corde stanno
- * sempre sulla carta, mai sulla foto: sul bordo destro del testo dell'intestazione, come senza foto.
+ * comincia con la colonna di testo (--container-text). Le corde stanno sempre sulla carta, mai sulla foto,
+ * e nello stesso punto di tutte le altre corde del sito, il bordo destro del contenitore: su telefono sotto
+ * la foto, accanto al titolo; da 64rem accanto alla foto, che finisce poco prima.
  */
 main > header:has(> picture) {
     --cover-inline-size: 100%;
@@ -257,25 +258,27 @@ main > header:has(> picture)::after {
 
 @media (min-width: 64rem) {
     main > header:has(> picture) {
-        /* Dalla colonna di testo delle sezioni al bordo dello schermo */
-        --cover-inline-size: calc(var(--container-text) + var(--page-inline));
+        /* Dove finisce la foto, contando dal bordo dello schermo: lascia il posto alle corde */
+        --cover-end: calc(var(--page-inline) + var(--corde-span) + var(--space-6));
+        /* Dalla colonna di testo delle sezioni fino alle corde */
+        --cover-inline-size: calc(var(--container-text) - var(--corde-span) - var(--space-6));
         display: flex;
         flex-direction: column;
         justify-content: center;
         box-sizing: border-box;
         min-block-size: var(--cover-min-block-size);
         padding-block: var(--space-9);
-        padding-inline-end: calc(var(--cover-inline-size) + var(--space-6) * 2 + var(--corde-span));
+        padding-inline-end: calc(var(--cover-end) + var(--cover-inline-size) + var(--space-6));
     }
 
     main > header > picture {
+        inset-inline-end: var(--cover-end);
         block-size: 100%;
     }
 
-    /* Tra il testo e la foto: scendono dall'alto e finiscono all'altezza del testo */
+    /* Accanto alla foto: scendono dall'alto e finiscono prima del fondo */
     main > header:has(> picture)::after {
         inset-block: 0 var(--space-9);
-        inset-inline-end: calc(var(--cover-inline-size) + var(--space-6));
     }
 }
 
