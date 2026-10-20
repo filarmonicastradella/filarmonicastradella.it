@@ -38,10 +38,23 @@
         padding-inline: 0;
     }
 
-    /* La foto va da bordo a bordo, il testo rientra nel contenitore */
+    /* La foto va da bordo a bordo, il testo rientra nel contenitore e lascia il posto alle corde */
     hgroup,
     header > p {
-        padding-inline: var(--page-inline);
+        padding-inline: var(--page-inline) calc(var(--page-inline) + var(--corde-span) + var(--space-6));
+    }
+
+    /*
+     * Le corde (layout.css) accanto al testo, dal bordo della foto in giù: qui l'altezza della foto non è
+     * fissa, quindi sono una cella della griglia, nelle righe del testo, invece di essere posizionate.
+     */
+    header::after {
+        position: relative;
+        inset: auto;
+        grid-row: 2 / -1;
+        grid-column: 1;
+        justify-self: end;
+        margin-inline-end: calc(var(--page-inline) - var(--pad));
     }
 
     header > :global(picture) {
@@ -57,8 +70,14 @@
         inset: 0;
     }
 
+    /* Righe esplicite: le corde stanno nelle stesse celle, e la griglia altrimenti sposterebbe il testo */
     hgroup {
+        grid-area: 2 / 1;
         margin-block-start: var(--space-7);
+    }
+
+    header > p {
+        grid-area: 3 / 1;
     }
 
     hgroup > * {

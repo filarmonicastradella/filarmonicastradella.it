@@ -206,17 +206,19 @@ main > header > p {
 /*
  * Intestazione con foto, la copertina (docs/DESIGN.md, Sito): la foto è un <picture> nell'intestazione,
  * dopo il testo, così senza CSS si legge prima il titolo. A ogni larghezza la foto è una fascia in alto, da
- * un bordo all'altro dello schermo, e il testo scorre sotto. Qui le corde non ci sono: l'elemento forte della
- * composizione è la foto.
+ * un bordo all'altro dello schermo, e il testo scorre sotto. Le corde restano dove sono in tutto il sito,
+ * sul bordo destro del contenitore, sulla carta: partono dal bordo inferiore della foto e scendono accanto
+ * al testo.
  */
 main > header:has(> picture) {
     grid-column: full;
     padding-block-start: calc(var(--cover-block-size) + var(--space-7));
-    padding-inline: var(--page-inline);
+    padding-inline: var(--page-inline) calc(var(--page-inline) + var(--corde-span) + var(--space-6));
 }
 
 main > header:has(> picture)::after {
-    content: none;
+    inset-block-start: var(--cover-block-size);
+    inset-inline-end: var(--page-inline);
 }
 
 /*
