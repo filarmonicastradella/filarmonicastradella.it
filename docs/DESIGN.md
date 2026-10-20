@@ -126,6 +126,7 @@ Il movimento accompagna, non si esibisce.
 - **Sì:** luce di scena, fondi scuri, dettagli (mani, ance, archi, respiro), ritratti con sguardo in camera, luoghi storici della Lunigiana.
 - **No:** foto di gruppo in fila, flash diretto, transenne e gazebo, scatti mossi o sgranati.
 - **Trattamento standard sui social:** duotone inchiostro e bordeaux. Bianco e nero quando la qualità è disomogenea. Colore pieno solo per foto professionali.
+- **Foto d'archivio:** sempre in bianco e nero, anche nel sito; mai virate in duotone. Nelle copertine del sito le foto a colori vanno in duotone come la hero, quelle d'archivio in bianco e nero; tutte leggermente scurite, perché le corde chiare restino visibili.
 - Prevedere un servizio fotografico professionale all'anno.
 
 ## 10. Componenti
@@ -150,6 +151,7 @@ Il movimento accompagna, non si esibisce.
 - Schede (eventi, notizie, rimandi): nessun riquadro e nessun fondo, solo un filetto in alto (`--rule-width` in `--border`) che diventa bordeaux (`--accent`) al passaggio del mouse o al tocco, insieme al titolo. Scelte il 9/10/2026 al posto delle card bordate: più coerenti con corde e filetti, più editoriali e più pulite nel tema scuro.
 - Card evento: ogni informazione una volta sola. La data in occhiello bordeaux sopra il titolo ("sab 10 ottobre"; per più giorni "lun 7 – mar 8 dicembre"), il titolo in Cormorant 600, la descrizione, e in fondo una didascalia con ora di inizio e luogo ("ore 21 · Teatro degli Impavidi"). Ogni parte ha un numero fisso di righe, così nella griglia tutto è allineato: data e didascalia una, titolo due, descrizione tre; il resto si interrompe con i puntini e si legge nella pagina dell'evento, insieme all'ora di fine.
 - Apertura della homepage: occhiello, titolo display con una parola in corsivo bordeaux, sottotitolo, pulsante primario a sinistra su carta; foto in duotone a destra; corde sopra la foto, nello stesso punto di tutte le altre corde del sito (il bordo destro del contenitore), in colore chiaro, che scendono dall'alto e si fermano con i terminali a pallino.
+- Intestazione di pagina con foto (copertina): la foto è nell'HTML, un'immagine con il suo testo alternativo dopo titolo e presentazione. Da 64 rem il testo sta a sinistra e la foto a destra fino al bordo dello schermo; sotto, la foto è una fascia in alto e il testo scorre sotto. Le corde, in colore chiaro, scendono sulla foto e si fermano dentro di essa con i terminali a pallino. Copertine solo nelle pagine da leggere che hanno una foto propria (formazioni, storia, eventi e notizie, pagine come Alessandro Stradella); mai nelle pagine di servizio (contatti, moduli, informative, ringraziamenti) né negli indici. Solo foto nostre o di luoghi nostri, mai foto generiche messe per dare l'idea.
 - Colonne di testo al massimo 40 rem.
 - Sezioni da leggere (testo, immagini, elenchi di testo ed elenchi etichetta/valore): su schermo largo, da 64 rem, il titolo sta a sinistra e il contenuto a destra, nella colonna da 40 rem; così la sezione è larga quanto le griglie senza allungare le righe. Le sezioni con griglie di schede o di foto tengono il titolo sopra e usano tutta la larghezza.
 
