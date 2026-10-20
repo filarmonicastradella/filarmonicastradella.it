@@ -16,7 +16,8 @@
     <meta name="description" content="La storia della Filarmonica Alessandro Stradella dal 1777 a oggi: le origini, l'Ottocento, il Novecento, il nome e le formazioni di oggi." />
 </svelte:head>
 
-<header style="--cover-placeholder: url({anni30Placeholder})">
+<!-- Nella fascia la foto si taglia dal basso: meglio perdere le gambe di chi è seduto che le teste della fila in alto -->
+<header style="--cover-placeholder: url({anni30Placeholder}); --cover-position: top">
     <h1>La storia</h1>
     <p>Dal 1777 a oggi: quasi due secoli e mezzo di musica a Fivizzano.</p>
     <enhanced:img
