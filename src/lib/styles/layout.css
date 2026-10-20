@@ -25,8 +25,7 @@
     --page-inline: max(var(--gutter), calc((100% - var(--container)) / 2));
     --header-height: 4.5rem;
     --logo-height: 2.5rem; /* il simbolo del logotipo nell'intestazione */
-    --cover-block-size: clamp(12rem, 40svh, 20rem); /* fascia della foto di copertina, sotto i 64rem */
-    --cover-min-block-size: 32rem; /* altezza minima dell'intestazione con foto, da 64rem */
+    --cover-block-size: clamp(12rem, 45svh, 28rem); /* altezza della fascia della foto di copertina */
 
     /* Forma: angoli quasi vivi, editoria e non app */
     --radius: 2px;
@@ -206,14 +205,11 @@ main > header > p {
 
 /*
  * Intestazione con foto, la copertina (docs/DESIGN.md, Sito): la foto è un <picture> nell'intestazione,
- * dopo il testo, così senza CSS si legge prima il titolo. L'intestazione occupa tutta la riga di "main":
- * sotto i 64rem la foto è una fascia in alto, a tutta larghezza, e il testo scorre sotto; da 64rem segue la
- * griglia delle sezioni da leggere, con titolo e presentazione nella colonna di sinistra e la foto che
- * comincia con la colonna di testo (--container-text) e arriva al bordo dello schermo. Qui le corde non ci
- * sono: l'elemento forte della composizione è la foto.
+ * dopo il testo, così senza CSS si legge prima il titolo. A ogni larghezza la foto è una fascia in alto, da
+ * un bordo all'altro dello schermo, e il testo scorre sotto. Qui le corde non ci sono: l'elemento forte della
+ * composizione è la foto.
  */
 main > header:has(> picture) {
-    --cover-inline-size: 100%;
     grid-column: full;
     padding-block-start: calc(var(--cover-block-size) + var(--space-7));
     padding-inline: var(--page-inline);
@@ -231,8 +227,7 @@ main > header:has(> picture)::after {
 main > header > picture {
     position: absolute;
     inset-block-start: 0;
-    inset-inline-end: 0;
-    inline-size: var(--cover-inline-size);
+    inset-inline: 0;
     block-size: var(--cover-block-size);
     /* È posizionata: il margine tra gli elementi dell'intestazione la sposterebbe */
     margin: 0;
@@ -247,24 +242,6 @@ main > header > picture > img {
     object-fit: cover;
     border-radius: 0;
     color: transparent;
-}
-
-@media (min-width: 64rem) {
-    main > header:has(> picture) {
-        /* Dalla colonna di testo delle sezioni al bordo dello schermo */
-        --cover-inline-size: calc(var(--container-text) + var(--page-inline));
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        box-sizing: border-box;
-        min-block-size: var(--cover-min-block-size);
-        padding-block: var(--space-9);
-        padding-inline-end: calc(var(--cover-inline-size) + var(--space-6));
-    }
-
-    main > header > picture {
-        block-size: 100%;
-    }
 }
 
 /* Piè di pagina: superficie inchiostro (colors.css), corde sul margine destro */

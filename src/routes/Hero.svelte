@@ -5,8 +5,8 @@
 </script>
 
 <!--
-    Apertura della home: è l'intestazione con foto di tutte le pagine (layout.css, copertina), con in più
-    l'occhiello, il titolo in corpo display e la comparsa della prima schermata.
+    Apertura della home: l'intestazione con foto di tutte le pagine (layout.css, copertina), con la fascia
+    più alta, l'occhiello, il titolo in corpo display, la foto in duotone e la comparsa della prima schermata.
 -->
 <header style="--cover-placeholder: url({wallpaperPlaceholder})">
     <hgroup>
@@ -19,15 +19,14 @@
     <enhanced:img
         src={wallpaper}
         alt="Violinisti in concerto"
-        sizes="(min-width: 64rem) calc(40rem + (100vw - 64rem) / 2), 100vw"
+        sizes="100vw"
         fetchpriority="high"
     />
 </header>
 
 <style>
-    /* Il titolo misura la colonna in cui sta (vedi h1) */
-    hgroup {
-        container-type: inline-size;
+    header {
+        --cover-block-size: clamp(15rem, 55svh, 36rem);
     }
 
     hgroup > * {
@@ -43,13 +42,8 @@
         text-transform: uppercase;
     }
 
-    /*
-     * Corpo display, ma mai più largo della colonna dei titoli: dove la colonna è stretta (poco sopra i
-     * 64rem) rimpicciolisce quanto basta perché "Filarmonica", la parola più lunga, stia su una riga.
-     */
     h1 {
         margin-block-start: var(--space-4);
-        font-size: min(var(--fs-display), 21cqi);
         font-weight: var(--fw-display);
     }
 
