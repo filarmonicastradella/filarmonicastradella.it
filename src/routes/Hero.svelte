@@ -19,17 +19,15 @@
     <enhanced:img
         src={wallpaper}
         alt="Violinisti in concerto"
-        sizes="(min-width: 64rem) 45vw, 100vw"
+        sizes="(min-width: 64rem) calc(40rem + (100vw - 64rem) / 2), 100vw"
         fetchpriority="high"
     />
 </header>
 
 <style>
-    /* Il titolo in corpo display ha bisogno di più spazio della colonna dei titoli: la foto si stringe */
-    @media (min-width: 64rem) {
-        header {
-            --cover-inline-size: 45%;
-        }
+    /* Il titolo misura la colonna in cui sta (vedi h1) */
+    hgroup {
+        container-type: inline-size;
     }
 
     hgroup > * {
@@ -45,8 +43,13 @@
         text-transform: uppercase;
     }
 
+    /*
+     * Corpo display, ma mai più largo della colonna dei titoli: dove la colonna è stretta (poco sopra i
+     * 64rem) rimpicciolisce quanto basta perché "Filarmonica", la parola più lunga, stia su una riga.
+     */
     h1 {
         margin-block-start: var(--space-4);
+        font-size: min(var(--fs-display), 21cqi);
         font-weight: var(--fw-display);
     }
 
