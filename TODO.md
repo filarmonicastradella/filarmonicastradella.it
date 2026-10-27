@@ -65,6 +65,8 @@ Nuovi musicisti (`support/volunteer`):
 
 ## Altri punti aperti
 
+- Musicisti (`/about/musicians`): mancano gli archi, da aggiungere come sezione «Archi» (prima dei legni) quando si hanno i nomi. Andrei e Ricciardi restano solo con nome o cognome, per loro scelta.
+
 - Storia: le fonti in fondo vengono dal Vault («Storia - fonti.md», da verificare sugli originali). Senza fonte restano l'unione di due bande negli anni Venti (solo bandamusicale.it) e la data del nome Stradella: bandamusicale.it dice 1996, ma la locandina del 6 dicembre 1997 porta ancora «Società Filarmonica Fivizzano», quindi per ora il testo dice «alla fine degli anni Novanta». Trovare la fonte (verbale, statuto, giornale) e precisare.
 
 - Pagina su Alessandro Stradella (`/about/stradella`): creata il 19/10 su Dizionario Biografico degli Italiani (Garavaglia 2019), Wikipedia e Dizionario della Tuscia. Nascita: Bologna, 3 luglio 1643 (atto di battesimo, Mingozzi 2018), non Nepi 1639. Eventuali approfondimenti: Gerini 1829, pp. 136-137 (Alessio); Gianturco 2007.
@@ -77,3 +79,15 @@ Nuovi musicisti (`support/volunteer`):
 
 - Modulo di adesione (`support/join`): non indica come e quando versare la quota associativa (oggi dice solo "l'esito ti verrà comunicato via email") — manca l'istruzione di pagamento.
 - Documenti dell'associazione (regolamenti, statuto, rendiconti): decidere una visualizzazione comune (tutti Markdown) tranne i casi speciali come lo statuto.
+
+## Audit di qualità (27/10/2026)
+
+Lighthouse 13.5 su home, events, stradella-facendo, history, contacts/message e booking: 100 in accessibilità, best practices, SEO e agentic browsing; performance 95–99 su mobile, 100 su desktop; CLS 0. Restano da sistemare:
+
+- **Menu su telefono senza JS** (priorità alta): sotto 64rem il pannello di `SiteMenu.svelte` è sempre `visibility: hidden` e il pulsante senza JS non fa nulla, quindi Associazione, Calendario, Sostienici e Contatti non si raggiungono (il footer ha solo i link legali). Va contro il principio di progressive enhancement. Idea: le regole del pannello nascosto dentro `@media (scripting: enabled)` e il pulsante nascosto con `@media (scripting: none)`, così senza JS le voci restano in colonna nell'intestazione. Verificarlo con JS disattivato su un telefono vero.
+- **404 vuota senza JS**: `build/404.html` è solo il guscio di avvio di SvelteKit (niente `<title>`, `<main>` né testo), e GitHub Pages lo serve per ogni indirizzo inesistente; `+error.svelte` compare solo con il JS. Generare una 404 vera alla build (per esempio una route `src/routes/404/+page.svelte`, controllando prima l'opzione `fallback` dell'adapter).
+- **Notizie orfane**: con la pagina `news` disattivata, le notizie singole (`news/[slug]`) sono comunque generate e nella sitemap (`src/routes/sitemap.xml/+server.ts`), nessuna pagina le collega e il loro link «Tutte le notizie» porta a `/news`, che dà 404. Disattivarle e toglierle dalla sitemap finché non si riattiva l'indice (o riattivarlo).
+- **Immagini della Storia**: Lighthouse stima 101 KiB risparmiabili su `/about/history` (LCP mobile 2,9 s, il più lento). `sizes="(min-width: 40rem) 40rem, 100vw"` sembra più largo delle figure reali: verificare la larghezza effettiva e correggere `sizes`.
+- **Titoli lunghi** (oltre 70 caratteri, tagliati da Google): un evento del calendario (92), `legal/images` (83), le notizie `iscrizioni-scuola-di-musica` (83) e `concerto-estate` (80), `about/sonnet` (70, con descrizione di 169 caratteri).
+- Limite noto di GitHub Pages, non risolvibile senza cambiare hosting: cache di 10 minuti anche per i file `_app/immutable`, niente HSTS né CSP.
+- Da provare a mano: tastiera e screen reader su menu e finestra dei contatti.
