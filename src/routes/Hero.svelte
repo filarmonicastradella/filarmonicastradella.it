@@ -151,6 +151,13 @@
         }
     }
 
+    /* Le corde scendono ogni volta che si torna qui, non solo alla prima apertura come nelle altre intestazioni */
+    @media (prefers-reduced-motion: no-preference) {
+        header::after {
+            animation: corde-scendono var(--duration-slow) var(--ease) calc(var(--stagger) * 3) both;
+        }
+    }
+
     header > :global(picture) {
         animation: dissolvenza var(--duration-entrance) var(--ease) both;
     }

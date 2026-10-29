@@ -210,7 +210,8 @@ main > header::after {
     inset-inline-end: 0;
 }
 
-/* Solo alla prima apertura del sito: nei cambi di pagina successivi (main[data-navigated], +layout.svelte) restano ferme */
+/* Solo alla prima apertura del sito: nei cambi di pagina successivi (main[data-navigated], +layout.svelte) restano
+   ferme. Fa eccezione la hero della homepage (Hero.svelte), dove scendono sempre. */
 @media (prefers-reduced-motion: no-preference) {
     main:not([data-navigated]) > header::after {
         animation: corde-scendono var(--duration-slow) var(--ease) calc(var(--stagger) * 3) both;
