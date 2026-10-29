@@ -28,7 +28,7 @@
 
 <section>
     <h2>Suona con noi</h2>
-    <p>Per suonare in un ensemble iscriviti alla Filarmonica con la <a href="/support/join">richiesta di iscrizione</a>.</p>
+    <p>Per suonare in un ensemble iscriviti alla Filarmonica con la <a href="/support/join">domanda di iscrizione</a>.</p>
 </section>
 
 <section>

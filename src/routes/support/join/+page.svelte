@@ -32,8 +32,8 @@
 </script>
 
 <svelte:head>
-    <title>Richiesta di iscrizione — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="Compila il modulo per richiedere l'iscrizione come socio alla Filarmonica Alessandro Stradella APS." />
+    <title>Domanda di iscrizione — Filarmonica Alessandro Stradella APS</title>
+    <meta name="description" content="Compila la domanda di iscrizione come socio della Filarmonica Alessandro Stradella APS." />
 </svelte:head>
 
 {#snippet identityFields(prefix: string, section: string, bindsBirthDate: boolean)}
@@ -90,7 +90,8 @@
 {/snippet}
 
 <header>
-    <h1>Richiesta di iscrizione</h1>
+    <h1>Domanda di iscrizione</h1>
+    <p>Il consiglio direttivo esamina la domanda e ti comunica l'esito per email.</p>
 </header>
 
 <section>
@@ -108,10 +109,6 @@
         <p>No: strumento, parti e sala prove li mette a disposizione l'associazione.</p>
     </details>
     <details>
-        <summary>Come so se l'iscrizione è accettata?</summary>
-        <p>Ti scriviamo all'indirizzo email indicato nel modulo.</p>
-    </details>
-    <details>
         <summary>Come si iscrive un minorenne?</summary>
         <p>
             L'iscrizione la fa un genitore o tutore: inserisci i dati del ragazzo e poi i tuoi, con il tuo documento di identità. Sotto i 14 anni online
@@ -121,7 +118,7 @@
 </section>
 
 <form action="https://formsubmit.co/segreteria@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="_subject" value="Nuova richiesta di iscrizione - Filarmonica Stradella" />
+    <input type="hidden" name="_subject" value="Nuova domanda di iscrizione - Filarmonica Stradella" />
     <input type="hidden" name="_template" value="table" />
     <input type="hidden" name="_next" value="https://filarmonicastradella.it/support/join/thanks" />
     <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
@@ -193,7 +190,7 @@
             <p>
                 <input type="checkbox" id="privacy" name="privacy" required />
                 <label for="privacy">
-                    Dichiaro di aver preso visione dell'<a href="/legal/privacy" target="_blank" rel="noopener noreferrer">informativa sulla privacy</a> e acconsento al trattamento dei miei dati personali per la gestione della richiesta di iscrizione.
+                    Dichiaro di aver preso visione dell'<a href="/legal/privacy" target="_blank" rel="noopener noreferrer">informativa sulla privacy</a> e acconsento al trattamento dei miei dati personali per la gestione della domanda di iscrizione.
                 </label>
             </p>
 
@@ -269,7 +266,7 @@
     {/if}
 
     <p>
-        <button type="submit" disabled={isTooYoung}>Invia la richiesta di iscrizione</button>
+        <button type="submit" disabled={isTooYoung}>Invia la domanda di iscrizione</button>
     </p>
 </form>
 
