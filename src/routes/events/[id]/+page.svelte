@@ -1,14 +1,14 @@
 <script lang="ts">
-    import { eventDate, eventPlace, eventTime } from "$lib/events";
+    import { eventDate, eventPlace, eventTime, eventWhen } from "$lib/events";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
     const event = $derived(data.event);
 
     const date = $derived(eventDate(event));
-    const time = $derived(eventTime(event));
     const place = $derived(eventPlace(event));
-    const summary = $derived([time, place].filter(Boolean).join(" · "));
+    // Il resto dell'indirizzo, dopo il nome del luogo
+    const address = $derived(event.location.split(",").slice(1).join(",").trim());
     // La descrizione del calendario: i paragrafi sono separati da una riga vuota, le righe singole (programma,
     // musicisti) restano una sotto l'altra.
     const paragraphs = $derived(event.description.split(/\n\s*\n/).map((text) => text.trim()).filter(Boolean));
@@ -16,12 +16,12 @@
 
 <svelte:head>
     <title>{event.summary} — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content={[date, summary].filter(Boolean).join(", ")} />
+    <meta name="description" content={[date, eventTime(event), place].filter(Boolean).join(", ")} />
 </svelte:head>
 
 <!--
-    L'intestazione è come quella delle altre pagine; i microdati dell'evento la collegano, con "itemref", alle
-    sezioni con i dettagli e la descrizione.
+    Ogni informazione una volta sola (docs/DESIGN.md): la data in occhiello e il titolo nell'intestazione, ora e
+    luogo per esteso in "Quando e dove". I microdati dell'evento collegano, con "itemref", le sezioni sotto.
 -->
 <header itemscope itemtype="https://schema.org/Event" itemref="evento-dettagli evento-descrizione">
     <p><time itemprop="startDate" datetime={event.start}>{date}</time></p>
@@ -29,25 +29,30 @@
         <meta itemprop="endDate" content={event.end} />
     {/if}
     <h1 itemprop="name">{event.summary}</h1>
-    {#if summary}
-        <p>{summary}</p>
-    {/if}
 </header>
 
 <section id="evento-dettagli">
     <h2>Quando e dove</h2>
     <dl>
         <dt>Quando</dt>
-        <dd>{event.when}</dd>
+        <dd>{eventWhen(event)}</dd>
         {#if event.location}
             <dt>Dove</dt>
-            <dd itemprop="location">{event.location}</dd>
-            <dd><a href="https://maps.google.com/?q={encodeURIComponent(event.location)}" target="_blank" rel="noopener noreferrer">Apri in Google Maps</a></dd>
+            <dd itemprop="location" itemscope itemtype="https://schema.org/Place">
+                <span itemprop="name">{place}</span>
+                {#if address}
+                    <br />
+                    <a
+                        itemprop="address"
+                        href="https://maps.google.com/?q={encodeURIComponent(event.location)}"
+                        target="_blank"
+                        rel="noopener noreferrer">{address}</a
+                    >
+                {/if}
+            </dd>
         {/if}
     </dl>
-    {#if event.htmlLink}
-        <p><a href={event.htmlLink} target="_blank" rel="noopener noreferrer">Apri in Google Calendar</a></p>
-    {/if}
+    <p><a href="/events/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
 </section>
 
 {#if paragraphs.length > 0}
