@@ -141,6 +141,16 @@
         Nel <time datetime="1970">1970</time> Fivizzano ospitò il convegno provinciale delle bande, l'<time datetime="1970-01-11">11 gennaio</time>, e il <time datetime="1970-07-19">19 luglio</time> il primo Concorso bandistico «Città di Fivizzano». Il
         <time datetime="1987-06-27">27 giugno 1987</time> cominciarono i festeggiamenti per i 210 anni<sup><a href="#fonte-27" role="doc-noteref" id="rimando-27b" aria-label="Fonte 27">27</a></sup>.
     </p>
+    <figure>
+        <!-- SEGNAPOSTO: luogo, occasione e anno da verificare. -->
+        <enhanced:img
+            src={anni90CorteoImg}
+            alt="La Filarmonica in corteo in una via stretta del paese, in camicia bianca e pantaloni neri: clarinetti e flauto davanti, poi sassofoni e ottoni, dietro un corteo di bambine vestite di bianco e di persone"
+            {sizes}
+            loading="lazy"
+        />
+        <figcaption>La Filarmonica in corteo per le vie del paese, anni Novanta.</figcaption>
+    </figure>
 </section>
 
 <section id="nome">
@@ -155,17 +165,6 @@
         Barocca. Le origini ritrovate», e lo stesso giorno, «auspice la Società Filarmonica», fu posta una lapide sulla casa degli Stradella, vicino alle
         mura<sup><a href="#fonte-30" role="doc-noteref" id="rimando-30a" aria-label="Fonte 30">30</a></sup>. Alla fine degli anni Novanta la Filarmonica prese il nome del compositore.
     </p>
-    
-    <figure>
-        <!-- SEGNAPOSTO: luogo, occasione e anno da verificare. -->
-        <enhanced:img
-            src={anni90CorteoImg}
-            alt="La Filarmonica in corteo in una via stretta del paese, in camicia bianca e pantaloni neri: clarinetti e flauto davanti, poi sassofoni e ottoni, dietro un corteo di bambine vestite di bianco e di persone"
-            {sizes}
-            loading="lazy"
-        />
-        <figcaption>La Filarmonica in corteo per le vie del paese, anni Novanta.</figcaption>
-    </figure>
 </section>
 
 <section id="oggi">
