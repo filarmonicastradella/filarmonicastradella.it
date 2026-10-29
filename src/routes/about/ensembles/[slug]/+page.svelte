@@ -32,10 +32,12 @@
     <h2>Organico</h2>
     <dl>
         {#each ensemble.lineup as { name, instruments } (name)}
-            <dt>{name}</dt>
-            {#each instruments as instrument (instrument)}
-                <dd>{instrument}</dd>
-            {/each}
+            <div>
+                <dt>{name}</dt>
+                {#each instruments as instrument (instrument)}
+                    <dd>{instrument}</dd>
+                {/each}
+            </div>
         {/each}
     </dl>
 </section>

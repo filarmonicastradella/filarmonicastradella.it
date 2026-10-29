@@ -207,6 +207,29 @@ dd {
     margin: var(--space-1) 0 var(--space-4);
 }
 
+/*
+ * Elenchi a gruppi, un <div> per gruppo (l'organico di una formazione, i musicisti per strumento): i gruppi in
+ * colonne, ognuno con il filetto delle schede, così l'elenco resta compatto anche con molte voci.
+ */
+dl:has(> div):not([itemtype]) {
+    columns: 11rem;
+    column-gap: var(--space-6);
+
+    & > div {
+        break-inside: avoid;
+        padding-block: var(--space-4);
+        border-block-start: var(--border-width) solid var(--border);
+    }
+
+    & dt {
+        margin-block-end: var(--space-2);
+    }
+
+    & dd {
+        margin: 0;
+    }
+}
+
 /* Domande frequenti: la domanda è un titolo, non un'etichetta */
 dl[itemtype$="FAQPage"] > div {
     padding-block: var(--space-5);

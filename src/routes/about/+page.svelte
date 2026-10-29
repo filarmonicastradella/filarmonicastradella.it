@@ -30,6 +30,12 @@
         </a>
     </li>
     <li>
+        <a href="/about/musicians">
+            <h2>I nostri musicisti</h2>
+            <p>Chi suona nella Filarmonica, strumento per strumento.</p>
+        </a>
+    </li>
+    <li>
         <a href="/articles">
             <h2>Articoli</h2>
             <p>Storia, didattica, teoria musicale, vita della Filarmonica e notizie.</p>
