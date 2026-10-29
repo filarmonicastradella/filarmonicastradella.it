@@ -1,7 +1,5 @@
 <!-- Elenco dei musicisti dato dall'utente il 26/10/2026, aggiornato il 29/10/2026 (archi). In ogni strumento i nomi vanno in ordine alfabetico di cognome. -->
 <script lang="ts">
-    import FaqItem from "$lib/components/FaqItem.svelte";
-    import { faq } from "$lib/faq";
     const families = [
         {
             name: "Legni",
@@ -103,7 +101,6 @@
         <summary>Quali strumenti cercate?</summary>
         <p>Tutti, e in particolare oboe, fagotto e altri archi.</p>
     </details>
-    <FaqItem item={faq.strumento} />
     <details>
         <summary>Quanto spesso provate?</summary>
         <p>Una o due volte a settimana, più spesso prima dei concerti.</p>

@@ -1,6 +1,4 @@
 <script lang="ts">
-    import FaqItem from "$lib/components/FaqItem.svelte";
-    import { faq } from "$lib/faq";
     let birthDate = $state("");
     let domicilioUgualeResidenza = $state(true);
 
@@ -106,7 +104,10 @@
         <summary>Che impegno è richiesto?</summary>
         <p>Partecipare ad almeno metà delle attività, tra concerti, prove e momenti di vita associativa.</p>
     </details>
-    <FaqItem item={faq.strumento} />
+    <details>
+        <summary>Devo avere uno strumento mio?</summary>
+        <p>No: strumento, parti e sala prove li mette a disposizione l'associazione.</p>
+    </details>
     <details>
         <summary>C'è un limite di età?</summary>
         <p>No: si può suonare a qualsiasi età. Per i minorenni l'iscrizione la fa un genitore o un tutore.</p>

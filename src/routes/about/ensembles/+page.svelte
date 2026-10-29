@@ -31,14 +31,6 @@
 <section>
     <h2>Domande frequenti</h2>
     <details>
-        <summary>Che cos'è una filarmonica?</summary>
-        <p>
-            Lo dice il nome: «filarmonica» viene dal greco e vuol dire amica della musica. È un'associazione che riunisce chi ama la musica e vuole suonarla
-            insieme, in più formazioni perché ogni repertorio chiede un organico diverso: il concerto in sala per l'orchestra di fiati, la musica in
-            movimento per la street band, archi e fiati insieme per l'orchestra Infieri, la musica antica per i Dissonanti.
-        </p>
-    </details>
-    <details>
         <summary>Come si entra in una formazione?</summary>
         <p>
             Prima ci si iscrive alla Filarmonica con la <a href="/support/join">domanda di iscrizione</a>; da soci si chiede di entrare nella formazione.
@@ -48,17 +40,6 @@
     <details>
         <summary>Posso suonare in più formazioni?</summary>
         <p>Sì: puoi entrare in più di una, ognuna con i suoi requisiti.</p>
-    </details>
-    <details>
-        <summary>Chi sceglie i brani?</summary>
-        <p>I musicisti: propongono i brani e li votano in una graduatoria, e i direttori scelgono da lì quelli da suonare.</p>
-    </details>
-    <details>
-        <summary>Chi è il maestro?</summary>
-        <p>
-            Non ce n'è uno solo: i direttori sono più di uno e sono prima di tutto musicisti. Ognuno dirige in autonomia i propri brani, e negli altri
-            suona con tutti.
-        </p>
     </details>
     <details>
         <summary>Posso proporre una nuova formazione?</summary>

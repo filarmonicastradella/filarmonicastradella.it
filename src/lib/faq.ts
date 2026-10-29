@@ -12,10 +12,5 @@ export const faq = {
         question: "Potete suonare al mio evento?",
         answer:
             'Sì: per un concerto, un convegno, una cerimonia o una festa <a href="/booking">raccontaci l\'occasione</a>. Ti rispondiamo con la disponibilità e la formazione adatta.'
-    },
-    // Iscrizione, I nostri musicisti
-    strumento: {
-        question: "Devo avere uno strumento mio?",
-        answer: "No: strumento, parti e sala prove li mette a disposizione l'associazione."
     }
 } satisfies Record<string, FaqItem>;
