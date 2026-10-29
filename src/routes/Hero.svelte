@@ -15,7 +15,7 @@
         <h1>Filarmonica <em>Alessandro Stradella</em></h1>
         <p>Custodi della <strong>tradizione</strong>, interpreti del <strong>futuro</strong>.</p>
     </hgroup>
-    <p><a href="/booking">Richiedi un concerto</a></p>
+    <p><a href="/booking">Per il tuo evento</a></p>
     <enhanced:img
         src={cover}
         alt="Stradella Facendo in concerto nel Museo di San Giovanni degli Agostiniani a Fivizzano"
