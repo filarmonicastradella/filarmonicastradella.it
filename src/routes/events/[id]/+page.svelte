@@ -31,6 +31,14 @@
     <h1 itemprop="name">{event.summary}</h1>
 </header>
 
+<!-- La descrizione del calendario, già pulita alla build (src/lib/server/calendar.ts): paragrafi, elenchi, link -->
+{#if event.descriptionHtml}
+    <section id="evento-descrizione">
+        <h2>L'evento</h2>
+        {@html event.descriptionHtml}
+    </section>
+{/if}
+
 <section id="evento-dettagli">
     <h2>Quando e dove</h2>
     <dl>
@@ -54,13 +62,5 @@
     </dl>
     <p><a href="/events/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
 </section>
-
-<!-- La descrizione del calendario, già pulita alla build (src/lib/server/calendar.ts): paragrafi, elenchi, link -->
-{#if event.descriptionHtml}
-    <section id="evento-descrizione">
-        <h2>L'evento</h2>
-        {@html event.descriptionHtml}
-    </section>
-{/if}
 
 <p class="rimando"><a href="/events">Tutto il calendario</a></p>
