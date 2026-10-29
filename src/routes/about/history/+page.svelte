@@ -3,7 +3,7 @@
     import anni30Img from "$lib/assets/imgs/anni_30.jpeg?enhanced&w=400;640;800;1280;1600";
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
     import anni30Placeholder from "$lib/assets/imgs/anni_30.jpeg?w=24&blur=2&format=webp&inline";
-    import anni80Img from "$lib/assets/imgs/anni_80.jpeg?enhanced&w=400;640;800;1280;1600";
+    
     import anni90CorteoImg from "$lib/assets/imgs/anni_90_corteo.jpeg?enhanced&w=400;640;800;1280;1600";
     import oggiImg from "$lib/assets/imgs/oggi.jpg?enhanced&w=400;640;800;1280;1600";
 
@@ -38,9 +38,9 @@
 </nav>
 
 <p>
-    La Filarmonica di Fivizzano nacque nel Settecento come accademia di nobili, religiosi e musicisti; nell'Ottocento ebbe un'orchestra, una banda e
-    maestri di professione; nel 1872 lo Stato la contava tra le quattro accademie filarmoniche italiane più antiche ancora attive, con Santa Cecilia di
-    Roma, la Filarmonica di Bologna e l'Accademia di Alba<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1a" aria-label="Fonte 1">1</a></sup>. Questa è la sua storia, come la raccontano i documenti ritrovati finora.
+    La Filarmonica di Fivizzano nacque nel Settecento come accademia di nobili, religiosi e musicisti. Nell'Ottocento ebbe un'orchestra, una banda e
+    maestri di professione, e nel 1872 lo Stato la contava tra le quattro accademie filarmoniche italiane più antiche ancora attive, con Santa Cecilia di
+    Roma, la Filarmonica di Bologna e l'Accademia di Alba<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1a" aria-label="Fonte 1">1</a></sup>. Quello che segue viene dai documenti ritrovati finora.
 </p>
 
 <section id="accademia">
@@ -54,8 +54,7 @@
     <p>
         Si chiamava Accademia dei Filarmonici Dissonanti<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3a" aria-label="Fonte 3">3</a></sup>. La fondò il conte Odoardo Fantoni<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1b" aria-label="Fonte 1">1</a></sup>, flautista, fratello del poeta Giovanni
         Fantoni, Labindo, che in un'ode lo descrive mentre suona nella valle del Rosaro con Angiolo Battaglia, musicista dal «genio straordinario»<sup><a href="#fonte-4" role="doc-noteref" id="rimando-4a" aria-label="Fonte 4">4</a></sup>.
-        A capo dell'accademia c'era un «Principe»: nel 1789 lo era il marchese Carlo Emanuele Malaspina di Fosdinovo, e Giosuè Carducci ne sorrise scrivendo
-        che «democraticamente il marchese era principe dell'Accademia filarmonica dei Dissonanti in Fivizzano»<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5a" aria-label="Fonte 5">5</a></sup>. Gli accademici avevano una sala
+        A capo dell'accademia c'era un «Principe»: nel 1789 lo era il marchese Carlo Emanuele Malaspina di Fosdinovo, e Giosuè Carducci scrisse che «democraticamente il marchese era principe dell'Accademia filarmonica dei Dissonanti in Fivizzano»<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5a" aria-label="Fonte 5">5</a></sup>. Gli accademici avevano una sala
         tutta loro, dove dopo le feste si cenava e si ballava<sup><a href="#fonte-6" role="doc-noteref" id="rimando-6a" aria-label="Fonte 6">6</a></sup>.
     </p>
     <p>
@@ -72,7 +71,7 @@
         compositore<sup><a href="#fonte-6" role="doc-noteref" id="rimando-6b" aria-label="Fonte 6">6</a></sup>.
     </p>
     <p>
-        La festa più grande fu quella del <time datetime="1790-12">dicembre 1790</time>, per l'elezione di Leopoldo a imperatore: tre giorni di messe con
+        La festa di cui sappiamo di più è quella del <time datetime="1790-12">dicembre 1790</time>, per l'elezione di Leopoldo a imperatore: tre giorni di messe con
         musicisti fatti venire da fuori, una cantata su versi di Odoardo Fantoni e, in piazza, «quattro Orchestre con soprabbondante numero di Suonatori» e
         un globo aerostatico lanciato in cielo<sup><a href="#fonte-13" role="doc-noteref" id="rimando-13a" aria-label="Fonte 13">13</a></sup>.
     </p>
@@ -81,13 +80,13 @@
 <section id="banda">
     <h2>Dalla Rivoluzione alla banda</h2>
     <p>
-        La musica non si fermò con l'arrivo dei Francesi. Nel <time datetime="1799">1799</time>, per piantare l'albero della libertà, il Comune affidò «le
+        Nel <time datetime="1799">1799</time>, sotto i Francesi, per piantare l'albero della libertà, il Comune affidò «le
         zinfonie e canti» ad Antonio Cortesi e Carlo Contigli, con «tutti gli strumenti sì da fiato che da corda» e i cantori che si potevano
-        trovare<sup><a href="#fonte-14" role="doc-noteref" id="rimando-14a" aria-label="Fonte 14">14</a></sup>. Nel <time datetime="1802-04">1802</time>, nella processione del Venerdì santo, una banda suonò dal terrazzo di casa
-        Grilli<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3b" aria-label="Fonte 3">3</a></sup>. Nel <time datetime="1810">1810</time> Odoardo Fantoni chiamò da Parma l'orchestra per aprire il nuovo teatro del paese<sup><a href="#fonte-7" role="doc-noteref" id="rimando-7b" aria-label="Fonte 7">7</a></sup>.
+        trovare<sup><a href="#fonte-14" role="doc-noteref" id="rimando-14a" aria-label="Fonte 14">14</a></sup>. Tre anni dopo, nella processione del Venerdì santo, una banda suonò dal terrazzo di casa
+        Grilli<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3b" aria-label="Fonte 3">3</a></sup>. Per aprire il nuovo teatro del paese, nel <time datetime="1810">1810</time>, Odoardo Fantoni chiamò da Parma l'orchestra<sup><a href="#fonte-7" role="doc-noteref" id="rimando-7b" aria-label="Fonte 7">7</a></sup>.
     </p>
     <p>
-        Nel <time datetime="1829">1829</time> il Comune istituì un maestro di cappella pagato per insegnare musica ai giovani<sup><a href="#fonte-15" role="doc-noteref" id="rimando-15a" aria-label="Fonte 15">15</a></sup>. Il
+        Il Comune istituì nel <time datetime="1829">1829</time> un maestro di cappella pagato per insegnare musica ai giovani<sup><a href="#fonte-15" role="doc-noteref" id="rimando-15a" aria-label="Fonte 15">15</a></sup>. Il
         <time datetime="1831-08-24">24 agosto 1831</time> un rescritto del granduca eresse la società «in Banda Musicale» e diede ai suonatori un'uniforme
         per comparire «in pubblica forma»<sup><a href="#fonte-2" role="doc-noteref" id="rimando-2b" aria-label="Fonte 2">2</a></sup>. L'anno dopo, per la visita di Leopoldo II, la banda «alternò fino a notte avanzata i suoi concerti»
         in piazza<sup><a href="#fonte-16" role="doc-noteref" id="rimando-16a" aria-label="Fonte 16">16</a></sup>.
@@ -98,13 +97,12 @@
     <h2>La Società Filarmonica e i suoi maestri</h2>
     <p>
         Nella seconda metà dell'Ottocento la Società Filarmonica chiamò maestri di professione. Il primo che conosciamo è il pratese Livio Nesti, figlio di
-        sarti, che nel <time datetime="1854">1854</time> dirigeva l'orchestra del teatro di Grosseto ed era a Fivizzano già intorno al 1860<sup><a href="#fonte-17" role="doc-noteref" id="rimando-17a" aria-label="Fonte 17">17</a></sup>. Nel
-        <time datetime="1867">1867</time> il maestro di musica era Cesare Rossi, che l'anno dopo scriveva un'opera comica, <i>Per amore e non per
+        sarti, che nel <time datetime="1854">1854</time> dirigeva l'orchestra del teatro di Grosseto ed era a Fivizzano già intorno al 1860<sup><a href="#fonte-17" role="doc-noteref" id="rimando-17a" aria-label="Fonte 17">17</a></sup>. Nel <time datetime="1867">1867</time>, invece, il maestro era Cesare Rossi, che l'anno dopo scriveva un'opera comica, <i>Per amore e non per
         forza</i><sup><a href="#fonte-18" role="doc-noteref" id="rimando-18a" aria-label="Fonte 18">18</a></sup><sup><a href="#fonte-19" role="doc-noteref" id="rimando-19a" aria-label="Fonte 19">19</a></sup>.
     </p>
     <p>
-        Nel <time datetime="1871">1871-72</time>, di nuovo sotto Nesti, la Società contava 47 soci esecutori e 25 onorari, e la sua banda 25
-        elementi<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1c" aria-label="Fonte 1">1</a></sup>. Nel <time datetime="1878">1878</time> aveva due sezioni, Orchestra e Banda, e un presidente, l'avvocato Alberto Ginesi; il 7 febbraio
+        Nel <time datetime="1871">1871-72</time> il capo era di nuovo Nesti: la Società contava 47 soci esecutori e 25 onorari, la sua banda 25
+        elementi<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1c" aria-label="Fonte 1">1</a></sup>. Sette anni dopo aveva due sezioni, Orchestra e Banda, e un presidente, l'avvocato Alberto Ginesi; il 7 febbraio
         celebrò le esequie di Vittorio Emanuele II nella chiesa di San Giovanni, e un'epigrafe all'ingresso ricordava «l'armonia della Società Filarmonica di
         Fivizzano»<sup><a href="#fonte-20" role="doc-noteref" id="rimando-20a" aria-label="Fonte 20">20</a></sup>.
     </p>
@@ -113,7 +111,7 @@
         vent'anni e sposò Edoardina Ginesi, la figlia del presidente<sup><a href="#fonte-18" role="doc-noteref" id="rimando-18b" aria-label="Fonte 18">18</a></sup>.
     </p>
     <p>
-        Nel <time datetime="1880">1880</time> nacque a Fivizzano una seconda società musicale, la «8 febbraio 1880». Nel gennaio
+        Intanto, nel <time datetime="1880">1880</time>, era nata in paese una seconda società musicale, la «8 febbraio 1880». Nel gennaio
         <time datetime="1884-01">1884</time> le «due società musicali, Filarmonica e Otto febbraio» sfilarono a Roma, al Pantheon, e il giornale notò che
         Fivizzano era l'unico comune della provincia ad aver portato «ben quattro stendardi»<sup><a href="#fonte-21" role="doc-noteref" id="rimando-21a" aria-label="Fonte 21">21</a></sup>. Nel <time datetime="1887-05">1887</time> la
         Filarmonica mandò due rappresentanti a Firenze per la traslazione delle spoglie di Rossini in Santa Croce<sup><a href="#fonte-22" role="doc-noteref" id="rimando-22a" aria-label="Fonte 22">22</a></sup>.
@@ -123,16 +121,14 @@
 <section id="novecento">
     <h2>Il Novecento</h2>
     <p>
-        All'inizio del secolo la banda di Fivizzano era conosciuta anche fuori: lo scrittore Mario Puccini vi ambientò una novella, la storia di un giovane
-        maestro arrivato in paese «per dirigere la banda»<sup><a href="#fonte-23" role="doc-noteref" id="rimando-23a" aria-label="Fonte 23">23</a></sup>. Nelle fotografie del <time datetime="1921-11-04">4 novembre 1921</time>, per il Milite
+        All'inizio del secolo lo scrittore Mario Puccini ambientò a Fivizzano una novella: la storia di un giovane maestro arrivato in paese «per dirigere la banda»<sup><a href="#fonte-23" role="doc-noteref" id="rimando-23a" aria-label="Fonte 23">23</a></sup>. Nelle fotografie del <time datetime="1921-11-04">4 novembre 1921</time>, per il Milite
         Ignoto, si vede lo stendardo di una «Società Musicale» di Fivizzano<sup><a href="#fonte-24" role="doc-noteref" id="rimando-24a" aria-label="Fonte 24">24</a></sup>. Secondo la tradizione le due società si unirono intorno agli anni
         Venti<sup><a href="#fonte-25" role="doc-noteref" id="rimando-25a" aria-label="Fonte 25">25</a></sup>; alla fine del <time datetime="1929">1929</time> la banda di Fivizzano risulta in attività<sup><a href="#fonte-26" role="doc-noteref" id="rimando-26a" aria-label="Fonte 26">26</a></sup>. Negli anni Trenta la
         Filarmonica era anche società di mutuo soccorso e dall'<time datetime="1934-11-11">11 novembre 1934</time> passò all'Opera Nazionale
         Dopolavoro<sup><a href="#fonte-27" role="doc-noteref" id="rimando-27a" aria-label="Fonte 27">27</a></sup>.
     </p>
     <p>
-        Nel dopoguerra Fivizzano tornò un punto di riferimento per le bande: l'<time datetime="1970-01-11">11 gennaio 1970</time> ospitò il loro convegno
-        provinciale e il <time datetime="1970-07-19">19 luglio</time> il primo Concorso bandistico «Città di Fivizzano». Il
+        Nel <time datetime="1970">1970</time> Fivizzano ospitò il convegno provinciale delle bande, l'<time datetime="1970-01-11">11 gennaio</time>, e il <time datetime="1970-07-19">19 luglio</time> il primo Concorso bandistico «Città di Fivizzano». Il
         <time datetime="1987-06-27">27 giugno 1987</time> cominciarono i festeggiamenti per i 210 anni<sup><a href="#fonte-27" role="doc-noteref" id="rimando-27b" aria-label="Fonte 27">27</a></sup>.
     </p>
 </section>
@@ -149,13 +145,9 @@
         Barocca. Le origini ritrovate», e lo stesso giorno, «auspice la Società Filarmonica», fu posta una lapide sulla casa degli Stradella, vicino alle
         mura<sup><a href="#fonte-30" role="doc-noteref" id="rimando-30a" aria-label="Fonte 30">30</a></sup>. Alla fine degli anni Novanta la Filarmonica prese il nome del compositore.
     </p>
+    
     <figure>
-        <!-- SEGNAPOSTO: il file si chiama anni_80 ma la didascalia dice anni Novanta: verificare il decennio. -->
-        <enhanced:img src={anni80Img} alt="Foto di gruppo dei musicisti della Filarmonica" {sizes} loading="lazy" />
-        <figcaption>I musicisti della Filarmonica negli anni Novanta.</figcaption>
-    </figure>
-    <figure>
-        <!-- SEGNAPOSTO: luogo, occasione e anno da verificare (stessa serie d'archivio della foto sopra). -->
+        <!-- SEGNAPOSTO: luogo, occasione e anno da verificare. -->
         <enhanced:img
             src={anni90CorteoImg}
             alt="La Filarmonica in corteo in una via stretta del paese, in camicia bianca e pantaloni neri: clarinetti e flauto davanti, poi sassofoni e ottoni, dietro un corteo di bambine vestite di bianco e di persone"
@@ -169,7 +161,7 @@
 <section id="oggi">
     <h2>Oggi</h2>
     <p>
-        Oggi la Filarmonica Alessandro Stradella è un'associazione di promozione sociale con più di cinquanta soci e quattro formazioni: l'orchestra di fiati
+        La Filarmonica Alessandro Stradella è un'associazione di promozione sociale con più di cinquanta soci e quattro formazioni: l'orchestra di fiati
         <a href="/about/ensembles/stradella-facendo">Stradella Facendo</a>, la <a href="/about/ensembles/streetella-band">Streetella Band</a>,
         l'<a href="/about/ensembles/infieri">Orchestra Infieri</a> e il gruppo di musica antica dei
         <a href="/about/ensembles/filarmonici-dissonanti">Filarmonici Dissonanti</a>, che porta il nome degli accademici del Settecento. Nel

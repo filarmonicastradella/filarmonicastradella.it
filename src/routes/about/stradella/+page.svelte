@@ -26,9 +26,8 @@
 </header>
 
 <p>
-    Alessandro Stradella non nacque a Fivizzano, ma la sua famiglia sì: per più di un secolo gli Stradella furono medici, giuristi, notai e uomini di
-    Chiesa del paese, e da qui partì il ramo da cui discende il compositore. Per questo, alla fine degli anni Novanta, la Filarmonica ha preso il suo
-    nome.
+    La famiglia di Alessandro Stradella era di Fivizzano. Per più di un secolo gli Stradella furono medici, giuristi, notai e uomini di Chiesa del
+    paese, e da qui partì il ramo del compositore, che nacque a Bologna. Per questo la Filarmonica porta il suo nome.
 </p>
 
 <section>
@@ -37,11 +36,10 @@
         Alessandro Stradella fu uno dei compositori più importanti del Seicento italiano: scrisse cantate, oratori come il <i>San Giovanni Battista</i>,
         opere e musica strumentale. Nacque a Bologna il <time datetime="1643-07-03">3 luglio 1643</time><sup><a href="#fonte-1" role="doc-noteref" id="rimando-1a" aria-label="Fonte 1">1</a></sup>, crebbe a Roma, lavorò per le grandi
         famiglie romane e poi a Genova, dove morì il <time datetime="1682-02-25">25 febbraio 1682</time>, ucciso in un agguato<sup><a href="#fonte-2" role="doc-noteref" id="rimando-2a" aria-label="Fonte 2">2</a></sup>. A Genova tra i suoi
-        protettori c'erano i Doria, che un secolo prima avevano avuto al loro servizio i suoi antenati fivizzanesi<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3a" aria-label="Fonte 3">3</a></sup>. Morì senza moglie né
-        figli<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3b" aria-label="Fonte 3">3</a></sup>.
+        protettori c'erano i Doria, che un secolo prima avevano avuto al loro servizio i suoi antenati fivizzanesi<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3a" aria-label="Fonte 3">3</a></sup>. Non lasciò moglie né figli<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3b" aria-label="Fonte 3">3</a></sup>.
     </p>
     <p>
-        La sua vita avventurosa ha ispirato romanzi, melodrammi e perfino un film. Per conoscerla meglio c'è la sua
+        La sua vita, tra fughe e amori contrastati, ha dato materia a romanzi e melodrammi: il più noto è l'opera <i>Alessandro Stradella</i> di Friedrich von Flotow (1844). Per conoscerla meglio c'è la sua
         <a href="https://www.treccani.it/enciclopedia/alessandro-stradella_(Dizionario-Biografico)/" target="_blank" rel="noopener noreferrer"
             >voce nel Dizionario Biografico degli Italiani</a
         >.
@@ -79,7 +77,7 @@
 <section>
     <h2>Il vescovo Alessio</h2>
     <p>
-        Alessio entrò nell'ordine agostiniano e divenne uno dei predicatori più stimati del suo tempo. Partecipò al Concilio di Trento e insegnò teologia a
+        Alessio entrò nell'ordine agostiniano e fu predicatore. Partecipò al Concilio di Trento e insegnò teologia a
         Roma, dove tra i suoi allievi ci fu Filippo Neri<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3e" aria-label="Fonte 3">3</a></sup>. Il <time datetime="1575-07-20">20 luglio 1575</time> papa Gregorio XIII lo nominò
         vescovo di Nepi e Sutri<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5a" aria-label="Fonte 5">5</a></sup>; a Nepi chiese al Comune un seminario «con un maestro di grammatica e di musica»<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3f" aria-label="Fonte 3">3</a></sup>. Scrisse anche
         memorie su Fivizzano, che il naturalista Giovanni Targioni Tozzetti citò due secoli dopo<sup><a href="#fonte-6" role="doc-noteref" id="rimando-6a" aria-label="Fonte 6">6</a></sup>.
@@ -100,7 +98,7 @@
         Giannotino Stradella di Fivizzano suo zio»<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3g" aria-label="Fonte 3">3</a></sup><sup><a href="#fonte-8" role="doc-noteref" id="rimando-8a" aria-label="Fonte 8">8</a></sup>.
     </p>
     <p>
-        Marc'Antonio amava la musica: nel <time datetime="1609">1609</time> curò a Roma la stampa del primo libro di madrigali di Giovanni Girolamo
+        Anche Marc'Antonio ebbe a che fare con la musica: nel <time datetime="1609">1609</time> curò a Roma la stampa del primo libro di madrigali di Giovanni Girolamo
         Kapsberger<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3h" aria-label="Fonte 3">3</a></sup>. Suo figlio era Alessandro. Un altro ramo della famiglia restò a Fivizzano: nel <time datetime="1610">1610</time> vi nacque
         Giovanni Battista, figlio di Pellegrino Stradella e di Angelica Rossi<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3i" aria-label="Fonte 3">3</a></sup>.
     </p>
@@ -112,8 +110,7 @@
         La casa degli Stradella sorge vicino alle mura del paese. Fu danneggiata dal terremoto del 1920 e nella ricostruzione perse un piano<sup><a href="#fonte-9" role="doc-noteref" id="rimando-9a" aria-label="Fonte 9">9</a></sup>.
     </p>
     <p>
-        Il ramo fivizzanese della famiglia lo ha ricostruito Patrizia Radicchi, su invito della musicologa Carolyn Gianturco, la studiosa che più di tutti ha
-        fatto conoscere Stradella<sup><a href="#fonte-8" role="doc-noteref" id="rimando-8b" aria-label="Fonte 8">8</a></sup><sup><a href="#fonte-3" role="doc-noteref" id="rimando-3j" aria-label="Fonte 3">3</a></sup>. Il <time datetime="1997-12-06">6 dicembre 1997</time> la Società Filarmonica, il Comune e la
+        Il ramo fivizzanese della famiglia lo ha ricostruito Patrizia Radicchi, su invito della musicologa Carolyn Gianturco, autrice della biografia di riferimento del compositore (1994)<sup><a href="#fonte-8" role="doc-noteref" id="rimando-8b" aria-label="Fonte 8">8</a></sup><sup><a href="#fonte-3" role="doc-noteref" id="rimando-3j" aria-label="Fonte 3">3</a></sup>. Il <time datetime="1997-12-06">6 dicembre 1997</time> la Società Filarmonica, il Comune e la
         Fondazione Cassa di Risparmio di Carrara presentarono queste ricerche in una giornata intera, «Alessandro Stradella e la Musica Barocca. Le origini
         ritrovate»: il pomeriggio la conferenza a Palazzo Coiari, la sera un concerto di musica barocca nella chiesa prepositurale<sup><a href="#fonte-10" role="doc-noteref" id="rimando-10a" aria-label="Fonte 10">10</a></sup>. Lo stesso
         giorno, «auspice la Società Filarmonica», fu murata sulla casa una lapide. Vi si legge che Alessandro nacque nel 1644: era la data accettata allora,
