@@ -72,8 +72,7 @@
 <section>
     <h2>Suona con noi</h2>
     <p>
-        Cerchiamo musicisti di ogni livello, anche chi comincia da zero, e in particolare oboe, fagotto e archi. Strumento, parti e sala prove li mette a
-        disposizione l'associazione.
+        Cerchiamo musicisti di ogni livello, anche chi comincia da zero. Strumento, parti e sala prove li mette a disposizione l'associazione.
     </p>
     <p class="rimando"><a href="/support/join">Come iscriversi</a></p>
 </section>
