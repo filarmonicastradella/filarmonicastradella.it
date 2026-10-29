@@ -11,6 +11,7 @@
         { name: "Collaborazioni, enti e sponsor", mailbox: "presidente" },
         { name: "Stampa e media", mailbox: "presidente" },
         { name: "Materiale storico", mailbox: "info" },
+        { name: "Tutela dei minori", mailbox: "safeguarding" },
         { name: "Privacy e dati personali", mailbox: "privacy" },
         { name: "Problemi con il sito", mailbox: "webmaster" },
         { name: "Altro", mailbox: "info" }
@@ -23,7 +24,7 @@
 
 <svelte:head>
     <title>Contatti — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content="Telefono, email, modulo di contatto e uffici della Filarmonica Alessandro Stradella APS." />
+    <meta name="description" content="Telefono, email e modulo di contatto della Filarmonica Alessandro Stradella APS." />
 </svelte:head>
 
 <header>
@@ -87,24 +88,6 @@
 
         <p><button type="submit">Invia il messaggio</button></p>
     </form>
-</section>
-
-<section>
-    <h2>Uffici</h2>
-    <dl>
-        <dt>Presidenza</dt>
-        <dd><a href="mailto:presidente@filarmonicastradella.it">presidente@filarmonicastradella.it</a></dd>
-        <dt>Segreteria</dt>
-        <dd><a href="mailto:segreteria@filarmonicastradella.it">segreteria@filarmonicastradella.it</a></dd>
-        <dt>Tesoreria</dt>
-        <dd><a href="mailto:tesoreria@filarmonicastradella.it">tesoreria@filarmonicastradella.it</a></dd>
-        <dt>Tutela dei minori</dt>
-        <dd><a href="mailto:safeguarding@filarmonicastradella.it">safeguarding@filarmonicastradella.it</a></dd>
-        <dt>Privacy</dt>
-        <dd><a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a></dd>
-        <dt>Sito web</dt>
-        <dd><a href="mailto:webmaster@filarmonicastradella.it">webmaster@filarmonicastradella.it</a></dd>
-    </dl>
 </section>
 
 <!-- Da riattivare insieme a /about/locations:
