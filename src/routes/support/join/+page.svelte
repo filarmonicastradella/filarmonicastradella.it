@@ -116,6 +116,10 @@
             pratica di persona.
         </p>
     </details>
+    <details>
+        <summary>Posso aiutare senza suonare?</summary>
+        <p>Sì: da socio puoi mettere a disposizione il tuo tempo e le tue competenze, anche senza suonare uno strumento.</p>
+    </details>
 </section>
 
 <form action="https://formsubmit.co/segreteria@filarmonicastradella.it" method="POST" enctype="multipart/form-data">

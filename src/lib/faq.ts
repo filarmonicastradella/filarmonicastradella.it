@@ -7,7 +7,7 @@ export interface FaqItem {
 }
 
 export const faq = {
-    // Calendario, Le nostre formazioni
+    // Pagine dei singoli eventi, Le nostre formazioni
     evento: {
         question: "Potete suonare al mio evento?",
         answer:

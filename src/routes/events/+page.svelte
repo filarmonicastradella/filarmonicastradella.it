@@ -1,6 +1,4 @@
 <script lang="ts">
-    import FaqItem from "$lib/components/FaqItem.svelte";
-    import { faq } from "$lib/faq";
     import { onMount } from "svelte";
     import EventCard from "$lib/components/EventCard.svelte";
     import TimelineSections from "$lib/components/TimelineSections.svelte";
@@ -37,23 +35,3 @@
         {/snippet}
     </TimelineSections>
 {/if}
-
-<section>
-    <h2>Domande frequenti</h2>
-    <details>
-        <summary>Si paga l'ingresso?</summary>
-        <p>No, i concerti sono a ingresso libero.</p>
-    </details>
-    <details>
-        <summary>Devo prenotare?</summary>
-        <p>
-            Non è obbligatorio, ma ci aiuta sapere in quanti verrete, per organizzare la sala e per la sicurezza:
-            <a href="/contacts#scrivici">scrivici</a> per segnalare la tua presenza.
-        </p>
-    </details>
-    <details>
-        <summary>E se piove?</summary>
-        <p>Per i concerti all'aperto abbiamo sempre pronto un posto al chiuso nelle vicinanze.</p>
-    </details>
-    <FaqItem item={faq.evento} />
-</section>

@@ -1,6 +1,6 @@
 <svelte:head>
     <title>Sostienici — Filarmonica Alessandro Stradella</title>
-    <meta name="description" content="Come sostenere la Filarmonica Alessandro Stradella APS, iscrivendoti o con una donazione, e che cosa coprono quote e donazioni." />
+    <meta name="description" content="Come sostenere la Filarmonica Alessandro Stradella APS: iscrivendoti come socio o con una donazione." />
 </svelte:head>
 
 <header>
@@ -10,21 +10,6 @@
         difficilmente potrebbe sostenere.
     </p>
 </header>
-
-<section>
-    <h2>Domande frequenti</h2>
-    <details>
-        <summary>A cosa serve il tuo sostegno?</summary>
-        <p>
-            Copre le spese di tutto l'anno: strumenti e attrezzatura, spartiti, la sala prove, i costi dei concerti e
-            l'assicurazione dei soci.
-        </p>
-    </details>
-    <details>
-        <summary>Posso aiutare senza dare soldi?</summary>
-        <p>Sì: da socio puoi mettere a disposizione il tuo tempo e le tue competenze. <a href="/support/join">Iscriviti</a>.</p>
-    </details>
-</section>
 
 <ul>
     <li>

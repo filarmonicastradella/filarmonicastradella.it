@@ -11,6 +11,13 @@
 <section>
     <h2>Domande frequenti</h2>
     <details>
+        <summary>A cosa serve la tua donazione?</summary>
+        <p>
+            Copre le spese di tutto l'anno: strumenti e attrezzatura, spartiti, la sala prove, i costi dei concerti e
+            l'assicurazione dei soci.
+        </p>
+    </details>
+    <details>
         <summary>Posso detrarre la donazione?</summary>
         <p>
             Sì: siamo un'associazione di promozione sociale, e le donazioni a nostro favore godono delle agevolazioni fiscali previste dalla normativa

@@ -31,6 +31,14 @@
 <section>
     <h2>Domande frequenti</h2>
     <details>
+        <summary>Perché più formazioni?</summary>
+        <p>
+            Perché ogni repertorio chiede un organico diverso: il concerto in sala per l'orchestra di fiati, la musica in movimento per la street band,
+            archi e fiati insieme per l'orchestra Infieri, la musica antica per i Dissonanti. La Filarmonica le riunisce tutte: lo dice il nome, che dal
+            greco vuol dire amica della musica.
+        </p>
+    </details>
+    <details>
         <summary>Come si entra in una formazione?</summary>
         <p>
             Prima ci si iscrive alla Filarmonica con la <a href="/support/join">domanda di iscrizione</a>; da soci si chiede di entrare nella formazione.
@@ -40,6 +48,10 @@
     <details>
         <summary>Posso proporre una nuova formazione?</summary>
         <p>Sì: basta che la propongano almeno tre soci, con una bozza di regolamento.</p>
+    </details>
+    <details>
+        <summary>Chi sceglie i brani?</summary>
+        <p>I musicisti: propongono i brani e li votano in una graduatoria, e i direttori scelgono da lì quelli da suonare.</p>
     </details>
     <FaqItem item={faq.evento} />
 </section>

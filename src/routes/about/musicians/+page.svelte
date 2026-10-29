@@ -104,6 +104,13 @@
         <summary>Quanto spesso provate?</summary>
         <p>Una o due volte a settimana, più spesso prima dei concerti.</p>
     </details>
+    <details>
+        <summary>Chi è il maestro?</summary>
+        <p>
+            Non ce n'è uno solo: i direttori sono più di uno e sono prima di tutto musicisti. Ognuno dirige in autonomia i propri brani, e negli altri
+            suona con tutti.
+        </p>
+    </details>
 </section>
 
 <p class="rimando"><a href="/about">L'associazione</a></p>

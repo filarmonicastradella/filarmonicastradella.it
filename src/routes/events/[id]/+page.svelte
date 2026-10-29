@@ -1,5 +1,7 @@
 <script lang="ts">
-    import { eventDate, eventPlace, eventTime, eventWhen } from "$lib/events";
+    import FaqItem from "$lib/components/FaqItem.svelte";
+    import { eventDate, eventPlace, eventTime, eventWhen, hasNotEnded } from "$lib/events";
+    import { faq } from "$lib/faq";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
@@ -15,6 +17,8 @@
     });
     // Il resto dell'indirizzo, dopo il nome del luogo
     const address = $derived(event.location.split(",").slice(1).join(",").trim());
+    // Le domande servono a chi ci deve ancora andare: per gli eventi passati non si mostrano
+    const upcoming = $derived(hasNotEnded(event, new Date()));
 </script>
 
 <svelte:head>
@@ -68,5 +72,27 @@
     </dl>
     <p><a href="/events/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
 </section>
+
+{#if upcoming}
+    <section>
+        <h2>Domande frequenti</h2>
+        <details>
+            <summary>Si paga l'ingresso?</summary>
+            <p>No, i concerti sono a ingresso libero.</p>
+        </details>
+        <details>
+            <summary>Devo prenotare?</summary>
+            <p>
+                Non è obbligatorio, ma ci aiuta sapere in quanti verrete, per organizzare la sala e per la sicurezza:
+                <a href="/contacts#scrivici">scrivici</a> per segnalare la tua presenza.
+            </p>
+        </details>
+        <details>
+            <summary>E se piove?</summary>
+            <p>Per i concerti all'aperto abbiamo sempre pronto un posto al chiuso nelle vicinanze.</p>
+        </details>
+        <FaqItem item={faq.evento} />
+    </section>
+{/if}
 
 <p class="rimando"><a href="/events">Tutti gli eventi</a></p>
