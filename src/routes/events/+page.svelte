@@ -46,7 +46,7 @@
         <summary>Devo prenotare?</summary>
         <p>
             Non è obbligatorio, ma ci aiuta sapere in quanti verrete, per organizzare la sala e per la sicurezza:
-            <a href="/contacts/message">scrivici</a> per segnalare la tua presenza.
+            <a href="/contacts#scrivici">scrivici</a> per segnalare la tua presenza.
         </p>
     </details>
     <details>

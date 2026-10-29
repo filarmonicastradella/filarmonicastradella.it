@@ -57,5 +57,5 @@
 </ul>
 
 <!-- Tolto il 9/10/2026; con /faq riattivata si può rimettere:
-<p>Hai dubbi? Leggi le <a href="/faq">domande frequenti</a> o <a href="/contacts/message">scrivici</a>.</p>
+<p>Hai dubbi? Leggi le <a href="/faq">domande frequenti</a> o <a href="/contacts#scrivici">scrivici</a>.</p>
 -->
