@@ -1,5 +1,8 @@
 // I dati dell'ente, in un solo punto: li leggono il footer, le pagine legali, la mappa del sito e i dati
 // strutturati per i motori di ricerca (home).
+// Dopo il titolo di ogni pagina, nel <title>
+export const titleSuffix = " — Filarmonica Alessandro Stradella";
+
 export const organization = {
     name: "Filarmonica Alessandro Stradella APS",
     url: "https://filarmonicastradella.it",

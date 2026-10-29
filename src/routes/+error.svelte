@@ -15,10 +15,9 @@
             ? "La pagina che stai cercando sembra non esistere o è stata spostata in un altro pentagramma."
             : "Si è verificato un imprevisto tecnico durante l'esecuzione. Riprova più tardi."}
     </p>
+    {#if !notFound && page.error?.message}
+        <p><code>{page.error.message}</code></p>
+    {/if}
 </header>
-
-{#if !notFound && page.error?.message}
-    <p><code>{page.error.message}</code></p>
-{/if}
 
 <p class="rimando"><a href="/">Torna alla pagina principale</a></p>

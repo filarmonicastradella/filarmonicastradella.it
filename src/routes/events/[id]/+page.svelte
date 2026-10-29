@@ -1,7 +1,9 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import FaqItem from "$lib/components/FaqItem.svelte";
     import { eventDate, eventPlace, eventTime, eventWhen, hasNotEnded } from "$lib/events";
     import { faq } from "$lib/faq";
+    import { titleSuffix } from "$lib/organization";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
@@ -17,11 +19,15 @@
     });
     // Il resto dell'indirizzo, dopo il nome del luogo
     const address = $derived(event.location.split(",").slice(1).join(",").trim());
-    // Le domande servono a chi ci deve ancora andare: per gli eventi passati non si mostrano
-    const upcoming = $derived(hasNotEnded(event, new Date()));
+    // Le domande servono a chi ci deve ancora andare: per gli eventi passati non si mostrano. La build genera solo
+    // eventi in programma; nel browser si ricontrolla dopo il montaggio, così l'HTML del prerender resta valido.
+    let now = $state<Date>();
+    const upcoming = $derived(!now || hasNotEnded(event, now));
+    onMount(() => {
+        now = new Date();
+    });
     // Titoli lunghi senza il nome della Filarmonica, così il titolo resta entro i 70 caratteri che i motori mostrano
-    const suffix = " — Filarmonica Alessandro Stradella";
-    const pageTitle = $derived(event.summary.length + suffix.length > 70 ? event.summary : event.summary + suffix);
+    const pageTitle = $derived(event.summary.length + titleSuffix.length > 70 ? event.summary : event.summary + titleSuffix);
 </script>
 
 <svelte:head>

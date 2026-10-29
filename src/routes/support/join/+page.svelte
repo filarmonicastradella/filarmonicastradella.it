@@ -2,7 +2,7 @@
     let birthDate = $state("");
     let domicilioUgualeResidenza = $state(true);
 
-    const maxBirthDate = new Date().toISOString().split("T")[0];
+    const maxBirthDate = new Date().toLocaleDateString("en-CA", { timeZone: "Europe/Rome" }); // AAAA-MM-GG, il giorno in Italia
 
     const age = $derived.by(() => {
         if (!birthDate) return null;

@@ -1,12 +1,11 @@
 import type { Handle } from "@sveltejs/kit";
 import { categories } from "$lib/articles";
-import { organization } from "$lib/organization";
+import { organization, titleSuffix } from "$lib/organization";
 
 // Anteprime dei link (Open Graph): titolo e descrizione sono quelli che ogni pagina ha già (<title> e meta description),
 // copiati alla build nei tag og:, così non vanno scritti due volte in ogni pagina.
 const escapeAttribute = (text: string) => text.trim().replace(/"/g, "&quot;");
 
-const suffix = " — Filarmonica Alessandro Stradella";
 const plainText = (html: string) =>
     html
         .replace(/<[^>]*>/g, "")
@@ -60,7 +59,9 @@ function breadcrumb(path: string, title: string) {
 function faqQuestions(html: string) {
     const start = html.indexOf(">Domande frequenti</h2>");
     if (start === -1) return [];
-    const section = html.slice(start, html.indexOf("</section>", start));
+    const end = html.indexOf("</section>", start);
+    if (end === -1) return [];
+    const section = html.slice(start, end);
     return [...section.matchAll(/<details[^>]*>\s*<summary[^>]*>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/g)].map(([, question, answer]) => ({
         "@type": "Question",
         name: plainText(question),
@@ -100,7 +101,7 @@ export const handle: Handle = ({ event, resolve }) =>
             if (title && path !== "/") {
                 const questions = faqQuestions(html);
                 const types = [pageTypes[path] ?? "WebPage", ...(questions.length ? ["FAQPage"] : [])];
-                const name = plainText(title.split(suffix)[0]);
+                const name = plainText(title.split(titleSuffix)[0]);
                 const data = {
                     "@context": "https://schema.org",
                     "@type": types.length === 1 ? types[0] : types,

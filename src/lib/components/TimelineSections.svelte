@@ -47,7 +47,7 @@
         <section id="mese-{year}-{month}">
             <svelte:element this={`h${level}`}>{title}</svelte:element>
             <ol>
-                {#each monthItems as item}
+                {#each monthItems as item (item)}
                     <li>{@render entry(item, level === 2 ? 3 : 4)}</li>
                 {/each}
             </ol>

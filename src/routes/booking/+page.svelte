@@ -13,7 +13,7 @@
     ];
 
     // Niente date passate (il sito si ricostruisce ogni 3 ore, il limite resta aggiornato)
-    const today = new Date().toISOString().split("T")[0];
+    const today = new Date().toLocaleDateString("en-CA", { timeZone: "Europe/Rome" }); // AAAA-MM-GG, il giorno in Italia
 </script>
 
 <svelte:head>

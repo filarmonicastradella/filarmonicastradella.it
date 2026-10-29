@@ -43,6 +43,9 @@
         sameAs: organization.socials.filter(({ profile }) => profile).map(({ href }) => href)
     };
 
+    // "<" come \u003c: nessun testo dei dati può chiudere lo script prima del tempo
+    const structuredDataScript = `<script type="application/ld+json">${JSON.stringify(structuredData).replace(/</g, "\\u003c")}<\/script>`;
+
     // In home solo le notizie (la categoria Notizie degli articoli); ricerche e altri scritti stanno in /articles
     const latestNews = articles.filter(({ category }) => category === "news").slice(0, 3);
 </script>
@@ -51,7 +54,7 @@
     <title>Filarmonica Alessandro Stradella APS — Fivizzano dal 1777</title>
     <meta name="description" content="La Filarmonica Alessandro Stradella fa musica a Fivizzano, in Lunigiana, dal 1777: quattro formazioni, concerti a ingresso libero e posto per chi vuole suonare." />
     <link rel="preload" href={cormorantItalicFont} as="font" type="font/woff2" crossorigin="anonymous" />
-    {@html `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`}
+    {@html structuredDataScript}
 </svelte:head>
 
 <Hero />
