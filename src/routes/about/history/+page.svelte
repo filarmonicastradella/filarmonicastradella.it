@@ -4,7 +4,6 @@
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
     import anni30Placeholder from "$lib/assets/imgs/anni_30.jpeg?w=24&blur=2&format=webp&inline";
     
-    import diplomaImg from "$lib/assets/imgs/diploma-dissonanti.jpg?enhanced&w=400;640;800;1280;1600";
     import anni90CorteoImg from "$lib/assets/imgs/anni_90_corteo.jpeg?enhanced&w=400;640;800;1280;1600";
     import oggiImg from "$lib/assets/imgs/oggi.jpg?enhanced&w=400;640;800;1280;1600";
     import diplomaImg from "$lib/assets/imgs/diploma_dissonanti.jpg?enhanced&w=400;640;800;1280;1600";
@@ -63,15 +62,6 @@
         Il diploma dei soci, disegnato dal pittore fivizzanese Ercole Lemmi, spiega il nome con due motti: «La soave armonia figlia del cielo» e «Le
         dissonanze in un accordo solo»<sup><a href="#fonte-7" role="doc-noteref" id="rimando-7a" aria-label="Fonte 7">7</a></sup>. Un esemplare è arrivato fino alla Newberry Library di Chicago.
     </p>
-    <figure>
-        <enhanced:img
-            src={diplomaImg}
-            alt="Incisione del diploma: un genio alato con la lira tra strumenti musicali, la veduta di Fivizzano cinta dalle mura, un ovale con una lira e una stella; in alto il motto «La soave armonia figlia del cielo», in basso «Le dissonanze in un accordo solo», al centro lo spazio vuoto per il nome del socio"
-            {sizes}
-            loading="lazy"
-        />
-        <figcaption>Il diploma dei Filarmonici Dissonanti, disegnato da Ercole Lemmi e inciso da Giuseppe Poggiali (Newberry Library, Chicago).</figcaption>
-    </figure>
     <figure>
         <enhanced:img
             src={diplomaImg}
@@ -239,11 +229,6 @@
     <p>
         Diploma dell'Accademia: Newberry Library, Chicago, Wing broadside ZP 735 .L45,
         <a href="https://collections.newberry.org/asset-management/2KXJ8Z9X0DEI" target="_blank" rel="noopener noreferrer">scheda della collezione</a>.
-        Pubblico dominio.
-    </p>
-    <p>
-        Immagine del diploma: Newberry Library, Chicago, Wing broadside ZP 735 .L45, tramite
-        <a href="https://commons.wikimedia.org/wiki/File:Diploma_Accademia_dei_Filarmonici_Dissonanti_di_Fivizzano,_Newberry_Library.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.
         Pubblico dominio.
     </p>
     <p>
