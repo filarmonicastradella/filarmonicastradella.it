@@ -4,7 +4,7 @@
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
     import anni30Placeholder from "$lib/assets/imgs/anni_30.jpeg?w=24&blur=2&format=webp&inline";
     
-    import anni90CorteoImg from "$lib/assets/imgs/anni_90_corteo.jpeg?enhanced&w=400;640;800;1280;1600";
+    import anni80Img from "$lib/assets/imgs/anni_80.jpeg?enhanced&w=400;640;800;1280;1600";
     import oggiImg from "$lib/assets/imgs/oggi.jpg?enhanced&w=400;640;800;1280;1600";
     import diplomaImg from "$lib/assets/imgs/diploma_dissonanti.jpg?enhanced&w=400;640;800;1280;1600";
 
@@ -142,14 +142,14 @@
         <time datetime="1987-06-27">27 giugno 1987</time> cominciarono i festeggiamenti per i 210 anni<sup><a href="#fonte-27" role="doc-noteref" id="rimando-27b" aria-label="Fonte 27">27</a></sup>.
     </p>
     <figure>
-        <!-- SEGNAPOSTO: luogo, occasione e anno da verificare. -->
+        <!-- SEGNAPOSTO: il file si chiama anni_80, ma decennio, luogo e occasione sono da verificare. -->
         <enhanced:img
-            src={anni90CorteoImg}
-            alt="La Filarmonica in corteo in una via stretta del paese, in camicia bianca e pantaloni neri: clarinetti e flauto davanti, poi sassofoni e ottoni, dietro un corteo di bambine vestite di bianco e di persone"
+            src={anni80Img}
+            alt="La Filarmonica in concerto di sera su un palco in piazza, con il drappo rosso e le luminarie di una festa: il direttore a sinistra, dietro di lui lo stendardo della banda, poi clarinetti, sassofoni e ottoni in camicia bianca"
             {sizes}
             loading="lazy"
         />
-        <figcaption>La Filarmonica in corteo per le vie del paese, anni Novanta.</figcaption>
+        <figcaption>La Filarmonica in concerto in piazza, in una sera di festa.</figcaption>
     </figure>
 </section>
 
