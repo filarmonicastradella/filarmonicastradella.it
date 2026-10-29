@@ -16,6 +16,9 @@
         <p>
             <time itemprop="datePublished" datetime={data.article.date}>{formatArticleDate(data.article.date)}</time> ·
             <a itemprop="articleSection" href="/articles/{data.article.category}">{categoryName(data.article.category)}</a>
+            {#if data.article.author}
+                · di <span itemprop="author">{data.article.author}</span>
+            {/if}
         </p>
         <h1 itemprop="headline">{data.article.title}</h1>
     </header>

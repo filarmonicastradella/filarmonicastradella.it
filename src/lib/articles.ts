@@ -16,6 +16,8 @@ interface ArticleMetadata {
     date: string;
     excerpt: string;
     category: CategorySlug;
+    // Chi l'ha scritto, nome e cognome; più autori separati da virgola
+    author?: string;
     // Bozze: restano nel repository ma non vengono pubblicate
     draft?: boolean;
 }

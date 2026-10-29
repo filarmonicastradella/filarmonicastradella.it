@@ -18,6 +18,9 @@
     <p>
         <time datetime={article.date}>{formatArticleDate(article.date)}</time> ·
         <a href="/articles/{article.category}">{categoryName(article.category)}</a>
+        {#if article.author}
+            · di {article.author}
+        {/if}
     </p>
     <h1>Sonetto per Santa Cecilia, 1789</h1>
     <p>Un foglio a stampa degli Accademici Dissonanti di Fivizzano, per la festa della patrona dei musicisti.</p>

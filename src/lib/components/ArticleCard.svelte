@@ -10,6 +10,9 @@
         <p>
             <time itemprop="datePublished" datetime={article.date}>{formatArticleDate(article.date)}</time> ·
             <span itemprop="articleSection">{categoryName(article.category)}</span>
+            {#if article.author}
+                · di <span itemprop="author">{article.author}</span>
+            {/if}
         </p>
         <svelte:element this={`h${level}`}><span itemprop="headline">{article.title}</span></svelte:element>
         <p itemprop="description">{article.excerpt}</p>

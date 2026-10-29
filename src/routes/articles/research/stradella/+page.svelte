@@ -21,6 +21,9 @@
     <p>
         <time datetime={article.date}>{formatArticleDate(article.date)}</time> ·
         <a href="/articles/{article.category}">{categoryName(article.category)}</a>
+        {#if article.author}
+            · di {article.author}
+        {/if}
     </p>
     <h1>Alessandro Stradella</h1>
     <p>Il compositore del Seicento che dà il nome alla Filarmonica, e la sua famiglia di Fivizzano.</p>
