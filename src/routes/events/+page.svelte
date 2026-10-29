@@ -36,4 +36,19 @@
     </TimelineSections>
 {/if}
 
+<section>
+    <h2>Domande frequenti</h2>
+    <details>
+        <summary>Si paga l'ingresso?</summary>
+        <p>No, i concerti sono a ingresso libero.</p>
+    </details>
+    <details>
+        <summary>Devo prenotare?</summary>
+        <p>
+            Non è obbligatorio, ma ci aiuta sapere in quanti verrete, per organizzare la sala e per la sicurezza:
+            <a href="/contacts/message">scrivici</a> per segnalare la tua presenza.
+        </p>
+    </details>
+</section>
+
 <p>Vuoi la Filarmonica al tuo evento? <a href="/booking">Scopri come richiederla</a>.</p>
