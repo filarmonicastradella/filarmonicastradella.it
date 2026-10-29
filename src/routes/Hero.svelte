@@ -12,7 +12,7 @@
 <header style:--cover-placeholder="url({coverPlaceholder})" style:--cover-position="center 35%">
     <hgroup>
         <p>Fivizzano · dal 1777</p>
-        <h1>Filarmonica <em>Alessandro Stradella</em></h1>
+        <h1>Filarmonica Alessandro <em>Stradella</em></h1>
         <p>Custodi della <strong>tradizione</strong>, interpreti del <strong>futuro</strong>.</p>
     </hgroup>
     <p><a href="/booking">Per il tuo evento</a></p>
