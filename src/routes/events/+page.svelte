@@ -55,4 +55,4 @@
     </details>
 </section>
 
-<p>Vuoi la Filarmonica al tuo evento? <a href="/booking">Scopri come richiederla</a>.</p>
+<p class="rimando"><a href="/booking">Per il tuo evento</a></p>

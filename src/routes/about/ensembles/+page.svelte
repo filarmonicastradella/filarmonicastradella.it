@@ -41,7 +41,4 @@
     </details>
 </section>
 
-<section>
-    <h2>Al tuo evento</h2>
-    <p>Vuoi una delle nostre formazioni a un concerto, una festa o una cerimonia? <a href="/booking">Scopri come richiederla</a>.</p>
-</section>
+<p class="rimando"><a href="/booking">Per il tuo evento</a></p>
