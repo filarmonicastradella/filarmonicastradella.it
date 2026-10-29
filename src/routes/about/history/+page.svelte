@@ -7,9 +7,7 @@
     import anni80Img from "$lib/assets/imgs/anni_80.jpeg?enhanced&w=400;640;800;1280;1600";
     import oggiImg from "$lib/assets/imgs/oggi.jpg?enhanced&w=400;640;800;1280;1600";
     import diplomaImg from "$lib/assets/imgs/diploma_dissonanti.jpg?enhanced&w=400;640;800;1280;1600";
-    import piantaImg from "$lib/assets/imgs/pianta-fivizzano.jpg?enhanced&w=400;640;800;1280;1600";
     import militeIgnotoImg from "$lib/assets/imgs/milite-ignoto-1921.jpg?enhanced&w=400;640;800;1280;1600";
-    import locandinaImg from "$lib/assets/imgs/locandina-1997.jpg?enhanced&w=400;640;800;1280;1600";
 
     const sizes = "(min-width: 40rem) 40rem, 100vw";
 </script>
@@ -98,15 +96,6 @@
         trovare<sup><a href="#fonte-14" role="doc-noteref" id="rimando-14a" aria-label="Fonte 14">14</a></sup>. Tre anni dopo, nella processione del Venerdì santo, una banda suonò dal terrazzo di casa
         Grilli<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3b" aria-label="Fonte 3">3</a></sup>. Per aprire il nuovo teatro del paese, nel <time datetime="1810">1810</time>, Odoardo Fantoni chiamò da Parma l'orchestra<sup><a href="#fonte-7" role="doc-noteref" id="rimando-7b" aria-label="Fonte 7">7</a></sup>.
     </p>
-    <figure>
-        <enhanced:img
-            src={piantaImg}
-            alt="Pianta acquerellata del paese chiuso dalle mura bastionate, con gli isolati in giallo, le porte di Sopra e di Sotto, la piazza con la fontana al centro, la Piazza d'Arme in basso e le strade per la Garfagnana, Sarzana e Modena; in alto a sinistra un cartiglio con la legenda"
-            {sizes}
-            loading="lazy"
-        />
-        <figcaption>«Terra di Fivizzano nella Lunigiana»: il paese dentro le mura, con la piazza e la fontana al centro (Archivio di Stato di Firenze).</figcaption>
-    </figure>
     <p>
         Il Comune istituì nel <time datetime="1829">1829</time> un maestro di cappella pagato per insegnare musica ai giovani<sup><a href="#fonte-15" role="doc-noteref" id="rimando-15a" aria-label="Fonte 15">15</a></sup>. Il
         <time datetime="1831-08-24">24 agosto 1831</time> un rescritto del granduca eresse la società «in Banda Musicale» e diede ai suonatori un'uniforme
@@ -186,15 +175,6 @@
         Barocca. Le origini ritrovate», e lo stesso giorno, «auspice la Società Filarmonica», fu posta una lapide sulla casa degli Stradella, vicino alle
         mura<sup><a href="#fonte-30" role="doc-noteref" id="rimando-30a" aria-label="Fonte 30">30</a></sup>. Alla fine degli anni Novanta la Filarmonica prese il nome del compositore.
     </p>
-    <figure>
-        <enhanced:img
-            src={locandinaImg}
-            alt="Locandina incorniciata: «Alessandro Stradella e la Musica Barocca. Le origini ritrovate», Fivizzano 6 dicembre 1997, conferenza a Palazzo Coiari e concerto nella chiesa prepositurale, con la lira della Società Filarmonica Fivizzano e lo stemma del Comune"
-            {sizes}
-            loading="lazy"
-        />
-        <figcaption>La locandina della giornata del 6 dicembre 1997.</figcaption>
-    </figure>
 </section>
 
 <section id="oggi">
@@ -261,7 +241,7 @@
         Pubblico dominio.
     </p>
     <p>
-        Pianta: Archivio di Stato di Firenze, dalla Cartografia storica regionale della Regione Toscana. Fotografia del 1921: Museo centrale del
+        Fotografia del 1921: Museo centrale del
         Risorgimento, Roma, album <i>Onoranze al Milite Ignoto</i>, MCRR 1000, foto 0009; pubblico dominio.
     </p>
     <p>
