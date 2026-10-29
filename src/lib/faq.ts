@@ -11,6 +11,6 @@ export const faq = {
     evento: {
         question: "Potete suonare al mio evento?",
         answer:
-            'Sì: per un concerto, un convegno, una cerimonia o una festa <a href="/booking">raccontaci l\'occasione</a>. Ti rispondiamo con la disponibilità e la formazione adatta.'
+            'Sì: per un concerto, un convegno, una cerimonia o una festa in Lunigiana, <a href="/booking">raccontaci l\'occasione</a> almeno 30 giorni prima. Ti rispondiamo con la disponibilità e la formazione adatta.'
     }
 } satisfies Record<string, FaqItem>;

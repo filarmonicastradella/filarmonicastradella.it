@@ -11,7 +11,7 @@
 <section>
     <h2>Domande frequenti</h2>
     <details>
-        <summary>A cosa serve la tua donazione?</summary>
+        <summary>A cosa serve la mia donazione?</summary>
         <p>
             Copre le spese di tutto l'anno: strumenti e attrezzatura, spartiti, la sala prove, i costi dei concerti e
             l'assicurazione dei soci.
@@ -43,7 +43,7 @@
         <dt>Banca</dt>
         <dd>Crédit Agricole Italia</dd>
         <dt>Causale</dt>
-        <dd>Erogazione liberale, con il tuo nome, cognome e codice fiscale</dd>
+        <dd>«Erogazione liberale», seguita da nome, cognome e codice fiscale di chi dona</dd>
     </dl>
 </section>
 

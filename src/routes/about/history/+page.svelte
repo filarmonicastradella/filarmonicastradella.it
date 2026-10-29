@@ -155,7 +155,7 @@
         <!-- SEGNAPOSTO: il file si chiama anni_80, ma decennio, luogo e occasione sono da verificare. -->
         <enhanced:img
             src={anni80Img}
-            alt="La Filarmonica in concerto di sera su un palco in piazza, con il drappo rosso e le luminarie di una festa: il direttore a sinistra, dietro di lui lo stendardo della banda, poi clarinetti, sassofoni e ottoni in camicia bianca"
+            alt="La Filarmonica in concerto di sera su un palco in piazza, con il drappo rosso e le luminarie di una festa: il direttore a sinistra, dietro di lui lo stendardo della Filarmonica, poi clarinetti, sassofoni e ottoni in camicia bianca"
             {sizes}
             loading="lazy"
         />
@@ -187,8 +187,8 @@
         <time datetime="2027">2027</time> la Filarmonica compie 250 anni.
     </p>
     <figure>
-        <enhanced:img src={oggiImg} alt="L'orchestra Infieri in concerto" {sizes} loading="lazy" />
-        <figcaption>L'orchestra Infieri della Filarmonica in concerto.</figcaption>
+        <enhanced:img src={oggiImg} alt="L'Orchestra Infieri in concerto" {sizes} loading="lazy" />
+        <figcaption>L'Orchestra Infieri della Filarmonica in concerto.</figcaption>
     </figure>
 </section>
 

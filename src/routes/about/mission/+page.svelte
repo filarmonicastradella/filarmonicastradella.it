@@ -19,7 +19,7 @@
 <section>
     <h2>Chi siamo</h2>
     <p>
-        Portiamo il nome di uno dei grandi compositori del Seicento e 250 anni di storia, ma non siamo un museo: la tradizione per noi è un punto di
+        Portiamo il nome di uno dei grandi compositori del Seicento e quasi 250 anni di storia, ma non siamo un museo: la tradizione per noi è un punto di
         partenza, non un luogo in cui fermarsi. Oggi siamo più di 50 soci e più di 40 musicisti attivi, in quattro formazioni:
         <a href="/about/ensembles/stradella-facendo">Stradella Facendo</a>, la nostra orchestra di fiati; la
         <a href="/about/ensembles/streetella-band">Streetella Band</a>; l'<a href="/about/ensembles/infieri">Orchestra Infieri</a>; i
@@ -67,7 +67,7 @@
     </p>
     <p>
         Il repertorio nasce dai musicisti: i componenti propongono i brani e li votano in una graduatoria, e i direttori scelgono da lì cosa preparare
-        per ogni stagione. I direttori sono più di uno e sono prima di tutto musicisti: li nomina il Consiglio Direttivo dopo aver consultato i componenti
+        per ogni stagione. I direttori sono più di uno e sono prima di tutto musicisti: li nomina il consiglio direttivo dopo aver consultato i componenti
         di ogni formazione, ognuno dirige in autonomia i propri brani, e quando non dirige suona accanto agli altri. Anche le prove si fissano insieme, ogni settimana, quando può esserci il maggior numero di persone. I
         capi sezione, guidando i compagni, imparano passo dopo passo a dirigere: così la Filarmonica forma da sé le sue guide, e una prova non salta mai
         perché manca qualcuno.
@@ -83,7 +83,7 @@
         ha bisogno di musicisti: chi suona con uno strumento della Filarmonica può usarlo anche con loro.
     </p>
     <p>
-        Sogniamo una Filarmonica con più musicisti e più giovani, e una rete di realtà musicali della Lunigiana che collaborano e si sostengono a
+        Sogniamo una Filarmonica con più musicisti e più giovani, e una rete di realtà musicali della Lunigiana che collaborino e si sostengano a
         vicenda: una comunità in cui suonare sia normale, alla portata di tutti, e in cui ogni euro e ogni ora investiti restino qui, nelle persone.
     </p>
 </section>

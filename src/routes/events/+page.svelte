@@ -18,15 +18,15 @@
 
 <svelte:head>
     <title>Calendario — Filarmonica Alessandro Stradella</title>
-    <meta name="description" content="I prossimi concerti, le prove aperte e tutte le attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano." />
+    <meta name="description" content="I prossimi concerti e le altre attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano, in Lunigiana: date, orari e luoghi." />
 </svelte:head>
 
 <header>
     <h1>Calendario</h1>
-    <p>Scopri i prossimi concerti, le prove aperte, i saggi e tutte le attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano.</p>
+    <p>I prossimi concerti e le altre attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano.</p>
     <!-- Senza eventi l'avviso sta nell'intestazione: niente testo sciolto nella pagina -->
     {#if events.length === 0}
-        <p>Al momento non ci sono eventi in programma. Torna a trovarci presto!</p>
+        <p>Per ora non ci sono eventi in programma.</p>
     {/if}
 </header>
 

@@ -21,7 +21,7 @@
 <section>
     <h2>Contenuti di altri siti</h2>
     <p>
-        Le foto della galleria arrivano dai server di Behold e Instagram, che ricevono il tuo indirizzo IP come per ogni immagine scaricata. I link ai
+        Le foto della galleria sono copiate sul nostro sito: guardarle non contatta Instagram. I link ai
         nostri profili social, alle mappe e ad altri siti portano su pagine esterne, con le loro regole sui cookie.
     </p>
     <p>Per i dati personali trattati tramite il sito vale l'<a href="/legal/privacy">informativa privacy</a>.</p>

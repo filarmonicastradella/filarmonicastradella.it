@@ -98,7 +98,7 @@
     </details>
     <details>
         <summary>Quali strumenti cercate?</summary>
-        <p>Tutti, e in particolare oboe, fagotto e altri archi.</p>
+        <p>Tutti, e in particolare oboe, fagotto e archi.</p>
     </details>
     <details>
         <summary>Quanto spesso provate?</summary>
@@ -107,7 +107,7 @@
     <details>
         <summary>Chi è il maestro?</summary>
         <p>
-            Non ce n'è uno solo: i direttori sono più di uno e sono prima di tutto musicisti. Ognuno dirige in autonomia i propri brani, e negli altri
+            Non ce n'è uno solo: i direttori sono più di uno, e prima di tutto sono musicisti. Ognuno dirige in autonomia i propri brani, e negli altri
             suona con tutti.
         </p>
     </details>

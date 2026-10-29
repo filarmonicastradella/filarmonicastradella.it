@@ -39,7 +39,7 @@
         </dd>
         <dt>Messaggi</dt>
         <dd>
-            Se ci scrivi per email o con il modulo di contatto, usiamo nome, indirizzo email, motivo e testo del messaggio solo per risponderti. Base
+            Se ci scrivi per email, con il modulo di contatto o con la richiesta per un evento, usiamo i dati che ci dai (nome, indirizzo email, eventuale telefono, motivo, data e luogo dell'evento, testo del messaggio) solo per risponderti. Base
             giuridica: la tua richiesta (art. 6.1.b).
         </dd>
         <dt>Richiesta di iscrizione</dt>
@@ -69,12 +69,12 @@
         <dt>GitHub</dt>
         <dd>ospita il sito.</dd>
         <dt>formsubmit.co</dt>
-        <dd>inoltra via email all'associazione i dati dei moduli di contatto e di iscrizione.</dd>
+        <dd>inoltra via email all'associazione i dati dei moduli di contatto, di richiesta per un evento e di iscrizione.</dd>
         <dt>Behold e Instagram</dt>
-        <dd>forniscono le foto della galleria, che il tuo browser scarica dai loro server.</dd>
+        <dd>forniscono le foto della galleria, che il sito copia quando viene preparato: il tuo browser non si collega ai loro server, se non quando apri un post su Instagram.</dd>
     </dl>
     <p>
-        Il calendario degli eventi viene letto da Google quando il sito viene preparato, non durante la tua visita: Google non riceve i tuoi dati. I dati
+        Il sito legge il calendario degli eventi da Google mentre viene preparato, non durante la tua visita: Google non riceve i tuoi dati. I dati
         non vengono venduti né diffusi.
     </p>
     <!-- SEGNAPOSTO: verificare per ciascun fornitore la sede e la base del trasferimento. -->

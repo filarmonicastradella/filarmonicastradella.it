@@ -15,7 +15,7 @@
     <li>
         <a href="/support/join">
             <h2>Diventa socio</h2>
-            <p>Con la quota annuale di 12 € entri nell'associazione e puoi suonare nelle nostre formazioni.</p>
+            <p>Con la quota annuale di 12 € entri nell'associazione e puoi chiedere di entrare nelle nostre formazioni.</p>
         </a>
     </li>
     <li>
@@ -26,9 +26,10 @@
     </li>
     <!-- 5x1000: link segnaposto senza href finché l'associazione non è beneficiaria; poi href="/support/5x1000" e rinominare support/5x1000/_page.svelte in +page.svelte -->
     <li>
-        <a aria-disabled="true">
+        <!-- svelte-ignore a11y_missing_attribute (segnaposto nella forma finale: l'href arriva con la pagina) -->
+        <a>
             <h2>5x1000</h2>
-            <p>Destinare il 5x1000 non costa nulla. Non ancora disponibile: aspettiamo di essere ammessi tra i beneficiari.</p>
+            <p>Non ancora disponibile: aspettiamo di essere ammessi tra i beneficiari. Destinare il 5x1000 non costa nulla.</p>
         </a>
     </li>
     <!-- Da riattivare insieme a /support/volunteer (rinominare _page.svelte in +page.svelte):

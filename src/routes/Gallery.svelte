@@ -12,7 +12,7 @@
 <section>
     <h2>Momenti in musica</h2>
     {#if slides === null}
-        <p>Le foto dei nostri concerti sono sul nostro profilo Instagram.</p>
+        <p>Le foto dei nostri concerti sono su Instagram.</p>
     {:else if shown.length > 0}
         <ul>
             {#each shown as slide (slide.id)}

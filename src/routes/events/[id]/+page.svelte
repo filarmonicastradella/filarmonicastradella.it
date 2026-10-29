@@ -87,7 +87,7 @@
         <h2>Domande frequenti</h2>
         <details>
             <summary>Si paga l'ingresso?</summary>
-            <p>Di norma no: i nostri concerti sono a ingresso libero. Se per un evento è previsto un biglietto, lo trovi scritto qui sopra.</p>
+            <p>Di norma no: i nostri eventi sono a ingresso libero. Se per un evento è previsto un biglietto, lo trovi scritto qui sopra.</p>
         </details>
         <details>
             <summary>Devo prenotare?</summary>
@@ -98,7 +98,7 @@
         </details>
         <details>
             <summary>E se piove?</summary>
-            <p>Per i concerti all'aperto abbiamo sempre pronto un posto al chiuso nelle vicinanze.</p>
+            <p>Per i nostri concerti all'aperto prepariamo un posto al chiuso nelle vicinanze; se cambia qualcosa, lo trovi scritto qui sopra.</p>
         </details>
         <FaqItem item={faq.evento} />
     </section>

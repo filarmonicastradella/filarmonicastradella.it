@@ -61,7 +61,7 @@
         </p>
 
         <p>
-            <label for="contatto-email">Indirizzo email</label>
+            <label for="contatto-email">Email</label>
             <input type="email" id="contatto-email" name="email" autocomplete="email" required maxlength="120" />
         </p>
 
@@ -89,7 +89,7 @@
 </section>
 
 <section>
-    <h2>Ingaggi</h2>
+    <h2>La Filarmonica al tuo evento</h2>
     <p>
         Per un concerto, un convegno, una cerimonia o una festa in Lunigiana, <a href="/booking">raccontaci l'occasione</a> almeno 30 giorni
         prima.

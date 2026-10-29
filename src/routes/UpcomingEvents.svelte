@@ -19,7 +19,7 @@
 <section>
     <h2>Prossimi eventi</h2>
     {#if events.length === 0}
-        <p>Nessun evento in programma.</p>
+        <p>Per ora non ci sono eventi in programma.</p>
     {:else}
         <ol>
             {#each events as event (event.id)}

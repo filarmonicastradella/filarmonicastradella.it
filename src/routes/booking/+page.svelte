@@ -36,9 +36,9 @@
         <p>Ci spostiamo in tutta la Lunigiana.</p>
     </details>
     <details>
-        <summary>Suonate a funzioni religiose o eventi politici?</summary>
+        <summary>Suonate a funzioni religiose o a iniziative di partito?</summary>
         <p>
-            No: siamo un'associazione laica e apartitica, e non svolgiamo servizi religiosi né suoniamo a feste e iniziative di partito.
+            No: siamo un'associazione laica e apartitica, e non suoniamo a funzioni religiose né a feste e iniziative di partito.
             Per le occasioni religiose collaboriamo però con le realtà musicali amiche della Lunigiana, e possiamo indicarti a chi rivolgerti.
         </p>
     </details>
@@ -70,7 +70,7 @@
         <p>
             <label for="evento-occasione">Occasione</label>
             <select id="evento-occasione" name="occasione" required>
-                <option value="" disabled selected>Scegli</option>
+                <option value="" disabled selected>Scegli l'occasione</option>
                 {#each occasions as occasion (occasion)}
                     <option>{occasion}</option>
                 {/each}
@@ -78,7 +78,7 @@
         </p>
 
         <p>
-            <label for="evento-data">Data</label>
+            <label for="evento-data">Data (almeno 30 giorni da oggi)</label>
             <input type="date" id="evento-data" name="data" required min={today} />
         </p>
 
@@ -88,7 +88,7 @@
         </p>
 
         <p>
-            <label for="evento-note">Note</label>
+            <label for="evento-note">Note (facoltativo)</label>
             <textarea id="evento-note" name="note" rows="4" maxlength="2000"></textarea>
         </p>
     </fieldset>
@@ -97,7 +97,7 @@
         <legend>Chi scrive</legend>
 
         <p>
-            <label for="evento-nome">Nome</label>
+            <label for="evento-nome">Nome e cognome</label>
             <input type="text" id="evento-nome" name="nome" autocomplete="name" required minlength="2" maxlength="120" />
         </p>
 
@@ -107,7 +107,7 @@
         </p>
 
         <p>
-            <label for="evento-telefono">Telefono</label>
+            <label for="evento-telefono">Telefono (facoltativo)</label>
             <input type="tel" id="evento-telefono" name="telefono" autocomplete="tel" maxlength="20" />
         </p>
     </fieldset>

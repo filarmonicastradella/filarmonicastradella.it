@@ -55,15 +55,15 @@
     <p>
         <label for="{prefix}data_nascita">Data di nascita</label>
         {#if bindsBirthDate}
-            <input type="date" id="{prefix}data_nascita" name="{prefix}data_nascita" autocomplete="bday" bind:value={birthDate} required max={maxBirthDate} />
+            <input type="date" id="{prefix}data_nascita" name="{prefix}data_nascita" autocomplete={(section ? `section-${section} bday` : "bday") as AutoFill} bind:value={birthDate} required max={maxBirthDate} />
         {:else}
-            <input type="date" id="{prefix}data_nascita" name="{prefix}data_nascita" autocomplete="bday" required max={maxBirthDate} />
+            <input type="date" id="{prefix}data_nascita" name="{prefix}data_nascita" autocomplete={(section ? `section-${section} bday` : "bday") as AutoFill} required max={maxBirthDate} />
         {/if}
     </p>
 
     <p>
         <label for="{prefix}codice_fiscale">Codice fiscale</label>
-        <input type="text" id="{prefix}codice_fiscale" name="{prefix}codice_fiscale" required minlength="16" oninput={handleCF} />
+        <input type="text" id="{prefix}codice_fiscale" name="{prefix}codice_fiscale" required minlength="16" maxlength="16" pattern="[A-Za-z0-9]{16}" autocapitalize="characters" spellcheck="false" oninput={handleCF} />
     </p>
 {/snippet}
 
@@ -75,17 +75,17 @@
 
     <p>
         <label for="{prefix}_cap">CAP</label>
-        <input type="text" id="{prefix}_cap" name="{prefix}_cap" autocomplete="section-{prefix} postal-code" inputmode="numeric" required minlength="5" oninput={handleCAP} />
+        <input type="text" id="{prefix}_cap" name="{prefix}_cap" autocomplete="section-{prefix} postal-code" inputmode="numeric" required minlength="5" maxlength="5" pattern="[0-9]{5}" oninput={handleCAP} />
     </p>
 
     <p>
-        <label for="{prefix}_via">Via / Piazza</label>
+        <label for="{prefix}_via">Via o piazza</label>
         <input type="text" id="{prefix}_via" name="{prefix}_via" autocomplete="section-{prefix} address-line1" required minlength="2" maxlength="80" />
     </p>
 
     <p>
         <label for="{prefix}_civico">Numero civico</label>
-        <input type="text" id="{prefix}_civico" name="{prefix}_civico" autocomplete="section-{prefix} address-line2" required maxlength="10" />
+        <input type="text" id="{prefix}_civico" name="{prefix}_civico" required maxlength="10" />
     </p>
 {/snippet}
 
@@ -111,7 +111,7 @@
     <details>
         <summary>Ci sono limiti di età?</summary>
         <p>
-            No: si può suonare a qualsiasi età. Per un minorenne l'iscrizione la fa un genitore o tutore: inserisci i dati del ragazzo
+            No: si può suonare a qualsiasi età. Per un minorenne l'iscrizione la fa un genitore o tutore: inserisci i dati del minore
             e poi i tuoi, con il tuo documento di identità. Sotto i 14 anni online non si può: <a href="/contacts">contattaci</a> e completiamo la
             pratica di persona.
         </p>
@@ -136,12 +136,12 @@
 
     {#if isTooYoung}
         <p role="alert">
-            L'iscrizione online non è abilitata per i minori di 14 anni: <a href="/contacts">contatta l'associazione</a> per completare la pratica di persona.
+            Sotto i 14 anni l'iscrizione online non è possibile: <a href="/contacts">contattaci</a> e completiamo la pratica di persona.
         </p>
     {:else}
         {#if isMinorenne}
             <fieldset>
-                <legend>Dati anagrafici del genitore</legend>
+                <legend>Dati anagrafici del genitore o tutore</legend>
                 {@render identityFields("genitore_", "genitore", false)}
             </fieldset>
         {/if}
@@ -167,12 +167,12 @@
             <legend>Contatti</legend>
 
             <p>
-                <label for="telefono">{isMinorenne ? "Telefono del genitore" : "Telefono"}</label>
+                <label for="telefono">{isMinorenne ? "Telefono del genitore o tutore" : "Telefono"}</label>
                 <input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="tel" required minlength="9" maxlength="15" />
             </p>
 
             <p>
-                <label for="email">{isMinorenne ? "Email del genitore" : "Email"}</label>
+                <label for="email">{isMinorenne ? "Email del genitore o tutore" : "Email"}</label>
                 <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required maxlength="100" />
             </p>
 
@@ -251,9 +251,9 @@
         </fieldset>
 
         <fieldset>
-            <legend>Documento e firma</legend>
+            <legend>Documento e richiesta</legend>
             <p>
-                <label for="documento_identita">{isMinorenne ? "Documento di identità del genitore" : "Documento di identità"} (PDF, JPG o PNG)</label>
+                <label for="documento_identita">{isMinorenne ? "Documento di identità del genitore o tutore" : "Documento di identità"} (PDF, JPG o PNG)</label>
                 <input type="file" id="documento_identita" name="attachment" required multiple accept="application/pdf,image/jpeg,image/png" />
             </p>
 

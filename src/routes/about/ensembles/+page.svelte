@@ -34,8 +34,8 @@
         <summary>Perché più formazioni?</summary>
         <p>
             Perché ogni repertorio chiede un organico diverso: il concerto in sala per l'orchestra di fiati, la musica in movimento per la street band,
-            archi e fiati insieme per l'orchestra Infieri, la musica antica per i Dissonanti. La Filarmonica le riunisce tutte: lo dice il nome, che dal
-            greco vuol dire amica della musica.
+            archi e fiati insieme per l'Orchestra Infieri, la musica antica per i Dissonanti. La Filarmonica le riunisce tutte: lo dice il nome, che dal
+            greco vuol dire «amica della musica».
         </p>
     </details>
     <details>
