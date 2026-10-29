@@ -39,6 +39,10 @@
         </p>
     </details>
     <details>
+        <summary>Suonate a feste e iniziative di partito?</summary>
+        <p>No: siamo un'associazione apartitica e non suoniamo a eventi politici.</p>
+    </details>
+    <details>
         <summary>Con quanto anticipo devo scrivervi?</summary>
         <p>Almeno 30 giorni prima dell'evento.</p>
     </details>
