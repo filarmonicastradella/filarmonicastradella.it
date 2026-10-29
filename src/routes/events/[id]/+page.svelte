@@ -62,13 +62,3 @@
 </section>
 
 <p class="rimando"><a href="/events">Tutto il calendario</a></p>
-
-<style>
-    /*
-     * La descrizione è testo: i suoi elenchi (il programma) seguono i paragrafi con lo stacco del testo, non con
-     * quello tra le sezioni (layout.css). È HTML del calendario, fuori dallo scope del componente: serve :global.
-     */
-    :global(main:has(> header[itemtype$="/Event"]) > p + :is(ul, ol)) {
-        margin-block-start: var(--space-5);
-    }
-</style>

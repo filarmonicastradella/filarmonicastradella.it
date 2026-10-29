@@ -73,9 +73,22 @@ main > * {
     grid-column: content;
 }
 
+/*
+ * Tra i blocchi della pagina (intestazione, sezioni, elenchi, moduli) lo stacco grande, anche verso quello che
+ * li segue: un rimando o una nota in fondo alla pagina non è una sezione (non ha un titolo), ma è un blocco a sé.
+ */
 main > * + :is(section, article, nav, ul, ol, dl, form),
-main > header + * {
+main > :is(header, section, article, nav, ul, ol, dl, form) + * {
     margin-block-start: var(--space-9);
+}
+
+/*
+ * Il testo scritto direttamente nella pagina (un'introduzione, la descrizione di un evento) ha lo stacco del testo
+ * delle sezioni: tra un paragrafo e l'altro, e tra un paragrafo e il suo elenco (non un elenco di schede).
+ */
+main > p + p,
+main > p + :is(ul, ol):not(:has(> li > :is(a, article, video, figure))) {
+    margin-block-start: var(--space-5);
 }
 
 main > :is(section, article, header) > * + * {
