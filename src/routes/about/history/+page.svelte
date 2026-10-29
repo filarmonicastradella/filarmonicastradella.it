@@ -1,5 +1,5 @@
 <script lang="ts">
-    // Foto della pagina, in più misure: il browser sceglie quella adatta alla colonna di testo (40rem) e allo schermo.
+    // Foto della pagina, in più misure: il browser sceglie quella adatta alla colonna di testo (36rem) e allo schermo.
     import anni30Img from "$lib/assets/imgs/anni_30.jpeg?enhanced&w=400;640;800;1280;1600";
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
     import anni30Placeholder from "$lib/assets/imgs/anni_30.jpeg?w=24&blur=2&format=webp&inline";
@@ -9,7 +9,7 @@
     import diplomaImg from "$lib/assets/imgs/diploma_dissonanti.jpg?enhanced&w=400;640;800;1280;1600";
     import militeIgnotoImg from "$lib/assets/imgs/milite-ignoto-1921.jpg?enhanced&w=400;640;800;1280;1600";
 
-    const sizes = "(min-width: 40rem) 40rem, 100vw";
+    const sizes = "(min-width: 36rem) 36rem, 100vw";
 </script>
 
 <svelte:head>

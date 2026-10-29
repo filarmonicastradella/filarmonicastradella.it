@@ -19,8 +19,8 @@
     --gap-grid: var(--space-7) var(--space-6); /* tra le schede e le foto in griglia */
 
     /* Contenitori */
-    --container: 64rem; /* contenitore raccolto, da rivista: il testo a 40rem non lascia troppo vuoto a destra */
-    --container-text: 40rem; /* massimo per colonne di testo */
+    --container: 64rem; /* contenitore raccolto, da rivista: il testo a 36rem non lascia troppo vuoto a destra */
+    --container-text: 36rem; /* massimo per colonne di testo: circa 72 caratteri per riga in Jakarta a 16px */
     --gutter: clamp(1rem, 4vw, 2.5rem);
     --page-inline: max(var(--gutter), calc((100% - var(--container)) / 2));
     --header-height: 4.5rem;
