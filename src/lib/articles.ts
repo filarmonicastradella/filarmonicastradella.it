@@ -45,6 +45,7 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
     {
         slug: "sonnet",
         category: "research",
+        author: "Leonardo Orietti Del Duca",
         title: "Sonetto per Santa Cecilia, 1789",
         date: "2026-10-10",
         excerpt: "Un foglio a stampa degli Accademici Dissonanti di Fivizzano, per la festa della patrona dei musicisti."
@@ -52,6 +53,7 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
     {
         slug: "stradella",
         category: "research",
+        author: "Leonardo Orietti Del Duca",
         title: "Alessandro Stradella",
         date: "2026-10-19",
         excerpt: "Il compositore del Seicento che dà il nome alla Filarmonica, e la sua famiglia di Fivizzano."
