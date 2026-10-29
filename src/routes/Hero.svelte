@@ -1,24 +1,24 @@
 <script lang="ts">
-    import wallpaper from "$lib/assets/wallpaper.webp?enhanced";
+    // La stessa foto della copertina di Stradella Facendo (© Eleonora Rocchi, credito in fondo alla home)
+    import cover from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?enhanced";
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
-    import wallpaperPlaceholder from "$lib/assets/wallpaper.webp?w=24&blur=2&format=webp&inline";
+    import coverPlaceholder from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?w=24&blur=2&format=webp&inline";
 </script>
 
 <!--
     Apertura della home: l'intestazione con foto di tutte le pagine (layout.css, copertina), con la fascia
     più alta, l'occhiello, il titolo in corpo display e la comparsa della prima schermata.
 -->
-<header style="--cover-placeholder: url({wallpaperPlaceholder})">
+<header style:--cover-placeholder="url({coverPlaceholder})" style:--cover-position="center 35%">
     <hgroup>
         <p>Fivizzano · dal 1777</p>
         <h1>Filarmonica <em>Alessandro Stradella</em></h1>
-        <p>Custodi della <strong>tradizione</strong>, interpreti del <strong>futuro</strong>.</p>
+        <p>«Le dissonanze in un accordo solo»: il motto dei nostri soci nel Settecento.</p>
     </hgroup>
-    <p><a href="/support/join">Unisciti a noi</a></p>
-    <!-- SEGNAPOSTO: foto di repertorio, da sostituire con una foto della Filarmonica (docs/DESIGN.md: solo foto nostre) -->
+    <p><a href="/booking">La Filarmonica al tuo evento</a></p>
     <enhanced:img
-        src={wallpaper}
-        alt="Violinisti in concerto"
+        src={cover}
+        alt="Stradella Facendo in concerto nel Museo di San Giovanni degli Agostiniani a Fivizzano"
         sizes="100vw"
         fetchpriority="high"
     />
@@ -108,12 +108,24 @@
         font-size: var(--fs-lead);
     }
 
-    hgroup p:last-child strong {
+    header > p {
+        margin-block-start: var(--space-7);
+    }
+
+    /*
+     * Pulsante secondario (contorno inchiostro): l'unico pulsante pieno della schermata è "Unisciti a noi"
+     * nell'intestazione del sito; da qui si va agli ingaggi.
+     */
+    header > p > a {
+        border-color: var(--border-strong);
+        background-color: transparent;
         color: var(--text);
     }
 
-    header > p {
-        margin-block-start: var(--space-7);
+    header > p > a:hover {
+        border-color: var(--text-brand);
+        background-color: transparent;
+        color: var(--text-brand);
     }
 
     /*

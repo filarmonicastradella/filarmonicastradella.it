@@ -127,6 +127,8 @@
     <p><a href="/support">Come sostenerci</a></p>
 </section>
 
+<p>Foto di apertura: © Eleonora Rocchi.</p>
+
 <!-- Home alleggerita il 9/10/2026: versione precedente, con le schede già presenti in /support.
 <section>
     <h2>Sostieni la Filarmonica</h2>
