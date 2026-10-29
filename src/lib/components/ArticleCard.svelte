@@ -1,14 +1,24 @@
 <script lang="ts">
     import { categoryName, formatArticleDate, type Article } from "$lib/articles";
+    import type { PressItem } from "$lib/press";
 
-    // `level` è il livello del titolo, da scegliere in base a dove compare la scheda.
-    let { article, level = 3 }: { article: Article; level?: 2 | 3 | 4 } = $props();
+    // Un nostro articolo (occhiello: la categoria) o un articolo di giornale della rassegna stampa (occhiello: la
+    // testata, link al giornale). `level` è il livello del titolo, da scegliere in base a dove compare la scheda.
+    let { article, level = 3 }: { article: Article | PressItem; level?: 2 | 3 | 4 } = $props();
+
+    const isPress = $derived("publisher" in article);
 </script>
 
 <!-- Come la card evento (docs/DESIGN.md): occhiello, titolo, descrizione e in fondo la firma come didascalia -->
-<article itemscope itemtype="https://schema.org/Article">
-    <a itemprop="url" href={article.href}>
-        <p><span itemprop="articleSection">{categoryName(article.category)}</span></p>
+<article itemscope itemtype="https://schema.org/{isPress ? 'NewsArticle' : 'Article'}">
+    <a itemprop="url" href={article.href} target={isPress ? "_blank" : undefined} rel={isPress ? "noopener noreferrer" : undefined}>
+        <p>
+            {#if "publisher" in article}
+                <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">{article.publisher}</span></span>
+            {:else}
+                <span itemprop="articleSection">{categoryName(article.category)}</span>
+            {/if}
+        </p>
         <svelte:element this={`h${level}`} itemprop="headline">{article.title}</svelte:element>
         <p itemprop="description">{article.excerpt}</p>
         <p>
@@ -64,6 +74,16 @@
         [itemprop="description"] + p {
             grid-area: byline;
             margin: 0;
+        }
+
+        /* La freccia dei link esterni (rassegna stampa) sta nell'angolo: lo spazio lo lascia il titolo, non la scheda,
+           così le colonne restano allineate a quelle delle altre pagine */
+        a[target="_blank"] {
+            padding-inline-end: 0;
+        }
+
+        a[target="_blank"] > :is(h2, h3, h4) {
+            padding-inline-end: var(--space-7);
         }
     }
 </style>

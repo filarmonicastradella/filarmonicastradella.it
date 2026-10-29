@@ -109,11 +109,12 @@ figcaption {
 
 /*
  * Occhielli: le date in testa a schede ed eventi (un paragrafo con la sola data, riconoscibile dai
- * microdati), la categoria degli articoli, le etichette e le voci delle coppie etichetta/valore. Le date
+ * microdati), la categoria degli articoli e la testata nella rassegna stampa, le etichette e le voci delle coppie etichetta/valore. Le date
  * dentro un testo, o accanto all'autore nella firma di un articolo, restano testo.
  */
 p > time[itemprop]:only-child,
 [itemprop="articleSection"],
+p:first-child > [itemprop="publisher"],
 dt,
 th {
     font-family: var(--font-text);
@@ -124,7 +125,8 @@ th {
 }
 
 p > time[itemprop]:only-child,
-[itemprop="articleSection"] {
+[itemprop="articleSection"],
+p:first-child > [itemprop="publisher"] {
     color: var(--text-brand);
     text-decoration: none;
 }

@@ -45,5 +45,5 @@
 <p><a href="https://instagram.com/filarmonicastradella" target="_blank" rel="noopener noreferrer">Guarda tutto su Instagram</a></p>
 
 <!-- Da riattivare quando ci sono i contenuti (rinominare _page.svelte in +page.svelte):
-interviste: /media/interviews, rassegna stampa: /media/press, materiali per la stampa: /media/kit
+interviste: /media/interviews, rassegna stampa: /about/press, materiali per la stampa: /media/kit
 -->
