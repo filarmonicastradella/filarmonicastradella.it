@@ -32,6 +32,13 @@
         <p>Ci spostiamo in tutta la Lunigiana.</p>
     </details>
     <details>
+        <summary>Suonate a processioni e funzioni religiose?</summary>
+        <p>
+            No: siamo un'associazione laica e non svolgiamo servizi religiosi. Collaboriamo però con le realtà musicali amiche della Lunigiana, e
+            possiamo indicarti a chi rivolgerti.
+        </p>
+    </details>
+    <details>
         <summary>Con quanto anticipo devo scrivervi?</summary>
         <p>Almeno 30 giorni prima dell'evento.</p>
     </details>
