@@ -39,9 +39,8 @@ input[type="button"]:hover,
     color: var(--on-accent);
 }
 
-/* Secondario: azioni di servizio (caricare una mappa, svuotare un modulo, scegliere un file) */
+/* Secondario: azioni di servizio (caricare una mappa, scegliere un file) */
 main button[type="button"],
-button[type="reset"],
 input[type="file"]::file-selector-button {
     border: var(--border-width) solid var(--border-strong);
     border-radius: var(--radius);
@@ -50,7 +49,6 @@ input[type="file"]::file-selector-button {
 }
 
 main button[type="button"]:hover,
-button[type="reset"]:hover,
 input[type="file"]::file-selector-button:hover {
     border-color: var(--text-brand);
     background-color: transparent;
@@ -120,6 +118,16 @@ select:user-invalid,
 textarea:user-invalid {
     border-color: var(--text-brand);
     box-shadow: inset 0 0 0 var(--border-width) var(--text-brand);
+}
+
+/*
+ * Non basta il colore: sotto il campo non valido compare anche una riga scritta. Il motivo preciso lo dice
+ * il browser all'invio, con il suo messaggio collegato al campo.
+ */
+form p:has(> :user-invalid:not([type="checkbox"]))::after {
+    content: "Controlla questo campo";
+    color: var(--text-brand);
+    font-size: var(--fs-small);
 }
 
 /* Le caselle: nel colore del marchio, grandi abbastanza da toccare, allineate alla prima riga del testo */

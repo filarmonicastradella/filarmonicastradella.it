@@ -91,7 +91,7 @@
 
 <header>
     <h1>Richiesta di iscrizione</h1>
-    <p>Per suonare con noi basta iscriversi all'associazione. L'esito ti verrà comunicato all'indirizzo email indicato. Per i minorenni l'iscrizione può essere richiesta online da un genitore o tutore.</p>
+    <p>Per suonare con noi basta iscriversi all'associazione. L'esito ti verrà comunicato all'indirizzo email indicato. Per i minorenni, dai 14 anni, l'iscrizione la chiede online un genitore o tutore; per i più piccoli <a href="/contacts">contattaci</a>.</p>
 </header>
 
 <section>
@@ -105,6 +105,7 @@
         <li><strong>Esserci</strong>: partecipare ad almeno metà delle attività, tra concerti, prove e momenti di vita associativa.</li>
     </ol>
     <p>Al resto pensa l'associazione: strumento, parti, sala prove.</p>
+    <p>Vuoi prima sapere quando proviamo o venire ad ascoltarci? <a href="/contacts/message?motivo={encodeURIComponent("Iscrizione e quote")}">Scrivici</a>.</p>
 </section>
 
 <form action="https://formsubmit.co/segreteria@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
@@ -121,7 +122,7 @@
 
     {#if isTooYoung}
         <p role="alert">
-            L'iscrizione online non è abilitata per i minori di 14 anni: <a href="/contacts">contattate l'associazione</a> per completare la pratica di persona.
+            L'iscrizione online non è abilitata per i minori di 14 anni: <a href="/contacts">contatta l'associazione</a> per completare la pratica di persona.
         </p>
     {:else}
         {#if isMinorenne}
@@ -257,7 +258,6 @@
 
     <p>
         <button type="submit" disabled={isTooYoung}>Invia la richiesta di iscrizione</button>
-        <button type="reset">Cancella i campi</button>
     </p>
 </form>
 
