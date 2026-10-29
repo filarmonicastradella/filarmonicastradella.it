@@ -1,4 +1,6 @@
 <script lang="ts">
+    import FaqItem from "$lib/components/FaqItem.svelte";
+    import { faq } from "$lib/faq";
     import { onMount } from "svelte";
     import EventCard from "$lib/components/EventCard.svelte";
     import TimelineSections from "$lib/components/TimelineSections.svelte";
@@ -53,11 +55,5 @@
         <summary>E se piove?</summary>
         <p>Per i concerti all'aperto abbiamo sempre pronto un posto al chiuso nelle vicinanze.</p>
     </details>
-    <details>
-        <summary>Potete suonare al mio evento?</summary>
-        <p>
-            Sì: per un concerto, un convegno, una cerimonia o una festa <a href="/booking">raccontaci l'occasione</a> e ti rispondiamo con la
-            disponibilità e una proposta.
-        </p>
-    </details>
+    <FaqItem item={faq.evento} />
 </section>

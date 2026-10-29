@@ -51,16 +51,7 @@
         <p>Iscriviti alla Filarmonica con la <a href="/support/join">domanda di iscrizione</a>.</p>
     </details>
     <FaqItem item={faq.direttori} />
-    <details>
-        <summary>Potete suonare al mio evento?</summary>
-        <p>Sì, queste sono le occasioni adatte:</p>
-        <ul>
-            {#each ensemble.occasions as occasion (occasion)}
-                <li>{occasion}</li>
-            {/each}
-        </ul>
-        <p><a href="/booking">Raccontaci l'occasione</a>: ti rispondiamo con la disponibilità e una proposta.</p>
-    </details>
+    <FaqItem item={faq.evento} />
 </section>
 
 <p class="rimando"><a href="/about/ensembles">Tutte le formazioni</a></p>

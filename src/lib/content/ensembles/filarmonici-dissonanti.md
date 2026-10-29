@@ -2,10 +2,6 @@
 title: Filarmonici Dissonanti
 summary: "Un viaggio nel tempo attraverso la musica medievale, rinascimentale e barocca, secondo i criteri dell'interpretazione storicamente informata."
 order: 4
-occasions:
-    - "Rievocazioni e feste storiche"
-    - "Spettacoli con danza storica"
-    - "Concerti di musica antica in luoghi storici"
 lineup:
     - name: Fiati
       instruments:

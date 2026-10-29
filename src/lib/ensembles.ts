@@ -5,8 +5,6 @@ interface EnsembleMetadata {
     title: string;
     summary: string;
     order: number;
-    /** Le occasioni adatte alla formazione, mostrate nella sua pagina tra le domande frequenti */
-    occasions: string[];
     /** L'organico: gli strumenti divisi per sezione (legni, ottoni, archi...) */
     lineup: { name: string; instruments: string[] }[];
     /** La foto di copertina (il file è in src/lib/assets/imgs/ensembles/, con lo slug come nome) */

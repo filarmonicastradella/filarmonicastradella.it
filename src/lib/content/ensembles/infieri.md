@@ -2,9 +2,6 @@
 title: Orchestra Infieri
 summary: "L'orchestra mista della Filarmonica, dove archi e fiati suonano insieme."
 order: 3
-occasions:
-    - "Concerti sinfonici in teatri e auditorium"
-    - "Programmi di grandi classici e colonne sonore"
 lineup:
     - name: Archi
       instruments:

@@ -64,13 +64,7 @@
         <summary>Posso proporre una nuova formazione?</summary>
         <p>Sì: basta che la propongano almeno tre soci, con una bozza di regolamento.</p>
     </details>
-    <details>
-        <summary>Potete suonare al mio evento?</summary>
-        <p>
-            Sì: per un concerto, un convegno, una cerimonia o una festa la formazione adatta te la proponiamo noi.
-            <a href="/booking">Raccontaci l'occasione</a>.
-        </p>
-    </details>
+    <FaqItem item={faq.evento} />
 </section>
 
 <p class="rimando"><a href="/about">L'associazione</a></p>

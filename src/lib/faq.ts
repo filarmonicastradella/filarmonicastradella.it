@@ -30,6 +30,11 @@ export const faq = {
         question: "Chi è il maestro?",
         answer: "Non ce n'è uno solo: i direttori sono più di uno e sono prima di tutto musicisti. Ognuno dirige in autonomia i propri brani, e negli altri suona con tutti."
     },
+    evento: {
+        question: "Potete suonare al mio evento?",
+        answer:
+            'Sì: per un concerto, un convegno, una cerimonia o una festa <a href="/booking">raccontaci l\'occasione</a>. Ti rispondiamo con la disponibilità e la formazione adatta.'
+    },
     strumento: {
         question: "Devo avere uno strumento mio?",
         answer: "No: strumento, parti e sala prove li mette a disposizione l'associazione."
