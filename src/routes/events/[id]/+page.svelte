@@ -9,9 +9,6 @@
     const place = $derived(eventPlace(event));
     // Il resto dell'indirizzo, dopo il nome del luogo
     const address = $derived(event.location.split(",").slice(1).join(",").trim());
-    // La descrizione del calendario: i paragrafi sono separati da una riga vuota, le righe singole (programma,
-    // musicisti) restano una sotto l'altra.
-    const paragraphs = $derived(event.description.split(/\n\s*\n/).map((text) => text.trim()).filter(Boolean));
 </script>
 
 <svelte:head>
@@ -27,6 +24,9 @@
     <p><time itemprop="startDate" datetime={event.start}>{date}</time></p>
     {#if event.end}
         <meta itemprop="endDate" content={event.end} />
+    {/if}
+    {#if event.description}
+        <meta itemprop="description" content={event.description} />
     {/if}
     <h1 itemprop="name">{event.summary}</h1>
 </header>
@@ -55,20 +55,12 @@
     <p><a href="/events/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
 </section>
 
-{#if paragraphs.length > 0}
+<!-- La descrizione del calendario, già pulita alla build (src/lib/server/calendar.ts): paragrafi, elenchi, link -->
+{#if event.descriptionHtml}
     <section id="evento-descrizione">
         <h2>L'evento</h2>
-        {#each paragraphs as paragraph, i (i)}
-            <p itemprop="description">{paragraph}</p>
-        {/each}
+        {@html event.descriptionHtml}
     </section>
 {/if}
 
 <p class="rimando"><a href="/events">Tutto il calendario</a></p>
-
-<style>
-    /* Gli a capo del calendario restano a capo */
-    [itemprop="description"] {
-        white-space: pre-line;
-    }
-</style>

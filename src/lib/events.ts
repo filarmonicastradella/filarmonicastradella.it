@@ -1,7 +1,9 @@
 export interface EventItem {
     id: string;
     summary: string;
+    // Solo testo (schede, motori di ricerca, file .ics) e HTML già pulito (pagina dell'evento)
     description: string;
+    descriptionHtml: string;
     location: string;
     start: string;
     end: string;
