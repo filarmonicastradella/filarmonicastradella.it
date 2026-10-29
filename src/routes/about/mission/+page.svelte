@@ -66,9 +66,9 @@
         quota può comprare: un gruppo di persone con cui fare musica.
     </p>
     <p>
-        Il repertorio nasce dai musicisti: i componenti propongono i brani e i direttori scelgono da quella lista cosa preparare per ogni stagione. I
-        direttori sono più di uno e sono musicisti come gli altri: li nomina il Consiglio Direttivo dopo aver consultato i componenti di ogni formazione, e
-        quando non dirigono suonano accanto a tutti. Anche le prove si fissano insieme, ogni settimana, quando può esserci il maggior numero di persone. I
+        Il repertorio nasce dai musicisti: i componenti propongono i brani e li votano in una graduatoria, e i direttori scelgono da lì cosa preparare
+        per ogni stagione. I direttori sono più di uno e sono prima di tutto musicisti: li nomina il Consiglio Direttivo dopo aver consultato i componenti
+        di ogni formazione, ognuno dirige in autonomia i propri brani, e quando non dirige suona accanto agli altri. Anche le prove si fissano insieme, ogni settimana, quando può esserci il maggior numero di persone. I
         capi sezione, guidando i compagni, imparano passo dopo passo a dirigere: così la Filarmonica forma da sé le sue guide, e una prova non salta mai
         perché manca qualcuno.
     </p>

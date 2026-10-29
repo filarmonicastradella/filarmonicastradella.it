@@ -48,6 +48,12 @@
         <summary>Come posso suonare in questa formazione?</summary>
         <p>Iscriviti alla Filarmonica con la <a href="/support/join">domanda di iscrizione</a>.</p>
     </details>
+    {#each ensemble.faq ?? [] as { question, answer } (question)}
+        <details>
+            <summary>{question}</summary>
+            <p>{answer}</p>
+        </details>
+    {/each}
     <details>
         <summary>Potete suonare al mio evento?</summary>
         <p>

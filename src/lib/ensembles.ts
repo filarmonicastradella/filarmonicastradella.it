@@ -9,10 +9,12 @@ interface EnsembleMetadata {
     occasions: string[];
     /** L'organico: gli strumenti divisi per sezione (legni, ottoni, archi...) */
     lineup: { name: string; instruments: string[] }[];
+    /** Domande frequenti proprie della formazione, prima di quelle comuni a tutte (solo testo) */
+    faq?: { question: string; answer: string }[];
     /** La foto di copertina (il file è in src/lib/assets/imgs/ensembles/, con lo slug come nome) */
     cover?: {
         alt: string;
-        /** Chi l'ha scattata, citato in pagina */
+        /** Chi l'ha scattata: chi ha i diritti, non mostrato in pagina */
         credit: string;
         /** Il punto da tenere quando la fascia taglia la foto (object-position), di base il centro */
         position?: string;
