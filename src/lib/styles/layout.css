@@ -69,8 +69,13 @@ main {
     padding-block: var(--header-height) var(--space-9);
 }
 
+/*
+ * Nella griglia i margini non si fondono: quelli predefiniti del browser (1em sotto paragrafi ed elenchi) si
+ * sommerebbero agli stacchi qui sotto. Si azzerano, e tra i blocchi valgono solo le regole che seguono.
+ */
 main > * {
     grid-column: content;
+    margin-block: 0;
 }
 
 /*
