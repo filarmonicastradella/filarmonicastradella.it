@@ -84,6 +84,11 @@
             padding-block: calc(var(--header-height) + var(--space-7)) var(--space-7);
             padding-inline: var(--page-inline) calc(var(--page-inline) + var(--corde-span) + var(--space-6));
             overflow-y: auto;
+            /* Voci e pulsante in alto; le corde sono una cella della griglia, così finiscono con le voci */
+            display: grid;
+            /* Righe esplicite (voci, pulsante): "1 / -1" delle corde le copre tutte e due */
+            grid-template-rows: auto auto;
+            align-content: start;
             /* Sta già sul fondo vero di "nav" (inset: 0): il clip-path la scopre solo a espansione finita */
             border-block-end: var(--border-width) solid var(--border);
             background-color: var(--bg);
@@ -102,11 +107,20 @@
             transition-delay: 0s;
         }
 
-        /* Dal fondo del pulsante del menu, centrato nell'intestazione, fino in fondo allo schermo */
-        /* Si fermano prima del fondo dello schermo, con i terminali a pallino (layout.css) */
+        /*
+         * Dal fondo del pulsante del menu, centrato nell'intestazione, fino a poco sotto "Unisciti a noi", con i
+         * terminali a pallino (layout.css): lunghe quanto il menu, non quanto lo schermo. Sono una cella della
+         * griglia accanto a voci e pulsante (come nella hero): il margine negativo in alto le fa salire fino al
+         * pulsante del menu, quello a destra le porta nel margine riservato alle corde.
+         */
         nav::after {
-            inset-block: calc((var(--header-height) + var(--corde-span)) / 2) var(--space-9);
-            inset-inline-end: var(--page-inline);
+            position: relative;
+            inset: auto;
+            grid-row: 1 / -1;
+            grid-column: 1;
+            justify-self: end;
+            margin-block: calc((var(--corde-span) - var(--header-height)) / 2 - var(--space-7)) calc(var(--space-7) * -1);
+            margin-inline-end: calc((var(--corde-span) + var(--space-6) + var(--pad)) * -1);
             /* Ritratte nel pulsante; alla chiusura risalgono subito */
             clip-path: inset(0 0 100% 0);
             transition: clip-path var(--duration-slow) var(--ease);
@@ -137,10 +151,16 @@
             transition-delay: calc(var(--i) * var(--stagger) / 2);
         }
 
+        /* Righe esplicite: le corde occupano la stessa colonna, e il posizionamento automatico sposterebbe voci e pulsante sotto di loro */
         ul {
+            grid-area: 1 / 1;
             display: flex;
             flex-direction: column;
             gap: var(--space-5);
+        }
+
+        p {
+            grid-area: 2 / 1;
         }
 
         ul a {

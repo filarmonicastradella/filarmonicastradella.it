@@ -196,6 +196,28 @@ main > header::after {
     inset-inline-end: 0;
 }
 
+/* Solo alla prima apertura del sito: nei cambi di pagina successivi (main[data-navigated], +layout.svelte) restano ferme */
+@media (prefers-reduced-motion: no-preference) {
+    main:not([data-navigated]) > header::after {
+        animation: corde-scendono var(--duration-slow) var(--ease) calc(var(--stagger) * 3) both;
+    }
+}
+
+/*
+ * Le corde si tendono dall'alto in basso e si fermano sui pallini, dopo il titolo (docs/DESIGN.md,
+ * Movimento): clip-path le scopre senza cambiarne dimensioni né layout. Serve anche "to": da inset() a
+ * "none" il browser non interpola e le corde comparirebbero di colpo.
+ */
+@keyframes corde-scendono {
+    from {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    to {
+        clip-path: inset(0);
+    }
+}
+
 main > header h1 {
     font-size: var(--fs-display);
     line-height: var(--lh-display);

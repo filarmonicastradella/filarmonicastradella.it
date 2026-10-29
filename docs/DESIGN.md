@@ -117,7 +117,7 @@ Il movimento accompagna, non si esibisce.
 
 - **Andamento:** sempre `--ease`, mai rimbalzi.
 - **Cosa si anima:** solo opacità, spostamenti brevi (al massimo 1,5 rem) e colori. Mai dimensioni o layout. Unica eccezione: il pulsante del menu, tre corde distese che all'apertura ruotano di 90° e diventano la cima delle corde del pannello, che scendono da lì.
-- **Sì:** la comparsa dell'apertura in homepage; una dissolvenza breve tra le pagine con le View Transitions, con l'intestazione del sito ferma.
+- **Sì:** la comparsa dell'apertura in homepage; le corde delle intestazioni di pagina che si tendono dall'alto e si fermano sui pallini, quando la pagina si apre; una dissolvenza breve tra le pagine con le View Transitions, con l'intestazione del sito ferma.
 - **No:** animazioni allo scorrimento, parallasse, caroselli automatici, autoplay, contatori.
 - **Movimento ridotto:** con `prefers-reduced-motion` niente spostamenti; restano al massimo le dissolvenze.
 

@@ -28,8 +28,12 @@
 
     const reducedMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+    // Dopo il primo cambio di pagina le comparse della prima apertura (le corde delle intestazioni) non si ripetono
+    let navigated = $state(false);
+
     // Cambio di pagina animato con le View Transitions (dove il browser le supporta; il CSS descrive l'animazione).
     onNavigate((navigation) => {
+        navigated = true;
         // Dal menu aperto basta la sua chiusura: la nuova pagina si carica subito dietro il pannello, ancora
         // coperta mentre le corde risalgono, e il pannello sfumando la scopre. Niente dissolvenza in più.
         if (menu.open) {
@@ -74,7 +78,7 @@
 <SiteHeader />
 
 <!-- Con il menu aperto il resto della pagina, coperto dal pannello, non si raggiunge con la tastiera -->
-<main id="contenuto" inert={menu.open}>
+<main id="contenuto" inert={menu.open} data-navigated={navigated || undefined}>
     {@render children()}
 </main>
 <SiteFooter inert={menu.open} />
