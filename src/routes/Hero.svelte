@@ -1,5 +1,5 @@
 <script lang="ts">
-    // La stessa foto della copertina di Stradella Facendo (© Eleonora Rocchi, credito in fondo alla home)
+    // La stessa foto della copertina di Stradella Facendo (© Eleonora Rocchi)
     import cover from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?enhanced";
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
     import coverPlaceholder from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?w=24&blur=2&format=webp&inline";
@@ -13,9 +13,9 @@
     <hgroup>
         <p>Fivizzano · dal 1777</p>
         <h1>Filarmonica <em>Alessandro Stradella</em></h1>
-        <p>«Le dissonanze in un accordo solo»: il motto dei nostri soci nel Settecento.</p>
+        <p>Custodi della <strong>tradizione</strong>, interpreti del <strong>futuro</strong>.</p>
     </hgroup>
-    <p><a href="/booking">La Filarmonica al tuo evento</a></p>
+    <p><a href="/booking">Chiamaci a suonare</a></p>
     <enhanced:img
         src={cover}
         alt="Stradella Facendo in concerto nel Museo di San Giovanni degli Agostiniani a Fivizzano"
@@ -106,6 +106,10 @@
         margin-block-start: var(--space-5);
         color: var(--text-muted);
         font-size: var(--fs-lead);
+    }
+
+    hgroup p:last-child strong {
+        color: var(--text);
     }
 
     header > p {
