@@ -19,10 +19,13 @@
     const address = $derived(event.location.split(",").slice(1).join(",").trim());
     // Le domande servono a chi ci deve ancora andare: per gli eventi passati non si mostrano
     const upcoming = $derived(hasNotEnded(event, new Date()));
+    // Titoli lunghi senza il nome della Filarmonica, così il titolo resta entro i 70 caratteri che i motori mostrano
+    const suffix = " — Filarmonica Alessandro Stradella";
+    const pageTitle = $derived(event.summary.length + suffix.length > 70 ? event.summary : event.summary + suffix);
 </script>
 
 <svelte:head>
-    <title>{event.summary} — Filarmonica Alessandro Stradella</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={metaDescription} />
 </svelte:head>
 
@@ -78,7 +81,7 @@
         <h2>Domande frequenti</h2>
         <details>
             <summary>Si paga l'ingresso?</summary>
-            <p>No, i concerti sono a ingresso libero.</p>
+            <p>Di norma no: i nostri concerti sono a ingresso libero. Se per un evento è previsto un biglietto, lo trovi scritto qui sopra.</p>
         </details>
         <details>
             <summary>Devo prenotare?</summary>

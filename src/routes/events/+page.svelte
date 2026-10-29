@@ -24,11 +24,13 @@
 <header>
     <h1>Calendario</h1>
     <p>Scopri i prossimi concerti, le prove aperte, i saggi e tutte le attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano.</p>
+    <!-- Senza eventi l'avviso sta nell'intestazione: niente testo sciolto nella pagina -->
+    {#if events.length === 0}
+        <p>Al momento non ci sono eventi in programma. Torna a trovarci presto!</p>
+    {/if}
 </header>
 
-{#if events.length === 0}
-    <p>Al momento non ci sono eventi in programma. Torna a trovarci presto!</p>
-{:else}
+{#if events.length > 0}
     <TimelineSections items={events} date={(event) => event.start}>
         {#snippet entry(event, level)}
             <EventCard {event} {level} />
