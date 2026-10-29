@@ -60,13 +60,6 @@ input[type="file"]::file-selector-button:hover {
     color: var(--text-brand);
 }
 
-/* Le icone nei pulsanti: 1,25 rem (docs/DESIGN.md, Iconografia) */
-:is(button, main a[download]) > svg {
-    flex-shrink: 0;
-    inline-size: 1.25rem;
-    block-size: 1.25rem;
-}
-
 form {
     max-inline-size: var(--container-text);
 }
