@@ -99,7 +99,6 @@
         gli Accademici Dissonanti.
     </p>
     <p>In Massa 1789. Per Stefano Frediani stampator ducale con approvazione.</p>
-    <p><small>Nell'originale «Emanuelle» è scritto con due l.</small></p>
 </section>
 
 <p><a href="/documents/sonetto.jpg" type="image/jpeg">La scansione del foglio originale</a> (JPEG), stampato a Massa nel 1789.</p>
