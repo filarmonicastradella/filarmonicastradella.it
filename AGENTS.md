@@ -31,6 +31,7 @@ Elenco aggiornato man mano che vengono richieste nuove indicazioni. Testi dell'i
 - Landmark e sezioni con titolo: usare il componente `Section` (`$lib/components/Section.svelte`), che collega `h2` e `aria-labelledby` con `$props.id()`. Un solo `h1` per pagina; gerarchia dei titoli senza salti.
 - Elenchi di elementi equivalenti in `<ul><li>`; date in `<time datetime>`; coppie etichetta/valore in `<dl>`; niente `<header>`/`<footer>`/`<address>` dentro i link né `div` usati solo per il layout.
 - Pagine non ancora pronte: `<h1>`, una riga di presentazione e "Pagina in costruzione: …"; bozze legali con il commento `<!-- BOZZA … -->` in testa da far verificare prima della pubblicazione.
+- Spiegazioni aggiuntive di una pagina (aiuto, piccole FAQ): una sezione con `<h2>` e un `<details>`/`<summary>` per domanda, senza JS; stili generali in `content.css`. *(Dal 29/10/2026.)*
 - Incorporazioni di terze parti (mappe): caricate solo su richiesta con un pulsante (`MapEmbed`), con il link diretto sempre visibile.
 - Elenchi datati (eventi, notizie) con il componente `TimelineSections`: sezioni per anno (solo se più di uno) e mese, con indice di navigazione annidato; l'ordine è quello degli elementi passati (eventi dal più vicino, notizie dalla più recente).
 - Elenchi in ordine cronologico in `<ol>`; eventi con microdati schema.org (`itemscope itemtype="https://schema.org/Event"`, `itemprop`), indici di sezione come `<nav>` con collegamenti interni.

@@ -247,6 +247,33 @@
     </p>
 </form>
 
+<section>
+    <h2>Domande frequenti</h2>
+    <details>
+        <summary>Quanto costa iscriversi?</summary>
+        <p>La quota annuale è di 12 €.</p>
+    </details>
+    <details>
+        <summary>Che requisiti servono per suonare?</summary>
+        <p>
+            Ogni formazione ha i suoi. Per Stradella Facendo, per esempio, bastano 14 anni e una formazione musicale di base, come la scuola media a
+            indirizzo musicale.
+        </p>
+    </details>
+    <details>
+        <summary>Che impegno è richiesto?</summary>
+        <p>Partecipare ad almeno metà delle attività, tra concerti, prove e momenti di vita associativa.</p>
+    </details>
+    <details>
+        <summary>Devo avere uno strumento mio?</summary>
+        <p>No: strumento, parti e sala prove li mette a disposizione l'associazione.</p>
+    </details>
+    <details>
+        <summary>Come iscrivo un ragazzo sotto i 14 anni?</summary>
+        <p>Online non si può: <a href="/contacts">contattaci</a> e completiamo la pratica di persona.</p>
+    </details>
+</section>
+
 <style>
     /*
      * Da 40rem i campi brevi si affiancano: una griglia di sei colonne in cui ogni campo ne occupa tre,
