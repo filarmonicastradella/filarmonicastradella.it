@@ -16,7 +16,7 @@
 </script>
 
 <!-- "--i": posizione nella sequenza con cui le voci compaiono all'apertura -->
-<nav aria-label="Navigazione principale" data-open={menu.open || undefined} {@attach focusFirstItem}>
+<nav id="menu" aria-label="Navigazione principale" data-open={menu.open || undefined} {@attach focusFirstItem}>
     <ul>
         {#each navItems as item, i (item.href)}
             <li style:--i={i}><a href={item.href} aria-current={isActive(item.href)}>{item.title}</a></li>

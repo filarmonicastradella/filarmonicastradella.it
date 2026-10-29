@@ -45,10 +45,12 @@ a[target="_blank"]::after {
     mask: var(--icon-external) center / contain no-repeat;
 }
 
-/* Le icone dei social e le immagini parlano da sole: niente freccia */
+/* Le icone dei social e le immagini parlano da sole: niente freccia, ma resta il testo per gli screen reader */
 body > div > footer > nav:first-child a::after,
 a[target="_blank"]:has(img)::after {
-    content: none;
+    inline-size: 0;
+    margin: 0;
+    background: none;
 }
 
 /*
@@ -75,8 +77,11 @@ a[target="_blank"]:has(img)::after {
         transition: translate var(--duration) var(--ease);
     }
 
-    &:hover::after {
-        translate: var(--space-1) 0;
+    /* Con il movimento ridotto la freccia resta ferma (docs/DESIGN.md, Movimento) */
+    @media (prefers-reduced-motion: no-preference) {
+        &:hover::after {
+            translate: var(--space-1) 0;
+        }
     }
 }
 
@@ -323,6 +328,9 @@ main > nav li + li {
 }
 
 main > nav a {
+    /* Un po' d'aria sopra e sotto: i link sono piccoli e su telefono vanno a capo, così si toccano meglio */
+    display: inline-block;
+    padding-block: var(--space-1);
     font-size: var(--fs-eyebrow);
     font-weight: var(--fw-text-strong);
     letter-spacing: var(--tracking-eyebrow);

@@ -69,6 +69,7 @@ body > div > footer {
     --on-accent: var(--color-inchiostro);
     --border: color-mix(in oklab, var(--color-carta) 18%, transparent);
     --corde-color: var(--color-cipria);
+    --focus-ring: var(--color-cipria); /* il bordeaux sull'inchiostro non si vedrebbe */
     background-color: var(--bg);
     color: var(--text);
 }

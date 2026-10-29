@@ -94,7 +94,8 @@ textarea {
     box-sizing: border-box;
     inline-size: 100%;
     padding: var(--space-3) var(--space-4);
-    border: var(--border-width) solid var(--border);
+    /* Il bordo dei campi ha il contrasto del testo secondario (almeno 3:1): il filetto --border sarebbe troppo chiaro */
+    border: var(--border-width) solid var(--text-muted);
     border-radius: var(--radius);
     background-color: var(--bg-raised);
     color: var(--text);
@@ -104,7 +105,13 @@ textarea {
 input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="hidden"]):hover,
 select:hover,
 textarea:hover {
-    border-color: var(--text-muted);
+    border-color: var(--text);
+}
+
+/* Stessa altezza per campi di testo, date ed elenchi a scelta, così quelli affiancati restano allineati */
+input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="hidden"], [type="file"]),
+select {
+    block-size: calc(var(--fs-body) * var(--lh-body) + var(--space-3) * 2 + var(--border-width) * 2);
 }
 
 textarea {

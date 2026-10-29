@@ -26,7 +26,7 @@
     </a>
 
     <!-- Il nome del pulsante è la parola visibile, "Menu" o "Chiudi"; le tre corde sono solo il segno -->
-    <button type="button" aria-expanded={menu.open} onclick={() => (menu.open = !menu.open)} bind:this={toggle}>
+    <button type="button" aria-controls="menu" aria-expanded={menu.open} onclick={() => (menu.open = !menu.open)} bind:this={toggle}>
         <span>
             <span aria-hidden={menu.open}>Menu</span>
             <span aria-hidden={!menu.open}>Chiudi</span>

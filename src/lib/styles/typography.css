@@ -8,7 +8,7 @@
     --font-display: "Cormorant Garamond", Cormorant, Garamond, "Times New Roman", serif;
     --font-text: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
-    --fs-display: clamp(3rem, 2rem + 5vw, 4.5rem); /* 48→72 */
+    --fs-display: clamp(3rem, 2rem + 5vw, 4rem); /* 48→64, come in docs/DESIGN.md */
     --fs-h1: clamp(2.25rem, 1.75rem + 2.5vw, 2.75rem); /* 36→44 */
     --fs-h2: clamp(1.75rem, 1.5rem + 1vw, 1.875rem); /* 28→30 */
     --fs-h3: 1.5rem; /* 24 */
