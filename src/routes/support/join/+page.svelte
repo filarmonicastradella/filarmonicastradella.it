@@ -262,8 +262,11 @@
         <p>No: strumento, parti e sala prove li mette a disposizione l'associazione.</p>
     </details>
     <details>
-        <summary>Come iscrivo un ragazzo sotto i 14 anni?</summary>
-        <p>Online non si può: <a href="/contacts">contattaci</a> e completiamo la pratica di persona.</p>
+        <summary>Come si iscrive un minorenne?</summary>
+        <p>
+            L'iscrizione la fa un genitore o tutore: inserisci i dati del ragazzo e poi i tuoi, con il tuo documento di identità. Sotto i 14 anni online
+            non si può: <a href="/contacts">contattaci</a> e completiamo la pratica di persona.
+        </p>
     </details>
 </section>
 
