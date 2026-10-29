@@ -28,17 +28,9 @@
 
 <style>
     /*
-     * Ogni parte ha un numero fisso di righe, così nella griglia date, titoli e descrizioni partono alla
-     * stessa altezza in tutte le schede: data e didascalia su una riga, titolo su due, descrizione su tre.
-     * Il testo che non ci sta si interrompe con i puntini; quello intero è nella pagina dell'evento.
+     * Le schede sono sempre una sotto l'altra, quindi niente altezze fisse: titolo e descrizione hanno solo un
+     * limite, due e tre righe, con i puntini; il testo intero è nella pagina dell'evento.
      */
-    a > p:first-child,
-    :is(h3, h4) ~ p:not([itemprop="description"]) {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
     h3,
     h4,
     [itemprop="description"] {
@@ -47,15 +39,11 @@
         overflow: hidden;
     }
 
-    /*
-     * Con l'interlinea stretta dei titoli le lettere che scendono sotto la riga (g, p, q) dell'ultima riga
-     * uscirebbero dal riquadro e "overflow: hidden" le taglierebbe: un po' di spazio sotto le contiene.
-     */
+    /* Con l'interlinea stretta dei titoli "overflow: hidden" taglierebbe le lettere che scendono (g, p, q) dell'ultima riga */
     h3,
     h4 {
         -webkit-line-clamp: 2;
         line-clamp: 2;
-        min-block-size: 2lh;
         padding-block-end: var(--space-1);
     }
 
@@ -73,7 +61,6 @@
     /*
      * Quando la scheda è larga (gli elenchi di eventi su schermo largo, content.css) è una riga d'agenda, come
      * la scheda degli articoli: data e didascalia a sinistra, titolo e descrizione nella colonna di testo.
-     * Le righe fisse servono solo alla griglia: qui il titolo prende lo spazio che gli serve.
      */
     article {
         container-type: inline-size;
@@ -101,7 +88,6 @@
         h3,
         h4 {
             grid-area: 1 / 2;
-            min-block-size: 0;
         }
 
         [itemprop="description"] {
