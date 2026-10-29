@@ -19,6 +19,7 @@
     <h1 itemprop="name">{ensemble.title}</h1>
     <p itemprop="description">{ensemble.summary}</p>
     {#if ensemble.coverImage && ensemble.cover}
+        <p><small>Foto di copertina: © {ensemble.cover.credit}.</small></p>
         <enhanced:img src={ensemble.coverImage.picture} alt={ensemble.cover.alt} sizes="100vw" fetchpriority="high" itemprop="image" />
     {/if}
 </header>
@@ -46,9 +47,5 @@
 </section>
 
 <p class="rimando"><a href="/booking">Per il tuo evento</a></p>
-
-{#if ensemble.coverImage && ensemble.cover}
-    <p>Foto di copertina: © {ensemble.cover.credit}.</p>
-{/if}
 
 <p class="rimando"><a href="/about/ensembles">Tutti gli ensemble</a></p>

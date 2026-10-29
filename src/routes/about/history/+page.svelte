@@ -20,6 +20,11 @@
 <header style="--cover-placeholder: url({anni30Placeholder}); --cover-position: top; --cover-archive: 1">
     <h1>La storia</h1>
     <p>Dal 1777 a oggi: quasi due secoli e mezzo di musica a Fivizzano.</p>
+    <p>
+        La Filarmonica di Fivizzano nacque nel Settecento come accademia di nobili, religiosi e musicisti. Nell'Ottocento ebbe un'orchestra, una banda e
+        maestri di professione, e nel 1872 lo Stato la contava tra le quattro accademie filarmoniche italiane più antiche ancora attive, con Santa Cecilia di
+        Roma, la Filarmonica di Bologna e l'Accademia di Alba<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1a" aria-label="Fonte 1">1</a></sup>. Quello che segue viene dai documenti ritrovati finora.
+    </p>
     <enhanced:img
         src={anni30Img}
         alt="I musicisti della Filarmonica negli anni Trenta, in posa con i loro strumenti"
@@ -38,12 +43,6 @@
         <li><a href="#oggi">Oggi</a></li>
     </ol>
 </nav>
-
-<p>
-    La Filarmonica di Fivizzano nacque nel Settecento come accademia di nobili, religiosi e musicisti. Nell'Ottocento ebbe un'orchestra, una banda e
-    maestri di professione, e nel 1872 lo Stato la contava tra le quattro accademie filarmoniche italiane più antiche ancora attive, con Santa Cecilia di
-    Roma, la Filarmonica di Bologna e l'Accademia di Alba<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1a" aria-label="Fonte 1">1</a></sup>. Quello che segue viene dai documenti ritrovati finora.
-</p>
 
 <section id="accademia">
     <h2>L'Accademia dei Filarmonici Dissonanti</h2>

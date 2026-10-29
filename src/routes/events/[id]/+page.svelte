@@ -31,11 +31,13 @@
     <h1 itemprop="name">{event.summary}</h1>
 </header>
 
-<!--
-    La descrizione del calendario, senza titolo, come testo d'apertura sotto l'intestazione; già pulita alla build
-    (src/lib/server/calendar.ts): paragrafi, elenchi, link.
--->
-{@html event.descriptionHtml}
+<!-- La descrizione del calendario, già pulita alla build (src/lib/server/calendar.ts): paragrafi, elenchi, link -->
+{#if event.descriptionHtml}
+    <section>
+        <h2>L'evento</h2>
+        {@html event.descriptionHtml}
+    </section>
+{/if}
 
 <section id="evento-dettagli">
     <h2>Quando e dove</h2>

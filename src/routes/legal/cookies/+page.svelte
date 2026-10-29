@@ -7,6 +7,7 @@
 <header>
     <h1>Cookie</h1>
     <p>Questo sito non usa cookie: niente statistiche, niente profilazione, nessun banner da accettare.</p>
+    <p><small>Informativa sui cookie secondo le linee guida del Garante per la protezione dei dati personali del 10 giugno 2021. Ultimo aggiornamento: <time datetime="2026-10">ottobre 2026</time>.</small></p>
 </header>
 
 <section>
@@ -25,5 +26,3 @@
     </p>
     <p>Per i dati personali trattati tramite il sito vale l'<a href="/legal/privacy">informativa privacy</a>.</p>
 </section>
-
-<p><small>Informativa sui cookie secondo le linee guida del Garante per la protezione dei dati personali del 10 giugno 2021. Ultimo aggiornamento: <time datetime="2026-10">ottobre 2026</time>.</small></p>

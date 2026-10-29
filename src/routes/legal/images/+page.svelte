@@ -74,9 +74,10 @@
     <p>Il consenso dato prima della revoca resta valido per gli usi già fatti. Per tutto il resto vale l'<a href="/legal/privacy">informativa privacy</a>.</p>
 </section>
 
-<p>
-    <small>
-        Riferimenti: art. 10 del codice civile; artt. 80, 96 e 97 della legge 22 aprile 1941, n. 633; artt. 6, 7 e 8 del Regolamento UE 2016/679.
-        Chi si iscrive di persona firma la liberatoria su carta, con lo stesso contenuto.
-    </small>
-</p>
+<section>
+    <h2>Riferimenti</h2>
+    <p>
+        Art. 10 del codice civile; artt. 80, 96 e 97 della legge 22 aprile 1941, n. 633; artt. 6, 7 e 8 del Regolamento UE 2016/679. Chi si iscrive
+        di persona firma la liberatoria su carta, con lo stesso contenuto.
+    </p>
+</section>

@@ -12,6 +12,7 @@
 <header>
     <h1>Informativa privacy</h1>
     <p>Quali dati personali trattiamo quando visiti il sito, ci scrivi o chiedi di iscriverti, e come puoi controllarli.</p>
+    <p><small>Informativa ai sensi dell'art. 13 del Regolamento UE 2016/679 (GDPR). Ultimo aggiornamento: <time datetime="2026-10">ottobre 2026</time>.</small></p>
 </header>
 
 <section>
@@ -110,5 +111,3 @@
         <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">Garante per la protezione dei dati personali</a>.
     </p>
 </section>
-
-<p><small>Informativa ai sensi dell'art. 13 del Regolamento UE 2016/679 (GDPR). Ultimo aggiornamento: <time datetime="2026-10">ottobre 2026</time>.</small></p>

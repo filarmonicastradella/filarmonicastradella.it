@@ -7,4 +7,5 @@
     <h1>Messaggio inviato</h1>
     <p>Grazie per averci scritto: ti risponderemo il prima possibile all'indirizzo email che hai indicato.</p>
 </header>
+
 <p class="rimando"><a href="/">Torna alla pagina principale</a></p>

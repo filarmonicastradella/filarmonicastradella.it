@@ -87,12 +87,8 @@ main > :is(header, section, article, nav, ul, ol, dl, form) + * {
     margin-block-start: var(--space-9);
 }
 
-/*
- * Il testo scritto direttamente nella pagina (un'introduzione, la descrizione di un evento) ha lo stacco del testo
- * delle sezioni: tra un paragrafo e l'altro, e tra un paragrafo e il suo elenco (non un elenco di schede).
- */
-main > p + p,
-main > p + :is(ul, ol):not(:has(> li > :is(a, article, video, figure))) {
+/* I rimandi in fondo alla pagina, uno sotto l'altro: lo stacco del testo */
+main > p + p {
     margin-block-start: var(--space-5);
 }
 
