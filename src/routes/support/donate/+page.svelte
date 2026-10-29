@@ -1,10 +1,10 @@
 <svelte:head>
-    <title>Erogazioni liberali — Filarmonica Alessandro Stradella APS</title>
+    <title>Fai una donazione — Filarmonica Alessandro Stradella APS</title>
     <meta name="description" content="Come sostenere la Filarmonica Alessandro Stradella APS con un contributo libero tramite bonifico bancario." />
 </svelte:head>
 
 <header>
-    <h1>Erogazioni liberali</h1>
+    <h1>Fai una donazione</h1>
     <p>Puoi sostenere i nostri progetti con un contributo libero tramite bonifico bancario.</p>
 </header>
 

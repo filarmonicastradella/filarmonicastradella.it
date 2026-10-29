@@ -11,19 +11,6 @@
     </p>
 </header>
 
-<section>
-    <h2>Che cosa copre il tuo sostegno</h2>
-    <ul>
-        <li>Lo strumento, per chi non ne ha uno suo.</li>
-        <li>Le parti e il materiale di cartoleria.</li>
-        <li>La sala prove e il suo riscaldamento.</li>
-        <li>L'impianto audio.</li>
-        <li>I diritti SIAE dei concerti.</li>
-        <li>L'assicurazione dei soci.</li>
-    </ul>
-    <p>Mettendo insieme le risorse di tutti, ognuno può dedicarsi a ciò che conta: suonare. E ogni euro resta qui, nelle persone.</p>
-</section>
-
 <ul>
     <li>
         <a href="/support/join">
@@ -33,7 +20,7 @@
     </li>
     <li>
         <a href="/support/donate">
-            <h2>Erogazioni liberali</h2>
+            <h2>Fai una donazione</h2>
             <p>Un contributo libero tramite bonifico bancario, con le agevolazioni fiscali previste per le APS.</p>
         </a>
     </li>
@@ -54,6 +41,25 @@
     </li>
     -->
 </ul>
+
+<section>
+    <h2>Domande frequenti</h2>
+    <details>
+        <summary>A cosa serve il tuo sostegno?</summary>
+        <ul>
+            <li>Lo strumento, per chi non ne ha uno suo.</li>
+            <li>Le parti e il materiale di cartoleria.</li>
+            <li>La sala prove e il suo riscaldamento.</li>
+            <li>L'impianto audio.</li>
+            <li>I diritti SIAE dei concerti.</li>
+            <li>L'assicurazione dei soci.</li>
+        </ul>
+    </details>
+    <details>
+        <summary>Posso aiutare senza dare soldi?</summary>
+        <p>Sì: da socio puoi mettere a disposizione il tuo tempo e le tue competenze. <a href="/support/join">Iscriviti</a>.</p>
+    </details>
+</section>
 
 <!-- Tolto il 9/10/2026; con /faq riattivata si può rimettere:
 <p>Hai dubbi? Leggi le <a href="/faq">domande frequenti</a> o <a href="/contacts/message">scrivici</a>.</p>
