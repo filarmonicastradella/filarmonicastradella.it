@@ -1,7 +1,7 @@
 <!-- Fonti: Gianturco 1994, Radicchi 1988, Sforza 1874, Gerini 1829, Mingozzi 2018, DBI 2019, locandina e lapide del 6 dicembre 1997 (ricerca in ~/Filarmonica/Ricerca) -->
 <script lang="ts">
     // Copertina: il frontespizio della Serenata a 3, in più misure, e la sua anteprima sfocata
-    import serenataImg from "$lib/assets/imgs/serenata-stradella.jpg?enhanced&w=400;640;800;1280;1600";
+    import serenataImg from "$lib/assets/imgs/serenata-stradella.jpg?enhanced&w=400;640;800;1280;1600&quality=40";
     import serenataPlaceholder from "$lib/assets/imgs/serenata-stradella.jpg?w=24&blur=2&format=webp&inline";
 </script>
 

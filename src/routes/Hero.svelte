@@ -1,6 +1,6 @@
 <script lang="ts">
     // La stessa foto della copertina di Stradella Facendo (© Eleonora Rocchi)
-    import cover from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?enhanced";
+    import cover from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?enhanced&quality=40";
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
     import coverPlaceholder from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?w=24&blur=2&format=webp&inline";
 </script>
