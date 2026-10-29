@@ -1,20 +1,23 @@
-// Galleria di Instagram: il feed di Behold si legge qui, prima della build (e del server di sviluppo), al massimo una
-// volta al giorno; foto e video si scaricano in static/instagram/ e il sito li pubblica da sé. Le pagine leggono solo
-// src/lib/content/instagram.json, già pronto, senza nessuna richiesta a Behold né ai suoi server di immagini.
+// Galleria di Instagram: i post si leggono qui, prima della build (e del server di sviluppo), con l'API ufficiale di
+// Instagram (Instagram API with Instagram Login), senza servizi in mezzo. Foto e video si scaricano in static/instagram/
+// e il sito li pubblica da sé; le pagine leggono solo src/lib/content/instagram.json, già pronto, senza nessuna
+// richiesta a Instagram. Fino al 30/10/2026 il feed passava da Behold, finito in pausa per il limite di visualizzazioni.
 //
-// Behold conta ogni lettura del feed nelle visualizzazioni del mese e oltre il limite del piano lo mette in pausa
-// (errore 402, "pausedByOverage"): per questo una lettura al giorno, e se il feed non risponde restano le foto
-// dell'ultima volta. Nella GitHub Action la cache conserva i due percorsi tra una build e l'altra.
+// Il token (INSTAGRAM_TOKEN, in .env e nei segreti del repository) dura 60 giorni: lo script lo rinnova quando è vecchio
+// di una settimana e scrive quello nuovo nel file indicato da INSTAGRAM_TOKEN_FILE, che la GitHub Action salva nel
+// segreto. Se Instagram non risponde, o il token manca, restano le foto dell'ultima volta: la galleria è accessoria.
 import { existsSync } from "node:fs";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
-import { extname } from "node:path";
+import sharp from "sharp";
 
-const FEED_URL = "https://feeds.behold.so/1nxUxyt6x5qBVeEHpHNS";
+const API = "https://graph.instagram.com";
+const HASHTAG = "#filarmonicastradella"; // solo i post con questo hashtag finiscono sul sito
 const MEDIA_DIR = "static/instagram";
 const DATA_FILE = "src/lib/content/instagram.json";
-const MAX_AGE = 24 * 60 * 60 * 1000;
+const MAX_AGE = 60 * 60 * 1000; // una lettura all'ora al massimo: basta per la build ogni 3 ore
+const REFRESH_AFTER = 7 * 24 * 60 * 60 * 1000;
+const WIDTHS = [320, 640, 1080];
 const ALT_MAX_LENGTH = 140;
-const SIZES = ["small", "medium", "large"];
 
 const readData = async () => {
     try {
@@ -24,18 +27,23 @@ const readData = async () => {
     }
 };
 
-// Il testo alternativo è la prima frase della didascalia del post (di solito dice che cosa mostra la foto),
+const get = async (url) => {
+    const res = await fetch(url);
+    const body = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(`Instagram: ${res.status} ${body.error?.message ?? ""}`);
+    return body;
+};
+
+// Il testo alternativo è la prima frase della didascalia (di solito dice che cosa mostra la foto), senza hashtag,
 // tagliata a una parola intera se è troppo lunga.
-const altText = (post) => {
-    const firstSentence = (post.prunedCaption ?? "").trim().split(/(?<=[.!?])\s/)[0];
+const altText = (caption = "") => {
+    const firstSentence = caption.replace(/#\S+/g, "").trim().split(/(?<=[.!?])\s/)[0].trim();
     const alt = firstSentence.length > ALT_MAX_LENGTH ? `${firstSentence.slice(0, ALT_MAX_LENGTH).replace(/\s+\S*$/, "")}…` : firstSentence;
     return alt || "Foto dal profilo Instagram della Filarmonica";
 };
 
 // Scarica un file una volta sola: il nome dipende dall'id del contenuto, che su Instagram non cambia
-async function download(url, name) {
-    const extension = extname(new URL(url).pathname) || ".jpg";
-    const file = `${name}${extension}`;
+async function download(url, file) {
     if (!existsSync(`${MEDIA_DIR}/${file}`)) {
         const res = await fetch(url);
         if (!res.ok) throw new Error(`${url}: ${res.status}`);
@@ -44,67 +52,102 @@ async function download(url, name) {
     return file;
 }
 
-async function toSlide(media, post) {
+// Le misure per il srcset, in WebP, e il colore dominante come fondo mentre la foto si carica
+async function sizes(original, id) {
+    const image = sharp(`${MEDIA_DIR}/${original}`);
+    const { width, height } = await image.metadata();
     const files = [];
-    for (const size of SIZES) {
-        const variant = media.sizes?.[size];
-        if (variant) files.push({ file: await download(variant.mediaUrl, `${media.id}-${size}`), width: variant.width, height: variant.height });
+    for (const w of WIDTHS.filter((w) => w < width).concat(width)) {
+        const file = `${id}-${w}.webp`;
+        if (!existsSync(`${MEDIA_DIR}/${file}`)) await sharp(`${MEDIA_DIR}/${original}`).resize(w).webp({ quality: 75 }).toFile(`${MEDIA_DIR}/${file}`);
+        files.push({ file, width: w });
     }
-    const large = files.at(-1);
-    const video = media.mediaType === "VIDEO" ? await download(media.mediaUrl, media.id) : undefined;
-    // L'immagine: la misura più grande; senza misure, la foto stessa o, per un video, la sua miniatura
-    const image =
-        large?.file ??
-        (media.mediaType === "IMAGE" ? await download(media.mediaUrl, media.id) : media.thumbnailUrl && (await download(media.thumbnailUrl, `${media.id}-thumbnail`)));
-    const dominant = media.colorPalette?.dominant;
+    const { dominant } = await image.stats();
+    return { files, width, height, color: `rgb(${dominant.r} ${dominant.g} ${dominant.b})` };
+}
+
+async function toSlide(media, post) {
+    const video = media.media_type === "VIDEO";
+    const imageSource = video ? media.thumbnail_url : media.media_url;
+    if (!imageSource) return undefined;
+    const original = await download(imageSource, `${media.id}.jpg`);
+    const { files, width, height, color } = await sizes(original, media.id);
+    const large = files.at(-1).file;
+    const videoFile = video && media.media_url ? await download(media.media_url, `${media.id}.mp4`) : undefined;
 
     return {
         id: media.id,
-        mediaType: media.mediaType,
-        mediaUrl: `/instagram/${video ?? image}`,
-        thumbnailUrl: image ? `/instagram/${image}` : undefined,
-        imageUrl: image ? `/instagram/${image}` : undefined,
-        srcset: files.length ? files.map(({ file, width }) => `/instagram/${file} ${width}w`).join(", ") : undefined,
-        width: large?.width,
-        height: large?.height,
-        color: dominant ? `rgb(${dominant.replaceAll(",", " ")})` : undefined,
+        mediaType: video ? "VIDEO" : "IMAGE",
+        mediaUrl: `/instagram/${videoFile ?? large}`,
+        thumbnailUrl: `/instagram/${large}`,
+        imageUrl: `/instagram/${large}`,
+        srcset: files.map(({ file, width }) => `/instagram/${file} ${width}w`).join(", "),
+        width,
+        height,
+        color,
         permalink: post.permalink,
-        alt: altText(post)
+        alt: altText(post.caption)
     };
 }
 
+// Rinnovo del token: Instagram lo accetta solo se ha almeno un giorno; quello vecchio vale fino alla sua scadenza
+async function refreshToken(token, previous) {
+    const last = previous?.tokenRefreshedAt ? new Date(previous.tokenRefreshedAt).getTime() : 0;
+    if (Date.now() - last < REFRESH_AFTER) return previous?.tokenRefreshedAt;
+    const { access_token } = await get(`${API}/refresh_access_token?grant_type=ig_refresh_token&access_token=${token}`);
+    if (process.env.INSTAGRAM_TOKEN_FILE) await writeFile(process.env.INSTAGRAM_TOKEN_FILE, access_token);
+    console.log("Instagram: token rinnovato");
+    return new Date().toISOString();
+}
+
 const previous = await readData();
-if (previous && Date.now() - new Date(previous.fetchedAt).getTime() < MAX_AGE) {
-    console.log("Instagram: feed già letto oggi, nessuna richiesta a Behold");
+const token = process.env.INSTAGRAM_TOKEN;
+if (!token) {
+    console.warn("Instagram: manca INSTAGRAM_TOKEN, restano le foto dell'ultima volta");
+    process.exit(0);
+}
+if (previous?.fetchedAt && Date.now() - new Date(previous.fetchedAt).getTime() < MAX_AGE) {
+    console.log("Instagram: post già letti nell'ultima ora");
     process.exit(0);
 }
 
+let tokenRefreshedAt = previous?.tokenRefreshedAt;
 try {
-    const res = await fetch(FEED_URL);
-    if (!res.ok) throw new Error(`Behold: ${res.status} ${await res.text()}`);
-    const feed = await res.json();
-    await mkdir(MEDIA_DIR, { recursive: true });
-
-    // Il feed manda solo i post con #filarmonicastradella (filtro impostato su Behold); una voce per ogni foto degli album
-    const slides = [];
-    for (const post of feed.posts ?? []) {
-        for (const media of post.children?.length ? post.children : [post]) slides.push(await toSlide(media, post));
-    }
-
-    // Via i file dei post tolti dal feed
-    const used = new Set(
-        slides.flatMap(({ mediaUrl, imageUrl, srcset }) => [mediaUrl, imageUrl, ...(srcset ?? "").split(", ").map((entry) => entry.split(" ")[0])])
-    );
-    for (const file of await readdir(MEDIA_DIR)) {
-        if (!used.has(`/instagram/${file}`)) await rm(`${MEDIA_DIR}/${file}`);
-    }
-
-    await writeFile(DATA_FILE, JSON.stringify({ fetchedAt: new Date().toISOString(), slides }, null, 2));
-    console.log(`Instagram: ${slides.length} foto e video aggiornati`);
+    tokenRefreshedAt = await refreshToken(token, previous);
 } catch (error) {
-    // La galleria è accessoria: la build continua, con le foto dell'ultima volta o con il solo rimando a Instagram
+    console.warn("Instagram: token non rinnovato:", error.message);
+}
+
+try {
+    // Gli ultimi post (tre pagine al massimo); per gli album, ogni foto
+    const fields = "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,children{id,media_type,media_url,thumbnail_url}";
+    const posts = [];
+    let url = `${API}/me/media?fields=${encodeURIComponent(fields)}&limit=50&access_token=${token}`;
+    for (let page = 0; url && page < 3; page++) {
+        const { data, paging } = await get(url);
+        posts.push(...data);
+        url = paging?.next;
+    }
+
+    await mkdir(MEDIA_DIR, { recursive: true });
+    const slides = [];
+    for (const post of posts.filter(({ caption }) => caption?.toLowerCase().includes(HASHTAG))) {
+        for (const media of post.children?.data ?? [post]) {
+            const slide = await toSlide(media, post);
+            if (slide) slides.push(slide);
+        }
+    }
+
+    // Via i file dei post tolti da Instagram o senza più l'hashtag (si tengono gli originali, da cui nascono le misure)
+    const used = new Set(slides.flatMap(({ id }) => [id]));
+    for (const file of await readdir(MEDIA_DIR)) {
+        if (!used.has(file.split(/[-.]/)[0])) await rm(`${MEDIA_DIR}/${file}`);
+    }
+
+    await writeFile(DATA_FILE, JSON.stringify({ fetchedAt: new Date().toISOString(), tokenRefreshedAt, slides }, null, 2));
+    console.log(`Instagram: ${slides.length} foto e video da ${posts.length} post`);
+} catch (error) {
     console.warn(`Instagram non aggiornato (${previous?.slides ? "restano le foto dell'ultima volta" : "nessuna copia, solo il rimando a Instagram"}):`, error.message);
-    // Si annota il tentativo, così si riprova solo il giorno dopo, tenendo le foto che c'erano
     await mkdir("src/lib/content", { recursive: true });
-    await writeFile(DATA_FILE, JSON.stringify({ ...previous, fetchedAt: new Date().toISOString(), slides: previous?.slides ?? null }, null, 2));
+    await writeFile(DATA_FILE, JSON.stringify({ ...previous, fetchedAt: new Date().toISOString(), tokenRefreshedAt, slides: previous?.slides ?? null }, null, 2));
 }

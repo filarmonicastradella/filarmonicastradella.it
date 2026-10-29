@@ -28,7 +28,7 @@ jobs:
           cache: npm
       - run: npm ci
       # La galleria di Instagram tra una build e l'altra (scripts/instagram.mjs): si ripristina l'ultima copia e a fine
-      # build se ne salva una nuova, così Behold si legge al massimo una volta al giorno e le foto restano anche se non risponde.
+      # build se ne salva una nuova, così le foto già scaricate non si riscaricano e restano anche se Instagram non risponde.
       - uses: actions/cache@v4
         with:
           path: |
@@ -39,6 +39,18 @@ jobs:
       - run: npm run build
         env:
           GOOGLE_CALENDAR_API_KEY: ${{ secrets.GOOGLE_CALENDAR_API_KEY }}
+          INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+          INSTAGRAM_TOKEN_FILE: ${{ runner.temp }}/instagram-token
+      # Il token di Instagram dura 60 giorni: quando lo script lo rinnova, quello nuovo va nel segreto. Il token
+      # automatico delle Action non può scrivere i segreti: serve SECRETS_TOKEN, un token personale con il solo
+      # permesso «Secrets: read and write» su questo repository.
+      - name: Salva il token di Instagram rinnovato
+        env:
+          GH_TOKEN: ${{ secrets.SECRETS_TOKEN }}
+        run: |
+          [ -s "$RUNNER_TEMP/instagram-token" ] || exit 0
+          if [ -z "$GH_TOKEN" ]; then echo "::warning::Manca SECRETS_TOKEN: il token di Instagram rinnovato non è stato salvato"; exit 0; fi
+          gh secret set INSTAGRAM_TOKEN --repo "$GITHUB_REPOSITORY" < "$RUNNER_TEMP/instagram-token"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build

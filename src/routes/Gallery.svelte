@@ -61,7 +61,7 @@
      */
     ul {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
         gap: var(--gap-grid);
         padding: 0;
         list-style: none;

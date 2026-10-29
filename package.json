@@ -4,8 +4,8 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "node scripts/instagram.mjs && vite dev",
-		"build": "node scripts/instagram.mjs && vite build",
+		"dev": "node --env-file-if-exists=.env scripts/instagram.mjs && vite dev",
+		"build": "node --env-file-if-exists=.env scripts/instagram.mjs && vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -22,6 +22,7 @@
 		"html-validate": "^11.16.1",
 		"mdsvex": "^0.12.8",
 		"sanitize-html": "^2.18.1",
+		"sharp": "^0.34.5",
 		"svelte": "^5.56.1",
 		"svelte-check": "^4.7.6",
 		"typescript": "^6.0.3",

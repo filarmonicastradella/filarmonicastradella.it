@@ -70,7 +70,7 @@
         <dd>ospita il sito.</dd>
         <dt>formsubmit.co</dt>
         <dd>inoltra via email all'associazione i dati dei moduli di contatto, di richiesta per un evento e di iscrizione.</dd>
-        <dt>Behold e Instagram</dt>
+        <dt>Instagram</dt>
         <dd>forniscono le foto della galleria, che il sito copia quando viene preparato: il tuo browser non si collega ai loro server, se non quando apri un post su Instagram.</dd>
     </dl>
     <p>
