@@ -254,13 +254,6 @@
         <p>La quota annuale è di 12 €.</p>
     </details>
     <details>
-        <summary>Che requisiti servono per suonare?</summary>
-        <p>
-            Ogni formazione ha i suoi. Per Stradella Facendo, per esempio, bastano 14 anni e una formazione musicale di base, come la scuola media a
-            indirizzo musicale.
-        </p>
-    </details>
-    <details>
         <summary>Che impegno è richiesto?</summary>
         <p>Partecipare ad almeno metà delle attività, tra concerti, prove e momenti di vita associativa.</p>
     </details>
