@@ -50,7 +50,6 @@
 
 <section id="scrivici">
     <h2>Scrivici</h2>
-    <p>Compila il modulo: ti risponderemo all'indirizzo email che indichi.</p>
     <form action="https://formsubmit.co/{mailbox}@filarmonicastradella.it" method="POST">
         <input type="hidden" name="_subject" value="Nuovo messaggio dal sito - Filarmonica Stradella" />
         <input type="hidden" name="_template" value="table" />
