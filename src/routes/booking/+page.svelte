@@ -76,7 +76,7 @@
         <legend>Chi scrive</legend>
 
         <p>
-            <label for="evento-nome">Nome e cognome, o ente</label>
+            <label for="evento-nome">Nome</label>
             <input type="text" id="evento-nome" name="nome" autocomplete="name" required minlength="2" maxlength="120" />
         </p>
 
