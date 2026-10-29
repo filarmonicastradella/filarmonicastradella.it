@@ -36,7 +36,7 @@
         <p>Almeno 30 giorni prima dell'evento.</p>
     </details>
     <details>
-        <summary>Quanti musicisti venite?</summary>
+        <summary>Con quanti musicisti suonate?</summary>
         <p>Dipende dalla formazione e dall'occasione: te lo indichiamo nella proposta.</p>
     </details>
     <details>
