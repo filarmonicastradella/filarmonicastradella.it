@@ -1,10 +1,14 @@
 <script lang="ts">
-    // Chi organizza ragiona per occasioni: la formazione adatta la proponiamo noi
+    // Chi organizza ragiona per occasioni: la formazione adatta la proponiamo noi. Niente funzioni religiose né eventi
+    // di partito (associazione laica e apartitica, vedi le domande frequenti); i convegni sono tra le occasioni più frequenti.
     const occasions = [
-        "Cerimonia o ricorrenza ufficiale",
-        "Festa in piazza o sagra",
-        "Matrimonio o evento privato",
-        "Rassegna, festival o rievocazione",
+        "Concerto, rassegna o festival",
+        "Convegno o conferenza",
+        "Cerimonia o ricorrenza civile",
+        "Festa in piazza, sagra o corteo",
+        "Rievocazione storica",
+        "Festa privata o matrimonio",
+        "Ospedale, RSA o iniziativa sociale",
         "Altro"
     ];
 
@@ -16,7 +20,7 @@
     <title>La Filarmonica al tuo evento — Filarmonica Alessandro Stradella APS</title>
     <meta
         name="description"
-        content="Cerimonie, feste in piazza, matrimoni, rassegne: chiedi alla Filarmonica Alessandro Stradella di suonare al tuo evento."
+        content="Concerti, convegni, cerimonie civili, feste in piazza e private: chiedi alla Filarmonica Alessandro Stradella di suonare al tuo evento."
     />
 </svelte:head>
 

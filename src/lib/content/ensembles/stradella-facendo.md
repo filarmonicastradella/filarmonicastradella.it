@@ -7,9 +7,9 @@ cover:
     credit: Eleonora Rocchi
     position: center 35%
 occasions:
-    - "Concerti in teatri, chiese e sale"
+    - "Concerti in teatri, auditorium e sale"
     - "Rassegne e stagioni concertistiche"
-    - "Cerimonie e ricorrenze ufficiali"
+    - "Cerimonie e ricorrenze civili"
 lineup:
     - name: Legni
       instruments:

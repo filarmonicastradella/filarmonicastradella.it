@@ -31,6 +31,13 @@
 <section>
     <h2>Domande frequenti</h2>
     <details>
+        <summary>Che cos'è una filarmonica?</summary>
+        <p>
+            Un'associazione che fa musica insieme in più formazioni, dall'orchestra di fiati alla musica antica, e che dal Settecento a oggi porta a
+            Fivizzano la musica da concerto.
+        </p>
+    </details>
+    <details>
         <summary>Perché ci sono più formazioni?</summary>
         <p>
             Perché ogni repertorio chiede un organico diverso: il concerto in sala per l'orchestra di fiati, la musica in movimento per la street band,
@@ -60,7 +67,7 @@
     <details>
         <summary>Potete suonare al mio evento?</summary>
         <p>
-            Sì: per una cerimonia, una festa in piazza o un matrimonio la formazione adatta te la proponiamo noi.
+            Sì: per un concerto, un convegno, una cerimonia o una festa la formazione adatta te la proponiamo noi.
             <a href="/booking">Raccontaci l'occasione</a>.
         </p>
     </details>

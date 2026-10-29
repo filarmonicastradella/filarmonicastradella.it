@@ -56,7 +56,7 @@
     <details>
         <summary>Potete suonare al mio evento?</summary>
         <p>
-            Sì: per una cerimonia, una festa in piazza o un matrimonio <a href="/booking">raccontaci l'occasione</a> e ti rispondiamo con la
+            Sì: per un concerto, un convegno, una cerimonia o una festa <a href="/booking">raccontaci l'occasione</a> e ti rispondiamo con la
             disponibilità e una proposta.
         </p>
     </details>

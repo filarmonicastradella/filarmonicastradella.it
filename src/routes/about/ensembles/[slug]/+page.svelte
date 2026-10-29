@@ -53,10 +53,13 @@
     <FaqItem item={faq.direttori} />
     <details>
         <summary>Potete suonare al mio evento?</summary>
-        <p>
-            Sì: se vuoi {ensemble.title} alla tua cerimonia, festa o matrimonio <a href="/booking">raccontaci l'occasione</a> e ti rispondiamo
-            con la disponibilità e una proposta.
-        </p>
+        <p>Sì. Le occasioni adatte a {ensemble.title}:</p>
+        <ul>
+            {#each ensemble.occasions as occasion (occasion)}
+                <li>{occasion}</li>
+            {/each}
+        </ul>
+        <p><a href="/booking">Raccontaci l'occasione</a>: ti rispondiamo con la disponibilità e una proposta.</p>
     </details>
 </section>
 
