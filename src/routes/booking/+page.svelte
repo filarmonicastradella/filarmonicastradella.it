@@ -1,7 +1,5 @@
 <script lang="ts">
-    import { ensembles } from "$lib/ensembles";
-
-    // Chi organizza ragiona per occasioni, non per formazioni: la formazione si può lasciar scegliere a noi
+    // Chi organizza ragiona per occasioni: la formazione adatta la proponiamo noi
     const occasions = [
         "Cerimonia o ricorrenza ufficiale",
         "Festa patronale, processione o sagra",
@@ -69,17 +67,7 @@
         </p>
 
         <p>
-            <label for="evento-formazione">Formazione</label>
-            <select id="evento-formazione" name="formazione">
-                <option>Non so, consigliatemi</option>
-                {#each ensembles as ensemble (ensemble.slug)}
-                    <option>{ensemble.title}</option>
-                {/each}
-            </select>
-        </p>
-
-        <p>
-            <label for="evento-note">Note (facoltative)</label>
+            <label for="evento-note">Note</label>
             <textarea id="evento-note" name="note" rows="4" maxlength="2000"></textarea>
         </p>
     </fieldset>
@@ -98,7 +86,7 @@
         </p>
 
         <p>
-            <label for="evento-telefono">Telefono (facoltativo)</label>
+            <label for="evento-telefono">Telefono</label>
             <input type="tel" id="evento-telefono" name="telefono" autocomplete="tel" maxlength="20" />
         </p>
     </fieldset>
