@@ -39,14 +39,13 @@
         <summary>Quanto spesso provate?</summary>
         <p>Una o due volte a settimana, più spesso prima dei concerti.</p>
     </details>
-</section>
-
-<section>
-    <h2>Per il tuo evento</h2>
-    <p>
-        Per una cerimonia, una festa in piazza o un matrimonio la formazione adatta te la proponiamo noi:
-        <a href="/booking">raccontaci l'occasione</a>.
-    </p>
+    <details>
+        <summary>Potete suonare al mio evento?</summary>
+        <p>
+            Sì: per una cerimonia, una festa in piazza o un matrimonio la formazione adatta te la proponiamo noi.
+            <a href="/booking">Raccontaci l'occasione</a>.
+        </p>
+    </details>
 </section>
 
 <p class="rimando"><a href="/about">L'associazione</a></p>

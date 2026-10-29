@@ -53,12 +53,11 @@
         <summary>E se piove?</summary>
         <p>Per i concerti all'aperto abbiamo sempre pronto un posto al chiuso nelle vicinanze.</p>
     </details>
-</section>
-
-<section>
-    <h2>Per il tuo evento</h2>
-    <p>
-        Organizzi una cerimonia, una festa in piazza o un matrimonio? <a href="/booking">Raccontaci l'occasione</a>: ti rispondiamo con la
-        disponibilità e una proposta.
-    </p>
+    <details>
+        <summary>Potete suonare al mio evento?</summary>
+        <p>
+            Sì: per una cerimonia, una festa in piazza o un matrimonio <a href="/booking">raccontaci l'occasione</a> e ti rispondiamo con la
+            disponibilità e una proposta.
+        </p>
+    </details>
 </section>
