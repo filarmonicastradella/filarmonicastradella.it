@@ -58,7 +58,6 @@
 
 <UpcomingEvents events={data.events} />
 
-<!-- BOZZA: testo provvisorio nel tono di docs/DESIGN.md, da confermare -->
 <section>
     <h2>Chi siamo</h2>
     <p>
