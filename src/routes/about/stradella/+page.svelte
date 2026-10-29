@@ -39,7 +39,7 @@
         protettori c'erano i Doria, che un secolo prima avevano avuto al loro servizio i suoi antenati fivizzanesi<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3a" aria-label="Fonte 3">3</a></sup>. Non lasciò moglie né figli<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3b" aria-label="Fonte 3">3</a></sup>.
     </p>
     <p>
-        La sua vita, tra fughe e amori contrastati, è diventata romanzi, melodrammi, tra cui quello di Friedrich von Flotow (1844), e film: <i>Amanti in fuga</i> di Giacomo Gentilomo (1946)<sup><a href="#fonte-2" role="doc-noteref" id="rimando-2b" aria-label="Fonte 2">2</a></sup> e il musical barocco <i>La corda spezzata</i> di Francesco Leprino (2018)<sup><a href="#fonte-4" role="doc-noteref" id="rimando-4a" aria-label="Fonte 4">4</a></sup>. Per conoscerla meglio c'è la sua
+        La sua vita, tra fughe e amori contrastati, è diventata romanzi, melodrammi, tra cui l'opera <a href="https://imslp.org/wiki/Alessandro_Stradella_(Flotow,_Friedrich_von)" target="_blank" rel="noopener noreferrer"><i>Alessandro Stradella</i></a> di Friedrich von Flotow (Amburgo, 1844), e film: <i>Amanti in fuga</i> di Giacomo Gentilomo (1946)<sup><a href="#fonte-2" role="doc-noteref" id="rimando-2b" aria-label="Fonte 2">2</a></sup> e il musical barocco <i>La corda spezzata</i> di Francesco Leprino (2018)<sup><a href="#fonte-4" role="doc-noteref" id="rimando-4a" aria-label="Fonte 4">4</a></sup>. Per conoscerla meglio c'è la sua
         <a href="https://www.treccani.it/enciclopedia/alessandro-stradella_(Dizionario-Biografico)/" target="_blank" rel="noopener noreferrer"
             >voce nel Dizionario Biografico degli Italiani</a
         >.
