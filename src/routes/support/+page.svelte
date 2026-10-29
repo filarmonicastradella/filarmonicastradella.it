@@ -46,9 +46,8 @@
     <details>
         <summary>A cosa serve il tuo sostegno?</summary>
         <ul>
-            <li>Lo strumento, per chi non ne ha uno suo.</li>
+            <li>Lo strumento, per chi non ne ha uno suo, e i leggii.</li>
             <li>Le parti e il materiale di cartoleria.</li>
-            <li>I leggii.</li>
             <li>La sala prove e il suo riscaldamento.</li>
             <li>L'impianto audio.</li>
             <li>I diritti SIAE dei concerti.</li>
