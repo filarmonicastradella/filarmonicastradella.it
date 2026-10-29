@@ -91,14 +91,23 @@
             <a href="/support/join">domanda di iscrizione</a>.
         </p>
     </details>
-    <FaqItem item={faq.daZero} />
-    <FaqItem item={faq.livello} />
-    <FaqItem item={faq.strumentiCercati} />
-    <FaqItem item={faq.repertorio} />
-    <FaqItem item={faq.direttori} />
+    <details>
+        <summary>Posso cominciare da zero?</summary>
+        <p>Sì: c'è posto anche per chi non ha mai suonato uno strumento.</p>
+    </details>
+    <details>
+        <summary>Che livello serve?</summary>
+        <p>Dipende dalla formazione, ma ce n'è una per ogni livello.</p>
+    </details>
+    <details>
+        <summary>Quali strumenti cercate?</summary>
+        <p>Tutti, e in particolare oboe, fagotto e altri archi.</p>
+    </details>
     <FaqItem item={faq.strumento} />
-    <FaqItem item={faq.prove} />
-    <FaqItem item={faq.impegno} />
+    <details>
+        <summary>Quanto spesso provate?</summary>
+        <p>Una o due volte a settimana, più spesso prima dei concerti.</p>
+    </details>
 </section>
 
 <p class="rimando"><a href="/about">L'associazione</a></p>
