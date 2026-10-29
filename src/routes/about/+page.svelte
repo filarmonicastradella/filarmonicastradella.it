@@ -32,7 +32,7 @@
     <li>
         <a href="/articles">
             <h2>Articoli</h2>
-            <p>Ricerche d'archivio, didattica, teoria musicale e storie della Filarmonica.</p>
+            <p>Storia, didattica, teoria musicale, vita della Filarmonica e notizie.</p>
         </a>
     </li>
     <!-- Da riattivare quando pronte (rinominare _page.svelte in +page.svelte in ciascuna cartella):
