@@ -47,12 +47,6 @@
     -->
 </section>
 
-<section>
-    <h2>Ingaggi</h2>
-    <p>Per un concerto, un convegno, una cerimonia o una festa in Lunigiana, raccontaci l'occasione almeno 30 giorni prima.</p>
-    <p class="rimando"><a href="/booking">La Filarmonica al tuo evento</a></p>
-</section>
-
 <section id="scrivici">
     <h2>Scrivici</h2>
     <form action="https://formsubmit.co/{mailbox}@filarmonicastradella.it" method="POST">
@@ -92,6 +86,12 @@
 
         <p><button type="submit">Invia il messaggio</button></p>
     </form>
+</section>
+
+<section>
+    <h2>Ingaggi</h2>
+    <p>Per un concerto, un convegno, una cerimonia o una festa in Lunigiana, raccontaci l'occasione almeno 30 giorni prima.</p>
+    <p class="rimando"><a href="/booking">La Filarmonica al tuo evento</a></p>
 </section>
 
 <!-- Da riattivare insieme a /about/locations:
