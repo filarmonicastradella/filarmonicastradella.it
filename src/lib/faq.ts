@@ -27,8 +27,8 @@ export const faq = {
         answer: "I musicisti: propongono i brani e li votano in una graduatoria, e i direttori scelgono da lì quelli da suonare."
     },
     direttori: {
-        question: "Chi dirige?",
-        answer: "Più direttori, che sono prima di tutto musicisti: ognuno dirige in autonomia i propri brani, e negli altri suona con tutti."
+        question: "Chi è il maestro?",
+        answer: "Non ce n'è uno solo: i direttori sono più di uno e sono prima di tutto musicisti. Ognuno dirige in autonomia i propri brani, e negli altri suona con tutti."
     },
     strumento: {
         question: "Devo avere uno strumento mio?",
