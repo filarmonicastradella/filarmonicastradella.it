@@ -2,7 +2,7 @@
 <script lang="ts">
     import { organization } from "$lib/organization";
 
-    const href = "/articles/research/stradella";
+    const href = "/articles/history/stradella";
 </script>
 
 <svelte:head>

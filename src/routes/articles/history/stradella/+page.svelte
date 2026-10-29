@@ -6,7 +6,7 @@
     import serenataImg from "$lib/assets/imgs/serenata-stradella.jpg?enhanced&w=400;640;800;1280;1600&quality=40";
     import serenataPlaceholder from "$lib/assets/imgs/serenata-stradella.jpg?w=24&blur=2&format=webp&inline";
 
-    const article = findArticle("research", "stradella")!;
+    const article = findArticle("history", "stradella")!;
 </script>
 
 <svelte:head>

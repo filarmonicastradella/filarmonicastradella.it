@@ -1,8 +1,8 @@
 import type { Component } from "svelte";
 
-// Categorie degli articoli, nell'ordine dell'indice: lo slug è il segmento dell'indirizzo (/articles/research)
+// Categorie degli articoli, nell'ordine dell'indice: lo slug è il segmento dell'indirizzo (/articles/history)
 export const categories = [
-    { slug: "research", name: "Ricerche", description: "Studi e documenti d'archivio sulla musica a Fivizzano." },
+    { slug: "history", name: "Storia", description: "Ricerche e documenti sulla storia della musica a Fivizzano." },
     { slug: "teaching", name: "Didattica", description: "Guide per chi studia uno strumento o comincia a suonare." },
     { slug: "theory", name: "Teoria musicale", description: "Le basi della musica, spiegate semplici." },
     { slug: "life", name: "Vita della Filarmonica", description: "Prove, concerti, trasferte e persone." },
@@ -44,7 +44,7 @@ const markdownArticles = Object.entries(modules).map(([path, module]) => ({
 const pageArticles: (ArticleMetadata & { slug: string })[] = [
     {
         slug: "sonnet",
-        category: "research",
+        category: "history",
         author: "Leonardo Orietti Del Duca",
         title: "Sonetto per Santa Cecilia, 1789",
         date: "2026-10-10",
@@ -52,7 +52,7 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
     },
     {
         slug: "stradella",
-        category: "research",
+        category: "history",
         author: "Leonardo Orietti Del Duca",
         title: "Alessandro Stradella",
         date: "2026-10-19",

@@ -4,7 +4,7 @@
     // Il fregio inciso del foglio, ricalcato da una scansione e reso in PNG: un solo tratto, nessuna fotografia.
     import puttoImg from "$lib/assets/imgs/putto-sonetto.png?enhanced&w=256;512;768";
 
-    const article = findArticle("research", "sonnet")!;
+    const article = findArticle("history", "sonnet")!;
 </script>
 
 <svelte:head>

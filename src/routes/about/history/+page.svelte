@@ -69,7 +69,7 @@
         Toscana lodò «la maestria dei Professori, e l'abilità dei dilettanti»<sup><a href="#fonte-8" role="doc-noteref" id="rimando-8a" aria-label="Fonte 8">8</a></sup>. Da allora la Gazzetta segue gli accademici per quindici anni: la
         musica per le esequie dell'imperatrice Maria Teresa<sup><a href="#fonte-8" role="doc-noteref" id="rimando-8b" aria-label="Fonte 8">8</a></sup>, il Te Deum per Pietro Leopoldo in visita al paese nel
         <time datetime="1786-07-15">1786</time><sup><a href="#fonte-9" role="doc-noteref" id="rimando-9a" aria-label="Fonte 9">9</a></sup>, le «superbe Sinfonie» delle sere di festa<sup><a href="#fonte-10" role="doc-noteref" id="rimando-10a" aria-label="Fonte 10">10</a></sup>, la messa di Giuseppe Sarti del
-        <time datetime="1789-05-03">3 maggio 1789</time>, per la quale stamparono un <a href="/articles/research/sonnet">sonetto</a> ritrovato oggi nella villa dei Fantoni
+        <time datetime="1789-05-03">3 maggio 1789</time>, per la quale stamparono un <a href="/articles/history/sonnet">sonetto</a> ritrovato oggi nella villa dei Fantoni
         a Noletta<sup><a href="#fonte-11" role="doc-noteref" id="rimando-11a" aria-label="Fonte 11">11</a></sup>. I maestri di cappella furono il sacerdote Antonio Lamberti, «della Scuola Napoletana»<sup><a href="#fonte-12" role="doc-noteref" id="rimando-12a" aria-label="Fonte 12">12</a></sup>, e poi Battaglia, organista e
         compositore<sup><a href="#fonte-6" role="doc-noteref" id="rimando-6b" aria-label="Fonte 6">6</a></sup>.
     </p>
@@ -169,7 +169,7 @@
     <p>
         La famiglia Stradella venne a Fivizzano da Borgo Val di Taro nel Quattrocento: il medico Matteo Stradella fu tra i riformatori degli statuti del
         paese, approvati a Firenze nel <time datetime="1480">1480</time><sup><a href="#fonte-28" role="doc-noteref" id="rimando-28a" aria-label="Fonte 28">28</a></sup>. Da un ramo partito da qui discende il compositore
-        <a href="/articles/research/stradella">Alessandro Stradella</a>, nato a Bologna nel 1643<sup><a href="#fonte-29" role="doc-noteref" id="rimando-29a" aria-label="Fonte 29">29</a></sup>.
+        <a href="/articles/history/stradella">Alessandro Stradella</a>, nato a Bologna nel 1643<sup><a href="#fonte-29" role="doc-noteref" id="rimando-29a" aria-label="Fonte 29">29</a></sup>.
     </p>
     <p>
         Il <time datetime="1997-12-06">6 dicembre 1997</time> la Società Filarmonica organizzò con il Comune il convegno «Alessandro Stradella e la Musica
