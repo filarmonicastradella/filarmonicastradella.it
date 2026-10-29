@@ -142,6 +142,24 @@ form p:has(> :user-invalid:not([type="checkbox"]))::after {
     font-size: var(--fs-small);
 }
 
+/* Dove il motivo è certo, la riga lo dice */
+form p:has(> [type="email"]:user-invalid)::after {
+    content: "Scrivi un indirizzo email valido";
+}
+
+form p:has(> [id$="codice_fiscale"]:user-invalid)::after {
+    content: "Il codice fiscale ha 16 caratteri, lettere e numeri";
+}
+
+form p:has(> [id$="_cap"]:user-invalid)::after {
+    content: "Il CAP ha 5 cifre";
+}
+
+/* L'avviso per i moduli che cambiano forma (l'iscrizione di un minorenne): vuoto non occupa spazio */
+form > p[role="status"]:empty {
+    margin: 0;
+}
+
 /* Le caselle: nel colore del marchio, grandi abbastanza da toccare, allineate alla prima riga del testo */
 input[type="checkbox"],
 input[type="radio"] {

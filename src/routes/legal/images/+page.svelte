@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-    <title>Liberatoria per immagini e voce — Filarmonica Alessandro Stradella</title>
+    <title>Liberatoria per immagini, voce ed esecuzioni</title>
     <meta
         name="description"
         content="Come la Filarmonica Alessandro Stradella APS usa foto, riprese audio e video di soci e musicisti, quali scelte puoi fare e come revocare il consenso."

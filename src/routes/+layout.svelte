@@ -73,7 +73,8 @@
     <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
-<a href="#contenuto">Salta al contenuto</a>
+<!-- Con il menu aperto il contenuto non si raggiunge: neanche il link per saltarci -->
+<a href="#contenuto" inert={menu.open}>Salta al contenuto</a>
 
 <SiteHeader />
 

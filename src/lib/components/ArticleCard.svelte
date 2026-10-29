@@ -1,5 +1,6 @@
 <script lang="ts">
     import { categoryName, formatArticleDate, type Article } from "$lib/articles";
+    import { organization } from "$lib/organization";
     import type { PressItem } from "$lib/press";
 
     // Un nostro articolo (occhiello: la categoria) o un articolo di giornale della rassegna stampa (occhiello: la
@@ -37,6 +38,10 @@
                 · edizione cartacea
             {/if}
         </p>
+        {#if isPress}
+            <!-- Per i motori di ricerca: l'articolo di giornale parla della Filarmonica (l'ente descritto nella home) -->
+            <link itemprop="about" href="{organization.url}/#ente" />
+        {/if}
     </svelte:element>
 </article>
 

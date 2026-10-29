@@ -96,6 +96,13 @@ export const handle: Handle = ({ event, resolve }) =>
                 }
             }
 
+            // Negli articoli l'anteprima è di tipo articolo, con la data di pubblicazione dell'intestazione
+            if (header.includes('itemtype="https://schema.org/Article"')) {
+                const published = header.match(/itemprop="datePublished" datetime="([^"]+)"/)?.[1];
+                html = html.replace(/(<meta property="og:type" content=")[^"]*/, "$1article");
+                if (published) tags.push(`<meta property="article:published_time" content="${published}">`);
+            }
+
             // Vecchi indirizzi che rimandano a una pagina nuova: indirizzo canonico e anteprima sono quelli della pagina
             // nuova, e niente dati strutturati (la pagina non va nell'indice)
             const path = event.url.pathname.replace(/\/$/, "") || "/";

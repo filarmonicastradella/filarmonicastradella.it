@@ -106,11 +106,11 @@
     <ol>
         <li id="fonte-1">Sonetto a stampa <i>In occasione della solenne festività di Santa Cecilia</i>, Massa, Stefano Frediani, 1789; l'originale è nella villa dei Fantoni a Noletta, la
             <a href="https://commons.wikimedia.org/wiki/File:Sonetto_Santa_Cecilia_Accademia_dei_Dissonanti_Fivizzano_1789.jpg" target="_blank" rel="noopener noreferrer">scansione</a>
-            su Wikimedia Commons. <a role="doc-backlink" href="#rimando-1a">Torna al testo</a></li>
-        <li id="fonte-2"><i>Gazzetta Toscana</i>, 1789, «Fivizzano 3 maggio». <a role="doc-backlink" href="#rimando-2a">Torna al testo</a></li>
-        <li id="fonte-3"><i>Istituti e società musicali in Italia. Statistica</i>, Roma, Direzione di statistica, 1873, pp. 216-217 (dati del 1871-72). <a role="doc-backlink" href="#rimando-3a">Torna al testo</a></li>
-        <li id="fonte-4"><i>Gazzetta musicale di Milano</i>, 1887, supplemento straordinario al n. 23. <a role="doc-backlink" href="#rimando-4a">Torna al testo</a></li>
-        <li id="fonte-5">lunigiana.net, <i>Cento anni di Lunigiana</i>, anno 1987. <a role="doc-backlink" href="#rimando-5a">Torna al testo</a></li>
+            su Wikimedia Commons. <a role="doc-backlink" href="#rimando-1a" aria-label="Torna al rimando 1">Torna al testo</a></li>
+        <li id="fonte-2"><i>Gazzetta Toscana</i>, 1789, «Fivizzano 3 maggio». <a role="doc-backlink" href="#rimando-2a" aria-label="Torna al rimando 2">Torna al testo</a></li>
+        <li id="fonte-3"><i>Istituti e società musicali in Italia. Statistica</i>, Roma, Direzione di statistica, 1873, pp. 216-217 (dati del 1871-72). <a role="doc-backlink" href="#rimando-3a" aria-label="Torna al rimando 3">Torna al testo</a></li>
+        <li id="fonte-4"><i>Gazzetta musicale di Milano</i>, 1887, supplemento straordinario al n. 23. <a role="doc-backlink" href="#rimando-4a" aria-label="Torna al rimando 4">Torna al testo</a></li>
+        <li id="fonte-5">lunigiana.net, <i>Cento anni di Lunigiana</i>, anno 1987. <a role="doc-backlink" href="#rimando-5a" aria-label="Torna al rimando 5">Torna al testo</a></li>
     </ol>
 </section>
 

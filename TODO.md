@@ -54,6 +54,18 @@ Elenco di quello che resta da fare, ricontrollato il 30/10/2026 dopo la revision
 - **404 vera**: `build/404.html` è vuota senza JS (solo il guscio di SvelteKit).
 - **Pagine future come articoli**: interviste (`media/interviews`), riconoscimenti e traguardi (`about/achievements`) e gallerie dei concerti conviene farle nascere come articoli.
 
+## Ritocchi minori rimasti (da decidere, nessuno urgente)
+
+- Musicisti: il sottogruppo «Percussioni» dentro la famiglia «Percussioni» (dare un nome più preciso, per esempio «Batteria e percussioni», se è così).
+- Articoli: l'introduzione elenca anche categorie ancora vuote («didattica, teoria musicale…»); va bene se arriveranno presto.
+- Testo alternativo della copertina di Stradella Facendo: «Museo di San Giovanni degli Agostiniani», mentre la rassegna stampa dice «Museo di Arte Sacra»: usare il nome che conosce chi legge.
+- L'Accademia scritta in tre modi («dei Filarmonici Dissonanti», «de' Filarmonici Dissonanti», «dei Dissonanti»): uniformare, citazioni escluse.
+- «informativa sulla privacy» nei moduli, «informativa privacy» nel piè di pagina e nelle altre informative: scegliere una forma.
+- «Perché più formazioni?» chiude con l'etimologia di «filarmonica», che non risponde alla domanda; Orchestra Infieri: «con attenzione a dare a ogni sezione il proprio spazio» è un riempitivo.
+- Home: il link a Instagram è un paragrafo a sé accanto ai rimandi; Calendario: l'indice dei mesi ripete le stesse parole subito sotto (mostrarlo da tre mesi in su?); tema scuro: le copertine sembrano velate.
+- Iscrizione: avviso se si esce dal modulo compilato a metà.
+- Foto della hero: su telefono il browser scarica ancora una versione un po' più grande del necessario (`sizes` a 160vw); misurarlo su telefoni veri prima di ridurlo.
+
 ## Da verificare a mano
 
 - Screen reader (NVDA con Firefox, VoiceOver su iPhone e Mac): schede lunghe, «(si apre in una nuova scheda)», date in maiuscolo («SAB»), avviso sotto i 14 anni, messaggi di errore dei moduli.

@@ -26,9 +26,12 @@ export const GET: RequestHandler = async () => {
         ...events.map(({ id }) => `/events/${id}`)
     ];
 
+    // Data di pubblicazione degli articoli, l'unica data affidabile: le altre pagine restano senza
+    const lastmod = new Map(articles.map(({ href, date }) => [href, date]));
+
     const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[...new Set(paths)].sort().map((path) => `    <url><loc>${organization.url}${path === "/" ? "/" : path}</loc></url>`).join("\n")}
+${[...new Set(paths)].sort().map((path) => `    <url><loc>${organization.url}${path === "/" ? "/" : path}</loc>${lastmod.has(path) ? `<lastmod>${lastmod.get(path)}</lastmod>` : ""}</url>`).join("\n")}
 </urlset>
 `;
 

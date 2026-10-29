@@ -59,7 +59,7 @@
 </section>
 
 <form action="https://formsubmit.co/info@filarmonicastradella.it" method="POST">
-    <input type="hidden" name="_subject" value="Richiesta per un evento - Filarmonica Stradella" />
+    <input type="hidden" name="_subject" value="Richiesta per un evento – Filarmonica Stradella" />
     <input type="hidden" name="_template" value="table" />
     <input type="hidden" name="_next" value="https://filarmonicastradella.it/contacts/thanks" />
     <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>

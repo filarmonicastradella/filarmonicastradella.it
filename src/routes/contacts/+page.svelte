@@ -24,7 +24,7 @@
 
 <svelte:head>
     <title>Contatti — Filarmonica Alessandro Stradella</title>
-    <meta name="description" content="Telefono, email e modulo di contatto della Filarmonica Alessandro Stradella APS." />
+    <meta name="description" content="Telefono, email e modulo di contatto della Filarmonica Alessandro Stradella APS di Fivizzano, in Lunigiana: informazioni, iscrizioni, donazioni ed eventi." />
 </svelte:head>
 
 <header>
@@ -50,7 +50,7 @@
 <section id="scrivici">
     <h2>Scrivici</h2>
     <form action="https://formsubmit.co/{mailbox}@filarmonicastradella.it" method="POST">
-        <input type="hidden" name="_subject" value="Nuovo messaggio dal sito - Filarmonica Stradella" />
+        <input type="hidden" name="_subject" value="Nuovo messaggio dal sito – Filarmonica Stradella" />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_next" value="https://filarmonicastradella.it/contacts/thanks" />
         <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>

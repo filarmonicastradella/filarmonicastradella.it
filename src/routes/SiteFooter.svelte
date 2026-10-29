@@ -67,8 +67,8 @@
         </dl>
     </section>
 
-    <nav aria-label="Note legali">
-        <h2>Note legali</h2>
+    <nav aria-labelledby="note-legali">
+        <h2 id="note-legali">Note legali</h2>
         <ul>
             <!-- Da riattivare insieme a /transparency (rinominare transparency/_page.svelte in +page.svelte):
             <li><a href="/transparency">Amministrazione trasparente</a></li>

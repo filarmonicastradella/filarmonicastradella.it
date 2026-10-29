@@ -33,7 +33,7 @@
 
 <svelte:head>
     <title>Domanda di iscrizione — Filarmonica Alessandro Stradella</title>
-    <meta name="description" content="Compila la domanda di iscrizione come socio della Filarmonica Alessandro Stradella APS." />
+    <meta name="description" content="Domanda di iscrizione come socio della Filarmonica Alessandro Stradella APS di Fivizzano: quota annuale di 12 €, anche per i minorenni con un genitore o tutore." />
 </svelte:head>
 
 {#snippet identityFields(prefix: string, section: string, bindsBirthDate: boolean)}
@@ -118,12 +118,12 @@
     </details>
     <details>
         <summary>Posso aiutare senza suonare?</summary>
-        <p>Sì: da socio puoi mettere a disposizione il tuo tempo e le tue competenze, anche senza suonare uno strumento.</p>
+        <p>Sì: da socio puoi dare una mano con il tuo tempo e le tue competenze.</p>
     </details>
 </section>
 
 <form action="https://formsubmit.co/segreteria@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="_subject" value="Nuova domanda di iscrizione - Filarmonica Stradella" />
+    <input type="hidden" name="_subject" value="Nuova domanda di iscrizione – Filarmonica Stradella" />
     <input type="hidden" name="_template" value="table" />
     <input type="hidden" name="_next" value="https://filarmonicastradella.it/support/join/thanks" />
     <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
@@ -133,6 +133,9 @@
         <legend>{isMinorenne ? "Dati anagrafici del minore" : "Dati anagrafici del richiedente"}</legend>
         {@render identityFields("", "", true)}
     </fieldset>
+
+    <!-- Annuncia a chi usa uno screen reader che il modulo è cambiato; vuoto per i maggiorenni -->
+    <p role="status">{isMinorenne && !isTooYoung ? "Per un minorenne servono anche i dati di un genitore o tutore, qui sotto." : ""}</p>
 
     {#if isTooYoung}
         <p role="alert">

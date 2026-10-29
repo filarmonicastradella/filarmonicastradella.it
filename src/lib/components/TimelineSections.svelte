@@ -57,7 +57,7 @@
 
 <!-- L'indice segue la struttura delle sezioni: anni (se più di uno) e mesi. -->
 {#if years.length > 1 || (years[0]?.months.length ?? 0) > 1}
-    <nav aria-label="Vai alla sezione">
+    <nav aria-label="Mesi">
         <ul>
             {#if years.length > 1}
                 {#each years as { year, months } (year)}
