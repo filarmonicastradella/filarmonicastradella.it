@@ -22,21 +22,21 @@
     <p>
         Per la festa di Santa Cecilia l'Accademia Filarmonica «de i Dissonanti» di Fivizzano fece stampare un sonetto, dedicato al suo principe, Carlo
         Emanuele Malaspina, marchese di Fosdinovo, Gragnola e Viano. Il foglio uscì a Massa nel <time datetime="1789">1789</time>, dalla stamperia ducale
-        di Stefano Frediani. Più sotto ne trovi la trascrizione; l'originale si può guardare nella
+        di Stefano Frediani<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1a" aria-label="Fonte 1">1</a></sup>. Più sotto ne trovi la trascrizione; l'originale si può guardare nella
         <a href="/documents/sonetto.jpg" type="image/jpeg">scansione del foglio</a>.
     </p>
     <p>
         La festa si tenne il <time datetime="1789-05-03">3 maggio 1789</time> nella chiesa prepositurale di Fivizzano. La Gazzetta Toscana racconta che
         l'Accademia eseguì «la Messa composta dal celebre Sig. Sarti», cioè Giuseppe Sarti, e i Vespri «di scelta Musica», sotto la direzione del
         giovane maestro di cappella Angiolo Battaglia, e che durante la festa «vennero dispensati dei Sonetti analoghi», dedicati al marchese di
-        Fosdinovo, «attual degnissimo Capo dell'Accademia». Il nostro foglio è uno di quei sonetti.
+        Fosdinovo, «attual degnissimo Capo dell'Accademia»<sup><a href="#fonte-2" role="doc-noteref" id="rimando-2a" aria-label="Fonte 2">2</a></sup>. Il nostro foglio è uno di quei sonetti.
     </p>
     <p>
         I Dissonanti sono la Filarmonica stessa, nella sua forma settecentesca di accademia. Lo confermano le fonti dell'Ottocento: nel
         <time datetime="1872">1872</time> la statistica ufficiale del Regno d'Italia ricorda l'Accademia filarmonica di Fivizzano, «fondata nel 1779 dal
-        Cav. Odoardo Fantoni», e nel <time datetime="1887">1887</time> la Gazzetta musicale di Milano la chiama ancora «Società Filarmonica dei Dissonanti
-        di Fivizzano, fondata nel 1779». Le fonti ottocentesche datano la fondazione al 1779, l'anno del riconoscimento ufficiale; la tradizione della
-        Filarmonica, già celebrata nel <time datetime="1987">1987</time> con i 210 anni, la fa risalire al <time datetime="1777">1777</time>.
+        Cav. Odoardo Fantoni»<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3a" aria-label="Fonte 3">3</a></sup>, e nel <time datetime="1887">1887</time> la Gazzetta musicale di Milano la chiama ancora «Società Filarmonica dei Dissonanti
+        di Fivizzano, fondata nel 1779»<sup><a href="#fonte-4" role="doc-noteref" id="rimando-4a" aria-label="Fonte 4">4</a></sup>. Le fonti ottocentesche datano la fondazione al 1779, l'anno del riconoscimento ufficiale; la tradizione della
+        Filarmonica, già celebrata nel <time datetime="1987">1987</time> con i 210 anni<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5a" aria-label="Fonte 5">5</a></sup>, la fa risalire al <time datetime="1777">1777</time>.
     </p>
     <p>
         Il sonetto racconta Cecilia nel giorno delle nozze: mentre fuori suonano le trombe della festa, lei prega in una cella di restare pura, e un angelo
@@ -100,6 +100,17 @@
         gli Accademici Dissonanti.
     </p>
     <p>In Massa 1789. Per Stefano Frediani stampator ducale con approvazione.</p>
+</section>
+
+<section role="doc-endnotes" aria-labelledby="fonti">
+    <h2 id="fonti">Fonti</h2>
+    <ol>
+        <li id="fonte-1">Sonetto a stampa <i>In occasione della solenne festività di Santa Cecilia</i>, Massa, Stefano Frediani, 1789; l'originale è nella villa dei Fantoni a Noletta. <a role="doc-backlink" href="#rimando-1a">Torna al testo</a></li>
+        <li id="fonte-2"><i>Gazzetta Toscana</i>, 1789, «Fivizzano 3 maggio». <a role="doc-backlink" href="#rimando-2a">Torna al testo</a></li>
+        <li id="fonte-3"><i>Istituti e società musicali in Italia. Statistica</i>, Roma, Direzione di statistica, 1873, pp. 216-217 (dati del 1871-72). <a role="doc-backlink" href="#rimando-3a">Torna al testo</a></li>
+        <li id="fonte-4"><i>Gazzetta musicale di Milano</i>, 1887, supplemento straordinario al n. 23. <a role="doc-backlink" href="#rimando-4a">Torna al testo</a></li>
+        <li id="fonte-5">lunigiana.net, <i>Cento anni di Lunigiana</i>, anno 1987. <a role="doc-backlink" href="#rimando-5a">Torna al testo</a></li>
+    </ol>
 </section>
 
 <p class="rimando"><a href="/articles">Tutti gli articoli</a></p>
