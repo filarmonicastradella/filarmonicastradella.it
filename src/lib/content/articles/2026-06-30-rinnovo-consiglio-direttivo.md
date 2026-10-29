@@ -2,6 +2,9 @@
 title: Rinnovo del Consiglio Direttivo
 date: 2026-06-30
 excerpt: Pubblicati i verbali dell'assemblea generale e le cariche ufficiali per il triennio associativo in corso.
+category: news
+# SEGNAPOSTO: testo di prova, da verificare o sostituire prima di pubblicarlo
+draft: true
 ---
 
 L'assemblea generale dei soci ha rinnovato il Consiglio Direttivo per il prossimo triennio.

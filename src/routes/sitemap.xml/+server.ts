@@ -1,14 +1,15 @@
 import { getUpcomingEvents } from "$lib/server/calendar";
 import { ensembles } from "$lib/ensembles";
-import { news } from "$lib/news";
+import { activeCategories, articles } from "$lib/articles";
 import { organization } from "$lib/organization";
 import type { RequestHandler } from "./$types";
 
 export const prerender = true;
 
 
-// Pagine che non vanno nella mappa: conferme di invio e pagine con parametri (aggiunte sotto).
-const EXCLUDED = /\/thanks$|\[/;
+// Pagine che non vanno nella mappa: conferme di invio, pagine con parametri (aggiunte sotto) e vecchi indirizzi
+// che rimandano agli articoli.
+const EXCLUDED = /\/thanks$|\[|^\/about\/(sonnet|stradella)$/;
 
 const pages = Object.keys(import.meta.glob("/src/routes/**/+page.svelte"))
     .map((file) => file.replace("/src/routes", "").replace(/\/?\+page\.svelte$/, "") || "/")
@@ -20,7 +21,8 @@ export const GET: RequestHandler = async () => {
     const paths = [
         ...pages,
         ...ensembles.map(({ slug }) => `/about/ensembles/${slug}`),
-        ...news.map(({ slug }) => `/news/${slug}`),
+        ...activeCategories.map(({ slug }) => `/articles/${slug}`),
+        ...articles.map(({ href }) => href),
         ...events.map(({ id }) => `/events/${id}`)
     ];
 

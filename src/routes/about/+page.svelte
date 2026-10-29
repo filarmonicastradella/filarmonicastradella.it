@@ -24,21 +24,15 @@
         </a>
     </li>
     <li>
-        <a href="/about/stradella">
-            <h2>Alessandro Stradella</h2>
-            <p>Il compositore che dà il nome alla Filarmonica e la sua famiglia di Fivizzano.</p>
-        </a>
-    </li>
-    <li>
         <a href="/about/ensembles">
             <h2>Le nostre formazioni</h2>
             <p>Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti.</p>
         </a>
     </li>
     <li>
-        <a href="/about/sonnet">
-            <h2>Sonetto per Santa Cecilia, 1789</h2>
-            <p>Il foglio a stampa degli Accademici Dissonanti per la patrona dei musicisti.</p>
+        <a href="/articles">
+            <h2>Articoli</h2>
+            <p>Ricerche d'archivio, didattica, teoria musicale e storie della Filarmonica.</p>
         </a>
     </li>
     <!-- Da riattivare quando pronte (rinominare _page.svelte in +page.svelte in ciascuna cartella):

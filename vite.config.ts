@@ -28,9 +28,11 @@ export default defineConfig({
 			// Le voci di navigazione puntano a pagine non ancora create: avvisa invece di far fallire la build.
 			prerender: {
 				handleHttpError: 'warn',
-				// Senza eventi in programma /events/[id] non ha pagine da generare: non è un errore, le altre route sì.
+				// Senza eventi in programma /events/[id] non ha pagine da generare, e senza articoli in Markdown pubblicati
+				// nemmeno /articles/[category]/[slug]: non è un errore, le altre route sì.
 				handleUnseenRoutes: ({ routes, message }) => {
-					if (routes.some((route) => route !== '/events/[id]')) throw new Error(message);
+					const optional = ['/events/[id]', '/articles/[category]/[slug]'];
+					if (routes.some((route) => !optional.includes(route))) throw new Error(message);
 				}
 			}
 		})

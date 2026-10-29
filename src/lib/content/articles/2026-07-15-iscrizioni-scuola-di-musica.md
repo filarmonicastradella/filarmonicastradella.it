@@ -2,6 +2,9 @@
 title: Apertura delle iscrizioni ai corsi di musica
 date: 2026-07-15
 excerpt: Al via i corsi di strumento per il nuovo anno. Scopri l'offerta per tutte le età e i laboratori orchestrali.
+category: news
+# SEGNAPOSTO: testo di prova, da verificare o sostituire prima di pubblicarlo
+draft: true
 ---
 
 Sono aperte le iscrizioni ai corsi di strumento per il nuovo anno, rivolti a bambini, ragazzi e adulti.
