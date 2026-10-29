@@ -27,6 +27,15 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # La galleria di Instagram tra una build e l'altra (scripts/instagram.mjs): si ripristina l'ultima copia e a fine
+      # build se ne salva una nuova, così Behold si legge al massimo una volta al giorno e le foto restano anche se non risponde.
+      - uses: actions/cache@v4
+        with:
+          path: |
+            static/instagram
+            src/lib/content/instagram.json
+          key: instagram-${{ github.run_id }}
+          restore-keys: instagram-
       - run: npm run build
         env:
           GOOGLE_CALENDAR_API_KEY: ${{ secrets.GOOGLE_CALENDAR_API_KEY }}

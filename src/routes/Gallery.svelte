@@ -12,7 +12,7 @@
 <section>
     <h2>Momenti in musica</h2>
     {#if slides === null}
-        <p>La galleria non è al momento disponibile. Puoi guardarla direttamente sul nostro profilo Instagram.</p>
+        <p>Le foto dei nostri concerti sono sul nostro profilo Instagram.</p>
     {:else if shown.length > 0}
         <ul>
             {#each shown as slide (slide.id)}

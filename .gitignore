@@ -6,6 +6,9 @@ node_modules
 .netlify
 .wrangler
 /.svelte-kit
+# Galleria di Instagram, scaricata prima della build (scripts/instagram.mjs)
+/static/instagram
+/src/lib/content/instagram.json
 /build
 
 # OS
