@@ -45,14 +45,10 @@
     <h2>Domande frequenti</h2>
     <details>
         <summary>A cosa serve il tuo sostegno?</summary>
-        <ul>
-            <li>Lo strumento, per chi non ne ha uno suo, e i leggii.</li>
-            <li>Le parti e il materiale di cartoleria.</li>
-            <li>La sala prove e il suo riscaldamento.</li>
-            <li>L'impianto audio.</li>
-            <li>I diritti SIAE dei concerti.</li>
-            <li>L'assicurazione dei soci.</li>
-        </ul>
+        <p>
+            Copre le spese di tutto l'anno: strumenti e attrezzatura, spartiti, la sala prove, i costi dei concerti e
+            l'assicurazione dei soci.
+        </p>
     </details>
     <details>
         <summary>Posso aiutare senza dare soldi?</summary>
