@@ -49,6 +49,10 @@
             <a href="/contacts/message">scrivici</a> per segnalare la tua presenza.
         </p>
     </details>
+    <details>
+        <summary>E se piove?</summary>
+        <p>Per i concerti all'aperto abbiamo sempre pronto un posto al chiuso nelle vicinanze.</p>
+    </details>
 </section>
 
 <p>Vuoi la Filarmonica al tuo evento? <a href="/booking">Scopri come richiederla</a>.</p>
