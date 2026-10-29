@@ -2,8 +2,8 @@
     import Hero from "./Hero.svelte";
     import UpcomingEvents from "./UpcomingEvents.svelte";
     import Gallery from "./Gallery.svelte";
-    // import ArticleCard from "$lib/components/ArticleCard.svelte"; // con "Ultimi articoli", commentata sotto
-    // import { articles } from "$lib/articles";
+    import ArticleCard from "$lib/components/ArticleCard.svelte";
+    import { articles } from "$lib/articles";
     import { legalSeat } from "$lib/locations";
     // Il corsivo serve solo al titolo della home: richiesto subito, solo qui
     import cormorantItalicFont from "@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-italic.woff2?url";
@@ -33,7 +33,7 @@
         sameAs: organization.socials.filter(({ profile }) => profile).map(({ href }) => href)
     };
 
-    // const latestArticles = articles.slice(0, 3);
+    const latestArticles = articles.slice(0, 3);
 </script>
 
 <svelte:head>
@@ -56,6 +56,17 @@
     <p class="rimando"><a href="/about">Scopri l'associazione</a></p>
 </section>
 
+<!-- Come "Prossimi eventi": una scheda sotto l'altra nella colonna, mai titoli in Cormorant affiancati (docs/DESIGN.md) -->
+<section>
+    <h2>Ultimi articoli</h2>
+    <ol>
+        {#each latestArticles as article (article.href)}
+            <li><ArticleCard {article} /></li>
+        {/each}
+    </ol>
+    <p class="rimando"><a href="/articles">Tutti gli articoli</a></p>
+</section>
+
 <!-- Home alleggerita il 9/10/2026: versione precedente di "Chi siamo", sostituita dalla bozza sopra.
 <section>
     <h2>Chi siamo</h2>
@@ -69,8 +80,8 @@
 </section>
 -->
 
-<!-- Home alleggerita il 9/10/2026: "In primo piano" (assorbito da "Chi siamo") e "Ultimi articoli"
-     (le notizie sono diventate gli articoli, /articles: da valutare se rimetterli in home). Commenti annidati resi con [...].
+<!-- Home alleggerita il 9/10/2026: "In primo piano", assorbito da "Chi siamo" ("Ultime notizie" è tornata il 29/10/2026
+     come "Ultimi articoli", sopra). Commenti annidati resi con [...].
 <section>
     <h2>In primo piano</h2>
     <ul>
@@ -103,20 +114,6 @@
     </ul>
 </section>
 
-<section>
-    <h2>Ultimi articoli</h2>
-    {#if latestArticles.length === 0}
-        <p>Nessun articolo recente.</p>
-    {:else}
-        <ol>
-            {#each latestArticles as article (article.href)}
-                <li><ArticleCard {article} /></li>
-            {/each}
-        </ol>
-    {/if}
-
-    <p class="rimando"><a href="/articles">Tutti gli articoli</a></p>
-</section>
 -->
 
 <Gallery slides={data.gallery} />

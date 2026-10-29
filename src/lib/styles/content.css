@@ -133,7 +133,7 @@ ol:has(> li > article > a > :is(h2, h3, h4)) {
 }
 
 /* Gli indici degli articoli: righe larghe quanto il contenitore, la scheda si divide in due colonne (ArticleCard) */
-ol:has(> li > article[itemtype$="/Article"]) {
+main > ol:has(> li > article[itemtype$="/Article"]) {
     max-inline-size: none;
 }
 
