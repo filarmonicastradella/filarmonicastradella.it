@@ -108,10 +108,12 @@ figcaption {
 }
 
 /*
- * Occhielli: le date in testa a schede e articoli (un paragrafo con la sola data, riconoscibile dai
- * microdati), le etichette e le voci delle coppie etichetta/valore. Le date dentro un testo restano testo.
+ * Occhielli: le date in testa a schede ed eventi (un paragrafo con la sola data, riconoscibile dai
+ * microdati), la categoria degli articoli, le etichette e le voci delle coppie etichetta/valore. Le date
+ * dentro un testo, o accanto all'autore nella firma di un articolo, restano testo.
  */
-p > time[itemprop],
+p > time[itemprop]:only-child,
+[itemprop="articleSection"],
 dt,
 th {
     font-family: var(--font-text);
@@ -121,8 +123,10 @@ th {
     text-transform: uppercase;
 }
 
-p > time[itemprop] {
+p > time[itemprop]:only-child,
+[itemprop="articleSection"] {
     color: var(--text-brand);
+    text-decoration: none;
 }
 
 dt,

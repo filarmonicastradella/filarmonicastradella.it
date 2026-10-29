@@ -1,5 +1,6 @@
 <script lang="ts">
     import ArticleCard from "$lib/components/ArticleCard.svelte";
+    import CategoryNav from "../CategoryNav.svelte";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
@@ -15,10 +16,12 @@
     <p>{data.category.description}</p>
 </header>
 
-<ul>
+<CategoryNav />
+
+<ol>
     {#each data.articles as article (article.href)}
         <li><ArticleCard {article} level={2} /></li>
     {/each}
-</ul>
+</ol>
 
 <p class="rimando"><a href="/articles">Tutti gli articoli</a></p>

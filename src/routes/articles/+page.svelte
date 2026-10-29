@@ -1,6 +1,7 @@
 <script lang="ts">
     import ArticleCard from "$lib/components/ArticleCard.svelte";
-    import { activeCategories, articles } from "$lib/articles";
+    import { articles } from "$lib/articles";
+    import CategoryNav from "./CategoryNav.svelte";
 </script>
 
 <svelte:head>
@@ -16,16 +17,11 @@
     <p>Ricerche, lezioni e racconti della Filarmonica, dal più recente.</p>
 </header>
 
-<nav aria-label="Categorie">
-    <ul>
-        {#each activeCategories as category (category.slug)}
-            <li><a href="/articles/{category.slug}">{category.name}</a></li>
-        {/each}
-    </ul>
-</nav>
+<CategoryNav />
 
-<ul>
+<!-- In ordine di data, dal più recente: un elenco ordinato, una scheda sotto l'altra -->
+<ol>
     {#each articles as article (article.href)}
         <li><ArticleCard {article} level={2} /></li>
     {/each}
-</ul>
+</ol>

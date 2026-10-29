@@ -228,6 +228,16 @@ main > header > p {
     font-size: var(--fs-lead);
 }
 
+/* L'occhiello sopra il titolo (la data di un evento, la categoria di un articolo) gli sta vicino */
+main > header > p:has(+ h1) + h1 {
+    margin-block-start: var(--space-3);
+}
+
+/* La firma di un articolo, autore e data, sotto la presentazione */
+main > header > p:has(> time):not(:has(+ h1)) {
+    font-size: var(--fs-small);
+}
+
 /*
  * Intestazione con foto, la copertina (docs/DESIGN.md, Sito): la foto è un <picture> nell'intestazione,
  * dopo il testo, così senza CSS si legge prima il titolo. A ogni larghezza la foto è una fascia in alto, da

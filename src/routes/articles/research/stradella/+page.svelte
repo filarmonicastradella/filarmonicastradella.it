@@ -1,6 +1,7 @@
 <!-- Fonti: Gianturco 1994, Radicchi 1988, Sforza 1874, Gerini 1829, Mingozzi 2018, DBI 2019, locandina e lapide del 6 dicembre 1997 (ricerca in ~/Filarmonica/Ricerca) -->
 <script lang="ts">
-    import { categoryName, findArticle, formatArticleDate } from "$lib/articles";
+    import { findArticle } from "$lib/articles";
+    import ArticleHeader from "../../ArticleHeader.svelte";
     // Copertina: il frontespizio della Serenata a 3, in più misure, e la sua anteprima sfocata
     import serenataImg from "$lib/assets/imgs/serenata-stradella.jpg?enhanced&w=400;640;800;1280;1600&quality=40";
     import serenataPlaceholder from "$lib/assets/imgs/serenata-stradella.jpg?w=24&blur=2&format=webp&inline";
@@ -17,23 +18,14 @@
 </svelte:head>
 
 <!-- Nella fascia si tiene la parte con il titolo e il nome -->
-<header style="--cover-placeholder: url({serenataPlaceholder}); --cover-position: center 33%; --cover-archive: 1">
-    <p>
-        <time datetime={article.date}>{formatArticleDate(article.date)}</time> ·
-        <a href="/articles/{article.category}">{categoryName(article.category)}</a>
-        {#if article.author}
-            · di {article.author}
-        {/if}
-    </p>
-    <h1>Alessandro Stradella</h1>
-    <p>Il compositore del Seicento che dà il nome alla Filarmonica, e la sua famiglia di Fivizzano.</p>
+<ArticleHeader {article} style="--cover-placeholder: url({serenataPlaceholder}); --cover-position: center 33%; --cover-archive: 1">
     <enhanced:img
         src={serenataImg}
         alt="Frontespizio manoscritto della «Serenata a 3 con stromenti del Sig.r Alessandro Stradella», copia del Settecento"
         sizes="100vw"
         fetchpriority="high"
     />
-</header>
+</ArticleHeader>
 
 <p>
     La famiglia di Alessandro Stradella era di Fivizzano. Per più di un secolo gli Stradella furono medici, giuristi, notai e uomini di Chiesa del

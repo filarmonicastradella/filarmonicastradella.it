@@ -1,6 +1,7 @@
 <script lang="ts">
-    import { categoryName, findArticle, formatArticleDate } from "$lib/articles";
-    // Il fregio inciso del foglio, ripassato a vettori da una scansione: un solo tratto, nessuna fotografia.
+    import { findArticle } from "$lib/articles";
+    import ArticleHeader from "../../ArticleHeader.svelte";
+    // Il fregio inciso del foglio, ricalcato da una scansione e reso in PNG: un solo tratto, nessuna fotografia.
     import puttoImg from "$lib/assets/imgs/putto-sonetto.png?enhanced&w=256;512;768";
 
     const article = findArticle("research", "sonnet")!;
@@ -14,17 +15,7 @@
     />
 </svelte:head>
 
-<header>
-    <p>
-        <time datetime={article.date}>{formatArticleDate(article.date)}</time> ·
-        <a href="/articles/{article.category}">{categoryName(article.category)}</a>
-        {#if article.author}
-            · di {article.author}
-        {/if}
-    </p>
-    <h1>Sonetto per Santa Cecilia, 1789</h1>
-    <p>Un foglio a stampa degli Accademici Dissonanti di Fivizzano, per la festa della patrona dei musicisti.</p>
-</header>
+<ArticleHeader {article} />
 
 <section>
     <h2>Il foglio</h2>

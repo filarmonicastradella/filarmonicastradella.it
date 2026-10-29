@@ -1,7 +1,8 @@
 /*
  * Pulsanti e moduli — design system della Filarmonica (docs/DESIGN.md).
  * Primario: fondo bordeaux, testo carta, uno solo per schermata; lo hanno anche i link d'azione (il
- * pulsante "Sostienici" del menu: l'unico link in un paragrafo dell'intestazione).
+ * pulsante "Sostienici" del menu: l'unico link in un paragrafo dell'intestazione; non la categoria in
+ * occhiello sopra il titolo di un articolo).
  * Secondario: contorno inchiostro.
  * Campi: fondo rialzato e bordo sottile come le schede, angoli quasi vivi.
  */
@@ -9,7 +10,7 @@
 button,
 input[type="submit"],
 input[type="button"],
-:is(main > header, body > div > header nav) > p > a:only-child {
+:is(main > header, body > div > header nav) > p > a:only-child:not([itemprop="articleSection"]) {
     display: inline-flex;
     align-items: center;
     justify-content: center;

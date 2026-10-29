@@ -132,6 +132,11 @@ ol:has(> li > article > a > :is(h2, h3, h4)) {
     max-inline-size: var(--container-text);
 }
 
+/* Gli indici degli articoli: righe larghe quanto il contenitore, la scheda si divide in due colonne (ArticleCard) */
+ol:has(> li > article[itemtype$="/Article"]) {
+    max-inline-size: none;
+}
+
 li > article {
     block-size: 100%;
 }
@@ -193,8 +198,8 @@ li > article {
     }
 }
 
-/* Le pagine hub hanno titoli di scheda h2: stessa misura delle altre schede */
-li > a > h2 {
+/* Le pagine hub e gli indici degli articoli hanno titoli di scheda h2: stessa misura delle altre schede */
+:is(li > a, li > article > a) > h2 {
     font-size: var(--fs-h3);
 }
 
@@ -303,6 +308,14 @@ main > nav a {
     letter-spacing: var(--tracking-eyebrow);
     text-transform: uppercase;
     text-decoration: none;
+}
+
+/* La pagina in cui ci si trova (le categorie degli articoli) */
+main > nav a[aria-current="page"] {
+    color: var(--text-brand);
+    text-decoration: underline;
+    text-decoration-thickness: var(--rule-width);
+    text-underline-offset: var(--space-2);
 }
 
 main > nav li > ul {
