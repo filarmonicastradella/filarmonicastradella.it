@@ -1,5 +1,7 @@
 <!-- Elenco dei musicisti dato dall'utente il 26/10/2026, aggiornato il 29/10/2026 (archi). In ogni strumento i nomi vanno in ordine alfabetico di cognome. -->
 <script lang="ts">
+    import FaqItem from "$lib/components/FaqItem.svelte";
+    import { faq } from "$lib/faq";
     const families = [
         {
             name: "Legni",
@@ -89,6 +91,12 @@
             <a href="/support/join">domanda di iscrizione</a>.
         </p>
     </details>
+    <FaqItem item={faq.daZero} />
+    <FaqItem item={faq.livello} />
+    <FaqItem item={faq.strumentiCercati} />
+    <FaqItem item={faq.strumento} />
+    <FaqItem item={faq.prove} />
+    <FaqItem item={faq.impegno} />
 </section>
 
 <p class="rimando"><a href="/about">L'associazione</a></p>

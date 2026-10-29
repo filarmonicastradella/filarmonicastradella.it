@@ -1,4 +1,6 @@
 <script lang="ts">
+    import FaqItem from "$lib/components/FaqItem.svelte";
+    import { faq } from "$lib/faq";
     import { ensembles } from "$lib/ensembles";
 </script>
 
@@ -35,9 +37,16 @@
             Ognuna ha i suoi requisiti.
         </p>
     </details>
+    <FaqItem item={faq.livello} />
     <details>
-        <summary>Quanto spesso provate?</summary>
-        <p>Una o due volte a settimana, più spesso prima dei concerti.</p>
+        <summary>Posso suonare in più formazioni?</summary>
+        <p>Sì.</p>
+    </details>
+    <FaqItem item={faq.prove} />
+    <FaqItem item={faq.strumento} />
+    <details>
+        <summary>Posso proporre una nuova formazione?</summary>
+        <p>Sì: basta che la propongano almeno tre soci, con una bozza di regolamento.</p>
     </details>
     <details>
         <summary>Potete suonare al mio evento?</summary>

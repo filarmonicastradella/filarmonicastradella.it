@@ -1,4 +1,6 @@
 <script lang="ts">
+    import FaqItem from "$lib/components/FaqItem.svelte";
+    import { faq } from "$lib/faq";
     let birthDate = $state("");
     let domicilioUgualeResidenza = $state(true);
 
@@ -100,17 +102,19 @@
         <summary>Quanto costa iscriversi?</summary>
         <p>La quota annuale è di 12 € e si rinnova entro il 31 dicembre.</p>
     </details>
-    <details>
-        <summary>Che impegno è richiesto?</summary>
-        <p>Partecipare ad almeno metà delle attività, tra concerti, prove e momenti di vita associativa.</p>
-    </details>
-    <details>
-        <summary>Devo avere uno strumento mio?</summary>
-        <p>No: strumento, parti e sala prove li mette a disposizione l'associazione.</p>
-    </details>
+    <FaqItem item={faq.impegno} />
+    <FaqItem item={faq.prove} />
+    <FaqItem item={faq.livello} />
+    <FaqItem item={faq.daZero} />
+    <FaqItem item={faq.strumento} />
+    <FaqItem item={faq.strumentiCercati} />
     <details>
         <summary>Posso iscrivermi senza suonare?</summary>
         <p>Sì: da socio puoi aiutarci mettendo a disposizione il tuo tempo e le tue competenze.</p>
+    </details>
+    <details>
+        <summary>C'è un limite di età?</summary>
+        <p>No.</p>
     </details>
     <details>
         <summary>Come si iscrive un minorenne?</summary>
