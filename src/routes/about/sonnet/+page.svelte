@@ -1,6 +1,6 @@
 <script lang="ts">
     // Il fregio inciso del foglio, ripassato a vettori da una scansione: un solo tratto, nessuna fotografia.
-    import puttoImg from "$lib/assets/imgs/putto-sonetto.svg";
+    import puttoImg from "$lib/assets/imgs/putto-sonetto.png?enhanced&w=256;512;768";
 </script>
 
 <svelte:head>
@@ -53,11 +53,10 @@
         singolar patrona dell'Accademia Filarmonica de i Dissonanti di Fivizzano
     </p>
     <figure>
-        <img
+        <enhanced:img
             src={puttoImg}
             alt="Un putto in volo regge un cartiglio con la scritta «Sonetto», tra una tromba, una palma e rami d'alloro"
-            width="400"
-            height="263"
+            sizes="16rem"
             loading="lazy"
         />
     </figure>
@@ -127,12 +126,12 @@
     }
 
     /*
-     * Il fregio, dentro un <figure> (altrimenti un <img> nudo esce dalla lista degli elementi ammessi
+     * Il fregio (PNG da 768 px ricavato dal tracciato vettoriale, che pesava 470 kB), dentro un <figure> (altrimenti un <img> nudo esce dalla lista degli elementi ammessi
      * in layout.css e la sezione perde il layout a due colonne). Niente margin-inline:auto — il testo
      * della pagina è allineato a sinistra (max-width senza centrare), non al centro di una colonna più
      * larga: centrare l'immagine la sfalsava rispetto al testo. Resta quindi a sinistra, come i paragrafi intorno.
      */
-    section:last-of-type > figure > img {
+    section:last-of-type > figure img {
         display: block;
         inline-size: min(100%, 16rem);
         block-size: auto;
@@ -140,7 +139,7 @@
 
     /* Inchiostro chiaro su sfondo scuro: il fregio è tracciato in un colore fisso, non in currentColor */
     @media (prefers-color-scheme: dark) {
-        section:last-of-type > figure > img {
+        section:last-of-type > figure img {
             filter: invert(1);
         }
     }
