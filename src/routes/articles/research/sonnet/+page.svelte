@@ -22,7 +22,8 @@
     <p>
         Per la festa di Santa Cecilia l'Accademia Filarmonica «de i Dissonanti» di Fivizzano fece stampare un sonetto, dedicato al suo principe, Carlo
         Emanuele Malaspina, marchese di Fosdinovo, Gragnola e Viano. Il foglio uscì a Massa nel <time datetime="1789">1789</time>, dalla stamperia ducale
-        di Stefano Frediani.
+        di Stefano Frediani. Più sotto ne trovi la trascrizione; l'originale si può guardare nella
+        <a href="/documents/sonetto.jpg" type="image/jpeg">scansione del foglio</a> (JPEG, 700 kB).
     </p>
     <p>
         La festa si tenne il <time datetime="1789-05-03">3 maggio 1789</time> nella chiesa prepositurale di Fivizzano. La Gazzetta Toscana racconta che
@@ -100,8 +101,6 @@
     </p>
     <p>In Massa 1789. Per Stefano Frediani stampator ducale con approvazione.</p>
 </section>
-
-<p><a href="/documents/sonetto.jpg" type="image/jpeg">La scansione del foglio originale</a> (JPEG), stampato a Massa nel 1789.</p>
 
 <p class="rimando"><a href="/articles">Tutti gli articoli</a></p>
 
