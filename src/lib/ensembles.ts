@@ -33,7 +33,7 @@ const modules = import.meta.glob<{ default: Component; metadata: EnsembleMetadat
 const coverPictures = import.meta.glob<Picture>("/src/lib/assets/imgs/ensembles/*.jpg", {
     eager: true,
     import: "default",
-    query: "?enhanced&w=400;640;800;1280;1600&quality=40"
+    query: "?enhanced&w=400;640;800;1280;1600"
 });
 const coverPlaceholders = import.meta.glob<string>("/src/lib/assets/imgs/ensembles/*.jpg", {
     eager: true,

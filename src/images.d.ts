@@ -1,6 +1,13 @@
-// Foto: larghezze esplicite e qualità 40, che in AVIF quasi dimezza il peso senza differenze visibili
-// (`?enhanced&w=400;640;800;1280;1600&quality=40`); la copertina della home tiene le larghezze automatiche.
+// Foto d'archivio: larghezze esplicite e qualità 40, che in AVIF quasi dimezza il peso senza differenze visibili
+// (`?enhanced&w=400;640;800;1280;1600&quality=40`). Le foto a colori (copertine, home, «oggi») no:
+// con la qualità 40 si vedevano sfocate.
 declare module "*&quality=40" {
+    const picture: import("vite-imagetools").Picture;
+    export default picture;
+}
+
+// Foto a colori con larghezze esplicite (`?enhanced&w=400;640;800;1280;1600`), alla qualità predefinita.
+declare module "*?enhanced&w=400;640;800;1280;1600" {
     const picture: import("vite-imagetools").Picture;
     export default picture;
 }

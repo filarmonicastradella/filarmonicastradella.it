@@ -1,6 +1,9 @@
 <script lang="ts">
-    // La stessa foto della copertina di Stradella Facendo (© Eleonora Rocchi)
-    import cover from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?enhanced&quality=40";
+    // La stessa foto della copertina di Stradella Facendo (© Eleonora Rocchi), alla qualità predefinita: è a colori e
+    // a tutta larghezza, e con la qualità 40 delle foto d'archivio si vedeva sfocata.
+    // In verticale la fascia è più alta che larga in proporzione alla foto (3:2), che la riempie tagliando i lati:
+    // da qui i 160vw di "sizes", altrimenti il browser sceglie una versione larga quanto lo schermo e la ingrandisce.
+    import cover from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?enhanced";
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
     import coverPlaceholder from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?w=24&blur=2&format=webp&inline";
 </script>
@@ -19,7 +22,7 @@
     <enhanced:img
         src={cover}
         alt="Stradella Facendo in concerto nel Museo di San Giovanni degli Agostiniani a Fivizzano"
-        sizes="100vw"
+        sizes="(orientation: portrait) 160vw, 100vw"
         fetchpriority="high"
     />
 </header>
