@@ -87,8 +87,8 @@ main > :is(section, article) > :is(h1, h2) + * {
 }
 
 /*
- * Sezioni da leggere: titolo, paragrafi, citazioni, figure, elenchi etichetta/valore, elenchi di testo e domande a
- * scomparsa. Da
+ * Sezioni da leggere: titolo, paragrafi, citazioni, figure, elenchi etichetta/valore, elenchi di testo, domande a
+ * scomparsa e moduli (come «Scrivici» in Contatti). Da
  * 64rem il titolo va a sinistra e il resto a destra, così la sezione è larga quanto le griglie senza allungare
  * le righe oltre --container-text. Restano con il titolo sopra le sezioni con griglie di schede o di foto
  * (elenchi non ordinati i cui elementi sono link, articoli, video o figure), che hanno bisogno di tutta la
@@ -96,7 +96,7 @@ main > :is(section, article) > :is(h1, h2) + * {
  * scheda sotto l'altra, come un elenco di date.
  */
 @media (min-width: 64rem) {
-    main > section:not(:has(> :not(h2, p, blockquote, figure, dl, ul, ol, details))):not(:has(> ul > li > :is(a, article, video, figure))) {
+    main > section:not(:has(> :not(h2, p, blockquote, figure, dl, ul, ol, details, form))):not(:has(> ul > li > :is(a, article, video, figure))) {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
         column-gap: var(--space-6);
