@@ -25,7 +25,8 @@
         <a href="/about/ensembles/streetella-band">Streetella Band</a>; l'<a href="/about/ensembles/infieri">Orchestra Infieri</a>; i
         <a href="/about/ensembles/filarmonici-dissonanti">Filarmonici Dissonanti</a>. In Stradella Facendo e nella Streetella Band l'età media è sotto i
         18 anni, e accanto ai più giovani suonano musicisti con decenni di esperienza. Siamo un'associazione di promozione sociale autonoma, iscritta al
-        RUNTS e affiliata ad ANBIMA, e lavoriamo con il sostegno del Comune di Fivizzano.
+        RUNTS e affiliata ad ANBIMA, con gli scopi scritti all'articolo 2 dello <a href="/documents/statuto.pdf" type="application/pdf">statuto</a>, e lavoriamo
+        con il sostegno del Comune di Fivizzano.
     </p>
     <p>
         Nel nostro territorio ci sono insegnanti qualificati e giovani motivati, ma molti ragazzi che hanno studiato uno strumento smettono di suonare
@@ -86,5 +87,3 @@
         vicenda: una comunità in cui suonare sia normale, alla portata di tutti, e in cui ogni euro e ogni ora investiti restino qui, nelle persone.
     </p>
 </section>
-
-<p>Gli scopi dell'associazione sono definiti nell'articolo 2 dello <a href="/documents/statuto.pdf" type="application/pdf">statuto</a>.</p>
