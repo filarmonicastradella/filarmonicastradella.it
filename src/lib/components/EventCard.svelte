@@ -83,31 +83,34 @@
         a {
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
-            grid-template-areas:
-                "date title"
-                "caption description";
-            align-content: start;
+            /*
+             * A destra titolo e descrizione uno dopo l'altro; a sinistra data e didascalia, in alto, nella stessa cella alta
+             * quanto la scheda: la didascalia scende sotto la data di quanto è alta la sua riga, qualunque sia la lunghezza del titolo.
+             */
+            grid-template-rows: auto 1fr;
+            align-items: start;
             gap: var(--space-3) var(--space-6);
         }
 
+        /* La data all'altezza della prima riga del titolo */
         a > p:first-child {
-            grid-area: date;
-            align-self: center;
+            grid-area: 1 / 1 / 3 / 2;
+            padding-block-start: var(--space-2);
         }
 
         h3,
         h4 {
-            grid-area: title;
+            grid-area: 1 / 2;
             min-block-size: 0;
         }
 
         [itemprop="description"] {
-            grid-area: description;
+            grid-area: 2 / 2;
         }
 
         :is(h3, h4) ~ p:not([itemprop="description"]) {
-            grid-area: caption;
-            margin: 0;
+            grid-area: 1 / 1 / 3 / 2;
+            margin: calc(var(--space-2) + var(--fs-eyebrow) * var(--lh-body) + var(--space-3)) 0 0;
         }
     }
 </style>
