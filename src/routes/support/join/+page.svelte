@@ -202,9 +202,9 @@
                 <input type="checkbox" id="statuto" name="statuto" required />
                 <label for="statuto">
                     {#if isMinorenne}
-                        Dichiaro di conoscere e accettare lo <a href="/documents/statuto.pdf" target="_blank" rel="noopener noreferrer">statuto</a> (PDF), impegnandomi a rispettarlo anche per conto del minore.
+                        Dichiaro di conoscere e accettare lo <a href="/documents/statuto.pdf" target="_blank" rel="noopener noreferrer">statuto</a>, impegnandomi a rispettarlo anche per conto del minore.
                     {:else}
-                        Dichiaro di conoscere e accettare lo <a href="/documents/statuto.pdf" target="_blank" rel="noopener noreferrer">statuto</a> (PDF), impegnandomi a rispettarlo.
+                        Dichiaro di conoscere e accettare lo <a href="/documents/statuto.pdf" target="_blank" rel="noopener noreferrer">statuto</a>, impegnandomi a rispettarlo.
                     {/if}
                 </label>
             </p>
