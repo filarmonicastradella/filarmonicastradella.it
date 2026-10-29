@@ -246,23 +246,23 @@
         </fieldset>
 
         <fieldset>
-            <legend>{isMinorenne ? "Documento di identità del genitore" : "Documento di identità"}</legend>
+            <legend>Documento e firma</legend>
             <p>
-                <label for="documento_identita">Documento di identità (PDF, JPG o PNG)</label>
+                <label for="documento_identita">{isMinorenne ? "Documento di identità del genitore" : "Documento di identità"} (PDF, JPG o PNG)</label>
                 <input type="file" id="documento_identita" name="attachment" required multiple accept="application/pdf,image/jpeg,image/png" />
             </p>
-        </fieldset>
 
-        <p>
-            <input type="checkbox" id="richiesta_iscrizione" name="richiesta_iscrizione" required />
-            <label for="richiesta_iscrizione">
-                {#if isMinorenne}
-                    Chiedo, in qualità di genitore o tutore, l'iscrizione del minore sopra indicato come socio della Filarmonica Alessandro Stradella APS.
-                {:else}
-                    Chiedo la mia iscrizione come socio della Filarmonica Alessandro Stradella APS.
-                {/if}
-            </label>
-        </p>
+            <p>
+                <input type="checkbox" id="richiesta_iscrizione" name="richiesta_iscrizione" required />
+                <label for="richiesta_iscrizione">
+                    {#if isMinorenne}
+                        Chiedo, in qualità di genitore o tutore, l'iscrizione del minore sopra indicato come socio della Filarmonica Alessandro Stradella APS.
+                    {:else}
+                        Chiedo la mia iscrizione come socio della Filarmonica Alessandro Stradella APS.
+                    {/if}
+                </label>
+            </p>
+        </fieldset>
     {/if}
 
     <p>
