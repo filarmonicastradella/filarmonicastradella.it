@@ -41,12 +41,15 @@
         <dd><a href="mailto:info@filarmonicastradella.it">info@filarmonicastradella.it</a></dd>
         <dt>PEC</dt>
         <dd><a href="mailto:{organization.pec}">{organization.pec}</a></dd>
-        <dt>Eventi</dt>
-        <dd class="rimando"><a href="/booking">La Filarmonica al tuo evento</a></dd>
     </dl>
     <!-- Da riattivare insieme a /faq:
     <p>Prima di scriverci, guarda le <a href="/faq">domande frequenti</a>.</p>
     -->
+</section>
+
+<section>
+    <h2>Ingaggi</h2>
+    <p class="rimando"><a href="/booking">La Filarmonica al tuo evento</a></p>
 </section>
 
 <section id="scrivici">
