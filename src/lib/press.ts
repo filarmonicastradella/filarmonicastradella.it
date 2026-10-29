@@ -6,7 +6,8 @@ export interface PressItem {
     publisher: string;
     author?: string;
     excerpt: string;
-    href: string;
+    /** Il link all'articolo online; senza, è un'uscita solo su carta */
+    href?: string;
 }
 
 export const press: PressItem[] = [
@@ -17,6 +18,13 @@ export const press: PressItem[] = [
         author: "Roberto Oligeri",
         excerpt: "Fivizzano, l'evento celebrativo al Museo di Arte Sacra con autorità e cittadini.",
         href: "https://www.lanazione.it/massa-carrara/cronaca/la-filarmonica-dei-giovani-duecento-87a2bdf9"
+    },
+    {
+        title: "Fivizzano ritrova la sua Filarmonica",
+        date: "2026-10-12",
+        publisher: "Il Tirreno",
+        author: "Marco Landini",
+        excerpt: "Applausi per il ritorno della Stradella al Museo d'Arte Sacra di San Giovanni."
     },
     {
         title: "A Fivizzano rinasce la Filarmonica «Alessandro Stradella»",

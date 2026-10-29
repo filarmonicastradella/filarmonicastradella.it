@@ -112,7 +112,7 @@ figcaption {
  * microdati), la categoria degli articoli e la testata nella rassegna stampa, le etichette e le voci delle coppie etichetta/valore. Le date
  * dentro un testo, o accanto all'autore nella firma di un articolo, restano testo.
  */
-p > time[itemprop]:only-child,
+p:first-child > time[itemprop]:only-child,
 [itemprop="articleSection"],
 p:first-child > [itemprop="publisher"],
 dt,
@@ -124,7 +124,7 @@ th {
     text-transform: uppercase;
 }
 
-p > time[itemprop]:only-child,
+p:first-child > time[itemprop]:only-child,
 [itemprop="articleSection"],
 p:first-child > [itemprop="publisher"] {
     color: var(--text-brand);

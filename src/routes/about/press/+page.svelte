@@ -14,7 +14,7 @@
 </header>
 
 <ol>
-    {#each press as item (item.href)}
+    {#each press as item (item.title)}
         <li><ArticleCard article={item} level={2} /></li>
     {/each}
 </ol>

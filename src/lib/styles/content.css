@@ -107,11 +107,13 @@ li:target {
 
 /* ─────────────── Schede ───────────────
  * Una scheda è un elemento di elenco il cui link avvolge un titolo (AGENTS.md): direttamente
- * (<li><a><h3>) o dentro un articolo con microdati (<li><article><a><h3>).
+ * (<li><a><h3>) o dentro un articolo con microdati (<li><article><a><h3>). Unica eccezione, un articolo
+ * senza pagina da aprire (un ritaglio di giornale solo su carta): lo stesso contenuto in un <div>, senza
+ * effetto al passaggio del mouse.
  * Design system: nessun riquadro né fondo, solo un filetto in alto che diventa bordeaux al passaggio
  * del mouse, insieme al titolo; in griglia, tutte della stessa altezza.
  */
-:is(ul, ol):has(> li > a > :is(h2, h3, h4), > li > article > a > :is(h2, h3, h4)) {
+:is(ul, ol):has(> li > a > :is(h2, h3, h4), > li > article > :is(a, div) > :is(h2, h3, h4)) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
     gap: var(--gap-grid);
@@ -128,7 +130,7 @@ li:target {
  * del contenitore, come un'agenda: su schermo largo ogni scheda si divide in due colonne (EventCard,
  * ArticleCard), data o categoria a sinistra, titolo e descrizione nella colonna di testo.
  */
-ol:has(> li > article > a > :is(h2, h3, h4)) {
+ol:has(> li > article > :is(a, div) > :is(h2, h3, h4)) {
     grid-template-columns: minmax(0, 1fr);
 }
 
@@ -136,7 +138,7 @@ li > article {
     block-size: 100%;
 }
 
-:is(li > a, li > article > a):has(> :is(h2, h3, h4)) {
+:is(li > a, li > article > :is(a, div)):has(> :is(h2, h3, h4)) {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -157,11 +159,11 @@ li > article {
         color: var(--text-muted);
     }
 
-    &:hover {
+    &:is(a):hover {
         border-block-start-color: var(--accent);
     }
 
-    &:hover > :is(h2, h3, h4) {
+    &:is(a):hover > :is(h2, h3, h4) {
         color: var(--text-brand);
     }
 
@@ -194,7 +196,7 @@ li > article {
 }
 
 /* Le pagine hub e gli indici degli articoli hanno titoli di scheda h2: stessa misura delle altre schede */
-:is(li > a, li > article > a) > h2 {
+:is(li > a, li > article > :is(a, div)) > h2 {
     font-size: var(--fs-h3);
 }
 

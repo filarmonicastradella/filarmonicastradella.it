@@ -10,8 +10,15 @@
 </script>
 
 <!-- Come la card evento (docs/DESIGN.md): occhiello, titolo, descrizione e in fondo la firma come didascalia -->
+<!-- Senza link (un articolo di giornale solo su carta) il contenuto sta in un <div>: content.css, Schede -->
 <article itemscope itemtype="https://schema.org/{isPress ? 'NewsArticle' : 'Article'}">
-    <a itemprop="url" href={article.href} target={isPress ? "_blank" : undefined} rel={isPress ? "noopener noreferrer" : undefined}>
+    <svelte:element
+        this={article.href ? "a" : "div"}
+        itemprop={article.href ? "url" : undefined}
+        href={article.href}
+        target={isPress && article.href ? "_blank" : undefined}
+        rel={isPress && article.href ? "noopener noreferrer" : undefined}
+    >
         <p>
             {#if "publisher" in article}
                 <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">{article.publisher}</span></span>
@@ -26,8 +33,11 @@
                 di <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{article.author}</span></span> ·
             {/if}
             <time itemprop="datePublished" datetime={article.date}>{formatArticleDate(article.date)}</time>
+            {#if !article.href}
+                · edizione cartacea
+            {/if}
         </p>
-    </a>
+    </svelte:element>
 </article>
 
 <style>
@@ -48,7 +58,7 @@
     }
 
     @container (min-width: 48rem) {
-        a {
+        article > :is(a, div) {
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
             grid-template-areas:
