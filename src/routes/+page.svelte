@@ -33,7 +33,8 @@
         sameAs: organization.socials.filter(({ profile }) => profile).map(({ href }) => href)
     };
 
-    const latestArticles = articles.slice(0, 3);
+    // In home solo le notizie (la categoria Notizie degli articoli); ricerche e altri scritti stanno in /articles
+    const latestNews = articles.filter(({ category }) => category === "news").slice(0, 3);
 </script>
 
 <svelte:head>
@@ -56,16 +57,21 @@
     <p class="rimando"><a href="/about">Scopri l'associazione</a></p>
 </section>
 
-<!-- Come "Prossimi eventi": una scheda sotto l'altra nella colonna, mai titoli in Cormorant affiancati (docs/DESIGN.md) -->
-<section>
-    <h2>Ultimi articoli</h2>
-    <ol>
-        {#each latestArticles as article (article.href)}
-            <li><ArticleCard {article} /></li>
-        {/each}
-    </ol>
-    <p class="rimando"><a href="/articles">Tutti gli articoli</a></p>
-</section>
+<!--
+    Come "Prossimi eventi": una scheda sotto l'altra nella colonna, mai titoli in Cormorant affiancati (docs/DESIGN.md).
+    Finché non c'è nessuna notizia pubblicata la sezione non compare.
+-->
+{#if latestNews.length > 0}
+    <section>
+        <h2>Notizie</h2>
+        <ol>
+            {#each latestNews as article (article.href)}
+                <li><ArticleCard {article} /></li>
+            {/each}
+        </ol>
+        <p class="rimando"><a href="/articles/news">Tutte le notizie</a></p>
+    </section>
+{/if}
 
 <!-- Home alleggerita il 9/10/2026: versione precedente di "Chi siamo", sostituita dalla bozza sopra.
 <section>
@@ -81,7 +87,7 @@
 -->
 
 <!-- Home alleggerita il 9/10/2026: "In primo piano", assorbito da "Chi siamo" ("Ultime notizie" è tornata il 29/10/2026
-     come "Ultimi articoli", sopra). Commenti annidati resi con [...].
+     come "Notizie", sopra, dalla categoria degli articoli). Commenti annidati resi con [...].
 <section>
     <h2>In primo piano</h2>
     <ul>
