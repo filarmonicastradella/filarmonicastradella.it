@@ -5,9 +5,7 @@
 
 <header>
     <h1>Erogazioni liberali</h1>
-    <p>
-        Puoi sostenere i nostri progetti con un contributo libero tramite bonifico bancario. Essendo un'associazione di promozione sociale, le erogazioni a nostro favore godono delle agevolazioni fiscali previste dalla normativa vigente.
-    </p>
+    <p>Puoi sostenere i nostri progetti con un contributo libero tramite bonifico bancario.</p>
 </header>
 
 <section>
@@ -25,14 +23,21 @@
 </section>
 
 <section>
-    <h2>Ricevuta e agevolazioni fiscali</h2>
-    <p>
-        Rilasciamo una ricevuta a chi dona: puoi richiederla al tesoriere, scrivendo a
-        <a href="mailto:tesoreria@filarmonicastradella.it">tesoreria@filarmonicastradella.it</a>.
-    </p>
-    <p>
-        Per usufruire delle agevolazioni fiscali il pagamento deve essere tracciabile, per esempio con un bonifico: conserva la ricevuta del versamento. Le condizioni dipendono dalla tua situazione, quindi per i dettagli rivolgiti a un consulente o a un commercialista.
-    </p>
+    <h2>Domande frequenti</h2>
+    <details>
+        <summary>Posso detrarre la donazione?</summary>
+        <p>
+            Sì: siamo un'associazione di promozione sociale, e le donazioni a nostro favore godono delle agevolazioni fiscali previste dalla normativa
+            vigente. Il pagamento deve essere tracciabile, per esempio con un bonifico: conserva la ricevuta del versamento. Le condizioni dipendono dalla
+            tua situazione, quindi per i dettagli rivolgiti a un consulente o a un commercialista.
+        </p>
+    </details>
+    <details>
+        <summary>Come ottengo la ricevuta?</summary>
+        <p>
+            La rilascia il tesoriere: scrivi a <a href="mailto:tesoreria@filarmonicastradella.it">tesoreria@filarmonicastradella.it</a>.
+        </p>
+    </details>
 </section>
 
 <!-- Da riattivare quando ci sarà il pulsante PayPal dell'associazione (sostituire hosted_button_id):
