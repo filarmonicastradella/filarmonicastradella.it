@@ -23,7 +23,7 @@
         {/each}
     </ul>
     <!-- L'azione principale del sito: in linea da 64rem, in fondo al pannello sotto -->
-    <p style:--i={navItems.length}><a href="/support/join">Unisciti a noi</a></p>
+    <p style:--i={navItems.length}><a href="/support" aria-current={isActive("/support")}>Sostienici</a></p>
 </nav>
 
 <style>
@@ -108,7 +108,7 @@
         }
 
         /*
-         * Dal fondo del pulsante del menu, centrato nell'intestazione, fino a poco sotto "Unisciti a noi", con i
+         * Dal fondo del pulsante del menu, centrato nell'intestazione, fino a poco sotto "Sostienici", con i
          * terminali a pallino (layout.css): lunghe quanto il menu, non quanto lo schermo. Sono una cella della
          * griglia accanto a voci e pulsante (come nella hero): il margine negativo in alto le fa salire fino al
          * pulsante del menu, quello a destra le porta nel margine riservato alle corde.

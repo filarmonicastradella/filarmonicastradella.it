@@ -12,6 +12,5 @@ export const navItems = [
     { title: "Associazione", href: "/about" },
     { title: "Calendario", href: "/events" },
     { title: "Articoli", href: "/articles" },
-    { title: "Sostienici", href: "/support" },
     { title: "Contatti", href: "/contacts" }
 ];

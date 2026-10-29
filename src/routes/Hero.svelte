@@ -121,7 +121,7 @@
     }
 
     /*
-     * Pulsante secondario (contorno inchiostro): l'unico pulsante pieno della schermata è "Unisciti a noi"
+     * Pulsante secondario (contorno inchiostro): l'unico pulsante pieno della schermata è "Sostienici"
      * nell'intestazione del sito; da qui si va agli ingaggi.
      */
     header > p > a {
