@@ -402,8 +402,6 @@ body > div > footer > nav:first-child svg {
 
 body > div > footer > p:last-child {
     margin: 0;
-    padding-block-start: var(--space-5);
-    border-block-start: var(--border-width) solid var(--border);
     color: var(--text-muted);
 }
 
