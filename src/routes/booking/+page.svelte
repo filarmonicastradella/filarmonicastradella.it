@@ -36,6 +36,10 @@
         <p>Almeno 30 giorni prima dell'evento.</p>
     </details>
     <details>
+        <summary>Quanti musicisti venite?</summary>
+        <p>Dipende dalla formazione e dall'occasione: te lo indichiamo nella proposta.</p>
+    </details>
+    <details>
         <summary>Cosa serve sul posto?</summary>
         <p>
             Uno spazio adatto alla formazione, le sedie e un riparo in caso di pioggia. La corrente elettrica non sempre è necessaria, ma è gradita.
