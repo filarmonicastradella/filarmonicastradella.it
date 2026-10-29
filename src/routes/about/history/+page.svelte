@@ -6,6 +6,7 @@
     
     import anni90CorteoImg from "$lib/assets/imgs/anni_90_corteo.jpeg?enhanced&w=400;640;800;1280;1600";
     import oggiImg from "$lib/assets/imgs/oggi.jpg?enhanced&w=400;640;800;1280;1600";
+    import diplomaImg from "$lib/assets/imgs/diploma_dissonanti.jpg?enhanced&w=400;640;800;1280;1600";
 
     const sizes = "(min-width: 40rem) 40rem, 100vw";
 </script>
@@ -61,6 +62,15 @@
         Il diploma dei soci, disegnato dal pittore fivizzanese Ercole Lemmi, spiega il nome con due motti: «La soave armonia figlia del cielo» e «Le
         dissonanze in un accordo solo»<sup><a href="#fonte-7" role="doc-noteref" id="rimando-7a" aria-label="Fonte 7">7</a></sup>. Un esemplare è arrivato fino alla Newberry Library di Chicago.
     </p>
+    <figure>
+        <enhanced:img
+            src={diplomaImg}
+            alt="Diploma inciso dell'Accademia de' Filarmonici Dissonanti: in alto il motto «La soave armonia figlia del cielo» e un genio alato con la lira tra strumenti a fiato e rami d'alloro; al centro il testo dell'elezione ad Accademico, con il nome lasciato in bianco; in basso un liuto e un violino su un cartiglio di musica, una veduta di Fivizzano cinta dalle mura e il motto «Le dissonanze in un accordo solo»"
+            {sizes}
+            loading="lazy"
+        />
+        <figcaption>Il diploma dei soci, disegnato da Ercole Lemmi e inciso da Giuseppe Poggiali, anni Ottanta del Settecento.</figcaption>
+    </figure>
     <p>
         La patrona era santa Cecilia. La prima festa si tenne il <time datetime="1781-02-04">4 febbraio 1781</time> nella chiesa prepositurale, e la Gazzetta
         Toscana lodò «la maestria dei Professori, e l'abilità dei dilettanti»<sup><a href="#fonte-8" role="doc-noteref" id="rimando-8a" aria-label="Fonte 8">8</a></sup>. Da allora la Gazzetta segue gli accademici per quindici anni: la
@@ -216,6 +226,11 @@
         <li id="fonte-29">Davide Mingozzi, «Alessandro Stradella “Bononiensis Dominus”», <i>Il Saggiatore musicale</i>, XXV (2018), pp. 299-307. <a role="doc-backlink" href="#rimando-29a">Torna al testo</a></li>
         <li id="fonte-30">Locandina del convegno, Fivizzano, 6 dicembre 1997; iscrizione della lapide sulla casa degli Stradella. <a role="doc-backlink" href="#rimando-30a">Torna al testo</a></li>
     </ol>
+    <p>
+        Diploma dell'Accademia: Newberry Library, Chicago, Wing broadside ZP 735 .L45,
+        <a href="https://collections.newberry.org/asset-management/2KXJ8Z9X0DEI" target="_blank" rel="noopener noreferrer">scheda della collezione</a>.
+        Pubblico dominio.
+    </p>
     <p>
         Per approfondire: Duino Ceschi, <i>Giovanni Fantoni e l'Accademia di Belle Arti di Carrara […] e le Accademie Letteraria Lunense e dei
         Filarmonici Dissonanti di Fivizzano</i>, in <i>Atti e Memorie dell'Accademia Aruntica di Carrara</i>, vol. I, 1995, pp. 35-67.
