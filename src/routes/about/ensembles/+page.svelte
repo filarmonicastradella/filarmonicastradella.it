@@ -40,7 +40,7 @@
     <FaqItem item={faq.livello} />
     <details>
         <summary>Posso suonare in più formazioni?</summary>
-        <p>Sì.</p>
+        <p>Sì: puoi entrare in più di una, ognuna con i suoi requisiti.</p>
     </details>
     <FaqItem item={faq.prove} />
     <FaqItem item={faq.strumento} />

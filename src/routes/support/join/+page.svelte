@@ -114,7 +114,7 @@
     </details>
     <details>
         <summary>C'è un limite di età?</summary>
-        <p>No.</p>
+        <p>No: si può suonare a qualsiasi età. Per i minorenni l'iscrizione la fa un genitore o un tutore.</p>
     </details>
     <details>
         <summary>Come si iscrive un minorenne?</summary>

@@ -20,7 +20,7 @@ export const faq = {
     },
     daZero: {
         question: "Posso cominciare da zero?",
-        answer: "Sì."
+        answer: "Sì: c'è posto anche per chi non ha mai suonato uno strumento."
     },
     strumento: {
         question: "Devo avere uno strumento mio?",
@@ -28,6 +28,6 @@ export const faq = {
     },
     strumentiCercati: {
         question: "Quali strumenti cercate?",
-        answer: "Tutti. In particolare oboe e fagotto, e altri archi."
+        answer: "Tutti, e in particolare oboe, fagotto e altri archi."
     }
 } satisfies Record<string, FaqItem>;
