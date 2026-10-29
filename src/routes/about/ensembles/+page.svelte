@@ -33,8 +33,8 @@
     <details>
         <summary>Che cos'è una filarmonica?</summary>
         <p>
-            Un'associazione che fa musica insieme in più formazioni, dall'orchestra di fiati alla musica antica, e che dal Settecento a oggi porta a
-            Fivizzano la musica da concerto.
+            Lo dice il nome: «filarmonica» viene dal greco e vuol dire amica della musica. È un'associazione che riunisce chi ama la musica e vuole suonarla
+            insieme, in più formazioni, dall'orchestra di fiati alla musica antica.
         </p>
     </details>
     <details>
