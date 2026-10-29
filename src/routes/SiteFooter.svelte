@@ -46,6 +46,7 @@
                 <dd><a href="mailto:{organization.pec}">{organization.pec}</a></dd>
             </dl>
         </address>
+        <p><a href="/booking">La Filarmonica al tuo evento</a></p>
     </section>
 
     <section>

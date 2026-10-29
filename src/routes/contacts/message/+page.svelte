@@ -6,7 +6,6 @@
     const topics = [
         { name: "Informazioni generali", mailbox: "info" },
         { name: "Iscrizione e quote", mailbox: "segreteria" },
-        { name: "Eventi e ingaggi", mailbox: "info" },
         { name: "Donazioni e ricevute", mailbox: "tesoreria" },
         { name: "Collaborazioni, enti e sponsor", mailbox: "presidente" },
         { name: "Stampa e media", mailbox: "presidente" },
@@ -15,7 +14,7 @@
         { name: "Problemi con il sito", mailbox: "webmaster" },
         { name: "Altro", mailbox: "info" }
     ];
-    // Un link può scegliere il motivo con "?motivo=..." (per esempio dalla pagina degli ingaggi); in prerender non c'è l'indirizzo
+    // Un link può scegliere il motivo con "?motivo=..."; in prerender non c'è l'indirizzo
     const requested = browser ? page.url.searchParams.get("motivo") : null;
     let topic = $state(topics.find(({ name }) => name === requested)?.name ?? topics[0].name);
     const mailbox = $derived(topics.find(({ name }) => name === topic)?.mailbox ?? "info");
