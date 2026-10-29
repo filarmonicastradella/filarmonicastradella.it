@@ -2,7 +2,7 @@
     // Chi organizza ragiona per occasioni: la formazione adatta la proponiamo noi
     const occasions = [
         "Cerimonia o ricorrenza ufficiale",
-        "Festa patronale, processione o sagra",
+        "Festa in piazza o sagra",
         "Matrimonio o evento privato",
         "Rassegna, festival o rievocazione",
         "Altro"
@@ -16,7 +16,7 @@
     <title>La Filarmonica al tuo evento — Filarmonica Alessandro Stradella APS</title>
     <meta
         name="description"
-        content="Cerimonie, feste patronali, matrimoni, rassegne: chiedi alla Filarmonica Alessandro Stradella di suonare al tuo evento."
+        content="Cerimonie, feste in piazza, matrimoni, rassegne: chiedi alla Filarmonica Alessandro Stradella di suonare al tuo evento."
     />
 </svelte:head>
 
