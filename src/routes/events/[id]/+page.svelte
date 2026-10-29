@@ -1,6 +1,7 @@
 <script lang="ts">
     import { eventDate, eventPlace, eventTime, eventWhen } from "$lib/events";
     import type { PageProps } from "./$types";
+    import CalendarIcon from "~icons/heroicons/calendar-days-20-solid";
 
     let { data }: PageProps = $props();
     const event = $derived(data.event);
@@ -52,7 +53,7 @@
             </dd>
         {/if}
     </dl>
-    <p><a href="/events/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
+    <p><a href="/events/{event.id}.ics" download><CalendarIcon aria-hidden="true" />Aggiungi al tuo calendario</a></p>
 </section>
 
 <!-- La descrizione del calendario, già pulita alla build (src/lib/server/calendar.ts): paragrafi, elenchi, link -->

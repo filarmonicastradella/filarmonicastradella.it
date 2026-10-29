@@ -3,13 +3,15 @@
  * Primario: fondo bordeaux, testo carta, uno solo per schermata; lo hanno anche i link d'azione (il
  * pulsante "Sostienici" del menu: l'unico link in un paragrafo dell'intestazione; non la categoria in
  * occhiello sopra il titolo di un articolo).
- * Secondario: contorno inchiostro.
+ * Secondario: contorno inchiostro; lo hanno anche i link che scaricano un file (a[download], come
+ * «Aggiungi al tuo calendario» degli eventi).
  * Campi: fondo rialzato e bordo sottile come le schede, angoli quasi vivi.
  */
 
 button,
 input[type="submit"],
 input[type="button"],
+main a[download],
 :is(main > header, body > div > header nav) > p > a:only-child:not([itemprop="articleSection"]) {
     display: inline-flex;
     align-items: center;
@@ -40,8 +42,9 @@ input[type="button"]:hover,
     color: var(--on-accent);
 }
 
-/* Secondario: azioni di servizio (caricare una mappa, scegliere un file) */
+/* Secondario: azioni di servizio (caricare una mappa, scegliere un file, scaricare un file) */
 main button[type="button"],
+main a[download],
 input[type="file"]::file-selector-button {
     border: var(--border-width) solid var(--border-strong);
     border-radius: var(--radius);
@@ -50,10 +53,18 @@ input[type="file"]::file-selector-button {
 }
 
 main button[type="button"]:hover,
+main a[download]:hover,
 input[type="file"]::file-selector-button:hover {
     border-color: var(--text-brand);
     background-color: transparent;
     color: var(--text-brand);
+}
+
+/* Le icone nei pulsanti: 1,25 rem (docs/DESIGN.md, Iconografia) */
+:is(button, main a[download]) > svg {
+    flex-shrink: 0;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
 }
 
 form {
