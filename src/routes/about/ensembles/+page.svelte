@@ -43,6 +43,7 @@
         <p>Sì: puoi entrare in più di una, ognuna con i suoi requisiti.</p>
     </details>
     <FaqItem item={faq.prove} />
+    <FaqItem item={faq.repertorio} />
     <FaqItem item={faq.strumento} />
     <details>
         <summary>Posso proporre una nuova formazione?</summary>

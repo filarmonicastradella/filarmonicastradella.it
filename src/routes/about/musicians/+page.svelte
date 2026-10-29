@@ -94,6 +94,7 @@
     <FaqItem item={faq.daZero} />
     <FaqItem item={faq.livello} />
     <FaqItem item={faq.strumentiCercati} />
+    <FaqItem item={faq.repertorio} />
     <FaqItem item={faq.strumento} />
     <FaqItem item={faq.prove} />
     <FaqItem item={faq.impegno} />

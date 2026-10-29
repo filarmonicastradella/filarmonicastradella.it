@@ -22,6 +22,10 @@ export const faq = {
         question: "Posso cominciare da zero?",
         answer: "Sì: c'è posto anche per chi non ha mai suonato uno strumento."
     },
+    repertorio: {
+        question: "Chi sceglie i brani?",
+        answer: "I musicisti: propongono i brani e li votano in una graduatoria, e i direttori scelgono da lì quelli da suonare."
+    },
     strumento: {
         question: "Devo avere uno strumento mio?",
         answer: "No: strumento, parti e sala prove li mette a disposizione l'associazione."
