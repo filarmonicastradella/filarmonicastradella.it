@@ -69,4 +69,4 @@
     <p><a href="/events/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
 </section>
 
-<p class="rimando"><a href="/events">Tutto il calendario</a></p>
+<p class="rimando"><a href="/events">Tutti gli eventi</a></p>
