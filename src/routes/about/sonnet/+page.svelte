@@ -131,7 +131,7 @@
      * della pagina è allineato a sinistra (max-width senza centrare), non al centro di una colonna più
      * larga: centrare l'immagine la sfalsava rispetto al testo. Resta quindi a sinistra, come i paragrafi intorno.
      */
-    section:last-of-type > figure img {
+    section:last-of-type > figure :global(img) {
         display: block;
         inline-size: min(100%, 16rem);
         block-size: auto;
@@ -139,7 +139,7 @@
 
     /* Inchiostro chiaro su sfondo scuro: il fregio è tracciato in un colore fisso, non in currentColor */
     @media (prefers-color-scheme: dark) {
-        section:last-of-type > figure img {
+        section:last-of-type > figure :global(img) {
             filter: invert(1);
         }
     }
