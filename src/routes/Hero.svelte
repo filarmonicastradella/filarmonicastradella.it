@@ -3,7 +3,8 @@
     // a tutta larghezza, e con la qualità 40 delle foto d'archivio si vedeva sfocata.
     // In verticale la fascia è più alta che larga in proporzione alla foto (3:2), che la riempie tagliando i lati:
     // da qui i 160vw di "sizes", altrimenti il browser sceglie una versione larga quanto lo schermo e la ingrandisce.
-    import cover from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?enhanced";
+    // Più larghezze delle due predefinite (metà e intera): con solo 1024 e 2048 un telefono scaricava sempre la 2048.
+    import cover from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?enhanced&w=2048;1600;1280;960;640";
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
     import coverPlaceholder from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?w=24&blur=2&format=webp&inline";
 </script>
