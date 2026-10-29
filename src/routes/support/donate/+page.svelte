@@ -9,20 +9,6 @@
 </header>
 
 <section>
-    <h2>Dati per il bonifico</h2>
-    <dl>
-        <dt>Beneficiario</dt>
-        <dd>Filarmonica Alessandro Stradella APS</dd>
-        <dt>IBAN</dt>
-        <dd>IT52 Z062 3069 9130 0003 0649 193</dd>
-        <dt>Banca</dt>
-        <dd>Crédit Agricole Italia</dd>
-        <dt>Causale</dt>
-        <dd>Erogazione liberale, con il tuo nome, cognome e codice fiscale</dd>
-    </dl>
-</section>
-
-<section>
     <h2>Domande frequenti</h2>
     <details>
         <summary>Posso detrarre la donazione?</summary>
@@ -38,6 +24,20 @@
             La rilascia il tesoriere: scrivi a <a href="mailto:tesoreria@filarmonicastradella.it">tesoreria@filarmonicastradella.it</a>.
         </p>
     </details>
+</section>
+
+<section>
+    <h2>Dati per il bonifico</h2>
+    <dl>
+        <dt>Beneficiario</dt>
+        <dd>Filarmonica Alessandro Stradella APS</dd>
+        <dt>IBAN</dt>
+        <dd>IT52 Z062 3069 9130 0003 0649 193</dd>
+        <dt>Banca</dt>
+        <dd>Crédit Agricole Italia</dd>
+        <dt>Causale</dt>
+        <dd>Erogazione liberale, con il tuo nome, cognome e codice fiscale</dd>
+    </dl>
 </section>
 
 <!-- Da riattivare quando ci sarà il pulsante PayPal dell'associazione (sostituire hosted_button_id):
