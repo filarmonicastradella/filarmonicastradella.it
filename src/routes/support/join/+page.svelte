@@ -91,8 +91,34 @@
 
 <header>
     <h1>Richiesta di iscrizione</h1>
-    <p>Per i minorenni, dai 14 anni, compila il modulo un genitore o tutore. L'esito arriva all'indirizzo email indicato.</p>
 </header>
+
+<section>
+    <h2>Domande frequenti</h2>
+    <details>
+        <summary>Quanto costa iscriversi?</summary>
+        <p>La quota annuale è di 12 €.</p>
+    </details>
+    <details>
+        <summary>Che impegno è richiesto?</summary>
+        <p>Partecipare ad almeno metà delle attività, tra concerti, prove e momenti di vita associativa.</p>
+    </details>
+    <details>
+        <summary>Devo avere uno strumento mio?</summary>
+        <p>No: strumento, parti e sala prove li mette a disposizione l'associazione.</p>
+    </details>
+    <details>
+        <summary>Come so se l'iscrizione è accettata?</summary>
+        <p>Ti scriviamo all'indirizzo email indicato nel modulo.</p>
+    </details>
+    <details>
+        <summary>Come si iscrive un minorenne?</summary>
+        <p>
+            L'iscrizione la fa un genitore o tutore: inserisci i dati del ragazzo e poi i tuoi, con il tuo documento di identità. Sotto i 14 anni online
+            non si può: <a href="/contacts">contattaci</a> e completiamo la pratica di persona.
+        </p>
+    </details>
+</section>
 
 <form action="https://formsubmit.co/segreteria@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_subject" value="Nuova richiesta di iscrizione - Filarmonica Stradella" />
@@ -246,29 +272,6 @@
         <button type="submit" disabled={isTooYoung}>Invia la richiesta di iscrizione</button>
     </p>
 </form>
-
-<section>
-    <h2>Domande frequenti</h2>
-    <details>
-        <summary>Quanto costa iscriversi?</summary>
-        <p>La quota annuale è di 12 €.</p>
-    </details>
-    <details>
-        <summary>Che impegno è richiesto?</summary>
-        <p>Partecipare ad almeno metà delle attività, tra concerti, prove e momenti di vita associativa.</p>
-    </details>
-    <details>
-        <summary>Devo avere uno strumento mio?</summary>
-        <p>No: strumento, parti e sala prove li mette a disposizione l'associazione.</p>
-    </details>
-    <details>
-        <summary>Come si iscrive un minorenne?</summary>
-        <p>
-            L'iscrizione la fa un genitore o tutore: inserisci i dati del ragazzo e poi i tuoi, con il tuo documento di identità. Sotto i 14 anni online
-            non si può: <a href="/contacts">contattaci</a> e completiamo la pratica di persona.
-        </p>
-    </details>
-</section>
 
 <style>
     /*

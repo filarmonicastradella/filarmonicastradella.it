@@ -187,3 +187,35 @@ legend {
     font-size: var(--fs-h3);
     font-weight: var(--fw-heading);
 }
+
+/*
+ * Moduli con gruppi di campi, su schermo largo (da 64rem): come le sezioni da leggere (layout.css), il titolo
+ * del gruppo a sinistra e i campi a destra, nella colonna di testo; il filetto passa al gruppo e va da un
+ * bordo all'altro. La legenda è posizionata, così il browser non la tratta più come intestazione del riquadro
+ * e le griglie dei campi delle singole pagine restano com'erano. Il modulo di contatto, senza gruppi, non cambia.
+ */
+@media (min-width: 64rem) {
+    form:has(> fieldset) {
+        max-inline-size: none;
+
+        & > * {
+            padding-inline-start: calc(100% - var(--container-text));
+        }
+
+        & > fieldset {
+            position: relative;
+            padding-block-start: var(--space-5);
+            border-block-start: var(--rule-width) solid var(--border);
+        }
+
+        & > fieldset > legend {
+            position: absolute;
+            inset-block-start: var(--space-5);
+            inset-inline-start: 0;
+            inline-size: calc(100% - var(--container-text) - var(--space-6));
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+    }
+}
