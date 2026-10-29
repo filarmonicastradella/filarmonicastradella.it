@@ -7,7 +7,7 @@
     <h1>Sostienici</h1>
     <p>
         Suonare costa, e chi suona da solo lo sa bene. Con le quote dei soci e le donazioni la Filarmonica si fa carico di ciò che un singolo musicista
-        difficilmente potrebbe sostenere.
+        difficilmente potrebbe sostenere: strumenti e attrezzatura, spartiti, la sala prove, i costi dei concerti e l'assicurazione dei soci.
     </p>
 </header>
 
@@ -43,13 +43,6 @@
 
 <section>
     <h2>Domande frequenti</h2>
-    <details>
-        <summary>A cosa serve il tuo sostegno?</summary>
-        <p>
-            Copre le spese di tutto l'anno: strumenti e attrezzatura, spartiti, la sala prove, i costi dei concerti e
-            l'assicurazione dei soci.
-        </p>
-    </details>
     <details>
         <summary>Posso aiutare senza dare soldi?</summary>
         <p>Sì: da socio puoi mettere a disposizione il tuo tempo e le tue competenze. <a href="/support/join">Iscriviti</a>.</p>
