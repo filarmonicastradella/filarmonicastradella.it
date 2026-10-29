@@ -140,8 +140,8 @@
 <section id="nome">
     <h2>Il nome di Stradella</h2>
     <p>
-        La famiglia Stradella venne a Fivizzano da Borgo Val di Taro nel Quattrocento: nel <time datetime="1477">1477</time> il medico Matteo Stradella fu tra
-        i riformatori degli statuti del paese<sup><a href="#fonte-28" role="doc-noteref" id="rimando-28a" aria-label="Fonte 28">28</a></sup>. Da un ramo partito da qui discende il compositore
+        La famiglia Stradella venne a Fivizzano da Borgo Val di Taro nel Quattrocento: il medico Matteo Stradella fu tra i riformatori degli statuti del
+        paese, approvati a Firenze nel <time datetime="1480">1480</time><sup><a href="#fonte-28" role="doc-noteref" id="rimando-28a" aria-label="Fonte 28">28</a></sup>. Da un ramo partito da qui discende il compositore
         <a href="/about/stradella">Alessandro Stradella</a>, nato a Bologna nel 1643<sup><a href="#fonte-29" role="doc-noteref" id="rimando-29a" aria-label="Fonte 29">29</a></sup>.
     </p>
     <p>
