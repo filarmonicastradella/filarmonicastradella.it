@@ -123,6 +123,15 @@ li:target {
     }
 }
 
+/*
+ * Gli elenchi in ordine cronologico (eventi) sono una scheda sotto l'altra a ogni larghezza, come un elenco di
+ * date, larghi quanto la colonna di testo; le griglie restano per gli elenchi non ordinati.
+ */
+ol:has(> li > article > a > :is(h2, h3, h4)) {
+    grid-template-columns: minmax(0, 1fr);
+    max-inline-size: var(--container-text);
+}
+
 li > article {
     block-size: 100%;
 }
