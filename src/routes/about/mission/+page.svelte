@@ -31,7 +31,7 @@
     <p>
         Nel nostro territorio ci sono insegnanti qualificati e giovani motivati, ma molti ragazzi che hanno studiato uno strumento smettono di suonare
         perché non trovano un luogo dove continuare. La Filarmonica è stata rifondata per essere quel luogo, aperto a ragazzi e adulti insieme, dove la
-        musica diventa uno strumento di crescita personale e sociale. La nostra <a href="/about/history">storia</a> ci ha insegnato quanto questo sia
+        musica diventa uno strumento di crescita personale e sociale. La nostra <a href="/articles/history/filarmonica">storia</a> ci ha insegnato quanto questo sia
         fragile: dalla fine degli anni Novanta la Filarmonica è rimasta in silenzio per quasi trent'anni. Per questo siamo ripartiti con un modello in cui
         la musica non dipende mai da una persona sola.
     </p>

@@ -119,8 +119,8 @@
         prima che si trovasse a Bologna l'atto di battesimo del 1643<sup><a href="#fonte-10" role="doc-noteref" id="rimando-10b" aria-label="Fonte 10">10</a></sup><sup><a href="#fonte-1" role="doc-noteref" id="rimando-1b" aria-label="Fonte 1">1</a></sup>.
     </p>
     <p>
-        Alla fine degli anni Novanta la Filarmonica prese il nome di Alessandro Stradella. Il resto della nostra storia è nella pagina
-        <a href="/about/history">La storia</a>.
+        Alla fine degli anni Novanta la Filarmonica prese il nome di Alessandro Stradella. Il resto della nostra storia è nell'articolo
+        <a href="/articles/history/filarmonica">La storia della Filarmonica</a>.
     </p>
 </section>
 

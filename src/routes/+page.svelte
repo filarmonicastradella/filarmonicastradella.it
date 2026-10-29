@@ -142,7 +142,7 @@
         </li>
         ]
         <li>
-            <a href="/about/history">
+            <a href="/articles/history/filarmonica">
                 <h3>La Nostra Storia</h3>
                 <p>
                     Radici profonde che affondano nel 1777. Un viaggio attraverso i secoli tra cultura bandistica, strumenti storici e la memoria viva della nostra comunità.

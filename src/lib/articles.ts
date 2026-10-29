@@ -43,6 +43,14 @@ const markdownArticles = Object.entries(modules).map(([path, module]) => ({
 // Articoli con una pagina propria in src/routes/articles/<categoria>/<slug>: qui solo i dati per indici e intestazioni
 const pageArticles: (ArticleMetadata & { slug: string })[] = [
     {
+        slug: "filarmonica",
+        category: "history",
+        author: "Leonardo Orietti Del Duca",
+        title: "La storia della Filarmonica",
+        date: "2026-09-28",
+        excerpt: "Dal 1777 a oggi: quasi due secoli e mezzo di musica a Fivizzano."
+    },
+    {
         slug: "sonnet",
         category: "history",
         author: "Leonardo Orietti Del Duca",

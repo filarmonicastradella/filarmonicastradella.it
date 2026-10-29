@@ -18,9 +18,15 @@
         </a>
     </li>
     <li>
-        <a href="/about/history">
-            <h2>Storia e origini</h2>
-            <p>Dal riconoscimento settecentesco alla Filarmonica di oggi.</p>
+        <a href="/articles/history/filarmonica">
+            <h2>La storia della Filarmonica</h2>
+            <p>Dal 1777 a oggi: quasi due secoli e mezzo di musica a Fivizzano.</p>
+        </a>
+    </li>
+    <li>
+        <a href="/articles/history/stradella">
+            <h2>Alessandro Stradella</h2>
+            <p>Il compositore del Seicento che dà il nome alla Filarmonica, e la sua famiglia di Fivizzano.</p>
         </a>
     </li>
     <li>
