@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-    <title>Le nostre formazioni — Filarmonica Alessandro Stradella APS</title>
+    <title>Le nostre formazioni — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Le formazioni della Filarmonica Alessandro Stradella: Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti." />
 </svelte:head>
 

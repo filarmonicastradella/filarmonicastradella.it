@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-    <title>La storia — Filarmonica Alessandro Stradella APS</title>
+    <title>La storia — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="La storia della Filarmonica Alessandro Stradella di Fivizzano, dall'Accademia dei Filarmonici Dissonanti del Settecento a oggi, raccontata con i documenti." />
 </svelte:head>
 

@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Sostienici — Filarmonica Alessandro Stradella APS</title>
+    <title>Sostienici — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Come sostenere la Filarmonica Alessandro Stradella APS, iscrivendoti o con una donazione, e che cosa coprono quote e donazioni." />
 </svelte:head>
 

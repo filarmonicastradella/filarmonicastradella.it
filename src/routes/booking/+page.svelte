@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-    <title>La Filarmonica al tuo evento — Filarmonica Alessandro Stradella APS</title>
+    <title>La Filarmonica al tuo evento — Filarmonica Alessandro Stradella</title>
     <meta
         name="description"
         content="Concerti, convegni, cerimonie civili, feste in piazza e private: chiedi alla Filarmonica Alessandro Stradella di suonare al tuo evento."

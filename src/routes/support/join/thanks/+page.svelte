@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Domanda di iscrizione inviata — Filarmonica Alessandro Stradella APS</title>
+    <title>Domanda di iscrizione inviata — Filarmonica Alessandro Stradella</title>
     <meta name="robots" content="noindex" />
 </svelte:head>
 

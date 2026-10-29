@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Messaggio inviato — Filarmonica Alessandro Stradella APS</title>
+    <title>Messaggio inviato — Filarmonica Alessandro Stradella</title>
     <meta name="robots" content="noindex" />
 </svelte:head>
 

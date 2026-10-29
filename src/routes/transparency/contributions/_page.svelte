@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Contributi pubblici ricevuti — Filarmonica Alessandro Stradella APS</title>
+    <title>Contributi pubblici ricevuti — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="L'elenco dei contributi e dei vantaggi economici ricevuti da pubbliche amministrazioni, pubblicato per trasparenza." />
 </svelte:head>
 

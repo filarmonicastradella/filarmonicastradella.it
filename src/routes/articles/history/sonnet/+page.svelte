@@ -8,10 +8,10 @@
 </script>
 
 <svelte:head>
-    <title>Sonetto per Santa Cecilia, 1789 — Filarmonica Alessandro Stradella APS</title>
+    <title>Sonetto per Santa Cecilia, 1789 — Filarmonica Alessandro Stradella</title>
     <meta
         name="description"
-        content="Il sonetto a stampa che gli Accademici Dissonanti di Fivizzano dedicarono nel 1789 alla festa di Santa Cecilia, patrona dei musicisti: trascrizione del foglio originale."
+        content="Il sonetto a stampa che gli Accademici Dissonanti di Fivizzano dedicarono nel 1789 alla festa di Santa Cecilia, patrona dei musicisti, con la trascrizione."
     />
 </svelte:head>
 

@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-    <title>{data.article.title} — Filarmonica Alessandro Stradella APS</title>
+    <title>{data.article.title} — Filarmonica Alessandro Stradella</title>
     <meta name="description" content={data.article.excerpt} />
 </svelte:head>
 

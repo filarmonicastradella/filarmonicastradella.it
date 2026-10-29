@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-    <title>Informativa privacy — Filarmonica Alessandro Stradella APS</title>
+    <title>Informativa privacy — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Quali dati personali tratta la Filarmonica Alessandro Stradella APS, perché, per quanto tempo e come esercitare i tuoi diritti." />
 </svelte:head>
 

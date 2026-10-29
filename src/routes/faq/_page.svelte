@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Domande frequenti — Filarmonica Alessandro Stradella APS</title>
+    <title>Domande frequenti — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Le risposte alle domande più comuni su come suonare con la Filarmonica, iscriversi, sostenere l'associazione e trovare i corsi di musica." />
 </svelte:head>
 

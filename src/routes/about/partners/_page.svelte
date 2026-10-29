@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Partner — Filarmonica Alessandro Stradella APS</title>
+    <title>Partner — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Le associazioni con cui collabora la Filarmonica Alessandro Stradella APS: Medicea, Circolo Culturale Fantoni, Società di Mutuo Soccorso, Dal libro alla solidarietà e Associazione Mamme." />
 </svelte:head>
 

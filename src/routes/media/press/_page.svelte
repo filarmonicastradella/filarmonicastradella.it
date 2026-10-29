@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Rassegna stampa — Filarmonica Alessandro Stradella APS</title>
+    <title>Rassegna stampa — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Gli articoli e i servizi che parlano della Filarmonica Alessandro Stradella." />
 </svelte:head>
 

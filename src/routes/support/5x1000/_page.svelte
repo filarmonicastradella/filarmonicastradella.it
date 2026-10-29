@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>5x1000 — Filarmonica Alessandro Stradella APS</title>
+    <title>5x1000 — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Come destinare il 5x1000 alla Filarmonica Alessandro Stradella APS." />
 </svelte:head>
 

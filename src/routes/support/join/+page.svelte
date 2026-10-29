@@ -32,7 +32,7 @@
 </script>
 
 <svelte:head>
-    <title>Domanda di iscrizione — Filarmonica Alessandro Stradella APS</title>
+    <title>Domanda di iscrizione — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Compila la domanda di iscrizione come socio della Filarmonica Alessandro Stradella APS." />
 </svelte:head>
 

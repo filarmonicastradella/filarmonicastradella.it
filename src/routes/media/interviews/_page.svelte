@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Interviste — Filarmonica Alessandro Stradella APS</title>
+    <title>Interviste — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Le interviste ai musicisti e alle persone della Filarmonica Alessandro Stradella." />
 </svelte:head>
 

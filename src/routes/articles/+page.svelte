@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-    <title>Articoli — Filarmonica Alessandro Stradella APS</title>
+    <title>Articoli — Filarmonica Alessandro Stradella</title>
     <meta
         name="description"
         content="Storia, didattica, teoria musicale, vita e notizie della Filarmonica Alessandro Stradella APS di Fivizzano."

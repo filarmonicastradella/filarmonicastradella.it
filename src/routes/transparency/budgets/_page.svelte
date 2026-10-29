@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Rendiconti — Filarmonica Alessandro Stradella APS</title>
+    <title>Rendiconti — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="I rendiconti per cassa della Filarmonica Alessandro Stradella APS." />
 </svelte:head>
 

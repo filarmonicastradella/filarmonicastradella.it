@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Moduli e iscrizioni — Filarmonica Alessandro Stradella APS</title>
+    <title>Moduli e iscrizioni — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="I moduli per iscriversi e partecipare alle attività dell'associazione." />
 </svelte:head>
 

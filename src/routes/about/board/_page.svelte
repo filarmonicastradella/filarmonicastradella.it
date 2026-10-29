@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-    <title>Consiglio direttivo — Filarmonica Alessandro Stradella APS</title>
+    <title>Consiglio direttivo — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Le persone che compongono il Consiglio direttivo, l'organo di amministrazione della Filarmonica Alessandro Stradella APS." />
 </svelte:head>
 

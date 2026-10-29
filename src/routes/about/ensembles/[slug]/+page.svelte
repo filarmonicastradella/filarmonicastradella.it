@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-    <title>{ensemble.title} — Filarmonica Alessandro Stradella APS</title>
+    <title>{ensemble.title} — Filarmonica Alessandro Stradella</title>
     <meta name="description" content={ensemble.summary} />
 </svelte:head>
 

@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Riconoscimenti e traguardi — Filarmonica Alessandro Stradella APS</title>
+    <title>Riconoscimenti e traguardi — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="I riconoscimenti ricevuti e i traguardi raggiunti dalla Filarmonica Alessandro Stradella." />
 </svelte:head>
 

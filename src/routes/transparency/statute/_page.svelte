@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Statuto — Filarmonica Alessandro Stradella APS</title>
+    <title>Statuto — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Lo statuto della Filarmonica Alessandro Stradella APS: scopi, associati, organi, patrimonio e regole di funzionamento." />
 </svelte:head>
 

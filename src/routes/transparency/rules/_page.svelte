@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Regolamenti — Filarmonica Alessandro Stradella APS</title>
+    <title>Regolamenti — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="I regolamenti dell'associazione e delle sue attività." />
 </svelte:head>
 

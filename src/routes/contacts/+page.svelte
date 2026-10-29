@@ -23,7 +23,7 @@
 </script>
 
 <svelte:head>
-    <title>Contatti — Filarmonica Alessandro Stradella APS</title>
+    <title>Contatti — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Telefono, email e modulo di contatto della Filarmonica Alessandro Stradella APS." />
 </svelte:head>
 

@@ -1,6 +1,6 @@
 <!-- Testi ricavati dalla versione estesa e approvata della missione (Vault: Filarmonica/Missione.md) -->
 <svelte:head>
-    <title>La nostra missione — Filarmonica Alessandro Stradella APS</title>
+    <title>La nostra missione — Filarmonica Alessandro Stradella</title>
     <meta
         name="description"
         content="Chi siamo, in cosa crediamo e come stiamo insieme: la missione della Filarmonica Alessandro Stradella, musicisti volontari a Fivizzano dal 1777."

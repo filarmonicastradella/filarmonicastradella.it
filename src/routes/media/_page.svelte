@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-    <title>Mediateca — Filarmonica Alessandro Stradella APS</title>
+    <title>Mediateca — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Foto e video della Filarmonica Alessandro Stradella APS, dal nostro profilo Instagram." />
 </svelte:head>
 

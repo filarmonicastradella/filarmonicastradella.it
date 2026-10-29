@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-    <title>Calendario — Filarmonica Alessandro Stradella APS</title>
+    <title>Calendario — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="I prossimi concerti, le prove aperte e tutte le attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano." />
 </svelte:head>
 

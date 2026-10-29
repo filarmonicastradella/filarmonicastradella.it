@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Fai volontariato — Filarmonica Alessandro Stradella APS</title>
+    <title>Fai volontariato — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Come dare una mano all'associazione, anche senza suonare uno strumento." />
 </svelte:head>
 

@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Materiali per la stampa — Filarmonica Alessandro Stradella APS</title>
+    <title>Materiali per la stampa — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Logo, immagini e informazioni per chi vuole parlare della Filarmonica Alessandro Stradella." />
 </svelte:head>
 

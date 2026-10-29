@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-    <title>Le nostre sedi — Filarmonica Alessandro Stradella APS</title>
+    <title>Le nostre sedi — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="La sede legale a Fivizzano e le sedi operative di Fivizzano e Serricciolo della Filarmonica Alessandro Stradella APS." />
 </svelte:head>
 

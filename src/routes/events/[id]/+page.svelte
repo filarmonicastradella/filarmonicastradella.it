@@ -7,13 +7,19 @@
 
     const date = $derived(eventDate(event));
     const place = $derived(eventPlace(event));
+    // Per i motori di ricerca: nome, data, ora e luogo, poi l'inizio della descrizione, entro 160 caratteri
+    const metaDescription = $derived.by(() => {
+        const when = [date, eventTime(event)].filter(Boolean).join(", ");
+        const text = `${event.summary}: ${when}${place ? `, ${place}` : ""}.${event.description ? ` ${event.description.replace(/\s+/g, " ")}` : ""}`;
+        return text.length > 160 ? `${text.slice(0, 159).replace(/\s+\S*$/, "")}…` : text;
+    });
     // Il resto dell'indirizzo, dopo il nome del luogo
     const address = $derived(event.location.split(",").slice(1).join(",").trim());
 </script>
 
 <svelte:head>
-    <title>{event.summary} — Filarmonica Alessandro Stradella APS</title>
-    <meta name="description" content={[date, eventTime(event), place].filter(Boolean).join(", ")} />
+    <title>{event.summary} — Filarmonica Alessandro Stradella</title>
+    <meta name="description" content={metaDescription} />
 </svelte:head>
 
 <!--

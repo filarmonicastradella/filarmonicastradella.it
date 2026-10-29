@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Fai una donazione — Filarmonica Alessandro Stradella APS</title>
+    <title>Fai una donazione — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Come sostenere la Filarmonica Alessandro Stradella APS con un contributo libero tramite bonifico bancario." />
 </svelte:head>
 

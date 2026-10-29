@@ -2,7 +2,7 @@ import type { Component } from "svelte";
 
 // Categorie degli articoli, nell'ordine dell'indice: lo slug è il segmento dell'indirizzo (/articles/history)
 export const categories = [
-    { slug: "history", name: "Storia", description: "Ricerche e documenti sulla storia della musica a Fivizzano." },
+    { slug: "history", name: "Storia", description: "Ricerche e documenti sulla storia della musica a Fivizzano e della Filarmonica, dall'Accademia dei Dissonanti a oggi." },
     { slug: "teaching", name: "Didattica", description: "Guide per chi studia uno strumento o comincia a suonare." },
     { slug: "theory", name: "Teoria musicale", description: "Le basi della musica, spiegate semplici." },
     { slug: "life", name: "Vita della Filarmonica", description: "Prove, concerti, trasferte e persone." },

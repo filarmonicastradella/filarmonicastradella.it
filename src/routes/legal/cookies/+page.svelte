@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Cookie — Filarmonica Alessandro Stradella APS</title>
+    <title>Cookie — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Il sito della Filarmonica Alessandro Stradella APS non usa cookie, statistiche o profilazione." />
 </svelte:head>
 

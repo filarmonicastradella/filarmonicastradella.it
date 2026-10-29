@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-    <title>{page.status} — Filarmonica Alessandro Stradella APS</title>
+    <title>{page.status} — Filarmonica Alessandro Stradella</title>
 </svelte:head>
 
 <header>

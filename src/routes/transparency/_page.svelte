@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-    <title>Amministrazione trasparente — Filarmonica Alessandro Stradella APS</title>
+    <title>Amministrazione trasparente — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Dati dell'ente, organi e documenti che la Filarmonica Alessandro Stradella APS pubblica per trasparenza." />
 </svelte:head>
 

@@ -10,10 +10,10 @@
 </script>
 
 <svelte:head>
-    <title>Alessandro Stradella — Filarmonica Alessandro Stradella APS</title>
+    <title>Alessandro Stradella — Filarmonica Alessandro Stradella</title>
     <meta
         name="description"
-        content="Perché la Filarmonica porta il nome di Alessandro Stradella: la famiglia Stradella a Fivizzano dal Quattrocento, il vescovo Alessio, la casa e la lapide del 1997."
+        content="Perché la Filarmonica porta il nome di Alessandro Stradella: la sua famiglia a Fivizzano dal Quattrocento, il vescovo Alessio, la casa e la lapide del 1997."
     />
 </svelte:head>
 

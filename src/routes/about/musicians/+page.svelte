@@ -55,7 +55,7 @@
 </script>
 
 <svelte:head>
-    <title>I nostri musicisti — Filarmonica Alessandro Stradella APS</title>
+    <title>I nostri musicisti — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="I musicisti della Filarmonica Alessandro Stradella, divisi per strumento: legni, ottoni, percussioni e archi." />
 </svelte:head>
 

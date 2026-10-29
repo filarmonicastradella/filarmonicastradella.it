@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-    <title>Sonetto per Santa Cecilia, 1789 — Filarmonica Alessandro Stradella APS</title>
+    <title>Sonetto per Santa Cecilia, 1789 — Filarmonica Alessandro Stradella</title>
     <meta http-equiv="refresh" content="0; url={href}" />
     <meta name="robots" content="noindex" />
 </svelte:head>

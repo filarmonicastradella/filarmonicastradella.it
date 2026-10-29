@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>L'associazione — Filarmonica Alessandro Stradella APS</title>
+    <title>L'associazione — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Chi è la Filarmonica Alessandro Stradella APS: la missione, la storia e gli ensemble dell'associazione." />
 </svelte:head>
 
