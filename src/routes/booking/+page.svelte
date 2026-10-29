@@ -27,6 +27,18 @@
     <p>Dicci quando, dove e per quale occasione: ti rispondiamo con la disponibilità e una proposta.</p>
 </header>
 
+<section>
+    <h2>Domande frequenti</h2>
+    <details>
+        <summary>Dove suonate?</summary>
+        <p>Ci spostiamo in tutta la Lunigiana.</p>
+    </details>
+    <details>
+        <summary>Con quanto anticipo devo scrivervi?</summary>
+        <p>Almeno 30 giorni prima dell'evento.</p>
+    </details>
+</section>
+
 <form action="https://formsubmit.co/info@filarmonicastradella.it" method="POST">
     <input type="hidden" name="_subject" value="Richiesta per un evento - Filarmonica Stradella" />
     <input type="hidden" name="_template" value="table" />
