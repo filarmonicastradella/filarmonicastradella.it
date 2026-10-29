@@ -63,7 +63,7 @@
 
     <p>
         <label for="{prefix}codice_fiscale">Codice fiscale</label>
-        <input type="text" id="{prefix}codice_fiscale" name="{prefix}codice_fiscale" required minlength="16" maxlength="16" pattern="[A-Za-z0-9]{16}" autocapitalize="characters" spellcheck="false" oninput={handleCF} />
+        <input type="text" id="{prefix}codice_fiscale" name="{prefix}codice_fiscale" required minlength="16" maxlength="16" pattern={"[A-Za-z0-9]{16}"} autocapitalize="characters" spellcheck="false" oninput={handleCF} />
     </p>
 {/snippet}
 
@@ -75,7 +75,7 @@
 
     <p>
         <label for="{prefix}_cap">CAP</label>
-        <input type="text" id="{prefix}_cap" name="{prefix}_cap" autocomplete="section-{prefix} postal-code" inputmode="numeric" required minlength="5" maxlength="5" pattern="[0-9]{5}" oninput={handleCAP} />
+        <input type="text" id="{prefix}_cap" name="{prefix}_cap" autocomplete="section-{prefix} postal-code" inputmode="numeric" required minlength="5" maxlength="5" pattern={"[0-9]{5}"} oninput={handleCAP} />
     </p>
 
     <p>

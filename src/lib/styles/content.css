@@ -139,6 +139,19 @@ ol:has(> li > article > :is(a, div) > :is(h2, h3, h4)) {
     grid-template-columns: minmax(0, 1fr);
 }
 
+/* Il rimando sotto un'agenda («Tutti gli eventi» in home) parte dalla colonna dei titoli, come gli altri rimandi */
+@media (min-width: 64rem) {
+    section:has(> ol > li > article) > .rimando {
+        inline-size: min(100%, var(--container-text));
+        margin-inline-start: auto;
+    }
+}
+
+/* Quattro schede (le formazioni): due per riga, invece di tre più una rimasta sola */
+ul:has(> li:nth-child(4):last-child > a > :is(h2, h3, h4)) {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
+}
+
 li > article {
     block-size: 100%;
 }
@@ -172,16 +185,25 @@ li > article {
         color: var(--text-brand);
     }
 
-    /* Nelle schede che portano fuori dal sito la freccia sta nell'angolo, non in coda al testo */
-    &[target="_blank"] {
-        padding-inline-end: var(--space-7);
-    }
-
+    /*
+     * Nelle schede che portano fuori dal sito la freccia segue il titolo, come in un link nel testo (docs/DESIGN.md,
+     * Iconografia). Il link tiene solo il testo per gli screen reader, «si apre in una nuova scheda».
+     */
     &[target="_blank"]::after {
         position: absolute;
-        inset-block-start: var(--space-5);
-        inset-inline-end: 0;
+        inline-size: 0;
         margin: 0;
+        background: none;
+    }
+
+    &[target="_blank"] > :is(h2, h3, h4)::after {
+        content: "";
+        display: inline-block;
+        inline-size: 0.6em;
+        block-size: 0.6em;
+        margin-inline-start: 0.25em;
+        background-color: currentColor;
+        mask: var(--icon-external) center / contain no-repeat;
     }
 }
 

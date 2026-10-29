@@ -105,12 +105,13 @@ main > :is(section, article) > :is(h1, h2) + * {
  * scomparsa e moduli (come «Scrivici» in Contatti). Da
  * 64rem il titolo va a sinistra e il resto a destra, così la sezione è larga quanto le griglie senza allungare
  * le righe oltre --container-text. Restano con il titolo sopra le sezioni con griglie di schede o di foto
- * (elenchi i cui elementi sono link, articoli, video o figure), che hanno bisogno di tutta la larghezza, e
+ * (elenchi i cui elementi sono schede con un titolo, articoli, video o figure; non le fonti, dove ogni voce ha
+ * solo il link di ritorno al testo), che hanno bisogno di tutta la larghezza, e
  * quelle con gli elenchi in ordine cronologico (<ol> di eventi e articoli), che sono righe da un bordo
  * all'altro (content.css).
  */
 @media (min-width: 64rem) {
-    main > section:not(:has(> :not(h2, p, blockquote, figure, dl, ul, ol, details, form))):not(:has(> :is(ul, ol) > li > :is(a, article, video, figure))) {
+    main > section:not(:has(> :not(h2, p, blockquote, figure, dl, ul, ol, details, form))):not(:has(> :is(ul, ol) > li > :is(a:has(> :is(h2, h3, h4)), article, video, figure))) {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
         column-gap: var(--space-6);

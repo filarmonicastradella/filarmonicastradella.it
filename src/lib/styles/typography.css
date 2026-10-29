@@ -126,6 +126,7 @@ th {
 
 p:first-child > time[itemprop]:only-child,
 [itemprop="articleSection"],
+a:has(> [itemprop="articleSection"]),
 p:first-child > [itemprop="publisher"] {
     color: var(--text-brand);
     text-decoration: none;

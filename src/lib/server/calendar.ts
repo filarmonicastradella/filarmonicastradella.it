@@ -20,6 +20,9 @@ const decodeEntities = (text: string) =>
 // La descrizione del calendario può contenere HTML, anche con i simboli codificati (&lt;b&gt;).
 const withTags = (html: string) => html.replace(/&lt;(\/?[a-z][^&]*?)&gt;/gi, "<$1>");
 
+// Le virgolette dritte del calendario ("Tobagi") diventano caporali, come nel resto del sito (docs/DESIGN.md, Tono di voce)
+const guillemets = (text: string) => text.replace(/(?:"|&quot;)([^"<>\n]+?)(?:"|&quot;)/g, "«$1»");
+
 // Solo testo: per le schede, la descrizione per i motori di ricerca e il file .ics
 const stripTags = (html?: string) => {
     if (!html) return "";
@@ -29,7 +32,7 @@ const stripTags = (html?: string) => {
         // Solo i tag veri: un "<" nel testo ("3 < 5") resta
         .replace(/<\/?[a-z!][^>]*>/gi, "");
     // Alcune descrizioni contengono la sequenza "\n" scritta come testo: la trattiamo come un a capo.
-    return decodeEntities(text).replace(/\\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+    return guillemets(decodeEntities(text).replace(/\\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim());
 };
 
 /*
@@ -56,6 +59,7 @@ const toHtml = (raw?: string) => {
         allowedTags: ["p", "br", "strong", "em", "ul", "ol", "li", "a"],
         allowedAttributes: { a: ["href", "target", "rel"] },
         allowedSchemes: ["http", "https", "mailto", "tel"],
+        textFilter: guillemets,
         transformTags: {
             b: "strong",
             i: "em",
@@ -72,10 +76,10 @@ const toHtml = (raw?: string) => {
 function toEventItem(evt: any): EventItem {
     return {
         id: evt.id,
-        summary: evt.summary ?? "",
+        summary: guillemets(evt.summary ?? ""),
         description: stripTags(evt.description),
         descriptionHtml: toHtml(evt.description),
-        location: evt.location ?? "",
+        location: guillemets(evt.location ?? ""),
         start: evt.start.dateTime || evt.start.date,
         end: evt.end?.dateTime || evt.end?.date || ""
     };

@@ -12,7 +12,7 @@ button,
 input[type="submit"],
 input[type="button"],
 main a[download],
-:is(main > header, body > div > header nav) > p > a:only-child:not([itemprop="articleSection"]) {
+:is(main > header, body > div > header nav) > p > a:only-child:not(:has(> [itemprop="articleSection"])) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -36,7 +36,7 @@ main a[download],
 button:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover,
-:is(main > header, body > div > header nav) > p > a:only-child:hover {
+:is(main > header, body > div > header nav) > p > a:only-child:not(:has(> [itemprop="articleSection"])):hover {
     border-color: var(--accent-hover);
     background-color: var(--accent-hover);
     color: var(--on-accent);
