@@ -60,8 +60,9 @@
         tutta loro, dove dopo le feste si cenava e si ballava<sup><a href="#fonte-6" role="doc-noteref" id="rimando-6a" aria-label="Fonte 6">6</a></sup>.
     </p>
     <p>
-        Il diploma dei soci, disegnato dal pittore fivizzanese Ercole Lemmi, spiega il nome con due motti: «La soave armonia figlia del cielo» e «Le
-        dissonanze in un accordo solo»<sup><a href="#fonte-7" role="doc-noteref" id="rimando-7a" aria-label="Fonte 7">7</a></sup>. Un esemplare è arrivato fino alla Newberry Library di Chicago.
+        Il diploma dei soci fu disegnato dal pittore Ercole Lemmi e inciso da Giuseppe Poggiali. In alto porta il motto «La soave armonia figlia
+        del cielo»; in basso «Le dissonanze in un accordo solo», che richiama il nome dell'accademia<sup><a href="#fonte-7" role="doc-noteref" id="rimando-7a" aria-label="Fonte 7">7</a></sup>. Un modulo in bianco si conserva alla Newberry
+        Library di Chicago.
     </p>
     <p>
         La patrona era santa Cecilia. La prima festa si tenne il <time datetime="1781-02-04">4 febbraio 1781</time> nella chiesa prepositurale, e la Gazzetta
@@ -84,7 +85,7 @@
             {sizes}
             loading="lazy"
         />
-        <figcaption>Il diploma dei soci, disegnato da Ercole Lemmi e inciso da Giuseppe Poggiali, anni Ottanta del Settecento.</figcaption>
+        <figcaption>Il modulo di diploma dei Filarmonici Dissonanti (Newberry Library, Chicago).</figcaption>
     </figure>
 </section>
 
