@@ -47,11 +47,16 @@
         overflow: hidden;
     }
 
+    /*
+     * Con l'interlinea stretta dei titoli le lettere che scendono sotto la riga (g, p, q) dell'ultima riga
+     * uscirebbero dal riquadro e "overflow: hidden" le taglierebbe: un po' di spazio sotto le contiene.
+     */
     h3,
     h4 {
         -webkit-line-clamp: 2;
         line-clamp: 2;
         min-block-size: 2lh;
+        padding-block-end: var(--space-1);
     }
 
     [itemprop="description"] {
