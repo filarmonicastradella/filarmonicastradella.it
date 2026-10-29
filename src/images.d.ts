@@ -23,3 +23,9 @@ declare module "*&inline" {
     const src: string;
     export default src;
 }
+
+// La foto della hero, a tutta larghezza: anche 2048 per gli schermi grandi (`?enhanced&w=2048;1600;1280;960;640`).
+declare module "*?enhanced&w=2048;1600;1280;960;640" {
+    const picture: import("vite-imagetools").Picture;
+    export default picture;
+}
