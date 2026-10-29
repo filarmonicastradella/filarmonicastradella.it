@@ -18,9 +18,9 @@
 
 <!--
     Ogni informazione una volta sola (docs/DESIGN.md): la data in occhiello e il titolo nell'intestazione, ora e
-    luogo per esteso in "Quando e dove". I microdati dell'evento collegano, con "itemref", le sezioni sotto.
+    luogo per esteso nell'elenco quando/dove. I microdati dell'evento collegano, con "itemref", l'elenco sotto.
 -->
-<header itemscope itemtype="https://schema.org/Event" itemref="evento-dettagli evento-descrizione">
+<header itemscope itemtype="https://schema.org/Event" itemref="evento-dettagli">
     <p><time itemprop="startDate" datetime={event.start}>{date}</time></p>
     {#if event.end}
         <meta itemprop="endDate" content={event.end} />
@@ -31,36 +31,42 @@
     <h1 itemprop="name">{event.summary}</h1>
 </header>
 
-<!-- La descrizione del calendario, già pulita alla build (src/lib/server/calendar.ts): paragrafi, elenchi, link -->
-{#if event.descriptionHtml}
-    <section id="evento-descrizione">
-        <h2>L'evento</h2>
-        {@html event.descriptionHtml}
-    </section>
-{/if}
+<!--
+    La descrizione del calendario, senza titolo, come testo d'apertura sotto l'intestazione; già pulita alla build
+    (src/lib/server/calendar.ts): paragrafi, elenchi, link.
+-->
+{@html event.descriptionHtml}
 
-<section id="evento-dettagli">
-    <h2>Quando e dove</h2>
-    <dl>
-        <dt>Quando</dt>
-        <dd>{eventWhen(event)}</dd>
-        {#if event.location}
-            <dt>Dove</dt>
-            <dd itemprop="location" itemscope itemtype="https://schema.org/Place">
-                <span itemprop="name">{place}</span>
-                {#if address}
-                    <br />
-                    <a
-                        itemprop="address"
-                        href="https://maps.google.com/?q={encodeURIComponent(event.location)}"
-                        target="_blank"
-                        rel="noopener noreferrer">{address}</a
-                    >
-                {/if}
-            </dd>
-        {/if}
-    </dl>
-    <p><a href="/events/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
-</section>
+<!-- Quando e dove: le etichette bastano, senza un titolo di sezione -->
+<dl id="evento-dettagli">
+    <dt>Quando</dt>
+    <dd>{eventWhen(event)}</dd>
+    {#if event.location}
+        <dt>Dove</dt>
+        <dd itemprop="location" itemscope itemtype="https://schema.org/Place">
+            <span itemprop="name">{place}</span>
+            {#if address}
+                <br />
+                <a
+                    itemprop="address"
+                    href="https://maps.google.com/?q={encodeURIComponent(event.location)}"
+                    target="_blank"
+                    rel="noopener noreferrer">{address}</a
+                >
+            {/if}
+        </dd>
+    {/if}
+</dl>
+<p><a href="/events/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
 
 <p class="rimando"><a href="/events">Tutto il calendario</a></p>
+
+<style>
+    /*
+     * La descrizione è testo: i suoi elenchi (il programma) seguono i paragrafi con lo stacco del testo, non con
+     * quello tra le sezioni (layout.css). È HTML del calendario, fuori dallo scope del componente: serve :global.
+     */
+    :global(main:has(> header[itemtype$="/Event"]) > p + :is(ul, ol)) {
+        margin-block-start: var(--space-5);
+    }
+</style>
