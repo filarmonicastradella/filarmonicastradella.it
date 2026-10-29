@@ -22,7 +22,7 @@
         <dt>PEC</dt>
         <dd><a href="mailto:{organization.pec}">{organization.pec}</a></dd>
     </dl>
-    <p><a href="/contacts/message">Scrivici con il modulo</a></p>
+    <p class="rimando"><a href="/contacts/message">Scrivici con il modulo</a></p>
     <p>Per avere la Filarmonica a un evento leggi <a href="/booking">come richiederla</a>.</p>
     <!-- Da riattivare insieme a /faq:
     <p>Prima di scriverci, guarda le <a href="/faq">domande frequenti</a>.</p>

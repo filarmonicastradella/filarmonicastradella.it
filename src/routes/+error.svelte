@@ -21,4 +21,4 @@
     <p><code>{page.error.message}</code></p>
 {/if}
 
-<p><a href="/">Torna alla pagina principale</a></p>
+<p class="rimando"><a href="/">Torna alla pagina principale</a></p>

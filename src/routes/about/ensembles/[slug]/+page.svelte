@@ -54,4 +54,4 @@
     <p>Foto di copertina: © {ensemble.cover.credit}.</p>
 {/if}
 
-<p><a href="/about/ensembles">Tutti gli ensemble</a></p>
+<p class="rimando"><a href="/about/ensembles">Tutti gli ensemble</a></p>

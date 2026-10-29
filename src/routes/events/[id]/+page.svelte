@@ -59,7 +59,7 @@
     </section>
 {/if}
 
-<p><a href="/events">Tutto il calendario</a></p>
+<p class="rimando"><a href="/events">Tutto il calendario</a></p>
 
 <style>
     /* Gli a capo del calendario restano a capo */

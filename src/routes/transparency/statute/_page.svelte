@@ -10,7 +10,7 @@
     </header>
 
     <!-- SEGNAPOSTO: il file va caricato in static/documents/statuto.pdf. -->
-    <p><a href="/documents/statuto.pdf" type="application/pdf">Scarica la copia vidimata e scansionata dello statuto (PDF)</a></p>
+    <p class="rimando"><a href="/documents/statuto.pdf" type="application/pdf">Scarica la copia vidimata e scansionata dello statuto (PDF)</a></p>
 
     <nav aria-label="Indice degli articoli">
         <ol>
@@ -227,4 +227,4 @@
     </section>
 </article>
 
-<p><a href="/transparency">Torna ad Amministrazione trasparente</a></p>
+<p class="rimando"><a href="/transparency">Torna ad Amministrazione trasparente</a></p>

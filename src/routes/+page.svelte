@@ -53,7 +53,7 @@
     <p>
         Dal 1777 la Filarmonica fa musica a Fivizzano, in Lunigiana: una storia lunga quasi due secoli e mezzo. Oggi riunisce quattro formazioni (Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti) e porta il suo repertorio nelle sale e nelle piazze del territorio.
     </p>
-    <p><a href="/about">Scopri l'associazione</a></p>
+    <p class="rimando"><a href="/about">Scopri l'associazione</a></p>
 </section>
 
 <!-- Home alleggerita il 9/10/2026: versione precedente di "Chi siamo", sostituita dalla bozza sopra.
@@ -65,7 +65,7 @@
     <p>
         La nostra missione è mantenere viva la musica bandistica come bene comune: la suoniamo, la insegniamo alle nuove generazioni e la portiamo nelle piazze, nelle feste e nelle occasioni della nostra comunità.
     </p>
-    <p><a href="/about/mission">La nostra missione</a></p>
+    <p class="rimando"><a href="/about/mission">La nostra missione</a></p>
 </section>
 -->
 
@@ -115,7 +115,7 @@
         </ol>
     {/if}
 
-    <p><a href="/news">Tutte le notizie</a></p>
+    <p class="rimando"><a href="/news">Tutte le notizie</a></p>
 </section>
 -->
 
@@ -124,7 +124,7 @@
 <section>
     <h2>Sostieni la Filarmonica</h2>
     <p>Puoi diventare socio o fare una donazione: ogni contributo va alla musica, agli strumenti e ai giovani che iniziano a suonare.</p>
-    <p><a href="/support">Come sostenerci</a></p>
+    <p class="rimando"><a href="/support">Come sostenerci</a></p>
 </section>
 
 <!-- Home alleggerita il 9/10/2026: versione precedente, con le schede già presenti in /support.
@@ -151,7 +151,7 @@
         <li>
             <h3>Sostienici con il 5x1000</h3>
             <p>Dona il tuo 5x1000 alla Filarmonica Alessandro Stradella APS. Un piccolo gesto che non costa nulla ma che per noi fa una grande differenza.</p>
-            <p><a href="/support/5x1000">Scopri come fare</a></p>
+            <p class="rimando"><a href="/support/5x1000">Scopri come fare</a></p>
         </li>
         ]
     </ul>

@@ -68,4 +68,4 @@
         <p><button type="submit">Invia il messaggio</button></p>
     </form>
 
-<p><a href="/contacts">Tutti i recapiti</a></p>
+<p class="rimando"><a href="/contacts">Tutti i recapiti</a></p>

@@ -19,4 +19,4 @@
     <data.post.component />
 </article>
 
-<p><a href="/news">Tutte le notizie</a></p>
+<p class="rimando"><a href="/news">Tutte le notizie</a></p>

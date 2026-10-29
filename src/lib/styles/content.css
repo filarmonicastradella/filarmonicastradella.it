@@ -52,11 +52,11 @@ a[target="_blank"]:has(img)::after {
 }
 
 /*
- * Rimando a fine sezione ("Tutti gli eventi", "Tutte le notizie"): un paragrafo con un solo link
- * interno, in coda a una sezione o alla pagina. Si presenta come un'etichetta con la freccia.
+ * Rimando ("Tutti gli eventi", "Tutte le notizie"): un paragrafo fatto solo di un link interno, segnato con
+ * la classe "rimando" perché il CSS non distingue un paragrafo di solo link da un paragrafo di testo con un
+ * link dentro. Si presenta come un'etichetta con la freccia.
  */
-main :is(section, article) > p:last-child > a:only-child:not([target]),
-main > p:last-child > a:only-child:not([target]) {
+p.rimando > a {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
