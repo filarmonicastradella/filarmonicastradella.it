@@ -127,6 +127,15 @@
         Fivizzano era l'unico comune della provincia ad aver portato «ben quattro stendardi»<sup><a href="#fonte-21" role="doc-noteref" id="rimando-21a" aria-label="Fonte 21">21</a></sup>. Nel <time datetime="1887-05">1887</time> la
         Filarmonica mandò due rappresentanti a Firenze per la traslazione delle spoglie di Rossini in Santa Croce<sup><a href="#fonte-22" role="doc-noteref" id="rimando-22a" aria-label="Fonte 22">22</a></sup>.
     </p>
+    <figure>
+        <enhanced:img
+            src={militeIgnotoImg}
+            alt="Fotografia del 4 novembre 1921 nel cimitero di Fivizzano: davanti al loggiato ad archi le autorità, i militari e la folla attorno alla messa al campo; al centro, sopra le teste, lo stendardo chiaro della Società Musicale con un emblema tra due rami d'alloro"
+            {sizes}
+            loading="lazy"
+        />
+        <figcaption>4 novembre 1921, messa al campo per il Milite Ignoto nel cimitero di Fivizzano: al centro lo stendardo della «Società Musicale» (Museo centrale del Risorgimento, Roma).</figcaption>
+    </figure>
 </section>
 
 <section id="novecento">
@@ -138,15 +147,6 @@
         Filarmonica era anche società di mutuo soccorso e dall'<time datetime="1934-11-11">11 novembre 1934</time> passò all'Opera Nazionale
         Dopolavoro<sup><a href="#fonte-27" role="doc-noteref" id="rimando-27a" aria-label="Fonte 27">27</a></sup>.
     </p>
-    <figure>
-        <enhanced:img
-            src={militeIgnotoImg}
-            alt="Fotografia del 4 novembre 1921 nel cimitero di Fivizzano: davanti al loggiato ad archi le autorità, i militari e la folla attorno alla messa al campo; al centro, sopra le teste, lo stendardo chiaro della Società Musicale con un emblema tra due rami d'alloro"
-            {sizes}
-            loading="lazy"
-        />
-        <figcaption>4 novembre 1921, messa al campo per il Milite Ignoto nel cimitero di Fivizzano: al centro lo stendardo della «Società Musicale» (Museo centrale del Risorgimento, Roma).</figcaption>
-    </figure>
     <p>
         Nel <time datetime="1970">1970</time> Fivizzano ospitò il convegno provinciale delle bande, l'<time datetime="1970-01-11">11 gennaio</time>, e il <time datetime="1970-07-19">19 luglio</time> il primo Concorso bandistico «Città di Fivizzano». Il
         <time datetime="1987-06-27">27 giugno 1987</time> cominciarono i festeggiamenti per i 210 anni<sup><a href="#fonte-27" role="doc-noteref" id="rimando-27b" aria-label="Fonte 27">27</a></sup>.
