@@ -17,13 +17,14 @@
     // Organization), con le formazioni come MusicGroup e la Lunigiana come zona in cui opera.
     const [street, place] = legalSeat.address;
     const [, postalCode, locality, region] = place.match(/^(\d{5}) (.+) \((\w+)\)$/) ?? [];
-    const structuredData = {
-        "@context": "https://schema.org",
+    // L'ente e il sito, con un "@id" a cui rimandano le altre pagine (hooks.server.ts, eventi, articoli, formazioni)
+    const ente = {
         "@type": "NGO",
+        "@id": `${organization.url}/#ente`,
         name: organization.name,
         alternateName: "Filarmonica Alessandro Stradella",
         description: "Associazione musicale di Fivizzano, in Lunigiana, dal 1777.",
-        url: organization.url,
+        url: `${organization.url}/`,
         logo: `${organization.url}/logo.png`,
         image: `${organization.url}/anteprima.jpg`,
         foundingDate: organization.foundingYear,
@@ -31,6 +32,7 @@
         areaServed: { "@type": "Place", name: "Lunigiana" },
         subOrganization: ensembles.map(({ slug, title, summary }) => ({
             "@type": "MusicGroup",
+            "@id": `${organization.url}/about/ensembles/${slug}#formazione`,
             name: title,
             description: summary,
             url: `${organization.url}/about/ensembles/${slug}`
@@ -41,6 +43,21 @@
         taxID: organization.taxCode,
         memberOf: { "@type": "Organization", name: organization.affiliation.name, url: organization.affiliation.href },
         sameAs: organization.socials.filter(({ profile }) => profile).map(({ href }) => href)
+    };
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@graph": [
+            ente,
+            {
+                "@type": "WebSite",
+                "@id": `${organization.url}/#sito`,
+                url: `${organization.url}/`,
+                name: "Filarmonica Alessandro Stradella",
+                alternateName: "Filarmonica Stradella",
+                inLanguage: "it-IT",
+                publisher: { "@id": ente["@id"] }
+            }
+        ]
     };
 
     // "<" come \u003c: nessun testo dei dati può chiudere lo script prima del tempo

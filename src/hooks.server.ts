@@ -42,7 +42,7 @@ function breadcrumb(path: string, title: string) {
     const items = [
         { name: "Home", path: "/" },
         ...ancestors.map((ancestor) => ({ name: pageNames.get(ancestor)!, path: ancestor })),
-        { name: title, path }
+        { name: pageNames.get(path) ?? title, path }
     ];
     return {
         "@type": "BreadcrumbList",
@@ -50,12 +50,12 @@ function breadcrumb(path: string, title: string) {
             "@type": "ListItem",
             position: index + 1,
             name,
-            item: organization.url + (itemPath === "/" ? "" : itemPath)
+            item: organization.url + itemPath
         }))
     };
 }
 
-// Le domande frequenti della pagina (la sezione "Domande frequenti", con le risposte in <details>)
+// Le domande frequenti della pagina. Non nelle pagine degli eventi: lì sono le stesse per tutti, e la pagina parla dell'evento (la sezione "Domande frequenti", con le risposte in <details>)
 function faqQuestions(html: string) {
     const start = html.indexOf(">Domande frequenti</h2>");
     if (start === -1) return [];
@@ -96,17 +96,30 @@ export const handle: Handle = ({ event, resolve }) =>
                 }
             }
 
-            // Dati strutturati comuni: tipo di pagina, percorso di navigazione e domande frequenti (JSON-LD). La home ha i suoi.
+            // Vecchi indirizzi che rimandano a una pagina nuova: indirizzo canonico e anteprima sono quelli della pagina
+            // nuova, e niente dati strutturati (la pagina non va nell'indice)
             const path = event.url.pathname.replace(/\/$/, "") || "/";
+            const redirect = html.match(/<meta http-equiv="refresh" content="0; url=([^"]+)"/)?.[1];
+            if (redirect) {
+                return html
+                    .replace(/(<link rel="canonical" href=")[^"]*/, `$1${organization.url}${redirect}`)
+                    .replace(/(<meta property="og:url" content=")[^"]*/, `$1${organization.url}${redirect}`)
+                    .replace("</head>", `${tags.join("\n\t\t")}\n\t</head>`);
+            }
+
+            // Dati strutturati comuni: tipo di pagina, percorso di navigazione e domande frequenti (JSON-LD), collegati al
+            // sito e all'ente descritti nella home. La home ha i suoi.
             if (title && path !== "/") {
-                const questions = faqQuestions(html);
-                const types = [pageTypes[path] ?? "WebPage", ...(questions.length ? ["FAQPage"] : [])];
+                const questions = path.startsWith("/events/") ? [] : faqQuestions(html);
                 const name = plainText(title.split(titleSuffix)[0]);
                 const data = {
                     "@context": "https://schema.org",
-                    "@type": types.length === 1 ? types[0] : types,
+                    "@type": questions.length ? "FAQPage" : (pageTypes[path] ?? "WebPage"),
                     name,
                     url: organization.url + path,
+                    inLanguage: "it-IT",
+                    isPartOf: { "@id": `${organization.url}/#sito` },
+                    publisher: { "@id": `${organization.url}/#ente` },
                     breadcrumb: breadcrumb(path, name),
                     ...(questions.length && { mainEntity: questions })
                 };

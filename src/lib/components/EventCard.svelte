@@ -1,5 +1,6 @@
 <script lang="ts">
     import { eventDate, eventPlace, eventTime, type EventItem } from "$lib/events";
+    import { organization } from "$lib/organization";
 
     // `level` è il livello del titolo, da scegliere in base a dove compare la scheda.
     let { event, level = 3 }: { event: EventItem; level?: 3 | 4 } = $props();
@@ -10,7 +11,8 @@
     const separator = $derived(time && place ? " · " : "");
 </script>
 
-<article itemscope itemtype="https://schema.org/Event">
+<!-- Lo stesso evento della sua pagina ("itemid"), così i motori di ricerca non lo contano due volte -->
+<article itemscope itemtype="https://schema.org/Event" itemid="{organization.url}/events/{event.id}#evento">
     <a itemprop="url" href="/events/{event.id}">
         <p><time itemprop="startDate" datetime={event.start}>{date}</time></p>
         {#if event.end}
@@ -21,7 +23,9 @@
             <p itemprop="description">{event.description}</p>
         {/if}
         {#if time || place}
-            <p>{time}{separator}{#if place}<span itemprop="location">{place}</span>{/if}</p>
+            <p>{time}{separator}{#if place}<span itemprop="location" itemscope itemtype="https://schema.org/Place"
+                    ><span itemprop="name">{place}</span><meta itemprop="address" content={event.location} /></span
+                >{/if}</p>
         {/if}
     </a>
 </article>

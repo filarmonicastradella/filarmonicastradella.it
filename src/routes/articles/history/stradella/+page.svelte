@@ -28,6 +28,7 @@
         alt="Frontespizio manoscritto della «Serenata a 3 con stromenti del Sig.r Alessandro Stradella», copia del Settecento"
         sizes="100vw"
         fetchpriority="high"
+        itemprop="image"
     />
 </ArticleHeader>
 

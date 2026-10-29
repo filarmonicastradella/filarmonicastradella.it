@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
     import { categoryName, formatArticleDate, type Article } from "$lib/articles";
+    import { organization } from "$lib/organization";
 
     // Intestazione di ogni articolo: categoria in occhiello, titolo, riassunto e firma; `children` è il resto
     // dell'intestazione (un'introduzione, la foto di copertina) e `style` le proprietà della copertina
@@ -9,7 +10,10 @@
 </script>
 
 <header itemscope itemtype="https://schema.org/Article" {style}>
-    <p><a itemprop="articleSection" href="/articles/{article.category}">{categoryName(article.category)}</a></p>
+    <!-- Il microdato sul testo, non sul link: su un <a> il valore sarebbe l'indirizzo della categoria -->
+    <p><a href="/articles/{article.category}"><span itemprop="articleSection">{categoryName(article.category)}</span></a></p>
+    <link itemprop="mainEntityOfPage" href="{organization.url}{article.href}" />
+    <link itemprop="publisher" href="{organization.url}/#ente" />
     <h1 itemprop="headline">{article.title}</h1>
     <p itemprop="description">{article.excerpt}</p>
     {@render children?.()}

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { organization } from "$lib/organization";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
@@ -13,11 +14,14 @@
 <header
     itemscope
     itemtype="https://schema.org/MusicGroup"
+    itemid="{organization.url}/about/ensembles/{ensemble.slug}#formazione"
     style:--cover-placeholder={ensemble.coverImage && `url(${ensemble.coverImage.placeholder})`}
     style:--cover-position={ensemble.cover?.position}
 >
     <h1 itemprop="name">{ensemble.title}</h1>
     <p itemprop="description">{ensemble.summary}</p>
+    <link itemprop="url" href="{organization.url}/about/ensembles/{ensemble.slug}" />
+    <link itemprop="parentOrganization" href="{organization.url}/#ente" />
     {#if ensemble.coverImage && ensemble.cover}
         <enhanced:img src={ensemble.coverImage.picture} alt={ensemble.cover.alt} sizes="100vw" fetchpriority="high" itemprop="image" />
     {/if}

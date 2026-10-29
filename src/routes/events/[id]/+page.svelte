@@ -3,7 +3,7 @@
     import FaqItem from "$lib/components/FaqItem.svelte";
     import { eventDate, eventPlace, eventTime, eventWhen, hasNotEnded } from "$lib/events";
     import { faq } from "$lib/faq";
-    import { titleSuffix } from "$lib/organization";
+    import { organization, titleSuffix } from "$lib/organization";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
@@ -39,8 +39,13 @@
     Ogni informazione una volta sola (docs/DESIGN.md): la data in occhiello e il titolo nell'intestazione, ora e
     luogo per esteso in "Quando e dove". I microdati dell'evento collegano, con "itemref", la sezione sotto.
 -->
-<header itemscope itemtype="https://schema.org/Event" itemref="evento-dettagli">
+<header itemscope itemtype="https://schema.org/Event" itemid="{organization.url}/events/{event.id}#evento" itemref="evento-dettagli">
     <p><time itemprop="startDate" datetime={event.start}>{date}</time></p>
+    <!-- Per i motori di ricerca: indirizzo della pagina, stato, evento dal vivo, organizzatore (l'ente, come nella home) -->
+    <link itemprop="url" href="{organization.url}/events/{event.id}" />
+    <link itemprop="eventStatus" href="https://schema.org/EventScheduled" />
+    <link itemprop="eventAttendanceMode" href="https://schema.org/OfflineEventAttendanceMode" />
+    <link itemprop="organizer" href="{organization.url}/#ente" />
     {#if event.end}
         <meta itemprop="endDate" content={event.end} />
     {/if}
@@ -69,11 +74,9 @@
                 <span itemprop="name">{place}</span>
                 {#if address}
                     <br />
-                    <a
-                        itemprop="address"
-                        href="https://maps.google.com/?q={encodeURIComponent(event.location)}"
-                        target="_blank"
-                        rel="noopener noreferrer">{address}</a
+                    <!-- Il microdato sul testo, non sul link: su un <a> il valore sarebbe l'indirizzo di Google Maps -->
+                    <a href="https://maps.google.com/?q={encodeURIComponent(event.location)}" target="_blank" rel="noopener noreferrer"
+                        ><span itemprop="address">{address}</span></a
                     >
                 {/if}
             </dd>
