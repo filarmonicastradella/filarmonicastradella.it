@@ -35,6 +35,12 @@
         <summary>Con quanto anticipo devo scrivervi?</summary>
         <p>Almeno 30 giorni prima dell'evento.</p>
     </details>
+    <details>
+        <summary>Cosa serve sul posto?</summary>
+        <p>
+            Uno spazio adatto alla formazione, le sedie e un riparo in caso di pioggia. La corrente elettrica non sempre è necessaria, ma è gradita.
+        </p>
+    </details>
 </section>
 
 <form action="https://formsubmit.co/info@filarmonicastradella.it" method="POST">
