@@ -42,7 +42,7 @@
         <dt>PEC</dt>
         <dd><a href="mailto:{organization.pec}">{organization.pec}</a></dd>
         <dt>Eventi</dt>
-        <dd><a href="/booking">La Filarmonica al tuo evento</a></dd>
+        <dd class="rimando"><a href="/booking">La Filarmonica al tuo evento</a></dd>
     </dl>
     <!-- Da riattivare insieme a /faq:
     <p>Prima di scriverci, guarda le <a href="/faq">domande frequenti</a>.</p>

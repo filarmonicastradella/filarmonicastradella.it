@@ -52,11 +52,11 @@ a[target="_blank"]:has(img)::after {
 }
 
 /*
- * Rimando ("Tutti gli eventi", "Tutte le notizie"): un paragrafo fatto solo di un link interno, segnato con
+ * Rimando ("Tutti gli eventi", "Tutte le notizie"): un paragrafo (o una voce di un elenco) fatto solo di un link interno, segnato con
  * la classe "rimando" perché il CSS non distingue un paragrafo di solo link da un paragrafo di testo con un
  * link dentro. Si presenta come un'etichetta con la freccia.
  */
-p.rimando > a {
+.rimando > a {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
