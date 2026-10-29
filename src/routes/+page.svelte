@@ -4,6 +4,7 @@
     import Gallery from "./Gallery.svelte";
     import ArticleCard from "$lib/components/ArticleCard.svelte";
     import { articles } from "$lib/articles";
+    import { ensembles } from "$lib/ensembles";
     import { legalSeat } from "$lib/locations";
     // Il corsivo serve solo al titolo della home: richiesto subito, solo qui
     import cormorantItalicFont from "@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-italic.woff2?url";
@@ -13,7 +14,7 @@
     let { data }: PageProps = $props();
 
     // Dati strutturati dell'associazione per i motori di ricerca: un ente non profit (NGO, sottotipo di
-    // Organization). Le formazioni, quando avranno le loro pagine, saranno MusicGroup con parentOrganization.
+    // Organization), con le formazioni come MusicGroup e la Lunigiana come zona in cui opera.
     const [street, place] = legalSeat.address;
     const [, postalCode, locality, region] = place.match(/^(\d{5}) (.+) \((\w+)\)$/) ?? [];
     const structuredData = {
@@ -21,10 +22,19 @@
         "@type": "NGO",
         name: organization.name,
         alternateName: "Filarmonica Alessandro Stradella",
+        description: "Associazione musicale di Fivizzano, in Lunigiana, dal 1777.",
         url: organization.url,
         logo: `${organization.url}/logo.png`,
         image: `${organization.url}/anteprima.jpg`,
         foundingDate: organization.foundingYear,
+        foundingLocation: { "@type": "Place", name: "Fivizzano" },
+        areaServed: { "@type": "Place", name: "Lunigiana" },
+        subOrganization: ensembles.map(({ slug, title, summary }) => ({
+            "@type": "MusicGroup",
+            name: title,
+            description: summary,
+            url: `${organization.url}/about/ensembles/${slug}`
+        })),
         address: { "@type": "PostalAddress", streetAddress: street, postalCode, addressLocality: locality, addressRegion: region, addressCountry: "IT" },
         email: organization.email,
         telephone: organization.phone,
@@ -39,7 +49,7 @@
 
 <svelte:head>
     <title>Filarmonica Alessandro Stradella APS — Fivizzano dal 1777</title>
-    <meta name="description" content="Filarmonica Alessandro Stradella APS, a Fivizzano in Lunigiana dal 1777: concerti, calendario degli eventi e come sostenerci." />
+    <meta name="description" content="La Filarmonica Alessandro Stradella fa musica a Fivizzano, in Lunigiana, dal 1777: quattro formazioni, concerti a ingresso libero e posto per chi vuole suonare." />
     <link rel="preload" href={cormorantItalicFont} as="font" type="font/woff2" crossorigin="anonymous" />
     {@html `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`}
 </svelte:head>
@@ -52,9 +62,21 @@
 <section>
     <h2>Chi siamo</h2>
     <p>
-        Dal 1777 la Filarmonica fa musica a Fivizzano, in Lunigiana: una storia lunga quasi due secoli e mezzo. Oggi riunisce quattro formazioni (Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti) e porta il suo repertorio nelle sale e nelle piazze del territorio.
+        Dal 1777 la Filarmonica fa musica a Fivizzano, in Lunigiana: una storia lunga quasi due secoli e mezzo. Oggi riunisce quattro formazioni
+        ({#each ensembles as { slug, title }, i (slug)}{i === 0 ? "" : i === ensembles.length - 1 ? " e " : ", "}<a href="/about/ensembles/{slug}"
+                >{title}</a
+            >{/each}) e porta il suo repertorio nelle sale e nelle piazze del territorio.
     </p>
     <p class="rimando"><a href="/about">Scopri l'associazione</a></p>
+</section>
+
+<section>
+    <h2>Suona con noi</h2>
+    <p>
+        Cerchiamo musicisti di ogni livello, anche chi comincia da zero, e in particolare oboe, fagotto e archi. Strumento, parti e sala prove li mette a
+        disposizione l'associazione.
+    </p>
+    <p class="rimando"><a href="/support/join">Come iscriversi</a></p>
 </section>
 
 <!--
