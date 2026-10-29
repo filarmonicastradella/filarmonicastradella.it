@@ -58,7 +58,7 @@
 </section>
 
 <!--
-    Come "Prossimi eventi": una scheda sotto l'altra nella colonna, mai titoli in Cormorant affiancati (docs/DESIGN.md).
+    Come "Prossimi eventi": righe una sotto l'altra, mai titoli in Cormorant affiancati (docs/DESIGN.md).
     Finché non c'è nessuna notizia pubblicata la sezione non compare.
 -->
 {#if latestNews.length > 0}

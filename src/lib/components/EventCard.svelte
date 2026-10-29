@@ -69,4 +69,45 @@
         margin-block-start: auto;
         font-size: var(--fs-small);
     }
+
+    /*
+     * Quando la scheda è larga (gli elenchi di eventi su schermo largo, content.css) è una riga d'agenda, come
+     * la scheda degli articoli: data e didascalia a sinistra, titolo e descrizione nella colonna di testo.
+     * Le righe fisse servono solo alla griglia: qui il titolo prende lo spazio che gli serve.
+     */
+    article {
+        container-type: inline-size;
+    }
+
+    @container (min-width: 48rem) {
+        a {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
+            grid-template-areas:
+                "date title"
+                "caption description";
+            align-content: start;
+            gap: var(--space-3) var(--space-6);
+        }
+
+        a > p:first-child {
+            grid-area: date;
+            align-self: center;
+        }
+
+        h3,
+        h4 {
+            grid-area: title;
+            min-block-size: 0;
+        }
+
+        [itemprop="description"] {
+            grid-area: description;
+        }
+
+        :is(h3, h4) ~ p:not([itemprop="description"]) {
+            grid-area: caption;
+            margin: 0;
+        }
+    }
 </style>

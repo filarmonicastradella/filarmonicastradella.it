@@ -124,17 +124,12 @@ li:target {
 }
 
 /*
- * Gli elenchi in ordine cronologico (eventi) sono una scheda sotto l'altra a ogni larghezza, come un elenco di
- * date, larghi quanto la colonna di testo; le griglie restano per gli elenchi non ordinati.
+ * Gli elenchi in ordine cronologico (eventi, articoli) sono righe una sotto l'altra, da un bordo all'altro
+ * del contenitore, come un'agenda: su schermo largo ogni scheda si divide in due colonne (EventCard,
+ * ArticleCard), data o categoria a sinistra, titolo e descrizione nella colonna di testo.
  */
 ol:has(> li > article > a > :is(h2, h3, h4)) {
     grid-template-columns: minmax(0, 1fr);
-    max-inline-size: var(--container-text);
-}
-
-/* Gli indici degli articoli: righe larghe quanto il contenitore, la scheda si divide in due colonne (ArticleCard) */
-main > ol:has(> li > article[itemtype$="/Article"]) {
-    max-inline-size: none;
 }
 
 li > article {

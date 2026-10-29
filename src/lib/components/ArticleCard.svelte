@@ -29,9 +29,9 @@
     }
 
     /*
-     * Quando la scheda è larga (gli indici degli articoli su schermo largo), come le sezioni da leggere
-     * (layout.css): categoria e firma a sinistra, titolo e riassunto a destra nella colonna di testo, sotto
-     * un filetto da un bordo all'altro. Nella colonna stretta di una sezione (la home) resta una scheda sola.
+     * Quando la scheda è larga (su schermo largo, content.css), come le sezioni da leggere (layout.css) e
+     * come la card evento: categoria e firma a sinistra, titolo e riassunto a destra nella colonna di testo,
+     * sotto un filetto da un bordo all'altro. Quando è stretta resta una scheda sola.
      */
     article {
         container-type: inline-size;
