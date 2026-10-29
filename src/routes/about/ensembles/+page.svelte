@@ -27,8 +27,18 @@
 </ul>
 
 <section>
-    <h2>Suona con noi</h2>
-    <p>Per suonare in un ensemble iscriviti alla Filarmonica con la <a href="/support/join">domanda di iscrizione</a>.</p>
+    <h2>Domande frequenti</h2>
+    <details>
+        <summary>Come si entra in una formazione?</summary>
+        <p>
+            Prima ci si iscrive alla Filarmonica con la <a href="/support/join">domanda di iscrizione</a>; da soci si chiede di entrare nella formazione.
+            Ognuna ha i suoi requisiti.
+        </p>
+    </details>
+    <details>
+        <summary>Quanto spesso provate?</summary>
+        <p>Una o due volte a settimana, più spesso prima dei concerti.</p>
+    </details>
 </section>
 
 <section>

@@ -98,7 +98,7 @@
     <h2>Domande frequenti</h2>
     <details>
         <summary>Quanto costa iscriversi?</summary>
-        <p>La quota annuale è di 12 €.</p>
+        <p>La quota annuale è di 12 € e si rinnova entro il 31 dicembre.</p>
     </details>
     <details>
         <summary>Che impegno è richiesto?</summary>
@@ -107,6 +107,10 @@
     <details>
         <summary>Devo avere uno strumento mio?</summary>
         <p>No: strumento, parti e sala prove li mette a disposizione l'associazione.</p>
+    </details>
+    <details>
+        <summary>Posso iscrivermi senza suonare?</summary>
+        <p>Sì: da socio puoi aiutarci mettendo a disposizione il tuo tempo e le tue competenze.</p>
     </details>
     <details>
         <summary>Come si iscrive un minorenne?</summary>
