@@ -46,6 +46,12 @@
     <p>Per suonare in questo ensemble iscriviti alla Filarmonica con la <a href="/support/join">domanda di iscrizione</a>.</p>
 </section>
 
-<p class="rimando"><a href="/booking">Per il tuo evento</a></p>
+<section>
+    <h2>Per il tuo evento</h2>
+    <p>
+        Vuoi {ensemble.title} alla tua cerimonia, festa o matrimonio? <a href="/booking">Raccontaci l'occasione</a>: ti rispondiamo con la
+        disponibilità e una proposta.
+    </p>
+</section>
 
-<p class="rimando"><a href="/about/ensembles">Tutti gli ensemble</a></p>
+<p class="rimando"><a href="/about/ensembles">Tutte le formazioni</a></p>

@@ -55,4 +55,10 @@
     </details>
 </section>
 
-<p class="rimando"><a href="/booking">Per il tuo evento</a></p>
+<section>
+    <h2>Per il tuo evento</h2>
+    <p>
+        Organizzi una cerimonia, una festa in piazza o un matrimonio? <a href="/booking">Raccontaci l'occasione</a>: ti rispondiamo con la
+        disponibilità e una proposta.
+    </p>
+</section>

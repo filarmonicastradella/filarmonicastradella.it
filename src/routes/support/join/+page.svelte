@@ -274,6 +274,8 @@
     </p>
 </form>
 
+<p class="rimando"><a href="/support">Sostienici</a></p>
+
 <style>
     /*
      * Da 40rem i campi brevi si affiancano: una griglia di sei colonne in cui ogni campo ne occupa tre,

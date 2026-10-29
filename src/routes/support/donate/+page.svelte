@@ -50,5 +50,10 @@
 -->
 
 <!-- 5x1000: da riattivare quando l'associazione è beneficiaria.
-<p class="rimando"><a href="/support/5x1000">Sostienici anche con il 5x1000</a></p>
+<section>
+    <h2>5x1000</h2>
+    <p>Puoi sostenerci anche con il <a href="/support/5x1000">5x1000</a>: non ti costa nulla.</p>
+</section>
 -->
+
+<p class="rimando"><a href="/support">Sostienici</a></p>

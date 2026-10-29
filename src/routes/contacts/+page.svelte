@@ -42,7 +42,7 @@
         <dt>PEC</dt>
         <dd><a href="mailto:{organization.pec}">{organization.pec}</a></dd>
     </dl>
-    <p class="rimando"><a href="/booking">Per il tuo evento</a></p>
+    <p>Per una festa, una cerimonia o un matrimonio <a href="/booking">raccontaci l'occasione</a>.</p>
     <!-- Da riattivare insieme a /faq:
     <p>Prima di scriverci, guarda le <a href="/faq">domande frequenti</a>.</p>
     -->

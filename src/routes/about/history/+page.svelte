@@ -249,3 +249,5 @@
         Filarmonici Dissonanti di Fivizzano</i>, in <i>Atti e Memorie dell'Accademia Aruntica di Carrara</i>, vol. I, 1995, pp. 35-67.
     </p>
 </section>
+
+<p class="rimando"><a href="/about">L'associazione</a></p>

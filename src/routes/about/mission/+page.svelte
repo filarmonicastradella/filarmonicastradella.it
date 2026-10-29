@@ -87,3 +87,5 @@
         vicenda: una comunità in cui suonare sia normale, alla portata di tutti, e in cui ogni euro e ogni ora investiti restino qui, nelle persone.
     </p>
 </section>
+
+<p class="rimando"><a href="/about">L'associazione</a></p>
