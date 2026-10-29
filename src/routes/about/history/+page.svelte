@@ -237,8 +237,12 @@
     </ol>
     <p>
         Diploma dell'Accademia: Newberry Library, Chicago, Wing broadside ZP 735 .L45,
-        <a href="https://collections.newberry.org/asset-management/2KXJ8Z9X0DEI" target="_blank" rel="noopener noreferrer">scheda della collezione</a>.
-        Pubblico dominio.
+        <a href="https://collections.newberry.org/asset-management/2KXJ8Z9X0DEI" target="_blank" rel="noopener noreferrer">scheda della collezione</a>;
+        <a
+            href="https://commons.wikimedia.org/wiki/File:Diploma_Accademia_dei_Filarmonici_Dissonanti_di_Fivizzano,_Newberry_Library.jpg"
+            target="_blank"
+            rel="noopener noreferrer">scansione</a
+        > su Wikimedia Commons. Pubblico dominio.
     </p>
     <p>
         Fotografia del 1921: Museo centrale del
