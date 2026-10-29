@@ -34,12 +34,8 @@
         <summary>Come si entra in una formazione?</summary>
         <p>
             Prima ci si iscrive alla Filarmonica con la <a href="/support/join">domanda di iscrizione</a>; da soci si chiede di entrare nella formazione.
-            Ognuna ha i suoi requisiti.
+            Ognuna ha i suoi requisiti, e si può far parte anche di più di una.
         </p>
-    </details>
-    <details>
-        <summary>Posso suonare in più formazioni?</summary>
-        <p>Sì: puoi entrare in più di una, ognuna con i suoi requisiti.</p>
     </details>
     <details>
         <summary>Posso proporre una nuova formazione?</summary>

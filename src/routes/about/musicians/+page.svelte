@@ -90,12 +90,11 @@
         </p>
     </details>
     <details>
-        <summary>Posso cominciare da zero?</summary>
-        <p>Sì: c'è posto anche per chi non ha mai suonato uno strumento.</p>
-    </details>
-    <details>
         <summary>Che livello serve?</summary>
-        <p>Dipende dalla formazione, ma ce n'è una per ogni livello.</p>
+        <p>
+            Dipende dalla formazione, ma ce n'è una per ogni livello: si può cominciare anche da zero, senza aver mai suonato uno
+            strumento.
+        </p>
     </details>
     <details>
         <summary>Quali strumenti cercate?</summary>

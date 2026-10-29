@@ -36,15 +36,11 @@
         <p>Ci spostiamo in tutta la Lunigiana.</p>
     </details>
     <details>
-        <summary>Suonate a processioni e funzioni religiose?</summary>
+        <summary>Suonate a funzioni religiose o eventi politici?</summary>
         <p>
-            No: siamo un'associazione laica e non svolgiamo servizi religiosi. Collaboriamo però con le realtà musicali amiche della Lunigiana, e
-            possiamo indicarti a chi rivolgerti.
+            No: siamo un'associazione laica e apartitica, e non svolgiamo servizi religiosi né suoniamo a feste e iniziative di partito.
+            Per le occasioni religiose collaboriamo però con le realtà musicali amiche della Lunigiana, e possiamo indicarti a chi rivolgerti.
         </p>
-    </details>
-    <details>
-        <summary>Suonate a feste e iniziative di partito?</summary>
-        <p>No: siamo un'associazione apartitica e non suoniamo a eventi politici.</p>
     </details>
     <details>
         <summary>Con quanto anticipo devo scrivervi?</summary>

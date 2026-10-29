@@ -109,14 +109,11 @@
         <p>No: strumento, parti e sala prove li mette a disposizione l'associazione.</p>
     </details>
     <details>
-        <summary>C'è un limite di età?</summary>
-        <p>No: si può suonare a qualsiasi età. Per i minorenni l'iscrizione la fa un genitore o un tutore.</p>
-    </details>
-    <details>
-        <summary>Come si iscrive un minorenne?</summary>
+        <summary>Ci sono limiti di età?</summary>
         <p>
-            L'iscrizione la fa un genitore o tutore: inserisci i dati del ragazzo e poi i tuoi, con il tuo documento di identità. Sotto i 14 anni online
-            non si può: <a href="/contacts">contattaci</a> e completiamo la pratica di persona.
+            No: si può suonare a qualsiasi età. Per un minorenne l'iscrizione la fa un genitore o tutore: inserisci i dati del ragazzo
+            e poi i tuoi, con il tuo documento di identità. Sotto i 14 anni online non si può: <a href="/contacts">contattaci</a> e completiamo la
+            pratica di persona.
         </p>
     </details>
 </section>
