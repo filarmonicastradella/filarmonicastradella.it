@@ -91,22 +91,8 @@
 
 <header>
     <h1>Richiesta di iscrizione</h1>
-    <p>Per suonare con noi basta iscriversi all'associazione. L'esito ti verrà comunicato all'indirizzo email indicato. Per i minorenni, dai 14 anni, l'iscrizione la chiede online un genitore o tutore; per i più piccoli <a href="/contacts">contattaci</a>.</p>
+    <p>Per i minorenni, dai 14 anni, compila il modulo un genitore o tutore. L'esito arriva all'indirizzo email indicato.</p>
 </header>
-
-<section>
-    <h2>Che cosa ti chiediamo</h2>
-    <ol>
-        <li><strong>La quota annuale di 12 €.</strong></li>
-        <li>
-            <strong>I requisiti della formazione in cui vuoi suonare</strong>: ogni formazione ha i suoi. Per Stradella Facendo, per esempio, bastano 14 anni
-            e una formazione musicale di base, come la scuola media a indirizzo musicale.
-        </li>
-        <li><strong>Esserci</strong>: partecipare ad almeno metà delle attività, tra concerti, prove e momenti di vita associativa.</li>
-    </ol>
-    <p>Al resto pensa l'associazione: strumento, parti, sala prove.</p>
-    <p>Vuoi prima sapere quando proviamo o venire ad ascoltarci? <a href="/contacts/message?motivo={encodeURIComponent("Iscrizione e quote")}">Scrivici</a>.</p>
-</section>
 
 <form action="https://formsubmit.co/segreteria@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_subject" value="Nuova richiesta di iscrizione - Filarmonica Stradella" />
