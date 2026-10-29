@@ -1,13 +1,13 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
-    import type { HTMLAttributes } from "svelte/elements";
     import { categoryName, formatArticleDate, type Article } from "$lib/articles";
 
-    // Intestazione di ogni articolo: categoria in occhiello, titolo, riassunto e firma; `children` è la foto di copertina, se c'è
-    let { article, children, ...rest }: { article: Article; children?: Snippet } & HTMLAttributes<HTMLElement> = $props();
+    // Intestazione di ogni articolo: categoria in occhiello, titolo, riassunto e firma; `children` è la foto di copertina,
+    // se c'è, e `style` le sue proprietà (--cover-placeholder, --cover-position, --cover-archive)
+    let { article, children, style }: { article: Article; children?: Snippet; style?: string } = $props();
 </script>
 
-<header itemscope itemtype="https://schema.org/Article" {...rest}>
+<header itemscope itemtype="https://schema.org/Article" {style}>
     <p><a itemprop="articleSection" href="/articles/{article.category}">{categoryName(article.category)}</a></p>
     <h1 itemprop="headline">{article.title}</h1>
     <p itemprop="description">{article.excerpt}</p>
