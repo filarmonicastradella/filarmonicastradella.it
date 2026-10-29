@@ -24,14 +24,13 @@
             <p>Un contributo libero tramite bonifico bancario, con le agevolazioni fiscali previste per le APS.</p>
         </a>
     </li>
-    <!-- 5x1000: da riattivare quando l'associazione è beneficiaria.
+    <!-- 5x1000: link segnaposto senza href finché l'associazione non è beneficiaria; poi href="/support/5x1000" e rinominare support/5x1000/_page.svelte in +page.svelte -->
     <li>
-        <a href="/support/5x1000">
+        <a aria-disabled="true">
             <h2>5x1000</h2>
-            <p>Destinare il 5x1000 non costa nulla e sostiene le nostre attività.</p>
+            <p>Destinare il 5x1000 non costa nulla. Non ancora disponibile: aspettiamo di essere ammessi tra i beneficiari.</p>
         </a>
     </li>
-    -->
     <!-- Da riattivare insieme a /support/volunteer (rinominare _page.svelte in +page.svelte):
     <li>
         <a href="/support/volunteer">

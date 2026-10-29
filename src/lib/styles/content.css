@@ -178,6 +178,21 @@ li > article {
     }
 }
 
+/* Scheda non ancora attiva (un link segnaposto, senza href): attenuata e senza effetto al passaggio del mouse */
+:is(li > a, li > article > a):not([href]):has(> :is(h2, h3, h4)) {
+    color: var(--text-muted);
+    cursor: default;
+
+    &:hover {
+        border-block-start-color: var(--border);
+    }
+
+    & > :is(h2, h3, h4),
+    &:hover > :is(h2, h3, h4) {
+        color: inherit;
+    }
+}
+
 /* Le pagine hub hanno titoli di scheda h2: stessa misura delle altre schede */
 li > a > h2 {
     font-size: var(--fs-h3);
