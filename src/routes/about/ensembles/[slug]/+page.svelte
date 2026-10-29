@@ -1,4 +1,6 @@
 <script lang="ts">
+    import FaqItem from "$lib/components/FaqItem.svelte";
+    import { faq } from "$lib/faq";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
@@ -48,12 +50,7 @@
         <summary>Come posso suonare in questa formazione?</summary>
         <p>Iscriviti alla Filarmonica con la <a href="/support/join">domanda di iscrizione</a>.</p>
     </details>
-    {#each ensemble.faq ?? [] as { question, answer } (question)}
-        <details>
-            <summary>{question}</summary>
-            <p>{answer}</p>
-        </details>
-    {/each}
+    <FaqItem item={faq.direttori} />
     <details>
         <summary>Potete suonare al mio evento?</summary>
         <p>

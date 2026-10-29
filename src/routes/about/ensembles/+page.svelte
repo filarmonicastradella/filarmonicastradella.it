@@ -44,6 +44,7 @@
     </details>
     <FaqItem item={faq.prove} />
     <FaqItem item={faq.repertorio} />
+    <FaqItem item={faq.direttori} />
     <FaqItem item={faq.strumento} />
     <details>
         <summary>Posso proporre una nuova formazione?</summary>

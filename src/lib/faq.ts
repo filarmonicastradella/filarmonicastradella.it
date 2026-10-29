@@ -26,6 +26,10 @@ export const faq = {
         question: "Chi sceglie i brani?",
         answer: "I musicisti: propongono i brani e li votano in una graduatoria, e i direttori scelgono da lì quelli da suonare."
     },
+    direttori: {
+        question: "Chi dirige?",
+        answer: "Più direttori, che sono prima di tutto musicisti: ognuno dirige in autonomia i propri brani, e negli altri suona con tutti."
+    },
     strumento: {
         question: "Devo avere uno strumento mio?",
         answer: "No: strumento, parti e sala prove li mette a disposizione l'associazione."

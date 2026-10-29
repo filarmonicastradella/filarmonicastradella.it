@@ -6,9 +6,6 @@ cover:
     alt: "Stradella Facendo in concerto nel Museo di San Giovanni degli Agostiniani a Fivizzano: il direttore davanti, flauti, clarinetti, sassofoni e ottoni"
     credit: Eleonora Rocchi
     position: center 35%
-faq:
-    - question: Chi dirige?
-      answer: "Più direttori, che sono prima di tutto musicisti della formazione: ognuno dirige in autonomia i propri brani, e negli altri suona con tutti."
 occasions:
     - "Concerti in teatri, chiese e sale"
     - "Rassegne e stagioni concertistiche"
