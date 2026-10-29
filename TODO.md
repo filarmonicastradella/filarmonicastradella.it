@@ -16,6 +16,16 @@ Elenco di quello che resta da fare, ricontrollato il 30/10/2026 dopo la revision
   - la descrizione della mostra cita le «feste patronali» (contesto storico: decidere se va bene).
   - Le virgolette dritte ("Tobagi") ora il sito le trasforma da sé in «».
 
+## Galleria di Instagram: attivare l'API ufficiale (codice pronto dal 30/10/2026)
+
+Lo script (`scripts/instagram.mjs`) e la GitHub Action sono pronti; finché manca il token la galleria resta vuota e la home rimanda al profilo. Una volta sola:
+
+1. Nell'app Instagram dell'account della Filarmonica: *Impostazioni → Tipo di account e strumenti* → account **professionale** (Creator o Business, gratuito), se non lo è già.
+2. Su [developers.facebook.com](https://developers.facebook.com/): *Le mie app → Crea app*, caso d'uso Instagram («Gestisci messaggi e contenuti su Instagram»). Nell'app: *Instagram → Configurazione dell'API con login di Instagram* → «Genera token di accesso», aggiungere l'account della Filarmonica e copiare il token (dura 60 giorni). Se richiesto, accettare l'invito come tester.
+3. Salvare il token: in `.env` (`INSTAGRAM_TOKEN=…`) e nei segreti di GitHub (`gh secret set INSTAGRAM_TOKEN`, poi incollarlo).
+4. Permesso per il rinnovo automatico: GitHub → *Settings → Developer settings → Fine-grained tokens*, solo il repository `filarmonicastradella.it`, solo il permesso **Secrets: Read and write**; poi `gh secret set SECRETS_TOKEN`. Il repository è di un'organizzazione: può servire approvarlo nelle sue impostazioni. **Scade al massimo dopo un anno: rinnovarlo prima.**
+5. Poi provare in locale (`npm run build`) e controllare la galleria in home prima di pubblicare.
+
 ## Da far verificare al consulente (testi legali)
 
 - `legal/privacy`, `legal/cookies`, `legal/images` sono bozze. Il 30/10 sono state aggiornate: il modulo per gli eventi è nell'informativa, e la galleria di Instagram ora è copiata sul sito (il browser non si collega più a Instagram).
