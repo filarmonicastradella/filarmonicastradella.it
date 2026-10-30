@@ -6,7 +6,7 @@ Tre revisioni in sola lettura, fatte con skill scaricate per l'occasione e contr
 - **B.** Il sito confrontato con i tic del design generato dall'IA.
 - **C.** Prove di rottura con dati da caso peggiore.
 
-Le proposte si affrontano una alla volta: spiegate, applicate, giudicate a occhio, tenute o tolte. Nessuna è ancora applicata.
+Le proposte si affrontano una alla volta: spiegate, applicate, giudicate a occhio, tenute o tolte. Stato al 30/10/2026, sera: la parte C è applicata quasi per intero (restano il «+» delle domande alla prima riga e il `pattern` delle email); della parte A è in lavorazione il punto 1 (titoli Display solo con la foto) e il punto 4 è stato risolto al contrario, aggiornando DESIGN.md; il resto di A e B è ancora da decidere. Una revisione più libera è in `riprogettazione-2026-10-30.md`.
 
 
 ## A. Revisione del design system
