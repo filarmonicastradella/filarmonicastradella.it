@@ -121,6 +121,8 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 - [ ] 5.25 **F** — Storia: senza fonte l'unione di due bande e la data del nome Stradella; didascalia della foto anni 80/90. (T)
 - [ ] 5.26 **F** — Liberatoria: «ne prende visione» senza antecedente. (R5b.31)
 - [ ] 5.27 **F** — Domande degli eventi anche sulla mostra: «concerti» o «eventi». (R5b.30, R3b.16)
+- [ ] 5.28 **F** — Controllo antislop dei testi con `antislop-copywriting`, da installare nel progetto: non è mai stato fatto. La skill è pensata per l'inglese, quindi per l'italiano vale come seconda lente dopo `scrittura-italiana`. Comprende i testi scritti dopo la revisione (`alt` e didascalia della lapide). (S)
+- [ ] 5.29 **D** — La lineetta `—` nei titoli di tutte le pagine: antislop la vieta. Tenerla o sostituirla? (S)
 
 ## 6. SEO e dati strutturati
 
