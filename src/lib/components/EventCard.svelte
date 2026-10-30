@@ -48,12 +48,15 @@
         overflow: hidden;
     }
 
-    /* Con l'interlinea stretta dei titoli "overflow: hidden" taglierebbe le lettere che scendono (g, p, q) dell'ultima riga */
+    /*
+     * Con l'interlinea stretta dei titoli "overflow: hidden" taglierebbe le lettere che scendono (g, p, q) dell'ultima
+     * riga: un'interlinea un po' più ampia le tiene dentro, senza un margine sotto da cui spunterebbe la riga nascosta
+     */
     h3,
     h4 {
         -webkit-line-clamp: 2;
         line-clamp: 2;
-        padding-block-end: var(--space-1);
+        line-height: var(--lh-snug);
     }
 
     [itemprop="description"] {
