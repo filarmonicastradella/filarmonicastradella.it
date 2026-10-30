@@ -19,11 +19,11 @@ export const press: PressItem[] = [
         excerpt: "Fivizzano, l'evento celebrativo al Museo di Arte Sacra con autorità e cittadini.",
         href: "https://www.lanazione.it/massa-carrara/cronaca/la-filarmonica-dei-giovani-duecento-87a2bdf9"
     },
-    // SEGNAPOSTO: il nome della pagina Facebook e la data del post sono da inserire
+    // SEGNAPOSTO: la data del post è da inserire
     {
         title: "Grande successo per la rinata Filarmonica fivizzanese «Alessandro Stradella»",
         date: "2026-10-13",
-        publisher: "[Nome della pagina]",
+        publisher: "Bollettino di Fivizzano",
         excerpt: "Grande successo per il primo concerto della risorta Filarmonica Alessandro Stradella di Fivizzano.",
         href: "https://www.facebook.com/permalink.php?story_fbid=pfbid02tRBrkg7jdnh948Sj2GF6PMeGqiiVZgwjUK9TdZ6aLpeo2WAqVDQZak4MuMkz9NX8l&id=61589672907462"
     },
