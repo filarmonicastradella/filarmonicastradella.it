@@ -35,6 +35,8 @@
      */
     header {
         display: grid;
+        /* Una colonna larga quanto lo schermo, mai quanto il titolo: con i caratteri molto grandi il titolo va a capo */
+        grid-template-columns: minmax(0, 1fr);
         grid-template-rows: minmax(12rem, 1fr) auto auto;
         min-block-size: calc(100svh - var(--header-height));
         box-sizing: border-box;

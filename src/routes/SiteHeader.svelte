@@ -82,8 +82,10 @@
         z-index: 1;
     }
 
+    /* Se lo spazio non basta (caratteri del telefono molto grandi) si stringe il logotipo, mai il pulsante del menu */
     header > a {
         display: flex;
+        min-inline-size: 0;
         align-items: center;
         gap: var(--space-3);
         color: var(--text-brand);
@@ -129,6 +131,7 @@
      */
     button {
         display: flex;
+        flex-shrink: 0;
         align-items: center;
         gap: var(--space-2);
         margin-inline-end: calc((var(--corde-span) - var(--space-7)) / 2);
@@ -203,6 +206,21 @@
     @media (min-width: 64rem) {
         button {
             display: none;
+        }
+    }
+
+    /*
+     * Con i caratteri del telefono ingranditi (la soglia è in rem: con i caratteri normali anche un telefono da 320px
+     * ne resta fuori) la parola «Menu» non si vede più e restano le corde: il nome del pulsante rimane per gli screen reader.
+     */
+    @media (max-width: 19.99rem) {
+        button > span:first-child {
+            position: absolute;
+            inline-size: 1px;
+            block-size: 1px;
+            overflow: hidden;
+            clip-path: inset(50%);
+            white-space: nowrap;
         }
     }
 </style>
