@@ -2,6 +2,8 @@
 
 Elenco di quello che resta da fare, ricontrollato il 30/10/2026 dopo la revisione completa del sito (report in `docs/revisione-2026-10-30.md`). Si aggiorna togliendo le voci risolte, non accumulando.
 
+La lista da seguire, che unisce questo file e tutte le analisi, è `docs/lista-unica.md`: si affronta da lì, una voce alla volta. Qui restano le istruzioni passo passo.
+
 ## Da fare fuori dal sito
 
 - **Certificato per `www`**: `https://www.filarmonicastradella.it` mostra un errore di sicurezza (il certificato copre solo il dominio senza `www`). Su Register: record CNAME `www` → `filarmonicastradella.github.io`. Poi su GitHub, Settings → Pages: togliere e rimettere il dominio personalizzato, così viene emesso il certificato anche per `www`.
