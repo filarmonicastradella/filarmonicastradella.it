@@ -46,6 +46,10 @@ Lo script (`scripts/instagram.mjs`) e la GitHub Action sono pronti; finché manc
 - **Tipografia**: apostrofo dritto (') o tipografico (’) ovunque (oggi i Markdown escono con ’, le pagine con '); numeri in cifre o lettere («più di 50 soci» / «più di cinquanta soci»); «Flicorno» / «Flicorni» / «Euphonium».
 - **Storia**: la foto di copertina (anni Trenta) a tutta larghezza è sgranata: serve una scansione migliore, oppure una fascia più bassa. La didascalia della foto anni 80/90 è da verificare. Senza fonte: l'unione di due bande negli anni Venti e la data del nome Stradella (oggi «alla fine degli anni Novanta»).
 
+## Revisione libera del design, con tutte le skill
+
+Da fare: riprogettare il sito da zero senza i vincoli di `docs/DESIGN.md`, applicando una per una tutte le skill di design, perché ognuna aggiunge qualcosa: **frontend-design**, **frontend-design-deslop**, **antislop**, **antislop-ui**, **impeccable**. Si guardano le pagine vere: una decina, a 1280 e 390 px, in chiaro e in scuro, catturate una volta sola e non a ogni modifica. `docs/riprogettazione-2026-10-30.md` è solo un primo passo: una proposta da `frontend-design` sul codice, senza guardare le pagine.
+
 ## Da decidere sul design (scostamenti da docs/DESIGN.md)
 
 - **Corde nel menu aperto**: finiscono a metà schermo con i pallini vicino a «Sostienici»; DESIGN.md le vuole a tutta altezza e senza pallini. Correggere il menu o aggiornare DESIGN.md.
