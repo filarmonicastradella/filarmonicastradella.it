@@ -40,6 +40,8 @@ body {
     font-size: var(--fs-body);
     font-weight: var(--fw-text);
     line-height: var(--lh-body);
+    /* Una parola più larga della riga (un indirizzo email, un link) va a capo invece di allargare la pagina */
+    overflow-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
