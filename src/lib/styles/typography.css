@@ -108,11 +108,11 @@ figcaption {
 }
 
 /*
- * Occhielli: le date in testa a schede ed eventi (un paragrafo con la sola data, riconoscibile dai
+ * Occhielli: le date in testa a schede ed eventi (la data all'inizio del primo paragrafo, riconoscibile dai
  * microdati), la categoria degli articoli e la testata nella rassegna stampa, le etichette e le voci delle coppie etichetta/valore. Le date
  * dentro un testo, o accanto all'autore nella firma di un articolo, restano testo.
  */
-p:first-child > time[itemprop]:only-child,
+p:first-child > time[itemprop]:first-child,
 [itemprop="articleSection"],
 p:first-child > [itemprop="publisher"],
 dt,
@@ -124,7 +124,7 @@ th {
     text-transform: uppercase;
 }
 
-p:first-child > time[itemprop]:only-child,
+p:first-child > time[itemprop]:first-child,
 [itemprop="articleSection"],
 a:has(> [itemprop="articleSection"]),
 p:first-child > [itemprop="publisher"] {

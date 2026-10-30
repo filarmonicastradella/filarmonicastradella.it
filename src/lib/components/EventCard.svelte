@@ -14,18 +14,23 @@
 <!-- Lo stesso evento della sua pagina ("itemid"), così i motori di ricerca non lo contano due volte -->
 <article itemscope itemtype="https://schema.org/Event" itemid="{organization.url}/events/{event.id}#evento">
     <a itemprop="url" href="/events/{event.id}">
-        <p><time itemprop="startDate" datetime={event.start}>{date}</time></p>
+        <!-- In testa le informazioni pratiche: la data e, sotto, ora e luogo -->
+        <p>
+            <time itemprop="startDate" datetime={event.start}>{date}</time>
+            {#if time || place}
+                <br /><span
+                    >{time}{separator}{#if place}<span itemprop="location" itemscope itemtype="https://schema.org/Place"
+                            ><span itemprop="name">{place}</span><meta itemprop="address" content={event.location} /></span
+                        >{/if}</span
+                >
+            {/if}
+        </p>
         {#if event.end}
             <meta itemprop="endDate" content={event.end} />
         {/if}
         <svelte:element this={`h${level}`}><span itemprop="name">{event.summary}</span></svelte:element>
         {#if event.description}
             <p itemprop="description">{event.description}</p>
-        {/if}
-        {#if time || place}
-            <p>{time}{separator}{#if place}<span itemprop="location" itemscope itemtype="https://schema.org/Place"
-                    ><span itemprop="name">{place}</span><meta itemprop="address" content={event.location} /></span
-                >{/if}</p>
         {/if}
     </a>
 </article>
@@ -54,53 +59,5 @@
     [itemprop="description"] {
         -webkit-line-clamp: 3;
         line-clamp: 3;
-    }
-
-    /* Ora e luogo come didascalia, sempre in fondo alla scheda */
-    :is(h3, h4) ~ p:not([itemprop="description"]) {
-        margin-block-start: auto;
-        font-size: var(--fs-small);
-    }
-
-    /*
-     * Quando la scheda è larga (gli elenchi di eventi su schermo largo, content.css) è una riga d'agenda, come
-     * la scheda degli articoli: data e didascalia a sinistra, titolo e descrizione nella colonna di testo.
-     */
-    article {
-        container-type: inline-size;
-    }
-
-    @container (min-width: 48rem) {
-        a {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
-            /*
-             * A destra titolo e descrizione uno dopo l'altro; a sinistra data e didascalia, in alto, nella stessa cella alta
-             * quanto la scheda: la didascalia scende sotto la data di quanto è alta la sua riga, qualunque sia la lunghezza del titolo.
-             */
-            grid-template-rows: auto 1fr;
-            align-items: start;
-            gap: var(--space-3) var(--space-6);
-        }
-
-        /* La data all'altezza della prima riga del titolo */
-        a > p:first-child {
-            grid-area: 1 / 1 / 3 / 2;
-            padding-block-start: var(--space-2);
-        }
-
-        h3,
-        h4 {
-            grid-area: 1 / 2;
-        }
-
-        [itemprop="description"] {
-            grid-area: 2 / 2;
-        }
-
-        :is(h3, h4) ~ p:not([itemprop="description"]) {
-            grid-area: 1 / 1 / 3 / 2;
-            margin: calc(var(--space-2) + var(--fs-eyebrow) * var(--lh-body) + var(--space-3)) 0 0;
-        }
     }
 </style>

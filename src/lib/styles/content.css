@@ -154,6 +154,8 @@ ul:has(> li:nth-child(4):last-child > a > :is(h2, h3, h4)) {
 
 li > article {
     block-size: 100%;
+    /* Le schede larghe diventano righe d'agenda (qui sotto) */
+    container-type: inline-size;
 }
 
 :is(li > a, li > article > :is(a, div)):has(> :is(h2, h3, h4)) {
@@ -204,6 +206,39 @@ li > article {
         margin-inline-start: 0.25em;
         background-color: currentColor;
         mask: var(--icon-external) center / contain no-repeat;
+    }
+}
+
+/*
+ * Le schede degli eventi e degli articoli (EventCard, ArticleCard): in testa le informazioni pratiche, data o categoria
+ * e, sotto, la didascalia (ora e luogo, oppure la firma). Quando la scheda è larga (gli elenchi in ordine cronologico) è una riga d'agenda: due colonne indipendenti, allineate in alto, data e didascalia a sinistra, titolo e
+ * descrizione nella colonna di testo, come le sezioni da leggere (layout.css). Dopo la regola generale delle
+ * schede e con lo stesso selettore, che altrimenti la scavalcherebbe.
+ */
+li > article > :is(a, div) > p:first-child > br + span {
+    color: var(--text-muted);
+    font-size: var(--fs-small);
+}
+
+@container (min-width: 48rem) {
+    li > article > :is(a, div):has(> :is(h2, h3, h4)) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
+        grid-template-rows: auto 1fr;
+        align-items: start;
+        gap: var(--space-3) var(--space-6);
+
+        & > p:first-child {
+            grid-area: 1 / 1 / 3 / 2;
+        }
+
+        & > :is(h2, h3, h4) {
+            grid-area: 1 / 2;
+        }
+
+        & > [itemprop="description"] {
+            grid-area: 2 / 2;
+        }
     }
 }
 
