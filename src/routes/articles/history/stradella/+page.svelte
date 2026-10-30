@@ -123,7 +123,7 @@
     <figure class="inchiostro">
         <enhanced:img
             src={targaImg}
-            alt="Lapide con quattro borchie e la scritta: Casa degli Stradella, dalla cui famiglia uscirono Alessio, 1520-1580, agostiniano, procuratore generale dell'Ordine, vescovo di Nepi e Sutri, nunzio apostolico in Germania; Alessandro, 1644-1682, compositore e cantante. L'Amministrazione comunale, auspice la Società Filarmonica, 6 dicembre 1997"
+            alt="Lapide con quattro borchie e la scritta: Casa degli Stradella, dalla cui famiglia uscirono Alessio, 1520-1580, agostiniano, procuratore generale dell'Ordine, vescovo di Nepi e Sotri (sic), nunzio apostolico in Germania; Alessandro, 1644-1682, compositore e cantante. L'Amministrazione comunale, auspice la Società Filarmonica, 6 dicembre 1997"
             sizes="24rem"
             loading="lazy"
         />
