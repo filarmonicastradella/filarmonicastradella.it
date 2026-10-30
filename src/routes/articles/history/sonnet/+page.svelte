@@ -53,7 +53,7 @@
         vergine e martire<br />
         singolar patrona dell'Accademia Filarmonica de i Dissonanti di Fivizzano
     </p>
-    <figure>
+    <figure class="inchiostro">
         <enhanced:img
             src={puttoImg}
             alt="Un putto in volo regge un cartiglio con la scritta «Sonetto», tra una tromba, una palma e rami d'alloro"
@@ -148,13 +148,6 @@
         display: block;
         inline-size: min(100%, 16rem);
         block-size: auto;
-    }
-
-    /* Inchiostro chiaro su sfondo scuro: il fregio è tracciato in un colore fisso, non in currentColor */
-    @media (prefers-color-scheme: dark) {
-        section:has(> blockquote) > figure :global(img) {
-            filter: invert(1);
-        }
     }
 
     blockquote {

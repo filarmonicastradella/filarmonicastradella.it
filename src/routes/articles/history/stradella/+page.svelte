@@ -5,6 +5,8 @@
     // Copertina: il frontespizio della Serenata a 3, in più misure, e la sua anteprima sfocata
     import serenataImg from "$lib/assets/imgs/serenata-stradella.jpg?enhanced&w=400;640;800;1280;1600&quality=40";
     import serenataPlaceholder from "$lib/assets/imgs/serenata-stradella.jpg?w=24&blur=2&format=webp&inline";
+    // La lapide del 1997 ridisegnata a puntini dalla foto, un solo inchiostro su fondo trasparente, con il testo ricomposto riga per riga
+    import targaImg from "$lib/assets/imgs/targa-stradella.png?enhanced&w=256;512;768";
 
     const article = findArticle("history", "stradella")!;
 </script>
@@ -118,6 +120,15 @@
         giorno, «auspice la Società Filarmonica», fu murata sulla casa una lapide. Vi si legge che Alessandro nacque nel 1644: era la data accettata allora,
         prima che si trovasse a Bologna l'atto di battesimo del 1643<sup><a href="#fonte-10" role="doc-noteref" id="rimando-10b" aria-label="Fonte 10">10</a></sup><sup><a href="#fonte-1" role="doc-noteref" id="rimando-1b" aria-label="Fonte 1">1</a></sup>.
     </p>
+    <figure class="inchiostro">
+        <enhanced:img
+            src={targaImg}
+            alt="Lapide con quattro borchie e la scritta: Casa degli Stradella, dalla cui famiglia uscirono Alessio, 1520-1580, agostiniano, procuratore generale dell'Ordine, vescovo di Nepi e Sutri, nunzio apostolico in Germania; Alessandro, 1644-1682, compositore e cantante. L'Amministrazione comunale, auspice la Società Filarmonica, 6 dicembre 1997"
+            sizes="24rem"
+            loading="lazy"
+        />
+        <figcaption>La lapide sulla casa degli Stradella, ridisegnata da una fotografia.</figcaption>
+    </figure>
     <p>
         Alla fine degli anni Novanta la Filarmonica prese il nome di Alessandro Stradella. Il resto della nostra storia è nell'articolo
         <a href="/articles/history/filarmonica">La storia della Filarmonica</a>.
@@ -148,3 +159,11 @@
 </section>
 
 <p class="rimando"><a href="/articles">Tutti gli articoli</a></p>
+
+<style>
+    figure :global(img) {
+        display: block;
+        inline-size: min(100%, calc(var(--container-text) * 2 / 3));
+        block-size: auto;
+    }
+</style>

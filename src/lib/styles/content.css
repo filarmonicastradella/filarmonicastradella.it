@@ -458,3 +458,10 @@ figure img {
 figcaption {
     margin-block-start: var(--space-3);
 }
+
+/* Disegni a un solo inchiostro su fondo trasparente (fregi, lapidi): sono in un colore fisso, non in currentColor */
+@media (prefers-color-scheme: dark) {
+    figure.inchiostro img {
+        filter: invert(1);
+    }
+}
