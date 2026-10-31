@@ -143,7 +143,7 @@
 
         <p>
             <input type="radio" id="richiedente_minore" name="tipo_richiedente" value="minore" bind:group={applicant} />
-            <label for="richiedente_minore">Iscrivo un minore, come genitore</label>
+            <label for="richiedente_minore">Iscrivo un minore</label>
         </p>
     </fieldset>
 

@@ -80,7 +80,7 @@
 
         <p>
             <input type="radio" id="compila_minore" name="compilato_da" value="minore" bind:group={applicant} />
-            <label for="compila_minore">Compilo per un minore, come genitore</label>
+            <label for="compila_minore">Compilo per un minore</label>
         </p>
     </fieldset>
 
