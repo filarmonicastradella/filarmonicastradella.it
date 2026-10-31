@@ -94,10 +94,6 @@
         <p>Tutti, e in particolare oboe, fagotto e archi.</p>
     </details>
     <details>
-        <summary>Quanto spesso provate?</summary>
-        <p>Una o due volte a settimana, più spesso prima dei concerti.</p>
-    </details>
-    <details>
         <summary>Chi è il maestro?</summary>
         <p>
             Non ce n'è uno solo: i direttori sono più di uno, e prima di tutto sono musicisti. Li scelgono i componenti di ogni

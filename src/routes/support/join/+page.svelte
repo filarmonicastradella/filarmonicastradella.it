@@ -103,8 +103,8 @@
     <details>
         <summary>Che impegno è richiesto? C'è un obbligo di presenza?</summary>
         <p>
-            Nessun obbligo: per essere socio basta la quota annuale. Contiamo su di te quando puoi esserci, ai concerti e alle prove, perché la
-            musica si fa insieme.
+            Nessun obbligo: per essere socio basta la quota annuale. Le prove sono una o due volte a settimana, più spesso prima dei concerti, e
+            contiamo su di te quando puoi esserci, perché la musica si fa insieme.
         </p>
     </details>
     <details>
