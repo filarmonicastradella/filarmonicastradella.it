@@ -96,8 +96,8 @@
     <details>
         <summary>Chi è il maestro?</summary>
         <p>
-            Non ce n'è uno solo: i direttori sono più di uno, e prima di tutto sono musicisti. Li scelgono i componenti di ogni
-            formazione, per un anno, e possono cambiarli quando vogliono. Ognuno dirige in autonomia i propri brani, e negli altri
+            Non ce n'è uno solo: i direttori sono più di uno, e prima di tutto sono musicisti. Li indicano i componenti di ogni
+            formazione, dai 14 anni in su, e il consiglio direttivo ne ratifica la nomina per un anno. Ognuno dirige in autonomia i propri brani, e negli altri
             suona con tutti.
         </p>
     </details>
