@@ -16,8 +16,10 @@
         return years;
     });
 
-    // La casella si spunta da sola quando la data di nascita è di un minorenne; chi compila può anche spuntarla prima
-    let isMinorenne = $derived(age !== null && age < 18);
+    // Per chi è l'iscrizione: si sceglie in cima al modulo, e la data di nascita la imposta da sola; chi compila può cambiarla
+    let applicant = $derived(age !== null && age < 18 ? "minore" : "maggiorenne");
+
+    const isMinorenne = $derived(applicant === "minore");
 
     const isTooYoung = $derived(age !== null && age < 14);
 
@@ -131,21 +133,27 @@
     <input type="hidden" name="_template" value="table" />
     <input type="hidden" name="_next" value="https://filarmonicastradella.it/support/join/thanks" />
     <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
-    <input type="hidden" name="tipo_richiedente" value={isMinorenne ? "Minorenne (iscrizione tramite genitore/tutore)" : "Maggiorenne"} />
+    <fieldset>
+        <legend>Chi si iscrive</legend>
+
+        <p>
+            <input type="radio" id="richiedente_maggiorenne" name="tipo_richiedente" value="maggiorenne" bind:group={applicant} />
+            <label for="richiedente_maggiorenne">Mi iscrivo io</label>
+        </p>
+
+        <p>
+            <input type="radio" id="richiedente_minore" name="tipo_richiedente" value="minore" bind:group={applicant} />
+            <label for="richiedente_minore">Iscrivo un minore, come genitore o tutore</label>
+        </p>
+    </fieldset>
 
     <fieldset>
         <legend>{isMinorenne ? "Dati anagrafici del minore" : "Dati anagrafici del richiedente"}</legend>
-
-        <p>
-            <input type="checkbox" id="per_minore" bind:checked={isMinorenne} />
-            <label for="per_minore">Iscrivo un minore, come genitore o tutore</label>
-        </p>
-
         {@render identityFields("", "", true)}
     </fieldset>
 
     <!-- Avvisa, anche chi usa uno screen reader, se la casella e la data di nascita non coincidono; di solito è vuoto -->
-    <p role="status">{isMinorenne && age !== null && age >= 18 ? "La data di nascita è di un maggiorenne: controlla la data o togli la spunta." : ""}</p>
+    <p role="status">{isMinorenne && age !== null && age >= 18 ? "La data di nascita è di un maggiorenne: controlla la data o scegli «Mi iscrivo io»." : ""}</p>
 
     {#if isTooYoung}
         <p role="alert">

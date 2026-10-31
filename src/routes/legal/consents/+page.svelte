@@ -1,5 +1,7 @@
 <script lang="ts">
-    let forMinor = $state(false);
+    let applicant = $state("socio");
+
+    const forMinor = $derived(applicant === "minore");
 
     // I canali della liberatoria su carta (moduli 04.06 e 04.07), uno per uno
     const imageChannels = [
@@ -68,16 +70,22 @@
     <input type="hidden" name="_template" value="table" />
     <input type="hidden" name="_next" value="https://filarmonicastradella.it/legal/consents/thanks" />
     <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
-    <input type="hidden" name="compilato_da" value={forMinor ? "Genitore o tutore, per un minore" : "Il socio"} />
+    <fieldset>
+        <legend>Chi compila</legend>
+
+        <p>
+            <input type="radio" id="compila_socio" name="compilato_da" value="socio" bind:group={applicant} />
+            <label for="compila_socio">Compilo per me</label>
+        </p>
+
+        <p>
+            <input type="radio" id="compila_minore" name="compilato_da" value="minore" bind:group={applicant} />
+            <label for="compila_minore">Compilo per un minore, come genitore o tutore</label>
+        </p>
+    </fieldset>
 
     <fieldset>
         <legend>{forMinor ? "Dati del minore" : "I tuoi dati"}</legend>
-
-        <p>
-            <input type="checkbox" id="per_minore" bind:checked={forMinor} />
-            <label for="per_minore">Compilo per un minore, come genitore o tutore</label>
-        </p>
-
         {@render identityFields("", "socio")}
     </fieldset>
 
