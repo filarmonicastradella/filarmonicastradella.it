@@ -2,10 +2,11 @@
 title: Stradella Facendo
 summary: "L'orchestra di fiati della Filarmonica, dedicata al repertorio da concerto e alla cura del dettaglio sonoro."
 order: 1
-cover:
-    alt: "Stradella Facendo in concerto nel Museo di San Giovanni degli Agostiniani a Fivizzano: chi dirige davanti, flauti, clarinetti, sassofoni e ottoni"
-    credit: Eleonora Rocchi
-    position: center 35%
+# SOSPESA finché non ci sono i consensi alle immagini di chi suona oggi (modulo dei consensi)
+# cover:
+#     alt: "Stradella Facendo in concerto nel Museo di San Giovanni degli Agostiniani a Fivizzano: chi dirige davanti, flauti, clarinetti, sassofoni e ottoni"
+#     credit: Eleonora Rocchi
+#     position: center 35%
 lineup:
     - name: Legni
       instruments:

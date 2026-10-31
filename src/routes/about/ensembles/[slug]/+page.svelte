@@ -15,7 +15,7 @@
     itemscope
     itemtype="https://schema.org/MusicGroup"
     itemid="{organization.url}/about/ensembles/{ensemble.slug}#formazione"
-    style:--cover-placeholder={ensemble.coverImage && `url(${ensemble.coverImage.placeholder})`}
+    style:--cover-placeholder={ensemble.coverImage && ensemble.cover && `url(${ensemble.coverImage.placeholder})`}
     style:--cover-position={ensemble.cover?.position}
 >
     <h1 itemprop="name">{ensemble.title}</h1>

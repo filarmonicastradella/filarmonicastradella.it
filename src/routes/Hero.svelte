@@ -4,16 +4,22 @@
     // In verticale la fascia è più alta che larga in proporzione alla foto (3:2), che la riempie tagliando i lati:
     // da qui i 160vw di "sizes", altrimenti il browser sceglie una versione larga quanto lo schermo e la ingrandisce.
     // Più larghezze delle due predefinite (metà e intera): con solo 1024 e 2048 un telefono scaricava sempre la 2048.
-    import cover from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?enhanced&w=2048;1600;1280;960;640";
+    // SOSPESA finché non ci sono i consensi alle immagini di chi suona oggi (modulo dei consensi); al suo posto la foto
+    // d'archivio degli anni Ottanta. Per tornare indietro: togliere il commento a queste due righe, all'alt e alla
+    // posizione, e cancellare le due righe della foto d'archivio.
+    // import cover from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?enhanced&w=2048;1600;1280;960;640";
+    // import coverPlaceholder from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?w=24&blur=2&format=webp&inline";
+    import cover from "$lib/assets/imgs/anni_80.jpeg?enhanced&w=2048;1600;1280;960;640";
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
-    import coverPlaceholder from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?w=24&blur=2&format=webp&inline";
+    import coverPlaceholder from "$lib/assets/imgs/anni_80.jpeg?w=24&blur=2&format=webp&inline";
 </script>
 
 <!--
     Apertura della home: l'intestazione con foto di tutte le pagine (layout.css, copertina), con la fascia
     più alta, l'occhiello, il titolo in corpo display e la comparsa della prima schermata.
 -->
-<header style:--cover-placeholder="url({coverPlaceholder})" style:--cover-position="center 35%">
+<!-- SOSPESA, la posizione della foto di Stradella Facendo: style:--cover-position="center 35%" -->
+<header style:--cover-placeholder="url({coverPlaceholder})" style:--cover-position="center 60%">
     <hgroup>
         <p>Fivizzano · dal 1777</p>
         <h1>Filarmonica <span>Alessandro <em>Stradella</em></span></h1>
@@ -22,7 +28,7 @@
     <p><a href="/booking">Per il tuo evento</a></p>
     <enhanced:img
         src={cover}
-        alt="Stradella Facendo in concerto nel Museo di San Giovanni degli Agostiniani a Fivizzano"
+        alt="La Filarmonica in concerto di sera su un palco in piazza, negli anni Ottanta"
         sizes="(orientation: portrait) 160vw, 100vw"
         fetchpriority="high"
     />

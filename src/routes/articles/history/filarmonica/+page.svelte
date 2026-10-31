@@ -7,7 +7,8 @@
     import anni30Placeholder from "$lib/assets/imgs/anni_30.jpeg?w=24&blur=2&format=webp&inline";
     
     import anni80Img from "$lib/assets/imgs/anni_80.jpeg?enhanced&w=400;640;800;1280;1600&quality=40";
-    import oggiImg from "$lib/assets/imgs/oggi.jpg?enhanced&w=400;640;800;1280;1600";
+    // SOSPESA finché non ci sono i consensi alle immagini di chi suona oggi (modulo dei consensi):
+    // import oggiImg from "$lib/assets/imgs/oggi.jpg?enhanced&w=400;640;800;1280;1600";
     import diplomaImg from "$lib/assets/imgs/diploma_dissonanti.jpg?enhanced&w=400;640;800;1280;1600&quality=40";
     import militeIgnotoImg from "$lib/assets/imgs/milite-ignoto-1921.jpg?enhanced&w=400;640;800;1280;1600&quality=40";
 
@@ -189,10 +190,12 @@
         <a href="/about/ensembles/filarmonici-dissonanti">Filarmonici Dissonanti</a>, che porta il nome degli accademici del Settecento. Nel
         <time datetime="2027">2027</time> la Filarmonica compie 250 anni.
     </p>
+    <!-- SOSPESA finché non ci sono i consensi alle immagini (vedi l'import):
     <figure>
         <enhanced:img src={oggiImg} alt="L'Orchestra Infieri in concerto" {sizes} loading="lazy" />
         <figcaption>L'Orchestra Infieri della Filarmonica in concerto.</figcaption>
     </figure>
+    -->
 </section>
 
 <section>
