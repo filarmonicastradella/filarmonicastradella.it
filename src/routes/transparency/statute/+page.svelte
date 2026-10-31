@@ -5,7 +5,8 @@
 
 <header>
     <h1>Statuto</h1>
-    <p>Lo statuto della Filarmonica Alessandro Stradella APS, disponibile anche <a href="/documents/statuto.pdf" type="application/pdf">in PDF</a>.</p>
+    <p>Lo statuto della Filarmonica Alessandro Stradella APS.</p>
+    <p class="rimando"><a href="/documents/statuto.pdf" type="application/pdf">Statuto in PDF</a></p>
 </header>
 
 <nav aria-label="Indice degli articoli">
