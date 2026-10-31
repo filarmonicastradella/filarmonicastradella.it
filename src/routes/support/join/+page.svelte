@@ -235,7 +235,7 @@
                 <p>
                     <input type="checkbox" id="intesa_genitori" name="intesa_genitori" required />
                     <label for="intesa_genitori">
-                        Dichiaro di agire d'intesa con l'altro genitore o tutore, manlevando l'associazione da eventuali contestazioni in caso contrario.
+                        Dichiaro di agire d'intesa con l'altro genitore o tutore.
                     </label>
                 </p>
 
