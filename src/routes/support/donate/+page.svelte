@@ -18,17 +18,12 @@
         </p>
     </details>
     <details>
-        <summary>Posso detrarre la donazione?</summary>
+        <summary>Posso detrarre la donazione? Come ottengo la ricevuta?</summary>
         <p>
             Sì: siamo un'associazione di promozione sociale, e le donazioni a nostro favore godono delle agevolazioni fiscali previste dalla normativa
-            vigente. Il pagamento deve essere tracciabile, per esempio con un bonifico: conserva la ricevuta del versamento. Le condizioni dipendono dalla
-            tua situazione, quindi per i dettagli rivolgiti a un consulente o a un commercialista.
-        </p>
-    </details>
-    <details>
-        <summary>Come ottengo la ricevuta?</summary>
-        <p>
-            La rilascia il tesoriere: scrivi a <a href="mailto:tesoreria@filarmonicastradella.it">tesoreria@filarmonicastradella.it</a>.
+            vigente. Il pagamento deve essere tracciabile, per esempio con un bonifico: conserva la prova del versamento e chiedi la ricevuta al
+            tesoriere, scrivendo a <a href="mailto:tesoreria@filarmonicastradella.it">tesoreria@filarmonicastradella.it</a>. Le condizioni dipendono
+            dalla tua situazione, quindi per i dettagli rivolgiti a un consulente o a un commercialista.
         </p>
     </details>
 </section>

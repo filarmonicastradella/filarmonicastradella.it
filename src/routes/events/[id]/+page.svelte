@@ -89,13 +89,10 @@
     <section>
         <h2>Domande frequenti</h2>
         <details>
-            <summary>Si paga l'ingresso?</summary>
-            <p>Di norma no: i nostri eventi sono a ingresso libero. Se per un evento è previsto un biglietto, lo trovi scritto qui sopra.</p>
-        </details>
-        <details>
-            <summary>Devo prenotare?</summary>
+            <summary>Si paga l'ingresso? Devo prenotare?</summary>
             <p>
-                Non è obbligatorio, ma ci aiuta sapere in quanti verrete, per organizzare la sala e per la sicurezza:
+                Di norma no: i nostri eventi sono a ingresso libero, e se per un evento è previsto un biglietto lo trovi scritto qui sopra. Prenotare
+                non è obbligatorio, ma ci aiuta sapere in quanti verrete, per organizzare la sala e per la sicurezza:
                 <a href="/contacts#scrivici">scrivici</a> per segnalare la tua presenza.
             </p>
         </details>

@@ -83,17 +83,10 @@
 <section>
     <h2>Domande frequenti</h2>
     <details>
-        <summary>Come posso suonare con loro?</summary>
-        <p>
-            Suonano nelle nostre <a href="/about/ensembles">formazioni</a>: per unirti a loro iscriviti alla Filarmonica con la
-            <a href="/support/join">domanda di iscrizione</a>.
-        </p>
-    </details>
-    <details>
         <summary>Che livello serve?</summary>
         <p>
-            Dipende dalla formazione, ma ce n'è una per ogni livello: si può cominciare anche da zero, senza aver mai suonato uno
-            strumento.
+            Dipende dalla <a href="/about/ensembles">formazione</a>, ma ce n'è una per ogni livello: si può cominciare anche da zero, senza aver mai
+            suonato uno strumento. Per entrare basta la <a href="/support/join">domanda di iscrizione</a>.
         </p>
     </details>
     <details>
