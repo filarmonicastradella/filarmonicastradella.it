@@ -144,14 +144,8 @@
         {@render identityFields("", "", true)}
     </fieldset>
 
-    <!-- Annuncia a chi usa uno screen reader che il modulo è cambiato; vuoto per i maggiorenni -->
-    <p role="status">
-        {#if isMinorenne && age !== null && age >= 18}
-            La data di nascita è di un maggiorenne: controlla la data o togli la spunta.
-        {:else if isMinorenne && !isTooYoung}
-            Per un minorenne servono anche i dati di un genitore o tutore, qui sotto.
-        {/if}
-    </p>
+    <!-- Avvisa, anche chi usa uno screen reader, se la casella e la data di nascita non coincidono; di solito è vuoto -->
+    <p role="status">{isMinorenne && age !== null && age >= 18 ? "La data di nascita è di un maggiorenne: controlla la data o togli la spunta." : ""}</p>
 
     {#if isTooYoung}
         <p role="alert">
