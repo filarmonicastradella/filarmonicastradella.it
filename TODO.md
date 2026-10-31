@@ -91,9 +91,9 @@ Da fare: riprogettare il sito da zero senza i vincoli di `docs/DESIGN.md`, appli
 
 Oggi sono `_page.svelte` (SvelteKit le ignora): per ognuna rinominare in `+page.svelte`, scrivere il contenuto vero, togliere il commento nel link che la raggiunge.
 
-- `about/board`, `about/locations`, `about/partners`, `about/achievements`.
+- `about/locations`, `about/partners`, `about/achievements`.
 - `support/volunteer` (priorità alta: intercetta chi vuole dare una mano), `support/5x1000` (quando l'associazione sarà ammessa), `support/forms`.
-- `transparency` e sottopagine (statuto, rendiconti, contributi, regolamenti): da unificare come visualizzazione, tranne lo statuto.
+- `transparency/budgets` e `transparency/rules` (rendiconti e regolamenti), quando ci sono i documenti veri: da unificare come visualizzazione. Statuto, contributi pubblici e consiglio direttivo sono attivi dal 31/10/2026.
 - `media`, `media/interviews`, `media/kit` (cartella stampa in PDF di una pagina).
 - `faq`.
 

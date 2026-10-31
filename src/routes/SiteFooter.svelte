@@ -70,9 +70,7 @@
     <nav aria-labelledby="note-legali">
         <h2 id="note-legali">Note legali</h2>
         <ul>
-            <!-- Da riattivare insieme a /transparency (rinominare transparency/_page.svelte in +page.svelte):
             <li><a href="/transparency">Amministrazione trasparente</a></li>
-            -->
             <li><a href="/legal/privacy">Informativa privacy</a></li>
             <li><a href="/legal/cookies">Cookie</a></li>
         </ul>

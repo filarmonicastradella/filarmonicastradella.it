@@ -39,3 +39,5 @@
         {/each}
     </ul>
 </section>
+
+<p class="rimando"><a href="/about">L'associazione</a></p>
