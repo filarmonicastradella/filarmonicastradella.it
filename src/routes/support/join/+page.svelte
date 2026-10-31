@@ -36,7 +36,7 @@
 
 <svelte:head>
     <title>Domanda di iscrizione — Filarmonica Alessandro Stradella</title>
-    <meta name="description" content="Domanda di iscrizione come socio della Filarmonica Alessandro Stradella APS di Fivizzano: quota annuale di 12 €, anche per i minorenni con un genitore o tutore." />
+    <meta name="description" content="Domanda di iscrizione come socio della Filarmonica Alessandro Stradella APS di Fivizzano: quota annuale di 12 €, anche per i minorenni con un genitore." />
 </svelte:head>
 
 {#snippet identityFields(prefix: string, section: string, bindsBirthDate: boolean)}
@@ -117,7 +117,7 @@
     <details>
         <summary>Ci sono limiti di età?</summary>
         <p>
-            No: si può suonare a qualsiasi età. Per un minorenne l'iscrizione la fa un genitore o tutore: inserisci i dati del minore
+            No: si può suonare a qualsiasi età. Per un minorenne l'iscrizione la fa un genitore: inserisci i dati del minore
             e poi i tuoi, con il tuo documento di identità. Sotto i 14 anni online non si può: <a href="/contacts">contattaci</a> e completiamo la
             pratica di persona.
         </p>
@@ -143,7 +143,7 @@
 
         <p>
             <input type="radio" id="richiedente_minore" name="tipo_richiedente" value="minore" bind:group={applicant} />
-            <label for="richiedente_minore">Iscrivo un minore, come genitore o tutore</label>
+            <label for="richiedente_minore">Iscrivo un minore, come genitore</label>
         </p>
     </fieldset>
 
@@ -162,7 +162,7 @@
     {:else}
         {#if isMinorenne}
             <fieldset>
-                <legend>Dati anagrafici del genitore o tutore</legend>
+                <legend>Dati anagrafici del genitore</legend>
                 {@render identityFields("genitore_", "genitore", false)}
             </fieldset>
         {/if}
@@ -188,12 +188,12 @@
             <legend>Contatti</legend>
 
             <p>
-                <label for="telefono">{isMinorenne ? "Telefono del genitore o tutore" : "Telefono"}</label>
+                <label for="telefono">{isMinorenne ? "Telefono del genitore" : "Telefono"}</label>
                 <input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="tel" required minlength="9" maxlength="15" />
             </p>
 
             <p>
-                <label for="email">{isMinorenne ? "Email del genitore o tutore" : "Email"}</label>
+                <label for="email">{isMinorenne ? "Email del genitore" : "Email"}</label>
                 <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required maxlength="100" />
             </p>
 
@@ -235,7 +235,7 @@
                 <p>
                     <input type="checkbox" id="intesa_genitori" name="intesa_genitori" required />
                     <label for="intesa_genitori">
-                        Dichiaro di agire d'intesa con l'altro genitore o tutore.
+                        Dichiaro di agire d'intesa con l'altro genitore.
                     </label>
                 </p>
 
@@ -274,7 +274,7 @@
         <fieldset>
             <legend>Documento e richiesta</legend>
             <p>
-                <label for="documento_identita">{isMinorenne ? "Documento di identità del genitore o tutore" : "Documento di identità"} (PDF, JPG o PNG)</label>
+                <label for="documento_identita">{isMinorenne ? "Documento di identità del genitore" : "Documento di identità"} (PDF, JPG o PNG)</label>
                 <input type="file" id="documento_identita" name="attachment" required multiple accept="application/pdf,image/jpeg,image/png" />
             </p>
 
@@ -282,7 +282,7 @@
                 <input type="checkbox" id="richiesta_iscrizione" name="richiesta_iscrizione" required />
                 <label for="richiesta_iscrizione">
                     {#if isMinorenne}
-                        Chiedo, in qualità di genitore o tutore, l'iscrizione del minore sopra indicato come socio della Filarmonica Alessandro Stradella APS.
+                        Chiedo, in qualità di genitore, l'iscrizione del minore sopra indicato come socio della Filarmonica Alessandro Stradella APS.
                     {:else}
                         Chiedo la mia iscrizione come socio della Filarmonica Alessandro Stradella APS.
                     {/if}

@@ -80,7 +80,7 @@
 
         <p>
             <input type="radio" id="compila_minore" name="compilato_da" value="minore" bind:group={applicant} />
-            <label for="compila_minore">Compilo per un minore, come genitore o tutore</label>
+            <label for="compila_minore">Compilo per un minore, come genitore</label>
         </p>
     </fieldset>
 
@@ -91,7 +91,7 @@
 
     {#if forMinor}
         <fieldset>
-            <legend>Dati del genitore o tutore</legend>
+            <legend>Dati del genitore</legend>
             {@render identityFields("genitore_", "genitore")}
         </fieldset>
     {/if}
@@ -99,7 +99,7 @@
     <fieldset>
         <legend>Contatti</legend>
         <p>
-            <label for="email">{forMinor ? "Email del genitore o tutore" : "Email"}</label>
+            <label for="email">{forMinor ? "Email del genitore" : "Email"}</label>
             <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required maxlength="100" />
         </p>
     </fieldset>
@@ -125,14 +125,14 @@
     <fieldset>
         <legend>Documento e conferma</legend>
         <p>
-            <label for="documento_identita">{forMinor ? "Documento di identità del genitore o tutore" : "Documento di identità"} (PDF, JPG o PNG)</label>
+            <label for="documento_identita">{forMinor ? "Documento di identità del genitore" : "Documento di identità"} (PDF, JPG o PNG)</label>
             <input type="file" id="documento_identita" name="attachment" required multiple accept="application/pdf,image/jpeg,image/png" />
         </p>
 
         {#if forMinor}
             <p>
                 <input type="checkbox" id="intesa_genitori" name="intesa_genitori" required />
-                <label for="intesa_genitori">Dichiaro di agire d'intesa con l'altro genitore o tutore.</label>
+                <label for="intesa_genitori">Dichiaro di agire d'intesa con l'altro genitore.</label>
             </p>
         {/if}
 

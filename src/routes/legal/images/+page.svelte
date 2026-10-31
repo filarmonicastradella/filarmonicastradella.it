@@ -57,7 +57,7 @@
 <section>
     <h2>Per i minori</h2>
     <p>
-        Per chi ha meno di 18 anni decidono i genitori o il tutore, d'intesa tra loro; chi ha già compiuto 14 anni ne prende visione insieme a loro. Nelle
+        Per chi ha meno di 18 anni decidono i genitori, d'intesa tra loro; chi ha già compiuto 14 anni ne prende visione insieme a loro. Nelle
         pubblicazioni del minore compare al massimo il nome proprio, salvo i programmi di sala, e non pubblichiamo mai immagini riprese negli spogliatoi o
         mentre ci si cambia.
     </p>

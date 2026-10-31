@@ -44,7 +44,7 @@
         </dd>
         <dt>Richiesta di iscrizione</dt>
         <dd>
-            Dati anagrafici, residenza e domicilio, recapiti e documento di identità; per i minori anche i dati del genitore o tutore. Servono a valutare la
+            Dati anagrafici, residenza e domicilio, recapiti e documento di identità; per i minori anche i dati del genitore. Servono a valutare la
             domanda e a tenere il libro dei soci. Base giuridica: il rapporto associativo (art. 6.1.b) e gli obblighi di legge (art. 6.1.c).
         </dd>
         <dt>Consensi facoltativi</dt>
