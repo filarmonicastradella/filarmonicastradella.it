@@ -101,8 +101,11 @@
         <p>La quota annuale è di 12 € e si rinnova entro il 31 dicembre.</p>
     </details>
     <details>
-        <summary>Che impegno è richiesto?</summary>
-        <p>Partecipare ad almeno metà delle attività, tra concerti, prove e momenti di vita associativa.</p>
+        <summary>Che impegno è richiesto? C'è un obbligo di presenza?</summary>
+        <p>
+            Nessun obbligo: per essere socio basta la quota annuale. Contiamo su di te quando puoi esserci, ai concerti e alle prove, perché la
+            musica si fa insieme.
+        </p>
     </details>
     <details>
         <summary>Devo avere uno strumento mio?</summary>

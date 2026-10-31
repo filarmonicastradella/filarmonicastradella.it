@@ -51,8 +51,8 @@
         condivise.
     </p>
     <p>
-        Siamo un'associazione, non un'accademia. A chi entra chiediamo di esserci: di partecipare ad almeno metà delle attività, che siano concerti,
-        prove o momenti di vita associativa. Ognuno dà qualcosa, e insieme teniamo in piedi qualcosa che appartiene a tutti. Tutto si regge sul
+        Siamo un'associazione, non un'accademia. Non chiediamo un minimo di presenze: contiamo su ognuno quando può esserci, ai concerti, alle prove
+        e nei momenti di vita associativa, perché la musica si fa insieme. Ognuno dà qualcosa, e insieme teniamo in piedi qualcosa che appartiene a tutti. Tutto si regge sul
         volontariato: nessuno di noi è pagato per suonare, nemmeno chi dirige.
     </p>
 </section>
