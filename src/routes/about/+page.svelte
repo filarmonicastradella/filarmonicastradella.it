@@ -35,12 +35,14 @@
             <p>Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti.</p>
         </a>
     </li>
+    <!-- SOSPESA finché non ci sono i consensi alla pubblicazione dei nomi (rinominare about/musicians/_page.svelte in +page.svelte):
     <li>
         <a href="/about/musicians">
             <h2>I nostri musicisti</h2>
             <p>Chi suona nella Filarmonica, strumento per strumento.</p>
         </a>
     </li>
+    -->
     <li>
         <a href="/about/press">
             <h2>Rassegna stampa</h2>
