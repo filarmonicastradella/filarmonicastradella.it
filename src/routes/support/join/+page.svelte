@@ -16,7 +16,8 @@
         return years;
     });
 
-    const isMinorenne = $derived(age !== null && age < 18);
+    // La casella si spunta da sola quando la data di nascita è di un minorenne; chi compila può anche spuntarla prima
+    let isMinorenne = $derived(age !== null && age < 18);
 
     const isTooYoung = $derived(age !== null && age < 14);
 
@@ -134,11 +135,23 @@
 
     <fieldset>
         <legend>{isMinorenne ? "Dati anagrafici del minore" : "Dati anagrafici del richiedente"}</legend>
+
+        <p>
+            <input type="checkbox" id="per_minore" bind:checked={isMinorenne} />
+            <label for="per_minore">Iscrivo un minore, come genitore o tutore</label>
+        </p>
+
         {@render identityFields("", "", true)}
     </fieldset>
 
     <!-- Annuncia a chi usa uno screen reader che il modulo è cambiato; vuoto per i maggiorenni -->
-    <p role="status">{isMinorenne && !isTooYoung ? "Per un minorenne servono anche i dati di un genitore o tutore, qui sotto." : ""}</p>
+    <p role="status">
+        {#if isMinorenne && age !== null && age >= 18}
+            La data di nascita è di un maggiorenne: controlla la data o togli la spunta.
+        {:else if isMinorenne && !isTooYoung}
+            Per un minorenne servono anche i dati di un genitore o tutore, qui sotto.
+        {/if}
+    </p>
 
     {#if isTooYoung}
         <p role="alert">
