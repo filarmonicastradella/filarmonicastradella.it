@@ -31,7 +31,7 @@
 <section>
     <h2>Dove possono essere usate</h2>
     <p>
-        Con il modulo di iscrizione online il consenso vale per tutti questi canali. Se preferisci escluderne qualcuno, scrivici in qualsiasi momento,
+        Con il modulo di iscrizione online il consenso vale per tutti questi canali. Se preferisci escluderne qualcuno, usa in qualsiasi momento il <a href="/legal/consents">modulo dei consensi</a>,
         oppure scegli canale per canale firmando la liberatoria su carta.
     </p>
     <ul>
@@ -66,8 +66,8 @@
 <section>
     <h2>Come revocare</h2>
     <p>
-        Puoi revocare il consenso quando vuoi, in tutto o solo per alcuni canali, scrivendo a
-        <a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a>. Entro 30 giorni togliamo i contenuti dai canali digitali che
+        Puoi revocare il consenso quando vuoi, in tutto o solo per alcuni canali, con il <a href="/legal/consents">modulo dei consensi</a> o
+        scrivendo a <a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a>. Entro 30 giorni togliamo i contenuti dai canali digitali che
         gestiamo; il materiale a stampa già distribuito resta com'è. Se sei in una ripresa di gruppo che non si può togliere senza danneggiare gli altri,
         ti rendiamo non riconoscibile.
     </p>

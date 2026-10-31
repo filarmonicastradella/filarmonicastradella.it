@@ -103,7 +103,8 @@
     <h2>I tuoi diritti</h2>
     <p>
         Puoi chiederci in qualsiasi momento di vedere i tuoi dati, correggerli, cancellarli, limitarne l'uso o riceverli in un formato leggibile, e puoi
-        opporti al trattamento (artt. 15-22 GDPR). Puoi revocare un consenso quando vuoi: vale da quel momento in poi. Scrivi a
+        opporti al trattamento (artt. 15-22 GDPR). Puoi revocare un consenso quando vuoi: vale da quel momento in poi. Per cambiare i consensi c'è il
+        <a href="/legal/consents">modulo dei consensi</a>; per tutto il resto scrivi a
         <a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a>.
     </p>
     <p>
