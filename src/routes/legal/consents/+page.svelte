@@ -50,12 +50,8 @@
 
 {#snippet choice(name: string, label: string)}
     <p>
+        <input type="checkbox" id={name} {name} value="Sì" />
         <label for={name}>{label}</label>
-        <select id={name} {name} required>
-            <option value="">Scegli</option>
-            <option value="Sì">Sì, acconsento</option>
-            <option value="No">No, non acconsento</option>
-        </select>
     </p>
 {/snippet}
 
@@ -63,7 +59,7 @@
     <h1>Modifica dei consensi</h1>
     <p>
         Qui cambi i consensi dati all'iscrizione: foto e riprese, canale per canale, e le comunicazioni. Le scelte che invii sostituiscono quelle di
-        prima.
+        prima: una casella non spuntata vale come no.
     </p>
 </header>
 
@@ -103,7 +99,7 @@
     <fieldset>
         <legend>Foto e riprese</legend>
         <p>
-            Per ogni canale scegli se autorizzi l'uso di foto e riprese {forMinor ? "del minore" : "in cui compari"}. Cosa comporta lo spiega la
+            Spunta i canali dove autorizzi l'uso di foto e riprese {forMinor ? "del minore" : "in cui compari"}. Cosa comporta lo spiega la
             <a href="/legal/images" target="_blank" rel="noopener noreferrer">liberatoria per immagini, voce ed esecuzioni</a>.
         </p>
         {#each imageChannels as { name, label } (name)}
