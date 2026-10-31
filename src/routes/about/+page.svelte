@@ -47,12 +47,6 @@
             <p>Gli articoli dei giornali sulla Filarmonica.</p>
         </a>
     </li>
-    <li>
-        <a href="/about/board">
-            <h2>Consiglio direttivo</h2>
-            <p>Le persone che amministrano l'associazione.</p>
-        </a>
-    </li>
     <!-- Da riattivare quando pronte (rinominare _page.svelte in +page.svelte in ciascuna cartella):
     <li>
         <a href="/about/locations">

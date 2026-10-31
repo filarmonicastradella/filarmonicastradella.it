@@ -40,4 +40,4 @@
     </ul>
 </section>
 
-<p class="rimando"><a href="/about">L'associazione</a></p>
+<p class="rimando"><a href="/transparency">Amministrazione trasparente</a></p>

@@ -33,7 +33,7 @@
 
 <section>
     <h2>Organi</h2>
-    <p>Il <a href="/about/board">Consiglio direttivo</a> è l'organo di amministrazione: viene nominato dall'assemblea e resta in carica un anno.</p>
+    <p>Il <a href="/transparency/board">Consiglio direttivo</a> è l'organo di amministrazione: viene nominato dall'assemblea e resta in carica un anno.</p>
 </section>
 
 <section>
