@@ -7,7 +7,7 @@
     <title>Articoli — Filarmonica Alessandro Stradella</title>
     <meta
         name="description"
-        content="Storia, didattica, teoria musicale, obiettivi e notizie della Filarmonica Alessandro Stradella APS di Fivizzano, e gli articoli dei giornali che parlano di noi."
+        content="Storia, didattica, obiettivi e notizie della Filarmonica Alessandro Stradella APS di Fivizzano, e gli articoli dei giornali che parlano di noi."
     />
 </svelte:head>
 

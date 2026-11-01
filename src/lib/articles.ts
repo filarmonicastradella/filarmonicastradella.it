@@ -5,7 +5,6 @@ import { press } from "$lib/press";
 export const categories = [
     { slug: "storia", name: "Storia", description: "Ricerche e documenti sulla storia della musica a Fivizzano e della Filarmonica, dall'Accademia dei Dissonanti a oggi." },
     { slug: "didattica", name: "Didattica", description: "Guide per chi studia uno strumento o comincia a suonare." },
-    { slug: "teoria", name: "Teoria musicale", description: "Le basi della musica, spiegate semplici." },
     { slug: "obiettivi", name: "Obiettivi", description: "La nostra missione, i traguardi raggiunti e i progetti e le idee per arrivarci." },
     { slug: "notizie", name: "Notizie", description: "Avvisi dell'associazione, iscrizioni e appuntamenti." },
     // Gli articoli dei giornali (press.ts), con il link alla testata: fino al 1/11/2026 erano la Rassegna stampa in /associazione/press
