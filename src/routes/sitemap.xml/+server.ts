@@ -21,7 +21,7 @@ export const GET: RequestHandler = async () => {
         ...pages,
         ...ensembles.map(({ slug }) => `/ensembles/${slug}`),
         ...activeCategories.map(({ slug }) => `/articles/${slug}`),
-        ...articles.map(({ href }) => href),
+        ...articles.filter(({ publisher }) => !publisher).map(({ href }) => href),
         ...events.map(({ id }) => `/events/${id}`)
     ];
 

@@ -1,5 +1,6 @@
-// Rassegna stampa: gli articoli dei giornali sulla Filarmonica, dal più recente. Il riassunto è il sommario o
-// l'attacco del giornale; per gli annunci senza sommario, una riga nostra che dice di che cosa si tratta.
+// Gli articoli dei giornali sulla Filarmonica: nell'archivio Articoli con la categoria Stampa (articles.ts). Il
+// riassunto è il sommario o l'attacco del giornale; per gli annunci senza sommario, una riga nostra che dice di che
+// cosa si tratta. Mai il testo intero: si legge sul sito del giornale.
 export interface PressItem {
     title: string;
     date: string;
@@ -8,6 +9,8 @@ export interface PressItem {
     excerpt: string;
     /** Il link all'articolo online; senza, è un'uscita solo su carta */
     href?: string;
+    /** Le formazioni di cui parla, con l'hashtag degli eventi senza il cancelletto (articles.ts) */
+    ensembles?: string[];
 }
 
 export const press: PressItem[] = [
@@ -47,6 +50,7 @@ export const press: PressItem[] = [
         publisher: "La Gazzetta di Massa e Carrara",
         author: "Sonia Cimoli",
         excerpt: "C'è una nuova energia che muove Fivizzano, ed ha il ritmo della musica.",
+        ensembles: ["stradellafacendo"],
         href: "https://www.lagazzettadimassaecarrara.net/fivizzano/successo-per-a-tempo-di-vita-il-concerto-di-fiati-del-gruppo-stradella-facendo-della-rinata-filarmonica-di-fivizzano"
     },
     {
@@ -54,6 +58,7 @@ export const press: PressItem[] = [
         date: "2026-10-07",
         publisher: "Il Corriere Apuano",
         excerpt: "L'annuncio del concerto «A tempo di vita» di sabato 10 ottobre nel salone del Museo d'Arte Sacra di San Giovanni.",
+        ensembles: ["stradellafacendo"],
         href: "https://www.ilcorriereapuano.it/evento/concerto-autunnale-a-fivizzano-della-filarmonica-alessandro-stradella/"
     }
 ].sort((a, b) => b.date.localeCompare(a.date));

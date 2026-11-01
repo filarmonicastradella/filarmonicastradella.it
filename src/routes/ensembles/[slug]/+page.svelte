@@ -1,12 +1,16 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import ArticleCard from "$lib/components/ArticleCard.svelte";
     import EventCard from "$lib/components/EventCard.svelte";
+    import { articleKey, articles } from "$lib/articles";
     import { hasNotEnded } from "$lib/events";
     import { organization } from "$lib/organization";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
     const ensemble = $derived(data.ensemble);
+    // Gli articoli, nostri o dei giornali, che hanno la formazione tra i tag (l'hashtag senza il cancelletto)
+    const related = $derived(articles.filter((article) => article.ensembles?.some((tag) => `#${tag}` === ensemble.hashtag)));
 
     // Con JS si nascondono gli eventi già conclusi dalla build, come nel calendario.
     let now = $state<Date>();
@@ -71,6 +75,17 @@
         <ol>
             {#each events as event (event.id)}
                 <li><EventCard {event} /></li>
+            {/each}
+        </ol>
+    </section>
+{/if}
+
+{#if related.length > 0}
+    <section>
+        <h2>Se ne parla</h2>
+        <ol>
+            {#each related as article (articleKey(article))}
+                <li><ArticleCard {article} /></li>
             {/each}
         </ol>
     </section>

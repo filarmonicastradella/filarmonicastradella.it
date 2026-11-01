@@ -260,4 +260,4 @@
     </p>
 </section>
 
-<p class="rimando"><a href="/articles">Tutti gli articoli</a></p>
+<p class="rimando"><a href="/articles">Articoli</a></p>

@@ -3,8 +3,7 @@
     import UpcomingEvents from "./UpcomingEvents.svelte";
     import Gallery from "./Gallery.svelte";
     import ArticleCard from "$lib/components/ArticleCard.svelte";
-    import { articles } from "$lib/articles";
-    import { press } from "$lib/press";
+    import { articleKey, articles } from "$lib/articles";
     import { ensembles } from "$lib/ensembles";
     import { legalSeat } from "$lib/locations";
     // Il corsivo serve solo al titolo della home: richiesto subito, solo qui
@@ -65,8 +64,8 @@
     const structuredDataScript = `<script type="application/ld+json">${JSON.stringify(structuredData).replace(/</g, "\\u003c")}<\/script>`;
 
     // In home solo le notizie (la categoria Notizie degli articoli); ricerche e altri scritti stanno in /articles
-    const latestNews = articles.filter(({ category }) => category === "news").slice(0, 2);
-    const latestPress = press.slice(0, 2);
+    // Le ultime notizie: le nostre e gli articoli dei giornali, insieme
+    const latestNews = articles.filter(({ category }) => category === "news" || category === "press").slice(0, 2);
 </script>
 
 <svelte:head>
@@ -100,18 +99,18 @@
 </section>
 
 <!--
-    Come "Prossimi eventi": righe una sotto l'altra, mai titoli in Cormorant affiancati (docs/DESIGN.md).
-    Finché non c'è nessuna notizia pubblicata la sezione non compare.
+    Come "Prossimi eventi": righe una sotto l'altra, mai titoli in Cormorant affiancati (docs/DESIGN.md); le notizie
+    nostre e gli articoli dei giornali insieme, con la categoria o la testata in occhiello. Senza notizie la sezione non compare.
 -->
 {#if latestNews.length > 0}
     <section>
-        <h2>Notizie</h2>
+        <h2>Ultime notizie</h2>
         <ol>
-            {#each latestNews as article (article.href)}
+            {#each latestNews as article (articleKey(article))}
                 <li><ArticleCard {article} /></li>
             {/each}
         </ol>
-        <p class="rimando"><a href="/articles/news">Tutte le notizie</a></p>
+        <p class="rimando"><a href="/articles">Articoli</a></p>
     </section>
 {/if}
 
@@ -163,17 +162,6 @@
 </section>
 
 -->
-
-<!-- Gli ultimi articoli dei giornali, come le notizie: righe una sotto l'altra, con la testata in occhiello -->
-<section>
-    <h2>Parlano di noi</h2>
-    <ol>
-        {#each latestPress as item (item.title)}
-            <li><ArticleCard article={item} /></li>
-        {/each}
-    </ol>
-    <p class="rimando"><a href="/about/press">Rassegna stampa</a></p>
-</section>
 
 <Gallery slides={data.gallery} />
 

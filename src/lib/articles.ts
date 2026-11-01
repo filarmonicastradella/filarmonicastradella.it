@@ -1,4 +1,5 @@
 import type { Component } from "svelte";
+import { press } from "$lib/press";
 
 // Categorie degli articoli, nell'ordine dell'indice: lo slug è il segmento dell'indirizzo (/articles/history)
 export const categories = [
@@ -6,7 +7,9 @@ export const categories = [
     { slug: "teaching", name: "Didattica", description: "Guide per chi studia uno strumento o comincia a suonare." },
     { slug: "theory", name: "Teoria musicale", description: "Le basi della musica, spiegate semplici." },
     { slug: "life", name: "Vita della Filarmonica", description: "Prove, concerti, trasferte e persone." },
-    { slug: "news", name: "Notizie", description: "Avvisi dell'associazione, iscrizioni e appuntamenti." }
+    { slug: "news", name: "Notizie", description: "Avvisi dell'associazione, iscrizioni e appuntamenti." },
+    // Gli articoli dei giornali (press.ts), con il link alla testata: fino al 1/11/2026 erano la Rassegna stampa in /about/press
+    { slug: "press", name: "Stampa", description: "Gli articoli dei giornali sulla Filarmonica, con il link alla testata." }
 ] as const;
 
 export type CategorySlug = (typeof categories)[number]["slug"];
@@ -20,11 +23,17 @@ interface ArticleMetadata {
     author?: string;
     // Bozze: restano nel repository ma non vengono pubblicate
     draft?: boolean;
+    // Le formazioni di cui parla, con l'hashtag degli eventi senza il cancelletto (stradellafacendo): l'articolo
+    // compare anche nella pagina della formazione
+    ensembles?: string[];
 }
 
 export interface Article extends ArticleMetadata {
-    slug: string;
-    href: string;
+    slug?: string;
+    // Il link all'articolo: una nostra pagina, o il sito del giornale; senza, un articolo di giornale solo su carta
+    href?: string;
+    // Solo per gli articoli dei giornali: la testata
+    publisher?: string;
     // Solo per gli articoli in Markdown; quelli con una pagina propria (immagini, impaginazione) non ce l'hanno
     component?: Component;
 }
@@ -68,11 +77,17 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
     }
 ];
 
-// Dal più recente
-export const articles: Article[] = [...markdownArticles, ...pageArticles]
-    .filter(({ draft }) => !draft)
-    .map((article) => ({ ...article, href: `/articles/${article.category}/${article.slug}` }))
-    .sort((a, b) => b.date.localeCompare(a.date));
+// I nostri articoli e quelli dei giornali in un solo archivio, dal più recente. Dei giornali solo titolo, sommario e
+// link: il testo intero si legge sul loro sito (diritto d'autore)
+export const articles: Article[] = [
+    ...[...markdownArticles, ...pageArticles]
+        .filter(({ draft }) => !draft)
+        .map((article) => ({ ...article, href: `/articles/${article.category}/${article.slug}` })),
+    ...press.map((item) => ({ ...item, category: "press" as const }))
+].sort((a, b) => b.date.localeCompare(a.date));
+
+// Una chiave per gli elenchi: il link, o per le uscite solo su carta testata e titolo
+export const articleKey = (article: Article) => article.href ?? `${article.publisher} ${article.title}`;
 
 // Solo le categorie con almeno un articolo: le altre non hanno pagina né link
 export const activeCategories = categories.filter(({ slug }) => articles.some(({ category }) => category === slug));

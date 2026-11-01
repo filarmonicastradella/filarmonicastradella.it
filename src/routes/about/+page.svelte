@@ -43,12 +43,6 @@
         </a>
     </li>
     -->
-    <li>
-        <a href="/about/press">
-            <h2>Rassegna stampa</h2>
-            <p>Gli articoli dei giornali sulla Filarmonica.</p>
-        </a>
-    </li>
     <!-- Da riattivare quando pronte (rinominare _page.svelte in +page.svelte in ciascuna cartella):
     <li>
         <a href="/about/locations">

@@ -1,13 +1,12 @@
 <script lang="ts">
     import { categoryName, formatArticleDate, type Article } from "$lib/articles";
     import { organization } from "$lib/organization";
-    import type { PressItem } from "$lib/press";
 
     // Un nostro articolo (occhiello: la categoria) o un articolo di giornale della rassegna stampa (occhiello: la
     // testata, link al giornale). `level` è il livello del titolo, da scegliere in base a dove compare la scheda.
-    let { article, level = 3 }: { article: Article | PressItem; level?: 2 | 3 | 4 } = $props();
+    let { article, level = 3 }: { article: Article; level?: 2 | 3 | 4 } = $props();
 
-    const isPress = $derived("publisher" in article);
+    const isPress = $derived(Boolean(article.publisher));
 </script>
 
 <!-- Come la card evento (docs/DESIGN.md): occhiello, titolo, descrizione e in fondo la firma come didascalia -->
@@ -22,7 +21,7 @@
     >
         <!-- In testa la categoria (o la testata) e, sotto, la firma: autore e data -->
         <p>
-            {#if "publisher" in article}
+            {#if article.publisher}
                 <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">{article.publisher}</span></span>
             {:else}
                 <span itemprop="articleSection">{categoryName(article.category)}</span>
