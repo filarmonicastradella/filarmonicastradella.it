@@ -88,6 +88,14 @@
     </p>
 {/snippet}
 
+<!-- Il documento di chi firma la domanda: chi si iscrive, o per un minore il genitore, accanto ai suoi dati -->
+{#snippet identityDocument()}
+    <p>
+        <label for="documento_identita">Documento di identità (PDF, JPG o PNG)</label>
+        <input type="file" id="documento_identita" name="attachment" required multiple accept="application/pdf,image/jpeg,image/png" />
+    </p>
+{/snippet}
+
 {#snippet addressFields(prefix: string)}
     <p>
         <label for="{prefix}_comune">Comune</label>
@@ -185,6 +193,9 @@
     <fieldset>
         <legend>{isMinorenne ? "Dati anagrafici del minore" : "Dati anagrafici"}</legend>
         {@render identityFields("", "", true)}
+        {#if !isMinorenne}
+            {@render identityDocument()}
+        {/if}
     </fieldset>
 
     <!-- Avvisa, anche chi usa uno screen reader, se la casella e la data di nascita non coincidono; di solito è vuoto -->
@@ -199,6 +210,7 @@
             <fieldset>
                 <legend>Dati anagrafici del genitore</legend>
                 {@render identityFields("genitore_", "genitore", false)}
+                {@render identityDocument()}
             </fieldset>
         {/if}
 
@@ -318,11 +330,7 @@
         </fieldset>
 
         <fieldset>
-            <legend>Documento e conferma</legend>
-            <p>
-                <label for="documento_identita">{isMinorenne ? "Documento di identità del genitore" : "Documento di identità"} (PDF, JPG o PNG)</label>
-                <input type="file" id="documento_identita" name="attachment" required multiple accept="application/pdf,image/jpeg,image/png" />
-            </p>
+            <legend>Conferma</legend>
 
             <p>
                 <input type="checkbox" id="richiesta_iscrizione" name="richiesta_iscrizione" required />
