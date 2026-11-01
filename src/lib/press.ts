@@ -15,6 +15,15 @@ export interface PressItem {
 
 export const press: PressItem[] = [
     {
+        title: "La prima orchestra della Lunigiana. Stasera il debutto alla Pieve di Monti: «Obiettivo crescere e condividere»",
+        date: "2026-01-10",
+        publisher: "La Nazione",
+        author: "Anastasia Biancardi",
+        excerpt: "Licciana Nardi, l'organico è composto da 16 strumenti.",
+        ensembles: ["orchestrainfieri"],
+        href: "https://www.lanazione.it/massa-carrara/cronaca/la-prima-orchestra-della-lunigiana-17728677"
+    },
+    {
         title: "La Filarmonica dei giovani. Duecento anni in musica: «Una mostra e tante idee»",
         date: "2026-10-20",
         publisher: "La Nazione",
