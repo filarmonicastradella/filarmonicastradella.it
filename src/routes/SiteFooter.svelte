@@ -30,12 +30,6 @@
     </nav>
 
     <section>
-        <h2>Sostienici</h2>
-        <p>Strumenti, spartiti e sala prove li mette a disposizione l'associazione: con il tuo aiuto possiamo continuare a farlo.</p>
-        <p><a href="/support">Sostieni la Filarmonica</a></p>
-    </section>
-
-    <section>
         <h2>Contatti</h2>
 
         <address>

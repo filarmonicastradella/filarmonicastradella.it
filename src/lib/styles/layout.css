@@ -376,8 +376,7 @@ body > div > footer dd {
     margin: var(--space-1) 0 var(--space-4);
 }
 
-/* Su una riga intera: i social, l'invito a sostenerci e il copyright; le altre sezioni vanno a capo sotto */
-body > div > footer > :is(nav:first-child, section:has(a[href="/support"]), p:last-child) {
+body > div > footer > :is(nav:first-child, p:last-child) {
     grid-column: 1 / -1;
 }
 
