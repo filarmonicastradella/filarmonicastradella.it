@@ -4,12 +4,12 @@
 </script>
 
 <svelte:head>
-    <title>Trasparenza — Filarmonica Alessandro Stradella</title>
+    <title>Amministrazione trasparente — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Dati dell'ente, organi e documenti che la Filarmonica Alessandro Stradella APS pubblica per trasparenza." />
 </svelte:head>
 
 <header>
-    <h1>Trasparenza</h1>
+    <h1>Amministrazione trasparente</h1>
     <p>In questa sezione l'associazione pubblica i documenti e le informazioni previsti per gli enti del Terzo settore.</p>
 </header>
 
