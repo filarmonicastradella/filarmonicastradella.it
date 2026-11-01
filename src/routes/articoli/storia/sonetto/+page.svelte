@@ -3,6 +3,9 @@
     import ArticleHeader from "../../ArticleHeader.svelte";
     // Il fregio inciso del foglio, ricalcato da una scansione e reso in PNG: un solo tratto, nessuna fotografia.
     import puttoImg from "$lib/assets/imgs/putto-sonetto.png?enhanced&w=256;512;768";
+    // Copertina: la scansione del foglio originale (la stessa su Wikimedia Commons), in più misure, e la sua anteprima sfocata
+    import sonettoImg from "$lib/assets/imgs/sonetto-santa-cecilia.jpg?enhanced&w=400;640;800;1280;1600&quality=40";
+    import sonettoPlaceholder from "$lib/assets/imgs/sonetto-santa-cecilia.jpg?w=24&blur=2&format=webp&inline";
 
     const article = findArticle("storia", "sonetto")!;
 </script>
@@ -15,7 +18,16 @@
     />
 </svelte:head>
 
-<ArticleHeader {article} />
+<!-- Nella fascia si tiene il titolo del foglio, «DI SANTA CECILIA» -->
+<ArticleHeader {article} style="--cover-placeholder: url({sonettoPlaceholder}); --cover-position: center 9%; --cover-archive: 1">
+    <enhanced:img
+        src={sonettoImg}
+        alt="Il foglio a stampa del 1789: «In occasione della solenne festività di Santa Cecilia vergine e martire», con il putto che suona la tromba e il sonetto dedicato a Carlo Emanuele Malaspina"
+        sizes="100vw"
+        fetchpriority="high"
+        itemprop="image"
+    />
+</ArticleHeader>
 
 <section>
     <h2>Il foglio</h2>
