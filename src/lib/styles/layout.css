@@ -375,8 +375,32 @@ body > div > footer dd {
     margin: var(--space-1) 0 var(--space-4);
 }
 
-body > div > footer > :is(nav:first-child, p:last-child) {
+/* Su una riga intera: i social, l'invito a sostenerci e il copyright; le altre sezioni vanno a capo sotto */
+body > div > footer > :is(nav:first-child, section:has(a[href="/support"]), p:last-child) {
     grid-column: 1 / -1;
+}
+
+/* L'invito a sostenerci come le sezioni delle pagine (sopra): da 64rem il titolo a sinistra, testo e link a destra */
+@media (min-width: 64rem) {
+    body > div > footer > section:has(a[href="/support"]) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
+        column-gap: var(--space-6);
+
+        & > * {
+            grid-column: 2;
+            margin: 0;
+        }
+
+        & > h2 {
+            grid-column: 1;
+            grid-row: span 2;
+        }
+
+        & > p + p {
+            margin-block-start: var(--space-4);
+        }
+    }
 }
 
 body > div > footer > nav:first-child ul {
