@@ -148,7 +148,7 @@
         </fieldset>
 
         <fieldset>
-            <legend>Per chi</legend>
+            <legend>Richiedente</legend>
 
             <p>
                 <input type="radio" id="richiedente_maggiorenne" name="tipo_richiedente" value="maggiorenne" bind:group={applicant} />
