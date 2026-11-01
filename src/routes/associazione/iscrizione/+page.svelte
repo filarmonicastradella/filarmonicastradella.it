@@ -191,7 +191,7 @@
     </fieldset>
 
     <fieldset>
-        <legend>{isMinorenne ? "Dati anagrafici del minore" : "Dati anagrafici"}</legend>
+        <legend>{isMinorenne ? "Anagrafica del minore" : "Anagrafica"}</legend>
         {@render identityFields("", "", true)}
         {#if !isMinorenne}
             {@render identityDocument()}
@@ -208,7 +208,7 @@
     {:else}
         {#if isMinorenne}
             <fieldset>
-                <legend>Dati anagrafici del genitore</legend>
+                <legend>Anagrafica del genitore</legend>
                 {@render identityFields("genitore_", "genitore", false)}
                 {@render identityDocument()}
             </fieldset>
