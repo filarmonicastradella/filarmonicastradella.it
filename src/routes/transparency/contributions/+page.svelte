@@ -27,4 +27,4 @@
     </table>
 </section>
 
-<p class="rimando"><a href="/transparency">Amministrazione trasparente</a></p>
+<p class="rimando"><a href="/transparency">Trasparenza</a></p>

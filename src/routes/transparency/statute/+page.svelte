@@ -223,4 +223,4 @@
     <p>L'associazione può dotarsi di uno o più Regolamenti interni allo scopo di disciplinare in modo più dettagliato l'organizzazione e il funzionamento delle attività associative. I Regolamenti integrano lo Statuto e non possono in alcun modo contrastare con le sue disposizioni né con la normativa vigente. Essi sono approvati, modificati e revocati dall'Organo di amministrazione con propria deliberazione. L'Assemblea può in ogni momento esaminarli e deliberarne la modifica o la revoca. I regolamenti interni sono sottoposti a revisione almeno una volta ogni tre anni.</p>
 </section>
 
-<p class="rimando"><a href="/transparency">Amministrazione trasparente</a></p>
+<p class="rimando"><a href="/transparency">Trasparenza</a></p>
