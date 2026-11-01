@@ -177,16 +177,16 @@
     </fieldset>
 
     <fieldset>
-        <legend>{isChange ? "Per chi" : "Chi si iscrive"}</legend>
+        <legend>Per chi</legend>
 
         <p>
             <input type="radio" id="richiedente_maggiorenne" name="tipo_richiedente" value="maggiorenne" bind:group={applicant} />
-            <label for="richiedente_maggiorenne">{isChange ? "Per me" : "Mi iscrivo io"}</label>
+            <label for="richiedente_maggiorenne">Per me</label>
         </p>
 
         <p>
             <input type="radio" id="richiedente_minore" name="tipo_richiedente" value="minore" bind:group={applicant} />
-            <label for="richiedente_minore">{isChange ? "Per un minore" : "Iscrivo un minore"}</label>
+            <label for="richiedente_minore">Per un minore</label>
         </p>
     </fieldset>
 
