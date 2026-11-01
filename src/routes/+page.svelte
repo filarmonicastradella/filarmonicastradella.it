@@ -64,8 +64,8 @@
     const structuredDataScript = `<script type="application/ld+json">${JSON.stringify(structuredData).replace(/</g, "\\u003c")}<\/script>`;
 
     // In home solo le notizie (la categoria Notizie degli articoli); ricerche e altri scritti stanno in /articoli
-    // Le ultime notizie: le nostre e gli articoli dei giornali, insieme
-    const latestNews = articles.filter(({ category }) => category === "notizie" || category === "stampa").slice(0, 2);
+    // Gli ultimi articoli di qualsiasi categoria: i nostri e quelli dei giornali, insieme
+    const latestArticles = articles.slice(0, 2);
 </script>
 
 <svelte:head>
@@ -99,14 +99,14 @@
 </section>
 
 <!--
-    Come "Prossimi eventi": righe una sotto l'altra, mai titoli in Cormorant affiancati (docs/DESIGN.md); le notizie
-    nostre e gli articoli dei giornali insieme, con la categoria o la testata in occhiello. Senza notizie la sezione non compare.
+    Come "Prossimi eventi": righe una sotto l'altra, mai titoli in Cormorant affiancati (docs/DESIGN.md); i nostri articoli
+    e quelli dei giornali insieme, con la categoria o la testata in occhiello. Senza articoli la sezione non compare.
 -->
-{#if latestNews.length > 0}
+{#if latestArticles.length > 0}
     <section>
-        <h2>Ultime notizie</h2>
+        <h2>Ultimi articoli</h2>
         <ol>
-            {#each latestNews as article (articleKey(article))}
+            {#each latestArticles as article (articleKey(article))}
                 <li><ArticleCard {article} /></li>
             {/each}
         </ol>

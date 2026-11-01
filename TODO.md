@@ -104,6 +104,7 @@ Oggi sono `_page.svelte` (SvelteKit le ignora): per ognuna rinominare in `+page.
 - Numeri d'impatto (soci, concerti all'anno, età media, ore di volontariato).
 - Partner e patrocini con i loghi.
 - Notizie regolari (almeno una al mese): un sito fermo sembra un'associazione ferma.
+- **Newsletter** (idea dal sito del Lunigiana International Music Festival, 1/11/2026): modulo «Resta aggiornato» di un servizio esterno (il sito è statico; Brevo, europeo, o Buttondown, Mailchimp) con doppia conferma per il GDPR; si possono importare i soci che hanno dato il consenso alle email nel modulo di iscrizione; aggiornare l'informativa privacy con il fornitore. Prima serve qualcuno che la scriva con regolarità (una al mese), riprendendo articoli e calendario.
 - Ingaggi: video brevi delle formazioni dal vivo; «Dove abbiamo suonato».
 - Musicisti: mancano gli archi in `/associazione/musicisti` (sezione «Archi» quando ci sono i nomi).
 - Modulo di iscrizione: manca come e quando versare la quota.
