@@ -39,8 +39,9 @@
         </dd>
         <dt>Messaggi</dt>
         <dd>
-            Se ci scrivi per email, con il modulo di contatto o con la richiesta per un evento, usiamo i dati che ci dai (nome, indirizzo email, eventuale telefono, motivo, data e luogo dell'evento, testo del messaggio) solo per risponderti. Base
-            giuridica: la tua richiesta (art. 6.1.b).
+            Se ci scrivi per email o con il modulo di contatto, anche per chiederci di suonare a un evento, usiamo i dati che ci dai (nome, indirizzo
+            email, telefono, motivo, per gli eventi occasione, data e luogo, testo del messaggio) solo per risponderti: per email, con una telefonata,
+            un SMS o un messaggio WhatsApp. Base giuridica: la tua richiesta (art. 6.1.b).
         </dd>
         <dt>Richiesta di iscrizione</dt>
         <dd>
@@ -69,10 +70,13 @@
         <dt>GitHub</dt>
         <dd>ospita il sito.</dd>
         <dt>formsubmit.co</dt>
-        <dd>inoltra via email all'associazione i dati dei moduli di contatto, di richiesta per un evento e di iscrizione.</dd>
+        <dd>inoltra via email all'associazione i dati dei moduli di contatto e di iscrizione.</dd>
         <dt>Instagram</dt>
         <dd>forniscono le foto della galleria, che il sito copia quando viene preparato: il tuo browser non si collega ai loro server, se non quando apri un post su Instagram.</dd>
     </dl>
+    <p>
+        Se ti rispondiamo con WhatsApp, il tuo numero e i messaggi passano anche dai server di WhatsApp (Meta), secondo le sue condizioni.
+    </p>
     <p>
         Il sito legge il calendario degli eventi da Google mentre viene preparato, non durante la tua visita: Google non riceve i tuoi dati. I dati
         non vengono venduti né diffusi.

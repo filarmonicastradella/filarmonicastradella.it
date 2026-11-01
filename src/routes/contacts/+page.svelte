@@ -132,12 +132,11 @@
                 <input type="email" id="contatto-email" name="email" autocomplete="email" required maxlength="120" />
             </p>
 
-            {#if isBooking}
-                <p>
-                    <label for="contatto-telefono">Telefono</label>
-                    <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" inputmode="tel" required minlength="9" maxlength="20" />
-                </p>
-            {/if}
+            <!-- Molti preferiscono una telefonata o un messaggio WhatsApp a un'email: il telefono lo chiediamo sempre (informativa privacy) -->
+            <p>
+                <label for="contatto-telefono">Telefono</label>
+                <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" inputmode="tel" required minlength="9" maxlength="20" />
+            </p>
         </fieldset>
 
         <p>
