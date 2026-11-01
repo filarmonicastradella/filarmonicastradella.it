@@ -305,7 +305,7 @@
             <p>
                 <input type="checkbox" id="consenso_nome" name="consenso_nome" value="Sì" />
                 <label for="consenso_nome">
-                    {isMinorenne ? "Pubblicazione del nome proprio del minore" : "Pubblicazione del mio nome e cognome"} nell'elenco dei musicisti del sito.
+                    Acconsento alla pubblicazione {isMinorenne ? "del nome proprio del minore" : "del mio nome e cognome"} nell'elenco dei musicisti del sito.
                 </label>
             </p>
 
