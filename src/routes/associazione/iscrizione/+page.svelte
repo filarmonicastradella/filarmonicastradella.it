@@ -134,7 +134,7 @@
         <input type="hidden" name="_next" value="https://filarmonicastradella.it/associazione/iscrizione/grazie" />
         <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
         <fieldset>
-            <legend>Tipo di domanda</legend>
+            <legend>Tipologia</legend>
 
             <p>
                 <input type="radio" id="richiesta_iscrizione_nuova" name="tipo_richiesta" value="iscrizione" bind:group={request} />
