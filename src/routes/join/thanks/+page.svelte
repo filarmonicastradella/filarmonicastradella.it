@@ -1,11 +1,14 @@
 <svelte:head>
-    <title>Domanda di iscrizione inviata — Filarmonica Alessandro Stradella</title>
+    <title>Richiesta inviata — Filarmonica Alessandro Stradella</title>
     <meta name="robots" content="noindex" />
 </svelte:head>
 
 <header>
-    <h1>Domanda di iscrizione inviata</h1>
-    <p>Abbiamo ricevuto la tua domanda: il consiglio direttivo la esaminerà e ti comunicherà l'esito all'indirizzo email che hai indicato.</p>
+    <h1>Richiesta inviata</h1>
+    <p>
+        Abbiamo ricevuto la tua richiesta. Se è una nuova iscrizione, il consiglio direttivo la esaminerà e ti comunicherà l'esito all'indirizzo email che
+        hai indicato; se è una variazione, aggiorniamo i tuoi dati e i consensi.
+    </p>
     <p>Per qualsiasi dubbio puoi scrivere a <a href="mailto:segreteria@filarmonicastradella.it">segreteria@filarmonicastradella.it</a>.</p>
 </header>
 

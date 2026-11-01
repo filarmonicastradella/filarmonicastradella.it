@@ -9,7 +9,7 @@ export const prerender = true;
 
 // Pagine che non vanno nella mappa: conferme di invio, pagine con parametri (aggiunte sotto) e vecchi indirizzi
 // che rimandano agli articoli.
-const EXCLUDED = /\/thanks$|\[|^\/about\/(sonnet|stradella|history|ensembles\/infieri)$|^\/(support\/join|booking)$/;
+const EXCLUDED = /\/thanks$|\[|^\/about\/(sonnet|stradella|history|ensembles\/infieri)$|^\/(support\/join|booking|legal\/consents)$/;
 
 const pages = Object.keys(import.meta.glob("/src/routes/**/+page.svelte"))
     .map((file) => file.replace("/src/routes", "").replace(/\/?\+page\.svelte$/, "") || "/")

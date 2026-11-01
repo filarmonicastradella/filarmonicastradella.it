@@ -1,4 +1,22 @@
 <script lang="ts">
+    import { browser } from "$app/environment";
+    import { page } from "$app/state";
+
+    // Iscrizione o variazione dei dati e dei consensi di un socio (dal 1/11/2026, prima i consensi avevano un modulo loro):
+    // stesso modulo e stessi campi, cambiano solo la richiesta e l'oggetto dell'email. "?modo=variazione" la sceglie da un link.
+    let request = $derived(browser && page.url.searchParams.get("modo") === "variazione" ? "variazione" : "iscrizione");
+    const isChange = $derived(request === "variazione");
+
+    // I canali della liberatoria su carta (moduli 04.06 e 04.07), uno per uno
+    const imageChannels = [
+        { name: "consenso_archivio", label: "Archivio interno e documentazione delle attività" },
+        { name: "consenso_sito", label: "Sito internet dell'associazione" },
+        { name: "consenso_social", label: "Canali social ufficiali dell'associazione" },
+        { name: "consenso_stampa", label: "Materiale a stampa e comunicazioni alla stampa" },
+        { name: "consenso_piattaforme", label: "Registrazioni dei concerti su piattaforme di condivisione" },
+        { name: "consenso_progetti", label: "Documentazione dei progetti per enti finanziatori, scuole e pubbliche amministrazioni" }
+    ];
+
     let birthDate = $state("");
     let domicilioUgualeResidenza = $state(true);
 
@@ -35,8 +53,8 @@
 </script>
 
 <svelte:head>
-    <title>Domanda di iscrizione — Filarmonica Alessandro Stradella</title>
-    <meta name="description" content="Domanda di iscrizione come socio della Filarmonica Alessandro Stradella APS di Fivizzano: quota annuale di 12 €, anche per i minorenni con un genitore." />
+    <title>Iscrizione e variazioni — Filarmonica Alessandro Stradella</title>
+    <meta name="description" content="Domanda di iscrizione come socio della Filarmonica Alessandro Stradella APS di Fivizzano, quota annuale di 12 €, anche per i minorenni con un genitore; per chi è già socio, variazione dei dati e dei consensi." />
 </svelte:head>
 
 {#snippet identityFields(prefix: string, section: string, bindsBirthDate: boolean)}
@@ -93,8 +111,11 @@
 {/snippet}
 
 <header>
-    <h1>Domanda di iscrizione</h1>
-    <p>Il consiglio direttivo esamina la domanda e ti comunica l'esito per email.</p>
+    <h1>Iscrizione e variazioni</h1>
+    <p>
+        Per iscriverti come socio o, se lo sei già, per aggiornare i tuoi dati e i consensi. Il consiglio direttivo esamina le nuove domande e ti comunica
+        l'esito per email.
+    </p>
 </header>
 
 <section>
@@ -129,21 +150,35 @@
 </section>
 
 <form action="https://formsubmit.co/segreteria@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="_subject" value="Nuova domanda di iscrizione – Filarmonica Stradella" />
+    <input type="hidden" name="_subject" value={isChange ? "Variazione dei dati di un socio – Filarmonica Stradella" : "Nuova domanda di iscrizione – Filarmonica Stradella"} />
     <input type="hidden" name="_template" value="table" />
     <input type="hidden" name="_next" value="https://filarmonicastradella.it/join/thanks" />
     <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
     <fieldset>
-        <legend>Chi si iscrive</legend>
+        <legend>Che cosa vuoi fare</legend>
+
+        <p>
+            <input type="radio" id="richiesta_iscrizione_nuova" name="tipo_richiesta" value="iscrizione" bind:group={request} />
+            <label for="richiesta_iscrizione_nuova">Nuova iscrizione</label>
+        </p>
+
+        <p>
+            <input type="radio" id="richiesta_variazione" name="tipo_richiesta" value="variazione" bind:group={request} />
+            <label for="richiesta_variazione">Variazione dei dati o dei consensi, per chi è già socio</label>
+        </p>
+    </fieldset>
+
+    <fieldset>
+        <legend>{isChange ? "Per chi" : "Chi si iscrive"}</legend>
 
         <p>
             <input type="radio" id="richiedente_maggiorenne" name="tipo_richiedente" value="maggiorenne" bind:group={applicant} />
-            <label for="richiedente_maggiorenne">Mi iscrivo io</label>
+            <label for="richiedente_maggiorenne">{isChange ? "Per me" : "Mi iscrivo io"}</label>
         </p>
 
         <p>
             <input type="radio" id="richiedente_minore" name="tipo_richiedente" value="minore" bind:group={applicant} />
-            <label for="richiedente_minore">Iscrivo un minore</label>
+            <label for="richiedente_minore">{isChange ? "Per un minore" : "Iscrivo un minore"}</label>
         </p>
     </fieldset>
 
@@ -153,7 +188,7 @@
     </fieldset>
 
     <!-- Avvisa, anche chi usa uno screen reader, se la casella e la data di nascita non coincidono; di solito è vuoto -->
-    <p role="status">{isMinorenne && age !== null && age >= 18 ? "La data di nascita è di un maggiorenne: controlla la data o scegli «Mi iscrivo io»." : ""}</p>
+    <p role="status">{isMinorenne && age !== null && age >= 18 ? "La data di nascita è di un maggiorenne: controlla la data o la scelta qui sopra." : ""}</p>
 
     {#if isTooYoung}
         <p role="alert">
@@ -249,7 +284,12 @@
         </fieldset>
 
         <fieldset>
-            <legend>Consensi facoltativi</legend>
+            <legend>Consensi</legend>
+
+            <p>
+                Una casella non spuntata vale come no{isChange ? ", e le scelte che invii sostituiscono quelle date finora" : ""}. Foto e riprese:
+                cosa comporta lo spiega la <a href="/legal/images" target="_blank" rel="noopener noreferrer">liberatoria per immagini, voce ed esecuzioni</a>.
+            </p>
 
             <p>
                 <input type="checkbox" id="consenso_messaggi" name="consenso_messaggi" />
@@ -261,14 +301,12 @@
                 <label for="consenso_email">Acconsento alla ricezione di aggiornamenti sulle attività istituzionali all'indirizzo email indicato.</label>
             </p>
 
-            <p>
-                <input type="checkbox" id="consenso_immagini" name="consenso_immagini" />
-                <label for="consenso_immagini">
-                    Ho letto la <a href="/legal/images" target="_blank" rel="noopener noreferrer">liberatoria per immagini, voce ed esecuzioni</a> e
-                    {isMinorenne ? "autorizzo l'uso di foto e riprese del minore" : "autorizzo l'uso di foto e riprese che mi ritraggono"} sui canali indicati,
-                    per finalità istituzionali e promozionali.
-                </label>
-            </p>
+            {#each imageChannels as { name, label } (name)}
+                <p>
+                    <input type="checkbox" id={name} {name} value="Sì" />
+                    <label for={name}>{isMinorenne ? "Foto e riprese del minore" : "Foto e riprese che mi ritraggono"}: {label.toLowerCase()}</label>
+                </p>
+            {/each}
         </fieldset>
 
         <fieldset>
@@ -281,7 +319,11 @@
             <p>
                 <input type="checkbox" id="richiesta_iscrizione" name="richiesta_iscrizione" required />
                 <label for="richiesta_iscrizione">
-                    {#if isMinorenne}
+                    {#if isChange && isMinorenne}
+                        Chiedo, in qualità di genitore, di aggiornare i dati e i consensi del minore sopra indicato, socio della Filarmonica Alessandro Stradella APS.
+                    {:else if isChange}
+                        Chiedo di aggiornare i miei dati e i miei consensi di socio della Filarmonica Alessandro Stradella APS.
+                    {:else if isMinorenne}
                         Chiedo, in qualità di genitore, l'iscrizione del minore sopra indicato come socio della Filarmonica Alessandro Stradella APS.
                     {:else}
                         Chiedo la mia iscrizione come socio della Filarmonica Alessandro Stradella APS.
@@ -292,7 +334,7 @@
     {/if}
 
     <p>
-        <button type="submit" disabled={isTooYoung}>Invia la domanda di iscrizione</button>
+        <button type="submit" disabled={isTooYoung}>{isChange ? "Invia la variazione" : "Invia la domanda di iscrizione"}</button>
     </p>
 </form>
 

@@ -49,7 +49,7 @@
     <nav aria-labelledby="indice-partecipa">
         <h2 id="indice-partecipa">Partecipa</h2>
         <ul>
-            <li><a href="/join">Domanda di iscrizione</a></li>
+            <li><a href="/join">Iscrizione e variazioni</a></li>
             <li><a href="/events">Calendario</a></li>
             <li><a href="/contacts?motivo=ingaggio#scrivici">Per il tuo evento</a></li>
             <li><a href="/support">Sostienici</a></li>
