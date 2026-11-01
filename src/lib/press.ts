@@ -11,6 +11,8 @@ export interface PressItem {
     href?: string;
     /** Le formazioni di cui parla, con l'hashtag degli eventi senza il cancelletto (articles.ts) */
     ensembles?: string[];
+    /** In evidenza fino a questa data compresa, AAAA-MM-GG (articles.ts) */
+    pinned?: string;
 }
 
 export const press: PressItem[] = [
@@ -20,7 +22,8 @@ export const press: PressItem[] = [
         publisher: "La Nazione",
         author: "Roberto Oligeri",
         excerpt: "Fivizzano, l'evento celebrativo al Museo di Arte Sacra con autorità e cittadini.",
-        href: "https://www.lanazione.it/massa-carrara/cronaca/la-filarmonica-dei-giovani-duecento-87a2bdf9"
+        href: "https://www.lanazione.it/massa-carrara/cronaca/la-filarmonica-dei-giovani-duecento-87a2bdf9",
+        pinned: "2026-11-30"
     },
     // SEGNAPOSTO: la data del post è da inserire
     {
