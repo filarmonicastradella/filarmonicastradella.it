@@ -12,7 +12,7 @@
 
 <ul>
     <li>
-        <a href="/articoli/vita/missione">
+        <a href="/articoli/obiettivi/missione">
             <h2>La nostra missione</h2>
             <p>Chi siamo, in cosa crediamo e come stiamo insieme.</p>
         </a>

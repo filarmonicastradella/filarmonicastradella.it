@@ -8,7 +8,7 @@
 
 <header>
     <h1>Articoli</h1>
-    <p>Storia, didattica, teoria musicale, vita della Filarmonica, notizie e gli articoli dei giornali che parlano di noi.</p>
+    <p>Storia, didattica, teoria musicale, i nostri obiettivi, le notizie e gli articoli dei giornali che parlano di noi.</p>
 </header>
 
 <CategoryNav />
