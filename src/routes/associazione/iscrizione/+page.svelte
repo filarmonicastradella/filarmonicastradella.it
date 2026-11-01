@@ -318,7 +318,7 @@
         </fieldset>
 
         <fieldset>
-            <legend>Documento e richiesta</legend>
+            <legend>Documento e conferma</legend>
             <p>
                 <label for="documento_identita">{isMinorenne ? "Documento di identità del genitore" : "Documento di identità"} (PDF, JPG o PNG)</label>
                 <input type="file" id="documento_identita" name="attachment" required multiple accept="application/pdf,image/jpeg,image/png" />
