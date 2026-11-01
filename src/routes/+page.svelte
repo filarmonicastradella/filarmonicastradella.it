@@ -94,7 +94,7 @@
     <p>
         Cerchiamo musicisti di ogni livello, anche chi comincia da zero. Strumento, parti e sala prove li mette a disposizione l'associazione.
     </p>
-    <p class="rimando"><a href="/support/join">Come iscriversi</a></p>
+    <p class="rimando"><a href="/support/join">Domanda di iscrizione</a></p>
 </section>
 
 <!--
@@ -167,7 +167,7 @@
 <section>
     <h2>Sostieni la Filarmonica</h2>
     <p>Puoi diventare socio o fare una donazione: ogni contributo va alla musica, agli strumenti e ai giovani che iniziano a suonare.</p>
-    <p class="rimando"><a href="/support">Come sostenerci</a></p>
+    <p class="rimando"><a href="/support">Sostienici</a></p>
 </section>
 
 <!-- Home alleggerita il 9/10/2026: versione precedente, con le schede già presenti in /support.

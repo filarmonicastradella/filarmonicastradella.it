@@ -28,5 +28,5 @@
         </ol>
     {/if}
 
-    <p class="rimando"><a href="/events">Tutti gli eventi</a></p>
+    <p class="rimando"><a href="/events">Calendario</a></p>
 </section>
