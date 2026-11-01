@@ -71,7 +71,7 @@
         gestiamo; il materiale a stampa già distribuito resta com'è. Se sei in una ripresa di gruppo che non si può togliere senza danneggiare gli altri,
         ti rendiamo non riconoscibile.
     </p>
-    <p>Il consenso dato prima della revoca resta valido per gli usi già fatti. Per tutto il resto vale l'<a href="/legal/privacy">informativa privacy</a>.</p>
+    <p>Il consenso dato prima della revoca resta valido per gli usi già fatti. Per tutto il resto vale l'<a href="/legal/privacy">informativa sulla privacy</a>.</p>
 </section>
 
 <section>

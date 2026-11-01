@@ -4,13 +4,13 @@
 </script>
 
 <svelte:head>
-    <title>Informativa privacy — Filarmonica Alessandro Stradella</title>
+    <title>Informativa sulla privacy — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Quali dati personali tratta la Filarmonica Alessandro Stradella APS, perché, per quanto tempo e come esercitare i tuoi diritti." />
 </svelte:head>
 
 <!-- BOZZA da far verificare a un consulente privacy prima della pubblicazione. -->
 <header>
-    <h1>Informativa privacy</h1>
+    <h1>Informativa sulla privacy</h1>
     <p>Quali dati personali trattiamo quando visiti il sito, ci scrivi o chiedi di iscriverti, e come puoi controllarli.</p>
     <p><small>Informativa ai sensi dell'art. 13 del Regolamento UE 2016/679 (GDPR). Ultimo aggiornamento: <time datetime="2026-10">ottobre 2026</time>.</small></p>
 </header>

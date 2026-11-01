@@ -72,6 +72,6 @@
     <h2>Informative</h2>
     <ul>
         <li><a href="/legal/privacy">Informativa sulla privacy</a></li>
-        <li><a href="/legal/cookies">Politica sui cookie</a></li>
+        <li><a href="/legal/cookies">Informativa sui cookie</a></li>
     </ul>
 </section>

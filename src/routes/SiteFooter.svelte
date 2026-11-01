@@ -77,8 +77,8 @@
         <h2 id="note-legali">Note legali</h2>
         <ul>
             <li><a href="/transparency">Amministrazione trasparente</a></li>
-            <li><a href="/legal/privacy">Informativa privacy</a></li>
-            <li><a href="/legal/cookies">Cookie</a></li>
+            <li><a href="/legal/privacy">Informativa sulla privacy</a></li>
+            <li><a href="/legal/cookies">Informativa sui cookie</a></li>
         </ul>
     </nav>
 

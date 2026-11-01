@@ -1,11 +1,11 @@
 <svelte:head>
-    <title>Cookie — Filarmonica Alessandro Stradella</title>
+    <title>Informativa sui cookie — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Il sito della Filarmonica Alessandro Stradella APS non usa cookie, statistiche o profilazione." />
 </svelte:head>
 
 <!-- BOZZA da far verificare a un consulente privacy prima della pubblicazione. -->
 <header>
-    <h1>Cookie</h1>
+    <h1>Informativa sui cookie</h1>
     <p>Questo sito non usa cookie: niente statistiche, niente profilazione, nessun banner da accettare.</p>
     <p><small>Informativa sui cookie secondo le linee guida del Garante per la protezione dei dati personali del 10 giugno 2021. Ultimo aggiornamento: <time datetime="2026-10">ottobre 2026</time>.</small></p>
 </header>
@@ -24,5 +24,5 @@
         Le foto della galleria sono copiate sul nostro sito: guardarle non contatta Instagram. I link ai
         nostri profili social, alle mappe e ad altri siti portano su pagine esterne, con le loro regole sui cookie.
     </p>
-    <p>Per i dati personali trattati tramite il sito vale l'<a href="/legal/privacy">informativa privacy</a>.</p>
+    <p>Per i dati personali trattati tramite il sito vale l'<a href="/legal/privacy">informativa sulla privacy</a>.</p>
 </section>
