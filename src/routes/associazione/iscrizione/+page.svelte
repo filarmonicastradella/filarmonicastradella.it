@@ -358,7 +358,7 @@
 <style>
     /*
      * Da 40rem i campi brevi si affiancano: una griglia di sei colonne in cui ogni campo ne occupa tre,
-     * i campi corti (CAP, numero civico) due e quelli lunghi (comune, via) quattro. Caselle, scelte e file su
+     * i campi corti (CAP, numero civico) due e quelli lunghi (comune, via) quattro. Caselle, scelte, codice fiscale e file su
      * tutta la riga.
      */
     @media (min-width: 40rem) {
@@ -381,6 +381,7 @@
         }
 
         form > fieldset > p:has(> input:is([type="checkbox"], [type="radio"], [type="file"])),
+        form > fieldset > p:has(> [id$="codice_fiscale"]),
         form > fieldset > p:not(:has(> input, > select, > textarea)) {
             grid-column: 1 / -1;
         }
