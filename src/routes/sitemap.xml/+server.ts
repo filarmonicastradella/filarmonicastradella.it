@@ -11,7 +11,8 @@ export const prerender = true;
 const EXCLUDED = /\/grazie$|\[/;
 
 const pages = Object.keys(import.meta.glob("/src/routes/**/+page.svelte"))
-    .map((file) => file.replace("/src/routes", "").replace(/\/?\+page\.svelte$/, "") || "/")
+    // I gruppi di pagine, tra parentesi come (elenco), non fanno parte dell'indirizzo
+    .map((file) => file.replace("/src/routes", "").replace(/\/\([^/]+\)/g, "").replace(/\/?\+page\.svelte$/, "") || "/")
     .filter((path) => !EXCLUDED.test(path));
 
 export const GET: RequestHandler = async () => {
