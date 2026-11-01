@@ -183,7 +183,7 @@
     </fieldset>
 
     <fieldset>
-        <legend>{isMinorenne ? "Dati anagrafici del minore" : "Dati anagrafici del richiedente"}</legend>
+        <legend>{isMinorenne ? "Dati anagrafici del minore" : "Dati anagrafici"}</legend>
         {@render identityFields("", "", true)}
     </fieldset>
 
