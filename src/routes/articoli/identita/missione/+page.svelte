@@ -4,7 +4,7 @@
     import { findArticle } from "$lib/articles";
     import ArticleHeader from "../../ArticleHeader.svelte";
 
-    const article = findArticle("obiettivi", "missione")!;
+    const article = findArticle("identita", "missione")!;
 </script>
 
 <svelte:head>

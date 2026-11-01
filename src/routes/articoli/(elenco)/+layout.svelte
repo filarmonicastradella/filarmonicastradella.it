@@ -8,7 +8,7 @@
 
 <header>
     <h1>Articoli</h1>
-    <p>Storia, didattica, i nostri obiettivi, le notizie e gli articoli dei giornali che parlano di noi.</p>
+    <p>La nostra identità, la storia, la didattica, le notizie e gli articoli dei giornali che parlano di noi.</p>
 </header>
 
 <CategoryNav />
