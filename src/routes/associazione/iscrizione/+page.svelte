@@ -270,8 +270,8 @@
                 <legend>Consensi</legend>
 
                 <p>
-                    Una casella non spuntata vale come no{isChange ? ", e le scelte che invii sostituiscono quelle date finora" : ""}. Foto e riprese:
-                    cosa comporta lo spiega la <a href="/informative/immagini" target="_blank" rel="noopener noreferrer">liberatoria per immagini, voce ed esecuzioni</a>.
+                    {isChange ? "Le scelte che invii sostituiscono quelle date finora. " : ""}Cosa comporta l'uso di foto e riprese lo spiega la
+                    <a href="/informative/immagini" target="_blank" rel="noopener noreferrer">liberatoria per immagini, voce ed esecuzioni</a>.
                 </p>
 
                 <p>
