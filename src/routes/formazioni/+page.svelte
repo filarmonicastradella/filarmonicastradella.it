@@ -71,4 +71,3 @@
     <FaqItem item={faq.evento} />
 </section>
 
-<p class="rimando"><a href="/associazione">L'associazione</a></p>

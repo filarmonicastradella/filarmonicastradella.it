@@ -126,37 +126,6 @@
     </p>
 </header>
 
-<section>
-    <h2>Domande frequenti</h2>
-    <details>
-        <summary>Quanto costa iscriversi?</summary>
-        <p>La quota annuale è di 12 € e si rinnova entro il 31 dicembre.</p>
-    </details>
-    <details>
-        <summary>Che impegno è richiesto? C'è un obbligo di presenza?</summary>
-        <p>
-            Nessun obbligo: per essere socio basta la quota annuale. Le prove sono una o due volte a settimana, più spesso prima dei concerti, e
-            contiamo su di te quando puoi esserci, perché la musica si fa insieme.
-        </p>
-    </details>
-    <details>
-        <summary>Devo avere uno strumento mio?</summary>
-        <p>No: strumento, parti e sala prove li mette a disposizione l'associazione.</p>
-    </details>
-    <details>
-        <summary>Ci sono limiti di età?</summary>
-        <p>
-            No: si può suonare a qualsiasi età. Per un minorenne l'iscrizione la fa un genitore: inserisci i dati del minore
-            e poi i tuoi, con il tuo documento di identità. Sotto i 14 anni online non si può: <a href="/contatti">contattaci</a> e completiamo la
-            pratica di persona.
-        </p>
-    </details>
-    <details>
-        <summary>Posso aiutare senza suonare?</summary>
-        <p>Sì: da socio puoi dare una mano con il tuo tempo e le tue competenze.</p>
-    </details>
-</section>
-
 <form action="https://formsubmit.co/segreteria@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_subject" value={isChange ? "Variazione dei dati di un socio – Filarmonica Stradella" : "Nuova domanda di iscrizione – Filarmonica Stradella"} />
     <input type="hidden" name="_template" value="table" />
@@ -354,6 +323,38 @@
     </p>
 </form>
 
+<section>
+    <h2>Domande frequenti</h2>
+    <details>
+        <summary>Quanto costa iscriversi?</summary>
+        <p>La quota annuale è di 12 € e si rinnova entro il 31 dicembre.</p>
+    </details>
+    <details>
+        <summary>Che impegno è richiesto? C'è un obbligo di presenza?</summary>
+        <p>
+            Nessun obbligo: per essere socio basta la quota annuale. Le prove sono una o due volte a settimana, più spesso prima dei concerti, e
+            contiamo su di te quando puoi esserci, perché la musica si fa insieme.
+        </p>
+    </details>
+    <details>
+        <summary>Devo avere uno strumento mio?</summary>
+        <p>No: strumento, parti e sala prove li mette a disposizione l'associazione.</p>
+    </details>
+    <details>
+        <summary>Ci sono limiti di età?</summary>
+        <p>
+            No: si può suonare a qualsiasi età. Per un minorenne l'iscrizione la fa un genitore: inserisci i dati del minore
+            e poi i tuoi, con il tuo documento di identità. Sotto i 14 anni online non si può: <a href="/contatti">contattaci</a> e completiamo la
+            pratica di persona.
+        </p>
+    </details>
+    <details>
+        <summary>Posso aiutare senza suonare?</summary>
+        <p>Sì: da socio puoi dare una mano con il tuo tempo e le tue competenze.</p>
+    </details>
+</section>
+
+<p class="rimando"><a href="/associazione">L'associazione</a></p>
 
 <style>
     /*

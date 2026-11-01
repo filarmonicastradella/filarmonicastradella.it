@@ -9,26 +9,6 @@
 </header>
 
 <section>
-    <h2>Domande frequenti</h2>
-    <details>
-        <summary>A cosa serve la mia donazione?</summary>
-        <p>
-            Copre le spese di tutto l'anno: strumenti e attrezzatura, spartiti, la sala prove, i costi dei concerti e
-            l'assicurazione dei soci.
-        </p>
-    </details>
-    <details>
-        <summary>Posso detrarre la donazione? Come ottengo la ricevuta?</summary>
-        <p>
-            Sì: siamo un'associazione di promozione sociale, e le donazioni a nostro favore godono delle agevolazioni fiscali previste dalla normativa
-            vigente. Il pagamento deve essere tracciabile, per esempio con un bonifico: conserva la prova del versamento e chiedi la ricevuta al
-            tesoriere, scrivendo a <a href="mailto:tesoreria@filarmonicastradella.it?subject=Ricevuta%20della%20donazione">tesoreria@filarmonicastradella.it</a>. Le condizioni dipendono
-            dalla tua situazione, quindi per i dettagli rivolgiti a un consulente o a un commercialista.
-        </p>
-    </details>
-</section>
-
-<section>
     <h2>Dati per il bonifico</h2>
     <dl>
         <dt>Beneficiario</dt>
@@ -57,5 +37,25 @@
     <p>Puoi sostenerci anche con il <a href="/sostienici/5x1000">5x1000</a>: non ti costa nulla.</p>
 </section>
 -->
+
+<section>
+    <h2>Domande frequenti</h2>
+    <details>
+        <summary>A cosa serve la mia donazione?</summary>
+        <p>
+            Copre le spese di tutto l'anno: strumenti e attrezzatura, spartiti, la sala prove, i costi dei concerti e
+            l'assicurazione dei soci.
+        </p>
+    </details>
+    <details>
+        <summary>Posso detrarre la donazione? Come ottengo la ricevuta?</summary>
+        <p>
+            Sì: siamo un'associazione di promozione sociale, e le donazioni a nostro favore godono delle agevolazioni fiscali previste dalla normativa
+            vigente. Il pagamento deve essere tracciabile, per esempio con un bonifico: conserva la prova del versamento e chiedi la ricevuta al
+            tesoriere, scrivendo a <a href="mailto:tesoreria@filarmonicastradella.it?subject=Ricevuta%20della%20donazione">tesoreria@filarmonicastradella.it</a>. Le condizioni dipendono
+            dalla tua situazione, quindi per i dettagli rivolgiti a un consulente o a un commercialista.
+        </p>
+    </details>
+</section>
 
 <p class="rimando"><a href="/sostienici">Sostienici</a></p>

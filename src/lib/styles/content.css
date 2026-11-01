@@ -316,7 +316,7 @@ dl[itemtype$="FAQPage"] dd {
 }
 
 /* ─────────────── Domande a scomparsa ───────────────
- * L'aiuto di una pagina (per esempio prima di un modulo): una sezione con un <details> per domanda, la
+ * L'aiuto di una pagina, sempre in fondo (dopo un modulo): una sezione con un <details> per domanda, la
  * domanda nel <summary>. Chiuse di base, così non pesano su chi sa già cosa fare; si aprono anche senza JS.
  * Divise da filetti sottili come le domande frequenti; più e meno al posto del triangolo del browser.
  */
