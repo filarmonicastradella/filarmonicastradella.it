@@ -93,19 +93,23 @@
         <input type="hidden" name="_next" value="https://filarmonicastradella.it/contatti/grazie" />
         <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
 
-        <p>
-            <label for="contatto-motivo">Motivo</label>
-            <select id="contatto-motivo" name="motivo" required bind:value={topic}>
-                {#each topics as { name } (name)}
-                    <option value={name}>{name}</option>
-                {/each}
-            </select>
-        </p>
+        <fieldset>
+            <legend>Il messaggio</legend>
 
-        <p>
-            <label for="contatto-messaggio">Messaggio</label>
-            <textarea id="contatto-messaggio" name="messaggio" rows="6" required minlength="10" maxlength="2000"></textarea>
-        </p>
+            <p>
+                <label for="contatto-motivo">Motivo</label>
+                <select id="contatto-motivo" name="motivo" required bind:value={topic}>
+                    {#each topics as { name } (name)}
+                        <option value={name}>{name}</option>
+                    {/each}
+                </select>
+            </p>
+
+            <p>
+                <label for="contatto-messaggio">Messaggio</label>
+                <textarea id="contatto-messaggio" name="messaggio" rows="6" required minlength="10" maxlength="2000"></textarea>
+            </p>
+        </fieldset>
 
         {#if isBooking}
             <fieldset>
