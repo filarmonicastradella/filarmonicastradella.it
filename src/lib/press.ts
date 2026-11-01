@@ -38,7 +38,8 @@ export const press: PressItem[] = [
         date: "2026-10-12",
         publisher: "Il Tirreno",
         author: "Marco Landini",
-        excerpt: "Applausi per il ritorno della Stradella al Museo d'Arte Sacra di San Giovanni."
+        excerpt: "Applausi per il ritorno della Stradella al Museo d'Arte Sacra di San Giovanni.",
+        pinned: "2026-11-30"
     },
     {
         title: "A Fivizzano rinasce la Filarmonica «Alessandro Stradella»",
