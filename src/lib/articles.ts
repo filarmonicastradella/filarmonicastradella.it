@@ -52,6 +52,15 @@ const markdownArticles = Object.entries(modules).map(([path, module]) => ({
 // Articoli con una pagina propria in src/routes/articoli/<categoria>/<slug>: qui solo i dati per indici e intestazioni
 const pageArticles: (ArticleMetadata & { slug: string })[] = [
     {
+        slug: "missione",
+        category: "vita",
+        author: "Leonardo Orietti Del Duca",
+        title: "La nostra missione",
+        date: "2026-09-28",
+        excerpt:
+            "La Filarmonica Alessandro Stradella suona a Fivizzano dal 1777. Siamo un'associazione di musicisti volontari, ragazzi e adulti insieme, che fa musica per chi la suona e per il proprio territorio."
+    },
+    {
         slug: "filarmonica",
         category: "storia",
         author: "Leonardo Orietti Del Duca",

@@ -1,4 +1,12 @@
-<!-- Testi ricavati dalla versione estesa e approvata della missione (Vault: Filarmonica/Missione.md) -->
+<!-- Testi ricavati dalla versione estesa e approvata della missione (Vault: Filarmonica/Missione.md). Articolo dal 1/11/2026,
+     prima pagina di Associazione: ha un autore, cita lo statuto e non ha domande frequenti -->
+<script lang="ts">
+    import { findArticle } from "$lib/articles";
+    import ArticleHeader from "../../ArticleHeader.svelte";
+
+    const article = findArticle("vita", "missione")!;
+</script>
+
 <svelte:head>
     <title>La nostra missione — Filarmonica Alessandro Stradella</title>
     <meta
@@ -7,14 +15,9 @@
     />
 </svelte:head>
 
-<header>
-    <h1>La nostra missione</h1>
-    <p>
-        La Filarmonica Alessandro Stradella suona a Fivizzano dal 1777. Siamo un'associazione di musicisti volontari, ragazzi e adulti insieme, che fa
-        musica per chi la suona e per il proprio territorio.
-    </p>
+<ArticleHeader {article}>
     <p><em>Custodi della tradizione, interpreti del futuro.</em></p>
-</header>
+</ArticleHeader>
 
 <section>
     <h2>Chi siamo</h2>
@@ -90,4 +93,14 @@
     </p>
 </section>
 
-<p class="rimando"><a href="/associazione">L'associazione</a></p>
+<section role="doc-endnotes" aria-labelledby="fonti">
+    <h2 id="fonti">Fonti</h2>
+    <ol>
+        <li id="fonte-1">
+            <a href="/documents/statuto.pdf" type="application/pdf">Statuto della Filarmonica Alessandro Stradella APS</a>, in particolare l'art. 2
+            (scopo, finalità, attività); il testo è anche nella pagina <a href="/trasparenza/statuto">Statuto</a>.
+        </li>
+    </ol>
+</section>
+
+<p class="rimando"><a href="/articoli">Articoli</a></p>
