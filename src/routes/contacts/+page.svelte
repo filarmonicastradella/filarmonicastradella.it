@@ -94,43 +94,51 @@
         </p>
 
         {#if isBooking}
-            <p>
-                <label for="contatto-occasione">Occasione</label>
-                <select id="contatto-occasione" name="occasione" required>
-                    <option value="" disabled selected>Scegli l'occasione</option>
-                    {#each occasions as occasion (occasion)}
-                        <option>{occasion}</option>
-                    {/each}
-                </select>
-            </p>
+            <fieldset>
+                <legend>L'evento</legend>
 
-            <p>
-                <label for="contatto-data">Data (almeno 30 giorni da oggi)</label>
-                <input type="date" id="contatto-data" name="data" required min={minDate} />
-            </p>
+                <p>
+                    <label for="contatto-occasione">Occasione</label>
+                    <select id="contatto-occasione" name="occasione" required>
+                        <option value="" disabled selected>Scegli l'occasione</option>
+                        {#each occasions as occasion (occasion)}
+                            <option>{occasion}</option>
+                        {/each}
+                    </select>
+                </p>
 
-            <p>
-                <label for="contatto-luogo">Luogo</label>
-                <input type="text" id="contatto-luogo" name="luogo" required minlength="2" maxlength="120" />
-            </p>
+                <p>
+                    <label for="contatto-data">Data (almeno 30 giorni da oggi)</label>
+                    <input type="date" id="contatto-data" name="data" required min={minDate} />
+                </p>
+
+                <p>
+                    <label for="contatto-luogo">Luogo</label>
+                    <input type="text" id="contatto-luogo" name="luogo" required minlength="2" maxlength="120" />
+                </p>
+            </fieldset>
         {/if}
 
-        <p>
-            <label for="contatto-nome">Nome e cognome</label>
-            <input type="text" id="contatto-nome" name="nome" autocomplete="name" required minlength="2" maxlength="120" />
-        </p>
+        <fieldset>
+            <legend>Chi scrive</legend>
 
-        <p>
-            <label for="contatto-email">Email</label>
-            <input type="email" id="contatto-email" name="email" autocomplete="email" required maxlength="120" />
-        </p>
-
-        {#if isBooking}
             <p>
-                <label for="contatto-telefono">Telefono (facoltativo)</label>
-                <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" maxlength="20" />
+                <label for="contatto-nome">Nome e cognome</label>
+                <input type="text" id="contatto-nome" name="nome" autocomplete="name" required minlength="2" maxlength="120" />
             </p>
-        {/if}
+
+            <p>
+                <label for="contatto-email">Email</label>
+                <input type="email" id="contatto-email" name="email" autocomplete="email" required maxlength="120" />
+            </p>
+
+            {#if isBooking}
+                <p>
+                    <label for="contatto-telefono">Telefono (facoltativo)</label>
+                    <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" maxlength="20" />
+                </p>
+            {/if}
+        </fieldset>
 
         <p>
             <label for="contatto-messaggio">{isBooking ? "Note (facoltativo)" : "Messaggio"}</label>
