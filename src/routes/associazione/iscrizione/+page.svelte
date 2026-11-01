@@ -163,7 +163,7 @@
     <input type="hidden" name="_next" value="https://filarmonicastradella.it/associazione/iscrizione/grazie" />
     <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
     <fieldset>
-        <legend>Che cosa vuoi fare</legend>
+        <legend>Domanda</legend>
 
         <p>
             <input type="radio" id="richiesta_iscrizione_nuova" name="tipo_richiesta" value="iscrizione" bind:group={request} />
@@ -172,7 +172,7 @@
 
         <p>
             <input type="radio" id="richiesta_variazione" name="tipo_richiesta" value="variazione" bind:group={request} />
-            <label for="richiesta_variazione">Variazione dei dati o dei consensi, per chi è già socio</label>
+            <label for="richiesta_variazione">Variazione dei dati</label>
         </p>
     </fieldset>
 
