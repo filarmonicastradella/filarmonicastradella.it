@@ -234,7 +234,7 @@
                 <p>
                     <input type="checkbox" id="privacy" name="privacy" required />
                     <label for="privacy">
-                        Dichiaro di aver preso visione dell'<a href="/informative/privacy" target="_blank" rel="noopener noreferrer">informativa sulla privacy</a> e acconsento al trattamento dei miei dati personali per la gestione della domanda di iscrizione.
+                        Dichiaro di aver preso visione dell'<a href="/informative/privacy" target="_blank" rel="noopener noreferrer">informativa sulla privacy</a> e acconsento al trattamento dei miei dati personali per la gestione della domanda di {isChange ? "variazione" : "iscrizione"}.
                     </label>
                 </p>
 
