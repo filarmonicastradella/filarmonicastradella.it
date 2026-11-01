@@ -1,7 +1,8 @@
 <script lang="ts">
-    import type { PageProps } from "./$types";
+    import type { gallery } from "$lib/gallery";
 
-    let { data }: PageProps = $props();
+    // Pagina disattivata: SvelteKit non genera i tipi di ./$types, quando si riattiva tornare a PageProps da lì
+    let { data }: { data: { slides: typeof gallery } } = $props();
 </script>
 
 <svelte:head>
