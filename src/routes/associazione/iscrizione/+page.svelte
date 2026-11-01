@@ -342,7 +342,7 @@
     {/if}
 
     <p>
-        <button type="submit" disabled={isTooYoung}>{isChange ? "Invia la variazione" : "Invia la domanda di iscrizione"}</button>
+        <button type="submit" disabled={isTooYoung}>{isChange ? "Invia la domanda di variazione" : "Invia la domanda di iscrizione"}</button>
     </p>
 </form>
 
