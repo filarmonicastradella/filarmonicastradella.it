@@ -157,6 +157,35 @@
     </form>
 </section>
 
+<!-- Le domande di chi chiede un ingaggio (fino al 1/11/2026 nella pagina /booking, ora un rimando qui) -->
+<section>
+    <h2>Domande sugli ingaggi</h2>
+    <details>
+        <summary>Dove suonate?</summary>
+        <p>Ci spostiamo in tutta la Lunigiana.</p>
+    </details>
+    <details>
+        <summary>Suonate a funzioni religiose o a iniziative di partito?</summary>
+        <p>
+            No: siamo un'associazione laica e apartitica, e non suoniamo a funzioni religiose né a feste e iniziative di partito.
+            Per le occasioni religiose collaboriamo però con le realtà musicali amiche della Lunigiana, e possiamo indicarti a chi rivolgerti.
+        </p>
+    </details>
+    <details>
+        <summary>Con quanto anticipo devo scrivervi?</summary>
+        <p>Almeno 30 giorni prima dell'evento.</p>
+    </details>
+    <details>
+        <summary>Con quanti musicisti suonate?</summary>
+        <p>Dipende dalla formazione e dall'occasione: te lo indichiamo nella proposta.</p>
+    </details>
+    <details>
+        <summary>Cosa serve sul posto?</summary>
+        <p>
+            Uno spazio adatto alla formazione, le sedie e un riparo in caso di pioggia. La corrente elettrica non sempre è necessaria, ma è gradita.
+        </p>
+    </details>
+</section>
 
 <!-- Da riattivare insieme a /about/locations:
 <section>
