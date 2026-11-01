@@ -112,24 +112,40 @@
     <h2>La Società Filarmonica e i suoi maestri</h2>
     <p>
         Nella seconda metà dell'Ottocento la Società Filarmonica chiamò maestri di professione. Il primo che conosciamo è il pratese Livio Nesti, figlio di
-        sarti, che nel <time datetime="1854">1854</time> dirigeva l'orchestra del teatro di Grosseto ed era a Fivizzano già intorno al 1860<sup><a href="#fonte-17" role="doc-noteref" id="rimando-17a" aria-label="Fonte 17">17</a></sup>. Nel <time datetime="1867">1867</time>, invece, il maestro era Cesare Rossi, che l'anno dopo scriveva un'opera comica, <i>Per amore e non per
-        forza</i><sup><a href="#fonte-18" role="doc-noteref" id="rimando-18a" aria-label="Fonte 18">18</a></sup><sup><a href="#fonte-19" role="doc-noteref" id="rimando-19a" aria-label="Fonte 19">19</a></sup>.
+        sarti, che nel <time datetime="1854">1854</time> dirigeva l'orchestra del teatro di Grosseto ed era a Fivizzano già intorno al 1860<sup><a href="#fonte-17" role="doc-noteref" id="rimando-17a" aria-label="Fonte 17">17</a></sup>.
+    </p>
+    <p>
+        Il maestro di musica lo pagava il Comune. Nel <time datetime="1865-07">luglio 1865</time> ne bandì il posto con un avviso sui giornali: mille lire l'anno,
+        altre duecentocinquanta come organista, e i candidati dovevano essere anche «abili suonatori di Violino»<sup><a href="#fonte-31" role="doc-noteref" id="rimando-31a" aria-label="Fonte 31">31</a></sup>. Nel
+        <time datetime="1867">1867</time> il maestro era Cesare Rossi, «nativo di Pesaro»<sup><a href="#fonte-32" role="doc-noteref" id="rimando-32a" aria-label="Fonte 32">32</a></sup>. Faceva il maestro di musica almeno dal
+        <time datetime="1848">1848</time>, quando si sposò a Piancastagnaio, sul Monte Amiata<sup><a href="#fonte-35" role="doc-noteref" id="rimando-35a" aria-label="Fonte 35">35</a></sup>, e nella primavera del 1865 dirigeva la banda di
+        Campiglia Marittima<sup><a href="#fonte-36" role="doc-noteref" id="rimando-36a" aria-label="Fonte 36">36</a></sup>. A Fivizzano scrisse un'opera comica, <i>Per amore e non per
+        forza</i><sup><a href="#fonte-18" role="doc-noteref" id="rimando-18a" aria-label="Fonte 18">18</a></sup><sup><a href="#fonte-19" role="doc-noteref" id="rimando-19a" aria-label="Fonte 19">19</a></sup>; nel 1871-72 guidava la banda municipale di Carrara<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1d" aria-label="Fonte 1">1</a></sup>.
     </p>
     <p>
         Nel <time datetime="1871">1871</time>-<time datetime="1872">72</time> il capo era di nuovo Nesti: la Società contava 47 soci esecutori e 25 onorari, la sua banda 25
-        elementi<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1c" aria-label="Fonte 1">1</a></sup>. Sette anni dopo aveva due sezioni, Orchestra e Banda, e un presidente, l'avvocato Alberto Ginesi; il 7 febbraio
+        elementi. La banda era nata nel <time datetime="1857">1857</time> per iniziativa della Società, e il Municipio la sussidiava<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1c" aria-label="Fonte 1">1</a></sup>. Per questo alle esequie che il Comune fece celebrare
+        il <time datetime="1878-01-31">31 gennaio 1878</time> per Vittorio Emanuele II, durante la messa, suonò «la fanfara del Comune»<sup><a href="#fonte-37" role="doc-noteref" id="rimando-37a" aria-label="Fonte 37">37</a></sup>. In quegli anni la Società aveva due sezioni, Orchestra e Banda, e un presidente, l'avvocato Alberto Ginesi; il 7 febbraio
         celebrò le esequie di Vittorio Emanuele II nella chiesa di San Giovanni, e un'epigrafe all'ingresso ricordava «l'armonia della Società Filarmonica di
         Fivizzano»<sup><a href="#fonte-20" role="doc-noteref" id="rimando-20a" aria-label="Fonte 20">20</a></sup>.
     </p>
     <p>
-        Livio Nesti morì a Fivizzano nel <time datetime="1881">1881</time>. Il figlio Enea, nato a Prato nel 1844, fu maestro di musica in paese per circa
-        vent'anni e sposò Edoardina Ginesi, la figlia del presidente<sup><a href="#fonte-18" role="doc-noteref" id="rimando-18b" aria-label="Fonte 18">18</a></sup>.
+        Nel <time datetime="1880">1880</time> un corrispondente da Fivizzano chiamava ancora la Filarmonica «Società Filarmonica detta dei Dissonanti», esistente
+        «da più di un secolo». Il <time datetime="1880-05-31">31 maggio</time> i soci nominarono presidente onorario il conte Giuseppe Fabbricotti, che l'aveva aiutata
+        con le sue donazioni; presidente effettivo restava l'avvocato Ginesi<sup><a href="#fonte-33" role="doc-noteref" id="rimando-33a" aria-label="Fonte 33">33</a></sup>.
     </p>
     <p>
-        Intanto, nel <time datetime="1880">1880</time>, era nata in paese una seconda società musicale, la «8 febbraio 1880». Nel gennaio
+        Nello stesso anno era nata in paese una seconda società musicale, la «8 febbraio 1880», costituita il <time datetime="1880-03-14">14 marzo</time><sup><a href="#fonte-21" role="doc-noteref" id="rimando-21b" aria-label="Fonte 21">21</a></sup>. L'8 febbraio
+        1880 era l'ultima domenica di Carnevale; il 14 marzo, il compleanno del re Umberto I. Nel gennaio
         <time datetime="1884-01">1884</time> le «due società musicali, Filarmonica e Otto febbraio» sfilarono a Roma, al Pantheon, e il giornale notò che
         Fivizzano era l'unico comune della provincia ad aver portato «ben quattro stendardi»<sup><a href="#fonte-21" role="doc-noteref" id="rimando-21a" aria-label="Fonte 21">21</a></sup>. Nel <time datetime="1887-05">1887</time> la
         Filarmonica mandò due rappresentanti a Firenze per la traslazione delle spoglie di Rossini in Santa Croce<sup><a href="#fonte-22" role="doc-noteref" id="rimando-22a" aria-label="Fonte 22">22</a></sup>.
+    </p>
+    <p>
+        Livio Nesti morì a Fivizzano nel <time datetime="1881">1881</time>. Il figlio Enea, nato a Prato nel 1844, fu maestro di musica in paese per circa
+        vent'anni e sposò Edoardina Ginesi, la figlia del presidente<sup><a href="#fonte-18" role="doc-noteref" id="rimando-18b" aria-label="Fonte 18">18</a></sup>. Nel
+        <time datetime="1893">1893</time> il maestro di musica era ancora a carico del Comune, che aveva fuso nel suo bilancio il capitale del vecchio
+        Monte Pio<sup><a href="#fonte-15" role="doc-noteref" id="rimando-15b" aria-label="Fonte 15">15</a></sup>.
     </p>
     <figure>
         <enhanced:img
@@ -146,13 +162,20 @@
     <h2>Il Novecento</h2>
     <p>
         All'inizio del secolo lo scrittore Mario Puccini ambientò a Fivizzano una novella: la storia di un giovane maestro arrivato in paese «per dirigere la banda»<sup><a href="#fonte-23" role="doc-noteref" id="rimando-23a" aria-label="Fonte 23">23</a></sup>. Nelle fotografie del <time datetime="1921-11-04">4 novembre 1921</time>, per il Milite
-        Ignoto, si vede lo stendardo di una «Società Musicale» di Fivizzano<sup><a href="#fonte-24" role="doc-noteref" id="rimando-24a" aria-label="Fonte 24">24</a></sup>. Secondo la tradizione le due società si unirono intorno agli anni
-        Venti<sup><a href="#fonte-25" role="doc-noteref" id="rimando-25a" aria-label="Fonte 25">25</a></sup>; alla fine del <time datetime="1929">1929</time> la banda di Fivizzano risulta in attività<sup><a href="#fonte-26" role="doc-noteref" id="rimando-26a" aria-label="Fonte 26">26</a></sup>. Negli anni Trenta la
+        Ignoto, si vede lo stendardo di una «Società Musicale» di Fivizzano<sup><a href="#fonte-24" role="doc-noteref" id="rimando-24a" aria-label="Fonte 24">24</a></sup>. Le due società avevano già cominciato ad avvicinarsi: ai funerali di
+        Umberto I, a Roma nell'<time datetime="1900-08">agosto 1900</time>, tra le associazioni di Fivizzano c'era la «Società filarmonica I Risonanti ed 8 febbraio 1880»<sup><a href="#fonte-38" role="doc-noteref" id="rimando-38a" aria-label="Fonte 38">38</a></sup>.
+        La tradizione colloca la loro unione intorno agli anni Venti<sup><a href="#fonte-25" role="doc-noteref" id="rimando-25a" aria-label="Fonte 25">25</a></sup>; alla fine del <time datetime="1929">1929</time> la banda di Fivizzano risulta in attività<sup><a href="#fonte-26" role="doc-noteref" id="rimando-26a" aria-label="Fonte 26">26</a></sup>. Negli anni Trenta la
         Filarmonica era anche società di mutuo soccorso e dall'<time datetime="1934-11-11">11 novembre 1934</time> passò all'Opera Nazionale
         Dopolavoro<sup><a href="#fonte-27" role="doc-noteref" id="rimando-27a" aria-label="Fonte 27">27</a></sup>.
     </p>
     <p>
-        Nel <time datetime="1970">1970</time> Fivizzano ospitò il convegno provinciale delle bande, l'<time datetime="1970-01-11">11 gennaio</time>, e il <time datetime="1970-07-19">19 luglio</time> il primo Concorso bandistico «Città di Fivizzano». Il
+        Nel secondo Novecento la diressero, tra gli altri, il compositore Alfio Mercadini e poi Antonio Novelli, che era sul podio ancora nel
+        <time datetime="1987">1987</time><sup><a href="#fonte-39" role="doc-noteref" id="rimando-39a" aria-label="Fonte 39">39</a></sup>.
+    </p>
+    <p>
+        Nel <time datetime="1970">1970</time> Fivizzano ospitò il convegno provinciale delle bande, l'<time datetime="1970-01-11">11 gennaio</time>, e il <time datetime="1970-07-19">19 luglio</time> il primo Concorso bandistico «Città di Fivizzano». Nel
+        <time datetime="1972">1972</time> la rivista dell'ANBIMA, l'associazione delle bande, raccontò una festa delle bande di Fivizzano e di Moncigoli, «manifestazione di fratellanza e di
+        amicizia», con il sindaco<sup><a href="#fonte-34" role="doc-noteref" id="rimando-34a" aria-label="Fonte 34">34</a></sup>. Il
         <time datetime="1987-06-27">27 giugno 1987</time> cominciarono i festeggiamenti per i 210 anni<sup><a href="#fonte-27" role="doc-noteref" id="rimando-27b" aria-label="Fonte 27">27</a></sup>.
     </p>
     <figure>
@@ -177,7 +200,7 @@
     <p>
         Il <time datetime="1997-12-06">6 dicembre 1997</time> la Società Filarmonica organizzò con il Comune il convegno «Alessandro Stradella e la Musica
         Barocca. Le origini ritrovate», e lo stesso giorno, «auspice la Società Filarmonica», fu posta una lapide sulla casa degli Stradella, vicino alle
-        mura<sup><a href="#fonte-30" role="doc-noteref" id="rimando-30a" aria-label="Fonte 30">30</a></sup>. Alla fine degli anni Novanta la Filarmonica prese il nome del compositore.
+        mura<sup><a href="#fonte-30" role="doc-noteref" id="rimando-30a" aria-label="Fonte 30">30</a></sup>. In quell'occasione la Filarmonica prese il nome del compositore<sup><a href="#fonte-39" role="doc-noteref" id="rimando-39b" aria-label="Fonte 39">39</a></sup>.
     </p>
 </section>
 
@@ -210,7 +233,7 @@
 <section role="doc-endnotes" aria-labelledby="fonti">
     <h2 id="fonti">Fonti</h2>
     <ol>
-        <li id="fonte-1"><i>Istituti e società musicali in Italia. Statistica</i>, Roma, Direzione di statistica, 1873, pp. 216-217 (dati del 1871-72). Torna al testo: <a role="doc-backlink" href="#rimando-1a" aria-label="Torna al rimando 1a">a</a>, <a role="doc-backlink" href="#rimando-1b" aria-label="Torna al rimando 1b">b</a>, <a role="doc-backlink" href="#rimando-1c" aria-label="Torna al rimando 1c">c</a></li>
+        <li id="fonte-1"><i>Istituti e società musicali in Italia. Statistica</i>, Roma, Direzione di statistica, 1873, pp. 216-217 (dati del 1871-72). Torna al testo: <a role="doc-backlink" href="#rimando-1a" aria-label="Torna al rimando 1a">a</a>, <a role="doc-backlink" href="#rimando-1b" aria-label="Torna al rimando 1b">b</a>, <a role="doc-backlink" href="#rimando-1c" aria-label="Torna al rimando 1c">c</a>, <a role="doc-backlink" href="#rimando-1d" aria-label="Torna al rimando 1d">d</a></li>
         <li id="fonte-2">Prospetto delle società filodrammatiche e bande, 1839: Archivio di Stato di Massa, sezione di Pontremoli, <i>Affari diversi di Governo</i>, 1839, vol. 61, n. 111, citato in Marco Angella, <i>Musica e teatro a Pontremoli nel secondo periodo lorenese</i>, 2012. Torna al testo: <a role="doc-backlink" href="#rimando-2a" aria-label="Torna al rimando 2a">a</a>, <a role="doc-backlink" href="#rimando-2b" aria-label="Torna al rimando 2b">b</a></li>
         <li id="fonte-3">Lettere di Azzolino Malaspina (1780) e di Carlo Malaspina d'Olivola (1782) a Odoardo Fantoni e di Anna Fantoni (1802), Archivio Fantoni, Archivio di Stato di Massa, trascritte in Rino Barbieri, <i>Labindo e la Società Civile Settecentesca</i>. Torna al testo: <a role="doc-backlink" href="#rimando-3a" aria-label="Torna al rimando 3a">a</a>, <a role="doc-backlink" href="#rimando-3b" aria-label="Torna al rimando 3b">b</a></li>
         <li id="fonte-4">Giovanni Fantoni, <i>Poesie</i>, 1823, ode XXIII, <i>Baccanale</i>, nota, p. 308. <a role="doc-backlink" href="#rimando-4a" aria-label="Torna al rimando 4">Torna al testo</a></li>
@@ -224,13 +247,13 @@
         <li id="fonte-12"><i>Cronaca di Fivizzano dal 1799 al 1833</i> e <i>Contributo alla vita di Giovanni Fantoni</i>. <a role="doc-backlink" href="#rimando-12a" aria-label="Torna al rimando 12">Torna al testo</a></li>
         <li id="fonte-13"><i>Supplemento alla Gazzetta Toscana</i>, n. 2, 8 gennaio 1791, «Fivizzano 13 dicembre». <a role="doc-backlink" href="#rimando-13a" aria-label="Torna al rimando 13">Torna al testo</a></li>
         <li id="fonte-14">S. Andreani, <i>I Francesi a Fivizzano</i>, Fivizzano, 1911 (deliberazione del Magistrato comunitativo, 24 maggio 1799). <a role="doc-backlink" href="#rimando-14a" aria-label="Torna al rimando 14">Torna al testo</a></li>
-        <li id="fonte-15"><i>Bollettino ufficiale del Ministero dell'istruzione pubblica</i>, 1893, p. 1620. <a role="doc-backlink" href="#rimando-15a" aria-label="Torna al rimando 15">Torna al testo</a></li>
+        <li id="fonte-15"><i>Bollettino ufficiale del Ministero dell'istruzione pubblica</i>, 1893, p. 1620. Torna al testo: <a role="doc-backlink" href="#rimando-15a" aria-label="Torna al rimando 15a">a</a>, <a role="doc-backlink" href="#rimando-15b" aria-label="Torna al rimando 15b">b</a></li>
         <li id="fonte-16"><i>Gazzetta di Firenze</i>, 11 ottobre 1832, «Fivizzano 27 settembre». <a role="doc-backlink" href="#rimando-16a" aria-label="Torna al rimando 16">Torna al testo</a></li>
         <li id="fonte-17">Atto di nascita di Enea Nesti, Prato, 1° ottobre 1844; <i>Il buon gusto</i>, Firenze, 1854, p. 143 (teatro di Grosseto); G. Meyerbeer, <i>Gli Ugonotti</i>, edizione economica fiorentina, c. 1860, elenco degli associati. <a role="doc-backlink" href="#rimando-17a" aria-label="Torna al rimando 17">Torna al testo</a></li>
         <li id="fonte-18">Atti dello stato civile di Fivizzano, 1867-1893 (Archivio di Stato di Massa). Torna al testo: <a role="doc-backlink" href="#rimando-18a" aria-label="Torna al rimando 18a">a</a>, <a role="doc-backlink" href="#rimando-18b" aria-label="Torna al rimando 18b">b</a></li>
         <li id="fonte-19"><i>Signale für die musikalische Welt</i>, Lipsia, 1868, p. 875; <i>Le Guide musical</i>, Bruxelles, 1868. <a role="doc-backlink" href="#rimando-19a" aria-label="Torna al rimando 19">Torna al testo</a></li>
         <li id="fonte-20"><i>In memoria del lutto, onde furono colpiti per la morte del Re Galantuomo i cittadini fivizzanesi</i>, Firenze, Carnesecchi, 1878. <a role="doc-backlink" href="#rimando-20a" aria-label="Torna al rimando 20">Torna al testo</a></li>
-        <li id="fonte-21">Alessandro Ercolini, <i>Brevi cenni intorno all'origine della società musicale 8 febbraio 1880</i>, Sarzana, Ravani; <i>Fanfulla</i>, Roma, 18 gennaio 1884. <a role="doc-backlink" href="#rimando-21a" aria-label="Torna al rimando 21">Torna al testo</a></li>
+        <li id="fonte-21">Alessandro Ercolini, <i>Brevi cenni intorno all'origine della società musicale 8 febbraio 1880 costituitasi in Fivizzano il dì 14 marzo 1880</i>, Sarzana, Ravani, [1883?] (Reggio Emilia, Biblioteca «Città di Reggio»); <i>Fanfulla</i>, Roma, 18 gennaio 1884. Torna al testo: <a role="doc-backlink" href="#rimando-21a" aria-label="Torna al rimando 21a">a</a>, <a role="doc-backlink" href="#rimando-21b" aria-label="Torna al rimando 21b">b</a></li>
         <li id="fonte-22"><i>Gazzetta musicale di Milano</i>, 1887, supplemento straordinario al n. 23. <a role="doc-backlink" href="#rimando-22a" aria-label="Torna al rimando 22">Torna al testo</a></li>
         <li id="fonte-23"><i>Il Marzocco</i>, 1913, recensione di Mario Puccini, <i>Viottola</i>, Ancona, Puccini. <a role="doc-backlink" href="#rimando-23a" aria-label="Torna al rimando 23">Torna al testo</a></li>
         <li id="fonte-24">Museo centrale del Risorgimento, Roma, album <i>Onoranze al Milite Ignoto</i>, MCRR 1000, foto di Fivizzano. <a role="doc-backlink" href="#rimando-24a" aria-label="Torna al rimando 24">Torna al testo</a></li>
@@ -240,6 +263,15 @@
         <li id="fonte-28">Carolyn Gianturco, <i>Alessandro Stradella, 1639-1682: his life and music</i>, Oxford, Clarendon Press, 1994, pp. 3-7. <a role="doc-backlink" href="#rimando-28a" aria-label="Torna al rimando 28">Torna al testo</a></li>
         <li id="fonte-29">Davide Mingozzi, «Alessandro Stradella “Bononiensis Dominus”», <i>Il Saggiatore musicale</i>, XXV (2018), pp. 299-307. <a role="doc-backlink" href="#rimando-29a" aria-label="Torna al rimando 29">Torna al testo</a></li>
         <li id="fonte-30">Locandina del convegno, Fivizzano, 6 dicembre 1997; iscrizione della lapide sulla casa degli Stradella. <a role="doc-backlink" href="#rimando-30a" aria-label="Torna al rimando 30">Torna al testo</a></li>
+        <li id="fonte-31">Avviso del Comune di Fivizzano, <i>La Nazione</i>, Firenze, 5 luglio 1865, p. 3. <a role="doc-backlink" href="#rimando-31a" aria-label="Torna al rimando 31">Torna al testo</a></li>
+        <li id="fonte-32">G. Vanzolini, <i>Pompe funebri</i> in onore di Gioachino Rossini, Pesaro, 1869, pp. 62-63. <a role="doc-backlink" href="#rimando-32a" aria-label="Torna al rimando 32">Torna al testo</a></li>
+        <li id="fonte-33">Corrispondenza da Fivizzano del 14 luglio 1880, <i>La Nazione</i>, Firenze, 18 luglio 1880, p. 2. <a role="doc-backlink" href="#rimando-33a" aria-label="Torna al rimando 33">Torna al testo</a></li>
+        <li id="fonte-34"><i>Il Risveglio bandistico</i> (ANBIMA), 1972, pp. 16-20. <a role="doc-backlink" href="#rimando-34a" aria-label="Torna al rimando 34">Torna al testo</a></li>
+        <li id="fonte-35">Atto di matrimonio di Cesare Rossi, «maestro di musica», e Maria Fumasoli, Piancastagnaio, 15 giugno 1848: Archivio di Stato di Firenze, Stato civile toscano, Matrimoni 1848, consultabile sul <a href="https://antenati.cultura.gov.it/ark:/12657/an_ua36213340" target="_blank" rel="noopener noreferrer">Portale Antenati</a>. <a role="doc-backlink" href="#rimando-35a" aria-label="Torna al rimando 35">Torna al testo</a></li>
+        <li id="fonte-36">Lettera da Campiglia Marittima del 21 aprile 1865 sulla Banda Nazionale e il suo maestro «signor Cesare Rossi», <i>La Nazione</i>, Firenze, 27 aprile 1865, p. 3. <a role="doc-backlink" href="#rimando-36a" aria-label="Torna al rimando 36">Torna al testo</a></li>
+        <li id="fonte-37">Corrispondenza da Fivizzano firmata «X.», <i>La Nazione</i>, Firenze, 6 febbraio 1878, p. 2. <a role="doc-backlink" href="#rimando-37a" aria-label="Torna al rimando 37">Torna al testo</a></li>
+        <li id="fonte-38"><i>Per la morte del re Umberto I</i>, 1901, elenco delle rappresentanze ai funerali di Roma del 9 agosto 1900, p. 83. <a role="doc-backlink" href="#rimando-38a" aria-label="Torna al rimando 38">Torna al testo</a></li>
+        <li id="fonte-39">Ricordi dei soci e dei suonatori della Filarmonica, raccolti nel 2026; fotografia della Filarmonica in concerto, 1987. Torna al testo: <a role="doc-backlink" href="#rimando-39a" aria-label="Torna al rimando 39a">a</a>, <a role="doc-backlink" href="#rimando-39b" aria-label="Torna al rimando 39b">b</a></li>
     </ol>
     <p>
         Diploma dell'Accademia: Newberry Library, Chicago, Wing broadside ZP 735 .L45,

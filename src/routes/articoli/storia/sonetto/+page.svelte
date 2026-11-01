@@ -41,6 +41,10 @@
         di cappella Angiolo Battaglia. Durante la festa «vennero dispensati dei Sonetti analoghi», dedicati al marchese di Fosdinovo, «attual degnissimo
         Capo dell'Accademia»<sup><a href="#fonte-2" role="doc-noteref" id="rimando-2a" aria-label="Fonte 2">2</a></sup>.
     </p>
+    <p>
+        Non era la prima festa della patrona. Già il <time datetime="1788-01-13">13 gennaio 1788</time> gli accademici l'avevano celebrata con musica vocale e
+        strumentale<sup><a href="#fonte-6" role="doc-noteref" id="rimando-6a" aria-label="Fonte 6">6</a></sup>, e nelle sere di festa offrivano al paese «superbe Sinfonie»<sup><a href="#fonte-7" role="doc-noteref" id="rimando-7a" aria-label="Fonte 7">7</a></sup>.
+    </p>
 </section>
 
 <section>
@@ -48,7 +52,13 @@
     <p>
         Il nostro foglio è uno di quei sonetti. L'Accademia lo fece stampare a Massa, dalla stamperia ducale di Stefano Frediani<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1a" aria-label="Fonte 1">1</a></sup>, e lo
         dedicò al suo principe, Carlo Emanuele Malaspina, marchese di Fosdinovo, Gragnola e Viano. In alto c'è il titolo, al centro un putto in volo con
-        un cartiglio, sotto la dedica e i quattordici versi.
+        un cartiglio, sotto la dedica e i quattordici versi. Frediani lavorava anche con i Fantoni: nel 1791 chiese a Luigi Fantoni alcune iscrizioni latine per una
+        raccolta in morte di un Cybo di Massa, e altre sue le aveva già stampate<sup><a href="#fonte-8" role="doc-noteref" id="rimando-8a" aria-label="Fonte 8">8</a></sup>.
+    </p>
+    <p>
+        Il marchese era un uomo di teatro. A Fosdinovo dirigeva una compagnia di dilettanti e recitava con loro; Labindo, il poeta Giovanni Fantoni, scrisse che
+        in Italia non c'era «Comico che lo pareggi»<sup><a href="#fonte-9" role="doc-noteref" id="rimando-9a" aria-label="Fonte 9">9</a></sup>. Recitava anche Labindo: proprio nel settembre 1789, da Fosdinovo, chiese al fratello
+        Odoardo il pelo di capra per una «parrucca a zazzera da vecchio tragico»<sup><a href="#fonte-10" role="doc-noteref" id="rimando-10a" aria-label="Fonte 10">10</a></sup>.
     </p>
     <p>
         I versi raccontano Cecilia nel giorno delle nozze: mentre fuori suonano le trombe della festa, lei prega in una cella di restare pura, e un angelo
@@ -138,6 +148,11 @@
         <li id="fonte-3"><i>Istituti e società musicali in Italia. Statistica</i>, Roma, Direzione di statistica, 1873, pp. 216-217 (dati del 1871-72). <a role="doc-backlink" href="#rimando-3a" aria-label="Torna al rimando 3">Torna al testo</a></li>
         <li id="fonte-4"><i>Gazzetta musicale di Milano</i>, 1887, supplemento straordinario al n. 23. <a role="doc-backlink" href="#rimando-4a" aria-label="Torna al rimando 4">Torna al testo</a></li>
         <li id="fonte-5">lunigiana.net, <i>Cento anni di Lunigiana</i>, anno 1987. <a role="doc-backlink" href="#rimando-5a" aria-label="Torna al rimando 5">Torna al testo</a></li>
+        <li id="fonte-6"><i>Gazzetta Toscana</i>, 1788, «Fivizzano 19 gennaio». <a role="doc-backlink" href="#rimando-6a" aria-label="Torna al rimando 6">Torna al testo</a></li>
+        <li id="fonte-7"><i>Gazzetta Toscana</i>, 1787, «Fivizzano 5 maggio». <a role="doc-backlink" href="#rimando-7a" aria-label="Torna al rimando 7">Torna al testo</a></li>
+        <li id="fonte-8">Lettera di Luigi Fantoni al «Sig.r Frediani», 2 marzo 1791, Biblioteca Estense di Modena, Autografoteca Campori. <a role="doc-backlink" href="#rimando-8a" aria-label="Torna al rimando 8">Torna al testo</a></li>
+        <li id="fonte-9">Giovanni Fantoni, <i>Poesie</i>, Italia [Firenze], 1823, II, p. 104, nota all'epistola al marchese di Fosdinovo. <a role="doc-backlink" href="#rimando-9a" aria-label="Torna al rimando 9">Torna al testo</a></li>
+        <li id="fonte-10">Giosuè Carducci, «La gioventù poetica di Giovanni Fantoni», in <i>Melica e lirica del Settecento</i>, 1909, p. 210. <a role="doc-backlink" href="#rimando-10a" aria-label="Torna al rimando 10">Torna al testo</a></li>
     </ol>
 </section>
 

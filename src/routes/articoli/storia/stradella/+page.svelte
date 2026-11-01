@@ -62,7 +62,7 @@
     </p>
     <dl>
         <dt>Giovanbattista</dt>
-        <dd>dottore in legge, governatore di Rieti e di altre città dello Stato della Chiesa; nel 1567 riformò di nuovo gli statuti di Fivizzano<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5b" aria-label="Fonte 5">5</a></sup></dd>
+        <dd>dottore in legge, governatore di Rieti e di altre città dello Stato della Chiesa; nel 1567 riformò di nuovo gli statuti di Fivizzano<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5b" aria-label="Fonte 5">5</a></sup>; nel 1572 il cardinale Lomellini lo raccomandò al Senato di Genova per un posto di podestà o di vicario<sup><a href="#fonte-12" role="doc-noteref" id="rimando-12a" aria-label="Fonte 12">12</a></sup></dd>
         <dt>Matteo</dt>
         <dd>medico dei Doria, principi di Melfi, per trent'anni</dd>
         <dt>Giannotino</dt>
@@ -76,19 +76,30 @@
         <dt>Alessio</dt>
         <dd>frate agostiniano, vescovo di Nepi e Sutri</dd>
     </dl>
+    <p>
+        Ancora nel <time datetime="1836">1836</time> il Calendario lunese, stampato a Fivizzano, metteva gli Stradella tra le famiglie più antiche e cospicue
+        del paese, con gli Andreani, i Bosi, i Bianchi, i Gargiolli, i Fantoni e i Vasoli<sup><a href="#fonte-13" role="doc-noteref" id="rimando-13a" aria-label="Fonte 13">13</a></sup>.
+    </p>
 </section>
 
 <section>
     <h2>Il vescovo Alessio</h2>
     <p>
-        Alessio entrò nell'ordine agostiniano e fu predicatore. Partecipò al Concilio di Trento e insegnò teologia a
-        Roma, dove tra i suoi allievi ci fu Filippo Neri<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3e" aria-label="Fonte 3">3</a></sup>. Il <time datetime="1575-07-20">20 luglio 1575</time> papa Gregorio XIII lo nominò
-        vescovo di Nepi e Sutri<sup><a href="#fonte-6" role="doc-noteref" id="rimando-6a" aria-label="Fonte 6">6</a></sup>; a Nepi chiese al Comune un seminario «con un maestro di grammatica e di musica»<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3f" aria-label="Fonte 3">3</a></sup>. Scrisse anche
+        Alessio fece la professione nel convento agostiniano di Genova intorno al <time datetime="1530">1530</time><sup><a href="#fonte-12" role="doc-noteref" id="rimando-12b" aria-label="Fonte 12">12</a></sup> e divenne uno dei predicatori più ascoltati
+        del suo tempo: parlò nel duomo di Milano nel 1560, al Concilio di Trento nel 1562 e alla dieta di Augusta nel 1566, davanti all'imperatrice Maria d'Austria,
+        e le sue prediche furono stampate<sup><a href="#fonte-6" role="doc-noteref" id="rimando-6b" aria-label="Fonte 6">6</a></sup>. Nel 1555-56 fu processato dall'Inquisizione di Genova, che lo assolse<sup><a href="#fonte-12" role="doc-noteref" id="rimando-12c" aria-label="Fonte 12">12</a></sup>. Fu
+        procuratore generale del suo ordine e insegnò teologia a Roma, dove tra i suoi allievi ci fu Filippo Neri<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3e" aria-label="Fonte 3">3</a></sup>.
+    </p>
+    <p>
+        Il <time datetime="1575-07-20">20 luglio 1575</time> papa Gregorio XIII lo nominò vescovo di Nepi e Sutri; ne prese possesso il 5 agosto e vi si trasferì a
+        novembre, seguito dai fratelli<sup><a href="#fonte-6" role="doc-noteref" id="rimando-6a" aria-label="Fonte 6">6</a></sup>. A Nepi aprì un seminario «con un maestro di grammatica e di musica»<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3f" aria-label="Fonte 3">3</a></sup>. Scrisse anche
         memorie su Fivizzano, che il naturalista Giovanni Targioni Tozzetti citò due secoli dopo<sup><a href="#fonte-7" role="doc-noteref" id="rimando-7a" aria-label="Fonte 7">7</a></sup>.
     </p>
     <p>
         Nel <time datetime="1580">1580</time> fu nominato nunzio apostolico a Graz. Durante il viaggio si fermò nel suo paese e lì morì, il
-        <time datetime="1580-08-27">27 agosto</time>; fu sepolto nella chiesa di San Giovanni, accanto al convento degli agostiniani<sup><a href="#fonte-8" role="doc-noteref" id="rimando-8a" aria-label="Fonte 8">8</a></sup>.
+        <time datetime="1580-08-27">27 agosto</time>; fu sepolto nella chiesa di San Giovanni, accanto al convento degli agostiniani<sup><a href="#fonte-8" role="doc-noteref" id="rimando-8a" aria-label="Fonte 8">8</a></sup>. Nel 1912 la lapide
+        con il suo epitaffio non c'era più. Resta una medaglia con il suo ritratto e la scritta «Alexis Stradella Episc. Nep. et Sutr.», al Museo civico di
+        Brescia<sup><a href="#fonte-12" role="doc-noteref" id="rimando-12d" aria-label="Fonte 12">12</a></sup>.
     </p>
 </section>
 
@@ -130,7 +141,7 @@
         <figcaption>La lapide sulla casa degli Stradella, ridisegnata da una fotografia.</figcaption>
     </figure>
     <p>
-        Alla fine degli anni Novanta la Filarmonica prese il nome di Alessandro Stradella. Il resto della nostra storia è nell'articolo
+        In quell'occasione la Filarmonica prese il nome di Alessandro Stradella<sup><a href="#fonte-14" role="doc-noteref" id="rimando-14a" aria-label="Fonte 14">14</a></sup>. Il resto della nostra storia è nell'articolo
         <a href="/articoli/storia/filarmonica">Storia della Filarmonica</a>.
     </p>
 </section>
@@ -143,12 +154,15 @@
         <li id="fonte-3">Carolyn Gianturco, <i>Alessandro Stradella, 1639-1682: his life and music</i>, Oxford, Clarendon Press, 1994, pp. 3-7 e 55. Torna al testo: <a role="doc-backlink" href="#rimando-3a" aria-label="Torna al rimando 3a">a</a>, <a role="doc-backlink" href="#rimando-3b" aria-label="Torna al rimando 3b">b</a>, <a role="doc-backlink" href="#rimando-3c" aria-label="Torna al rimando 3c">c</a>, <a role="doc-backlink" href="#rimando-3d" aria-label="Torna al rimando 3d">d</a>, <a role="doc-backlink" href="#rimando-3e" aria-label="Torna al rimando 3e">e</a>, <a role="doc-backlink" href="#rimando-3f" aria-label="Torna al rimando 3f">f</a>, <a role="doc-backlink" href="#rimando-3g" aria-label="Torna al rimando 3g">g</a>, <a role="doc-backlink" href="#rimando-3h" aria-label="Torna al rimando 3h">h</a>, <a role="doc-backlink" href="#rimando-3i" aria-label="Torna al rimando 3i">i</a>, <a role="doc-backlink" href="#rimando-3j" aria-label="Torna al rimando 3j">j</a></li>
         <li id="fonte-4">MYmovies, <a href="https://www.mymovies.it/film/2018/la-corda-spezzata/" target="_blank" rel="noopener noreferrer">La corda spezzata</a> (2018), scheda del film. <a role="doc-backlink" href="#rimando-4a" aria-label="Torna al rimando 4">Torna al testo</a></li>
         <li id="fonte-5">Giovanni Sforza, <i>Saggio d'una bibliografia storica della Lunigiana</i>, I, 1874, pp. 22-24 e 143. Torna al testo: <a role="doc-backlink" href="#rimando-5a" aria-label="Torna al rimando 5a">a</a>, <a role="doc-backlink" href="#rimando-5b" aria-label="Torna al rimando 5b">b</a></li>
-        <li id="fonte-6">Saverio Franchi, <a href="https://www.gentedituscia.it/stradella-alessio/" target="_blank" rel="noopener noreferrer">Stradella Alessio</a>, Dizionario Storico Biografico della Tuscia. <a role="doc-backlink" href="#rimando-6a" aria-label="Torna al rimando 6">Torna al testo</a></li>
+        <li id="fonte-6">Saverio Franchi, <a href="https://www.gentedituscia.it/stradella-alessio/" target="_blank" rel="noopener noreferrer">Stradella Alessio</a>, Dizionario Storico Biografico della Tuscia. Torna al testo: <a role="doc-backlink" href="#rimando-6a" aria-label="Torna al rimando 6a">a</a>, <a role="doc-backlink" href="#rimando-6b" aria-label="Torna al rimando 6b">b</a></li>
         <li id="fonte-7">Giovanni Targioni Tozzetti, <i>Relazioni d'alcuni viaggi fatti in diverse parti della Toscana</i>, 2ª ed., XI, pp. 428-448. <a role="doc-backlink" href="#rimando-7a" aria-label="Torna al rimando 7">Torna al testo</a></li>
         <li id="fonte-8">Emanuele Gerini, <i>Memorie storiche d'illustri scrittori e di uomini insigni dell'antica e moderna Lunigiana</i>, II, Massa, 1829, pp. 136-138. <a role="doc-backlink" href="#rimando-8a" aria-label="Torna al rimando 8">Torna al testo</a></li>
         <li id="fonte-9">Patrizia Radicchi, «La famiglia Stradella e i suoi rapporti con la Toscana», <i>Chigiana</i>, XXXIX, n.s. 19 (1988), pp. 17-33. Torna al testo: <a role="doc-backlink" href="#rimando-9a" aria-label="Torna al rimando 9a">a</a>, <a role="doc-backlink" href="#rimando-9b" aria-label="Torna al rimando 9b">b</a></li>
         <li id="fonte-10">Iscrizione della lapide sulla casa degli Stradella, Fivizzano, 6 dicembre 1997; Nicolò Colliva, <a href="https://www.studiocolliva.it/archivi/casa-degli-stradella-fivizzano-ms/" target="_blank" rel="noopener noreferrer">Casa degli Stradella – Fivizzano (MS)</a>, Studio Colliva, 2025. Torna al testo: <a role="doc-backlink" href="#rimando-10a" aria-label="Torna al rimando 10a">a</a>, <a role="doc-backlink" href="#rimando-10b" aria-label="Torna al rimando 10b">b</a></li>
         <li id="fonte-11">Locandina «Alessandro Stradella e la Musica Barocca. Le origini ritrovate», Fivizzano, 6 dicembre 1997. <a role="doc-backlink" href="#rimando-11a" aria-label="Torna al rimando 11">Torna al testo</a></li>
+        <li id="fonte-12">Achille Neri, «Scrittori di Lunigiana. Alessio Stradella», <i>Giornale storico della Lunigiana</i>, IV (1912-13), pp. 22-30, con i documenti dell'Archivio di Stato di Genova e della Biblioteca universitaria di Genova. Torna al testo: <a role="doc-backlink" href="#rimando-12a" aria-label="Torna al rimando 12a">a</a>, <a role="doc-backlink" href="#rimando-12b" aria-label="Torna al rimando 12b">b</a>, <a role="doc-backlink" href="#rimando-12c" aria-label="Torna al rimando 12c">c</a>, <a role="doc-backlink" href="#rimando-12d" aria-label="Torna al rimando 12d">d</a></li>
+        <li id="fonte-13"><i>Calendario lunese per l'anno 1836</i>, Fivizzano, p. 36. <a role="doc-backlink" href="#rimando-13a" aria-label="Torna al rimando 13">Torna al testo</a></li>
+        <li id="fonte-14">Ricordi dei soci della Filarmonica, raccolti nel 2026. <a role="doc-backlink" href="#rimando-14a" aria-label="Torna al rimando 14">Torna al testo</a></li>
     </ol>
     <p>
         Immagine di copertina: frontespizio della
