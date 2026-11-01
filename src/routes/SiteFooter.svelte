@@ -35,27 +35,6 @@
         <p><a href="/support">Sostieni la Filarmonica</a></p>
     </section>
 
-    <!-- Indice del sito per chi arriva in fondo alla pagina: le pagine principali, raggruppate per chi le cerca -->
-    <nav aria-labelledby="indice-filarmonica">
-        <h2 id="indice-filarmonica">La Filarmonica</h2>
-        <ul>
-            <li><a href="/about/mission">La nostra missione</a></li>
-            <li><a href="/articles/history/filarmonica">La storia della Filarmonica</a></li>
-            <li><a href="/ensembles">Le nostre formazioni</a></li>
-            <li><a href="/about/press">Rassegna stampa</a></li>
-        </ul>
-    </nav>
-
-    <nav aria-labelledby="indice-partecipa">
-        <h2 id="indice-partecipa">Partecipa</h2>
-        <ul>
-            <li><a href="/about/join">Iscrizione e variazioni</a></li>
-            <li><a href="/events">Calendario</a></li>
-            <li><a href="/contacts?motivo=ingaggio#scrivici">Per il tuo evento</a></li>
-            <li><a href="/support">Sostienici</a></li>
-        </ul>
-    </nav>
-
     <section>
         <h2>Contatti</h2>
 
