@@ -67,7 +67,7 @@
     <h2>Come revocare</h2>
     <p>
         Puoi revocare il consenso quando vuoi, in tutto o solo per alcuni canali, con il <a href="/associazione/iscrizione?modo=variazione">modulo di iscrizione e variazione</a> o
-        scrivendo a <a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a>. Entro 30 giorni togliamo i contenuti dai canali digitali che
+        scrivendo a <a href="mailto:privacy@filarmonicastradella.it?subject=Revoca%20del%20consenso%20alle%20immagini">privacy@filarmonicastradella.it</a>. Entro 30 giorni togliamo i contenuti dai canali digitali che
         gestiamo; il materiale a stampa già distribuito resta com'è. Se sei in una ripresa di gruppo che non si può togliere senza danneggiare gli altri,
         ti rendiamo non riconoscibile.
     </p>
