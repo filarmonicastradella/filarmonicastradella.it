@@ -4,7 +4,7 @@
     import { organization } from "$lib/organization";
 
     // Un solo modulo per scriverci e per chiedere un ingaggio (dal 1/11/2026, prima l'ingaggio aveva un modulo suo in /booking):
-    // con il motivo «Ingaggio per un evento» compaiono i campi dell'evento e il messaggio diventa facoltativo.
+    // con il motivo «Ingaggio per un evento» compaiono i campi dell'evento.
     const BOOKING = "Ingaggio per un evento";
 
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
@@ -134,15 +134,15 @@
 
             {#if isBooking}
                 <p>
-                    <label for="contatto-telefono">Telefono (facoltativo)</label>
-                    <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" maxlength="20" />
+                    <label for="contatto-telefono">Telefono</label>
+                    <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" inputmode="tel" required minlength="9" maxlength="20" />
                 </p>
             {/if}
         </fieldset>
 
         <p>
-            <label for="contatto-messaggio">{isBooking ? "Note (facoltativo)" : "Messaggio"}</label>
-            <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isBooking} minlength={isBooking ? undefined : 10} maxlength="2000"></textarea>
+            <label for="contatto-messaggio">Messaggio</label>
+            <textarea id="contatto-messaggio" name="messaggio" rows="6" required minlength="10" maxlength="2000"></textarea>
         </p>
 
         <p>
