@@ -22,7 +22,7 @@
         Portiamo il nome di uno dei grandi compositori del Seicento e quasi 250 anni di storia, ma non siamo un museo: la tradizione per noi è un punto di
         partenza, non un luogo in cui fermarsi. Oggi siamo più di 50 soci e più di 40 musicisti attivi, in quattro formazioni:
         <a href="/about/ensembles/stradella-facendo">Stradella Facendo</a>, la nostra orchestra di fiati; la
-        <a href="/about/ensembles/streetella-band">Streetella Band</a>; l'<a href="/about/ensembles/infieri">Orchestra Infieri</a>; i
+        <a href="/about/ensembles/streetella-band">Streetella Band</a>; l'<a href="/about/ensembles/orchestra-infieri">Orchestra Infieri</a>; i
         <a href="/about/ensembles/filarmonici-dissonanti">Filarmonici Dissonanti</a>. In Stradella Facendo e nella Streetella Band l'età media è sotto i
         18 anni, e accanto ai più giovani suonano musicisti con decenni di esperienza. Siamo un'associazione di promozione sociale autonoma, iscritta al
         RUNTS e affiliata ad ANBIMA, con gli scopi scritti all'articolo 2 dello <a href="/documents/statuto.pdf" type="application/pdf">statuto</a>, e lavoriamo
