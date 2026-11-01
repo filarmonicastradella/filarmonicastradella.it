@@ -46,13 +46,12 @@
     // Almeno 30 giorni da oggi, il giorno in Italia (AAAA-MM-GG); il sito si ricostruisce ogni 3 ore, il limite resta aggiornato
     const minDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString("en-CA", { timeZone: "Europe/Rome" });
 
-    // Una data troppo vicina: al posto del messaggio generico del browser, la regola dei 30 giorni e la prima data utile
+    // Una data troppo vicina: al posto del messaggio generico del browser, la regola dei 30 giorni
     type InputEvent = Event & { currentTarget: EventTarget & HTMLInputElement };
-    const firstDate = new Date(minDate).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
 
     function explainDate(e: InputEvent) {
         if (e.currentTarget.validity.rangeUnderflow) {
-            e.currentTarget.setCustomValidity(`Scrivici almeno 30 giorni prima dell'evento: la prima data possibile è il ${firstDate}.`);
+            e.currentTarget.setCustomValidity("Scrivici almeno 30 giorni prima dell'evento");
         }
     }
 </script>
