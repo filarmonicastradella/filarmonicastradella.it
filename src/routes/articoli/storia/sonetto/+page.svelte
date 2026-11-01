@@ -20,6 +20,10 @@
 
 <!-- Nella fascia si tiene il titolo del foglio, «DI SANTA CECILIA» -->
 <ArticleHeader {article} style="--cover-placeholder: url({sonettoPlaceholder}); --cover-position: center 9%; --cover-archive: 1">
+    <p>
+        Il 3 maggio 1789 l'Accademia dei Dissonanti, la Filarmonica di allora, festeggiò Santa Cecilia, patrona dei musicisti, con una messa di
+        Giuseppe Sarti, e durante la festa distribuì un sonetto stampato per l'occasione. Quel foglio si è conservato.
+    </p>
     <enhanced:img
         src={sonettoImg}
         alt="Il foglio a stampa del 1789: «In occasione della solenne festività di Santa Cecilia vergine e martire», con il putto che suona la tromba e il sonetto dedicato a Carlo Emanuele Malaspina"
@@ -30,28 +34,39 @@
 </ArticleHeader>
 
 <section>
+    <h2>La festa del 1789</h2>
+    <p>
+        La festa si tenne il <time datetime="1789-05-03">3 maggio 1789</time> nella chiesa prepositurale di Fivizzano. Secondo la Gazzetta Toscana
+        l'Accademia eseguì «la Messa composta dal celebre Sig. Sarti», cioè Giuseppe Sarti, e i Vespri «di scelta Musica», diretti dal giovane maestro
+        di cappella Angiolo Battaglia. Durante la festa «vennero dispensati dei Sonetti analoghi», dedicati al marchese di Fosdinovo, «attual degnissimo
+        Capo dell'Accademia»<sup><a href="#fonte-2" role="doc-noteref" id="rimando-2a" aria-label="Fonte 2">2</a></sup>.
+    </p>
+</section>
+
+<section>
     <h2>Il foglio</h2>
     <p>
-        Per la festa di Santa Cecilia l'Accademia Filarmonica «de i Dissonanti» di Fivizzano fece stampare un sonetto, dedicato al suo principe, Carlo
-        Emanuele Malaspina, marchese di Fosdinovo, Gragnola e Viano. Il foglio uscì a Massa nel <time datetime="1789">1789</time>, dalla stamperia ducale
-        di Stefano Frediani<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1a" aria-label="Fonte 1">1</a></sup>. Più sotto ne trovi la trascrizione.
+        Il nostro foglio è uno di quei sonetti. L'Accademia lo fece stampare a Massa, dalla stamperia ducale di Stefano Frediani<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1a" aria-label="Fonte 1">1</a></sup>, e lo
+        dedicò al suo principe, Carlo Emanuele Malaspina, marchese di Fosdinovo, Gragnola e Viano. In alto c'è il titolo, al centro un putto in volo con
+        un cartiglio, sotto la dedica e i quattordici versi.
     </p>
     <p>
-        La festa si tenne il <time datetime="1789-05-03">3 maggio 1789</time> nella chiesa prepositurale di Fivizzano. La Gazzetta Toscana racconta che
-        l'Accademia eseguì «la Messa composta dal celebre Sig. Sarti», cioè Giuseppe Sarti, e i Vespri «di scelta Musica», sotto la direzione del
-        giovane maestro di cappella Angiolo Battaglia, e che durante la festa «vennero dispensati dei Sonetti analoghi», dedicati al marchese di
-        Fosdinovo, «attual degnissimo Capo dell'Accademia»<sup><a href="#fonte-2" role="doc-noteref" id="rimando-2a" aria-label="Fonte 2">2</a></sup>. Il nostro foglio è uno di quei sonetti.
+        I versi raccontano Cecilia nel giorno delle nozze: mentre fuori suonano le trombe della festa, lei prega in una cella di restare pura, e un angelo
+        le annuncia il martirio e la palma che la attende in cielo. La trascrizione completa è più sotto.
     </p>
+</section>
+
+<section>
+    <h2>Chi erano i Dissonanti</h2>
     <p>
         I Dissonanti sono la Filarmonica stessa, nella sua forma settecentesca di accademia. Lo confermano le fonti dell'Ottocento: nel
         <time datetime="1872">1872</time> la statistica ufficiale del Regno d'Italia ricorda l'Accademia filarmonica di Fivizzano, «fondata nel 1779 dal
         Cav. Odoardo Fantoni»<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3a" aria-label="Fonte 3">3</a></sup>, e nel <time datetime="1887">1887</time> la Gazzetta musicale di Milano la chiama ancora «Società Filarmonica dei Dissonanti
-        di Fivizzano, fondata nel 1779»<sup><a href="#fonte-4" role="doc-noteref" id="rimando-4a" aria-label="Fonte 4">4</a></sup>. Le fonti ottocentesche datano la fondazione al 1779, l'anno del riconoscimento ufficiale; la tradizione della
-        Filarmonica, già celebrata nel <time datetime="1987">1987</time> con i 210 anni<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5a" aria-label="Fonte 5">5</a></sup>, la fa risalire al <time datetime="1777">1777</time>.
+        di Fivizzano, fondata nel 1779»<sup><a href="#fonte-4" role="doc-noteref" id="rimando-4a" aria-label="Fonte 4">4</a></sup>.
     </p>
     <p>
-        Il sonetto racconta Cecilia nel giorno delle nozze: mentre fuori suonano le trombe della festa, lei prega in una cella di restare pura, e un angelo
-        le annuncia il martirio e la palma che la attende in cielo.
+        Le fonti ottocentesche datano la fondazione al 1779, l'anno del riconoscimento ufficiale; la tradizione della Filarmonica, già celebrata nel
+        <time datetime="1987">1987</time> con i 210 anni<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5a" aria-label="Fonte 5">5</a></sup>, la fa risalire al <time datetime="1777">1777</time>.
     </p>
 </section>
 
