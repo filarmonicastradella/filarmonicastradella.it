@@ -26,17 +26,12 @@ interface ArticleMetadata {
     // Le formazioni di cui parla, con l'hashtag degli eventi senza il cancelletto (stradellafacendo): l'articolo
     // compare anche nella pagina della formazione
     ensembles?: string[];
-    // In evidenza fino a questa data compresa (AAAA-MM-GG): in cima agli elenchi e in home, poi torna al suo posto
-    // da solo (il sito si ricostruisce ogni 3 ore)
-    pinned?: string;
 }
 
 export interface Article extends ArticleMetadata {
     slug?: string;
     // Il link all'articolo: una nostra pagina, o il sito del giornale; senza, un articolo di giornale solo su carta
     href?: string;
-    // In evidenza oggi (calcolato da `pinned` quando il sito viene preparato)
-    featured?: boolean;
     // Solo per gli articoli dei giornali: la testata
     publisher?: string;
     // Solo per gli articoli in Markdown; quelli con una pagina propria (immagini, impaginazione) non ce l'hanno
@@ -70,8 +65,6 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
         author: "Leonardo Orietti Del Duca",
         title: "Sonetto per Santa Cecilia, 1789",
         date: "2026-10-10",
-        // Fino alla festa di Santa Cecilia, il 22 novembre
-        pinned: "2026-11-22",
         excerpt: "Un foglio a stampa degli Accademici Dissonanti di Fivizzano, per la festa della patrona dei musicisti."
     },
     {
@@ -84,9 +77,6 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
     }
 ];
 
-// Il giorno in Italia (AAAA-MM-GG), per gli articoli in evidenza
-const today = new Date().toLocaleDateString("en-CA", { timeZone: "Europe/Rome" });
-
 // I nostri articoli e quelli dei giornali in un solo archivio, dal più recente. Dei giornali solo titolo, sommario e
 // link: il testo intero si legge sul loro sito (diritto d'autore)
 export const articles: Article[] = [
@@ -94,10 +84,7 @@ export const articles: Article[] = [
         .filter(({ draft }) => !draft)
         .map((article) => ({ ...article, href: `/articoli/${article.category}/${article.slug}` })),
     ...press.map((item) => ({ ...item, category: "stampa" as const }))
-]
-    .map((article) => ({ ...article, featured: Boolean(article.pinned && article.pinned >= today) }))
-    // Prima quelli in evidenza, poi gli altri; dal più recente
-    .sort((a, b) => Number(b.featured) - Number(a.featured) || b.date.localeCompare(a.date));
+].sort((a, b) => b.date.localeCompare(a.date));
 
 // Una chiave per gli elenchi: il link, o per le uscite solo su carta testata e titolo
 export const articleKey = (article: Article) => article.href ?? `${article.publisher} ${article.title}`;

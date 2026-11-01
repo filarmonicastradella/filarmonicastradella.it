@@ -26,9 +26,6 @@
             {:else}
                 <span itemprop="articleSection">{categoryName(article.category)}</span>
             {/if}
-            {#if article.featured}
-                · In evidenza
-            {/if}
             <br /><span>
                 {#if article.author}
                     di <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{article.author}</span></span> ·
