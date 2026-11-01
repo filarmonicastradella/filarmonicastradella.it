@@ -149,13 +149,6 @@
     </form>
 </section>
 
-<section>
-    <h2>La Filarmonica al tuo evento</h2>
-    <p>
-        Per un concerto, un convegno, una cerimonia o una festa in Lunigiana, <a href="/contacts?motivo=ingaggio#scrivici">raccontaci l'occasione</a> almeno 30 giorni
-        prima.
-    </p>
-</section>
 
 <!-- Da riattivare insieme a /about/locations:
 <section>
