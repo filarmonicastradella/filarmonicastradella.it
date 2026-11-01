@@ -118,6 +118,32 @@ textarea {
     resize: vertical;
 }
 
+/*
+ * Elenchi a scelta: al posto della freccia del browser, piccola e attaccata al bordo, il chevron delle icone (1,25rem),
+ * alla stessa distanza dal bordo del testo, centrato sull'altezza del campo (sopra). Disegnato dal paragrafo, perché un
+ * <select> non ha ::after.
+ */
+select {
+    appearance: none;
+    padding-inline-end: calc(var(--space-4) * 2 + 1.25rem);
+}
+
+form p:has(> select) {
+    position: relative;
+}
+
+form p:has(> select)::after {
+    content: "";
+    position: absolute;
+    inset-inline-end: var(--space-4);
+    inset-block-end: calc((var(--fs-body) * var(--lh-body) + var(--space-3) * 2 + var(--border-width) * 2 - 1.25rem) / 2);
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    background-color: currentColor;
+    mask: var(--icon-chevron) center / contain no-repeat;
+    pointer-events: none;
+}
+
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
