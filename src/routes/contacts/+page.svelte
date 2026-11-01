@@ -159,7 +159,7 @@
 
 <!-- Le domande di chi chiede un ingaggio (fino al 1/11/2026 nella pagina /booking, ora un rimando qui) -->
 <section>
-    <h2>Domande sugli ingaggi</h2>
+    <h2>Domande frequenti</h2>
     <details>
         <summary>Dove suonate?</summary>
         <p>Ci spostiamo in tutta la Lunigiana.</p>
