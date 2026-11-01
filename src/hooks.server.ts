@@ -103,16 +103,7 @@ export const handle: Handle = ({ event, resolve }) =>
                 if (published) tags.push(`<meta property="article:published_time" content="${published}">`);
             }
 
-            // Vecchi indirizzi che rimandano a una pagina nuova: indirizzo canonico e anteprima sono quelli della pagina
-            // nuova, e niente dati strutturati (la pagina non va nell'indice)
             const path = event.url.pathname.replace(/\/$/, "") || "/";
-            const redirect = html.match(/<meta http-equiv="refresh" content="0; url=([^"]+)"/)?.[1];
-            if (redirect) {
-                return html
-                    .replace(/(<link rel="canonical" href=")[^"]*/, `$1${organization.url}${redirect}`)
-                    .replace(/(<meta property="og:url" content=")[^"]*/, `$1${organization.url}${redirect}`)
-                    .replace("</head>", `${tags.join("\n\t\t")}\n\t</head>`);
-            }
 
             // Dati strutturati comuni: tipo di pagina, percorso di navigazione e domande frequenti (JSON-LD), collegati al
             // sito e all'ente descritti nella home. La home ha i suoi.

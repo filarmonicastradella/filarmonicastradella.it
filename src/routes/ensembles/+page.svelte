@@ -20,7 +20,7 @@
 <ul>
     {#each ensembles as ensemble (ensemble.slug)}
         <li>
-            <a href="/about/ensembles/{ensemble.slug}">
+            <a href="/ensembles/{ensemble.slug}">
                 <h2>{ensemble.title}</h2>
                 <p>{ensemble.summary}</p>
             </a>
@@ -41,7 +41,7 @@
     <details>
         <summary>Come si entra in una formazione?</summary>
         <p>
-            Prima ci si iscrive alla Filarmonica con la <a href="/join">domanda di iscrizione</a>; da soci si chiede di entrare nella formazione.
+            Prima ci si iscrive alla Filarmonica con la <a href="/about/join">domanda di iscrizione</a>; da soci si chiede di entrare nella formazione.
             Ognuna ha i suoi requisiti, e si può far parte anche di più di una.
         </p>
     </details>

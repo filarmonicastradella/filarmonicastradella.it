@@ -152,7 +152,7 @@
 <form action="https://formsubmit.co/segreteria@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_subject" value={isChange ? "Variazione dei dati di un socio – Filarmonica Stradella" : "Nuova domanda di iscrizione – Filarmonica Stradella"} />
     <input type="hidden" name="_template" value="table" />
-    <input type="hidden" name="_next" value="https://filarmonicastradella.it/join/thanks" />
+    <input type="hidden" name="_next" value="https://filarmonicastradella.it/about/join/thanks" />
     <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
     <fieldset>
         <legend>Che cosa vuoi fare</legend>

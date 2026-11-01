@@ -47,7 +47,7 @@
     <link itemprop="eventAttendanceMode" href="https://schema.org/OfflineEventAttendanceMode" />
     <link itemprop="organizer" href="{organization.url}/#ente" />
     {#each event.ensembles as { slug } (slug)}
-        <link itemprop="performer" href="{organization.url}/about/ensembles/{slug}#formazione" />
+        <link itemprop="performer" href="{organization.url}/ensembles/{slug}#formazione" />
     {/each}
     {#if event.end}
         <meta itemprop="endDate" content={event.end} />
@@ -72,7 +72,7 @@
         {#if event.ensembles.length > 0}
             <dt>Chi suona</dt>
             {#each event.ensembles as { slug, title } (slug)}
-                <dd><a href="/about/ensembles/{slug}">{title}</a></dd>
+                <dd><a href="/ensembles/{slug}">{title}</a></dd>
             {/each}
         {/if}
         <dt>Quando</dt>

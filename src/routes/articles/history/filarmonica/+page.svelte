@@ -185,9 +185,9 @@
     <h2>Oggi</h2>
     <p>
         La Filarmonica Alessandro Stradella è un'associazione di promozione sociale con più di cinquanta soci e quattro formazioni: l'orchestra di fiati
-        <a href="/about/ensembles/stradella-facendo">Stradella Facendo</a>, la <a href="/about/ensembles/streetella-band">Streetella Band</a>,
-        l'<a href="/about/ensembles/orchestra-infieri">Orchestra Infieri</a> e il gruppo di musica antica dei
-        <a href="/about/ensembles/filarmonici-dissonanti">Filarmonici Dissonanti</a>, che porta il nome degli accademici del Settecento. Nel
+        <a href="/ensembles/stradella-facendo">Stradella Facendo</a>, la <a href="/ensembles/streetella-band">Streetella Band</a>,
+        l'<a href="/ensembles/orchestra-infieri">Orchestra Infieri</a> e il gruppo di musica antica dei
+        <a href="/ensembles/filarmonici-dissonanti">Filarmonici Dissonanti</a>, che porta il nome degli accademici del Settecento. Nel
         <time datetime="2027">2027</time> la Filarmonica compie 250 anni.
     </p>
     <!-- SOSPESA finché non ci sono i consensi alle immagini (vedi l'import):

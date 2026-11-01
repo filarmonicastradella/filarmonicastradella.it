@@ -25,13 +25,13 @@
 <header
     itemscope
     itemtype="https://schema.org/MusicGroup"
-    itemid="{organization.url}/about/ensembles/{ensemble.slug}#formazione"
+    itemid="{organization.url}/ensembles/{ensemble.slug}#formazione"
     style:--cover-placeholder={ensemble.coverImage && ensemble.cover && `url(${ensemble.coverImage.placeholder})`}
     style:--cover-position={ensemble.cover?.position}
 >
     <h1 itemprop="name">{ensemble.title}</h1>
     <p itemprop="description">{ensemble.summary}</p>
-    <link itemprop="url" href="{organization.url}/about/ensembles/{ensemble.slug}" />
+    <link itemprop="url" href="{organization.url}/ensembles/{ensemble.slug}" />
     <link itemprop="parentOrganization" href="{organization.url}/#ente" />
     {#if ensemble.coverImage && ensemble.cover}
         <enhanced:img src={ensemble.coverImage.picture} alt={ensemble.cover.alt} sizes="100vw" fetchpriority="high" itemprop="image" />
@@ -60,7 +60,7 @@
 <section>
     <h2>Suona con noi</h2>
     <p>
-        Per suonare in {ensemble.title} si entra da soci: prima la <a href="/join">domanda di iscrizione</a> all'associazione, con la quota annuale di
+        Per suonare in {ensemble.title} si entra da soci: prima la <a href="/about/join">domanda di iscrizione</a> all'associazione, con la quota annuale di
         12 €, poi la richiesta di entrare nella formazione. Strumento, parti e sala prove li mette a disposizione l'associazione.
     </p>
 </section>
@@ -76,4 +76,4 @@
     </section>
 {/if}
 
-<p class="rimando"><a href="/about/ensembles">Le nostre formazioni</a></p>
+<p class="rimando"><a href="/ensembles">Le nostre formazioni</a></p>

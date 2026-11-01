@@ -7,9 +7,8 @@ import type { RequestHandler } from "./$types";
 export const prerender = true;
 
 
-// Pagine che non vanno nella mappa: conferme di invio, pagine con parametri (aggiunte sotto) e vecchi indirizzi
-// che rimandano agli articoli.
-const EXCLUDED = /\/thanks$|\[|^\/about\/(sonnet|stradella|history|ensembles\/infieri)$|^\/(support\/join|booking|legal\/consents)$/;
+// Pagine che non vanno nella mappa: conferme di invio e pagine con parametri (aggiunte sotto)
+const EXCLUDED = /\/thanks$|\[/;
 
 const pages = Object.keys(import.meta.glob("/src/routes/**/+page.svelte"))
     .map((file) => file.replace("/src/routes", "").replace(/\/?\+page\.svelte$/, "") || "/")
@@ -20,7 +19,7 @@ export const GET: RequestHandler = async () => {
 
     const paths = [
         ...pages,
-        ...ensembles.map(({ slug }) => `/about/ensembles/${slug}`),
+        ...ensembles.map(({ slug }) => `/ensembles/${slug}`),
         ...activeCategories.map(({ slug }) => `/articles/${slug}`),
         ...articles.map(({ href }) => href),
         ...events.map(({ id }) => `/events/${id}`)

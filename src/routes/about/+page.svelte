@@ -30,9 +30,9 @@
         </a>
     </li>
     <li>
-        <a href="/about/ensembles">
-            <h2>Le nostre formazioni</h2>
-            <p>Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti.</p>
+        <a href="/about/join">
+            <h2>Iscrizione e variazioni</h2>
+            <p>Per diventare socio con la quota annuale di 12 €, o per aggiornare i tuoi dati e i consensi.</p>
         </a>
     </li>
     <!-- SOSPESA finché non ci sono i consensi alla pubblicazione dei nomi (rinominare about/musicians/_page.svelte in +page.svelte):
