@@ -94,7 +94,7 @@
     <p>
         Cerchiamo musicisti di ogni livello, anche chi comincia da zero. Strumento, parti e sala prove li mette a disposizione l'associazione.
     </p>
-    <p class="rimando"><a href="/join">Suona con noi</a></p>
+    <p class="rimando"><a href="/join">Domanda di iscrizione</a></p>
 </section>
 
 <!--

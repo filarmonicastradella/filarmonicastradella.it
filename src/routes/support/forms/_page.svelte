@@ -8,7 +8,7 @@
     <p>I moduli per iscriversi e partecipare alle attività dell'associazione.</p>
 
     <ul>
-        <li><a href="/join/form">Richiesta di iscrizione come socio</a></li>
+        <li><a href="/join">Richiesta di iscrizione come socio</a></li>
     </ul>
 
 </main>

@@ -57,6 +57,14 @@
     </dl>
 </section>
 
+<section>
+    <h2>Suona con noi</h2>
+    <p>
+        Per suonare in {ensemble.title} si entra da soci: prima la <a href="/join">domanda di iscrizione</a> all'associazione, con la quota annuale di
+        12 €, poi la richiesta di entrare nella formazione. Strumento, parti e sala prove li mette a disposizione l'associazione.
+    </p>
+</section>
+
 {#if events.length > 0}
     <section>
         <h2>Prossimi appuntamenti</h2>
@@ -68,4 +76,4 @@
     </section>
 {/if}
 
-<p class="rimando"><a href="/about/ensembles">Tutte le formazioni</a></p>
+<p class="rimando"><a href="/about/ensembles">Le nostre formazioni</a></p>

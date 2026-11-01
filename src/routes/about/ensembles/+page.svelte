@@ -41,13 +41,28 @@
     <details>
         <summary>Come si entra in una formazione?</summary>
         <p>
-            Prima ci si iscrive alla Filarmonica con la <a href="/join/form">domanda di iscrizione</a>; da soci si chiede di entrare nella formazione.
+            Prima ci si iscrive alla Filarmonica con la <a href="/join">domanda di iscrizione</a>; da soci si chiede di entrare nella formazione.
             Ognuna ha i suoi requisiti, e si può far parte anche di più di una.
         </p>
     </details>
     <details>
+        <summary>Che livello serve?</summary>
+        <p>Dipende dalla formazione, ma ce n'è una per ogni livello: si può cominciare anche da zero, senza aver mai suonato uno strumento.</p>
+    </details>
+    <details>
+        <summary>Quali strumenti cercate?</summary>
+        <p>Tutti, e in particolare oboe, fagotto e archi.</p>
+    </details>
+    <details>
         <summary>Posso proporre una nuova formazione?</summary>
         <p>Sì: basta che la propongano almeno tre soci, con una bozza di regolamento.</p>
+    </details>
+    <details>
+        <summary>Chi è il maestro?</summary>
+        <p>
+            Non ce n'è uno solo: i direttori sono più di uno, e prima di tutto sono musicisti. Li indicano i componenti di ogni formazione, dai 14 anni in
+            su, e il consiglio direttivo ne ratifica la nomina per un anno. Ognuno dirige in autonomia i propri brani, e negli altri suona con tutti.
+        </p>
     </details>
     <details>
         <summary>Chi sceglie i brani?</summary>

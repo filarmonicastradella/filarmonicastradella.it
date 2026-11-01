@@ -13,7 +13,7 @@
         <dt itemprop="name">Come si suona con la Filarmonica?</dt>
         <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
             <span itemprop="text">
-                Prima ci si iscrive come soci dell'associazione con la <a href="/join/form">richiesta di iscrizione</a>, poi si chiede di entrare nell'ensemble in cui si vuole suonare.
+                Prima ci si iscrive come soci dell'associazione con la <a href="/join">richiesta di iscrizione</a>, poi si chiede di entrare nell'ensemble in cui si vuole suonare.
             </span>
         </dd>
     </div>
@@ -31,7 +31,7 @@
         <dt itemprop="name">Posso iscrivermi se sono minorenne?</dt>
         <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
             <span itemprop="text">
-                Sì: per i minorenni la richiesta di iscrizione può essere fatta online da un genitore o da un tutore, compilando lo stesso <a href="/join/form">modulo</a>.
+                Sì: per i minorenni la richiesta di iscrizione può essere fatta online da un genitore o da un tutore, compilando lo stesso <a href="/join">modulo</a>.
             </span>
         </dd>
     </div>
