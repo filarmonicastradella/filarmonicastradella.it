@@ -301,6 +301,14 @@
                 <label for="consenso_email">Acconsento alla ricezione di aggiornamenti sulle attività istituzionali all'indirizzo email indicato.</label>
             </p>
 
+            <!-- Per i minori al massimo il nome proprio, come nella liberatoria per le immagini -->
+            <p>
+                <input type="checkbox" id="consenso_nome" name="consenso_nome" value="Sì" />
+                <label for="consenso_nome">
+                    {isMinorenne ? "Pubblicazione del nome proprio del minore" : "Pubblicazione del mio nome e cognome"} nell'elenco dei musicisti del sito.
+                </label>
+            </p>
+
             {#each imageChannels as { name, label } (name)}
                 <p>
                     <input type="checkbox" id={name} {name} value="Sì" />

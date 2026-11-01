@@ -25,7 +25,7 @@
         <dt>Codice fiscale</dt>
         <dd>{organization.taxCode}</dd>
         <dt>Contatto per la privacy</dt>
-        <dd><a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a></dd>
+        <dd><a href="mailto:privacy@filarmonicastradella.it?subject=Privacy">privacy@filarmonicastradella.it</a></dd>
     </dl>
 </section>
 
@@ -50,7 +50,8 @@
         </dd>
         <dt>Consensi facoltativi</dt>
         <dd>
-            Comunicazioni via email o messaggistica e uso delle immagini, solo se li accetti nel modulo di iscrizione. Base giuridica: il tuo consenso (art.
+            Comunicazioni via email o messaggistica, uso delle immagini e pubblicazione del nome nell'elenco dei musicisti del sito (per i minori
+            al massimo il nome proprio), solo se li accetti nel modulo di iscrizione e variazione. Base giuridica: il tuo consenso (art.
             6.1.a), che puoi revocare in qualsiasi momento.
         </dd>
     </dl>
@@ -109,7 +110,7 @@
         Puoi chiederci in qualsiasi momento di vedere i tuoi dati, correggerli, cancellarli, limitarne l'uso o riceverli in un formato leggibile, e puoi
         opporti al trattamento (artt. 15-22 GDPR). Puoi revocare un consenso quando vuoi: vale da quel momento in poi. Per cambiare i consensi c'è il
         <a href="/associazione/iscrizione?modo=variazione">modulo di iscrizione e variazione</a>; per tutto il resto scrivi a
-        <a href="mailto:privacy@filarmonicastradella.it">privacy@filarmonicastradella.it</a>.
+        <a href="mailto:privacy@filarmonicastradella.it?subject=Esercizio%20dei%20diritti%20sui%20dati%20personali">privacy@filarmonicastradella.it</a>.
     </p>
     <p>
         Se ritieni che i tuoi dati siano trattati in modo scorretto, puoi presentare reclamo al
