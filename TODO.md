@@ -97,6 +97,18 @@ Oggi sono `_page.svelte` (SvelteKit le ignora): per ognuna rinominare in `+page.
 - `media`, `media/interviews`, `media/kit` (cartella stampa in PDF di una pagina).
 - `faq`.
 
+## Idee del 1/11/2026, da fare più avanti
+
+- **Raccolte fondi** come schede in testa a Sostienici, solo nel periodo in cui sono attive: strumentazione audio, divise, strumenti antichi, «Adotta uno strumento». Il modello della scheda è in `src/routes/sostienici/+page.svelte` (non salvato nei commit); servono cosa si compra, l'obiettivo in euro, cosa riceve chi adotta.
+- **Sedi** (`associazione/sedi`): quando sono confermate e a norma.
+- **Repertorio** delle formazioni: la sezione è già scritta e commentata nella pagina della formazione; servono i dati (`repertoire` nell'intestazione del Markdown).
+- **Video dei concerti**: sul canale YouTube, non nel sito, come le foto stanno su Instagram; la Mediateca rimanda ai due canali.
+- **Partner**: le bande di Moncigoli e di Casola, oltre ai soliti (Medicea e gli altri); il Lunigiana International Music Festival (a Fivizzano ogni luglio) e Luni Tunes per la rete della Lunigiana.
+- **Repository pubblico**: contiene ancora nomi e foto sospesi in attesa dei consensi; decidere se renderlo privato o toglierli.
+- **Regolamenti** (`trasparenza/regolamenti`): già in programma; ci va anche la regola sui direttori (indicati dai componenti dai 14 anni in su, nomina ratificata dal consiglio).
+- **Open day** «prova uno strumento»: quando c'è la data, nel calendario.
+- **Articoli**: interviste e testimonianze dei musicisti, anche di quelli di una volta; i traguardi raggiunti in Identità (poi si può eliminare la pagina disattivata `associazione/traguardi`).
+
 ## Idee per attirare persone e finanziatori
 
 - **I giovani**: alcune formazioni hanno età media sotto i 18 anni. Per bandi, fondazioni ed enti è un dato forte: dirlo in home, nelle formazioni e nella cartella stampa. Foto con minori solo con la liberatoria.

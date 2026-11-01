@@ -61,6 +61,18 @@
     </dl>
 </section>
 
+<!-- SEGNAPOSTO, da riattivare quando ci sono i dati: il repertorio della formazione, qualche genere e qualche brano, perché si capisca
+     subito come suona (idea da Luni Tunes, 1/11/2026). I dati andrebbero nell'intestazione del Markdown, come l'organico: `repertoire`.
+<section>
+    <h2>Repertorio</h2>
+    <ul>
+        {#each ensemble.repertoire as piece (piece)}
+            <li>{piece}</li>
+        {/each}
+    </ul>
+</section>
+-->
+
 <section>
     <h2>Suona con noi</h2>
     <p>
