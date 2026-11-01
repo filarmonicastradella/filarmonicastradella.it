@@ -381,29 +381,6 @@ body > div > footer > :is(nav:first-child, section:has(a[href="/support"]), p:la
     grid-column: 1 / -1;
 }
 
-/* L'invito a sostenerci come le sezioni delle pagine (sopra): da 64rem il titolo a sinistra, testo e link a destra */
-@media (min-width: 64rem) {
-    body > div > footer > section:has(a[href="/support"]) {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
-        column-gap: var(--space-6);
-
-        & > * {
-            grid-column: 2;
-            margin: 0;
-        }
-
-        & > h2 {
-            grid-column: 1;
-            grid-row: span 2;
-        }
-
-        & > p + p {
-            margin-block-start: var(--space-4);
-        }
-    }
-}
-
 body > div > footer > nav:first-child ul {
     display: flex;
     flex-wrap: wrap;
