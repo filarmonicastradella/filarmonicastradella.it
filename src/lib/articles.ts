@@ -1,15 +1,15 @@
 import type { Component } from "svelte";
 import { press } from "$lib/press";
 
-// Categorie degli articoli, nell'ordine dell'indice: lo slug è il segmento dell'indirizzo (/articles/history)
+// Categorie degli articoli, nell'ordine dell'indice: lo slug è il segmento dell'indirizzo (/articoli/storia)
 export const categories = [
-    { slug: "history", name: "Storia", description: "Ricerche e documenti sulla storia della musica a Fivizzano e della Filarmonica, dall'Accademia dei Dissonanti a oggi." },
-    { slug: "teaching", name: "Didattica", description: "Guide per chi studia uno strumento o comincia a suonare." },
-    { slug: "theory", name: "Teoria musicale", description: "Le basi della musica, spiegate semplici." },
-    { slug: "life", name: "Vita della Filarmonica", description: "Prove, concerti, trasferte e persone." },
-    { slug: "news", name: "Notizie", description: "Avvisi dell'associazione, iscrizioni e appuntamenti." },
-    // Gli articoli dei giornali (press.ts), con il link alla testata: fino al 1/11/2026 erano la Rassegna stampa in /about/press
-    { slug: "press", name: "Stampa", description: "Gli articoli dei giornali sulla Filarmonica, con il link alla testata." }
+    { slug: "storia", name: "Storia", description: "Ricerche e documenti sulla storia della musica a Fivizzano e della Filarmonica, dall'Accademia dei Dissonanti a oggi." },
+    { slug: "didattica", name: "Didattica", description: "Guide per chi studia uno strumento o comincia a suonare." },
+    { slug: "teoria", name: "Teoria musicale", description: "Le basi della musica, spiegate semplici." },
+    { slug: "vita", name: "Vita della Filarmonica", description: "Prove, concerti, trasferte e persone." },
+    { slug: "notizie", name: "Notizie", description: "Avvisi dell'associazione, iscrizioni e appuntamenti." },
+    // Gli articoli dei giornali (press.ts), con il link alla testata: fino al 1/11/2026 erano la Rassegna stampa in /associazione/press
+    { slug: "stampa", name: "Stampa", description: "Gli articoli dei giornali sulla Filarmonica, con il link alla testata." }
 ] as const;
 
 export type CategorySlug = (typeof categories)[number]["slug"];
@@ -49,19 +49,19 @@ const markdownArticles = Object.entries(modules).map(([path, module]) => ({
     component: module.default
 }));
 
-// Articoli con una pagina propria in src/routes/articles/<categoria>/<slug>: qui solo i dati per indici e intestazioni
+// Articoli con una pagina propria in src/routes/articoli/<categoria>/<slug>: qui solo i dati per indici e intestazioni
 const pageArticles: (ArticleMetadata & { slug: string })[] = [
     {
         slug: "filarmonica",
-        category: "history",
+        category: "storia",
         author: "Leonardo Orietti Del Duca",
         title: "La storia della Filarmonica",
         date: "2026-09-28",
         excerpt: "Dal 1777 a oggi: quasi due secoli e mezzo di musica a Fivizzano."
     },
     {
-        slug: "sonnet",
-        category: "history",
+        slug: "sonetto",
+        category: "storia",
         author: "Leonardo Orietti Del Duca",
         title: "Sonetto per Santa Cecilia, 1789",
         date: "2026-10-10",
@@ -69,7 +69,7 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
     },
     {
         slug: "stradella",
-        category: "history",
+        category: "storia",
         author: "Leonardo Orietti Del Duca",
         title: "Alessandro Stradella",
         date: "2026-10-19",
@@ -82,8 +82,8 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
 export const articles: Article[] = [
     ...[...markdownArticles, ...pageArticles]
         .filter(({ draft }) => !draft)
-        .map((article) => ({ ...article, href: `/articles/${article.category}/${article.slug}` })),
-    ...press.map((item) => ({ ...item, category: "press" as const }))
+        .map((article) => ({ ...article, href: `/articoli/${article.category}/${article.slug}` })),
+    ...press.map((item) => ({ ...item, category: "stampa" as const }))
 ].sort((a, b) => b.date.localeCompare(a.date));
 
 // Una chiave per gli elenchi: il link, o per le uscite solo su carta testata e titolo

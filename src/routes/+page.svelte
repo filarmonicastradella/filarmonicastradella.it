@@ -32,10 +32,10 @@
         areaServed: { "@type": "Place", name: "Lunigiana" },
         subOrganization: ensembles.map(({ slug, title, summary }) => ({
             "@type": "MusicGroup",
-            "@id": `${organization.url}/ensembles/${slug}#formazione`,
+            "@id": `${organization.url}/formazioni/${slug}#formazione`,
             name: title,
             description: summary,
-            url: `${organization.url}/ensembles/${slug}`
+            url: `${organization.url}/formazioni/${slug}`
         })),
         address: { "@type": "PostalAddress", streetAddress: street, postalCode, addressLocality: locality, addressRegion: region, addressCountry: "IT" },
         email: organization.email,
@@ -63,9 +63,9 @@
     // "<" come \u003c: nessun testo dei dati può chiudere lo script prima del tempo
     const structuredDataScript = `<script type="application/ld+json">${JSON.stringify(structuredData).replace(/</g, "\\u003c")}<\/script>`;
 
-    // In home solo le notizie (la categoria Notizie degli articoli); ricerche e altri scritti stanno in /articles
+    // In home solo le notizie (la categoria Notizie degli articoli); ricerche e altri scritti stanno in /articoli
     // Le ultime notizie: le nostre e gli articoli dei giornali, insieme
-    const latestNews = articles.filter(({ category }) => category === "news" || category === "press").slice(0, 2);
+    const latestNews = articles.filter(({ category }) => category === "notizie" || category === "stampa").slice(0, 2);
 </script>
 
 <svelte:head>
@@ -83,11 +83,11 @@
     <h2>Chi siamo</h2>
     <p>
         Dal 1777 la Filarmonica fa musica a Fivizzano, in Lunigiana: una storia lunga quasi due secoli e mezzo. Oggi riunisce quattro formazioni
-        ({#each ensembles as { slug, title }, i (slug)}{i === 0 ? "" : i === ensembles.length - 1 ? " e " : ", "}<a href="/ensembles/{slug}"
+        ({#each ensembles as { slug, title }, i (slug)}{i === 0 ? "" : i === ensembles.length - 1 ? " e " : ", "}<a href="/formazioni/{slug}"
                 >{title}</a
             >{/each}) e porta il suo repertorio nelle sale e nelle piazze del territorio.
     </p>
-    <p class="rimando"><a href="/about">Scopri l'associazione</a></p>
+    <p class="rimando"><a href="/associazione">Scopri l'associazione</a></p>
 </section>
 
 <section>
@@ -95,7 +95,7 @@
     <p>
         Cerchiamo musicisti di ogni livello, anche chi comincia da zero. Strumento, parti e sala prove li mette a disposizione l'associazione.
     </p>
-    <p class="rimando"><a href="/about/join">Domanda di iscrizione</a></p>
+    <p class="rimando"><a href="/associazione/iscrizione">Domanda di iscrizione</a></p>
 </section>
 
 <!--
@@ -110,7 +110,7 @@
                 <li><ArticleCard {article} /></li>
             {/each}
         </ol>
-        <p class="rimando"><a href="/articles">Articoli</a></p>
+        <p class="rimando"><a href="/articoli">Articoli</a></p>
     </section>
 {/if}
 
@@ -123,7 +123,7 @@
     <p>
         La nostra missione è mantenere viva la musica bandistica come bene comune: la suoniamo, la insegniamo alle nuove generazioni e la portiamo nelle piazze, nelle feste e nelle occasioni della nostra comunità.
     </p>
-    <p class="rimando"><a href="/about/mission">La nostra missione</a></p>
+    <p class="rimando"><a href="/associazione/missione">La nostra missione</a></p>
 </section>
 -->
 
@@ -132,9 +132,9 @@
 <section>
     <h2>In primo piano</h2>
     <ul>
-        [Da riattivare insieme a /ensembles:
+        [Da riattivare insieme a /formazioni:
         <li>
-            <a href="/ensembles">
+            <a href="/formazioni">
                 <h3>Le nostre formazioni</h3>
                 <p>
                     Quattro formazioni per suonare insieme: Stradella Facendo, la nostra orchestra di fiati; la Streetella Band; l'Orchestra Infieri; i Filarmonici Dissonanti.
@@ -143,7 +143,7 @@
         </li>
         ]
         <li>
-            <a href="/articles/history/filarmonica">
+            <a href="/articoli/storia/filarmonica">
                 <h3>La Nostra Storia</h3>
                 <p>
                     Radici profonde che affondano nel 1777. Un viaggio attraverso i secoli tra cultura bandistica, strumenti storici e la memoria viva della nostra comunità.
@@ -168,10 +168,10 @@
 <section>
     <h2>Sostieni la Filarmonica</h2>
     <p>Puoi diventare socio o fare una donazione: ogni contributo va alla musica, agli strumenti e ai giovani che iniziano a suonare.</p>
-    <p class="rimando"><a href="/support">Sostienici</a></p>
+    <p class="rimando"><a href="/sostienici">Sostienici</a></p>
 </section>
 
-<!-- Home alleggerita il 9/10/2026: versione precedente, con le schede già presenti in /support.
+<!-- Home alleggerita il 9/10/2026: versione precedente, con le schede già presenti in /sostienici.
 <section>
     <h2>Sostieni la Filarmonica</h2>
     <p>
@@ -180,13 +180,13 @@
 
     <ul>
         <li>
-            <a href="/support/join">
+            <a href="/sostienici/join">
                 <h3>Diventa socio</h3>
                 <p>Entra a far parte della nostra grande famiglia musicale, partecipa alla vita dell'associazione e supporta i nostri progetti formativi e concertistici.</p>
             </a>
         </li>
         <li>
-            <a href="/support/donate">
+            <a href="/sostienici/dona">
                 <h3>Erogazioni liberali</h3>
                 <p>Sostieni i nostri progetti con un contributo libero tramite bonifico bancario. Le erogazioni a favore delle APS godono delle agevolazioni fiscali previste dalla normativa vigente.</p>
             </a>
@@ -195,7 +195,7 @@
         <li>
             <h3>Sostienici con il 5x1000</h3>
             <p>Dona il tuo 5x1000 alla Filarmonica Alessandro Stradella APS. Un piccolo gesto che non costa nulla ma che per noi fa una grande differenza.</p>
-            <p class="rimando"><a href="/support/5x1000">Scopri come fare</a></p>
+            <p class="rimando"><a href="/sostienici/5x1000">Scopri come fare</a></p>
         </li>
         ]
     </ul>

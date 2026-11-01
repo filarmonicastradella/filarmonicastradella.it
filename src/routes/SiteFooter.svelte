@@ -70,9 +70,9 @@
     <nav aria-labelledby="note-legali">
         <h2 id="note-legali">Note legali</h2>
         <ul>
-            <li><a href="/transparency">Amministrazione trasparente</a></li>
-            <li><a href="/legal/privacy">Informativa sulla privacy</a></li>
-            <li><a href="/legal/cookies">Informativa sui cookie</a></li>
+            <li><a href="/trasparenza">Amministrazione trasparente</a></li>
+            <li><a href="/informative/privacy">Informativa sulla privacy</a></li>
+            <li><a href="/informative/cookie">Informativa sui cookie</a></li>
         </ul>
     </nav>
 

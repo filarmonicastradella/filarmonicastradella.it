@@ -2,7 +2,7 @@
 title: Gli strumenti della Filarmonica
 date: 2026-11-01
 excerpt: "[Riassunto da scrivere: com'è fatto ogni strumento, che suono ha e da dove si comincia]"
-category: teaching
+category: didattica
 # Articolo potenziale: resta in bozza finché non è scritto
 draft: true
 ---

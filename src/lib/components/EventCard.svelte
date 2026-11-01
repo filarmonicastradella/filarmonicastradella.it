@@ -12,8 +12,8 @@
 </script>
 
 <!-- Lo stesso evento della sua pagina ("itemid"), così i motori di ricerca non lo contano due volte -->
-<article itemscope itemtype="https://schema.org/Event" itemid="{organization.url}/events/{event.id}#evento">
-    <a itemprop="url" href="/events/{event.id}">
+<article itemscope itemtype="https://schema.org/Event" itemid="{organization.url}/calendario/{event.id}#evento">
+    <a itemprop="url" href="/calendario/{event.id}">
         <!-- In testa le informazioni pratiche: la data e, sotto, ora e luogo -->
         <p>
             <time itemprop="startDate" datetime={event.start}>{date}</time>

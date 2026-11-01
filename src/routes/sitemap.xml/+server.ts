@@ -8,7 +8,7 @@ export const prerender = true;
 
 
 // Pagine che non vanno nella mappa: conferme di invio e pagine con parametri (aggiunte sotto)
-const EXCLUDED = /\/thanks$|\[/;
+const EXCLUDED = /\/grazie$|\[/;
 
 const pages = Object.keys(import.meta.glob("/src/routes/**/+page.svelte"))
     .map((file) => file.replace("/src/routes", "").replace(/\/?\+page\.svelte$/, "") || "/")
@@ -19,10 +19,10 @@ export const GET: RequestHandler = async () => {
 
     const paths = [
         ...pages,
-        ...ensembles.map(({ slug }) => `/ensembles/${slug}`),
-        ...activeCategories.map(({ slug }) => `/articles/${slug}`),
+        ...ensembles.map(({ slug }) => `/formazioni/${slug}`),
+        ...activeCategories.map(({ slug }) => `/articoli/${slug}`),
         ...articles.filter(({ publisher }) => !publisher).map(({ href }) => href),
-        ...events.map(({ id }) => `/events/${id}`)
+        ...events.map(({ id }) => `/calendario/${id}`)
     ];
 
     // Data di pubblicazione degli articoli, l'unica data affidabile: le altre pagine restano senza

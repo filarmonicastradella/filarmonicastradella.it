@@ -2,7 +2,7 @@
 title: Apertura delle iscrizioni ai corsi di musica
 date: 2026-07-15
 excerpt: Al via i corsi di strumento per il nuovo anno. Scopri l'offerta per tutte le età e i laboratori orchestrali.
-category: news
+category: notizie
 # Esempio di prova per provare la categoria Notizie: resta in bozza, non va pubblicato
 draft: true
 ---

@@ -27,10 +27,10 @@ const pageNames = new Map<string, string>(
         return [[path, title.split(" — ")[0].trim()]];
     })
 );
-for (const { slug, name } of categories) pageNames.set(`/articles/${slug}`, name);
+for (const { slug, name } of categories) pageNames.set(`/articoli/${slug}`, name);
 
 // Tipo della pagina per i motori di ricerca, dove dice qualcosa in più di una pagina qualunque
-const pageTypes: Record<string, string> = { "/about": "AboutPage", "/contacts": "ContactPage" };
+const pageTypes: Record<string, string> = { "/associazione": "AboutPage", "/contatti": "ContactPage" };
 
 // Percorso di navigazione (BreadcrumbList): la home, le pagine di livello superiore che esistono, la pagina stessa
 function breadcrumb(path: string, title: string) {
@@ -108,7 +108,7 @@ export const handle: Handle = ({ event, resolve }) =>
             // Dati strutturati comuni: tipo di pagina, percorso di navigazione e domande frequenti (JSON-LD), collegati al
             // sito e all'ente descritti nella home. La home ha i suoi.
             if (title && path !== "/") {
-                const questions = path.startsWith("/events/") ? [] : faqQuestions(html);
+                const questions = path.startsWith("/calendario/") ? [] : faqQuestions(html);
                 const name = plainText(title.split(titleSuffix)[0]);
                 const data = {
                     "@context": "https://schema.org",

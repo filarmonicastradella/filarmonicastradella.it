@@ -13,7 +13,7 @@
         <dt itemprop="name">Come si suona con la Filarmonica?</dt>
         <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
             <span itemprop="text">
-                Prima ci si iscrive come soci dell'associazione con la <a href="/about/join">richiesta di iscrizione</a>, poi si chiede di entrare nell'ensemble in cui si vuole suonare.
+                Prima ci si iscrive come soci dell'associazione con la <a href="/associazione/iscrizione">richiesta di iscrizione</a>, poi si chiede di entrare nell'ensemble in cui si vuole suonare.
             </span>
         </dd>
     </div>
@@ -22,7 +22,7 @@
         <dt itemprop="name">Quali ensemble ci sono?</dt>
         <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
             <span itemprop="text">
-                Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti: le presentiamo nella pagina <a href="/ensembles">Le nostre formazioni</a>.
+                Stradella Facendo, Streetella Band, Orchestra Infieri e Filarmonici Dissonanti: le presentiamo nella pagina <a href="/formazioni">Le nostre formazioni</a>.
             </span>
         </dd>
     </div>
@@ -31,7 +31,7 @@
         <dt itemprop="name">Posso iscrivermi se sono minorenne?</dt>
         <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
             <span itemprop="text">
-                Sì: per i minorenni la richiesta di iscrizione può essere fatta online da un genitore o da un tutore, compilando lo stesso <a href="/about/join">modulo</a>.
+                Sì: per i minorenni la richiesta di iscrizione può essere fatta online da un genitore o da un tutore, compilando lo stesso <a href="/associazione/iscrizione">modulo</a>.
             </span>
         </dd>
     </div>
@@ -40,7 +40,7 @@
         <dt itemprop="name">Dove vi trovo?</dt>
         <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
             <span itemprop="text">
-                Abbiamo due sedi, a Fivizzano e a Serricciolo: indirizzi e mappe sono nella pagina <a href="/about/locations">Le nostre sedi</a>. I concerti e gli altri appuntamenti pubblici sono nella pagina <a href="/events">Eventi</a>.
+                Abbiamo due sedi, a Fivizzano e a Serricciolo: indirizzi e mappe sono nella pagina <a href="/associazione/sedi">Le nostre sedi</a>. I concerti e gli altri appuntamenti pubblici sono nella pagina <a href="/calendario">Eventi</a>.
             </span>
         </dd>
     </div>
@@ -49,7 +49,7 @@
         <dt itemprop="name">Come posso sostenere l'associazione?</dt>
         <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
             <span itemprop="text">
-                Iscrivendoti come socio o con una <a href="/support/donate">erogazione liberale</a> (il 5x1000 verrà aggiunto quando saremo beneficiari). Tutte le possibilità sono nella pagina <a href="/support">Sostienici</a>.
+                Iscrivendoti come socio o con una <a href="/sostienici/dona">erogazione liberale</a> (il 5x1000 verrà aggiunto quando saremo beneficiari). Tutte le possibilità sono nella pagina <a href="/sostienici">Sostienici</a>.
             </span>
         </dd>
     </div>
@@ -73,4 +73,4 @@
     </div>
 </dl>
 
-<p>Non trovi la risposta? <a href="/contacts#scrivici">Scrivici</a>.</p>
+<p>Non trovi la risposta? <a href="/contatti#scrivici">Scrivici</a>.</p>

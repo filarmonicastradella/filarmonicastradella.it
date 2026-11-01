@@ -23,7 +23,7 @@
         {/each}
     </ul>
     <!-- L'azione principale del sito: in linea da 64rem, in fondo al pannello sotto -->
-    <p style:--i={navItems.length}><a href="/support" aria-current={isActive("/support")}>Sostienici</a></p>
+    <p style:--i={navItems.length}><a href="/sostienici" aria-current={isActive("/sostienici")}>Sostienici</a></p>
 </nav>
 
 <style>

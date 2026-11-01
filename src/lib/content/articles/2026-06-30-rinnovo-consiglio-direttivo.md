@@ -2,7 +2,7 @@
 title: Rinnovo del Consiglio Direttivo
 date: 2026-06-30
 excerpt: Pubblicati i verbali dell'assemblea generale e le cariche ufficiali per l'anno associativo in corso.
-category: news
+category: notizie
 # Esempio di prova per provare la categoria Notizie: resta in bozza, non va pubblicato
 draft: true
 ---

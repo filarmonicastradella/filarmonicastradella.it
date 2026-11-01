@@ -2,7 +2,7 @@
 title: Fivizzano e la sua musica
 date: 2026-11-01
 excerpt: "[Riassunto da scrivere: il paese, la sua storia e il posto che la musica e la Filarmonica vi hanno avuto]"
-category: history
+category: storia
 # Articolo potenziale: resta in bozza finché non è scritto, con le fonti
 draft: true
 ---

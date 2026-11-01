@@ -9,10 +9,10 @@
 // in menu ma resta raggiungibile (es. dal footer): la pagina ha comunque contenuto reale (dati
 // dell'ente, link a privacy/cookie). Da riallargare quando il resto è pronto.
 export const navItems = [
-    { title: "Associazione", href: "/about" },
+    { title: "Associazione", href: "/associazione" },
     // Dal 1/11/2026: chi vuole suonare passa dalle formazioni, che hanno la sezione «Suona con noi» con il link all'iscrizione
-    { title: "Formazioni", href: "/ensembles" },
-    { title: "Calendario", href: "/events" },
-    { title: "Articoli", href: "/articles" },
-    { title: "Contatti", href: "/contacts" }
+    { title: "Formazioni", href: "/formazioni" },
+    { title: "Calendario", href: "/calendario" },
+    { title: "Articoli", href: "/articoli" },
+    { title: "Contatti", href: "/contatti" }
 ];

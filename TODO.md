@@ -105,5 +105,5 @@ Oggi sono `_page.svelte` (SvelteKit le ignora): per ognuna rinominare in `+page.
 - Partner e patrocini con i loghi.
 - Notizie regolari (almeno una al mese): un sito fermo sembra un'associazione ferma.
 - Ingaggi: video brevi delle formazioni dal vivo; «Dove abbiamo suonato».
-- Musicisti: mancano gli archi in `/about/musicians` (sezione «Archi» quando ci sono i nomi).
+- Musicisti: mancano gli archi in `/associazione/musicisti` (sezione «Archi» quando ci sono i nomi).
 - Modulo di iscrizione: manca come e quando versare la quota.
