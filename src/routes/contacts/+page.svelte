@@ -85,16 +85,6 @@
         <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
 
         <p>
-            <label for="contatto-nome">Nome e cognome</label>
-            <input type="text" id="contatto-nome" name="nome" autocomplete="name" required minlength="2" maxlength="120" />
-        </p>
-
-        <p>
-            <label for="contatto-email">Email</label>
-            <input type="email" id="contatto-email" name="email" autocomplete="email" required maxlength="120" />
-        </p>
-
-        <p>
             <label for="contatto-motivo">Motivo del messaggio</label>
             <select id="contatto-motivo" name="motivo" required bind:value={topic}>
                 {#each topics as { name } (name)}
@@ -104,11 +94,6 @@
         </p>
 
         {#if isBooking}
-            <p>
-                <label for="contatto-telefono">Telefono (facoltativo)</label>
-                <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" maxlength="20" />
-            </p>
-
             <p>
                 <label for="contatto-occasione">Occasione</label>
                 <select id="contatto-occasione" name="occasione" required>
@@ -127,6 +112,23 @@
             <p>
                 <label for="contatto-luogo">Luogo</label>
                 <input type="text" id="contatto-luogo" name="luogo" required minlength="2" maxlength="120" />
+            </p>
+        {/if}
+
+        <p>
+            <label for="contatto-nome">Nome e cognome</label>
+            <input type="text" id="contatto-nome" name="nome" autocomplete="name" required minlength="2" maxlength="120" />
+        </p>
+
+        <p>
+            <label for="contatto-email">Email</label>
+            <input type="email" id="contatto-email" name="email" autocomplete="email" required maxlength="120" />
+        </p>
+
+        {#if isBooking}
+            <p>
+                <label for="contatto-telefono">Telefono (facoltativo)</label>
+                <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" maxlength="20" />
             </p>
         {/if}
 
