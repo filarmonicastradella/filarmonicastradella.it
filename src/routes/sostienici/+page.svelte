@@ -12,6 +12,18 @@
 </header>
 
 <ul>
+    <!--
+        Raccolte fondi: una scheda in testa all'elenco per ogni raccolta attiva, tolta quando la raccolta finisce.
+        Modello da copiare fuori dal commento, con titolo, testo, obiettivo, scadenza e link veri:
+    <li>
+        <a href="/sostienici/dona">
+            <h2>Raccolta fondi: strumentazione audio</h2>
+            <p>
+                [Che cosa compriamo e perché.] Obiettivo: [importo] €, entro il <time datetime="2026-12-31">31 dicembre 2026</time>.
+            </p>
+        </a>
+    </li>
+    -->
     <li>
         <a href="/associazione/iscrizione">
             <h2>Diventa socio</h2>
