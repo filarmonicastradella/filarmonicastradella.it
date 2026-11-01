@@ -19,6 +19,8 @@ interface EnsembleMetadata {
 
 export interface Ensemble extends EnsembleMetadata {
     slug: string;
+    /** L'hashtag che lega un evento del calendario alla formazione: il nome tutto attaccato, «#streetellaband» */
+    hashtag: string;
     component: Component;
     /** La foto di copertina in più misure e la sua anteprima sfocata, se c'è il file */
     coverImage?: { picture: Picture; placeholder: string };
@@ -44,9 +46,17 @@ function coverImage(slug: string) {
     return coverPictures[path] ? { picture: coverPictures[path], placeholder: coverPlaceholders[path] } : undefined;
 }
 
+/** «Orchestra Infieri» → «#orchestrainfieri»: minuscole, senza spazi, accenti e segni */
+export const ensembleHashtag = (name: string) =>
+    "#" +
+    name
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[^a-z0-9]/g, "");
+
 export const ensembles: Ensemble[] = Object.entries(modules)
     .map(([path, module]) => {
         const slug = path.split("/").pop()!.replace(/\.md$/, "");
-        return { slug, ...module.metadata, component: module.default, coverImage: coverImage(slug) };
+        return { slug, hashtag: ensembleHashtag(module.metadata.title), ...module.metadata, component: module.default, coverImage: coverImage(slug) };
     })
     .sort((a, b) => a.order - b.order);

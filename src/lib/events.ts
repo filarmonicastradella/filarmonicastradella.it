@@ -7,6 +7,8 @@ export interface EventItem {
     location: string;
     start: string;
     end: string;
+    /** Le formazioni che suonano, dagli hashtag della descrizione */
+    ensembles: { slug: string; title: string }[];
 }
 
 // Un evento è ancora da mostrare finché non è finito (le date "tutto il giorno" finiscono il giorno dopo).

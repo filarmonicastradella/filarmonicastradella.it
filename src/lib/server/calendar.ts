@@ -1,5 +1,6 @@
 import { GOOGLE_CALENDAR_API_KEY } from "$env/static/private";
 import sanitizeHtml from "sanitize-html";
+import { ensembles } from "$lib/ensembles";
 import type { EventItem } from "$lib/events";
 
 const CALENDAR_ID = "10769a48a48eab07981c5dc931bd2a4b4b629eae0cbfcc9a92c16f5391156d47@group.calendar.google.com";
@@ -73,15 +74,35 @@ const toHtml = (raw?: string) => {
     });
 };
 
+/*
+ * Chi suona: nella descrizione si scrive l'hashtag della formazione («#streetellaband», anche più di uno), che il
+ * sito toglie dal testo e trasforma nel link alla formazione. Vale solo come parola a sé: dopo uno spazio, un tag
+ * o un'entità, mai dentro un indirizzo («pagina#sezione»). Un hashtag sconosciuto (scritto male, o di una
+ * formazione che non c'è più) sparisce lo stesso dal testo, con un avviso nella build.
+ */
+const HASHTAG = /(?<=^|[\s>;])#[\p{L}\p{N}_]+/gu;
+const ensembleByHashtag = new Map(ensembles.map(({ hashtag, slug, title }) => [hashtag, { slug, title }]));
+
+function eventEnsembles(evt: any) {
+    const hashtags = new Set<string>((evt.description ?? "").match(HASHTAG)?.map((tag: string) => tag.toLowerCase()));
+    return [...hashtags].flatMap((tag) => {
+        const ensemble = ensembleByHashtag.get(tag);
+        if (!ensemble) console.warn(`Calendario: hashtag sconosciuto ${tag} in «${evt.summary}»`);
+        return ensemble ? [ensemble] : [];
+    });
+}
+
 function toEventItem(evt: any): EventItem {
+    const description = evt.description?.replace(HASHTAG, "");
     return {
         id: evt.id,
         summary: guillemets(evt.summary ?? ""),
-        description: stripTags(evt.description),
-        descriptionHtml: toHtml(evt.description),
+        description: stripTags(description),
+        descriptionHtml: toHtml(description),
         location: guillemets(evt.location ?? ""),
         start: evt.start.dateTime || evt.start.date,
-        end: evt.end?.dateTime || evt.end?.date || ""
+        end: evt.end?.dateTime || evt.end?.date || "",
+        ensembles: eventEnsembles(evt)
     };
 }
 

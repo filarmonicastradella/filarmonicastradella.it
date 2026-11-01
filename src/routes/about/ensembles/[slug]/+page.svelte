@@ -1,9 +1,20 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+    import EventCard from "$lib/components/EventCard.svelte";
+    import { hasNotEnded } from "$lib/events";
     import { organization } from "$lib/organization";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
     const ensemble = $derived(data.ensemble);
+
+    // Con JS si nascondono gli eventi già conclusi dalla build, come nel calendario.
+    let now = $state<Date>();
+    const events = $derived(now ? data.events.filter((event) => hasNotEnded(event, now!)) : data.events);
+
+    onMount(() => {
+        now = new Date();
+    });
 </script>
 
 <svelte:head>
@@ -45,5 +56,16 @@
         {/each}
     </dl>
 </section>
+
+{#if events.length > 0}
+    <section>
+        <h2>Prossimi appuntamenti</h2>
+        <ol>
+            {#each events as event (event.id)}
+                <li><EventCard {event} /></li>
+            {/each}
+        </ol>
+    </section>
+{/if}
 
 <p class="rimando"><a href="/about/ensembles">Tutte le formazioni</a></p>

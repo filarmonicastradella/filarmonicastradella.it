@@ -46,6 +46,9 @@
     <link itemprop="eventStatus" href="https://schema.org/EventScheduled" />
     <link itemprop="eventAttendanceMode" href="https://schema.org/OfflineEventAttendanceMode" />
     <link itemprop="organizer" href="{organization.url}/#ente" />
+    {#each event.ensembles as { slug } (slug)}
+        <link itemprop="performer" href="{organization.url}/about/ensembles/{slug}#formazione" />
+    {/each}
     {#if event.end}
         <meta itemprop="endDate" content={event.end} />
     {/if}
@@ -66,6 +69,12 @@
 <section id="evento-dettagli">
     <h2>Quando e dove</h2>
     <dl>
+        {#if event.ensembles.length > 0}
+            <dt>Chi suona</dt>
+            {#each event.ensembles as { slug, title } (slug)}
+                <dd><a href="/about/ensembles/{slug}">{title}</a></dd>
+            {/each}
+        {/if}
         <dt>Quando</dt>
         <dd>{eventWhen(event)}</dd>
         {#if event.location}
