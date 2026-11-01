@@ -32,10 +32,10 @@
         areaServed: { "@type": "Place", name: "Lunigiana" },
         subOrganization: ensembles.map(({ slug, title, summary }) => ({
             "@type": "MusicGroup",
-            "@id": `${organization.url}/about/ensembles/${slug}#formazione`,
+            "@id": `${organization.url}/ensembles/${slug}#formazione`,
             name: title,
             description: summary,
-            url: `${organization.url}/about/ensembles/${slug}`
+            url: `${organization.url}/ensembles/${slug}`
         })),
         address: { "@type": "PostalAddress", streetAddress: street, postalCode, addressLocality: locality, addressRegion: region, addressCountry: "IT" },
         email: organization.email,
@@ -82,7 +82,7 @@
     <h2>Chi siamo</h2>
     <p>
         Dal 1777 la Filarmonica fa musica a Fivizzano, in Lunigiana: una storia lunga quasi due secoli e mezzo. Oggi riunisce quattro formazioni
-        ({#each ensembles as { slug, title }, i (slug)}{i === 0 ? "" : i === ensembles.length - 1 ? " e " : ", "}<a href="/about/ensembles/{slug}"
+        ({#each ensembles as { slug, title }, i (slug)}{i === 0 ? "" : i === ensembles.length - 1 ? " e " : ", "}<a href="/ensembles/{slug}"
                 >{title}</a
             >{/each}) e porta il suo repertorio nelle sale e nelle piazze del territorio.
     </p>
@@ -94,7 +94,7 @@
     <p>
         Cerchiamo musicisti di ogni livello, anche chi comincia da zero. Strumento, parti e sala prove li mette a disposizione l'associazione.
     </p>
-    <p class="rimando"><a href="/join">Domanda di iscrizione</a></p>
+    <p class="rimando"><a href="/about/join">Domanda di iscrizione</a></p>
 </section>
 
 <!--
@@ -131,9 +131,9 @@
 <section>
     <h2>In primo piano</h2>
     <ul>
-        [Da riattivare insieme a /about/ensembles:
+        [Da riattivare insieme a /ensembles:
         <li>
-            <a href="/about/ensembles">
+            <a href="/ensembles">
                 <h3>Le nostre formazioni</h3>
                 <p>
                     Quattro formazioni per suonare insieme: Stradella Facendo, la nostra orchestra di fiati; la Streetella Band; l'Orchestra Infieri; i Filarmonici Dissonanti.
