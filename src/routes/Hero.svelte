@@ -25,7 +25,7 @@
         <h1>Filarmonica <span>Alessandro <em>Stradella</em></span></h1>
         <p>Custodi della <strong>tradizione</strong>, interpreti del <strong>futuro</strong>.</p>
     </hgroup>
-    <p><a href="/booking">Per il tuo evento</a></p>
+    <p><a href="/contacts?motivo=ingaggio#scrivici">Per il tuo evento</a></p>
     <enhanced:img
         src={cover}
         alt="La Filarmonica in concerto di sera su un palco in piazza, negli anni Ottanta"

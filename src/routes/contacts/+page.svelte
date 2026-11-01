@@ -3,23 +3,48 @@
     import { page } from "$app/state";
     import { organization } from "$lib/organization";
 
+    // Un solo modulo per scriverci e per chiedere un ingaggio (dal 1/11/2026, prima l'ingaggio aveva un modulo suo in /booking):
+    // con il motivo «Ingaggio per un evento» compaiono i campi dell'evento e il messaggio diventa facoltativo.
+    const BOOKING = "Ingaggio per un evento";
+
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
+    // La chiave sceglie il motivo da un link: /contacts?motivo=ingaggio#scrivici
     const topics = [
-        { name: "Informazioni generali", mailbox: "info" },
-        { name: "Iscrizione e quote", mailbox: "segreteria" },
-        { name: "Donazioni e ricevute", mailbox: "tesoreria" },
-        { name: "Collaborazioni, enti e sponsor", mailbox: "presidente" },
-        { name: "Stampa e media", mailbox: "presidente" },
-        { name: "Materiale storico", mailbox: "info" },
-        { name: "Tutela dei minori", mailbox: "safeguarding" },
-        { name: "Privacy e dati personali", mailbox: "privacy" },
-        { name: "Problemi con il sito", mailbox: "webmaster" },
-        { name: "Altro", mailbox: "info" }
+        { key: "informazioni", name: "Informazioni generali", mailbox: "info" },
+        { key: "ingaggio", name: BOOKING, mailbox: "info" },
+        { key: "iscrizione", name: "Iscrizione e quote", mailbox: "segreteria" },
+        { key: "donazioni", name: "Donazioni e ricevute", mailbox: "tesoreria" },
+        { key: "collaborazioni", name: "Collaborazioni, enti e sponsor", mailbox: "presidente" },
+        { key: "stampa", name: "Stampa e media", mailbox: "presidente" },
+        { key: "storia", name: "Materiale storico", mailbox: "info" },
+        { key: "minori", name: "Tutela dei minori", mailbox: "safeguarding" },
+        { key: "privacy", name: "Privacy e dati personali", mailbox: "privacy" },
+        { key: "sito", name: "Problemi con il sito", mailbox: "webmaster" },
+        { key: "altro", name: "Altro", mailbox: "info" }
     ];
-    // Un link può scegliere il motivo con "?motivo=..."; in prerender non c'è l'indirizzo
-    const requested = browser ? page.url.searchParams.get("motivo") : null;
-    let topic = $state(topics.find(({ name }) => name === requested)?.name ?? topics[0].name);
+
+    // Chi organizza ragiona per occasioni: la formazione adatta la proponiamo noi. Niente funzioni religiose né eventi
+    // di partito (associazione laica e apartitica, vedi le domande frequenti); i convegni sono tra le occasioni più frequenti.
+    const occasions = [
+        "Concerto, rassegna o festival",
+        "Convegno o conferenza",
+        "Cerimonia o ricorrenza civile",
+        "Festa in piazza, sagra o corteo",
+        "Rievocazione storica",
+        "Festa privata o matrimonio",
+        "Ospedale, RSA o iniziativa sociale",
+        "Altro"
+    ];
+
+    // Il motivo scelto dal link (chiave o nome intero), aggiornato anche se si arriva da un altro link della stessa pagina;
+    // poi si cambia dal menu. In prerender non c'è l'indirizzo.
+    const requested = $derived(browser ? page.url.searchParams.get("motivo") : null);
+    let topic = $derived(topics.find(({ key, name }) => key === requested || name === requested)?.name ?? topics[0].name);
     const mailbox = $derived(topics.find(({ name }) => name === topic)?.mailbox ?? "info");
+    const isBooking = $derived(topic === BOOKING);
+
+    // Almeno 30 giorni da oggi, il giorno in Italia (AAAA-MM-GG); il sito si ricostruisce ogni 3 ore, il limite resta aggiornato
+    const minDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString("en-CA", { timeZone: "Europe/Rome" });
 </script>
 
 <svelte:head>
@@ -50,14 +75,18 @@
 <section id="scrivici">
     <h2>Scrivici</h2>
     <form action="https://formsubmit.co/{mailbox}@filarmonicastradella.it" method="POST">
-        <input type="hidden" name="_subject" value="Nuovo messaggio dal sito – Filarmonica Stradella" />
+        <input
+            type="hidden"
+            name="_subject"
+            value={isBooking ? "Richiesta per un evento – Filarmonica Stradella" : "Nuovo messaggio dal sito – Filarmonica Stradella"}
+        />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_next" value="https://filarmonicastradella.it/contacts/thanks" />
         <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
 
         <p>
             <label for="contatto-nome">Nome e cognome</label>
-            <input type="text" id="contatto-nome" name="nome" autocomplete="name" required minlength="2" maxlength="80" />
+            <input type="text" id="contatto-nome" name="nome" autocomplete="name" required minlength="2" maxlength="120" />
         </p>
 
         <p>
@@ -74,24 +103,54 @@
             </select>
         </p>
 
+        {#if isBooking}
+            <p>
+                <label for="contatto-telefono">Telefono (facoltativo)</label>
+                <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" maxlength="20" />
+            </p>
+
+            <p>
+                <label for="contatto-occasione">Occasione</label>
+                <select id="contatto-occasione" name="occasione" required>
+                    <option value="" disabled selected>Scegli l'occasione</option>
+                    {#each occasions as occasion (occasion)}
+                        <option>{occasion}</option>
+                    {/each}
+                </select>
+            </p>
+
+            <p>
+                <label for="contatto-data">Data (almeno 30 giorni da oggi)</label>
+                <input type="date" id="contatto-data" name="data" required min={minDate} />
+            </p>
+
+            <p>
+                <label for="contatto-luogo">Luogo</label>
+                <input type="text" id="contatto-luogo" name="luogo" required minlength="2" maxlength="120" />
+            </p>
+        {/if}
+
         <p>
-            <label for="contatto-messaggio">Messaggio</label>
-            <textarea id="contatto-messaggio" name="messaggio" rows="6" required minlength="10" maxlength="2000"></textarea>
+            <label for="contatto-messaggio">{isBooking ? "Note (facoltativo)" : "Messaggio"}</label>
+            <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isBooking} minlength={isBooking ? undefined : 10} maxlength="2000"></textarea>
         </p>
 
         <p>
             <input type="checkbox" id="contatto-privacy" name="consenso_privacy" value="Sì" required />
-            <label for="contatto-privacy">Ho letto l'<a href="/legal/privacy" target="_blank" rel="noopener noreferrer">informativa sulla privacy</a> e acconsento al trattamento dei dati per ricevere una risposta.</label>
+            <label for="contatto-privacy">
+                Ho letto l'<a href="/legal/privacy" target="_blank" rel="noopener noreferrer">informativa sulla privacy</a> e acconsento al trattamento dei dati
+                per ricevere una risposta.
+            </label>
         </p>
 
-        <p><button type="submit">Invia il messaggio</button></p>
+        <p><button type="submit">{isBooking ? "Invia la richiesta" : "Invia il messaggio"}</button></p>
     </form>
 </section>
 
 <section>
     <h2>La Filarmonica al tuo evento</h2>
     <p>
-        Per un concerto, un convegno, una cerimonia o una festa in Lunigiana, <a href="/booking">raccontaci l'occasione</a> almeno 30 giorni
+        Per un concerto, un convegno, una cerimonia o una festa in Lunigiana, <a href="/contacts?motivo=ingaggio#scrivici">raccontaci l'occasione</a> almeno 30 giorni
         prima.
     </p>
 </section>
