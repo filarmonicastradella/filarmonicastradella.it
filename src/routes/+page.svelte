@@ -4,6 +4,7 @@
     import Gallery from "./Gallery.svelte";
     import ArticleCard from "$lib/components/ArticleCard.svelte";
     import { articles } from "$lib/articles";
+    import { press } from "$lib/press";
     import { ensembles } from "$lib/ensembles";
     import { legalSeat } from "$lib/locations";
     // Il corsivo serve solo al titolo della home: richiesto subito, solo qui
@@ -64,7 +65,8 @@
     const structuredDataScript = `<script type="application/ld+json">${JSON.stringify(structuredData).replace(/</g, "\\u003c")}<\/script>`;
 
     // In home solo le notizie (la categoria Notizie degli articoli); ricerche e altri scritti stanno in /articles
-    const latestNews = articles.filter(({ category }) => category === "news").slice(0, 3);
+    const latestNews = articles.filter(({ category }) => category === "news").slice(0, 2);
+    const latestPress = press.slice(0, 2);
 </script>
 
 <svelte:head>
@@ -161,6 +163,17 @@
 </section>
 
 -->
+
+<!-- Gli ultimi articoli dei giornali, come le notizie: righe una sotto l'altra, con la testata in occhiello -->
+<section>
+    <h2>Parlano di noi</h2>
+    <ol>
+        {#each latestPress as item (item.title)}
+            <li><ArticleCard article={item} /></li>
+        {/each}
+    </ol>
+    <p class="rimando"><a href="/about/press">Rassegna stampa</a></p>
+</section>
 
 <Gallery slides={data.gallery} />
 
