@@ -108,7 +108,7 @@
                 </p>
 
                 <p>
-                    <label for="contatto-data">Data (almeno 30 giorni da oggi)</label>
+                    <label for="contatto-data">Data</label>
                     <input type="date" id="contatto-data" name="data" required min={minDate} />
                 </p>
 
