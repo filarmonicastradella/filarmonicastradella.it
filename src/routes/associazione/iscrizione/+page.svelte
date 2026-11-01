@@ -7,14 +7,14 @@
     let request = $derived(browser && page.url.searchParams.get("modo") === "variazione" ? "variazione" : "iscrizione");
     const isChange = $derived(request === "variazione");
 
-    // I canali della liberatoria su carta (moduli 04.06 e 04.07), uno per uno
+    // I canali della liberatoria su carta (moduli 04.06 e 04.07), uno per uno: ogni casella è una frase intera
     const imageChannels = [
-        { name: "consenso_archivio", label: "Archivio interno e documentazione delle attività" },
-        { name: "consenso_sito", label: "Sito internet dell'associazione" },
-        { name: "consenso_social", label: "Canali social ufficiali dell'associazione" },
-        { name: "consenso_stampa", label: "Materiale a stampa e comunicazioni alla stampa" },
-        { name: "consenso_piattaforme", label: "Registrazioni dei concerti su piattaforme di condivisione" },
-        { name: "consenso_progetti", label: "Documentazione dei progetti per enti finanziatori, scuole e pubbliche amministrazioni" }
+        { name: "consenso_archivio", where: "nell'archivio interno e nella documentazione delle attività" },
+        { name: "consenso_sito", where: "sul sito internet dell'associazione" },
+        { name: "consenso_social", where: "sui canali social ufficiali dell'associazione" },
+        { name: "consenso_stampa", where: "nel materiale a stampa e nelle comunicazioni alla stampa" },
+        { name: "consenso_piattaforme", where: "nelle registrazioni dei concerti pubblicate su piattaforme di condivisione" },
+        { name: "consenso_progetti", where: "nella documentazione dei progetti per enti finanziatori, scuole e pubbliche amministrazioni" }
     ];
 
     let birthDate = $state("");
@@ -309,10 +309,10 @@
                 </label>
             </p>
 
-            {#each imageChannels as { name, label } (name)}
+            {#each imageChannels as { name, where } (name)}
                 <p>
                     <input type="checkbox" id={name} {name} value="Sì" />
-                    <label for={name}>{isMinorenne ? "Foto e riprese del minore" : "Foto e riprese che mi ritraggono"}: {label.toLowerCase()}</label>
+                    <label for={name}>Acconsento all'uso di foto e riprese {isMinorenne ? "del minore" : "che mi ritraggono"} {where}.</label>
                 </p>
             {/each}
         </fieldset>
