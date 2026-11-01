@@ -36,7 +36,7 @@
     </p>
     <p>
         Siamo un'associazione di promozione sociale autonoma, iscritta al RUNTS e affiliata ad ANBIMA, con gli scopi scritti all'articolo 2 dello
-        <a href="/documents/statuto.pdf" type="application/pdf">statuto</a>, e lavoriamo con il sostegno del Comune di Fivizzano.
+        <a href="/documents/statuto.pdf" type="application/pdf">statuto</a><sup><a href="#fonte-1" role="doc-noteref" id="rimando-1a" aria-label="Fonte 1">1</a></sup>, e lavoriamo con il sostegno del Comune di Fivizzano.
     </p>
 </section>
 
@@ -49,7 +49,7 @@
     </p>
     <p>
         La nostra <a href="/articoli/storia/filarmonica">storia</a> ci ha insegnato quanto sia fragile una realtà musicale: dalla fine degli anni
-        Novanta la Filarmonica è rimasta in silenzio per quasi trent'anni. Per questo siamo ripartiti con un modello in cui la musica non dipende mai
+        Novanta la Filarmonica è rimasta in silenzio per quasi trent'anni.<sup><a href="#fonte-4" role="doc-noteref" id="rimando-4a" aria-label="Fonte 4">4</a></sup> Per questo siamo ripartiti con un modello in cui la musica non dipende mai
         da una persona sola.
     </p>
 </section>
@@ -81,7 +81,7 @@
 <section>
     <h2>Una porta aperta</h2>
     <p>
-        Per far parte della Filarmonica basta <a href="/associazione/iscrizione">iscriversi all'associazione</a>, con una quota annuale di 12 €. Da
+        Per far parte della Filarmonica basta <a href="/associazione/iscrizione">iscriversi all'associazione</a>, con una quota annuale di 12 €.<sup><a href="#fonte-2" role="doc-noteref" id="rimando-2a" aria-label="Fonte 2">2</a></sup> Da
         soci si può chiedere di entrare nelle formazioni, ognuna con i propri requisiti: per Stradella Facendo, per esempio, bastano 14 anni e una
         formazione musicale di base, come quella della scuola media a indirizzo musicale. Si può far parte di più formazioni.
     </p>
@@ -112,7 +112,7 @@
     <p>
         Le regole che ci siamo dati sono poche, semplici e scritte. Servono a ricordare come lavoriamo e a orientarci quando non siamo d'accordo; se la
         pratica cambia in meglio, le aggiorniamo. Statuto, contributi pubblici ricevuti e composizione del consiglio sono pubblici nella sezione
-        <a href="/trasparenza">Amministrazione trasparente</a>.
+        <a href="/trasparenza">Amministrazione trasparente</a>.<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3a" aria-label="Fonte 3">3</a></sup>
     </p>
 </section>
 
@@ -125,8 +125,8 @@
     <p>
         I capi sezione, guidando i compagni, imparano passo dopo passo a dirigere e si guadagnano la fiducia di tutti. Il numero di direttori e capi
         sezione cresce insieme alle formazioni: se qualcuno è impedito o si ammala c'è sempre chi è pronto a prendere il suo posto, e una prova non
-        salta mai perché manca qualcuno. Così la Filarmonica forma da sé le sue guide. La storia delle bande di paese lo insegna: dove tutto si
-        concentra in poche mani, prima o poi la musica si spegne.
+        salta mai perché manca qualcuno. Così la Filarmonica forma da sé le sue guide. La storia dei gruppi musicali dei nostri paesi lo insegna: dove
+        tutto si concentra in poche mani, prima o poi la musica si spegne.
     </p>
 </section>
 
@@ -137,7 +137,7 @@
         prestigiose. Ogni concerto richiama centinaia di persone: famiglie, amici, vicini, perché sul palco ci sono loro.
     </p>
     <p>
-        Non svolgiamo servizi religiosi, ma non viviamo chiusi in noi stessi. Collaboriamo con le bande e le realtà musicali amiche della Lunigiana,
+        Non svolgiamo servizi religiosi, ma non viviamo chiusi in noi stessi. Collaboriamo con le realtà musicali amiche della Lunigiana,
         le facciamo conoscere e mettiamo in contatto chi vuole suonare con chi ha bisogno di musicisti. Chi suona da noi può suonare anche con loro,
         e chi suona con uno strumento della Filarmonica può usarlo anche lì. Lo scambio e la contaminazione arricchiscono tutti: nessuna voce
         musicale del territorio deve spegnersi per mancanza di persone.
@@ -151,8 +151,8 @@
         vicenda: una comunità in cui suonare sia normale, alla portata di tutti, e in cui ogni euro e ogni ora investiti restino qui, nelle persone.
     </p>
     <p>
-        Per questo la misura del nostro lavoro non è quanto cresce la Filarmonica, ma quanti ragazzi suonano in Lunigiana, in qualsiasi banda o
-        gruppo. Vogliamo arrivare anche nelle frazioni e nelle valli dove oggi un ragazzo che vuole suonare non ha un posto vicino a casa.
+        Per questo misuriamo il nostro lavoro da quanti ragazzi suonano in Lunigiana, con noi o con qualsiasi altra realtà musicale, più che da
+        quanto cresce la Filarmonica. Vogliamo arrivare anche nelle frazioni e nelle valli dove oggi un ragazzo che vuole suonare non ha un posto vicino a casa.
     </p>
 </section>
 
@@ -160,8 +160,22 @@
     <h2 id="fonti">Fonti</h2>
     <ol>
         <li id="fonte-1">
-            <a href="/documents/statuto.pdf" type="application/pdf">Statuto della Filarmonica Alessandro Stradella APS</a>, in particolare l'art. 2
-            (scopo, finalità, attività); il testo è anche nella pagina <a href="/trasparenza/statuto">Statuto</a>.
+            <a href="/trasparenza/statuto#art-2">Statuto della Filarmonica Alessandro Stradella APS, art. 2</a> (scopo, finalità, attività); il testo
+            completo è anche in <a href="/documents/statuto.pdf" type="application/pdf">PDF</a>. Torna al testo:
+            <a role="doc-backlink" href="#rimando-1a" aria-label="Torna al rimando 1a">a</a>
+        </li>
+        <li id="fonte-2">
+            <a href="/trasparenza/statuto#art-3">Statuto, art. 3</a> (ammissione e numero degli associati: numero illimitato, nessuna limitazione
+            legata alle condizioni economiche). Torna al testo: <a role="doc-backlink" href="#rimando-2a" aria-label="Torna al rimando 2a">a</a>
+        </li>
+        <li id="fonte-3">
+            <a href="/trasparenza/statuto#art-4">Statuto, art. 4</a> (diritto degli associati di essere informati e di esaminare bilanci e libri) e
+            <a href="/trasparenza/statuto#art-7">art. 7</a> (l'assemblea è l'organo sovrano, un voto per ogni associato). Torna al testo:
+            <a role="doc-backlink" href="#rimando-3a" aria-label="Torna al rimando 3a">a</a>
+        </li>
+        <li id="fonte-4">
+            <a href="/articoli/storia/filarmonica">Storia della Filarmonica</a>, con le sue fonti. Torna al testo:
+            <a role="doc-backlink" href="#rimando-4a" aria-label="Torna al rimando 4a">a</a>
         </li>
     </ol>
 </section>
