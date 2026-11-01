@@ -13,7 +13,7 @@
 
 <ul>
     <li>
-        <a href="/support/join">
+        <a href="/join">
             <h2>Diventa socio</h2>
             <p>Con la quota annuale di 12 € entri nell'associazione e puoi chiedere di entrare nelle nostre formazioni.</p>
         </a>

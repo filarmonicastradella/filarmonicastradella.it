@@ -80,27 +80,5 @@
     </section>
 {/each}
 
-<section>
-    <h2>Domande frequenti</h2>
-    <details>
-        <summary>Che livello serve?</summary>
-        <p>
-            Dipende dalla <a href="/about/ensembles">formazione</a>, ma ce n'è una per ogni livello: si può cominciare anche da zero, senza aver mai
-            suonato uno strumento. Per entrare basta la <a href="/support/join">domanda di iscrizione</a>.
-        </p>
-    </details>
-    <details>
-        <summary>Quali strumenti cercate?</summary>
-        <p>Tutti, e in particolare oboe, fagotto e archi.</p>
-    </details>
-    <details>
-        <summary>Chi è il maestro?</summary>
-        <p>
-            Non ce n'è uno solo: i direttori sono più di uno, e prima di tutto sono musicisti. Li indicano i componenti di ogni
-            formazione, dai 14 anni in su, e il consiglio direttivo ne ratifica la nomina per un anno. Ognuno dirige in autonomia i propri brani, e negli altri
-            suona con tutti.
-        </p>
-    </details>
-</section>
 
 <p class="rimando"><a href="/about">L'associazione</a></p>

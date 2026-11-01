@@ -41,7 +41,7 @@
     <details>
         <summary>Come si entra in una formazione?</summary>
         <p>
-            Prima ci si iscrive alla Filarmonica con la <a href="/support/join">domanda di iscrizione</a>; da soci si chiede di entrare nella formazione.
+            Prima ci si iscrive alla Filarmonica con la <a href="/join/form">domanda di iscrizione</a>; da soci si chiede di entrare nella formazione.
             Ognuna ha i suoi requisiti, e si può far parte anche di più di una.
         </p>
     </details>

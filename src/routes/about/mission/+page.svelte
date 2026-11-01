@@ -60,7 +60,7 @@
 <section>
     <h2>Come funziona</h2>
     <p>
-        Per far parte della Filarmonica basta <a href="/support/join">iscriversi all'associazione</a>, con una quota annuale di 12 €; da soci si può
+        Per far parte della Filarmonica basta <a href="/join">iscriversi all'associazione</a>, con una quota annuale di 12 €; da soci si può
         chiedere di entrare nelle formazioni, ognuna con i propri requisiti. L'associazione si fa carico di ciò che un musicista da solo difficilmente
         potrebbe sostenere, dallo strumento alla sala prove, così ognuno può dedicarsi a ciò che conta: suonare. E soprattutto offriamo ciò che nessuna
         quota può comprare: un gruppo di persone con cui fare musica.
