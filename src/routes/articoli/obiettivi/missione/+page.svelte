@@ -125,8 +125,8 @@
     <p>
         I capi sezione, guidando i compagni, imparano passo dopo passo a dirigere e si guadagnano la fiducia di tutti. Il numero di direttori e capi
         sezione cresce insieme alle formazioni: se qualcuno è impedito o si ammala c'è sempre chi è pronto a prendere il suo posto, e una prova non
-        salta mai perché manca qualcuno. Così la Filarmonica forma da sé le sue guide. La storia dei gruppi musicali dei nostri paesi lo insegna: dove
-        tutto si concentra in poche mani, prima o poi la musica si spegne.
+        salta mai perché manca qualcuno. Così la Filarmonica forma da sé le sue guide. La storia delle bande di paese lo insegna: dove tutto si
+        concentra in poche mani, prima o poi la musica si spegne.
     </p>
 </section>
 
@@ -137,7 +137,7 @@
         prestigiose. Ogni concerto richiama centinaia di persone: famiglie, amici, vicini, perché sul palco ci sono loro.
     </p>
     <p>
-        Non svolgiamo servizi religiosi, ma non viviamo chiusi in noi stessi. Collaboriamo con le realtà musicali amiche della Lunigiana,
+        Non svolgiamo servizi religiosi, ma non viviamo chiusi in noi stessi. Collaboriamo con le bande e le realtà musicali amiche della Lunigiana,
         le facciamo conoscere e mettiamo in contatto chi vuole suonare con chi ha bisogno di musicisti. Chi suona da noi può suonare anche con loro,
         e chi suona con uno strumento della Filarmonica può usarlo anche lì. Lo scambio e la contaminazione arricchiscono tutti: nessuna voce
         musicale del territorio deve spegnersi per mancanza di persone.
@@ -151,7 +151,7 @@
         vicenda: una comunità in cui suonare sia normale, alla portata di tutti, e in cui ogni euro e ogni ora investiti restino qui, nelle persone.
     </p>
     <p>
-        Per questo misuriamo il nostro lavoro da quanti ragazzi suonano in Lunigiana, con noi o con qualsiasi altra realtà musicale, più che da
+        Per questo misuriamo il nostro lavoro da quanti ragazzi suonano in Lunigiana, con noi o in qualsiasi banda o gruppo, più che da
         quanto cresce la Filarmonica. Vogliamo arrivare anche nelle frazioni e nelle valli dove oggi un ragazzo che vuole suonare non ha un posto vicino a casa.
     </p>
 </section>
