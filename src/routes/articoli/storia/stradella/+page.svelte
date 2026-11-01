@@ -131,7 +131,7 @@
     </figure>
     <p>
         Alla fine degli anni Novanta la Filarmonica prese il nome di Alessandro Stradella. Il resto della nostra storia è nell'articolo
-        <a href="/articoli/storia/filarmonica">La storia della Filarmonica</a>.
+        <a href="/articoli/storia/filarmonica">Storia della Filarmonica</a>.
     </p>
 </section>
 

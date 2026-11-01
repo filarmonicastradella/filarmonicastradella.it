@@ -55,7 +55,7 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
         slug: "filarmonica",
         category: "storia",
         author: "Leonardo Orietti Del Duca",
-        title: "La storia della Filarmonica",
+        title: "Storia della Filarmonica",
         date: "2026-09-28",
         excerpt: "Dal 1777 a oggi: quasi due secoli e mezzo di musica a Fivizzano."
     },

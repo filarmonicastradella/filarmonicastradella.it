@@ -19,7 +19,7 @@
     </li>
     <li>
         <a href="/articoli/storia/filarmonica">
-            <h2>La storia della Filarmonica</h2>
+            <h2>Storia della Filarmonica</h2>
             <p>Dal 1777 a oggi: quasi due secoli e mezzo di musica a Fivizzano.</p>
         </a>
     </li>
