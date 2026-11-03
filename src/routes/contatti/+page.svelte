@@ -81,6 +81,29 @@
     <meta name="description" content="Telefono, email e modulo di contatto della Filarmonica Alessandro Stradella APS di Fivizzano, in Lunigiana: informazioni, iscrizioni, donazioni ed eventi." />
 </svelte:head>
 
+<!-- Chi scrive (o, per il materiale, chi consegna): in un punto diverso del modulo a seconda del motivo -->
+{#snippet sender()}
+    <fieldset>
+        <legend>{isMaterial ? "Chi consegna" : "Chi scrive"}</legend>
+
+        <p>
+            <label for="contatto-nome">Nome e cognome</label>
+            <input type="text" id="contatto-nome" name="nome" autocomplete="name" required minlength="2" maxlength="120" />
+        </p>
+
+        <p>
+            <label for="contatto-email">Email</label>
+            <input type="email" id="contatto-email" name="email" autocomplete="email" required maxlength="120" />
+        </p>
+
+        <!-- Molti preferiscono una telefonata o un messaggio WhatsApp a un'email: il telefono lo chiediamo sempre (informativa privacy) -->
+        <p>
+            <label for="contatto-telefono">Telefono</label>
+            <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" inputmode="tel" required minlength="9" maxlength="20" />
+        </p>
+    </fieldset>
+{/snippet}
+
 <header>
     <h1>Contatti</h1>
     <p>Per informazioni, iscrizioni e concerti scrivici o chiamaci.</p>
@@ -149,6 +172,41 @@
                     <label for="consegna-originali">Consegno gli originali a un punto di raccolta</label>
                 </p>
             </fieldset>
+
+            {@render sender()}
+
+            <!-- Gli originali portati a un punto di raccolta: compila chi ritira, con chi consegna accanto -->
+            {#if handsOriginals}
+                <fieldset>
+                    <legend>Chi ritira</legend>
+
+                    <p>
+                        <label for="contatto-punto">Punto di raccolta</label>
+                        <select id="contatto-punto" name="punto_di_raccolta" required>
+                            <option value="" disabled selected>Scegli il punto di raccolta</option>
+                            {#each collectionPoints as point (point)}
+                                <option>{point}</option>
+                            {/each}
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="contatto-ricevuto">Nome e cognome</label>
+                        <input type="text" id="contatto-ricevuto" name="ricevuto_da" required minlength="2" maxlength="120" />
+                    </p>
+
+                    <!-- Chi ritira guarda il documento di chi consegna, senza copiarlo: servirà a restituire gli originali alla persona giusta -->
+                    <p>
+                        <input type="checkbox" id="contatto-documento-visto" name="documento_verificato" value="Sì" required />
+                        <label for="contatto-documento-visto">Ho verificato l'identità di chi consegna con un documento.</label>
+                    </p>
+
+                    <p>
+                        <label for="contatto-busta">Identificativo</label>
+                        <input type="text" id="contatto-busta" name="identificativo" required minlength="2" maxlength="120" />
+                    </p>
+                </fieldset>
+            {/if}
 
             <fieldset>
                 <legend>Il materiale</legend>
@@ -299,58 +357,8 @@
             </fieldset>
         {/if}
 
-        <fieldset>
-            <legend>{isMaterial ? "Chi consegna" : "Chi scrive"}</legend>
-
-            <p>
-                <label for="contatto-nome">Nome e cognome</label>
-                <input type="text" id="contatto-nome" name="nome" autocomplete="name" required minlength="2" maxlength="120" />
-            </p>
-
-            <p>
-                <label for="contatto-email">Email</label>
-                <input type="email" id="contatto-email" name="email" autocomplete="email" required maxlength="120" />
-            </p>
-
-            <!-- Molti preferiscono una telefonata o un messaggio WhatsApp a un'email: il telefono lo chiediamo sempre (informativa privacy) -->
-            <p>
-                <label for="contatto-telefono">Telefono</label>
-                <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" inputmode="tel" required minlength="9" maxlength="20" />
-            </p>
-        </fieldset>
-
-        <!-- Gli originali portati a un punto di raccolta: compila chi ritira, con chi consegna accanto -->
-        {#if handsOriginals}
-            <fieldset>
-                <legend>Chi ritira</legend>
-
-                <p>
-                    <label for="contatto-punto">Punto di raccolta</label>
-                    <select id="contatto-punto" name="punto_di_raccolta" required>
-                        <option value="" disabled selected>Scegli il punto di raccolta</option>
-                        {#each collectionPoints as point (point)}
-                            <option>{point}</option>
-                        {/each}
-                    </select>
-                </p>
-
-                <p>
-                    <label for="contatto-ricevuto">Nome e cognome</label>
-                    <input type="text" id="contatto-ricevuto" name="ricevuto_da" required minlength="2" maxlength="120" />
-                </p>
-
-                <!-- Chi ritira guarda il documento di chi consegna, senza copiarlo: servirà a restituire gli originali alla persona giusta -->
-                <p>
-                    <input type="checkbox" id="contatto-documento-visto" name="documento_verificato" value="Sì" required />
-                    <label for="contatto-documento-visto">Ho verificato l'identità di chi consegna con un documento.</label>
-                </p>
-
-                <p>
-                    <label for="contatto-busta">Identificativo</label>
-                    <input type="text" id="contatto-busta" name="identificativo" required minlength="2" maxlength="120" />
-                </p>
-
-            </fieldset>
+        {#if !isMaterial}
+            {@render sender()}
         {/if}
 
         <p>
