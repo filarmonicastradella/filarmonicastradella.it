@@ -24,6 +24,15 @@ const withTags = (html: string) => html.replace(/&lt;(\/?[a-z][^&]*?)&gt;/gi, "<
 // Le virgolette dritte del calendario ("Tobagi") diventano caporali, come nel resto del sito (docs/DESIGN.md, Tono di voce)
 const guillemets = (text: string) => text.replace(/(?:"|&quot;)([^"<>\n]+?)(?:"|&quot;)/g, "«$1»");
 
+// Un indirizzo non va a capo: le righe del luogo (anche "\n" scritto per esteso) diventano parti separate da virgole,
+// senza spazi doppi né parti vuote ("Sala Tobagi\nAulla" → "Sala Tobagi, Aulla")
+const oneLine = (text: string) =>
+    text
+        .split(/\r?\n|\\n/)
+        .map((part) => part.replace(/\s+/g, " ").trim().replace(/,$/, ""))
+        .filter(Boolean)
+        .join(", ");
+
 // Solo testo: per le schede, la descrizione per i motori di ricerca e il file .ics
 const stripTags = (html?: string) => {
     if (!html) return "";
@@ -99,7 +108,7 @@ function toEventItem(evt: any): EventItem {
         summary: guillemets(evt.summary ?? ""),
         description: stripTags(description),
         descriptionHtml: toHtml(description),
-        location: guillemets(evt.location ?? ""),
+        location: guillemets(oneLine(evt.location ?? "")),
         start: evt.start.dateTime || evt.start.date,
         end: evt.end?.dateTime || evt.end?.date || "",
         ensembles: eventEnsembles(evt)
