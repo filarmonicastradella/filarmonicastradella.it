@@ -12,7 +12,7 @@ export const faq = {
         question: "Potete suonare al mio evento?",
         answer:
             'Sì: per un concerto, un convegno, una cerimonia o una festa in Lunigiana, raccontaci l\'occasione almeno 30 giorni prima: ti rispondiamo con la disponibilità e la formazione adatta. Occasioni, formazioni e come chiedere sono nella pagina <a href="/contatti/ingaggi">La Filarmonica al tuo evento</a>.'
-    }
+    },
     // Pagine delle singole formazioni: valgono per tutte
     maestro: {
         question: "Chi è il maestro?",

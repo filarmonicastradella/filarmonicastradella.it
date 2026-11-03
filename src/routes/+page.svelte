@@ -168,7 +168,7 @@
 
 <section>
     <h2>Sostieni la Filarmonica</h2>
-    <p>Puoi diventare socio o fare una donazione: ogni contributo va alla musica, agli strumenti e ai giovani che iniziano a suonare.</p>
+    <p>Ogni donazione va alla musica, agli strumenti e ai giovani che iniziano a suonare.</p>
     <p class="rimando"><a href="/sostienici">Sostienici</a></p>
 </section>
 
