@@ -239,7 +239,7 @@
 
                         <!-- Un file per ricordo: la scansione mandata da casa, o la foto fatta da chi ritira l'originale -->
                         <p>
-                            <label for="ricordo-{piece}-file">{handsOriginals ? "Foto al momento della consegna (JPG o PNG)" : "Scansione o foto (JPG, PNG o PDF)"}</label>
+                            <label for="ricordo-{piece}-file">{handsOriginals ? "Foto alla consegna" : "File"}</label>
                             <input
                                 type="file"
                                 id="ricordo-{piece}-file"
