@@ -280,9 +280,7 @@
                         Lo presto gratuitamente perché venga digitalizzato e autorizzo la Filarmonica, senza compenso e senza limiti di tempo, a
                         ritoccarne le copie per restauro e impaginazione; a esporre le copie, stampate o su schermo, in mostre, anche in altri
                         luoghi e negli anni successivi, e nei materiali che le presentano
-                        (locandine, stampa, catalogo); a conservare le copie digitali nel proprio archivio storico e a consegnarne una copia alla
-                        Biblioteca civica Abate E. Gerini di Fivizzano, che può conservarla e renderla consultabile per finalità di studio e ricerca.
-                        La Filarmonica sceglie liberamente quali ricordi esporre e pubblicare.
+                        (locandine, stampa, catalogo); a conservare le copie digitali nel proprio archivio storico. La Filarmonica sceglie liberamente quali ricordi esporre e pubblicare.
                     </label>
                 </p>
 
@@ -309,7 +307,7 @@
 
                 <p>
                     <input type="checkbox" id="materiale-nome" name="nome_nelle_didascalie" value="Sì" />
-                    <label for="materiale-nome">Acconsento a indicare il mio nome nelle didascalie e nella scheda della copia data alla Biblioteca.</label>
+                    <label for="materiale-nome">Acconsento a indicare il mio nome nelle didascalie.</label>
                 </p>
 
                 <p>
