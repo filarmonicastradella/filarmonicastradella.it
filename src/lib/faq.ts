@@ -11,6 +11,6 @@ export const faq = {
     evento: {
         question: "Potete suonare al mio evento?",
         answer:
-            'Sì: per un concerto, un convegno, una cerimonia o una festa in Lunigiana, <a href="/contatti?motivo=ingaggio#scrivici">raccontaci l\'occasione</a> almeno 30 giorni prima. Ti rispondiamo con la disponibilità e la formazione adatta.'
+            'Sì: per un concerto, un convegno, una cerimonia o una festa in Lunigiana, raccontaci l\'occasione almeno 30 giorni prima: ti rispondiamo con la disponibilità e la formazione adatta. Occasioni, formazioni e come chiedere sono nella pagina <a href="/contatti/ingaggi">La Filarmonica al tuo evento</a>.'
     }
 } satisfies Record<string, FaqItem>;

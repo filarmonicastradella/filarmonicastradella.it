@@ -114,11 +114,6 @@
     -->
 </section>
 
-<section>
-    <h2>Per il tuo evento</h2>
-    <p>Occasioni, formazioni e domande sugli ingaggi sono nella pagina <a href="/contatti/ingaggi">La Filarmonica al tuo evento</a>.</p>
-</section>
-
 <section id="scrivici">
     <h2>Scrivici</h2>
     <form action="https://formsubmit.co/{mailbox}@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
