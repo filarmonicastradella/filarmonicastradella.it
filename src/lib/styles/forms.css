@@ -244,6 +244,12 @@ legend {
     font-weight: var(--fw-heading);
 }
 
+/* Il primo gruppo dentro un altro (il primo ricordo della raccolta) ha già sopra il filetto del gruppo che lo contiene */
+fieldset > legend + fieldset > legend {
+    padding-block-start: 0;
+    border-block-start: 0;
+}
+
 /*
  * Moduli con gruppi di campi, su schermo largo (da 64rem): come le sezioni da leggere (layout.css), il titolo
  * del gruppo a sinistra e i campi a destra, nella colonna di testo; il filetto passa al gruppo e va da un
