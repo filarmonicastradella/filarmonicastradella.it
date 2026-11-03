@@ -79,7 +79,6 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 
 ## 4. Il documento DESIGN.md
 
-- [ ] 4.1 **F** — Interlinee dei titoli: tabella 1,2 contro codice 1,1. (PA2, PAc2)
 - [ ] 4.2 **D** — Regola «un solo titolo Cormorant»: darle un ambito, e `--fs-h2` da 28 a 36 su telefono. (PA3, PAc3, R4)
 - [ ] 4.3 **F** — «Una volta per schermata» diventa «una per estremità». (PA5, PAc5)
 - [ ] 4.4 **F** — Hero: scrivere «pulsante secondario, il solo pieno è Sostienici». (PA7, PAc7)

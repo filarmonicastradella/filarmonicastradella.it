@@ -39,7 +39,7 @@ Cinque rimandi bordeaux in maiuscolo spaziato con la freccia, uno per sezione: d
 **8. Sul telefono titolo di sezione e titolo di scheda quasi uguali. D (4.2)**
 A 390 px «Prossimi eventi» (h2) è 28 px, «Concerto Autunnale…» (h3) è 24 px, nello stesso carattere: 4 px di differenza, e il peso è lo stesso (600). La gerarchia la reggono solo il filetto e lo spazio. Proposta: h2 più grande su telefono (36 px, come già in 4.2) oppure h3 a 500, così la scheda si legge come voce e non come titolo.
 
-**9. Interlinee diverse per lo stesso ruolo. F**
+**9. Interlinee diverse per lo stesso ruolo. F** *(Risolto il 4/11/2026: tutti i titoli tranne l'h1 a 1,25, `--lh-snug`; anche `DESIGN.md`. Chiude la voce 4.1.)*
 Gli h3 delle schede evento hanno interlinea 1,25 (30 px), gli h3 degli articoli 1,1 (26,4 px). Il titolo «La Filarmonica dei giovani. Duecento anni in musica: «Una mostra e tante idee»», su tre righe, a 1,1 è stretto: `better-typography` vuole almeno 1,2 per i titoli che vanno a capo, `DESIGN.md` dice 1,2 per il Titolo 3. Una sola interlinea per gli h3, 1,2 o 1,25.
 
 **10. Il sottotitolo gioca con due parole in grassetto. D (0.5)**

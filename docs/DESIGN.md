@@ -49,8 +49,8 @@ Contrasti verificati (tutti conformi WCAG AA): bordeaux su carta 10,3:1, bordeau
 |---|---|---|---|
 | Display | Cormorant | 500 | 64 / 1,0 |
 | Titolo 1 | Cormorant | 500 | 44 / 1,1 |
-| Titolo 2 | Cormorant | 600 | 30 / 1,2 |
-| Titolo 3 | Cormorant | 600 | 24 / 1,2 |
+| Titolo 2 | Cormorant | 600 | 30 / 1,25 |
+| Titolo 3 | Cormorant | 600 | 24 / 1,25 |
 | Occhiello | Jakarta, maiuscolo, spaziatura 0,16 em | 600 | 12 |
 | Testo | Jakarta | 400 | 16 / 1,6 |
 | Didascalia | Jakarta | 400 | 13 / 1,5 |

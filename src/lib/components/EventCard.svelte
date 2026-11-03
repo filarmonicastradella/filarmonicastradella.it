@@ -48,15 +48,11 @@
         overflow: hidden;
     }
 
-    /*
-     * Con l'interlinea stretta dei titoli "overflow: hidden" taglierebbe le lettere che scendono (g, p, q) dell'ultima
-     * riga: un'interlinea un po' più ampia le tiene dentro, senza un margine sotto da cui spunterebbe la riga nascosta
-     */
+    /* L'interlinea dei titoli (--lh-snug, typography.css) tiene dentro le code delle lettere dell'ultima riga */
     h3,
     h4 {
         -webkit-line-clamp: 2;
         line-clamp: 2;
-        line-height: var(--lh-snug);
     }
 
     [itemprop="description"] {
