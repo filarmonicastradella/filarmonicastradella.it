@@ -1,6 +1,4 @@
 <script lang="ts">
-    import FaqItem from "$lib/components/FaqItem.svelte";
-    import { faq } from "$lib/faq";
     import { ensembles } from "$lib/ensembles";
 </script>
 
@@ -12,8 +10,8 @@
 <header>
     <h1>Le nostre formazioni</h1>
     <p>
-        Quattro formazioni per suonare insieme: Stradella Facendo, la nostra orchestra di fiati; la Streetella Band; l'Orchestra Infieri; i Filarmonici
-        Dissonanti.
+        Quattro formazioni, perché ogni repertorio chiede un organico diverso: il concerto in sala per Stradella Facendo, la nostra orchestra di fiati;
+        la musica in movimento per la Streetella Band; archi e fiati insieme per l'Orchestra Infieri; la musica antica per i Filarmonici Dissonanti.
     </p>
 </header>
 
@@ -27,28 +25,4 @@
         </li>
     {/each}
 </ul>
-
-<section>
-    <h2>Domande frequenti</h2>
-    <details>
-        <summary>Perché più formazioni?</summary>
-        <p>
-            Perché ogni repertorio chiede un organico diverso: il concerto in sala per l'orchestra di fiati, la musica in movimento per la street band,
-            archi e fiati insieme per l'Orchestra Infieri, la musica antica per i Dissonanti. La Filarmonica le riunisce tutte: lo dice il nome, che dal
-            greco vuol dire «amica della musica».
-        </p>
-    </details>
-    <details>
-        <summary>Come si entra in una formazione?</summary>
-        <p>
-            Prima ci si iscrive alla Filarmonica con la <a href="/associazione/iscrizione">domanda di iscrizione</a>; da soci si chiede di entrare nella formazione.
-            Ognuna ha i suoi requisiti, e si può far parte anche di più di una.
-        </p>
-    </details>
-    <details>
-        <summary>Posso proporre una nuova formazione?</summary>
-        <p>Sì: basta che la propongano almeno tre soci, con una bozza di regolamento.</p>
-    </details>
-    <FaqItem item={faq.evento} />
-</section>
 

@@ -340,6 +340,16 @@
         </p>
     </details>
     <details>
+        <summary>Come si entra in una formazione?</summary>
+        <p>
+            Da soci si chiede di entrare nella <a href="/formazioni">formazione</a>: ognuna ha i suoi requisiti, e si può far parte anche di più di una.
+        </p>
+    </details>
+    <details>
+        <summary>Posso proporre una nuova formazione?</summary>
+        <p>Sì: basta che la propongano almeno tre soci, con una bozza di regolamento.</p>
+    </details>
+    <details>
         <summary>Devo avere uno strumento mio?</summary>
         <p>No: strumento, parti e sala prove li mette a disposizione l'associazione.</p>
     </details>
