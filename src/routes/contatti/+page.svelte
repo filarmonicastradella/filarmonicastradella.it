@@ -200,11 +200,6 @@
                         <input type="checkbox" id="contatto-documento-visto" name="documento_verificato" value="Sì" required />
                         <label for="contatto-documento-visto">Ho verificato l'identità di chi consegna con un documento.</label>
                     </p>
-
-                    <p>
-                        <label for="contatto-busta">Identificativo</label>
-                        <input type="text" id="contatto-busta" name="identificativo" required minlength="2" maxlength="120" />
-                    </p>
                 </fieldset>
             {/if}
 
