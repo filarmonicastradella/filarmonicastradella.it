@@ -8,7 +8,7 @@ export const prerender = true;
 
 
 // Pagine che non vanno nella mappa: conferme di invio e pagine con parametri (aggiunte sotto)
-const EXCLUDED = /\/grazie$|\[/;
+const EXCLUDED = /\/grazie(\/|$)|\[/;
 
 const pages = Object.keys(import.meta.glob("/src/routes/**/+page.svelte"))
     // I gruppi di pagine, tra parentesi come (elenco), non fanno parte dell'indirizzo

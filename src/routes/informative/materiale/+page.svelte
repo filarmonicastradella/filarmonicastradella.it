@@ -7,7 +7,7 @@
     <title>Informativa per la raccolta — Filarmonica Alessandro Stradella</title>
     <meta
         name="description"
-        content="Come la Filarmonica Alessandro Stradella APS tratta i dati di chi presta foto, filmati e ricordi per la mostra «La tradizione bandistica in Lunigiana» e delle persone che vi compaiono."
+        content="Come la Filarmonica Alessandro Stradella APS tratta i dati di chi presta foto, filmati e ricordi per le sue mostre e il suo archivio storico, e delle persone che vi compaiono."
     />
 </svelte:head>
 
@@ -16,7 +16,7 @@
 <header>
     <h1>Informativa per la raccolta del materiale</h1>
     <p>
-        Come trattiamo i dati di chi ci presta foto, filmati e ricordi per la mostra «La tradizione bandistica in Lunigiana», e quelli delle persone
+        Come trattiamo i dati di chi ci presta foto, filmati e ricordi per le nostre mostre e il nostro archivio storico, e quelli delle persone
         che vi compaiono.
     </p>
     <p><small>Informativa ai sensi dell'art. 13 del Regolamento UE 2016/679 (GDPR). Ultimo aggiornamento: <time datetime="2026-11">novembre 2026</time>.</small></p>
@@ -39,7 +39,7 @@
 <section>
     <h2>Perché trattiamo i dati</h2>
     <p>
-        Trattiamo i dati che scrivi nel modulo per gestire la raccolta, la custodia e la restituzione del materiale, la mostra e le sue repliche,
+        Trattiamo i dati che scrivi nel modulo per gestire la raccolta, la custodia e la restituzione del materiale, le mostre,
         l'archivio storico e la copia data alla Biblioteca civica. La base giuridica è l'accordo che accetti con il modulo (art. 6.1.b del Regolamento). Se hai acconsentito, pubblichiamo
         le copie online sulla base del tuo consenso (art. 6.1.a).
     </p>
@@ -59,7 +59,7 @@
     <h2>Chi li riceve</h2>
     <p>
         Hanno accesso ai dati i volontari della Filarmonica incaricati della raccolta, i punti di raccolta per la sola consegna, il Comune di Fivizzano
-        e la Biblioteca civica per l'allestimento della mostra, il fornitore che inoltra il modulo via email (formsubmit.co) e i fornitori del sito e
+        e la Biblioteca civica per l'allestimento delle mostre, il fornitore che inoltra il modulo via email (formsubmit.co) e i fornitori del sito e
         dei canali social per la pubblicazione online. La Biblioteca civica Abate E. Gerini di Fivizzano riceve inoltre una copia del materiale di
         interesse storico, che conserva e rende consultabile per studio e ricerca come titolare autonomo del trattamento: le passiamo anche il tuo nome
         solo se hai acconsentito a indicarlo nelle didascalie, e le stesse limitazioni sulla pubblicazione online.

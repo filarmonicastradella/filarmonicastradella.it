@@ -5,7 +5,7 @@
 
     // Un solo modulo per scriverci e per chiedere un ingaggio (dal 1/11/2026, prima l'ingaggio aveva un modulo suo in /booking):
     // con il motivo «Ingaggio per un evento» compaiono i campi dell'evento. Con «Materiale storico» il modulo diventa la
-    // dichiarazione di consegna e liberatoria della raccolta per la mostra (dal 3/11/2026, al posto del foglio di carta):
+    // dichiarazione di consegna e liberatoria della raccolta per mostre e archivio (dal 3/11/2026, al posto del foglio di carta):
     // chi ritira il materiale nei punti di raccolta aiuta a compilarlo chi non usa il telefono.
     const BOOKING = "Ingaggio per un evento";
     const MATERIAL = "Materiale storico";
@@ -135,11 +135,11 @@
             value={isBooking
                 ? "Richiesta per un evento – Filarmonica Stradella"
                 : isMaterial
-                  ? "Materiale per la mostra «La tradizione bandistica in Lunigiana» – Filarmonica Stradella"
+                  ? "Materiale storico – Filarmonica Stradella"
                   : "Nuovo messaggio dal sito – Filarmonica Stradella"}
         />
         <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_next" value="https://filarmonicastradella.it/contatti/grazie" />
+        <input type="hidden" name="_next" value="https://filarmonicastradella.it/contatti/grazie{isMaterial ? '/materiale' : ''}" />
         <div hidden><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
 
         <fieldset>
@@ -278,8 +278,8 @@
                     <input type="checkbox" id="materiale-uso" name="autorizzazione_uso" value="Sì" required />
                     <label for="materiale-uso">
                         Lo presto gratuitamente perché venga digitalizzato e autorizzo la Filarmonica, senza compenso e senza limiti di tempo, a
-                        ritoccarne le copie per restauro e impaginazione; a esporre le copie, stampate o su schermo, nella mostra «La tradizione
-                        bandistica in Lunigiana» e nelle sue repliche, anche in altri luoghi e negli anni successivi, e nei materiali che le presentano
+                        ritoccarne le copie per restauro e impaginazione; a esporre le copie, stampate o su schermo, in mostre, anche in altri
+                        luoghi e negli anni successivi, e nei materiali che le presentano
                         (locandine, stampa, catalogo); a conservare le copie digitali nel proprio archivio storico e a consegnarne una copia alla
                         Biblioteca civica Abate E. Gerini di Fivizzano, che può conservarla e renderla consultabile per finalità di studio e ricerca.
                         La Filarmonica sceglie liberamente quali ricordi esporre e pubblicare.
@@ -291,7 +291,7 @@
                         <input type="checkbox" id="materiale-custodia" name="custodia_e_ritiro" value="Sì" required />
                         <label for="materiale-custodia">
                             So che gli originali non vengono esposti: la Filarmonica li custodisce gratuitamente per il tempo necessario alla
-                            digitalizzazione e li restituisce appena digitalizzati, possibilmente prima dell'apertura della mostra; risponde di perdite
+                            digitalizzazione e li restituisce appena digitalizzati, il prima possibile; risponde di perdite
                             o danni solo in caso di dolo o colpa grave e il materiale non è assicurato. Mi impegno a ritirarlo quando mi verrà
                             comunicato che è pronto: se non lo ritiro entro sei mesi da quella comunicazione, rinuncio alla restituzione e il
                             materiale resta alla Filarmonica.
@@ -315,7 +315,7 @@
                 <p>
                     Il consenso alla pubblicazione online si può revocare scrivendo a
                     <a href="mailto:privacy@filarmonicastradella.it?subject=Revoca%20della%20pubblicazione%20del%20materiale">privacy@filarmonicastradella.it</a>: la
-                    revoca vale per il futuro e non riguarda la mostra, l'archivio né i materiali già stampati o diffusi.
+                    revoca vale per il futuro e non riguarda le mostre, l'archivio né i materiali già stampati o diffusi.
                 </p>
             </fieldset>
         {/if}
@@ -378,34 +378,60 @@
     </form>
 </section>
 
-<!-- Le domande di chi chiede un ingaggio (fino al 1/11/2026 nella pagina /booking, ora un rimando qui) -->
+<!-- Le domande cambiano con il motivo scelto nel modulo: per il materiale storico quelle della raccolta, altrimenti quelle sugli ingaggi
+     (fino al 1/11/2026 nella pagina /booking). Senza JS restano quelle sugli ingaggi. -->
 <section>
     <h2>Domande frequenti</h2>
-    <details>
-        <summary>Dove suonate?</summary>
-        <p>Ci spostiamo in tutta la Lunigiana.</p>
-    </details>
-    <details>
-        <summary>Suonate a funzioni religiose o a iniziative di partito?</summary>
-        <p>
-            No: siamo un'associazione laica e apartitica, e non suoniamo a funzioni religiose né a feste e iniziative di partito.
-            Per le occasioni religiose collaboriamo però con le realtà musicali amiche della Lunigiana, e possiamo indicarti a chi rivolgerti.
-        </p>
-    </details>
-    <details>
-        <summary>Con quanto anticipo devo scrivervi?</summary>
-        <p>Almeno 30 giorni prima dell'evento.</p>
-    </details>
-    <details>
-        <summary>Con quanti musicisti suonate?</summary>
-        <p>Dipende dalla formazione e dall'occasione: te lo indichiamo nella proposta.</p>
-    </details>
-    <details>
-        <summary>Cosa serve sul posto?</summary>
-        <p>
-            Uno spazio adatto alla formazione, le sedie e un riparo in caso di pioggia. La corrente elettrica non sempre è necessaria, ma è gradita.
-        </p>
-    </details>
+    {#if isMaterial}
+        <details>
+            <summary>Dove posso consegnare gli originali?</summary>
+            <p>In uno dei punti di raccolta: {collectionPoints.join("; ")}. Chi ritira il materiale ti aiuta anche a compilare il modulo.</p>
+        </details>
+        <details>
+            <summary>Quando riavrò gli originali?</summary>
+            <p>
+                Appena li abbiamo digitalizzati, il prima possibile: ti avvisiamo quando sono pronti, e da quel momento hai sei mesi per ritirarli. In
+                mostra esponiamo solo le copie.
+            </p>
+        </details>
+        <details>
+            <summary>Posso mandare un filmato?</summary>
+            <p>Un file video è troppo grande per il modulo: porta la videocassetta o la pellicola a un punto di raccolta, la riversiamo noi.</p>
+        </details>
+        <details>
+            <summary>Le mie foto finiranno online?</summary>
+            <p>
+                Solo se lo autorizzi nel modulo, e mai le foto recenti in cui si riconoscono dei minori. Chi si riconosce in una foto può chiederne la
+                rimozione dal sito e dai social.
+            </p>
+        </details>
+    {:else}
+        <details>
+            <summary>Dove suonate?</summary>
+            <p>Ci spostiamo in tutta la Lunigiana.</p>
+        </details>
+        <details>
+            <summary>Suonate a funzioni religiose o a iniziative di partito?</summary>
+            <p>
+                No: siamo un'associazione laica e apartitica, e non suoniamo a funzioni religiose né a feste e iniziative di partito.
+                Per le occasioni religiose collaboriamo però con le realtà musicali amiche della Lunigiana, e possiamo indicarti a chi rivolgerti.
+            </p>
+        </details>
+        <details>
+            <summary>Con quanto anticipo devo scrivervi?</summary>
+            <p>Almeno 30 giorni prima dell'evento.</p>
+        </details>
+        <details>
+            <summary>Con quanti musicisti suonate?</summary>
+            <p>Dipende dalla formazione e dall'occasione: te lo indichiamo nella proposta.</p>
+        </details>
+        <details>
+            <summary>Cosa serve sul posto?</summary>
+            <p>
+                Uno spazio adatto alla formazione, le sedie e un riparo in caso di pioggia. La corrente elettrica non sempre è necessaria, ma è gradita.
+            </p>
+        </details>
+    {/if}
 </section>
 
 <!-- Da riattivare insieme a /associazione/sedi:
