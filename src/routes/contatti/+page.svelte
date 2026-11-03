@@ -346,8 +346,8 @@
                 </p>
 
                 <p>
-                    <label for="contatto-busta">Scritto sulla busta (per esempio cognome e data)</label>
-                    <input type="text" id="contatto-busta" name="scritto_sulla_busta" required minlength="2" maxlength="120" />
+                    <label for="contatto-busta">Identificativo</label>
+                    <input type="text" id="contatto-busta" name="identificativo" required minlength="2" maxlength="120" />
                 </p>
 
             </fieldset>
