@@ -1,6 +1,7 @@
 <script lang="ts">
     import { browser } from "$app/environment";
     import { page } from "$app/state";
+    import { ensembles } from "$lib/ensembles";
     import { occasions } from "$lib/occasions";
     import { organization } from "$lib/organization";
 
@@ -33,6 +34,11 @@
     let topic = $derived(topics.find(({ key, name }) => key === requested || name === requested)?.name ?? topics[0].name);
     const mailbox = $derived(topics.find(({ name }) => name === topic)?.mailbox ?? "info");
     const isBooking = $derived(topic === BOOKING);
+
+    // La formazione preferita per un ingaggio: dal link della sua pagina (?formazione=stradella-facendo), altrimenti nessuna
+    const NO_PREFERENCE = "Nessuna preferenza";
+    const requestedEnsemble = $derived(browser ? page.url.searchParams.get("formazione") : null);
+    let ensemble = $derived(ensembles.find(({ slug }) => slug === requestedEnsemble)?.title ?? NO_PREFERENCE);
     const isMaterial = $derived(topic === MATERIAL);
 
     // Materiale storico: le scansioni si mandano dal modulo, gli originali si portano a un punto di raccolta (gli stessi del calendario)
@@ -329,6 +335,16 @@
         {#if isBooking}
             <fieldset>
                 <legend>L'evento</legend>
+
+                <p>
+                    <label for="contatto-formazione">Formazione</label>
+                    <select id="contatto-formazione" name="formazione" bind:value={ensemble}>
+                        <option>{NO_PREFERENCE}</option>
+                        {#each ensembles as { slug, title } (slug)}
+                            <option>{title}</option>
+                        {/each}
+                    </select>
+                </p>
 
                 <p>
                     <label for="contatto-occasione">Occasione</label>

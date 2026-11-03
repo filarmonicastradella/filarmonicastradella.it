@@ -81,6 +81,15 @@
     </p>
 </section>
 
+<section>
+    <h2>Per il tuo evento</h2>
+    <p>
+        Vuoi {ensemble.title} al tuo evento?
+        <a href="/contatti?motivo=ingaggio&formazione={ensemble.slug}#scrivici">Chiedici un ingaggio</a> almeno 30 giorni prima: il modulo ha già
+        scelto la formazione.
+    </p>
+</section>
+
 {#if events.length > 0}
     <section>
         <h2>Prossimi appuntamenti</h2>
