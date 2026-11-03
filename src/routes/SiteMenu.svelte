@@ -171,6 +171,12 @@
             margin-block-start: var(--space-7);
         }
 
+        /* Nel pannello le voci sono grandi: il pulsante cresce con loro, ed è comodo da toccare (circa 46px) */
+        p a {
+            padding-block: var(--space-3);
+            font-size: var(--fs-lead);
+        }
+
         /* A menu aperto la pagina dietro non scorre */
         :global(html:has(nav[data-open])) {
             overflow: hidden;
