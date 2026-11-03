@@ -46,31 +46,8 @@
         </p>
     </details>
     <details>
-        <summary>Che livello serve?</summary>
-        <p>
-            Dipende dalla formazione, ma ce n'è una per ogni livello: si impara suonando insieme, nelle prove generali e in quelle di sezione. Le lezioni
-            individuali non le facciamo noi: per studiare uno strumento c'è la scuola media a indirizzo musicale di Fivizzano, per i ragazzi dei comuni di
-            Fivizzano, Casola e Fosdinovo, e ci sono i corsi del Circolo Fantoni di Serricciolo, con cui collaboriamo.
-        </p>
-    </details>
-    <details>
-        <summary>Quali strumenti cercate?</summary>
-        <p>Tutti, e in particolare oboe, fagotto e archi.</p>
-    </details>
-    <details>
         <summary>Posso proporre una nuova formazione?</summary>
         <p>Sì: basta che la propongano almeno tre soci, con una bozza di regolamento.</p>
-    </details>
-    <details>
-        <summary>Chi è il maestro?</summary>
-        <p>
-            Non ce n'è uno solo: i direttori sono più di uno, e prima di tutto sono musicisti. Li indicano i componenti di ogni formazione, dai 14 anni in
-            su, e il consiglio direttivo ne ratifica la nomina per un anno. Ognuno dirige in autonomia i propri brani, e negli altri suona con tutti.
-        </p>
-    </details>
-    <details>
-        <summary>Chi sceglie i brani?</summary>
-        <p>I musicisti: propongono i brani e li votano in una graduatoria, e i direttori scelgono da lì quelli da suonare.</p>
     </details>
     <FaqItem item={faq.evento} />
 </section>

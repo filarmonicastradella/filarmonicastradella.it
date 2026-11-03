@@ -13,6 +13,16 @@ export const faq = {
         answer:
             'Sì: per un concerto, un convegno, una cerimonia o una festa in Lunigiana, raccontaci l\'occasione almeno 30 giorni prima: ti rispondiamo con la disponibilità e la formazione adatta. Occasioni, formazioni e come chiedere sono nella pagina <a href="/contatti/ingaggi">La Filarmonica al tuo evento</a>.'
     }
+    // Pagine delle singole formazioni: valgono per tutte
+    maestro: {
+        question: "Chi è il maestro?",
+        answer:
+            "Non ce n'è uno solo: i direttori sono più di uno, e prima di tutto sono musicisti. Li indicano i componenti di ogni formazione, dai 14 anni in su, e il consiglio direttivo ne ratifica la nomina per un anno. Ognuno dirige in autonomia i propri brani, e negli altri suona con tutti."
+    },
+    brani: {
+        question: "Chi sceglie i brani?",
+        answer: "I musicisti: propongono i brani e li votano in una graduatoria, e i direttori scelgono da lì quelli da suonare."
+    }
 } satisfies Record<string, FaqItem>;
 
 // Le domande sugli ingaggi: nella pagina La Filarmonica al tuo evento e in Contatti quando il motivo è un ingaggio

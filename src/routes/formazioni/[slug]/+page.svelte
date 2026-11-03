@@ -2,6 +2,8 @@
     import { onMount } from "svelte";
     import ArticleCard from "$lib/components/ArticleCard.svelte";
     import EventCard from "$lib/components/EventCard.svelte";
+    import FaqItem from "$lib/components/FaqItem.svelte";
+    import { faq } from "$lib/faq";
     import { articleKey, articles } from "$lib/articles";
     import { hasNotEnded } from "$lib/events";
     import { organization } from "$lib/organization";
@@ -111,5 +113,11 @@
         </ol>
     </section>
 {/if}
+
+<section>
+    <h2>Domande frequenti</h2>
+    <FaqItem item={faq.maestro} />
+    <FaqItem item={faq.brani} />
+</section>
 
 <p class="rimando"><a href="/formazioni">Le nostre formazioni</a></p>
