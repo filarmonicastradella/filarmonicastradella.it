@@ -70,7 +70,7 @@
     <h2>Quando e dove</h2>
     <dl>
         {#if event.ensembles.length > 0}
-            <dt>Chi suona</dt>
+            <dt>{event.ensembles.length > 1 ? "Formazioni" : "Formazione"}</dt>
             {#each event.ensembles as { slug, title } (slug)}
                 <dd><a href="/formazioni/{slug}">{title}</a></dd>
             {/each}
