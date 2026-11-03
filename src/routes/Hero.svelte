@@ -20,7 +20,7 @@
     più alta, l'occhiello, il titolo in corpo display e la comparsa della prima schermata.
 -->
 <!-- SOSPESA, la posizione della foto di Stradella Facendo: style:--cover-position="center 35%" -->
-<header style:--cover-placeholder="url({coverPlaceholder})" style:--cover-position="center 40%">
+<header style:--cover-placeholder="url({coverPlaceholder})">
     <hgroup>
         <p>Fivizzano · dal 1777</p>
         <h1>Filarmonica <span>Alessandro <em>Stradella</em></span></h1>
@@ -153,6 +153,20 @@
      */
     header {
         --shift: var(--space-5); /* 1,5rem, il massimo ammesso */
+    }
+
+    /*
+     * Il punto della foto da tenere (layout.css, copertina): su schermo largo la fascia è più bassa in proporzione,
+     * e la foto si abbassa un po' perché il direttore sul podio resti intero, dalla testa ai piedi.
+     */
+    header {
+        --cover-position: center 40%;
+    }
+
+    @media (min-width: 64rem) {
+        header {
+            --cover-position: center 35%;
+        }
     }
 
     @media (prefers-reduced-motion: reduce) {
