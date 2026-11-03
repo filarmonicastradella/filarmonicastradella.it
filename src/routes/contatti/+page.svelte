@@ -282,20 +282,32 @@
                 </p>
 
                 <p>
-                    <input type="checkbox" id="materiale-uso" name="autorizzazione_uso" value="Sì" required />
-                    <label for="materiale-uso">
-                        Presto gratuitamente i ricordi alla Filarmonica e la autorizzo, senza limiti di tempo, a digitalizzarli, restaurarne le copie,
-                        esporle in mostre e conservarle nel suo archivio storico.
-                    </label>
+                    <input type="checkbox" id="materiale-prestito" name="prestito_per_la_digitalizzazione" value="Sì" required />
+                    <label for="materiale-prestito">Presto gratuitamente i ricordi alla Filarmonica perché li digitalizzi.</label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="materiale-mostre" name="restauro_ed_esposizione" value="Sì" required />
+                    <label for="materiale-mostre">Autorizzo la Filarmonica a restaurare le copie digitali dei ricordi e a esporle in mostre.</label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="materiale-archivio" name="conservazione_in_archivio" value="Sì" required />
+                    <label for="materiale-archivio">Autorizzo la Filarmonica a conservare le copie nel suo archivio storico, senza limiti di tempo.</label>
                 </p>
 
                 {#if handsOriginals}
                     <p>
-                        <input type="checkbox" id="materiale-custodia" name="custodia_e_ritiro" value="Sì" required />
+                        <input type="checkbox" id="materiale-custodia" name="custodia_al_punto_di_raccolta" value="Sì" required />
                         <label for="materiale-custodia">
-                            Dichiaro di sapere che gli originali non vengono esposti, che restano in custodia al punto di raccolta che li riceve e che
-                            me li restituisce appena digitalizzati, e che non sono assicurati. Mi impegno a ritirarli entro sei mesi dall'avviso,
-                            altrimenti restano alla Filarmonica.
+                            Dichiaro di sapere che gli originali restano in custodia al punto di raccolta e non sono assicurati.
+                        </label>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="materiale-ritiro" name="ritiro_entro_sei_mesi" value="Sì" required />
+                        <label for="materiale-ritiro">
+                            Mi impegno a ritirare gli originali entro sei mesi dall'avviso di restituzione, altrimenti restano alla Filarmonica.
                         </label>
                     </p>
                 {/if}
