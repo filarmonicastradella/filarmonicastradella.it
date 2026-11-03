@@ -149,8 +149,8 @@ ol:has(> li > article > :is(a, div) > :is(h2, h3, h4)) {
     }
 }
 
-/* Quattro schede (le formazioni): due per riga, invece di tre più una rimasta sola */
-ul:has(> li:nth-child(4):last-child > a > :is(h2, h3, h4)) {
+/* Due o quattro schede (Sostienici, le formazioni): due per riga, più larghe, invece di tre con un posto vuoto o una rimasta sola */
+ul:has(> li:is(:nth-child(2), :nth-child(4)):last-child > a > :is(h2, h3, h4)) {
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
 }
 
