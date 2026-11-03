@@ -39,9 +39,12 @@
 <section>
     <h2>Perché trattiamo i dati</h2>
     <p>
-        Trattiamo i dati che scrivi nel modulo per gestire la raccolta, la custodia e la restituzione del materiale, la mostra e le sue repliche e
-        l'archivio storico. La base giuridica è l'accordo che accetti con il modulo (art. 6.1.b del Regolamento). Se hai acconsentito, pubblichiamo
+        Trattiamo i dati che scrivi nel modulo per gestire la raccolta, la custodia e la restituzione del materiale, la mostra e le sue repliche,
+        l'archivio storico e la copia data alla Biblioteca civica. La base giuridica è l'accordo che accetti con il modulo (art. 6.1.b del Regolamento). Se hai acconsentito, pubblichiamo
         le copie online sulla base del tuo consenso (art. 6.1.a).
+    </p>
+    <p>
+        Chi ritira gli originali in un punto di raccolta verifica la tua identità guardando un documento, senza farne copia né annotarne il numero.
     </p>
     <p>
         Il materiale può contenere dati di altre persone, come volti e nomi di chi è ritratto o citato. Li trattiamo per finalità di documentazione e
@@ -57,7 +60,9 @@
     <p>
         Hanno accesso ai dati i volontari della Filarmonica incaricati della raccolta, i punti di raccolta per la sola consegna, il Comune di Fivizzano
         e la Biblioteca civica per l'allestimento della mostra, il fornitore che inoltra il modulo via email (formsubmit.co) e i fornitori del sito e
-        dei canali social per la pubblicazione online.
+        dei canali social per la pubblicazione online. La Biblioteca civica Abate E. Gerini di Fivizzano riceve inoltre una copia del materiale di
+        interesse storico, che conserva e rende consultabile per studio e ricerca come titolare autonomo del trattamento: le passiamo anche il tuo nome
+        solo se hai acconsentito a indicarlo nelle didascalie, e le stesse limitazioni sulla pubblicazione online.
     </p>
     <p>
         I tuoi dati non vengono diffusi: il tuo nome compare nelle didascalie solo se lo hai chiesto. Se acconsenti alla pubblicazione online, le

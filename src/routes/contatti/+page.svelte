@@ -174,6 +174,12 @@
                         <input type="text" id="contatto-ricevuto" name="ricevuto_da" required minlength="2" maxlength="120" />
                     </p>
 
+                    <!-- Chi ritira guarda il documento di chi consegna, senza copiarlo: servirà a restituire gli originali alla persona giusta -->
+                    <p>
+                        <input type="checkbox" id="contatto-documento-visto" name="documento_verificato" value="Sì" required />
+                        <label for="contatto-documento-visto">Chi ritira: ho verificato l'identità di chi consegna con un documento.</label>
+                    </p>
+
                     <p>
                         <label for="contatto-busta">Scritto sulla busta (per esempio cognome e data)</label>
                         <input type="text" id="contatto-busta" name="scritto_sulla_busta" required minlength="2" maxlength="120" />
@@ -213,8 +219,9 @@
                         Lo presto gratuitamente perché venga digitalizzato e autorizzo la Filarmonica, senza compenso e senza limiti di tempo, a
                         ritoccarne le copie per restauro e impaginazione; a esporre le copie, stampate o su schermo, nella mostra «La tradizione
                         bandistica in Lunigiana» e nelle sue repliche, anche in altri luoghi e negli anni successivi, e nei materiali che le presentano
-                        (locandine, stampa, catalogo); a conservare le copie digitali nel proprio archivio storico. La Filarmonica sceglie liberamente
-                        quali pezzi esporre e pubblicare.
+                        (locandine, stampa, catalogo); a conservare le copie digitali nel proprio archivio storico e a consegnarne una copia alla
+                        Biblioteca civica Abate E. Gerini di Fivizzano, che può conservarla e renderla consultabile per finalità di studio e ricerca.
+                        La Filarmonica sceglie liberamente quali pezzi esporre e pubblicare.
                     </label>
                 </p>
 
@@ -241,7 +248,7 @@
 
                 <p>
                     <input type="checkbox" id="materiale-nome" name="nome_nelle_didascalie" value="Sì" />
-                    <label for="materiale-nome">Acconsento a indicare il mio nome nelle didascalie.</label>
+                    <label for="materiale-nome">Acconsento a indicare il mio nome nelle didascalie e nella scheda della copia data alla Biblioteca.</label>
                 </p>
 
                 <p>
