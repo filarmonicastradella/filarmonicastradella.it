@@ -79,7 +79,7 @@
     <h2>I tuoi diritti</h2>
     <p>
         I dati del modulo sono necessari per accettare il materiale. Il consenso alla pubblicazione online è facoltativo: se non lo dai, il materiale
-        può comunque essere esposto in mostra e conservato in archivio.
+        può comunque essere esposto nelle mostre e conservato in archivio.
     </p>
     <p>
         Puoi chiedere accesso, rettifica, cancellazione, limitazione e opposizione nei limiti previsti dagli artt. 15–22 del Regolamento, e revocare il

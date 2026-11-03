@@ -387,8 +387,8 @@
         <details>
             <summary>Quando riavrò gli originali?</summary>
             <p>
-                Appena li abbiamo digitalizzati, il prima possibile: ti avvisiamo quando sono pronti, e da quel momento hai sei mesi per ritirarli. In
-                mostra esponiamo solo le copie.
+                Appena li abbiamo digitalizzati, il prima possibile: ti avvisiamo quando sono pronti, e da quel momento hai sei mesi per ritirarli. Nelle
+                mostre esponiamo solo le copie.
             </p>
         </details>
         <details>
