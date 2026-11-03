@@ -14,3 +14,19 @@ export const faq = {
             'Sì: per un concerto, un convegno, una cerimonia o una festa in Lunigiana, raccontaci l\'occasione almeno 30 giorni prima: ti rispondiamo con la disponibilità e la formazione adatta. Occasioni, formazioni e come chiedere sono nella pagina <a href="/contatti/ingaggi">La Filarmonica al tuo evento</a>.'
     }
 } satisfies Record<string, FaqItem>;
+
+// Le domande sugli ingaggi: nella pagina La Filarmonica al tuo evento e in Contatti quando il motivo è un ingaggio
+export const bookingFaq: FaqItem[] = [
+    { question: "Dove suonate?", answer: "Ci spostiamo in tutta la Lunigiana." },
+    {
+        question: "Suonate a funzioni religiose o a iniziative di partito?",
+        answer:
+            "No: siamo un'associazione laica e apartitica, e non suoniamo a funzioni religiose né a feste e iniziative di partito. Per le occasioni religiose collaboriamo però con le realtà musicali amiche della Lunigiana, e possiamo indicarti a chi rivolgerti."
+    },
+    { question: "Con quanto anticipo devo scrivervi?", answer: "Almeno 30 giorni prima dell'evento." },
+    { question: "Con quanti musicisti suonate?", answer: "Dipende dalla formazione e dall'occasione: te lo indichiamo nella proposta." },
+    {
+        question: "Cosa serve sul posto?",
+        answer: "Uno spazio adatto alla formazione, le sedie e un riparo in caso di pioggia. La corrente elettrica non sempre è necessaria, ma è gradita."
+    }
+];

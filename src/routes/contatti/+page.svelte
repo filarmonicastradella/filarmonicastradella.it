@@ -1,7 +1,9 @@
 <script lang="ts">
     import { browser } from "$app/environment";
     import { page } from "$app/state";
+    import FaqItem from "$lib/components/FaqItem.svelte";
     import { ensembles } from "$lib/ensembles";
+    import { bookingFaq } from "$lib/faq";
     import { occasions } from "$lib/occasions";
     import { organization } from "$lib/organization";
 
@@ -400,7 +402,8 @@
     </form>
 </section>
 
-<!-- Le domande sulla raccolta del materiale storico, solo quando si sceglie quel motivo; quelle sugli ingaggi sono in /contatti/ingaggi -->
+<!-- Le domande cambiano con il motivo: quelle della raccolta per il materiale storico, quelle sugli ingaggi (condivise con
+     /contatti/ingaggi, in $lib/faq.ts) per un ingaggio; con gli altri motivi nessuna -->
 {#if isMaterial}
     <section>
         <h2>Domande frequenti</h2>
@@ -426,6 +429,13 @@
                 rimozione dal sito e dai social.
             </p>
         </details>
+    </section>
+{:else if isBooking}
+    <section>
+        <h2>Domande frequenti</h2>
+        {#each bookingFaq as item (item.question)}
+            <FaqItem {item} />
+        {/each}
     </section>
 {/if}
 
