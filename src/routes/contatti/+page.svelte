@@ -155,7 +155,7 @@
 
         {#if isMaterial}
             <fieldset>
-                <legend>Consegna</legend>
+                <legend>Metodo</legend>
 
                 <p>
                     <input type="radio" id="consegna-scansioni" name="consegna" value="scansioni" bind:group={delivery} />
