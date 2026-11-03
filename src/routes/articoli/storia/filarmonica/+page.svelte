@@ -22,7 +22,7 @@
     <meta name="description" content="La storia della Filarmonica Alessandro Stradella di Fivizzano, dall'Accademia dei Filarmonici Dissonanti del Settecento a oggi, raccontata con i documenti." />
 </svelte:head>
 
-<ArticleHeader {article} style="--cover-placeholder: url({anni30Placeholder}); --cover-position: top; --cover-archive: 1">
+<ArticleHeader {article} style="--cover-placeholder: url({anni30Placeholder}); --cover-position: top">
     <p>
         La Filarmonica di Fivizzano nacque nel Settecento come accademia di nobili, religiosi e musicisti. Nell'Ottocento ebbe un'orchestra, una banda e
         maestri di professione, e nel 1872 lo Stato la contava tra le quattro accademie filarmoniche italiane più antiche ancora attive, con Santa Cecilia di

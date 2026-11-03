@@ -20,7 +20,7 @@
 </svelte:head>
 
 <!-- Nella fascia si tiene la parte con il titolo e il nome -->
-<ArticleHeader {article} style="--cover-placeholder: url({serenataPlaceholder}); --cover-position: center 33%; --cover-archive: 1">
+<ArticleHeader {article} style="--cover-placeholder: url({serenataPlaceholder}); --cover-position: center 33%; --cover-document: 1">
     <p>
         La famiglia di Alessandro Stradella era di Fivizzano. Per più di un secolo gli Stradella furono medici, giuristi, notai e uomini di Chiesa del
         paese, e da qui partì il ramo del compositore, che nacque a Bologna. Per questo la Filarmonica porta il suo nome.

@@ -5,7 +5,7 @@
 
     // Intestazione di ogni articolo: categoria in occhiello, titolo, riassunto e firma; `children` è il resto
     // dell'intestazione (un'introduzione, la foto di copertina) e `style` le proprietà della copertina
-    // (--cover-placeholder, --cover-position, --cover-archive)
+    // (--cover-placeholder, --cover-position, --cover-document)
     let { article, children, style }: { article: Article; children?: Snippet; style?: string } = $props();
 </script>
 

@@ -126,7 +126,7 @@ Il movimento accompagna, non si esibisce.
 - **Sì:** luce di scena, fondi scuri, dettagli (mani, ance, archi, respiro), ritratti con sguardo in camera, luoghi storici della Lunigiana.
 - **No:** foto di gruppo in fila, flash diretto, transenne e gazebo, scatti mossi o sgranati.
 - **Trattamento standard sui social:** duotone inchiostro e bordeaux. Bianco e nero quando la qualità è disomogenea. Colore pieno solo per foto professionali.
-- **Foto d'archivio:** sempre in bianco e nero, anche nel sito; mai virate in duotone. Nelle copertine del sito le foto a colori vanno in duotone come la hero, quelle d'archivio in bianco e nero.
+- **Nel sito:** tutte le foto delle copertine, a colori e d'archivio, hanno lo stesso velo: desaturate al 60% e velate dal bordeaux notte all'inchiostro, come la hero. I dipinti e i documenti (la serenata di Stradella, la scansione del sonetto) restano in bianco e nero senza velo, perché il velo li scurisce e li rende meno leggibili. Il duotone pieno resta per i social. *(Dal 3/11/2026, dopo una prova con quattro varianti di duotone; prima le foto d'archivio erano in bianco e nero senza velo.)*
 - Prevedere un servizio fotografico professionale all'anno.
 
 ## 10. Componenti
