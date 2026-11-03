@@ -190,7 +190,12 @@
                         <input type="text" id="contatto-ricevuto" name="ricevuto_da" required minlength="2" maxlength="120" />
                     </p>
 
-                    <!-- Chi ritira è del punto di raccolta, non della Filarmonica: guarda il documento di chi consegna senza copiarlo, e prende
+                    <p>
+                    Il nome di chi ritira serve a documentare la consegna e la custodia:
+                    <a href="/informative/materiale" target="_blank" rel="noopener noreferrer">informativa per la raccolta del materiale</a>.
+                </p>
+
+                <!-- Chi ritira è del punto di raccolta, non della Filarmonica: guarda il documento di chi consegna senza copiarlo, e prende
                      gli originali in custodia per il suo ente fino alla restituzione -->
                     <p>
                         <input type="checkbox" id="contatto-documento-visto" name="documento_verificato" value="Sì" required />

@@ -56,6 +56,16 @@
 </section>
 
 <section>
+    <h2>Chi ritira gli originali</h2>
+    <p>
+        Se lavori in un punto di raccolta e ritiri degli originali, scriviamo nel modulo il tuo nome e il punto di raccolta: servono a documentare
+        chi ha ricevuto il materiale e chi lo ha in custodia fino alla restituzione. La base giuridica è il legittimo interesse della Filarmonica e
+        del punto di raccolta a sapere dove si trova il materiale (art. 6.1.f del Regolamento). Il tuo nome non viene pubblicato e si conserva insieme
+        al modulo; hai gli stessi diritti indicati qui sotto.
+    </p>
+</section>
+
+<section>
     <h2>Chi li riceve</h2>
     <p>
         Hanno accesso ai dati i volontari della Filarmonica incaricati della raccolta, il personale dei punti di raccolta, che riceve e
