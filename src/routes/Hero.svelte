@@ -131,22 +131,6 @@
     }
 
     /*
-     * Pulsante secondario (contorno inchiostro): l'unico pulsante pieno della schermata è "Sostienici"
-     * nell'intestazione del sito; da qui si va agli ingaggi.
-     */
-    header > p > a {
-        border-color: var(--border-strong);
-        background-color: transparent;
-        color: var(--text);
-    }
-
-    header > p > a:hover {
-        border-color: var(--text-brand);
-        background-color: transparent;
-        color: var(--text-brand);
-    }
-
-    /*
      * Comparsa della prima schermata (docs/DESIGN.md, Movimento), in CSS puro, funziona anche senza JS:
      * la foto sfuma, poi occhiello, titolo, sottotitolo e pulsante salgono uno dopo l'altro. Con il
      * movimento ridotto resta solo la dissolvenza.
