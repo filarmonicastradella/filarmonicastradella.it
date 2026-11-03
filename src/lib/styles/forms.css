@@ -1,11 +1,11 @@
 /*
  * Pulsanti e moduli — design system della Filarmonica (docs/DESIGN.md).
- * Primario: fondo bordeaux, testo carta, uno solo per schermata; lo hanno anche i link d'azione (il
- * pulsante "Sostienici" del menu: l'unico link in un paragrafo dell'intestazione; non la categoria in
- * occhiello sopra il titolo di un articolo).
+ * Primario: fondo bordeaux, testo carta, per l'azione della pagina; lo hanno anche i link d'azione
+ * nell'intestazione della pagina (l'unico link in un suo paragrafo, come «Per il tuo evento» in home e
+ * «Chiedi un ingaggio»; non la categoria in occhiello sopra il titolo di un articolo).
  * Secondario: contorno inchiostro; lo hanno anche i link che scaricano un file (a[download], come
- * «Aggiungi al tuo calendario» degli eventi) e il link sotto il titolo della home («Per il tuo evento»,
- * dopo l'hgroup), perché nella prima schermata il solo pulsante pieno resti «Sostienici».
+ * «Aggiungi al tuo calendario» degli eventi) e «Sostienici» nel menu, che è su ogni pagina e non deve
+ * fare concorrenza all'azione della pagina.
  * Campi: fondo rialzato e bordo sottile come le schede, angoli quasi vivi.
  */
 
@@ -13,8 +13,8 @@ button,
 input[type="submit"],
 input[type="button"],
 main a[download],
-main > header > hgroup + p > a,
-:is(main > header:not(:has(> hgroup)), body > div > header nav) > p > a:only-child:not(:has(> [itemprop="articleSection"])) {
+body > div > header nav > p > a,
+main > header > p > a:only-child:not(:has(> [itemprop="articleSection"])) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -38,16 +38,16 @@ main > header > hgroup + p > a,
 button:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover,
-:is(main > header:not(:has(> hgroup)), body > div > header nav) > p > a:only-child:not(:has(> [itemprop="articleSection"])):hover {
+main > header > p > a:only-child:not(:has(> [itemprop="articleSection"])):hover {
     border-color: var(--accent-hover);
     background-color: var(--accent-hover);
     color: var(--on-accent);
 }
 
-/* Secondario: azioni di servizio (caricare una mappa, scegliere un file, scaricare un file) e il link della home */
+/* Secondario: azioni di servizio (caricare una mappa, scegliere un file, scaricare un file) e «Sostienici» nel menu */
 main button[type="button"],
 main a[download],
-main > header > hgroup + p > a,
+body > div > header nav > p > a,
 input[type="file"]::file-selector-button {
     border: var(--border-width) solid var(--border-strong);
     border-radius: var(--radius);
@@ -57,7 +57,7 @@ input[type="file"]::file-selector-button {
 
 main button[type="button"]:hover,
 main a[download]:hover,
-main > header > hgroup + p > a:hover,
+body > div > header nav > p > a:hover,
 input[type="file"]::file-selector-button:hover {
     border-color: var(--text-brand);
     background-color: transparent;

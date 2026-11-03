@@ -146,7 +146,8 @@ Il movimento accompagna, non si esibisce.
 - Locandina speciale: fondo inchiostro, foto nella mezzaluna, titolo centrato.
 
 **Sito**
-- Intestazione: logo orizzontale a sinistra, massimo cinque voci di menu, un solo pulsante pieno bordeaux per l'azione principale.
+- Intestazione: logo orizzontale a sinistra, massimo cinque voci di menu, un pulsante a contorno per «Sostienici».
+- Pulsante pieno bordeaux solo per l'azione della pagina (per esempio «Per il tuo evento» in home, «Chiedi un ingaggio», l'invio di un modulo), al massimo uno per schermata; dove la pagina non ha un'azione non ce n'è nessuno. «Sostienici» nel menu è su ogni pagina, quindi è a contorno: non fa concorrenza all'azione della pagina. *(Dal 4/11/2026; prima il pulsante pieno era «Sostienici» nell'intestazione e l'azione della home era a contorno.)*
 - Pulsante primario: fondo bordeaux, testo carta. Secondario: contorno inchiostro 1 px.
 - Schede (eventi, notizie, rimandi): nessun riquadro e nessun fondo, solo un filetto in alto (`--rule-width` in `--border`) che diventa bordeaux (`--accent`) al passaggio del mouse o al tocco, insieme al titolo. Scelte il 9/10/2026 al posto delle card bordate: più coerenti con corde e filetti, più editoriali e più pulite nel tema scuro.
 - Card evento: ogni informazione una volta sola. La data in occhiello bordeaux sopra il titolo ("sab 10 ottobre"; per più giorni "lun 7 – mar 8 dicembre"), il titolo in Cormorant 600, la descrizione, e in fondo una didascalia con ora di inizio e luogo ("ore 21 · Teatro degli Impavidi"). Le schede sono sempre una sotto l'altra, quindi niente altezze fisse: il titolo si ferma al massimo a due righe e la descrizione a tre, con i puntini, e si leggono interi nella pagina dell'evento, insieme all'ora di fine. *(Dal 29/10/2026; prima ogni parte aveva un numero fisso di righe, per allineare le schede affiancate in griglia.)*

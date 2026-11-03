@@ -56,7 +56,7 @@
         margin: 0;
     }
 
-    /* Il pulsante principale (forms.css), un po' più basso dentro l'intestazione */
+    /* Il pulsante «Sostienici» (forms.css, a contorno), un po' più basso dentro l'intestazione */
     p a {
         padding-block: var(--space-2);
     }

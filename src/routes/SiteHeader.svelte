@@ -50,7 +50,7 @@
     /*
      * "fixed": resta in vista scorrendo; lo spazio nel flusso lo riserva "main" (layout.css).
      * Design system: logotipo orizzontale a sinistra (simbolo, occhiello FILARMONICA, nome), voci di
-     * menu in linea e un solo pulsante pieno per l'azione principale.
+     * menu in linea e il pulsante «Sostienici», a contorno (il pulsante pieno è l'azione della pagina).
      */
     header {
         display: flex;

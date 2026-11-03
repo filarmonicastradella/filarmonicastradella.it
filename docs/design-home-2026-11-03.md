@@ -8,7 +8,7 @@ Primo blocco della voce 0.1 della lista unica: una pagina sola, la home, guardat
 
 ## Da correggere
 
-**1. «Per il tuo evento» è un pulsante pieno, non a contorno. F** *(Risolto il 4/11/2026, commit 8e6dcb4: ora è tra i pulsanti secondari di `forms.css`.)*
+**1. «Per il tuo evento» è un pulsante pieno, non a contorno. F** *(Risolto il 4/11/2026, commit 8e6dcb4: ora è tra i pulsanti secondari di `forms.css`. Poi, lo stesso giorno, i due pulsanti si sono scambiati: pieno «Per il tuo evento», cioè l'azione della pagina, e a contorno «Sostienici» nel menu, su tutto il sito.)*
 Nella prima schermata ci sono due pulsanti bordeaux pieni, «Sostienici» e «Per il tuo evento»; nel tema scuro due blocchi rosa. `Hero.svelte` lo vorrebbe secondario, a contorno, come dice anche `DESIGN.md` (un solo pulsante pieno). La regola però non vince mai: Svelte la compila come `header.svelte-x > p:where(.svelte-x) > a:where(.svelte-x)`, che pesa (0,1,3), mentre quella generale di `forms.css` pesa (0,2,4). Non è un problema di gusto: lo stile scritto non arriva in pagina.
 Come sistemarlo: dare più peso alla regola della hero (per esempio ripetere `:only-child`), oppure togliere la variante dalla hero e farla diventare il pulsante secondario generale di `forms.css`, che esiste già per le mappe e i download. La seconda è più pulita.
 
