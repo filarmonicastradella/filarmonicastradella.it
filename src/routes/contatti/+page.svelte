@@ -54,7 +54,7 @@
     const pieceTypes = ["Foto", "Filmato", "Locandina", "Programma", "Altro"];
     let pieces = $state([1]);
     let nextPiece = 2;
-    // L'anno di un pezzo: dalla nascita della Filarmonica a oggi (il sito si ricostruisce ogni 3 ore)
+    // L'anno di un pezzo: al massimo quello in corso (il sito si ricostruisce ogni 3 ore); prima, qualsiasi
     const thisYear = new Date().getFullYear();
     const handsOriginals = $derived(isMaterial && delivery === "originali");
     const collectionPoints = [
@@ -229,7 +229,7 @@
 
                         <p>
                             <label for="pezzo-{piece}-anno">Anno</label>
-                            <input type="number" id="pezzo-{piece}-anno" name="pezzo_{i + 1}_anno" min="1777" max={thisYear} step="1" inputmode="numeric" />
+                            <input type="number" id="pezzo-{piece}-anno" name="pezzo_{i + 1}_anno" max={thisYear} step="1" inputmode="numeric" />
                         </p>
 
                         <p>
