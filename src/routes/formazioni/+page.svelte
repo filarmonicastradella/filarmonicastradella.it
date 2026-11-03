@@ -47,7 +47,11 @@
     </details>
     <details>
         <summary>Che livello serve?</summary>
-        <p>Dipende dalla formazione, ma ce n'è una per ogni livello: si può cominciare anche da zero, senza aver mai suonato uno strumento.</p>
+        <p>
+            Dipende dalla formazione, ma ce n'è una per ogni livello: si impara suonando insieme, nelle prove generali e in quelle di sezione. Le lezioni
+            individuali non le facciamo noi: per studiare uno strumento c'è la scuola media a indirizzo musicale di Fivizzano, per i ragazzi dei comuni di
+            Fivizzano, Casola e Fosdinovo, e ci sono i corsi del Circolo Fantoni di Serricciolo, con cui collaboriamo.
+        </p>
     </details>
     <details>
         <summary>Quali strumenti cercate?</summary>
