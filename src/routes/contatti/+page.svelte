@@ -49,6 +49,11 @@
 
     // Materiale storico: le scansioni si mandano dal modulo, gli originali si portano a un punto di raccolta (gli stessi del calendario)
     let delivery = $state("scansioni");
+
+    // I pezzi consegnati, uno per riga: con JS se ne aggiungono altri, senza ce n'è uno e il resto va nel messaggio
+    const pieceTypes = ["Foto", "Filmato", "Locandina", "Programma", "Altro"];
+    let pieces = $state([1]);
+    let nextPiece = 2;
     const handsOriginals = $derived(isMaterial && delivery === "originali");
     const collectionPoints = [
         "Agenzia Vittoria Assicurazioni Orietti, Fivizzano",
@@ -125,26 +130,53 @@
             </p>
 
             <p>
-                <label for="contatto-messaggio">{isMaterial ? "Che cosa consegni" : "Messaggio"}</label>
-                <textarea
-                    id="contatto-messaggio"
-                    name="messaggio"
-                    rows="6"
-                    required
-                    minlength="10"
-                    maxlength="2000"
-                    aria-describedby={isMaterial ? "contatto-materiale-aiuto" : undefined}
-                ></textarea>
+                <label for="contatto-messaggio">Messaggio</label>
+                <textarea id="contatto-messaggio" name="messaggio" rows="6" required minlength="10" maxlength="2000"></textarea>
             </p>
-
-            {#if isMaterial}
-                <p id="contatto-materiale-aiuto">
-                    Per ogni pezzo: che cosa è (foto, filmato, locandina, programma), l'anno approssimativo e l'autore, se lo conosci.
-                </p>
-            {/if}
         </fieldset>
 
         {#if isMaterial}
+            <fieldset>
+                <legend>Il materiale</legend>
+
+                {#each pieces as piece, i (piece)}
+                    <fieldset>
+                        <legend>Pezzo {i + 1}</legend>
+
+                        <p>
+                            <label for="pezzo-{piece}-tipo">Che cos'è</label>
+                            <select id="pezzo-{piece}-tipo" name="pezzo_{i + 1}_tipo" required>
+                                <option value="" disabled selected>Scegli</option>
+                                {#each pieceTypes as type (type)}
+                                    <option>{type}</option>
+                                {/each}
+                            </select>
+                        </p>
+
+                        <p>
+                            <label for="pezzo-{piece}-descrizione">Descrizione (che cosa mostra, dove)</label>
+                            <input type="text" id="pezzo-{piece}-descrizione" name="pezzo_{i + 1}_descrizione" required minlength="3" maxlength="200" />
+                        </p>
+
+                        <p>
+                            <label for="pezzo-{piece}-anno">Anno, anche approssimativo</label>
+                            <input type="text" id="pezzo-{piece}-anno" name="pezzo_{i + 1}_anno" maxlength="20" />
+                        </p>
+
+                        <p>
+                            <label for="pezzo-{piece}-autore">Autore, se lo conosci</label>
+                            <input type="text" id="pezzo-{piece}-autore" name="pezzo_{i + 1}_autore" maxlength="120" />
+                        </p>
+
+                        {#if pieces.length > 1}
+                            <p><button type="button" onclick={() => (pieces = pieces.filter((p) => p !== piece))}>Togli il pezzo {i + 1}</button></p>
+                        {/if}
+                    </fieldset>
+                {/each}
+
+                <p><button type="button" onclick={() => pieces.push(nextPiece++)}>Aggiungi un altro pezzo</button></p>
+            </fieldset>
+
             <fieldset>
                 <legend>Consegna</legend>
 
