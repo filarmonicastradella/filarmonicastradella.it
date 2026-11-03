@@ -213,7 +213,7 @@
                         <legend>Ricordo {i + 1}</legend>
 
                         <p>
-                            <label for="ricordo-{piece}-tipo">Che cos'è</label>
+                            <label for="ricordo-{piece}-tipo">Tipologia</label>
                             <select id="ricordo-{piece}-tipo" name="ricordo_{i + 1}_tipo" required>
                                 <option value="" disabled selected>Scegli</option>
                                 {#each pieceTypes as type (type)}
