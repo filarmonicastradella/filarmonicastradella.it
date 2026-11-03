@@ -58,7 +58,8 @@
 <section>
     <h2>Chi li riceve</h2>
     <p>
-        Hanno accesso ai dati i volontari della Filarmonica incaricati della raccolta, i punti di raccolta per la sola consegna, il Comune di Fivizzano
+        Hanno accesso ai dati i volontari della Filarmonica incaricati della raccolta, il personale dei punti di raccolta, che riceve e
+        custodisce gli originali, il Comune di Fivizzano
         e la Biblioteca civica per l'allestimento delle mostre, il fornitore che inoltra il modulo via email (formsubmit.co) e i fornitori del sito e
         dei canali social per la pubblicazione online.
     </p>

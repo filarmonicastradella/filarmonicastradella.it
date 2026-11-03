@@ -7,7 +7,7 @@
     // Un solo modulo per scriverci e per chiedere un ingaggio (dal 1/11/2026, prima l'ingaggio aveva un modulo suo in /booking):
     // con il motivo «Ingaggio per un evento» compaiono i campi dell'evento. Con «Materiale storico» il modulo diventa la
     // dichiarazione di consegna e liberatoria della raccolta per mostre e archivio (dal 3/11/2026, al posto del foglio di carta):
-    // chi ritira il materiale nei punti di raccolta aiuta a compilarlo chi non usa il telefono.
+    // chi ritira il materiale nei punti di raccolta (personale di quell'ente, che ne prende la custodia) aiuta a compilarlo chi non usa il telefono.
     const BOOKING = "Ingaggio per un evento";
     const MATERIAL = "Materiale storico";
 
@@ -190,11 +190,20 @@
                         <input type="text" id="contatto-ricevuto" name="ricevuto_da" required minlength="2" maxlength="120" />
                     </p>
 
-                    <!-- Chi ritira guarda il documento di chi consegna, senza copiarlo: servirà a restituire gli originali alla persona giusta -->
+                    <!-- Chi ritira è del punto di raccolta, non della Filarmonica: guarda il documento di chi consegna senza copiarlo, e prende
+                     gli originali in custodia per il suo ente fino alla restituzione -->
                     <p>
                         <input type="checkbox" id="contatto-documento-visto" name="documento_verificato" value="Sì" required />
-                        <label for="contatto-documento-visto">Ho verificato l'identità di chi consegna con un documento.</label>
+                        <label for="contatto-documento-visto">Dichiaro di aver verificato l'identità di chi consegna con un documento.</label>
                     </p>
+
+                <p>
+                    <input type="checkbox" id="contatto-custodia" name="presa_in_custodia" value="Sì" required />
+                    <label for="contatto-custodia">
+                        Dichiaro di prendere in custodia gli originali per il punto di raccolta indicato, gratuitamente, fino alla loro
+                        restituzione.
+                    </label>
+                </p>
                 </fieldset>
             {/if}
 
@@ -263,15 +272,15 @@
                 <p>
                     <input type="checkbox" id="materiale-diritti" name="diritti_sul_materiale" value="Sì" required />
                     <label for="materiale-diritti">
-                        Dichiaro che il materiale è mio, o che ho comunque il diritto di disporne e di concedere quanto segue.
+                        Dichiaro che i ricordi che consegno sono miei, o che ho il diritto di prestarli.
                     </label>
                 </p>
 
                 <p>
                     <input type="checkbox" id="materiale-uso" name="autorizzazione_uso" value="Sì" required />
                     <label for="materiale-uso">
-                        Lo presto gratuitamente e autorizzo la Filarmonica, senza limiti di tempo, a digitalizzarlo, a restaurarne le copie, a esporle
-                        in mostre e nei materiali che le presentano e a conservarle nel suo archivio storico.
+                        Presto gratuitamente i ricordi alla Filarmonica e la autorizzo, senza limiti di tempo, a digitalizzarli, restaurarne le copie,
+                        esporle in mostre e conservarle nel suo archivio storico.
                     </label>
                 </p>
 
@@ -279,21 +288,16 @@
                     <p>
                         <input type="checkbox" id="materiale-custodia" name="custodia_e_ritiro" value="Sì" required />
                         <label for="materiale-custodia">
-                            So che gli originali non vengono esposti: la Filarmonica li custodisce gratuitamente per il tempo necessario alla
-                            digitalizzazione e li restituisce appena digitalizzati, il prima possibile; risponde di perdite
-                            o danni solo in caso di dolo o colpa grave e il materiale non è assicurato. Mi impegno a ritirarlo quando mi verrà
-                            comunicato che è pronto: se non lo ritiro entro sei mesi da quella comunicazione, rinuncio alla restituzione e il
-                            materiale resta alla Filarmonica.
+                            Dichiaro di sapere che gli originali non vengono esposti, che restano in custodia al punto di raccolta che li riceve e che
+                            me li restituisce appena digitalizzati, e che non sono assicurati. Mi impegno a ritirarli entro sei mesi dall'avviso,
+                            altrimenti restano alla Filarmonica.
                         </label>
                     </p>
                 {/if}
 
                 <p>
                     <input type="checkbox" id="materiale-online" name="pubblicazione_online" value="Sì" />
-                    <label for="materiale-online">
-                        Acconsento alla pubblicazione delle copie sul sito e sui canali social della Filarmonica, per finalità culturali e senza
-                        scopo di lucro.
-                    </label>
+                    <label for="materiale-online">Acconsento alla pubblicazione delle copie sul sito e sui social della Filarmonica.</label>
                 </p>
 
                 <p>
@@ -302,10 +306,10 @@
                 </p>
 
                 <p>
-                    La Filarmonica sceglie liberamente quali ricordi esporre e pubblicare. Il consenso alla pubblicazione online si può revocare
+                    La Filarmonica sceglie quali ricordi esporre e pubblicare. La pubblicazione online si può revocare in qualsiasi momento
                     scrivendo a
-                    <a href="mailto:privacy@filarmonicastradella.it?subject=Revoca%20della%20pubblicazione%20del%20materiale">privacy@filarmonicastradella.it</a>: la
-                    revoca vale per il futuro e non riguarda le mostre, l'archivio né i materiali già stampati o diffusi.
+                    <a href="mailto:privacy@filarmonicastradella.it?subject=Revoca%20della%20pubblicazione%20del%20materiale">privacy@filarmonicastradella.it</a>; la revoca non riguarda le mostre,
+                    l'archivio né i materiali già stampati.
                 </p>
             </fieldset>
         {/if}
