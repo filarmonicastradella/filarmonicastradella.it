@@ -79,7 +79,8 @@
     <h2>Suona con noi</h2>
     <p>
         Per suonare in {ensemble.title} si entra da soci: prima la <a href="/associazione/iscrizione">domanda di iscrizione</a> all'associazione, con la quota annuale di
-        12 €, poi la richiesta di entrare nella formazione. Strumento, parti e sala prove li mette a disposizione l'associazione.
+        12 €, poi la richiesta di entrare nella formazione. Le parti e la sala prove le mette l'associazione, e alcuni strumenti si possono avere in
+        prestito.
     </p>
 </section>
 
@@ -118,6 +119,7 @@
     <h2>Domande frequenti</h2>
     <FaqItem item={faq.maestro} />
     <FaqItem item={faq.brani} />
+    <FaqItem item={faq.nuovaFormazione} />
 </section>
 
 <p class="rimando"><a href="/formazioni">Le nostre formazioni</a></p>

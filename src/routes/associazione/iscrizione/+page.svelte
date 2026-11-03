@@ -346,12 +346,12 @@
         </p>
     </details>
     <details>
-        <summary>Posso proporre una nuova formazione?</summary>
-        <p>Sì: basta che la propongano almeno tre soci, con una bozza di regolamento.</p>
-    </details>
-    <details>
         <summary>Devo avere uno strumento mio?</summary>
-        <p>No: strumento, parti e sala prove li mette a disposizione l'associazione.</p>
+        <p>
+            Dipende dallo strumento: la Filarmonica ne ha alcuni da prestare, ma non tutti, perché certi costano moltissimo.
+            <a href="/contatti?motivo=iscrizione#scrivici">Scrivici</a> e ti diciamo se quello che suoni è disponibile. Le parti e la sala prove le
+            mettiamo noi.
+        </p>
     </details>
     <details>
         <summary>Ci sono limiti di età?</summary>

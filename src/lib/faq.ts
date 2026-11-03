@@ -22,6 +22,10 @@ export const faq = {
     brani: {
         question: "Chi sceglie i brani?",
         answer: "I musicisti: propongono i brani e li votano in una graduatoria, e i direttori scelgono da lì quelli da suonare."
+    },
+    nuovaFormazione: {
+        question: "Posso proporre una nuova formazione?",
+        answer: "Sì: basta che la propongano almeno tre soci, con una bozza di regolamento."
     }
 } satisfies Record<string, FaqItem>;
 

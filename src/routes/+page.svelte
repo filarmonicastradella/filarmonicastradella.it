@@ -93,8 +93,8 @@
 <section>
     <h2>Suona con noi</h2>
     <p>
-        Cerchiamo musicisti di ogni livello: si impara suonando insieme, nelle prove generali e in quelle di sezione. Strumento, parti e sala prove li
-        mette a disposizione l'associazione.
+        Cerchiamo musicisti di ogni livello: si impara suonando insieme, nelle prove generali e in quelle di sezione. Le parti e la sala prove le mette
+        l'associazione, e alcuni strumenti si possono avere in prestito.
     </p>
     <p class="rimando"><a href="/associazione/iscrizione">Domanda di iscrizione</a></p>
 </section>
