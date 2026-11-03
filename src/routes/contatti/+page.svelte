@@ -137,6 +137,20 @@
 
         {#if isMaterial}
             <fieldset>
+                <legend>Consegna</legend>
+
+                <p>
+                    <input type="radio" id="consegna-scansioni" name="consegna" value="scansioni" bind:group={delivery} />
+                    <label for="consegna-scansioni">Mando da qui le scansioni o le foto del materiale</label>
+                </p>
+
+                <p>
+                    <input type="radio" id="consegna-originali" name="consegna" value="originali" bind:group={delivery} />
+                    <label for="consegna-originali">Consegno gli originali a un punto di raccolta</label>
+                </p>
+            </fieldset>
+
+            <fieldset>
                 <legend>Il materiale</legend>
 
                 {#each pieces as piece, i (piece)}
@@ -154,18 +168,30 @@
                         </p>
 
                         <p>
-                            <label for="pezzo-{piece}-descrizione">Descrizione (che cosa mostra, dove)</label>
-                            <input type="text" id="pezzo-{piece}-descrizione" name="pezzo_{i + 1}_descrizione" required minlength="3" maxlength="200" />
+                            <label for="pezzo-{piece}-descrizione">Descrizione</label>
+                            <textarea id="pezzo-{piece}-descrizione" name="pezzo_{i + 1}_descrizione" rows="3" required minlength="3" maxlength="1000"></textarea>
                         </p>
 
                         <p>
-                            <label for="pezzo-{piece}-anno">Anno, anche approssimativo</label>
+                            <label for="pezzo-{piece}-anno">Anno</label>
                             <input type="text" id="pezzo-{piece}-anno" name="pezzo_{i + 1}_anno" maxlength="20" />
                         </p>
 
                         <p>
-                            <label for="pezzo-{piece}-autore">Autore, se lo conosci</label>
+                            <label for="pezzo-{piece}-autore">Autore</label>
                             <input type="text" id="pezzo-{piece}-autore" name="pezzo_{i + 1}_autore" maxlength="120" />
+                        </p>
+
+                        <!-- Un file per pezzo: la scansione mandata da casa, o la foto fatta da chi ritira l'originale -->
+                        <p>
+                            <label for="pezzo-{piece}-file">{handsOriginals ? "Foto al momento della consegna (JPG o PNG)" : "Scansione o foto (JPG, PNG o PDF)"}</label>
+                            <input
+                                type="file"
+                                id="pezzo-{piece}-file"
+                                name="attachment"
+                                required
+                                accept={handsOriginals ? "image/jpeg,image/png" : "image/jpeg,image/png,application/pdf"}
+                            />
                         </p>
 
                         {#if pieces.length > 1}
@@ -175,27 +201,6 @@
                 {/each}
 
                 <p><button type="button" onclick={() => pieces.push(nextPiece++)}>Aggiungi un altro pezzo</button></p>
-            </fieldset>
-
-            <fieldset>
-                <legend>Consegna</legend>
-
-                <p>
-                    <input type="radio" id="consegna-scansioni" name="consegna" value="scansioni" bind:group={delivery} />
-                    <label for="consegna-scansioni">Mando da qui le scansioni o le foto del materiale</label>
-                </p>
-
-                <p>
-                    <input type="radio" id="consegna-originali" name="consegna" value="originali" bind:group={delivery} />
-                    <label for="consegna-originali">Consegno gli originali a un punto di raccolta</label>
-                </p>
-
-                {#if !handsOriginals}
-                    <p>
-                        <label for="contatto-scansioni">Scansioni o foto del materiale (JPG, PNG o PDF)</label>
-                        <input type="file" id="contatto-scansioni" name="attachment" required multiple accept="image/jpeg,image/png,application/pdf" />
-                    </p>
-                {/if}
             </fieldset>
 
             <!-- La dichiarazione di consegna e liberatoria della raccolta, una casella per impegno -->
@@ -345,10 +350,6 @@
                     <input type="text" id="contatto-busta" name="scritto_sulla_busta" required minlength="2" maxlength="120" />
                 </p>
 
-                <p>
-                    <label for="contatto-foto-consegna">Foto del materiale al momento della consegna (JPG o PNG)</label>
-                    <input type="file" id="contatto-foto-consegna" name="attachment" required multiple accept="image/jpeg,image/png" />
-                </p>
             </fieldset>
         {/if}
 
