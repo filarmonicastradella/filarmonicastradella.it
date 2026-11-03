@@ -1,6 +1,7 @@
 <script lang="ts">
     import { browser } from "$app/environment";
     import { page } from "$app/state";
+    import { occasions } from "$lib/occasions";
     import { organization } from "$lib/organization";
 
     // Un solo modulo per scriverci e per chiedere un ingaggio (dal 1/11/2026, prima l'ingaggio aveva un modulo suo in /booking):
@@ -24,19 +25,6 @@
         { key: "privacy", name: "Privacy e dati personali", mailbox: "privacy" },
         { key: "sito", name: "Problemi con il sito", mailbox: "webmaster" },
         { key: "altro", name: "Altro", mailbox: "info" }
-    ];
-
-    // Chi organizza ragiona per occasioni: la formazione adatta la proponiamo noi. Niente funzioni religiose né eventi
-    // di partito (associazione laica e apartitica, vedi le domande frequenti); i convegni sono tra le occasioni più frequenti.
-    const occasions = [
-        "Concerto, rassegna o festival",
-        "Convegno o conferenza",
-        "Cerimonia o ricorrenza civile",
-        "Festa in piazza, sagra o corteo",
-        "Rievocazione storica",
-        "Festa privata o matrimonio",
-        "Ospedale, RSA o iniziativa sociale",
-        "Altro"
     ];
 
     // Il motivo scelto dal link (chiave o nome intero), aggiornato anche se si arriva da un altro link della stessa pagina;
@@ -124,6 +112,11 @@
     <!-- Da riattivare insieme a /faq:
     <p>Prima di scriverci, guarda le <a href="/faq">domande frequenti</a>.</p>
     -->
+</section>
+
+<section>
+    <h2>Per il tuo evento</h2>
+    <p>Occasioni, formazioni e domande sugli ingaggi sono nella pagina <a href="/contatti/ingaggi">La Filarmonica al tuo evento</a>.</p>
 </section>
 
 <section id="scrivici">
@@ -375,11 +368,10 @@
     </form>
 </section>
 
-<!-- Le domande cambiano con il motivo scelto nel modulo: per il materiale storico quelle della raccolta, altrimenti quelle sugli ingaggi
-     (fino al 1/11/2026 nella pagina /booking). Senza JS restano quelle sugli ingaggi. -->
-<section>
-    <h2>Domande frequenti</h2>
-    {#if isMaterial}
+<!-- Le domande sulla raccolta del materiale storico, solo quando si sceglie quel motivo; quelle sugli ingaggi sono in /contatti/ingaggi -->
+{#if isMaterial}
+    <section>
+        <h2>Domande frequenti</h2>
         <details>
             <summary>Dove posso consegnare gli originali?</summary>
             <p>In uno dei punti di raccolta: {collectionPoints.join("; ")}. Chi ritira il materiale ti aiuta anche a compilare il modulo.</p>
@@ -402,34 +394,8 @@
                 rimozione dal sito e dai social.
             </p>
         </details>
-    {:else}
-        <details>
-            <summary>Dove suonate?</summary>
-            <p>Ci spostiamo in tutta la Lunigiana.</p>
-        </details>
-        <details>
-            <summary>Suonate a funzioni religiose o a iniziative di partito?</summary>
-            <p>
-                No: siamo un'associazione laica e apartitica, e non suoniamo a funzioni religiose né a feste e iniziative di partito.
-                Per le occasioni religiose collaboriamo però con le realtà musicali amiche della Lunigiana, e possiamo indicarti a chi rivolgerti.
-            </p>
-        </details>
-        <details>
-            <summary>Con quanto anticipo devo scrivervi?</summary>
-            <p>Almeno 30 giorni prima dell'evento.</p>
-        </details>
-        <details>
-            <summary>Con quanti musicisti suonate?</summary>
-            <p>Dipende dalla formazione e dall'occasione: te lo indichiamo nella proposta.</p>
-        </details>
-        <details>
-            <summary>Cosa serve sul posto?</summary>
-            <p>
-                Uno spazio adatto alla formazione, le sedie e un riparo in caso di pioggia. La corrente elettrica non sempre è necessaria, ma è gradita.
-            </p>
-        </details>
-    {/if}
-</section>
+    </section>
+{/if}
 
 <!-- Da riattivare insieme a /associazione/sedi:
 <section>
