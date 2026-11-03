@@ -19,7 +19,7 @@
 </svelte:head>
 
 <!-- Nella fascia si tiene il titolo del foglio, «DI SANTA CECILIA» -->
-<ArticleHeader {article} style="--cover-placeholder: url({sonettoPlaceholder}); --cover-position: center 9%; --cover-document: 1">
+<ArticleHeader {article} style="--cover-placeholder: url({sonettoPlaceholder}); --cover-position: center 9%">
     <p>
         Il 3 maggio 1789 l'Accademia dei Dissonanti, la Filarmonica di allora, festeggiò Santa Cecilia, patrona dei musicisti, con una messa di
         Giuseppe Sarti, e durante la festa distribuì un sonetto stampato per l'occasione. Quel foglio si è conservato.

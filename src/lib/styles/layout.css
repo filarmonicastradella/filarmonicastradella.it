@@ -274,9 +274,8 @@ main > header:has(> picture)::after {
 }
 
 /*
- * Trattamento (docs/DESIGN.md, Fotografia): tutte le foto, nuove e d'archivio, quasi desaturate e con un velo
- * dal bordeaux notte all'inchiostro; i dipinti e i documenti in bianco e nero, senza velo, se la pagina lo indica
- * con --cover-document: 1 (0, il valore di base, è il velo). Sotto la foto c'è la sua anteprima sfocata,
+ * Trattamento (docs/DESIGN.md, Fotografia): tutte le immagini, foto nuove e d'archivio, dipinti e documenti,
+ * quasi desaturate e con un velo dal bordeaux notte all'inchiostro. Sotto la foto c'è la sua anteprima sfocata,
  * incorporata nella pagina e indicata dalla pagina stessa in --cover-placeholder: compare subito, e la foto
  * vera ci si posa sopra quando è arrivata. Il trattamento sta sul <picture>, così vale per tutte e due.
  */
@@ -288,7 +287,7 @@ main > header > picture {
     /* È posizionata: il margine tra gli elementi dell'intestazione la sposterebbe */
     margin: 0;
     background: var(--cover-placeholder) var(--cover-position, center) / cover;
-    filter: grayscale(calc(0.6 + 0.4 * var(--cover-document, 0))) contrast(calc(1 + 0.1 * var(--cover-document, 0)));
+    filter: grayscale(0.6);
 }
 
 /*
@@ -302,7 +301,6 @@ main > header:has(> picture) {
         color-mix(in srgb, var(--color-inchiostro) 20%, transparent),
         color-mix(in srgb, var(--color-inchiostro) 6%, transparent) var(--space-2),
         transparent var(--space-5);
-    --cover-veil-strength: calc(1 - var(--cover-document, 0));
 }
 
 main > header > picture::after {
@@ -313,8 +311,8 @@ main > header > picture::after {
         linear-gradient(var(--cover-shade-stops)),
         linear-gradient(to top, var(--cover-shade-stops)),
         linear-gradient(
-            color-mix(in srgb, var(--color-bordeaux-notte) calc(45% * var(--cover-veil-strength)), transparent),
-            color-mix(in srgb, var(--color-inchiostro) calc(55% * var(--cover-veil-strength)), transparent)
+            color-mix(in srgb, var(--color-bordeaux-notte) 45%, transparent),
+            color-mix(in srgb, var(--color-inchiostro) 55%, transparent)
         );
 }
 
