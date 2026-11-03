@@ -337,16 +337,6 @@
                 <legend>L'evento</legend>
 
                 <p>
-                    <label for="contatto-formazione">Formazione</label>
-                    <select id="contatto-formazione" name="formazione" bind:value={ensemble}>
-                        <option>{NO_PREFERENCE}</option>
-                        {#each ensembles as { slug, title } (slug)}
-                            <option>{title}</option>
-                        {/each}
-                    </select>
-                </p>
-
-                <p>
                     <label for="contatto-occasione">Occasione</label>
                     <select id="contatto-occasione" name="occasione" required>
                         <option value="" disabled selected>Scegli l'occasione</option>
@@ -372,6 +362,16 @@
                 <p>
                     <label for="contatto-luogo">Luogo</label>
                     <input type="text" id="contatto-luogo" name="luogo" required minlength="2" maxlength="120" />
+                </p>
+
+                <p>
+                    <label for="contatto-formazione">Formazione</label>
+                    <select id="contatto-formazione" name="formazione" bind:value={ensemble}>
+                        <option>{NO_PREFERENCE}</option>
+                        {#each ensembles as { slug, title } (slug)}
+                            <option>{title}</option>
+                        {/each}
+                    </select>
                 </p>
             </fieldset>
         {/if}
