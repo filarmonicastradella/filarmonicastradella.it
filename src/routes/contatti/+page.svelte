@@ -4,8 +4,11 @@
     import { organization } from "$lib/organization";
 
     // Un solo modulo per scriverci e per chiedere un ingaggio (dal 1/11/2026, prima l'ingaggio aveva un modulo suo in /booking):
-    // con il motivo «Ingaggio per un evento» compaiono i campi dell'evento.
+    // con il motivo «Ingaggio per un evento» compaiono i campi dell'evento. Con «Materiale storico» il modulo diventa la
+    // dichiarazione di consegna e liberatoria della raccolta per la mostra (dal 3/11/2026, al posto del foglio di carta):
+    // chi ritira il materiale nei punti di raccolta aiuta a compilarlo chi non usa il telefono.
     const BOOKING = "Ingaggio per un evento";
+    const MATERIAL = "Materiale storico";
 
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
     // La chiave sceglie il motivo da un link: /contatti?motivo=ingaggio#scrivici
@@ -16,7 +19,7 @@
         { key: "donazioni", name: "Donazioni e ricevute", mailbox: "tesoreria" },
         { key: "collaborazioni", name: "Collaborazioni, enti e sponsor", mailbox: "presidente" },
         { key: "stampa", name: "Stampa e media", mailbox: "presidente" },
-        { key: "storia", name: "Materiale storico", mailbox: "info" },
+        { key: "storia", name: MATERIAL, mailbox: "info" },
         { key: "minori", name: "Tutela dei minori", mailbox: "safeguarding" },
         { key: "privacy", name: "Privacy e dati personali", mailbox: "privacy" },
         { key: "sito", name: "Problemi con il sito", mailbox: "webmaster" },
@@ -42,6 +45,18 @@
     let topic = $derived(topics.find(({ key, name }) => key === requested || name === requested)?.name ?? topics[0].name);
     const mailbox = $derived(topics.find(({ name }) => name === topic)?.mailbox ?? "info");
     const isBooking = $derived(topic === BOOKING);
+    const isMaterial = $derived(topic === MATERIAL);
+
+    // Materiale storico: le scansioni si mandano dal modulo, gli originali si portano a un punto di raccolta (gli stessi del calendario)
+    let delivery = $state("scansioni");
+    const handsOriginals = $derived(isMaterial && delivery === "originali");
+    const collectionPoints = [
+        "Agenzia Vittoria Assicurazioni Orietti, Fivizzano",
+        "Dal libro alla solidarietà, piazza Medicea, Fivizzano",
+        "Biblioteca civica Abate E. Gerini, Fivizzano",
+        "Biblioteca Mario Tobino, Magliano",
+        "Biblioteca Mario Rigoni Stern, Sassalbo"
+    ];
 
     // Almeno 30 giorni da oggi, il giorno in Italia (AAAA-MM-GG); il sito si ricostruisce ogni 3 ore, il limite resta aggiornato
     const minDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString("en-CA", { timeZone: "Europe/Rome" });
@@ -83,11 +98,15 @@
 
 <section id="scrivici">
     <h2>Scrivici</h2>
-    <form action="https://formsubmit.co/{mailbox}@filarmonicastradella.it" method="POST">
+    <form action="https://formsubmit.co/{mailbox}@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
         <input
             type="hidden"
             name="_subject"
-            value={isBooking ? "Richiesta per un evento – Filarmonica Stradella" : "Nuovo messaggio dal sito – Filarmonica Stradella"}
+            value={isBooking
+                ? "Richiesta per un evento – Filarmonica Stradella"
+                : isMaterial
+                  ? "Materiale per la mostra «La tradizione bandistica in Lunigiana» – Filarmonica Stradella"
+                  : "Nuovo messaggio dal sito – Filarmonica Stradella"}
         />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_next" value="https://filarmonicastradella.it/contatti/grazie" />
@@ -106,10 +125,132 @@
             </p>
 
             <p>
-                <label for="contatto-messaggio">Messaggio</label>
-                <textarea id="contatto-messaggio" name="messaggio" rows="6" required minlength="10" maxlength="2000"></textarea>
+                <label for="contatto-messaggio">{isMaterial ? "Che cosa consegni" : "Messaggio"}</label>
+                <textarea
+                    id="contatto-messaggio"
+                    name="messaggio"
+                    rows="6"
+                    required
+                    minlength="10"
+                    maxlength="2000"
+                    aria-describedby={isMaterial ? "contatto-materiale-aiuto" : undefined}
+                ></textarea>
             </p>
+
+            {#if isMaterial}
+                <p id="contatto-materiale-aiuto">
+                    Per ogni pezzo: che cosa è (foto, filmato, locandina, programma), l'anno approssimativo e l'autore, se lo conosci.
+                </p>
+            {/if}
         </fieldset>
+
+        {#if isMaterial}
+            <fieldset>
+                <legend>Consegna</legend>
+
+                <p>
+                    <input type="radio" id="consegna-scansioni" name="consegna" value="scansioni" bind:group={delivery} />
+                    <label for="consegna-scansioni">Mando da qui le scansioni o le foto del materiale</label>
+                </p>
+
+                <p>
+                    <input type="radio" id="consegna-originali" name="consegna" value="originali" bind:group={delivery} />
+                    <label for="consegna-originali">Consegno gli originali a un punto di raccolta</label>
+                </p>
+
+                {#if handsOriginals}
+                    <p>
+                        <label for="contatto-punto">Punto di raccolta</label>
+                        <select id="contatto-punto" name="punto_di_raccolta" required>
+                            <option value="" disabled selected>Scegli il punto di raccolta</option>
+                            {#each collectionPoints as point (point)}
+                                <option>{point}</option>
+                            {/each}
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="contatto-ricevuto">Ricevuto da (nome e cognome di chi ritira)</label>
+                        <input type="text" id="contatto-ricevuto" name="ricevuto_da" required minlength="2" maxlength="120" />
+                    </p>
+
+                    <p>
+                        <label for="contatto-busta">Scritto sulla busta (per esempio cognome e data)</label>
+                        <input type="text" id="contatto-busta" name="scritto_sulla_busta" required minlength="2" maxlength="120" />
+                    </p>
+
+                    <p>
+                        <label for="contatto-foto-consegna">Foto del materiale al momento della consegna (JPG o PNG)</label>
+                        <input type="file" id="contatto-foto-consegna" name="attachment" required multiple accept="image/jpeg,image/png" />
+                    </p>
+                {:else}
+                    <p>
+                        <label for="contatto-scansioni">Scansioni o foto del materiale (JPG, PNG o PDF)</label>
+                        <input type="file" id="contatto-scansioni" name="attachment" required multiple accept="image/jpeg,image/png,application/pdf" />
+                    </p>
+                {/if}
+            </fieldset>
+
+            <!-- La dichiarazione di consegna e liberatoria della raccolta, una casella per impegno -->
+            <fieldset>
+                <legend>Autorizzazioni</legend>
+
+                <p>
+                    <input type="checkbox" id="materiale-maggiorenne" name="maggiorenne" value="Sì" required />
+                    <label for="materiale-maggiorenne">Dichiaro di essere maggiorenne.</label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="materiale-diritti" name="diritti_sul_materiale" value="Sì" required />
+                    <label for="materiale-diritti">
+                        Dichiaro che il materiale è mio, o che ho comunque il diritto di disporne e di concedere quanto segue.
+                    </label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="materiale-uso" name="autorizzazione_uso" value="Sì" required />
+                    <label for="materiale-uso">
+                        Lo presto gratuitamente perché venga digitalizzato e autorizzo la Filarmonica, senza compenso e senza limiti di tempo, a
+                        ritoccarne le copie per restauro e impaginazione; a esporre le copie, stampate o su schermo, nella mostra «La tradizione
+                        bandistica in Lunigiana» e nelle sue repliche, anche in altri luoghi e negli anni successivi, e nei materiali che le presentano
+                        (locandine, stampa, catalogo); a conservare le copie digitali nel proprio archivio storico. La Filarmonica sceglie liberamente
+                        quali pezzi esporre e pubblicare.
+                    </label>
+                </p>
+
+                {#if handsOriginals}
+                    <p>
+                        <input type="checkbox" id="materiale-custodia" name="custodia_e_ritiro" value="Sì" required />
+                        <label for="materiale-custodia">
+                            So che gli originali non vengono esposti: la Filarmonica li custodisce gratuitamente per il tempo necessario alla
+                            digitalizzazione e li restituisce appena digitalizzati, possibilmente prima dell'apertura della mostra; risponde di perdite
+                            o danni solo in caso di dolo o colpa grave e il materiale non è assicurato. Mi impegno a ritirarlo quando mi verrà
+                            comunicato che è pronto: se non lo ritiro entro sei mesi da quella comunicazione, rinuncio alla restituzione e il
+                            materiale resta alla Filarmonica.
+                        </label>
+                    </p>
+                {/if}
+
+                <p>
+                    <input type="checkbox" id="materiale-online" name="pubblicazione_online" value="Sì" />
+                    <label for="materiale-online">
+                        Acconsento alla pubblicazione delle copie sul sito e sui canali social della Filarmonica, per finalità culturali e senza
+                        scopo di lucro.
+                    </label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="materiale-nome" name="nome_nelle_didascalie" value="Sì" />
+                    <label for="materiale-nome">Acconsento a indicare il mio nome nelle didascalie.</label>
+                </p>
+
+                <p>
+                    Il consenso alla pubblicazione online si può revocare scrivendo a
+                    <a href="mailto:privacy@filarmonicastradella.it?subject=Revoca%20della%20pubblicazione%20del%20materiale">privacy@filarmonicastradella.it</a>: la
+                    revoca vale per il futuro e non riguarda la mostra, l'archivio né i materiali già stampati o diffusi.
+                </p>
+            </fieldset>
+        {/if}
 
         {#if isBooking}
             <fieldset>
@@ -168,12 +309,20 @@
         <p>
             <input type="checkbox" id="contatto-privacy" name="consenso_privacy" value="Sì" required />
             <label for="contatto-privacy">
-                Ho letto l'<a href="/informative/privacy" target="_blank" rel="noopener noreferrer">informativa sulla privacy</a> e acconsento al trattamento dei dati
-                per ricevere una risposta.
+                {#if isMaterial}
+                    Ho letto l'<a href="/informative/materiale" target="_blank" rel="noopener noreferrer">informativa per la raccolta del materiale</a>.
+                {:else}
+                    Ho letto l'<a href="/informative/privacy" target="_blank" rel="noopener noreferrer">informativa sulla privacy</a> e acconsento al trattamento
+                    dei dati per ricevere una risposta.
+                {/if}
             </label>
         </p>
 
-        <p><button type="submit">{isBooking ? "Invia la richiesta" : "Invia il messaggio"}</button></p>
+        <p>
+            <button type="submit">
+                {isBooking ? "Invia la richiesta" : handsOriginals ? "Registra la consegna" : isMaterial ? "Invia il materiale" : "Invia il messaggio"}
+            </button>
+        </p>
     </form>
 </section>
 
