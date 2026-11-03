@@ -141,7 +141,8 @@
 
     /*
      * Il punto della foto da tenere (layout.css, copertina): su schermo largo la fascia è più bassa in proporzione,
-     * e la foto si abbassa un po' perché il direttore sul podio resti intero, dalla testa ai piedi.
+     * e conta che si vedano le teste: al 30% restano dentro quella del direttore e quelle della prima fila anche
+     * nella fascia più bassa (1280×720); più in alto si taglia la prima fila, più in basso il direttore.
      */
     header {
         --cover-position: center 40%;
@@ -149,7 +150,7 @@
 
     @media (min-width: 64rem) {
         header {
-            --cover-position: center 35%;
+            --cover-position: center 30%;
         }
     }
 

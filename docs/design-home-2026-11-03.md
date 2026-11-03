@@ -12,7 +12,7 @@ Primo blocco della voce 0.1 della lista unica: una pagina sola, la home, guardat
 Nella prima schermata ci sono due pulsanti bordeaux pieni, «Sostienici» e «Per il tuo evento»; nel tema scuro due blocchi rosa. `Hero.svelte` lo vorrebbe secondario, a contorno, come dice anche `DESIGN.md` (un solo pulsante pieno). La regola però non vince mai: Svelte la compila come `header.svelte-x > p:where(.svelte-x) > a:where(.svelte-x)`, che pesa (0,1,3), mentre quella generale di `forms.css` pesa (0,2,4). Non è un problema di gusto: lo stile scritto non arriva in pagina.
 Come sistemarlo: dare più peso alla regola della hero (per esempio ripetere `:only-child`), oppure togliere la variante dalla hero e farla diventare il pulsante secondario generale di `forms.css`, che esiste già per le mappe e i download. La seconda è più pulita.
 
-**2. Su schermo largo la foto perde lo striscione. D**
+**2. Su schermo largo la foto perde lo striscione. D** *(Deciso il 4/11/2026: conta che si vedano le teste, non lo striscione. Sul largo la foto è al 30%, così la testa del direttore entra anche nella fascia più bassa, 1280×720, dove al 35% era tagliata.)*
 A 1280×800 la fascia della foto è alta 340 px e mostra solo l'orchestra; lo striscione «Società Filarmonica Fivizzano 1777-1987, duecento anni e un po'», che dice di che concerto si tratta (ed è nel testo alternativo), resta tagliato sopra. Sul telefono si legge. Sul largo la foto è un'orchestra qualunque; con lo striscione è *quel* concerto.
 Scelte: alzare la posizione della foto sul largo (si perde un po' di podio in basso), o una fascia più alta su schermo largo. Da decidere guardando.
 
