@@ -5,13 +5,14 @@
     // da qui i 160vw di "sizes", altrimenti il browser sceglie una versione larga quanto lo schermo e la ingrandisce.
     // Più larghezze delle due predefinite (metà e intera): con solo 1024 e 2048 un telefono scaricava sempre la 2048.
     // SOSPESA finché non ci sono i consensi alle immagini di chi suona oggi (modulo dei consensi); al suo posto la foto
-    // d'archivio degli anni Ottanta. Per tornare indietro: togliere il commento a queste due righe, all'alt e alla
-    // posizione, e cancellare le due righe della foto d'archivio.
+    // d'archivio del concerto per i duecento anni, nel 1987 (scansione raddrizzata di 1,7° e rifilata). Per tornare
+    // indietro: togliere il commento a queste due righe, all'alt e alla posizione, e cancellare le due righe della
+    // foto d'archivio.
     // import cover from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?enhanced&w=2048;1600;1280;960;640";
     // import coverPlaceholder from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?w=24&blur=2&format=webp&inline";
-    import cover from "$lib/assets/imgs/anni_80.jpeg?enhanced&w=2048;1600;1280;960;640";
+    import cover from "$lib/assets/imgs/bicentenario-1987.jpg?enhanced&w=2048;1600;1280;960;640";
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
-    import coverPlaceholder from "$lib/assets/imgs/anni_80.jpeg?w=24&blur=2&format=webp&inline";
+    import coverPlaceholder from "$lib/assets/imgs/bicentenario-1987.jpg?w=24&blur=2&format=webp&inline";
 </script>
 
 <!--
@@ -19,7 +20,7 @@
     più alta, l'occhiello, il titolo in corpo display e la comparsa della prima schermata.
 -->
 <!-- SOSPESA, la posizione della foto di Stradella Facendo: style:--cover-position="center 35%" -->
-<header style:--cover-placeholder="url({coverPlaceholder})" style:--cover-position="center 60%">
+<header style:--cover-placeholder="url({coverPlaceholder})" style:--cover-position="center 40%">
     <hgroup>
         <p>Fivizzano · dal 1777</p>
         <h1>Filarmonica <span>Alessandro <em>Stradella</em></span></h1>
@@ -28,7 +29,7 @@
     <p><a href="/contatti?motivo=ingaggio#scrivici">Per il tuo evento</a></p>
     <enhanced:img
         src={cover}
-        alt="La Filarmonica in concerto di sera su un palco in piazza, negli anni Ottanta"
+        alt="La Filarmonica in concerto di sera su un palco in piazza nel 1987, sotto lo striscione «Società Filarmonica Fivizzano, 1777-1987, duecento anni e un po'»"
         sizes="(orientation: portrait) 160vw, 100vw"
         fetchpriority="high"
     />
