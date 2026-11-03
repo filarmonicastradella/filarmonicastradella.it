@@ -50,11 +50,11 @@
     // Materiale storico: le scansioni si mandano dal modulo, gli originali si portano a un punto di raccolta (gli stessi del calendario)
     let delivery = $state("scansioni");
 
-    // I pezzi consegnati, uno per riga: con JS se ne aggiungono altri, senza ce n'è uno e il resto va nel messaggio
+    // I ricordi consegnati, uno per gruppo: con JS se ne aggiungono altri, senza ce n'è uno e il resto va nel messaggio
     const pieceTypes = ["Foto", "Filmato", "Locandina", "Programma", "Altro"];
     let pieces = $state([1]);
     let nextPiece = 2;
-    // L'anno di un pezzo: al massimo quello in corso (il sito si ricostruisce ogni 3 ore); prima, qualsiasi
+    // L'anno di un ricordo: al massimo quello in corso (il sito si ricostruisce ogni 3 ore); prima, qualsiasi
     const thisYear = new Date().getFullYear();
     const handsOriginals = $derived(isMaterial && delivery === "originali");
     const collectionPoints = [
@@ -210,11 +210,11 @@
 
                 {#each pieces as piece, i (piece)}
                     <fieldset>
-                        <legend>Pezzo {i + 1}</legend>
+                        <legend>Ricordo {i + 1}</legend>
 
                         <p>
-                            <label for="pezzo-{piece}-tipo">Che cos'è</label>
-                            <select id="pezzo-{piece}-tipo" name="pezzo_{i + 1}_tipo" required>
+                            <label for="ricordo-{piece}-tipo">Che cos'è</label>
+                            <select id="ricordo-{piece}-tipo" name="ricordo_{i + 1}_tipo" required>
                                 <option value="" disabled selected>Scegli</option>
                                 {#each pieceTypes as type (type)}
                                     <option>{type}</option>
@@ -223,26 +223,26 @@
                         </p>
 
                         <p>
-                            <label for="pezzo-{piece}-descrizione">Descrizione</label>
-                            <textarea id="pezzo-{piece}-descrizione" name="pezzo_{i + 1}_descrizione" rows="3" required minlength="3" maxlength="1000"></textarea>
+                            <label for="ricordo-{piece}-descrizione">Descrizione</label>
+                            <textarea id="ricordo-{piece}-descrizione" name="ricordo_{i + 1}_descrizione" rows="3" required minlength="3" maxlength="1000"></textarea>
                         </p>
 
                         <p>
-                            <label for="pezzo-{piece}-anno">Anno</label>
-                            <input type="number" id="pezzo-{piece}-anno" name="pezzo_{i + 1}_anno" max={thisYear} step="1" inputmode="numeric" />
+                            <label for="ricordo-{piece}-anno">Anno</label>
+                            <input type="number" id="ricordo-{piece}-anno" name="ricordo_{i + 1}_anno" max={thisYear} step="1" inputmode="numeric" />
                         </p>
 
                         <p>
-                            <label for="pezzo-{piece}-autore">Autore</label>
-                            <input type="text" id="pezzo-{piece}-autore" name="pezzo_{i + 1}_autore" maxlength="120" />
+                            <label for="ricordo-{piece}-autore">Autore</label>
+                            <input type="text" id="ricordo-{piece}-autore" name="ricordo_{i + 1}_autore" maxlength="120" />
                         </p>
 
-                        <!-- Un file per pezzo: la scansione mandata da casa, o la foto fatta da chi ritira l'originale -->
+                        <!-- Un file per ricordo: la scansione mandata da casa, o la foto fatta da chi ritira l'originale -->
                         <p>
-                            <label for="pezzo-{piece}-file">{handsOriginals ? "Foto al momento della consegna (JPG o PNG)" : "Scansione o foto (JPG, PNG o PDF)"}</label>
+                            <label for="ricordo-{piece}-file">{handsOriginals ? "Foto al momento della consegna (JPG o PNG)" : "Scansione o foto (JPG, PNG o PDF)"}</label>
                             <input
                                 type="file"
-                                id="pezzo-{piece}-file"
+                                id="ricordo-{piece}-file"
                                 name="attachment"
                                 required
                                 accept={handsOriginals ? "image/jpeg,image/png" : "image/jpeg,image/png,application/pdf"}
@@ -250,12 +250,12 @@
                         </p>
 
                         {#if pieces.length > 1}
-                            <p><button type="button" onclick={() => (pieces = pieces.filter((p) => p !== piece))}>Rimuovi il pezzo {i + 1}</button></p>
+                            <p><button type="button" onclick={() => (pieces = pieces.filter((p) => p !== piece))}>Rimuovi il ricordo {i + 1}</button></p>
                         {/if}
                     </fieldset>
                 {/each}
 
-                <p><button type="button" onclick={() => pieces.push(nextPiece++)}>Aggiungi un altro pezzo</button></p>
+                <p><button type="button" onclick={() => pieces.push(nextPiece++)}>Aggiungi un altro ricordo</button></p>
             </fieldset>
 
             <!-- La dichiarazione di consegna e liberatoria della raccolta, una casella per impegno -->
@@ -282,7 +282,7 @@
                         bandistica in Lunigiana» e nelle sue repliche, anche in altri luoghi e negli anni successivi, e nei materiali che le presentano
                         (locandine, stampa, catalogo); a conservare le copie digitali nel proprio archivio storico e a consegnarne una copia alla
                         Biblioteca civica Abate E. Gerini di Fivizzano, che può conservarla e renderla consultabile per finalità di studio e ricerca.
-                        La Filarmonica sceglie liberamente quali pezzi esporre e pubblicare.
+                        La Filarmonica sceglie liberamente quali ricordi esporre e pubblicare.
                     </label>
                 </p>
 
