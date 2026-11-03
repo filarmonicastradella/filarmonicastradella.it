@@ -1,12 +1,15 @@
 ---
-title: Apertura delle iscrizioni ai corsi di musica
+title: Aperte le iscrizioni ai corsi del Circolo Fantoni
 date: 2026-07-15
-excerpt: Al via i corsi di strumento per il nuovo anno. Scopri l'offerta per tutte le età e i laboratori orchestrali.
+excerpt: "[Riassunto da scrivere: il Circolo Fantoni di Serricciolo apre le iscrizioni ai suoi corsi di strumento]"
 category: notizie
-# Esempio di prova per provare la categoria Notizie: resta in bozza, non va pubblicato
+# Bozza per il futuro: da pubblicare quando il Circolo Fantoni apre davvero le iscrizioni, con la data giusta
 draft: true
 ---
 
-Sono aperte le iscrizioni ai corsi di strumento per il nuovo anno, rivolti a bambini, ragazzi e adulti.
+<!-- SEGNAPOSTO. La Filarmonica non fa corsi né lezioni individuali: si impara suonando insieme, nelle prove generali e di sezione.
+     I corsi di strumento sono del Circolo Fantoni di Serricciolo (Accademia Stradella), che li segnaliamo come realtà amica;
+     per i ragazzi c'è anche la scuola media a indirizzo musicale di Fivizzano (comuni di Fivizzano, Casola e Fosdinovo).
+     Data, corsi, età e link al sito del Circolo da inserire quando escono. -->
 
-I corsi sono organizzati dall'Accademia Stradella, con cui collaboriamo: tutte le informazioni e le modalità di iscrizione sono sul suo sito.
+[Testo da scrivere]
