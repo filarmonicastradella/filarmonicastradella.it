@@ -250,7 +250,7 @@
                         </p>
 
                         {#if pieces.length > 1}
-                            <p><button type="button" onclick={() => (pieces = pieces.filter((p) => p !== piece))}>Togli il pezzo {i + 1}</button></p>
+                            <p><button type="button" onclick={() => (pieces = pieces.filter((p) => p !== piece))}>Rimuovi il pezzo {i + 1}</button></p>
                         {/if}
                     </fieldset>
                 {/each}
