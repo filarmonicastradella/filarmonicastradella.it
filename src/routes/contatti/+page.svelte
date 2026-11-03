@@ -158,38 +158,7 @@
                     <label for="consegna-originali">Consegno gli originali a un punto di raccolta</label>
                 </p>
 
-                {#if handsOriginals}
-                    <p>
-                        <label for="contatto-punto">Punto di raccolta</label>
-                        <select id="contatto-punto" name="punto_di_raccolta" required>
-                            <option value="" disabled selected>Scegli il punto di raccolta</option>
-                            {#each collectionPoints as point (point)}
-                                <option>{point}</option>
-                            {/each}
-                        </select>
-                    </p>
-
-                    <p>
-                        <label for="contatto-ricevuto">Ricevuto da (nome e cognome di chi ritira)</label>
-                        <input type="text" id="contatto-ricevuto" name="ricevuto_da" required minlength="2" maxlength="120" />
-                    </p>
-
-                    <!-- Chi ritira guarda il documento di chi consegna, senza copiarlo: servirà a restituire gli originali alla persona giusta -->
-                    <p>
-                        <input type="checkbox" id="contatto-documento-visto" name="documento_verificato" value="Sì" required />
-                        <label for="contatto-documento-visto">Chi ritira: ho verificato l'identità di chi consegna con un documento.</label>
-                    </p>
-
-                    <p>
-                        <label for="contatto-busta">Scritto sulla busta (per esempio cognome e data)</label>
-                        <input type="text" id="contatto-busta" name="scritto_sulla_busta" required minlength="2" maxlength="120" />
-                    </p>
-
-                    <p>
-                        <label for="contatto-foto-consegna">Foto del materiale al momento della consegna (JPG o PNG)</label>
-                        <input type="file" id="contatto-foto-consegna" name="attachment" required multiple accept="image/jpeg,image/png" />
-                    </p>
-                {:else}
+                {#if !handsOriginals}
                     <p>
                         <label for="contatto-scansioni">Scansioni o foto del materiale (JPG, PNG o PDF)</label>
                         <input type="file" id="contatto-scansioni" name="attachment" required multiple accept="image/jpeg,image/png,application/pdf" />
@@ -294,7 +263,7 @@
         {/if}
 
         <fieldset>
-            <legend>Chi scrive</legend>
+            <legend>{isMaterial ? "Chi consegna" : "Chi scrive"}</legend>
 
             <p>
                 <label for="contatto-nome">Nome e cognome</label>
@@ -312,6 +281,44 @@
                 <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" inputmode="tel" required minlength="9" maxlength="20" />
             </p>
         </fieldset>
+
+        <!-- Gli originali portati a un punto di raccolta: compila chi ritira, con chi consegna accanto -->
+        {#if handsOriginals}
+            <fieldset>
+                <legend>Chi ritira</legend>
+
+                <p>
+                    <label for="contatto-punto">Punto di raccolta</label>
+                    <select id="contatto-punto" name="punto_di_raccolta" required>
+                        <option value="" disabled selected>Scegli il punto di raccolta</option>
+                        {#each collectionPoints as point (point)}
+                            <option>{point}</option>
+                        {/each}
+                    </select>
+                </p>
+
+                <p>
+                    <label for="contatto-ricevuto">Nome e cognome</label>
+                    <input type="text" id="contatto-ricevuto" name="ricevuto_da" required minlength="2" maxlength="120" />
+                </p>
+
+                <!-- Chi ritira guarda il documento di chi consegna, senza copiarlo: servirà a restituire gli originali alla persona giusta -->
+                <p>
+                    <input type="checkbox" id="contatto-documento-visto" name="documento_verificato" value="Sì" required />
+                    <label for="contatto-documento-visto">Ho verificato l'identità di chi consegna con un documento.</label>
+                </p>
+
+                <p>
+                    <label for="contatto-busta">Scritto sulla busta (per esempio cognome e data)</label>
+                    <input type="text" id="contatto-busta" name="scritto_sulla_busta" required minlength="2" maxlength="120" />
+                </p>
+
+                <p>
+                    <label for="contatto-foto-consegna">Foto del materiale al momento della consegna (JPG o PNG)</label>
+                    <input type="file" id="contatto-foto-consegna" name="attachment" required multiple accept="image/jpeg,image/png" />
+                </p>
+            </fieldset>
+        {/if}
 
         <p>
             <input type="checkbox" id="contatto-privacy" name="consenso_privacy" value="Sì" required />
