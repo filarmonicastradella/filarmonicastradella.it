@@ -277,10 +277,8 @@
                 <p>
                     <input type="checkbox" id="materiale-uso" name="autorizzazione_uso" value="Sì" required />
                     <label for="materiale-uso">
-                        Lo presto gratuitamente perché venga digitalizzato e autorizzo la Filarmonica, senza compenso e senza limiti di tempo, a
-                        ritoccarne le copie per restauro e impaginazione; a esporre le copie, stampate o su schermo, in mostre, anche in altri
-                        luoghi e negli anni successivi, e nei materiali che le presentano
-                        (locandine, stampa, catalogo); a conservare le copie digitali nel proprio archivio storico. La Filarmonica sceglie liberamente quali ricordi esporre e pubblicare.
+                        Lo presto gratuitamente e autorizzo la Filarmonica, senza limiti di tempo, a digitalizzarlo, a restaurarne le copie, a esporle
+                        in mostre e nei materiali che le presentano e a conservarle nel suo archivio storico.
                     </label>
                 </p>
 
@@ -311,7 +309,8 @@
                 </p>
 
                 <p>
-                    Il consenso alla pubblicazione online si può revocare scrivendo a
+                    La Filarmonica sceglie liberamente quali ricordi esporre e pubblicare. Il consenso alla pubblicazione online si può revocare
+                    scrivendo a
                     <a href="mailto:privacy@filarmonicastradella.it?subject=Revoca%20della%20pubblicazione%20del%20materiale">privacy@filarmonicastradella.it</a>: la
                     revoca vale per il futuro e non riguarda le mostre, l'archivio né i materiali già stampati o diffusi.
                 </p>
