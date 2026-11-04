@@ -235,7 +235,16 @@ main > header::after {
     }
 }
 
+/*
+ * Il corpo Display solo per l'apertura della home e le pagine con la foto in testa; le altre (indici, pagine di
+ * servizio, moduli, eventi) hanno Titolo 1, così il titolo grande resta un evento e non un'abitudine.
+ */
 main > header h1 {
+    font-size: var(--fs-h1);
+    line-height: var(--lh-heading);
+}
+
+main > header:has(> picture) h1 {
     font-size: var(--fs-display);
     line-height: var(--lh-display);
 }
@@ -349,7 +358,6 @@ body > div > footer::before {
 
 body > div > footer h2 {
     margin-block-end: var(--space-5);
-    font-size: var(--fs-h3);
 }
 
 body > div > footer ul {

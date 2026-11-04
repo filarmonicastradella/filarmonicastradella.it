@@ -45,7 +45,7 @@ Gli h3 delle schede evento hanno interlinea 1,25 (30 px), gli h3 degli articoli 
 **10. Il sottotitolo gioca con due parole in grassetto. D (0.5)**
 «Custodi della **tradizione**, interpreti del **futuro**»: grigio pietra con due parole in nero, che in più si contrappongono. È il motto ancora da decidere (0.5); se resta, meglio tutto dello stesso colore, senza grassetti: il gesto distintivo della pagina è già «Stradella» in corsivo bordeaux, e due enfasi in tre righe si fanno concorrenza.
 
-**11. Piè di pagina: tre titoli Cormorant uguali affiancati. D (3.11)**
+**11. Piè di pagina: tre titoli Cormorant uguali affiancati. D (3.11)** *(Risolto il 4/11/2026: i titoli delle colonne sono occhielli in Jakarta maiuscolo; «L'associazione» è diventata «Dati dell'ente».)*
 Su schermo largo «Contatti», «L'associazione», «Note legali» sono tre titoli Cormorant della stessa dimensione sulla stessa riga: è il caso che `DESIGN.md` §4 vieta. Basterebbe l'occhiello in Jakarta maiuscolo, quello già usato per «Indirizzo», «Telefono»; sul telefono, una colonna sola, il problema non c'è.
 
 ## Tema scuro

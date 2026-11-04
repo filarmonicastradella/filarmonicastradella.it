@@ -49,7 +49,7 @@
     </section>
 
     <section>
-        <h2>L'associazione</h2>
+        <h2>Dati dell'ente</h2>
 
         <dl>
             <dt>Denominazione</dt>

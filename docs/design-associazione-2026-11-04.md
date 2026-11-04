@@ -10,7 +10,7 @@ Titolo, una frase di presentazione, quattro schede di solo testo in due colonne 
 
 ## Gerarchia
 
-**1. Il piè di pagina pesa più della pagina. D (3.11)**
+**1. Il piè di pagina pesa più della pagina. D (3.11)** *(In parte risolto il 4/11/2026: occhielli al posto dei titoli Cormorant, «Dati dell'ente» al posto di «L'associazione». L'altezza resta.)*
 È l'unico fondo scuro, ha tre titoli Cormorant e undici righe di dati: sul largo è alto quasi quanto il contenuto, sul telefono più del doppio. In più uno dei suoi titoli è «L'associazione», lo stesso testo dell'h1 della pagina. In una pagina corta come questa la parte più vistosa è quella che si ripete uguale ovunque. Proposta: occhielli in Jakarta al posto dei tre titoli (già in 3.11), e un nome diverso per la colonna dei dati («Dati dell'ente», «L'ente»).
 
 **2. Quattro schede uguali, due tipi di contenuto. D (3.10)**
