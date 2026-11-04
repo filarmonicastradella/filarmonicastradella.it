@@ -31,7 +31,7 @@ Proposta: le tre sezioni «porta» (Chi siamo, Suona con noi, Sostieni) diventan
 **6. «Momenti in musica» senza galleria è la sezione più debole. D (3.5, 3.20, 1.4)** *(Risolto il 4/11/2026: senza foto la sezione non compare; il link a Instagram resta nel piè di pagina.)*
 Oggi, senza il token di Instagram, è un titolo, una frase («Le foto dei nostri concerti sono su Instagram.») e un link. Con la galleria vuota la sezione andrebbe nascosta, lasciando il link a Instagram nel testo di «Chi siamo» o nel piè di pagina, che ha già le icone dei social.
 
-**7. Il rimando in maiuscoletto è il segno più forte della pagina. D (3.8)** *(Chiuso il 4/11/2026: i rimandi restano, sono il passo successivo di ogni sezione e non competono con il pulsante della prima schermata; regola in AGENTS.md. Testi corretti con il nome della pagina d'arrivo: «L'associazione», «Iscrizione».)*
+**7. Il rimando in maiuscoletto è il segno più forte della pagina. D (3.8)** *(Chiuso il 4/11/2026: i rimandi restano, sono il passo successivo di ogni sezione e non competono con il pulsante della prima schermata; regola in AGENTS.md. Testi corretti con il nome della pagina d'arrivo: «Associazione», «Iscrizione».)*
 Cinque rimandi bordeaux in maiuscolo spaziato con la freccia, uno per sezione: dopo la hero sono l'unico colore della pagina, e quindi la cosa più vistosa. Il bordeaux finisce per indicare «vai altrove» più che «questo conta». Si ridurrebbero da soli con la proposta 5.
 
 ## Tipografia

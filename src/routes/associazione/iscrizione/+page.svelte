@@ -367,7 +367,7 @@
     </details>
 </section>
 
-<p class="rimando"><a href="/associazione">L'associazione</a></p>
+<p class="rimando"><a href="/associazione">Associazione</a></p>
 
 <style>
     /*

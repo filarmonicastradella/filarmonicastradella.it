@@ -87,7 +87,7 @@
                 >{title}</a
             >{/each}) e porta il suo repertorio nelle sale e nelle piazze del territorio.
     </p>
-    <p class="rimando"><a href="/associazione">L'associazione</a></p>
+    <p class="rimando"><a href="/associazione">Associazione</a></p>
 </section>
 
 <section>
