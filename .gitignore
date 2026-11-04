@@ -27,3 +27,6 @@ vite.config.ts.timestamp-*
 
 # Claude Code (impostazioni locali)
 /.claude/settings.local.json*
+
+# Worker dei moduli: segreti per la prova locale
+.dev.vars
