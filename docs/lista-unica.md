@@ -12,9 +12,8 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 
 ## 0. Prima di tutto: scelte da cui dipendono le altre
 
-- [ ] 0.1 **F** — Revisione libera del design con tutte le skill, guardando le pagine vere. Viene prima di 0.2. (T, S)
-- [ ] 0.2 **D** — Il vestito del sito: si tiene `DESIGN.md` con ritocchi, o si cambia (per esempio il cartellone)? Da questa risposta dipendono quasi tutte le voci della parte 3. (N, PB)
-- [ ] 0.3 **D** — Se cambia, cambia la marca intera o solo il sito? Locandine e social seguono lo stesso `DESIGN.md`. (N)
+**Deciso il 4/11/2026:** si tiene `DESIGN.md`, con ritocchi. Il sito resta sobrio, «da conservatorio»; le direzioni più forti (il cartellone, il rapporto stampato con il bordeaux a tutta superficie e il carattere da testata) sono state viste e scartate come esagerate. Le voci della parte 3 restano valide come ritocchi. La revisione di design (0.1) continua pagina per pagina: `design-home-2026-11-03.md`, `design-associazione-2026-11-04.md`.
+
 - [ ] 0.4 **D** — Quando unire `stili` a `main`: 33 commit non sono online, comprese le correzioni della revisione. La pubblicazione parte solo da `main`. (S)
 - [ ] 0.5 **D** — Il motto: «Custodi della tradizione, interpreti del futuro», «Le dissonanze in un accordo solo» o nessuno? Le pagine si contraddicono, e la revisione lo trova la frase più da IA della hero. (R5.3, R5.32, PB3, N, T)
 - [ ] 0.6 **D** — Notizie e gallerie non hanno fonti: con la regola «l'articolo ha le fonti» restano articoli per eccezione o diventano pagine? (S, T)
@@ -46,7 +45,7 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 - [ ] 2.11 **F** — Pagine future (interviste, riconoscimenti): nascono come articoli, con le fonti. (T, S)
 - [ ] 2.12 **D** — Stampa: oggi si stampano intestazione, menu e corde. Serve un `@media print`? (PAm8)
 
-## 3. Design: resta valida solo se 0.2 tiene il sistema attuale, o va riformulata
+## 3. Design: ritocchi al sistema attuale
 
 - [ ] 3.1 **F** — Display solo con la foto, Titolo 1 altrove: è la tua modifica aperta in `layout.css`, da giudicare e committare. (PAc1, T)
 - [ ] 3.2 **D** — Foto: un duotone vero, o si dichiara il trattamento attuale (`grayscale(.6)`)? (R4.5, PAc6, PAi5, PB2, T)
