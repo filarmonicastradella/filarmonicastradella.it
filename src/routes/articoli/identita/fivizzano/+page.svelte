@@ -26,8 +26,7 @@
 </ArticleHeader>
 
 <section>
-    <h2>Oggi</h2>
-    <h3>La Filarmonica Alessandro Stradella</h3>
+    <h2>La Filarmonica oggi</h2>
     <p>La Filarmonica ha quattro formazioni<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1a" aria-label="Fonte 1">1</a></sup>:</p>
     <ul>
         <li><a href="/formazioni/stradella-facendo">Stradella Facendo</a>, l'orchestra di fiati;</li>
@@ -38,13 +37,19 @@
     <p>
         La sede legale è in via Stretta 5<sup><a href="#fonte-1" role="doc-noteref" id="rimando-1b" aria-label="Fonte 1">1</a></sup>. Le prove si fanno nella sala della Società operaia di mutuo soccorso, in via Radda<sup><a href="#fonte-2" role="doc-noteref" id="rimando-2a" aria-label="Fonte 2">2</a></sup>.
     </p>
-    <h3>La scuola media a indirizzo musicale</h3>
+</section>
+
+<section>
+    <h2>La scuola media a indirizzo musicale</h2>
     <p>
         La scuola media «G. Fantoni» di Fivizzano fa parte dell'Istituto comprensivo che serve i comuni di Fivizzano, Casola in Lunigiana e
         Fosdinovo<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3a" aria-label="Fonte 3">3</a></sup>. L'Istituto ha un percorso a indirizzo musicale, e a Natale i ragazzi suonano in concerto<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3b" aria-label="Fonte 3">3</a></sup>. Gli strumenti insegnati sono flauto,
         clarinetto, sassofono, tromba e percussioni<sup><a href="#fonte-4" role="doc-noteref" id="rimando-4a" aria-label="Fonte 4">4</a></sup>.
     </p>
-    <h3>Il Lunigiana International Music Festival</h3>
+</section>
+
+<section>
+    <h2>Il Lunigiana International Music Festival</h2>
     <p>
         Ogni luglio Fivizzano ospita il Lunigiana International Music Festival<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5a" aria-label="Fonte 5">5</a></sup>. Arrivano studenti e musicisti da tutto il mondo per lezioni,
         masterclass, musica da camera e concerti<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5b" aria-label="Fonte 5">5</a></sup>. Il festival è nato nel <time datetime="2017">2017</time><sup><a href="#fonte-6" role="doc-noteref" id="rimando-6a" aria-label="Fonte 6">6</a></sup>. I concerti si tengono nei luoghi storici del paese: nel 2024 il Museo di San
@@ -53,8 +58,7 @@
 </section>
 
 <section>
-    <h2>La tradizione bandistica</h2>
-    <h3>La banda della Società</h3>
+    <h2>La banda della Società</h2>
     <p>
         Nel <time datetime="1831">1831</time> un rescritto del granduca «erige in Banda Musicale» la Società filarmonica di Fivizzano, con la sua
         uniforme<sup><a href="#fonte-8" role="doc-noteref" id="rimando-8a" aria-label="Fonte 8">8</a></sup>. Nel <time datetime="1832">1832</time>, per la visita di Leopoldo II, la banda alterna i suoi concerti in piazza «fino a notte
@@ -67,7 +71,10 @@
         le società musicali sono due: la Filarmonica e la «Otto febbraio 1880»<sup><a href="#fonte-13" role="doc-noteref" id="rimando-13a" aria-label="Fonte 13">13</a></sup>. Nel settembre <time datetime="1887-09">1887</time>, quando Giosuè Carducci arriva a Fivizzano
         per studiare le carte di Labindo, la sera «la banda municipale» suona un concerto in suo onore<sup><a href="#fonte-14" role="doc-noteref" id="rimando-14a" aria-label="Fonte 14">14</a></sup>.
     </p>
-    <h3>Le bande delle frazioni</h3>
+</section>
+
+<section>
+    <h2>Le bande delle frazioni</h2>
     <p>
         Anche i paesi intorno hanno avuto le loro bande. Nel <time datetime="1909">1909</time> il deputato Ernesto Artom, in viaggio da Aulla a
         Fivizzano, viene salutato dalle bande di Ceserano, Soliera e Gassano<sup><a href="#fonte-15" role="doc-noteref" id="rimando-15a" aria-label="Fonte 15">15</a></sup>. Nel <time datetime="1929">1929</time> il Bollettino della SIAE
@@ -98,7 +105,10 @@
         primo Concorso bandistico «Città di Fivizzano», vinto dalla banda di Pontremoli<sup><a href="#fonte-21" role="doc-noteref" id="rimando-21a" aria-label="Fonte 21">21</a></sup>. Nel <time datetime="1987">1987</time> la Filarmonica
         festeggia i suoi 210 anni<sup><a href="#fonte-22" role="doc-noteref" id="rimando-22a" aria-label="Fonte 22">22</a></sup>.
     </p>
-    <h3>La mostra e la raccolta dei ricordi</h3>
+</section>
+
+<section>
+    <h2>La mostra e la raccolta dei ricordi</h2>
     <p>
         Dal <time datetime="2026-12-05">5</time> all'<time datetime="2026-12-08">8 dicembre 2026</time> la Biblioteca civica Abate E. Gerini ospita la
         mostra «La tradizione bandistica in Lunigiana». Intanto raccogliamo foto e ricordi delle bande di Fivizzano e delle frazioni. Se hai qualcosa da
@@ -107,8 +117,7 @@
 </section>
 
 <section>
-    <h2>Da dove viene</h2>
-    <h3>Libri di musica e di stampa</h3>
+    <h2>Libri di musica e di stampa</h2>
     <p>
         Fivizzano è anche una città del libro. Tra il 1471 e il 1474 Jacopo da Fivizzano vi stampa a caratteri mobili, tra i primi in Italia; nel
         <time datetime="1472">1472</time> esce l'opera di Virgilio<sup><a href="#fonte-23" role="doc-noteref" id="rimando-23a" aria-label="Fonte 23">23</a></sup>. Oggi il Museo della stampa «Jacopo da Fivizzano», in Palazzo Fantoni Bononi,
@@ -124,7 +133,10 @@
         Un altro antifonario, di 280 carte, fu donato alla chiesa dei Santi Jacopo e Antonio dal suo rettore, il fivizzanese Paolo Sarti, il
         <time datetime="1487-02-09">9 febbraio 1487</time><sup><a href="#fonte-27" role="doc-noteref" id="rimando-27a" aria-label="Fonte 27">27</a></sup>.
     </p>
-    <h3>L'Accademia Filarmonica</h3>
+</section>
+
+<section>
+    <h2>L'Accademia Filarmonica</h2>
     <p>
         Il <time datetime="1779-08-03">3 agosto 1779</time> il granduca autorizza a Fivizzano una «Società Filarmonica di Canto e Suono»<sup><a href="#fonte-28" role="doc-noteref" id="rimando-28a" aria-label="Fonte 28">28</a></sup>. Il
         <time datetime="1781-02-04">4 febbraio 1781</time> l'Accademia Filarmonica celebra «per la prima volta» la festa di santa Cecilia nella
@@ -134,7 +146,10 @@
         <enhanced:img src={propositura} alt="Facciata della chiesa dei Santi Jacopo e Antonio a Fivizzano" {sizes} loading="lazy" />
         <figcaption>La chiesa dei Santi Jacopo e Antonio, la «Propositura». Foto di Sailko, CC BY 3.0, <a href="https://commons.wikimedia.org/wiki/File:Fivizzano,_santi_jacopo_e_antonio,_esterno_01.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</figcaption>
     </figure>
-    <h3>Quattro orchestre in piazza</h3>
+</section>
+
+<section>
+    <h2>Quattro orchestre in piazza</h2>
     <p>
         Il <time datetime="1790-12-12">12 dicembre 1790</time>, per l'elezione imperiale di Leopoldo, in piazza si balla con «quattro orchestre, con
         soprabbondante numero di suonatori»<sup><a href="#fonte-30" role="doc-noteref" id="rimando-30a" aria-label="Fonte 30">30</a></sup>.
@@ -144,7 +159,10 @@
         Battaglia, «che possedeva un genio straordinario per la musica», e Odoardo Fantoni, che amavano «andare a suonare il flauto sopra certe balze
         della Valle del Rosaro»<sup><a href="#fonte-31" role="doc-noteref" id="rimando-31a" aria-label="Fonte 31">31</a></sup>.
     </p>
-    <h3>Il Teatro degli Imperfetti</h3>
+</section>
+
+<section>
+    <h2>Il Teatro degli Imperfetti</h2>
     <p>
         Nel <time datetime="1804">1804</time> un gruppo di famiglie fonda l'Accademia degli Imperfetti per costruire il teatro<sup><a href="#fonte-32" role="doc-noteref" id="rimando-32a" aria-label="Fonte 32">32</a></sup>. La prima recita è
         del luglio <time datetime="1810-07">1810</time>, con suonatori chiamati da Parma<sup><a href="#fonte-33" role="doc-noteref" id="rimando-33a" aria-label="Fonte 33">33</a></sup>.
@@ -154,7 +172,10 @@
         cinema, chiuso nei primi anni Ottanta. Il <time datetime="2026-07-21">21 luglio 2026</time> il Comune ha deciso di acquistarlo, con l'obiettivo di
         «far rinascere l'antico Teatro degli Imperfetti» come spazio per la cultura, anche per concerti e associazioni musicali<sup><a href="#fonte-34" role="doc-noteref" id="rimando-34a" aria-label="Fonte 34">34</a></sup>.
     </p>
-    <h3>La famiglia Stradella</h3>
+</section>
+
+<section>
+    <h2>La famiglia Stradella</h2>
     <p>
         Dalla famiglia Stradella di Fivizzano vengono il vescovo Alessio, sepolto nella chiesa di San Giovanni nel 1580<sup><a href="#fonte-35" role="doc-noteref" id="rimando-35a" aria-label="Fonte 35">35</a></sup>, e il compositore
         <a href="/articoli/storia/stradella">Alessandro Stradella</a>. Il <time datetime="1997-12-06">6 dicembre 1997</time> il Comune ha posto una
