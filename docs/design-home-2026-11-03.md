@@ -36,7 +36,7 @@ Cinque rimandi bordeaux in maiuscolo spaziato con la freccia, uno per sezione: d
 
 ## Tipografia
 
-**8. Sul telefono titolo di sezione e titolo di scheda quasi uguali. D (4.2)**
+**8. Sul telefono titolo di sezione e titolo di scheda quasi uguali. D (4.2)** *(4/11/2026: rimandato alla proposta di scala modulare, voce 4.14 della lista unica.)*
 A 390 px «Prossimi eventi» (h2) è 28 px, «Concerto Autunnale…» (h3) è 24 px, nello stesso carattere: 4 px di differenza, e il peso è lo stesso (600). La gerarchia la reggono solo il filetto e lo spazio. Proposta: h2 più grande su telefono (36 px, come già in 4.2) oppure h3 a 500, così la scheda si legge come voce e non come titolo.
 
 **9. Interlinee diverse per lo stesso ruolo. F** *(Risolto il 4/11/2026: tutti i titoli tranne l'h1 a 1,25, `--lh-snug`; anche `DESIGN.md`. Chiude la voce 4.1.)*
