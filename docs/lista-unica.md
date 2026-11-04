@@ -121,6 +121,7 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 - [ ] 5.26 **F** — Liberatoria: «ne prende visione» senza antecedente. (R5b.31)
 - [ ] 5.27 **F** — Domande degli eventi anche sulla mostra: «concerti» o «eventi». (R5b.30, R3b.16)
 - [ ] 5.28 **F** — Controllo antislop dei testi con `antislop-copywriting`, da installare nel progetto: non è mai stato fatto. La skill è pensata per l'inglese, quindi per l'italiano vale come seconda lente dopo `scrittura-italiana`. Comprende i testi scritti dopo la revisione (`alt` e didascalia della lapide). (S)
+- [ ] 5.30 **D** — Nomi delle pagine contro menu e rimandi (4/11/2026): titolo «L'associazione» e «Le nostre formazioni» contro le voci «Associazione» e «Formazioni»; i rimandi delle formazioni dicono «Le nostre formazioni»; i tre ringraziamenti dopo i moduli dicono «Torna alla pagina principale» invece del nome della pagina del modulo. (S)
 - [ ] 5.29 **D** — La lineetta `—` nei titoli di tutte le pagine: antislop la vieta. Tenerla o sostituirla? (S)
 
 ## 6. SEO e dati strutturati
