@@ -54,6 +54,7 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
     {
         slug: "missione",
         category: "identita",
+        draft: true,
         author: "Leonardo Orietti Del Duca",
         title: "La nostra missione",
         date: "2026-09-28",

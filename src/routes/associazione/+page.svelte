@@ -1,6 +1,6 @@
 <svelte:head>
     <title>L'associazione — Filarmonica Alessandro Stradella</title>
-    <meta name="description" content="Chi è la Filarmonica Alessandro Stradella APS: la missione, la storia, le formazioni e i musicisti dell'associazione." />
+    <meta name="description" content="Chi è la Filarmonica Alessandro Stradella APS: la storia, Alessandro Stradella e l'iscrizione all'associazione." />
 </svelte:head>
 
 <header>
@@ -12,12 +12,14 @@
 </header>
 
 <ul>
+    <!-- IN BOZZA dal 4/11/2026, come l'articolo (articles.ts, identita/missione/_page.svelte):
     <li>
         <a href="/articoli/identita/missione">
             <h2>La nostra missione</h2>
             <p>Perché siamo rinati, in cosa crediamo e dove vogliamo arrivare.</p>
         </a>
     </li>
+    -->
     <li>
         <a href="/articoli/storia/filarmonica">
             <h2>Storia della Filarmonica</h2>
