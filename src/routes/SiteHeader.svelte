@@ -49,7 +49,7 @@
 <style>
     /*
      * "fixed": resta in vista scorrendo; lo spazio nel flusso lo riserva "main" (layout.css).
-     * Design system: logotipo orizzontale a sinistra (simbolo, occhiello FILARMONICA, nome), voci di
+     * Design system: logotipo orizzontale a sinistra (simbolo, «Filarmonica» e il nome), voci di
      * menu in linea e il pulsante «Sostienici», a contorno (il pulsante pieno è l'azione della pagina).
      */
     header {
@@ -110,16 +110,14 @@
         white-space: nowrap;
     }
 
-    /* L'occhiello FILARMONICA del logotipo */
+    /*
+     * «Filarmonica» sopra il nome, nello stesso carattere e colore e più piccola, come il frontespizio di un libro
+     * (dal 4/11/2026; prima era un occhiello in Jakarta maiuscolo spaziato, bordeaux). Segue la misura del nome.
+     */
     header > a > span:last-child > span {
         margin-block-end: var(--space-1);
-        color: var(--text-brand);
-        font-family: var(--font-text);
-        /* Si restringe un po' anche lei, così il nome sotto non deve farsi così piccolo da solo */
-        font-size: clamp(0.5625rem, 1.5vw, var(--fs-logo-eyebrow));
-        font-weight: var(--fw-text-strong);
-        letter-spacing: var(--tracking-logo);
-        text-transform: uppercase;
+        /* Sul telefono il nome si rimpicciolisce: «Filarmonica» non scende sotto la misura degli occhielli */
+        font-size: max(var(--fs-eyebrow), var(--fs-logo-eyebrow));
     }
 
     /*

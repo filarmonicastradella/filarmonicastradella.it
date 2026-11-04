@@ -78,6 +78,7 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 
 ## 4. Il documento DESIGN.md
 
+- [ ] 4.15 **F** — Logotipo: nel sito dal 4/11/2026 «Filarmonica» è in Cormorant, più piccola sopra il nome, senza l'occhiello in Jakarta maiuscolo. Da rifare uguale nel kit di marca (versioni verticale e orizzontale), su locandine, carta intestata e social. (S)
 - [ ] 4.14 **D** — Proposta del 4/11/2026: scala tipografica modulare, un solo rapporto (1,25, terza maggiore) dal testo a 16 px: piccoli 12,8 (didascalie, occhielli e pulsanti a una sola misura), presentazione 20, Titolo 3 25, Titolo 2 31,3, Titolo 1 39,1, Display 61 sul largo e 48,8 sul telefono (un gradino sotto). Quasi tutta fissa; risolve il punto 8 della home (Titolo 2 e 3 troppo vicini sul telefono) e assorbe 4.2. Campione confrontato con la scala di oggi in sessione; da riprendere più avanti. (S)
 - [ ] 4.2 **D** — Regola «un solo titolo Cormorant»: darle un ambito, e `--fs-h2` da 28 a 36 su telefono. (PA3, PAc3, R4)
 - [ ] 4.3 **F** — «Una volta per schermata» diventa «una per estremità». (PA5, PAc5)
