@@ -90,6 +90,14 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
         date: "2026-11-04",
         excerpt:
             "Una passeggiata nel centro di Fivizzano, dalla Propositura alla piazza, dal teatro degli Imperfetti a San Giovanni, sulle tracce di due secoli e mezzo di musica documentata."
+    },
+    {
+        slug: "fivizzano",
+        category: "identita",
+        title: "Fivizzano, città della musica",
+        date: "2026-11-04",
+        excerpt:
+            "A Fivizzano oggi ci sono una filarmonica con quattro formazioni, una scuola media a indirizzo musicale, un festival internazionale e una lunga tradizione di bande nei paesi intorno. E la musica ha radici che risalgono al Settecento."
     }
 ];
 
