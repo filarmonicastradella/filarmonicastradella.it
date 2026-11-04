@@ -1,0 +1,13 @@
+# Il servizio dei moduli del sito (worker/src/index.js). Si mette online con: cd worker && npx wrangler deploy
+name = "filarmonica-moduli"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+SITE = "https://filarmonicastradella.it"
+SENDER = "sito@filarmonicastradella.it"
+# Da dove si possono inviare i moduli: il sito e l'anteprima locale
+ALLOWED_ORIGINS = "https://filarmonicastradella.it,http://localhost:4173,http://localhost:5173"
+
+# Il segreto BREVO_API_KEY non sta qui: si mette con  npx wrangler secret put BREVO_API_KEY
