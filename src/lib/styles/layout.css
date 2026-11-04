@@ -310,10 +310,7 @@ main > header > picture::after {
     background:
         linear-gradient(var(--cover-shade-stops)),
         linear-gradient(to top, var(--cover-shade-stops)),
-        linear-gradient(
-            color-mix(in srgb, var(--color-bordeaux-notte) 45%, transparent),
-            color-mix(in srgb, var(--color-inchiostro) 55%, transparent)
-        );
+        var(--cover-veil);
 }
 
 /* Il testo alternativo resta per chi usa uno screen reader, ma non si vede scritto mentre la foto si carica */

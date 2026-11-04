@@ -37,6 +37,11 @@
     --border-strong: var(--color-inchiostro);
     --focus-ring: var(--color-bordeaux);
     --corde-color: var(--color-bordeaux);
+    /* Il velo sulle foto delle copertine (layout.css): leggero sulla carta, più scuro nel tema scuro */
+    --cover-veil: linear-gradient(
+        color-mix(in srgb, var(--color-bordeaux-notte) 20%, transparent),
+        color-mix(in srgb, var(--color-inchiostro) 28%, transparent)
+    );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -55,6 +60,10 @@
         --border-strong: var(--color-carta);
         --focus-ring: var(--color-rosa-velluto);
         --corde-color: var(--color-rosa-velluto);
+        --cover-veil: linear-gradient(
+            color-mix(in srgb, var(--color-bordeaux-notte) 45%, transparent),
+            color-mix(in srgb, var(--color-inchiostro) 55%, transparent)
+        );
     }
 }
 
