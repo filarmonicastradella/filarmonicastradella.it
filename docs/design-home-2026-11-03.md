@@ -21,14 +21,14 @@ Scelte: alzare la posizione della foto sul largo (si perde un po' di podio in ba
 
 ## Gerarchia
 
-**4. Il punto d'ingresso è il nome, che è già nel logo. D (3.6)**
+**4. Il punto d'ingresso è il nome, che è già nel logo. D (3.6)** *(4/11/2026: in sospeso. La riga con il prossimo concerto nella prima schermata metteva troppe cose insieme.)*
 L'occhio va prima sulla foto, poi sul titolo «Filarmonica Alessandro Stradella», che ripete il logotipo dell'intestazione. Il prossimo concerto, l'informazione più utile per chi arriva, è sotto la piega sia a 1280 (la sezione comincia a circa 900 px) sia sul telefono (circa 940 px). Proposta: tenere il nome ma portare nella prima schermata una riga con il prossimo appuntamento (data, titolo, luogo, link), sotto il sottotitolo e al posto del pulsante o accanto. È la voce 3.6: ora c'è la misura.
 
 **5. Sotto la hero, sei sezioni con lo stesso passo. D (3.4, 3.5)**
 Prossimi eventi, Chi siamo, Suona con noi, Ultimi articoli, Momenti in musica, Sostieni la Filarmonica: stesso titolo a sinistra, stesso testo a destra, stessa pausa di 6 rem, stesso rimando in fondo. Quattro su sei sono una o due frasi e un link. Su schermo largo la colonna sinistra ha solo il titolo e la pagina sembra un elenco di cartelli: niente prevale, e la pagina è lunga (3385 px sul largo, 4750 sul telefono) per quello che dice.
 Proposta: le tre sezioni «porta» (Chi siamo, Suona con noi, Sostieni) diventano un solo blocco con un titolo e tre righe brevi con link, come l'agenda degli eventi; restano due blocchi pieni (eventi e articoli). Contrasta con la regola «mai titoli Cormorant affiancati» solo se le tre righe diventano colonne: in righe una sotto l'altra no.
 
-**6. «Momenti in musica» senza galleria è la sezione più debole. D (3.5, 3.20, 1.4)**
+**6. «Momenti in musica» senza galleria è la sezione più debole. D (3.5, 3.20, 1.4)** *(Risolto il 4/11/2026: senza foto la sezione non compare; il link a Instagram resta nel piè di pagina.)*
 Oggi, senza il token di Instagram, è un titolo, una frase («Le foto dei nostri concerti sono su Instagram.») e un link. Con la galleria vuota la sezione andrebbe nascosta, lasciando il link a Instagram nel testo di «Chi siamo» o nel piè di pagina, che ha già le icone dei social.
 
 **7. Il rimando in maiuscoletto è il segno più forte della pagina. D (3.8)**

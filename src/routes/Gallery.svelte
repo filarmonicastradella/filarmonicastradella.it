@@ -9,11 +9,10 @@
     const shown = $derived(slides?.slice(0, SHOWN) ?? []);
 </script>
 
-<section>
-    <h2>Momenti in musica</h2>
-    {#if slides === null}
-        <p>Le foto dei nostri concerti sono su Instagram.</p>
-    {:else if shown.length > 0}
+<!-- Senza foto (feed non raggiungibile o vuoto) la sezione non c'è: il link a Instagram resta nel piè di pagina -->
+{#if shown.length > 0}
+    <section>
+        <h2>Momenti in musica</h2>
         <ul>
             {#each shown as slide (slide.id)}
                 <!-- Il colore dominante della foto fa da fondo finché l'immagine non arriva -->
@@ -49,10 +48,10 @@
                 </li>
             {/each}
         </ul>
-    {/if}
 
-    <p><a href="https://instagram.com/filarmonicastradella" target="_blank" rel="noopener noreferrer">Guarda tutto su Instagram</a></p>
-</section>
+        <p><a href="https://instagram.com/filarmonicastradella" target="_blank" rel="noopener noreferrer">Guarda tutto su Instagram</a></p>
+    </section>
+{/if}
 
 <style>
     /*
