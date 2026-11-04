@@ -41,9 +41,8 @@
     <h3>La scuola media a indirizzo musicale</h3>
     <p>
         La scuola media «G. Fantoni» di Fivizzano fa parte dell'Istituto comprensivo che serve i comuni di Fivizzano, Casola in Lunigiana e
-        Fosdinovo<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3a" aria-label="Fonte 3">3</a></sup>. Ha un indirizzo musicale: i ragazzi studiano uno strumento durante le medie
-        <!-- SEGNAPOSTO: fonte ufficiale (sito o PTOF dell'Istituto) e strumenti insegnati -->[fonte da completare: sito o PTOF dell'Istituto; strumenti
-        insegnati].
+        Fosdinovo<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3a" aria-label="Fonte 3">3</a></sup>. L'Istituto ha un percorso a indirizzo musicale, e ogni dicembre i ragazzi lo presentano con un concerto di Natale<sup><a href="#fonte-3" role="doc-noteref" id="rimando-3b" aria-label="Fonte 3">3</a></sup>.
+        <!-- SEGNAPOSTO: gli strumenti insegnati -->[Strumenti insegnati da completare.]
     </p>
     <h3>Il Lunigiana International Music Festival</h3>
     <p>
@@ -77,20 +76,20 @@
         <dd>
             Nel 1963 la Società musicale di Gassano festeggia il 90° anniversario della fondazione, cioè il 1873. Nel 1980 celebra il centenario della
             Società filarmonica «Unione Musicale», con le bande di Caprigliola, Pallerone, Casola e Vinca<sup><a href="#fonte-14" role="doc-noteref" id="rimando-14a" aria-label="Fonte 14">14</a></sup>. Nel 2009 la Filarmonica «G. Verdi» di
-            Gassano organizza la sagra del paese<sup><a href="#fonte-15" role="doc-noteref" id="rimando-15a" aria-label="Fonte 15">15</a></sup>. [Attività di oggi da completare.]
+            Gassano organizza la sagra del paese<sup><a href="#fonte-15" role="doc-noteref" id="rimando-15a" aria-label="Fonte 15">15</a></sup>. Oggi non è più attiva<sup><a href="#fonte-16" role="doc-noteref" id="rimando-16a" aria-label="Fonte 16">16</a></sup>.
         </dd>
         <dt>Moncigoli</dt>
         <dd>
-            L'8 dicembre 1963 la banda di Moncigoli suona al monumento ai caduti del paese<sup><a href="#fonte-16" role="doc-noteref" id="rimando-16a" aria-label="Fonte 16">16</a></sup>. Nel 1968 suona all'inaugurazione del monumento ai caduti
-            di Agnino<sup><a href="#fonte-17" role="doc-noteref" id="rimando-17a" aria-label="Fonte 17">17</a></sup>. Nel 2023 la Banda «Puccini» di Moncigoli apre con il suo corteo «Sapori di Fivizzano»<sup><a href="#fonte-18" role="doc-noteref" id="rimando-18a" aria-label="Fonte 18">18</a></sup>. [Se è ancora attiva e l'anno di
-            fondazione, forse 1927, da completare.]
+            L'8 dicembre 1963 la banda di Moncigoli suona al monumento ai caduti del paese<sup><a href="#fonte-17" role="doc-noteref" id="rimando-17a" aria-label="Fonte 17">17</a></sup>. Nel 1968 suona all'inaugurazione del monumento ai caduti
+            di Agnino<sup><a href="#fonte-18" role="doc-noteref" id="rimando-18a" aria-label="Fonte 18">18</a></sup>. Nel 2023 la Banda «Puccini» di Moncigoli apre con il suo corteo «Sapori di Fivizzano»<sup><a href="#fonte-19" role="doc-noteref" id="rimando-19a" aria-label="Fonte 19">19</a></sup>. È ancora attiva, e nel
+            <time datetime="2027">2027</time> compie cento anni<sup><a href="#fonte-16" role="doc-noteref" id="rimando-16b" aria-label="Fonte 16">16</a></sup>.
         </dd>
         <dt>Vinca</dt>
-        <dd>Nel 1929 è tra le bande abbonate alla SIAE<sup><a href="#fonte-13" role="doc-noteref" id="rimando-13b" aria-label="Fonte 13">13</a></sup>, e nel 1980 suona a Gassano per il centenario<sup><a href="#fonte-14" role="doc-noteref" id="rimando-14b" aria-label="Fonte 14">14</a></sup>. [Anni di attività da completare.]</dd>
+        <dd>Nel 1929 è tra le bande abbonate alla SIAE<sup><a href="#fonte-13" role="doc-noteref" id="rimando-13b" aria-label="Fonte 13">13</a></sup>, e nel 1980 suona a Gassano per il centenario<sup><a href="#fonte-14" role="doc-noteref" id="rimando-14b" aria-label="Fonte 14">14</a></sup>. Oggi non è più attiva<sup><a href="#fonte-16" role="doc-noteref" id="rimando-16c" aria-label="Fonte 16">16</a></sup>.</dd>
         <dt>Ceserano e Soliera</dt>
-        <dd>Le loro bande sono attestate nel 1909<sup><a href="#fonte-12" role="doc-noteref" id="rimando-12b" aria-label="Fonte 12">12</a></sup>. [Altre notizie da completare.]</dd>
+        <dd>Le loro bande sono attestate nel 1909<sup><a href="#fonte-12" role="doc-noteref" id="rimando-12b" aria-label="Fonte 12">12</a></sup>. Oggi non ci sono più<sup><a href="#fonte-16" role="doc-noteref" id="rimando-16d" aria-label="Fonte 16">16</a></sup>.</dd>
     </dl>
-    <p>[Altre bande delle frazioni, se ce ne sono, da completare.]</p>
+    <p>Di tutte queste, oggi resta solo la banda di Moncigoli<sup><a href="#fonte-16" role="doc-noteref" id="rimando-16e" aria-label="Fonte 16">16</a></sup>.</p>
     <h3>La mostra e la raccolta dei ricordi</h3>
     <p>
         Dal <time datetime="2026-12-05">5</time> all'<time datetime="2026-12-08">8 dicembre 2026</time> la Biblioteca civica Abate E. Gerini ospita la
@@ -103,9 +102,9 @@
     <h2>Da dove viene</h2>
     <h3>L'Accademia Filarmonica</h3>
     <p>
-        Il <time datetime="1779-08-03">3 agosto 1779</time> il granduca autorizza a Fivizzano una «Società Filarmonica di Canto e Suono»<sup><a href="#fonte-19" role="doc-noteref" id="rimando-19a" aria-label="Fonte 19">19</a></sup>. Il
+        Il <time datetime="1779-08-03">3 agosto 1779</time> il granduca autorizza a Fivizzano una «Società Filarmonica di Canto e Suono»<sup><a href="#fonte-20" role="doc-noteref" id="rimando-20a" aria-label="Fonte 20">20</a></sup>. Il
         <time datetime="1781-02-04">4 febbraio 1781</time> l'Accademia Filarmonica celebra «per la prima volta» la festa di santa Cecilia nella
-        Propositura dei Santi Jacopo e Antonio<sup><a href="#fonte-20" role="doc-noteref" id="rimando-20a" aria-label="Fonte 20">20</a></sup>. Il resto è nella <a href="/articoli/storia/filarmonica">storia della Filarmonica</a>.
+        Propositura dei Santi Jacopo e Antonio<sup><a href="#fonte-21" role="doc-noteref" id="rimando-21a" aria-label="Fonte 21">21</a></sup>. Il resto è nella <a href="/articoli/storia/filarmonica">storia della Filarmonica</a>.
     </p>
     <figure>
         <enhanced:img src={propositura} alt="Facciata della chiesa dei Santi Jacopo e Antonio a Fivizzano" {sizes} loading="lazy" />
@@ -114,18 +113,18 @@
     <h3>Quattro orchestre in piazza</h3>
     <p>
         Il <time datetime="1790-12-12">12 dicembre 1790</time>, per l'elezione imperiale di Leopoldo, in piazza si balla con «quattro orchestre, con
-        soprabbondante numero di suonatori»<sup><a href="#fonte-21" role="doc-noteref" id="rimando-21a" aria-label="Fonte 21">21</a></sup>.
+        soprabbondante numero di suonatori»<sup><a href="#fonte-22" role="doc-noteref" id="rimando-22a" aria-label="Fonte 22">22</a></sup>.
     </p>
     <h3>Il Teatro degli Imperfetti</h3>
     <p>
-        Nel <time datetime="1804">1804</time> un gruppo di famiglie fonda l'Accademia degli Imperfetti per costruire il teatro<sup><a href="#fonte-22" role="doc-noteref" id="rimando-22a" aria-label="Fonte 22">22</a></sup>. La prima recita è
-        del luglio <time datetime="1810-07">1810</time>, con suonatori chiamati da Parma<sup><a href="#fonte-23" role="doc-noteref" id="rimando-23a" aria-label="Fonte 23">23</a></sup>.
+        Nel <time datetime="1804">1804</time> un gruppo di famiglie fonda l'Accademia degli Imperfetti per costruire il teatro<sup><a href="#fonte-23" role="doc-noteref" id="rimando-23a" aria-label="Fonte 23">23</a></sup>. La prima recita è
+        del luglio <time datetime="1810-07">1810</time>, con suonatori chiamati da Parma<sup><a href="#fonte-24" role="doc-noteref" id="rimando-24a" aria-label="Fonte 24">24</a></sup>.
     </p>
     <h3>La famiglia Stradella</h3>
     <p>
-        Dalla famiglia Stradella di Fivizzano vengono il vescovo Alessio, sepolto nella chiesa di San Giovanni nel 1580<sup><a href="#fonte-24" role="doc-noteref" id="rimando-24a" aria-label="Fonte 24">24</a></sup>, e il compositore
+        Dalla famiglia Stradella di Fivizzano vengono il vescovo Alessio, sepolto nella chiesa di San Giovanni nel 1580<sup><a href="#fonte-25" role="doc-noteref" id="rimando-25a" aria-label="Fonte 25">25</a></sup>, e il compositore
         <a href="/articoli/storia/stradella">Alessandro Stradella</a>. Il <time datetime="1997-12-06">6 dicembre 1997</time> il Comune ha posto una
-        lapide sulla loro casa, «auspice la Società Filarmonica»<sup><a href="#fonte-25" role="doc-noteref" id="rimando-25a" aria-label="Fonte 25">25</a></sup>. Quell'anno la Filarmonica ha preso il nome di Alessandro Stradella.
+        lapide sulla loro casa, «auspice la Società Filarmonica»<sup><a href="#fonte-26" role="doc-noteref" id="rimando-26a" aria-label="Fonte 26">26</a></sup>. Quell'anno la Filarmonica ha preso il nome di Alessandro Stradella.
     </p>
     <figure>
         <enhanced:img src={sanGiovanni} alt="L'ex chiesa di San Giovanni a Fivizzano, oggi museo" {sizes} loading="lazy" />
@@ -139,10 +138,10 @@
     <ol>
         <li id="fonte-1">Filarmonica Alessandro Stradella, <a href="/formazioni">Le nostre formazioni</a> e dati dell'ente nel piè di pagina di questo sito. Torna al testo: <a role="doc-backlink" href="#rimando-1a" aria-label="Torna al rimando 1a">a</a>, <a role="doc-backlink" href="#rimando-1b" aria-label="Torna al rimando 1b">b</a></li>
         <li id="fonte-2"><!-- SEGNAPOSTO: fonte pubblicabile per la sede di via Radda -->[Fonte pubblicabile per la sede di via Radda da completare.] <a role="doc-backlink" href="#rimando-2a" aria-label="Torna al rimando 2">Torna al testo</a></li>
-        <li id="fonte-3">Istituto comprensivo di Fivizzano, plessi: <a href="https://www.tuttitalia.it/toscana/36-fivizzano/86-scuole/" target="_blank" rel="noopener noreferrer">Tuttitalia, scuole di Fivizzano</a>. [Meglio il sito dell'Istituto, da completare.] <a role="doc-backlink" href="#rimando-3a" aria-label="Torna al rimando 3">Torna al testo</a></li>
+        <li id="fonte-3">Istituto comprensivo «Moratti-Bonomi» di Fivizzano, sito ufficiale, sezione <a href="https://www.icmoratti.edu.it/category/indirizzo-musicale/" target="_blank" rel="noopener noreferrer">Indirizzo musicale</a> (concerti di Natale 2022 e 2023); plessi: <a href="https://www.tuttitalia.it/toscana/36-fivizzano/86-scuole/" target="_blank" rel="noopener noreferrer">Tuttitalia, scuole di Fivizzano</a>. Torna al testo: <a role="doc-backlink" href="#rimando-3a" aria-label="Torna al rimando 3a">a</a>, <a role="doc-backlink" href="#rimando-3b" aria-label="Torna al rimando 3b">b</a></li>
         <li id="fonte-4">Lunigiana International Music Festival, <a href="https://www.lunigianamusicfestival.com/" target="_blank" rel="noopener noreferrer">sito ufficiale</a>. Torna al testo: <a role="doc-backlink" href="#rimando-4a" aria-label="Torna al rimando 4a">a</a>, <a role="doc-backlink" href="#rimando-4b" aria-label="Torna al rimando 4b">b</a></li>
         <li id="fonte-5">«VC Interview: Chantal Balestri, Lunigiana International Music Festival Artistic Director», <a href="https://theviolinchannel.com/vc-interview-chantal-balestri-lunigiana-international-music-festival-artistic-director/" target="_blank" rel="noopener noreferrer"><i>The Violin Channel</i></a>. <a role="doc-backlink" href="#rimando-5a" aria-label="Torna al rimando 5">Torna al testo</a></li>
-        <li id="fonte-6">Prospetto delle società filodrammatiche e bande del 1839 (vedi la fonte 19); <i>Calendario lunese</i> per il 1835, pp. 253-254. <a role="doc-backlink" href="#rimando-6a" aria-label="Torna al rimando 6">Torna al testo</a></li>
+        <li id="fonte-6">Prospetto delle società filodrammatiche e bande del 1839 (vedi la fonte 20); <i>Calendario lunese</i> per il 1835, pp. 253-254. <a role="doc-backlink" href="#rimando-6a" aria-label="Torna al rimando 6">Torna al testo</a></li>
         <li id="fonte-7"><i>Gazzetta di Firenze</i>, 1832, visita di Leopoldo II a Fivizzano. <a role="doc-backlink" href="#rimando-7a" aria-label="Torna al rimando 7">Torna al testo</a></li>
         <li id="fonte-8"><i>Istituti e società musicali in Italia. Statistica</i>, Roma, 1873, pp. 216-217. <a href="https://books.google.it/books?id=OtbfU1jeVN8C&amp;pg=PA216" target="_blank" rel="noopener noreferrer">Google Libri</a>. <a role="doc-backlink" href="#rimando-8a" aria-label="Torna al rimando 8">Torna al testo</a></li>
         <li id="fonte-9"><i>La Nazione</i>, 20 giugno 1878, corrispondenza da Fivizzano. Biblioteca Digitale Toscana. <a role="doc-backlink" href="#rimando-9a" aria-label="Torna al rimando 9">Torna al testo</a></li>
@@ -152,16 +151,17 @@
         <li id="fonte-13"><i>Bollettino della Società italiana degli autori ed editori</i>, 1930, pp. 329 e 374-375, «Elenco delle bande musicali abbonate fino al 31 dicembre 1929». Torna al testo: <a role="doc-backlink" href="#rimando-13a" aria-label="Torna al rimando 13a">a</a>, <a role="doc-backlink" href="#rimando-13b" aria-label="Torna al rimando 13b">b</a></li>
         <li id="fonte-14">«Cento anni di Lunigiana», cronache del 1963 e del 1980, lunigiana.net. [URL delle pagine da completare.] Torna al testo: <a role="doc-backlink" href="#rimando-14a" aria-label="Torna al rimando 14a">a</a>, <a role="doc-backlink" href="#rimando-14b" aria-label="Torna al rimando 14b">b</a></li>
         <li id="fonte-15">Comune di Fivizzano, calendario estivo della Pro Loco 2009 (copia nella Wayback Machine). [URL da completare.] <a role="doc-backlink" href="#rimando-15a" aria-label="Torna al rimando 15">Torna al testo</a></li>
-        <li id="fonte-16">Due fotografie «Moncigoli 8 dicembre 1963», pubblicate da Carlo Francini in un gruppo Facebook, 26 novembre 2023. <a role="doc-backlink" href="#rimando-16a" aria-label="Torna al rimando 16">Torna al testo</a></li>
-        <li id="fonte-17">Rino Barbieri, <i>Il paese dai 18 campanili</i> (Agnino), da un articolo di Ezio Pandiani nella <i>Gazzetta di Parma</i>, 3 dicembre 1968. <a role="doc-backlink" href="#rimando-17a" aria-label="Torna al rimando 17">Torna al testo</a></li>
-        <li id="fonte-18"><i>La Nazione</i>, ed. Massa-Carrara, 3 giugno 2023, «Al via ’Sapori di Fivizzano’». <a href="https://arquivo.pt/wayback/20230603192658/https://lanazione.it/massa-carrara/cronaca" target="_blank" rel="noopener noreferrer">Arquivo.pt</a>. <a role="doc-backlink" href="#rimando-18a" aria-label="Torna al rimando 18">Torna al testo</a></li>
-        <li id="fonte-19">Prospetto delle società filodrammatiche e bande del 1839, Archivio di Stato di Massa, sezione di Pontremoli, <i>Affari diversi di Governo</i>, 1839, vol. 61, n. 111; citato da Mauro Angella, «La nascita della Banda musicale pontremolese», <i>Archivio storico per le province parmensi</i>, IV serie, LXII (2010), pp. 41-53. <a role="doc-backlink" href="#rimando-19a" aria-label="Torna al rimando 19">Torna al testo</a></li>
-        <li id="fonte-20"><i>Gazzetta Toscana</i>, 1781, p. 39, «Fivizzano 6. Febbrajo». <a href="https://babel.hathitrust.org/cgi/pt?id=nyp.33433081589602&amp;seq=277" target="_blank" rel="noopener noreferrer">HathiTrust</a>. <a role="doc-backlink" href="#rimando-20a" aria-label="Torna al rimando 20">Torna al testo</a></li>
-        <li id="fonte-21"><i>Gazzetta Toscana</i>, 1791, feste del 10-12 dicembre 1790. <a href="https://babel.hathitrust.org/cgi/pt?id=njp.32101076536919&amp;seq=21" target="_blank" rel="noopener noreferrer">HathiTrust</a>. <a role="doc-backlink" href="#rimando-21a" aria-label="Torna al rimando 21">Torna al testo</a></li>
-        <li id="fonte-22">Rino Barbieri, <i>Il Teatro-Cinema di Fivizzano</i>, p. 13 (atto del notaio Antonio Falchi, 10 luglio 1804). <a role="doc-backlink" href="#rimando-22a" aria-label="Torna al rimando 22">Torna al testo</a></li>
-        <li id="fonte-23">Lettere di Saverio Salvioni (4 luglio 1810) e Andrea Ferroni (3 agosto 1810) a Odoardo Fantoni, Archivio di Stato di Massa, Archivio Fantoni; trascrizioni di Rino Barbieri, <i>Labindo e la Società Civile Settecentesca</i>. <a role="doc-backlink" href="#rimando-23a" aria-label="Torna al rimando 23">Torna al testo</a></li>
-        <li id="fonte-24">Emanuele Gerini, <i>Memorie storiche d'illustri scrittori e di uomini insigni dell'antica e moderna Lunigiana</i>, II, Massa, 1829, pp. 136-138. <a href="https://books.google.it/books?id=a0gssshrWAsC&amp;pg=PA137" target="_blank" rel="noopener noreferrer">Google Libri</a>. <a role="doc-backlink" href="#rimando-24a" aria-label="Torna al rimando 24">Torna al testo</a></li>
-        <li id="fonte-25">Lapide sulla casa degli Stradella, Fivizzano, 6 dicembre 1997: «L'Amministrazione comunale / auspice / la Società Filarmonica». <a role="doc-backlink" href="#rimando-25a" aria-label="Torna al rimando 25">Torna al testo</a></li>
+        <li id="fonte-16">Testimonianza di Leonardo Orietti Del Duca, presidente della Filarmonica, 4 novembre 2026. Torna al testo: <a role="doc-backlink" href="#rimando-16a" aria-label="Torna al rimando 16a">a</a>, <a role="doc-backlink" href="#rimando-16b" aria-label="Torna al rimando 16b">b</a>, <a role="doc-backlink" href="#rimando-16c" aria-label="Torna al rimando 16c">c</a>, <a role="doc-backlink" href="#rimando-16d" aria-label="Torna al rimando 16d">d</a>, <a role="doc-backlink" href="#rimando-16e" aria-label="Torna al rimando 16e">e</a></li>
+        <li id="fonte-17">Due fotografie «Moncigoli 8 dicembre 1963», pubblicate da Carlo Francini in un gruppo Facebook, 26 novembre 2023. <a role="doc-backlink" href="#rimando-17a" aria-label="Torna al rimando 17">Torna al testo</a></li>
+        <li id="fonte-18">Rino Barbieri, <i>Il paese dai 18 campanili</i> (Agnino), da un articolo di Ezio Pandiani nella <i>Gazzetta di Parma</i>, 3 dicembre 1968. <a role="doc-backlink" href="#rimando-18a" aria-label="Torna al rimando 18">Torna al testo</a></li>
+        <li id="fonte-19"><i>La Nazione</i>, ed. Massa-Carrara, 3 giugno 2023, «Al via ’Sapori di Fivizzano’». <a href="https://arquivo.pt/wayback/20230603192658/https://lanazione.it/massa-carrara/cronaca" target="_blank" rel="noopener noreferrer">Arquivo.pt</a>. <a role="doc-backlink" href="#rimando-19a" aria-label="Torna al rimando 19">Torna al testo</a></li>
+        <li id="fonte-20">Prospetto delle società filodrammatiche e bande del 1839, Archivio di Stato di Massa, sezione di Pontremoli, <i>Affari diversi di Governo</i>, 1839, vol. 61, n. 111; citato da Mauro Angella, «La nascita della Banda musicale pontremolese», <i>Archivio storico per le province parmensi</i>, IV serie, LXII (2010), pp. 41-53. <a role="doc-backlink" href="#rimando-20a" aria-label="Torna al rimando 20">Torna al testo</a></li>
+        <li id="fonte-21"><i>Gazzetta Toscana</i>, 1781, p. 39, «Fivizzano 6. Febbrajo». <a href="https://babel.hathitrust.org/cgi/pt?id=nyp.33433081589602&amp;seq=277" target="_blank" rel="noopener noreferrer">HathiTrust</a>. <a role="doc-backlink" href="#rimando-21a" aria-label="Torna al rimando 21">Torna al testo</a></li>
+        <li id="fonte-22"><i>Gazzetta Toscana</i>, 1791, feste del 10-12 dicembre 1790. <a href="https://babel.hathitrust.org/cgi/pt?id=njp.32101076536919&amp;seq=21" target="_blank" rel="noopener noreferrer">HathiTrust</a>. <a role="doc-backlink" href="#rimando-22a" aria-label="Torna al rimando 22">Torna al testo</a></li>
+        <li id="fonte-23">Rino Barbieri, <i>Il Teatro-Cinema di Fivizzano</i>, p. 13 (atto del notaio Antonio Falchi, 10 luglio 1804). <a role="doc-backlink" href="#rimando-23a" aria-label="Torna al rimando 23">Torna al testo</a></li>
+        <li id="fonte-24">Lettere di Saverio Salvioni (4 luglio 1810) e Andrea Ferroni (3 agosto 1810) a Odoardo Fantoni, Archivio di Stato di Massa, Archivio Fantoni; trascrizioni di Rino Barbieri, <i>Labindo e la Società Civile Settecentesca</i>. <a role="doc-backlink" href="#rimando-24a" aria-label="Torna al rimando 24">Torna al testo</a></li>
+        <li id="fonte-25">Emanuele Gerini, <i>Memorie storiche d'illustri scrittori e di uomini insigni dell'antica e moderna Lunigiana</i>, II, Massa, 1829, pp. 136-138. <a href="https://books.google.it/books?id=a0gssshrWAsC&amp;pg=PA137" target="_blank" rel="noopener noreferrer">Google Libri</a>. <a role="doc-backlink" href="#rimando-25a" aria-label="Torna al rimando 25">Torna al testo</a></li>
+        <li id="fonte-26">Lapide sulla casa degli Stradella, Fivizzano, 6 dicembre 1997: «L'Amministrazione comunale / auspice / la Società Filarmonica». <a role="doc-backlink" href="#rimando-26a" aria-label="Torna al rimando 26">Torna al testo</a></li>
     </ol>
     <p>
         Immagine di copertina: piazza Medicea e la fontana di Cosimo III de' Medici. Foto di Sailko, CC BY 3.0,
