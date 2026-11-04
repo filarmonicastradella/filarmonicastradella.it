@@ -49,6 +49,7 @@ const markdownArticles = Object.entries(modules).map(([path, module]) => ({
 }));
 
 // Articoli con una pagina propria in src/routes/articoli/<categoria>/<slug>: qui solo i dati per indici e intestazioni
+// Le pagine in bozza hanno draft: true qui e il file della pagina rinominato in _page.svelte (SvelteKit lo ignora)
 const pageArticles: (ArticleMetadata & { slug: string })[] = [
     {
         slug: "missione",
@@ -86,6 +87,7 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
     {
         slug: "fivizzano",
         category: "storia",
+        draft: true,
         title: "Fivizzano, i luoghi della musica",
         date: "2026-11-04",
         excerpt:
@@ -94,6 +96,7 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
     {
         slug: "fivizzano",
         category: "identita",
+        draft: true,
         title: "Fivizzano, città della musica",
         date: "2026-11-04",
         excerpt:
