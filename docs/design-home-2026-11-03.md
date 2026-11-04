@@ -50,7 +50,7 @@ Su schermo largo «Contatti», «L'associazione», «Note legali» sono tre tito
 
 ## Tema scuro
 
-**12. La foto è il blocco più chiaro e il pulsante il secondo. D (3.19)**
+**12. La foto è il blocco più chiaro e il pulsante il secondo. D (3.19)** *(Chiuso il 4/11/2026: nel tema scuro le foto vanno bene così; il velo è stato alleggerito solo sulla carta.)*
 Nella prima schermata scura la foto (bianco e nero velato, ma con fondo chiaro) e i due pulsanti rosa pieni sono le tre cose più luminose: l'occhio va lì e non al titolo. Il punto 1 toglie un pulsante; per la foto, un velo più scuro solo nel tema scuro.
 
 ## Cosa funziona
