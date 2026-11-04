@@ -27,7 +27,7 @@ Sul largo le schede sono due per riga: quattro h2 Cormorant da 24 px, a coppie s
 **5. La presentazione dice due volte la stessa cosa. F**
 «La Filarmonica Alessandro Stradella APS è un'associazione di promozione sociale … che promuove la cultura musicale dal 1777»: APS è già «associazione di promozione sociale», e «promozione … promuove» si ripete. Proposta, con i soli fatti già sul sito: «Dal 1777 la Filarmonica Alessandro Stradella fa musica a Fivizzano, in Lunigiana. Oggi è un'associazione di promozione sociale con quattro formazioni.»
 
-**6. «Iscrizione e variazioni». D**
+**6. «Iscrizione e variazioni». D** *(Risolto il 4/11/2026: titolo «Iscrizione», nella scheda e nella pagina.)*
 «Variazioni» è il nome del modulo, non quello che cerca chi legge. Proposta: titolo «Iscrizione», e la variazione dei dati resta nella riga sotto («…o per aggiornare i tuoi dati e i consensi»). Il titolo della pagina d'arrivo andrebbe cambiato insieme (regola dei rimandi: stesso nome).
 
 **7. «Chi siamo, in cosa crediamo e come stiamo insieme.» F**

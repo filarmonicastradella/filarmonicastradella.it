@@ -87,7 +87,7 @@
                 >{title}</a
             >{/each}) e porta il suo repertorio nelle sale e nelle piazze del territorio.
     </p>
-    <p class="rimando"><a href="/associazione">Scopri l'associazione</a></p>
+    <p class="rimando"><a href="/associazione">L'associazione</a></p>
 </section>
 
 <section>
@@ -96,7 +96,7 @@
         Cerchiamo musicisti di ogni livello: si impara suonando insieme, nelle prove generali e in quelle di sezione. Le parti e la sala prove le mette
         l'associazione, e alcuni strumenti si possono avere in prestito.
     </p>
-    <p class="rimando"><a href="/associazione/iscrizione">Domanda di iscrizione</a></p>
+    <p class="rimando"><a href="/associazione/iscrizione">Iscrizione</a></p>
 </section>
 
 <!--

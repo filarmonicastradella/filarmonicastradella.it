@@ -31,7 +31,7 @@
     </li>
     <li>
         <a href="/associazione/iscrizione">
-            <h2>Iscrizione e variazioni</h2>
+            <h2>Iscrizione</h2>
             <p>Per diventare socio con la quota annuale di 12 €, o per aggiornare i tuoi dati e i consensi.</p>
         </a>
     </li>

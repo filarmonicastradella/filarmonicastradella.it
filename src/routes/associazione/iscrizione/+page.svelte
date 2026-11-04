@@ -53,7 +53,7 @@
 </script>
 
 <svelte:head>
-    <title>Iscrizione e variazioni — Filarmonica Alessandro Stradella</title>
+    <title>Iscrizione — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Domanda di iscrizione come socio della Filarmonica Alessandro Stradella APS di Fivizzano, quota annuale di 12 €, anche per i minorenni con un genitore; per chi è già socio, variazione dei dati e dei consensi." />
 </svelte:head>
 
@@ -119,7 +119,7 @@
 {/snippet}
 
 <header>
-    <h1>Iscrizione e variazioni</h1>
+    <h1>Iscrizione</h1>
     <p>
         Per iscriverti come socio o, se lo sei già, per aggiornare i tuoi dati e i consensi. Il consiglio direttivo esamina le nuove domande e ti comunica
         l'esito per email.
