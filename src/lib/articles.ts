@@ -82,6 +82,14 @@ const pageArticles: (ArticleMetadata & { slug: string })[] = [
         title: "Alessandro Stradella",
         date: "2026-10-19",
         excerpt: "Il compositore del Seicento che dà il nome alla Filarmonica, e la sua famiglia di Fivizzano."
+    },
+    {
+        slug: "fivizzano",
+        category: "storia",
+        title: "Fivizzano, i luoghi della musica",
+        date: "2026-11-04",
+        excerpt:
+            "Una passeggiata nel centro di Fivizzano, dalla Propositura alla piazza, dal teatro degli Imperfetti a San Giovanni, sulle tracce di due secoli e mezzo di musica documentata."
     }
 ];
 
