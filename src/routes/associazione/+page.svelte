@@ -6,7 +6,8 @@
 <header>
     <h1>L'associazione</h1>
     <p>
-        La Filarmonica Alessandro Stradella APS è un'associazione di promozione sociale di Fivizzano, in Lunigiana, che promuove la cultura musicale dal 1777.
+        Dal 1777 la Filarmonica Alessandro Stradella fa musica a Fivizzano, in Lunigiana. Oggi è un'associazione di promozione sociale con quattro
+        formazioni.
     </p>
 </header>
 
@@ -14,7 +15,7 @@
     <li>
         <a href="/articoli/identita/missione">
             <h2>La nostra missione</h2>
-            <p>Chi siamo, in cosa crediamo e come stiamo insieme.</p>
+            <p>Perché siamo rinati, in cosa crediamo e dove vogliamo arrivare.</p>
         </a>
     </li>
     <li>
