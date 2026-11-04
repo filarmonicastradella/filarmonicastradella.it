@@ -12,10 +12,9 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 
 ## 0. Prima di tutto: scelte da cui dipendono le altre
 
-**Deciso il 4/11/2026:** si tiene `DESIGN.md`, con ritocchi. Il sito resta sobrio, «da conservatorio»; le direzioni più forti (il cartellone, il rapporto stampato con il bordeaux a tutta superficie e il carattere da testata) sono state viste e scartate come esagerate. Le voci della parte 3 restano valide come ritocchi. La revisione di design (0.1) continua pagina per pagina: `design-home-2026-11-03.md`, `design-associazione-2026-11-04.md`.
+**Deciso il 4/11/2026:** si tiene `DESIGN.md`, con ritocchi. Il sito resta sobrio, «da conservatorio»; le direzioni più forti (il cartellone, il rapporto stampato con il bordeaux a tutta superficie e il carattere da testata) sono state viste e scartate come esagerate. Le voci della parte 3 restano valide come ritocchi. Il motto è «Le dissonanze in un accordo solo», dal diploma dell'Accademia de' Filarmonici Dissonanti, senza spiegazione accanto (deciso il 4/11/2026, chiude 0.5). La revisione di design (0.1) continua pagina per pagina: `design-home-2026-11-03.md`, `design-associazione-2026-11-04.md`.
 
 - [ ] 0.4 **D** — Quando unire `stili` a `main`: 33 commit non sono online, comprese le correzioni della revisione. La pubblicazione parte solo da `main`. (S)
-- [ ] 0.5 **D** — Il motto: «Custodi della tradizione, interpreti del futuro», «Le dissonanze in un accordo solo» o nessuno? Le pagine si contraddicono, e la revisione lo trova la frase più da IA della hero. (R5.3, R5.32, PB3, N, T)
 - [ ] 0.6 **D** — Notizie e gallerie non hanno fonti: con la regola «l'articolo ha le fonti» restano articoli per eccezione o diventano pagine? (S, T)
 
 ## 1. Fuori dal sito

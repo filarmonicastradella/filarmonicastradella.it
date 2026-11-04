@@ -24,7 +24,8 @@
     <hgroup>
         <p>Fivizzano · dal 1777</p>
         <h1>Filarmonica <span>Alessandro <em>Stradella</em></span></h1>
-        <p>Custodi della <strong>tradizione</strong>, interpreti del <strong>futuro</strong>.</p>
+        <!-- Il motto dell'Accademia de' Filarmonici Dissonanti, dal diploma settecentesco (articoli/storia/filarmonica) -->
+        <p>Le dissonanze in un accordo solo</p>
     </hgroup>
     <p><a href="/contatti?motivo=ingaggio#scrivici">Per il tuo evento</a></p>
     <enhanced:img
@@ -120,10 +121,6 @@
         margin-block-start: var(--space-5);
         color: var(--text-muted);
         font-size: var(--fs-lead);
-    }
-
-    hgroup p:last-child strong {
-        color: var(--text);
     }
 
     header > p {

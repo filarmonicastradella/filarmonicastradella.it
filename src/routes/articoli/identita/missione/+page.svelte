@@ -16,7 +16,7 @@
 </svelte:head>
 
 <ArticleHeader {article}>
-    <p><em>Custodi della tradizione, interpreti del futuro.</em></p>
+    <p><em>Le dissonanze in un accordo solo</em></p>
 </ArticleHeader>
 
 <section>

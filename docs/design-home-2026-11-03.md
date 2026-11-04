@@ -42,7 +42,7 @@ A 390 px «Prossimi eventi» (h2) è 28 px, «Concerto Autunnale…» (h3) è 24
 **9. Interlinee diverse per lo stesso ruolo. F** *(Risolto il 4/11/2026: tutti i titoli tranne l'h1 a 1,25, `--lh-snug`; anche `DESIGN.md`. Chiude la voce 4.1.)*
 Gli h3 delle schede evento hanno interlinea 1,25 (30 px), gli h3 degli articoli 1,1 (26,4 px). Il titolo «La Filarmonica dei giovani. Duecento anni in musica: «Una mostra e tante idee»», su tre righe, a 1,1 è stretto: `better-typography` vuole almeno 1,2 per i titoli che vanno a capo, `DESIGN.md` dice 1,2 per il Titolo 3. Una sola interlinea per gli h3, 1,2 o 1,25.
 
-**10. Il sottotitolo gioca con due parole in grassetto. D (0.5)**
+**10. Il sottotitolo gioca con due parole in grassetto. D (0.5)** *(Risolto il 4/11/2026: il motto è «Le dissonanze in un accordo solo», senza grassetti, anche nella missione.)*
 «Custodi della **tradizione**, interpreti del **futuro**»: grigio pietra con due parole in nero, che in più si contrappongono. È il motto ancora da decidere (0.5); se resta, meglio tutto dello stesso colore, senza grassetti: il gesto distintivo della pagina è già «Stradella» in corsivo bordeaux, e due enfasi in tre righe si fanno concorrenza.
 
 **11. Piè di pagina: tre titoli Cormorant uguali affiancati. D (3.11)** *(Risolto il 4/11/2026: i titoli delle colonne sono occhielli in Jakarta maiuscolo; «L'associazione» è diventata «Dati dell'ente».)*
