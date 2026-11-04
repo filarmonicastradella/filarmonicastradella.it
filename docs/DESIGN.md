@@ -63,7 +63,7 @@ Contrasti verificati (tutti conformi WCAG AA): bordeaux su carta 10,3:1, bordeau
 
 ## 5. Logo
 
-Il simbolo è una lira sormontata dalla mezzaluna, emblema della Lunigiana e di Fivizzano. Il logotipo usa "Filarmonica" in Cormorant, più piccola e sopra "Alessandro Stradella" in Cormorant, nello stesso colore, come il frontespizio di un libro; la firma "Fivizzano · dal 1777" in Jakarta maiuscolo spaziato. *(Dal 4/11/2026 nel sito; prima "FILARMONICA" era un occhiello in Jakarta maiuscolo spaziato. Da portare anche in stampa e social, voce 4.15 della lista unica.)*
+Il simbolo è una lira sormontata dalla mezzaluna, emblema della Lunigiana e di Fivizzano. Il logotipo usa "FILARMONICA" in maiuscole di Cormorant 600, appena spaziate (0,14 em) e a poco più di metà della misura del nome, sopra "Alessandro Stradella" in Cormorant, nello stesso colore, come il frontespizio di un libro; la firma "Fivizzano · dal 1777" in Jakarta maiuscolo spaziato. *(Dal 4/11/2026 nel sito; prima "FILARMONICA" era un occhiello in Jakarta maiuscolo spaziato. Da portare anche in stampa e social, voce 4.15 della lista unica.)*
 
 Il vettoriale di riferimento è `src/lib/assets/favicon.svg`, la favicon del sito è `src/lib/assets/icon.svg` (simbolo carta su quadrato bordeaux arrotondato) e `static/logo.png` è la stessa icona a 512 px per i motori di ricerca. I file originali sono nel kit di marca (cartella `01 Simbolo`).
 
