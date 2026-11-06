@@ -61,17 +61,9 @@
         "Biblioteca Mario Rigoni Stern, Sassalbo"
     ];
 
-    // Almeno 30 giorni da oggi, il giorno in Italia (AAAA-MM-GG); il sito si ricostruisce ogni 3 ore, il limite resta aggiornato
-    const minDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString("en-CA", { timeZone: "Europe/Rome" });
-
-    // Una data troppo vicina: al posto del messaggio generico del browser, la regola dei 30 giorni
-    type InputEvent = Event & { currentTarget: EventTarget & HTMLInputElement };
-
-    function explainDate(e: InputEvent) {
-        if (e.currentTarget.validity.rangeUnderflow) {
-            e.currentTarget.setCustomValidity("Scrivici almeno 30 giorni prima dell'evento");
-        }
-    }
+    // Si può chiedere un ingaggio per qualsiasi data futura, poi valutiamo noi (dal 6/11/2026; prima almeno 30 giorni):
+    // il limite è solo oggi, il giorno in Italia (AAAA-MM-GG); il sito si ricostruisce ogni 3 ore, il limite resta aggiornato
+    const today = new Date().toLocaleDateString("en-CA", { timeZone: "Europe/Rome" });
 </script>
 
 <svelte:head>
@@ -355,9 +347,7 @@
                         id="contatto-data"
                         name="data"
                         required
-                        min={minDate}
-                        oninvalid={explainDate}
-                        oninput={(e) => e.currentTarget.setCustomValidity("")}
+                        min={today}
                     />
                 </p>
 
