@@ -2,6 +2,11 @@
 title: Orchestra Infieri
 summary: "L'orchestra mista della Filarmonica, dove archi e fiati suonano insieme."
 order: 3
+# SEGNAPOSTO: l'autore della foto è da verificare (la stessa foto della Storia della Filarmonica)
+cover:
+    alt: "L'Orchestra Infieri in concerto all'aperto: chi dirige a sinistra, violini, viola e contrabbasso davanti, il coro in piedi dietro"
+    credit: Filarmonica Alessandro Stradella
+    position: center 40%
 lineup:
     - name: Archi
       instruments:
