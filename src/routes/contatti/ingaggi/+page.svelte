@@ -67,8 +67,8 @@
 <section>
     <h2>Come chiedere</h2>
     <p>
-        Scrivici almeno 30 giorni prima dell'evento con il <a href={form}>modulo di Contatti</a>: dicci l'occasione, la data e il luogo, e ti
-        rispondiamo con la disponibilità e una proposta.
+        Scrivici con il <a href={form}>modulo di Contatti</a>: dicci l'occasione, la data e il luogo, e ti rispondiamo con la disponibilità e una
+        proposta.
     </p>
 </section>
 

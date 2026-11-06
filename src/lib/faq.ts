@@ -11,7 +11,7 @@ export const faq = {
     evento: {
         question: "Potete suonare al mio evento?",
         answer:
-            'Sì: per un concerto, un convegno, una cerimonia o una festa in Lunigiana, raccontaci l\'occasione almeno 30 giorni prima: ti rispondiamo con la disponibilità e la formazione adatta. Occasioni, formazioni e come chiedere sono nella pagina <a href="/contatti/ingaggi">La Filarmonica al tuo evento</a>.'
+            'Sì: per un concerto, un convegno, una cerimonia o una festa in Lunigiana, raccontaci l\'occasione: ti rispondiamo con la disponibilità e la formazione adatta. Occasioni, formazioni e come chiedere sono nella pagina <a href="/contatti/ingaggi">La Filarmonica al tuo evento</a>.'
     },
     // Pagine delle singole formazioni: valgono per tutte
     maestro: {
@@ -37,7 +37,7 @@ export const bookingFaq: FaqItem[] = [
         answer:
             "No: siamo un'associazione laica e apartitica, e non suoniamo a funzioni religiose né a feste e iniziative di partito. Per le occasioni religiose collaboriamo però con le realtà musicali amiche della Lunigiana, e possiamo indicarti a chi rivolgerti."
     },
-    { question: "Con quanto anticipo devo scrivervi?", answer: "Almeno 30 giorni prima dell'evento." },
+    { question: "Con quanto anticipo devo scrivervi?", answer: "Quando vuoi: valutiamo ogni richiesta. Prima ci scrivi, più è facile trovare una formazione libera." },
     { question: "Con quanti musicisti suonate?", answer: "Dipende dalla formazione e dall'occasione: te lo indichiamo nella proposta." },
     {
         question: "Cosa serve sul posto?",
