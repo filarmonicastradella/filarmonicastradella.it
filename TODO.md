@@ -106,11 +106,13 @@ Oggi sono `_page.svelte` (SvelteKit le ignora): per ognuna rinominare in `+page.
 - **Partner**: le bande di Moncigoli e di Casola, oltre ai soliti (Medicea e gli altri); il Lunigiana International Music Festival (a Fivizzano ogni luglio) e Luni Tunes per la rete della Lunigiana.
 - **Repository pubblico**: contiene ancora nomi e foto sospesi in attesa dei consensi; decidere se renderlo privato o toglierli.
 - **Regolamenti** (`trasparenza/regolamenti`): già in programma; ci va anche la regola sui direttori (indicati dai componenti dai 14 anni in su, nomina ratificata dal consiglio).
-- **Open day** «prova uno strumento»: quando c'è la data, nel calendario.
+- **Open day** «prova uno strumento»: quando c'è la data, nel calendario. Anche la Filarmonica di Bagnone lo fa, per trovare musicisti nuovi, e i giornali ne parlano (6/11/2026).
 - **Articoli**: interviste e testimonianze dei musicisti, anche di quelli di una volta; i traguardi raggiunti in Identità (poi si può eliminare la pagina disattivata `associazione/traguardi`).
 
 ## Idee per attirare persone e finanziatori
 
+- **Sponsor** (idea dal sito della Filarmonica di Bagnone, 6/11/2026): una sezione in Sostienici per le aziende, con la contropartita chiara (logo su locandine, volantini e programmi di sala, ringraziamento sul sito e sui social, uno spazio ai concerti) e il link al motivo «Collaborazioni, enti e sponsor» di Contatti. Prima va deciso cosa offriamo davvero.
+- **Volontariato per chi non suona** (stessa fonte): compiti concreti (logistica dei concerti, sede, archivio storico e raccolta del materiale, promozione) e la frase «non serve saper suonare». È la pagina disattivata `sostienici/volontariato` (ex `support/volunteer`), priorità alta nella lista unica (2.9).
 - **I giovani**: alcune formazioni hanno età media sotto i 18 anni. Per bandi, fondazioni ed enti è un dato forte: dirlo in home, nelle formazioni e nella cartella stampa. Foto con minori solo con la liberatoria.
 - Consiglio direttivo e rendiconto (anche solo il modello D): primo controllo di enti e fondazioni.
 - Numeri d'impatto (soci, concerti all'anno, età media, ore di volontariato).
