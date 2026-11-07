@@ -13,20 +13,19 @@
     const events = $derived(now ? data.events.filter((event) => hasNotEnded(event, now!)) : data.events);
 
     /*
-     * Il calendario a cui iscriversi (calendario.ics), con un solo pulsante. Il browser non dice quali programmi di
-     * calendario ci sono (per la privacy), quindi si indovina dal sistema: webcal:// apre il Calendario di iPhone e Mac
-     * e Outlook su Windows; Android non lo riconosce, e lì il pulsante porta a Google Calendar. Su Windows, dove molti
-     * usano Google Calendar, c'è anche quel link; con altri sistemi, e senza JS, l'indirizzo da copiare.
+     * Il calendario a cui iscriversi (calendario.ics), con un solo pulsante: di base porta a Google Calendar (computer,
+     * Android e senza JS); su iPhone e iPad apre il calendario del dispositivo con webcal://. Il browser non dice quali
+     * programmi di calendario ci sono (per la privacy), quindi si guarda solo il sistema. L'iPad si presenta come un
+     * Mac: lo distingue lo schermo touch.
      */
     const feed = `${organization.url}/calendario.ics`;
     const webcal = feed.replace(/^https?:/, "webcal:");
     const google = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcal)}`;
-    let system = $state<"apple" | "android" | "windows" | "other">("other");
+    let ios = $state(false);
 
     onMount(() => {
         now = new Date();
-        const agent = navigator.userAgent;
-        system = /android/i.test(agent) ? "android" : /iphone|ipad|ipod|macintosh/i.test(agent) ? "apple" : /windows/i.test(agent) ? "windows" : "other";
+        ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (/macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
     });
 </script>
 
@@ -38,13 +37,11 @@
 <header>
     <h1>Calendario</h1>
     <p>I prossimi concerti e le altre attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano.</p>
-    <p><a href={system === "android" ? google : webcal}>Segui il calendario</a></p>
+    <p><a href={ios ? webcal : google}>Segui il calendario</a></p>
     <p>
         <small>
             I nuovi eventi compaiono da soli nel tuo calendario.
-            {#if system === "windows"}
-                Usi Google Calendar? <a href={google}>Iscriviti da qui</a>.
-            {:else if system === "other"}
+            {#if !ios}
                 Con altri programmi iscriviti a <a href={feed}>{feed}</a>.
             {/if}
         </small>
