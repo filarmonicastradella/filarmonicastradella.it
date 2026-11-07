@@ -56,6 +56,10 @@
         <meta itemprop="description" content={event.description} />
     {/if}
     <h1 itemprop="name">{event.summary}</h1>
+    <!-- L'azione principale della pagina, il pulsante pieno: solo per gli eventi che devono ancora arrivare -->
+    {#if upcoming}
+        <p><a href="/calendario/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
+    {/if}
 </header>
 
 <!-- La descrizione del calendario, già pulita alla build (src/lib/server/calendar.ts): paragrafi, elenchi, link -->
@@ -91,7 +95,6 @@
             </dd>
         {/if}
     </dl>
-    <p><a href="/calendario/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
 </section>
 
 {#if upcoming}

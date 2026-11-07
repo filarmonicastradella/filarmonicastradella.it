@@ -109,6 +109,8 @@
         <dt>PEC</dt>
         <dd><a href="mailto:{organization.pec}">{organization.pec}</a></dd>
     </dl>
+    <!-- La scheda contatto da salvare in rubrica (filarmonica.vcf): telefono, email, sito e sede in un tocco -->
+    <p><a href="/contatti/filarmonica.vcf" download>Salva nei contatti</a></p>
     <!-- Da riattivare insieme a /faq:
     <p>Prima di scriverci, guarda le <a href="/faq">domande frequenti</a>.</p>
     -->
