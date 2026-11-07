@@ -15,6 +15,13 @@ export interface PressItem {
 
 export const press: PressItem[] = [
     {
+        title: "Filarmonica Alessandro Stradella",
+        date: "2026-09-05",
+        publisher: "Radio Elle",
+        excerpt: "Un'intervista per presentare la Filarmonica, in video sul canale YouTube della radio.",
+        href: "https://www.youtube.com/watch?v=STNhPYbBvh4"
+    },
+    {
         title: "La prima orchestra della Lunigiana. Stasera il debutto alla Pieve di Monti: «Obiettivo crescere e condividere»",
         date: "2026-01-10",
         publisher: "La Nazione",
