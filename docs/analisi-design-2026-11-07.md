@@ -140,3 +140,42 @@ Tenerle in due soli posti: la prima schermata della home e il piè di pagina. To
 | 9 | Servizio fotografico con i consensi | Consiglio | Fuori dal sito |
 
 Le voci 2, 3 e 4 si possono provare in un pomeriggio su un ramo a parte e guardare affiancate al sito di oggi prima di decidere.
+
+## Rispetto ai controlli del 30 ottobre
+
+Il 30/10 erano state fatte otto revisioni tecniche (`docs/revisione-2026-10-30.md`: Svelte, accessibilità, codice dell'interfaccia, SEO e prestazioni, dati strutturati, design, testi) e tre di design (`docs/proposte-design-2026-10-30.md`: il design system, i tic da IA, le prove di rottura). Le correzioni chiare sono state fatte allora; il resto è nella lista unica. Oggi, sulle pagine vere:
+
+### Le osservazioni di design di allora, confermate
+
+Le voci aperte della parte 3 della lista unica non erano dettagli: guardate insieme sono lo stesso problema di fondo descritto qui sopra. Le proposte di questo report le chiudono tutte insieme, invece che una per una.
+
+| Voce della lista | Confermata oggi | Proposta che la risolve |
+|---|---|---|
+| 3.4 Stesso scheletro su tutte le pagine | Sì, è la causa principale | 3. Quattro tipi di pagina |
+| 3.6 Aprire la home con il prossimo concerto | Sì | 2. Home |
+| 3.7 Bordeaux quasi assente | Sì, circa 2–3% della pagina | 4. Bordeaux in superficie |
+| 3.8 Maiuscolo spaziato e frecce ovunque | Sì, cinque rimandi uguali in home | 6. Tipografia |
+| 3.10 Schede di solo testo tutte dello stesso peso | Sì (Associazione, Formazioni, Sostienici) | 3 e 7: indici con immagini |
+| 3.11 Piè di pagina pesante e recapiti ripetuti | Sì, anche in Contatti | 4 e 8 |
+| 3.13 Pulsante della hero | Sì: «Per il tuo evento» come unica azione della home | 2. Home |
+| 3.15 Linea del tempo sulla corda nella storia | Sì, la colonna vuota c'è ancora | 5. Corde |
+| 3.18 Corde che stringono i titoli sul telefono | Sì | 5. Corde, tolte dalle intestazioni |
+| 3.17 Foto degli anni Trenta sgranata | Sì, ancora più visibile col velo | 7. Foto |
+
+Non più valide: la hero con la foto di Stradella Facendo (ora c'è quella del 1987), il trattamento delle foto (deciso il 3/11: il velo su tutte le copertine), le corde del menu (decise il 29/10).
+
+### SEO, controllato di nuovo oggi sulla build
+
+Script su tutte le 35 pagine generate: titolo, description, `h1`, canonical, JSON-LD, sitemap.
+
+- **Già a posto**: un `h1` per pagina, canonical ovunque, JSON-LD valido, sitemap di 31 indirizzi che coincide con le pagine da indicizzare, nessuna pagina `noindex` nella sitemap. Le pagine di ringraziamento non hanno description, ma sono fuori dalla ricerca.
+- **Ancora aperto dal 30/10**:
+  - **la 404 è vuota senza JavaScript** (niente titolo né `h1`: lista 2.4);
+  - **gli eventi passati diventano 404 il giorno dopo** (`timeMin` è sempre «adesso» in `calendar.ts`; lista 2.1): l'indirizzo citato dai giornali muore. Con il calendario che cresce conviene decidere ora: una sezione «Eventi passati» è anche il «Dove abbiamo suonato» che serve agli ingaggi;
+  - **titoli lunghi** (lista 6.5): `articoli/storia/sonetto` 66 caratteri, `contatti/ingaggi` 63, `trasparenza` 62, `trasparenza/contributi` 63, `informative/materiale` 62, due eventi 68 e 70;
+  - **description troppo brevi**: `articoli/stampa` 70, `formazioni/orchestra-infieri` 72, `informative/cookie` 94, `trasparenza` 104, `sostienici/dona` 106, `formazioni/stradella-facendo` 108; **troppo lunghe**: `associazione/iscrizione` 208, `informative/materiale` 175, `contatti/ingaggi` 172. Google le taglia oltre circa 155 caratteri.
+- **Nuovo**: oltre agli eventi interni (proposta 1), i titoli degli eventi in maiuscole all'inglese finiscono così anche nei risultati di Google e nei file `.ics`.
+
+### Accessibilità e prestazioni
+
+Il 30/10: Lighthouse 100 in accessibilità su 16 pagine, axe senza violazioni, prestazioni 94–99. Da allora nessuna modifica di struttura le ha toccate. Le proposte di questo report non le peggiorano se si rispetta una regola: più foto e foto più alte solo con le misure giuste (`sizes`) e il caricamento differito sotto la prima schermata, altrimenti l'LCP della home, già il valore più debole (3,0 s), peggiora. La proposta 2 aiuta: una prima schermata con data e titolo del concerto in testo appare subito, senza aspettare la foto.
