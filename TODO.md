@@ -109,6 +109,10 @@ Oggi sono `_page.svelte` (SvelteKit le ignora): per ognuna rinominare in `+page.
 - **Open day** «prova uno strumento»: quando c'è la data, nel calendario. Anche la Filarmonica di Bagnone lo fa, per trovare musicisti nuovi, e i giornali ne parlano (6/11/2026).
 - **Articoli**: interviste e testimonianze dei musicisti, anche di quelli di una volta; i traguardi raggiunti in Identità (poi si può eliminare la pagina disattivata `associazione/traguardi`).
 
+## Design, possibilità future
+
+- **Scala armonica dei titoli** (provata il 7/11/2026 sul ramo prova-design, non adottata): tutte le misure come gradini di un rapporto fisso, la terza maggiore 1,25 da 16 px (12,8 · 16 · 20 · 25 · 31,25 · 39 · 48,8 · 61), con i titoli di sezione a due gradini dai titoli delle schede (39 contro 25: oggi 30 contro 24, troppo vicini). Da riprendere se la gerarchia dei titoli torna un problema.
+
 ## Idee per attirare persone e finanziatori
 
 - **Riconoscimento CISM per il 250° (2027)** (dalla pagina Awards di cism.info, 7/11/2026): la Confederazione internazionale delle società musicali dà un attestato di riconoscimento alle associazioni con più di 10 anni e una medaglia al merito ai musicisti con un lungo servizio attivo. La richiesta la presenta l'associazione nazionale socia: **ANBIMA**, a cui siamo affiliati, è socia della CISM. Le spese sono di chi chiede; la consegna avviene in pubblico. Da chiedere ad ANBIMA come si fa e quanto costa, per consegnarlo a un concerto del 250° (con un'uscita sui giornali).
