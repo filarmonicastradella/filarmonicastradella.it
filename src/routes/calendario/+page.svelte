@@ -1,5 +1,6 @@
 <script lang="ts">
     import CopyLink from "$lib/components/CopyLink.svelte";
+    import { isIos } from "$lib/device";
     import { onMount } from "svelte";
     import EventCard from "$lib/components/EventCard.svelte";
     import TimelineSections from "$lib/components/TimelineSections.svelte";
@@ -13,12 +14,7 @@
     let now = $state<Date>();
     const events = $derived(now ? data.events.filter((event) => hasNotEnded(event, now!)) : data.events);
 
-    /*
-     * Il calendario a cui iscriversi (calendario.ics), con un solo pulsante: di base porta a Google Calendar (computer,
-     * Android e senza JS); su iPhone e iPad apre il calendario del dispositivo con webcal://. Il browser non dice quali
-     * programmi di calendario ci sono (per la privacy), quindi si guarda solo il sistema. L'iPad si presenta come un
-     * Mac: lo distingue lo schermo touch.
-     */
+    // Il calendario a cui iscriversi (calendario.ics), con un solo pulsante: Google Calendar, o il calendario del dispositivo su iPhone e iPad
     const feed = `${organization.url}/calendario.ics`;
     const webcal = feed.replace(/^https?:/, "webcal:");
     const google = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcal)}`;
@@ -26,7 +22,7 @@
 
     onMount(() => {
         now = new Date();
-        ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (/macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+        ios = isIos();
     });
 </script>
 

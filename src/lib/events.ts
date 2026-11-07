@@ -67,3 +67,24 @@ export function eventWhen(event: EventItem): string {
 
 /** Il nome del luogo: il calendario dà spesso l'indirizzo completo, qui basta la parte prima della prima virgola. */
 export const eventPlace = (event: EventItem) => event.location.split(",")[0].trim();
+
+/*
+ * Il link per aggiungere un evento a Google Calendar, già compilato (titolo, date, luogo, descrizione): su Android
+ * l'app di Google non apre i file .ics. Date "tutto il giorno" come AAAAMMGG con la fine esclusa, orari in UTC.
+ */
+export const googleCalendarHref = (event: EventItem, url: string) => {
+    const allDay = !event.start.includes("T");
+    const stamp = (value: string) =>
+        allDay ? value.replace(/-/g, "") : new Date(value).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+    const nextDay = (value: string) => new Date(new Date(`${value}T00:00:00Z`).getTime() + 86_400_000).toISOString().slice(0, 10);
+    const end = event.end || (allDay ? nextDay(event.start) : event.start);
+    const params = new URLSearchParams({
+        action: "TEMPLATE",
+        text: event.summary,
+        dates: `${stamp(event.start)}/${stamp(end)}`,
+        details: [event.description, url].filter(Boolean).join("\n\n"),
+        location: event.location,
+        ctz: "Europe/Rome"
+    });
+    return `https://calendar.google.com/calendar/render?${params}`;
+};

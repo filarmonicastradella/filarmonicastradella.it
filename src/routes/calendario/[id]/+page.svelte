@@ -1,7 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import FaqItem from "$lib/components/FaqItem.svelte";
-    import { eventDate, eventPlace, eventTime, eventWhen, hasNotEnded } from "$lib/events";
+    import { isIos } from "$lib/device";
+    import { eventDate, eventPlace, eventTime, eventWhen, googleCalendarHref, hasNotEnded } from "$lib/events";
     import { faq } from "$lib/faq";
     import { organization, titleSuffix } from "$lib/organization";
     import type { PageProps } from "./$types";
@@ -23,8 +24,12 @@
     // eventi in programma; nel browser si ricontrolla dopo il montaggio, così l'HTML del prerender resta valido.
     let now = $state<Date>();
     const upcoming = $derived(!now || hasNotEnded(event, now));
+    // Aggiungi al tuo calendario: Google Calendar già compilato (Android, computer, senza JS), il file .ics su iPhone e iPad
+    const google = $derived(googleCalendarHref(event, `${organization.url}/calendario/${event.id}`));
+    let ios = $state(false);
     onMount(() => {
         now = new Date();
+        ios = isIos();
     });
     // Titoli lunghi senza il nome della Filarmonica, così il titolo resta entro i 70 caratteri che i motori mostrano
     const pageTitle = $derived(event.summary.length + titleSuffix.length > 70 ? event.summary : event.summary + titleSuffix);
@@ -91,7 +96,11 @@
             </dd>
         {/if}
     </dl>
-    <p><a href="/calendario/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
+    {#if ios}
+        <p><a href="/calendario/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
+    {:else}
+        <p><a href={google} target="_blank" rel="noopener noreferrer">Aggiungi al tuo calendario</a></p>
+    {/if}
 </section>
 
 {#if upcoming}
