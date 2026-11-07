@@ -22,10 +22,23 @@
     const webcal = feed.replace(/^https?:/, "webcal:");
     const google = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcal)}`;
     let ios = $state(false);
+    // L'indirizzo va copiato nel programma di calendario: un link scaricherebbe il file, senza iscrizione
+    let canCopy = $state(false);
+    let copied = $state(false);
+
+    async function copyFeed() {
+        try {
+            await navigator.clipboard.writeText(feed);
+            copied = true;
+        } catch {
+            copied = false;
+        }
+    }
 
     onMount(() => {
         now = new Date();
         ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (/macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+        canCopy = "clipboard" in navigator;
     });
 </script>
 
@@ -42,10 +55,16 @@
         <small>
             I nuovi eventi compaiono da soli nel tuo calendario.
             {#if !ios}
-                Con altri programmi iscriviti a <a href={feed}>{feed}</a>.
+                Con altri programmi iscriviti a questo indirizzo: {feed}
             {/if}
         </small>
     </p>
+    {#if !ios && canCopy}
+        <p>
+            <button type="button" onclick={copyFeed}>Copia l'indirizzo</button>
+            <small role="status">{copied ? "Indirizzo copiato." : ""}</small>
+        </p>
+    {/if}
     <!-- Senza eventi l'avviso sta nell'intestazione: niente testo sciolto nella pagina -->
     {#if events.length === 0}
         <p>Per ora non ci sono eventi in programma.</p>
