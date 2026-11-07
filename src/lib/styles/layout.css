@@ -271,8 +271,11 @@ main > header > p:has(+ h1) + h1 {
     margin-block-start: var(--space-3);
 }
 
-/* La firma di un articolo, autore e data, sotto la presentazione */
-main > header > p:has(> time):not(:has(+ h1)) {
+/*
+ * La firma di un articolo, autore e data, sotto la presentazione: riconosciuta dalla data di pubblicazione, non da
+ * una data qualsiasi (una presentazione può contenere delle date, come nella storia della Filarmonica)
+ */
+main > header > p:has(> time[itemprop="datePublished"]) {
     font-size: var(--fs-small);
 }
 
