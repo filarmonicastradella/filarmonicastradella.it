@@ -18,7 +18,8 @@ export const press: PressItem[] = [
     {
         title: "Buona la prima!",
         date: "2026-10-11",
-        publisher: "Gianluigi Giannetti, sindaco di Fivizzano",
+        publisher: "Facebook",
+        author: "Gianluigi Giannetti",
         excerpt: "Il saluto del sindaco al primo concerto della Filarmonica rinata, sulla sua pagina Facebook.",
         ensembles: ["stradellafacendo"],
         href: "https://www.facebook.com/gianluigi.giannetti.3/posts/pfbid0TE57TzTGePaGsPge8x5tv5eRhKbxF2vPHeQ1kbyxUaiov7xzymwmkXf158gqgc1Sl"
