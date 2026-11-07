@@ -101,8 +101,25 @@ main > :is(section, article) > :is(h1, h2) + * {
 }
 
 /*
+ * Sottosezioni di un testo lungo (la storia della Filarmonica): una <section> con il suo <h3> dentro la sezione. Tra
+ * una sottosezione e l'altra uno stacco più largo di quello tra i paragrafi, dentro lo stacco del testo.
+ */
+main > section > section + section {
+    margin-block-start: var(--space-7);
+}
+
+main > section > section > * + * {
+    margin-block: var(--space-5) 0;
+}
+
+main > section > section > h3 + * {
+    margin-block-start: var(--space-4);
+}
+
+/*
  * Sezioni da leggere: titolo, paragrafi, citazioni, figure, elenchi etichetta/valore, elenchi di testo, domande a
- * scomparsa e moduli (come «Scrivici» in Contatti). Da
+ * scomparsa e moduli (come «Scrivici» in Contatti), anche divise in sottosezioni con il loro <h3> fatte degli stessi
+ * elementi (dal 7/11/2026, per la storia della Filarmonica). Da
  * 64rem il titolo va a sinistra e il resto a destra, così la sezione è larga quanto le griglie senza allungare
  * le righe oltre --container-text. Restano con il titolo sopra le sezioni con griglie di schede o di foto
  * (elenchi i cui elementi sono schede con un titolo, articoli, video o figure; non le fonti, dove ogni voce ha
@@ -112,7 +129,11 @@ main > :is(section, article) > :is(h1, h2) + * {
  * (forms.css: dentro la colonna di testo le legende restavano senza spazio).
  */
 @media (min-width: 64rem) {
-    main > section:not(:has(> :not(h2, p, blockquote, figure, dl, ul, ol, details, form))):not(:has(> :is(ul, ol) > li > :is(a:has(> :is(h2, h3, h4)), article, video, figure))):not(:has(> form > fieldset)) {
+    main > section:not(:has(> :not(h2, p, blockquote, figure, dl, ul, ol, details, form))):not(:has(> :is(ul, ol) > li > :is(a:has(> :is(h2, h3, h4)), article, video, figure))):not(:has(> form > fieldset)),
+    main
+        > section:has(> section > h3):not(:has(> :not(h2, p, blockquote, figure, dl, ul, ol, details, section))):not(
+            :has(> section > :not(h3, p, blockquote, figure, dl, ul, ol, details))
+        ):not(:has(> section > :is(ul, ol) > li > :is(a:has(> :is(h2, h3, h4)), article, video, figure))) {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
         column-gap: var(--space-6);
