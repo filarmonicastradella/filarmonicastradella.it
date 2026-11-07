@@ -73,6 +73,20 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 - [ ] 3.26 **D** — «5x1000»: in Cormorant sembra «5x1ooo». «5 per mille» o «5×1000»? (PB12)
 - [ ] 3.28 **D** — Carta `#F6F1EA`: tenerla, o un bianco meno giallo. (PAi4, N)
 
+- [ ] 3.29 **D** — Corde solo nella hero della home e nel piè di pagina, via dalle intestazioni di tutte le altre pagine: ripetute in 13 pagine su 13 sono diventate carta da parati. Prova sul ramo `prova-design`. (A5, 7/11/2026)
+- [ ] 3.30 **D** — Piè di pagina in bordeaux notte invece che inchiostro: oggi il blocco più scuro e pesante del sito è il meno importante. Prova sul ramo `prova-design`. (A4)
+- [ ] 3.31 **D** — Una superficie bordeaux per pagina (in home la fascia «Sostieni la Filarmonica», negli indici l'intestazione). Prova in home sul ramo `prova-design`. (A4)
+- [ ] 3.32 **D** — Descrizioni di schede e presentazioni in inchiostro invece che in grigio: il grigio solo per date e didascalie. Prova sul ramo `prova-design`. (A4)
+- [ ] 3.33 **D** — Scala dei titoli: h2 32–36, h3 22 (oggi 28–30 e 24, salto di 1,2 sotto la soglia di 1,5); Cormorant 600 fino all'h2. Prova sul ramo `prova-design`. (A6; con 4.2)
+- [ ] 3.34 **D** — Maiuscolo spaziato solo per le date; categorie, testate, etichette del piè di pagina in tondo; rimandi come link per esteso senza maiuscoletto. Prova sul ramo `prova-design`. (A6; con 3.8)
+- [ ] 3.35 **D** — Quattro tipi di pagina (indice con immagini, lettura lunga in una colonna centrata con note a margine, scheda, modulo) al posto dello scheletro unico. (A3; con 3.4, 3.10)
+- [ ] 3.36 **D** — Copertine più alte (almeno metà schermo anche su computer) e una foto per scheda nelle pagine indice; velo più leggero sulle foto a colori. (A7)
+- [ ] 3.37 **F** — Associazione quasi vuota: titolo, due righe e tre schede di solo testo; servono immagini, numeri, persone. (A, Associazione)
+- [ ] 3.38 **D** — Storia: le note a margine su schermo largo invece del titolo di sezione a sinistra con il 40% della larghezza vuoto. (A, Storia; con 3.15)
+- [ ] 3.39 **D** — Formazioni: otto sezioni per pagina; tenere presentazione, prossimi appuntamenti e suona con noi, il resto in un blocco o nelle domande. (A8; con 5.1)
+- [ ] 3.40 **D** — Articoli: i nostri articoli (storia, Stradella, sonetto) hanno lo stesso peso delle uscite di giornale, ma sono i contenuti migliori del sito. (A, Articoli)
+- [ ] 3.41 **D** — Contatti: la sezione «Recapiti» ripete telefono, email e PEC del piè di pagina; tenerli in un posto solo. (A8; con 3.11)
+
 ## 4. Il documento DESIGN.md
 
 - [ ] 4.15 **F** — Logotipo: nel sito dal 4/11/2026 FILARMONICA è in maiuscole di Cormorant appena spaziate, sopra il nome e nello stesso colore, senza l'occhiello in Jakarta maiuscolo. Da rifare uguale nel kit di marca (versioni verticale e orizzontale), su locandine, carta intestata e social. (S)
@@ -128,7 +142,8 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 - [ ] 6.2 **F** — Pagine figlie con un solo link interno: missione, musicisti, rassegna stampa. (R3.24)
 - [ ] 6.3 **D** — Articoli: `dateModified` e `url` dell'autore. (R3b.9)
 - [ ] 6.4 **D** — Sottotipi di evento: `MusicEvent`, `ExhibitionEvent`. (R3b.16)
-- [ ] 6.5 **D** — Titoli oltre 60 caratteri rimasti, da ricontrollare. (R3.18)
+- [ ] 6.5 **D** — Titoli oltre 60 caratteri, ricontrollati il 7/11/2026: `articoli/storia/sonetto` 66, `contatti/ingaggi` 63, `trasparenza` 62, `trasparenza/contributi` 63, `informative/materiale` 62, due eventi 68 e 70. (R3.18, A)
+- [ ] 6.9 **F** — Description fuori misura (7/11/2026): corte `articoli/stampa` 70, `formazioni/orchestra-infieri` 72, `informative/cookie` 94, `trasparenza` 104, `sostienici/dona` 106, `formazioni/stradella-facendo` 108; lunghe `associazione/iscrizione` 208, `informative/materiale` 175, `contatti/ingaggi` 172 (Google taglia oltre circa 155). (A)
 - [ ] 6.6 **D** — Rassegna stampa come `NewsArticle` di testi altrui. (R3.20, R3b.15)
 - [ ] 6.7 **F** — Dettagli dell'ente: URL della home con la barra, `contactPoint`, `areaServed`; breadcrumb «Home» da ricontrollare. (R3b.13, R3b.14, R3.16)
 - [ ] 6.8 **D** — Sicurezza: CSP come `<meta>`; il resto richiederebbe un CDN, come la cache. (R3.21, R3.22)
