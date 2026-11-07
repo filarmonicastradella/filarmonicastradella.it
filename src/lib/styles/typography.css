@@ -17,8 +17,12 @@
     --fs-small: 0.8125rem; /* 13 */
     --fs-eyebrow: 0.75rem; /* 12, maiuscolo spaziato */
     --fs-button: 0.875rem; /* 14 */
-    --fs-logo-eyebrow: 0.55em; /* FILARMONICA nel logotipo: maiuscole in Cormorant, poco più di metà della misura del nome */
-    --tracking-logo: 0.14em; /* le maiuscole del logotipo, spaziate come in un frontespizio */
+    /* Il logotipo nell'intestazione (SiteHeader.svelte): fuori dalla scala dei titoli, è un marchio */
+    --font-logo: "Cormorant SC", var(--font-display); /* maiuscoletto vero, solo per il logotipo */
+    --fs-logo: 1.125rem; /* 18 */
+    --lh-logo: 1.05;
+    --tracking-logo: 0.04em;
+    --tracking-logo-first: 0.062em; /* «Filarmonica» largo quanto «A. Stradella», misurato sul Cormorant SC 600 */
 
     --lh-display: 1;
     --lh-heading: 1.1; /* Titolo 1 */

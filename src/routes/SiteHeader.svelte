@@ -22,7 +22,8 @@
 <header>
     <a href="/">
         <span aria-hidden="true">{@html logo}</span>
-        <span><span>Filarmonica</span> Alessandro Stradella</span>
+        <!-- «Alessandro» abbreviato (dal 7/11/2026): il nome intero resta nel titolo dell'abbreviazione -->
+        <span><span>Filarmonica</span> <span><abbr title="Alessandro">A.</abbr> Stradella</span></span>
     </a>
 
     <!-- Il nome del pulsante è la parola visibile, "Menu" o "Chiudi"; le tre corde sono solo il segno -->
@@ -48,8 +49,19 @@
 
 <style>
     /*
+     * Il maiuscoletto vero del Garamond, solo per il logotipo: Cormorant SC 600, sottoinsieme latino, licenza SIL Open
+     * Font License (static/fonts/OFL.txt). Il Cormorant Garamond del resto del sito non ha il maiuscoletto disegnato.
+     */
+    @font-face {
+        font-family: "Cormorant SC";
+        src: url("/fonts/cormorant-sc-600-latin.woff2") format("woff2");
+        font-weight: 600;
+        font-display: swap;
+    }
+
+    /*
      * "fixed": resta in vista scorrendo; lo spazio nel flusso lo riserva "main" (layout.css).
-     * Design system: logotipo orizzontale a sinistra (simbolo, FILARMONICA in maiuscole e il nome), voci di
+     * Design system: logotipo orizzontale a sinistra (simbolo e il nome in maiuscoletto su due righe), voci di
      * menu in linea e il pulsante «Sostienici», a contorno (il pulsante pieno è l'azione della pagina).
      */
     header {
@@ -98,30 +110,25 @@
         inline-size: auto;
     }
 
+    /*
+     * Il nome in maiuscoletto vero del Garamond, su due righe alla stessa misura, come un frontespizio: «Filarmonica»
+     * sopra, «A. Stradella» sotto (dal 7/11/2026; prima FILARMONICA in maiuscole piccole sopra «Alessandro Stradella»).
+     */
     header > a > span:last-child {
         display: flex;
         flex-direction: column;
         color: var(--text);
-        font-family: var(--font-display);
-        /* Su schermi stretti "Alessandro Stradella" a --fs-h3 andava a capo, 3 righe con l'occhiello: troppo alte per l'intestazione */
-        font-size: clamp(0.875rem, 4vw, var(--fs-h3));
-        font-weight: var(--fw-display);
-        line-height: var(--lh-display);
+        font-family: var(--font-logo);
+        font-size: clamp(0.8125rem, 3.4vw, var(--fs-logo));
+        font-weight: var(--fw-heading);
+        letter-spacing: var(--tracking-logo);
+        line-height: var(--lh-logo);
         white-space: nowrap;
     }
 
-    /*
-     * FILARMONICA sopra il nome, in maiuscole dello stesso carattere e colore, appena spaziate, come il frontespizio
-     * di un libro (dal 4/11/2026; prima era un occhiello in Jakarta maiuscolo molto spaziato, bordeaux). Segue la
-     * misura del nome.
-     */
-    header > a > span:last-child > span {
-        margin-block-end: var(--space-1);
-        font-weight: var(--fw-heading);
-        letter-spacing: var(--tracking-logo);
-        text-transform: uppercase;
-        /* Sul telefono il nome si rimpicciolisce: «Filarmonica» non scende sotto la misura degli occhielli */
-        font-size: max(var(--fs-eyebrow), var(--fs-logo-eyebrow));
+    /* «Filarmonica» spaziato quanto basta per finire alla stessa larghezza di «A. Stradella»: le due righe fanno un blocco */
+    header > a > span:last-child > span:first-child {
+        letter-spacing: var(--tracking-logo-first);
     }
 
     /*
