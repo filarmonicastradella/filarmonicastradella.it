@@ -60,8 +60,8 @@
         <small>
             I nuovi eventi compaiono da soli nel tuo calendario.
             {#if !ios}
-                Con altri programmi iscriviti a questo indirizzo (un clic lo copia):
-                <a href={feed} onclick={copyFeed} aria-live="polite">{copied ? "indirizzo copiato" : feed}</a>
+                Con altri programmi iscriviti a questo indirizzo (<span aria-live="polite">{copied ? "copiato" : "un clic lo copia"}</span>):
+                <a href={feed} onclick={copyFeed}>{feed}</a>
             {/if}
         </small>
     </p>
