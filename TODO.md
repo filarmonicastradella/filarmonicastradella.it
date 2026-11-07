@@ -109,6 +109,10 @@ Oggi sono `_page.svelte` (SvelteKit le ignora): per ognuna rinominare in `+page.
 - **Open day** «prova uno strumento»: quando c'è la data, nel calendario. Anche la Filarmonica di Bagnone lo fa, per trovare musicisti nuovi, e i giornali ne parlano (6/11/2026).
 - **Articoli**: interviste e testimonianze dei musicisti, anche di quelli di una volta; i traguardi raggiunti in Identità (poi si può eliminare la pagina disattivata `associazione/traguardi`).
 
+## Da verificare prima di riattivare la pagina dei musicisti
+
+- **Nomi su richiesta** (nota del 26/10/2026, ritrovata il 7/11 nella prova eliminata `prova-taste`): due musicisti avevano chiesto di comparire solo con il nome (Andrei) o solo con il cognome (Ricciardi). Nell'elenco aggiornato il 29/10 (`src/routes/associazione/musicisti/_page.svelte`) Andrei compare come «Andrei Neagovici» e Ricciardi non c'è più. Verificare con loro prima di riattivare la pagina, insieme ai consensi.
+
 ## Design, possibilità future
 
 - **Scala armonica dei titoli** (provata il 7/11/2026 sul ramo prova-design, non adottata): tutte le misure come gradini di un rapporto fisso, la terza maggiore 1,25 da 16 px (12,8 · 16 · 20 · 25 · 31,25 · 39 · 48,8 · 61), con i titoli di sezione a due gradini dai titoli delle schede (39 contro 25: oggi 30 contro 24, troppo vicini). Da riprendere se la gerarchia dei titoli torna un problema.
