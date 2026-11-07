@@ -19,6 +19,7 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 
 ## 1. Fuori dal sito
 
+- [ ] 1.0 **D** — **Eventi interni in home e in calendario**: «Prove Ensemble Lunilicei — Evento creato automaticamente dal sondaggio» è pubblico, perché il sito legge tutto il calendario Google senza filtri. Calendario pubblico separato, o filtro in `calendar.ts`; e titoli degli eventi con la maiuscola solo all'inizio. Le proposte di design del 7/11 sono in `docs/analisi-design-2026-11-07.md`. (A1, 7/11/2026)
 - [ ] 1.1 **F** — **FormSubmit: finché le caselle non sono attivate i messaggi dei moduli si perdono.** È la voce più urgente della lista. Poi sostituire gli indirizzi con gli alias. (T, R3.23)
 - [ ] 1.2 **F** — Certificato per `www`: chi arriva da `https://www.` vede un errore di sicurezza. (R3.1, T)
 - [ ] 1.3 **F** — PayPal: manca l'ID vero del pulsante di donazione. (T)
