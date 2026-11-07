@@ -30,6 +30,7 @@
         try {
             await navigator.clipboard.writeText(feed);
             copied = true;
+            setTimeout(() => (copied = false), 3000);
         } catch {
             copied = false;
         }
@@ -61,8 +62,8 @@
     </p>
     {#if !ios && canCopy}
         <p>
-            <button type="button" onclick={copyFeed}>Copia l'indirizzo</button>
-            <small role="status">{copied ? "Indirizzo copiato." : ""}</small>
+            <!-- Il testo del pulsante dice che l'indirizzo è copiato; aria-live lo fa leggere anche agli screen reader -->
+            <button type="button" onclick={copyFeed} aria-live="polite">{copied ? "Indirizzo copiato" : "Copia l'indirizzo"}</button>
         </p>
     {/if}
     <!-- Senza eventi l'avviso sta nell'intestazione: niente testo sciolto nella pagina -->
