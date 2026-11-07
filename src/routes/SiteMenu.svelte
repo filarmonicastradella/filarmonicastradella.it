@@ -61,6 +61,12 @@
         padding-block: var(--space-2);
     }
 
+    /* In Sostienici e nelle sue pagine il pulsante resta nel colore del marchio, come le voci attive del menu */
+    p a[aria-current] {
+        border-color: var(--text-brand);
+        color: var(--text-brand);
+    }
+
     /*
      * Sotto i 64rem: pannello a tutto schermo, con le voci in colonna, il pulsante in fondo e le corde
      * (layout.css) sul margine destro. Il pannello copre anche l'intestazione, di cui restano sopra solo
