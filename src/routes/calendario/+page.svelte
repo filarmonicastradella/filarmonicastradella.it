@@ -22,11 +22,16 @@
     const webcal = feed.replace(/^https?:/, "webcal:");
     const google = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcal)}`;
     let ios = $state(false);
-    // L'indirizzo va copiato nel programma di calendario: un link scaricherebbe il file, senza iscrizione
-    let canCopy = $state(false);
+
+    /*
+     * L'indirizzo va copiato nel programma di calendario: aprirlo scaricherebbe il file, senza iscrizione. Il link
+     * quindi copia sé stesso (con JS e appunti disponibili; Ctrl e clic centrale restano quelli del browser).
+     */
     let copied = $state(false);
 
-    async function copyFeed() {
+    async function copyFeed(event: MouseEvent) {
+        if (!("clipboard" in navigator) || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
         try {
             await navigator.clipboard.writeText(feed);
             copied = true;
@@ -39,7 +44,6 @@
     onMount(() => {
         now = new Date();
         ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (/macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
-        canCopy = "clipboard" in navigator;
     });
 </script>
 
@@ -56,16 +60,11 @@
         <small>
             I nuovi eventi compaiono da soli nel tuo calendario.
             {#if !ios}
-                Con altri programmi iscriviti a questo indirizzo: {feed}
+                Con altri programmi iscriviti a questo indirizzo (un clic lo copia):
+                <a href={feed} onclick={copyFeed} aria-live="polite">{copied ? "indirizzo copiato" : feed}</a>
             {/if}
         </small>
     </p>
-    {#if !ios && canCopy}
-        <p>
-            <!-- Il testo del pulsante dice che l'indirizzo è copiato; aria-live lo fa leggere anche agli screen reader -->
-            <button type="button" onclick={copyFeed} aria-live="polite">{copied ? "Indirizzo copiato" : "Copia l'indirizzo"}</button>
-        </p>
-    {/if}
     <!-- Senza eventi l'avviso sta nell'intestazione: niente testo sciolto nella pagina -->
     {#if events.length === 0}
         <p>Per ora non ci sono eventi in programma.</p>
