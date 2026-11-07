@@ -99,7 +99,7 @@
     {#if ios}
         <p><a href="/calendario/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
     {:else}
-        <p><a href={google} target="_blank" rel="noopener noreferrer">Aggiungi al tuo calendario</a></p>
+        <p><a href={google}>Aggiungi al tuo calendario</a></p>
     {/if}
 </section>
 
