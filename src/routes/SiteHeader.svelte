@@ -49,8 +49,8 @@
 
 <style>
     /*
-     * Il maiuscoletto vero del Garamond, solo per il logotipo: Cormorant SC 600, sottoinsieme latino, licenza SIL Open
-     * Font License (static/fonts/OFL.txt). Il Cormorant Garamond del resto del sito non ha il maiuscoletto disegnato.
+     * Il maiuscoletto vero del Garamond, solo per «Filarmonica» nel logotipo: Cormorant SC 600, sottoinsieme latino,
+     * licenza SIL Open Font License (static/fonts/OFL.txt). Il Cormorant Garamond non ha il maiuscoletto disegnato.
      */
     @font-face {
         font-family: "Cormorant SC";
@@ -61,7 +61,7 @@
 
     /*
      * "fixed": resta in vista scorrendo; lo spazio nel flusso lo riserva "main" (layout.css).
-     * Design system: logotipo orizzontale a sinistra (simbolo e il nome in maiuscoletto su due righe), voci di
+     * Design system: logotipo orizzontale a sinistra (simbolo e il nome su due righe), voci di
      * menu in linea e il pulsante «Sostienici», a contorno (il pulsante pieno è l'azione della pagina).
      */
     header {
@@ -111,23 +111,24 @@
     }
 
     /*
-     * Il nome in maiuscoletto vero del Garamond, su due righe alla stessa misura, come un frontespizio: «Filarmonica»
-     * sopra, «A. Stradella» sotto (dal 7/11/2026; prima FILARMONICA in maiuscole piccole sopra «Alessandro Stradella»).
+     * «A. Stradella» è l'elemento principale e decide la larghezza, in Cormorant Garamond 600; sopra «Filarmonica» in
+     * maiuscoletto più piccolo, spaziato fino alla stessa larghezza, come il frontespizio di un libro (dal 7/11/2026).
      */
     header > a > span:last-child {
         display: flex;
         flex-direction: column;
         color: var(--text);
-        font-family: var(--font-logo);
-        font-size: clamp(0.8125rem, 3.4vw, var(--fs-logo));
+        font-family: var(--font-display);
+        font-size: clamp(0.9375rem, 4vw, var(--fs-logo));
         font-weight: var(--fw-heading);
-        letter-spacing: var(--tracking-logo);
         line-height: var(--lh-logo);
         white-space: nowrap;
     }
 
-    /* «Filarmonica» spaziato quanto basta per finire alla stessa larghezza di «A. Stradella»: le due righe fanno un blocco */
     header > a > span:last-child > span:first-child {
+        margin-block-end: var(--logo-gap);
+        font-family: var(--font-logo-first);
+        font-size: var(--fs-logo-first);
         letter-spacing: var(--tracking-logo-first);
     }
 
