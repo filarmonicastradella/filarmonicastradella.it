@@ -111,6 +111,7 @@ Oggi sono `_page.svelte` (SvelteKit le ignora): per ognuna rinominare in `+page.
 
 ## Idee per attirare persone e finanziatori
 
+- **Missione in due parti** (idea dalla pagina «Goals & Activities» della CISM, 7/11/2026), quando si riprende l'articolo in bozza: tre **obiettivi** presi dallo statuto (titolo breve e due o tre frasi sul perché) e poi le **attività** concrete con cui ci arriviamo (concerti, prove aperte, raccolta del materiale storico e mostre, collaborazioni con le realtà della Lunigiana). In apertura una riga di fatti (dal 1777, soci, formazioni). Senza numerare gli obiettivi: non sono una sequenza.
 - **Sponsor** (idea dal sito della Filarmonica di Bagnone, 6/11/2026): una sezione in Sostienici per le aziende, con la contropartita chiara (logo su locandine, volantini e programmi di sala, ringraziamento sul sito e sui social, uno spazio ai concerti) e il link al motivo «Collaborazioni, enti e sponsor» di Contatti. Prima va deciso cosa offriamo davvero.
 - **Volontariato per chi non suona** (stessa fonte): compiti concreti (logistica dei concerti, sede, archivio storico e raccolta del materiale, promozione) e la frase «non serve saper suonare». È la pagina disattivata `sostienici/volontariato` (ex `support/volunteer`), priorità alta nella lista unica (2.9).
 - **I giovani**: alcune formazioni hanno età media sotto i 18 anni. Per bandi, fondazioni ed enti è un dato forte: dirlo in home, nelle formazioni e nella cartella stampa. Foto con minori solo con la liberatoria.
