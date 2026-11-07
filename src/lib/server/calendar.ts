@@ -127,8 +127,15 @@ async function fetchUpcomingEvents(): Promise<EventItem[]> {
     if (!res.ok) throw new Error(`Google Calendar API: ${res.status}`);
     const data = await res.json();
 
-    return (data.items ?? []).map(toEventItem);
+    return (data.items ?? []).filter((evt: any) => !isInternal(evt)).map(toEventItem);
 }
+
+/*
+ * Il calendario contiene anche le prove e gli eventi creati dagli strumenti dei sondaggi, che non sono per il pubblico
+ * (dal 7/11/2026): restano fuori dal sito gli eventi il cui titolo comincia con «Prove» e quelli che nella descrizione
+ * dicono di essere stati creati automaticamente.
+ */
+const isInternal = (evt: any) => /^\s*prove\b/i.test(evt.summary ?? "") || /creato automaticamente/i.test(evt.description ?? "");
 
 // Le pagine della stessa build condividono una sola richiesta al calendario.
 let cache: { at: number; events: Promise<EventItem[]> } | undefined;
