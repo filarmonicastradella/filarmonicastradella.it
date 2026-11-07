@@ -202,3 +202,29 @@
     </ul>
 </section>
 -->
+
+<style>
+    /*
+     * La fascia «Sostieni la Filarmonica», l'ultima sezione della home: bordeaux da un bordo all'altro dello schermo e
+     * attaccata al piè di pagina, con i ruoli dei colori girati come nel piè di pagina (dal 7/11/2026).
+     */
+    section:has(> .rimando > a[href="/sostienici"]) {
+        --text: var(--color-carta);
+        --text-muted: var(--color-cipria);
+        --text-brand: var(--color-cipria);
+        --accent: var(--color-carta);
+        --focus-ring: var(--color-cipria);
+        grid-column: full;
+        padding: var(--space-8) var(--page-inline);
+        background-color: var(--color-bordeaux);
+        color: var(--text);
+    }
+
+    section:has(> .rimando > a[href="/sostienici"]) a {
+        color: var(--text);
+    }
+
+    :global(main):has(> section:last-child > .rimando > a[href="/sostienici"]) {
+        padding-block-end: 0;
+    }
+</style>
