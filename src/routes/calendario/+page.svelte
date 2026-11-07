@@ -1,4 +1,5 @@
 <script lang="ts">
+    import CopyLink from "$lib/components/CopyLink.svelte";
     import { onMount } from "svelte";
     import EventCard from "$lib/components/EventCard.svelte";
     import TimelineSections from "$lib/components/TimelineSections.svelte";
@@ -23,24 +24,6 @@
     const google = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcal)}`;
     let ios = $state(false);
 
-    /*
-     * L'indirizzo va copiato nel programma di calendario: aprirlo scaricherebbe il file, senza iscrizione. Il link
-     * quindi copia sé stesso (con JS e appunti disponibili; Ctrl e clic centrale restano quelli del browser).
-     */
-    let copied = $state(false);
-
-    async function copyFeed(event: MouseEvent) {
-        if (!("clipboard" in navigator) || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-        event.preventDefault();
-        try {
-            await navigator.clipboard.writeText(feed);
-            copied = true;
-            setTimeout(() => (copied = false), 3000);
-        } catch {
-            copied = false;
-        }
-    }
-
     onMount(() => {
         now = new Date();
         ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (/macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
@@ -60,8 +43,7 @@
         <small>
             I nuovi eventi compaiono da soli nel tuo calendario.
             {#if !ios}
-                Con altri programmi iscriviti a questo indirizzo (<span aria-live="polite">{copied ? "copiato" : "un clic lo copia"}</span>):
-                <a href={feed} onclick={copyFeed}>{feed}</a>
+                Con altri programmi iscriviti a questo indirizzo <CopyLink href={feed} />
             {/if}
         </small>
     </p>

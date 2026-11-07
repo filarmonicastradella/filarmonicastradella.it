@@ -62,6 +62,8 @@
     <link rel="preload" href={jakartaFont} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href={cormorantFont} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="canonical" href={organization.url + page.url.pathname} />
+    <!-- Il feed degli articoli (articoli.xml): lettori di notizie e browser lo trovano da qui, in ogni pagina -->
+    <link rel="alternate" type="application/atom+xml" title="Articoli — Filarmonica Alessandro Stradella" href="/articoli.xml" />
     <meta property="og:site_name" content={organization.name} />
     <meta property="og:locale" content="it_IT" />
     <meta property="og:type" content="website" />
