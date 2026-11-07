@@ -126,17 +126,32 @@ figcaption {
  * dentro un testo, o accanto all'autore nella firma di un articolo, restano testo. Anche i titoli delle colonne del piè
  * di pagina: tre titoli in Cormorant affiancati erano proprio quello che docs/DESIGN.md vieta.
  */
-p:first-child > time[itemprop]:first-child,
-[itemprop="articleSection"],
-p:first-child > [itemprop="publisher"],
-body > div > footer h2,
-dt,
-th {
+p:first-child > time[itemprop]:first-child {
     font-family: var(--font-text);
     font-size: var(--fs-eyebrow);
     font-weight: var(--fw-text-strong);
     letter-spacing: var(--tracking-eyebrow);
     text-transform: uppercase;
+}
+
+/*
+ * Meno maiuscoletto (dal 7/11/2026): categorie, testate e titoli del piè di pagina in tondo, alla misura del testo;
+ * etichette delle coppie etichetta/valore e delle tabelle in tondo, piccole. Il maiuscolo spaziato resta alle date,
+ * agli indici in cima alle pagine, all'occhiello della home e alla parola «Menu».
+ */
+[itemprop="articleSection"],
+p:first-child > [itemprop="publisher"],
+body > div > footer h2 {
+    font-family: var(--font-text);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-text-strong);
+}
+
+dt,
+th {
+    font-family: var(--font-text);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-text-strong);
 }
 
 p:first-child > time[itemprop]:first-child,
