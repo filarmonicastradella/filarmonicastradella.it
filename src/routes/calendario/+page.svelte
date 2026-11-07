@@ -12,14 +12,19 @@
     let now = $state<Date>();
     const events = $derived(now ? data.events.filter((event) => hasNotEnded(event, now!)) : data.events);
 
-    onMount(() => {
-        now = new Date();
-    });
-
-    // Il calendario a cui iscriversi (calendario.ics): webcal:// lo apre direttamente nel programma di calendario
+    /*
+     * Il calendario a cui iscriversi (calendario.ics), con un solo pulsante: webcal:// lo apre nel calendario di iPhone,
+     * Mac, Windows e Outlook; Android non lo riconosce, e lì il pulsante porta a Google Calendar. Senza JS resta webcal.
+     */
     const feed = `${organization.url}/calendario.ics`;
     const webcal = feed.replace(/^https?:/, "webcal:");
     const google = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcal)}`;
+    let android = $state(false);
+
+    onMount(() => {
+        now = new Date();
+        android = /android/i.test(navigator.userAgent);
+    });
 </script>
 
 <svelte:head>
@@ -30,6 +35,8 @@
 <header>
     <h1>Calendario</h1>
     <p>I prossimi concerti e le altre attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano.</p>
+    <p><a href={android ? google : webcal}>Segui il calendario</a></p>
+    <p><small>I nuovi eventi compaiono da soli nel tuo calendario. Con altri programmi iscriviti a <a href={feed}>{feed}</a>.</small></p>
     <!-- Senza eventi l'avviso sta nell'intestazione: niente testo sciolto nella pagina -->
     {#if events.length === 0}
         <p>Per ora non ci sono eventi in programma.</p>
@@ -44,12 +51,3 @@
     </TimelineSections>
 {/if}
 
-<section>
-    <h2>Segui il calendario</h2>
-    <p>
-        Puoi avere i nostri eventi nel calendario del telefono o del computer: si aggiornano da soli quando ne aggiungiamo uno nuovo. Con
-        <a href={google} target="_blank" rel="noopener noreferrer">Google Calendar</a>, oppure con
-        <a href={webcal}>il calendario di iPhone, Mac e Outlook</a>. Con altri programmi basta iscriversi a questo indirizzo:
-        <a href={feed}>{feed}</a>.
-    </p>
-</section>
