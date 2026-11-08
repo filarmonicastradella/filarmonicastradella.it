@@ -96,6 +96,8 @@
         <dt>Telefono</dt>
         <dd><a href="tel:{organization.phone.replaceAll(' ', '')}">{organization.phone}</a></dd>
     </dl>
+    <!-- La scheda contatto per la stampa (stampa.vcf), come «Salva nei contatti» in Contatti -->
+    <p><a href="/contatti/stampa.vcf" download>Salva nei contatti</a></p>
 </section>
 
 <p class="rimando"><a href="/contatti">Contatti</a></p>
