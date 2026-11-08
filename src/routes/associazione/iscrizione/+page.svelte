@@ -363,7 +363,7 @@
         <summary>Devo avere uno strumento mio?</summary>
         <p>
             Dipende dallo strumento: la Filarmonica ne ha alcuni da prestare, ma non tutti, perché certi costano moltissimo.
-            <a href="/contatti/scrivi?motivo=iscrizione">Scrivici</a> e ti diciamo se quello che suoni è disponibile. Le parti e la sala prove le
+            <a href="/contatti/scrivi?riguardo=Prestito%20di%20uno%20strumento">Scrivici</a> e ti diciamo se quello che suoni è disponibile. Le parti e la sala prove le
             mettiamo noi.
         </p>
     </details>

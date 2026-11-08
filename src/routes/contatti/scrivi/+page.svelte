@@ -60,6 +60,9 @@
         .filter(({ publisher }) => !publisher)
         .map(({ href, title }) => ({ href, title, value: `${title} – ${organization.url}${href}` }));
     const requestedArticle = $derived(browser ? page.url.searchParams.get("articolo") : null);
+    // Da un link che dice di che cosa si scrive (&riguardo=Prestito di uno strumento, o la prenotazione per un evento) il messaggio
+    // comincia con quel testo, poi chi scrive continua
+    const about = $derived(browser ? page.url.searchParams.get("riguardo")?.slice(0, 200) : null);
     let chosenArticle = $derived(ourArticles.find(({ href }) => href === requestedArticle)?.value ?? "");
     // Dal piè di pagina (&pagina=/calendario) l'indirizzo della pagina da cui si segnala il problema, nel gruppo «La pagina»;
     // solo indirizzi interni, che cominciano con una barra
@@ -98,7 +101,7 @@
     let receiptFor = $derived(requestedReceipt === "quota" ? "quota" : "donazione");
     // I contanti non danno diritto alle agevolazioni, ma la ricevuta si fa lo stesso
     const paymentMethods = ["Bonifico", "Carta, online", "Assegno", "Altro pagamento tracciabile", "Contanti"];
-    // Dalla pagina di ringraziamento di Stripe (&modalita=carta) la modalità è già scelta
+    // Dalla pagina di ringraziamento di Stripe (&modalita=carta) la modalità è già scelta, e la data del versamento è oggi
     const requestedMethod = $derived(browser ? page.url.searchParams.get("modalita") : null);
     let paymentMethod = $derived(requestedMethod === "carta" ? "Carta, online" : "");
 
@@ -215,7 +218,7 @@
 
             <p>
                 <label for="contatto-messaggio">Messaggio</label>
-                <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isReceipt} minlength="10" maxlength="2000"></textarea>
+                <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isReceipt} minlength="10" maxlength="2000" value={about ? `${about}\n\n` : ""}></textarea>
             </p>
 
         </fieldset>
@@ -598,7 +601,7 @@
 
                 <p>
                     <label for="ricevuta-data">Data del versamento</label>
-                    <input type="date" id="ricevuta-data" name="data_del_versamento" required max={today} />
+                    <input type="date" id="ricevuta-data" name="data_del_versamento" required max={today} value={requestedMethod === "carta" ? today : ""} />
                 </p>
 
                 <p>

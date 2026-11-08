@@ -111,7 +111,7 @@
             <p>
                 Di norma no: i nostri eventi sono a ingresso libero, e se per un evento è previsto un biglietto lo trovi scritto qui sopra. Prenotare
                 non è obbligatorio, ma ci aiuta sapere in quanti verrete, per organizzare la sala e per la sicurezza:
-                <a href="/contatti/scrivi">scrivici</a> per segnalare la tua presenza.
+                <a href="/contatti/scrivi?riguardo={encodeURIComponent(`Prenotazione per «${event.summary}», ${date}`)}">scrivici</a> per segnalare la tua presenza.
             </p>
         </details>
         <details>
