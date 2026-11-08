@@ -102,7 +102,6 @@
             loading="lazy"
         />
     </figure>
-    <p>Sonetto</p>
     <p>
         dedicato al degnissimo principe della medesima, sua eccellenza<br />
         Carlo Emanuelle Malaspina<br />
@@ -166,22 +165,14 @@
 
 <style>
     /*
-     * La trascrizione (la sezione con le strofe nel <blockquote>) impaginata come il foglio: frontespizio, dedica e note di stampa in occhiello, il titolo
-     * «Sonetto» in Cormorant, le strofe nel <blockquote> più grandi e staccate, con un filetto sopra e sotto a
-     * isolarle dal resto.
+     * La trascrizione (la sezione con le strofe nel <blockquote>) impaginata come il foglio: frontespizio, dedica e note di stampa in occhiello
+     * (il titolo «Sonetto» è nel cartiglio del putto, e non si ripete nel testo), le strofe nel <blockquote> più grandi e staccate, con un
+     * filetto sopra e sotto a isolarle dal resto.
      */
-    section:has(> blockquote) > p:is(:nth-of-type(1), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5)) {
+    section:has(> blockquote) > p {
         color: var(--text-muted);
         font-size: var(--fs-eyebrow);
         font-weight: var(--fw-text-strong);
-        letter-spacing: var(--tracking-eyebrow);
-        text-transform: uppercase;
-    }
-
-    section:has(> blockquote) > p:nth-of-type(2) {
-        font-family: var(--font-display);
-        font-size: var(--fs-h3);
-        font-weight: var(--fw-heading);
         letter-spacing: var(--tracking-eyebrow);
         text-transform: uppercase;
     }
