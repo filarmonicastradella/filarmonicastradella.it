@@ -1,14 +1,16 @@
 <script lang="ts">
     import { formatArticleDate, type Article } from "$lib/articles";
+    import type { Snippet } from "svelte";
     import CopyValue from "$lib/components/CopyValue.svelte";
     import { organization } from "$lib/organization";
 
     /*
-     * La fine di ogni nostro articolo, prima del rimando agli Articoli: come citarlo (solo la storia, che ha le fonti)
-     * e l'invito a segnalare errori o aggiunte. L'invito a mandarci materiale storico sta solo negli articoli dove
+     * La fine di ogni nostro articolo: subito dopo il testo, dove chi ha finito di leggere le vede, come citarlo (solo la storia, che ha le fonti)
+     * e l'invito a segnalare errori o aggiunte; poi le fonti (si consultano dalle note) e per ultimo il rimando agli Articoli. L'invito a mandarci materiale storico sta solo negli articoli dove
      * serve, scritto lì (Storia della Filarmonica).
      */
-    let { article }: { article: Article } = $props();
+    // `children`: le fonti dell'articolo, che vanno dopo queste sezioni brevi e prima del rimando
+    let { article, children }: { article: Article; children?: Snippet } = $props();
 
     const history = $derived(article.category === "storia");
     const citation = $derived(
@@ -30,5 +32,7 @@
     <h2>Hai qualcosa da aggiungere?</h2>
     <p>Se in questo articolo hai trovato un errore o sai qualcosa da aggiungere, <a href="/contatti?motivo=articoli&articolo={encodeURIComponent(article.href ?? '')}#scrivici">scrivici</a>.</p>
 </section>
+
+{@render children?.()}
 
 <p class="rimando"><a href="/articoli">Articoli</a></p>

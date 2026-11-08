@@ -139,25 +139,26 @@
     <p>In Massa 1789. Per Stefano Frediani stampator ducale con approvazione.</p>
 </section>
 
-<section role="doc-endnotes" aria-labelledby="fonti">
-    <h2 id="fonti">Fonti</h2>
-    <ol>
-        <li id="fonte-1">Sonetto a stampa <i>In occasione della solenne festività di Santa Cecilia</i>, Massa, Stefano Frediani, 1789; l'originale è nella villa dei Fantoni a Noletta, la
-            <a href="https://commons.wikimedia.org/wiki/File:Sonetto_Santa_Cecilia_Accademia_dei_Dissonanti_Fivizzano_1789.jpg" target="_blank" rel="noopener noreferrer">scansione</a>
-            su Wikimedia Commons. <a role="doc-backlink" href="#rimando-1a" aria-label="Torna al rimando 1">Torna al testo</a></li>
-        <li id="fonte-2"><i>Gazzetta Toscana</i>, 1789, «Fivizzano 3 maggio». <a role="doc-backlink" href="#rimando-2a" aria-label="Torna al rimando 2">Torna al testo</a></li>
-        <li id="fonte-3"><i>Istituti e società musicali in Italia. Statistica</i>, Roma, Direzione di statistica, 1873, pp. 216-217 (dati del 1871-72). <a role="doc-backlink" href="#rimando-3a" aria-label="Torna al rimando 3">Torna al testo</a></li>
-        <li id="fonte-4"><i>Gazzetta musicale di Milano</i>, 1887, supplemento straordinario al n. 23. <a role="doc-backlink" href="#rimando-4a" aria-label="Torna al rimando 4">Torna al testo</a></li>
-        <li id="fonte-5">lunigiana.net, <i>Cento anni di Lunigiana</i>, anno 1987. <a role="doc-backlink" href="#rimando-5a" aria-label="Torna al rimando 5">Torna al testo</a></li>
-        <li id="fonte-6"><i>Gazzetta Toscana</i>, 1788, «Fivizzano 19 gennaio». <a role="doc-backlink" href="#rimando-6a" aria-label="Torna al rimando 6">Torna al testo</a></li>
-        <li id="fonte-7"><i>Gazzetta Toscana</i>, 1787, «Fivizzano 5 maggio». <a role="doc-backlink" href="#rimando-7a" aria-label="Torna al rimando 7">Torna al testo</a></li>
-        <li id="fonte-8">Lettera di Luigi Fantoni al «Sig.r Frediani», 2 marzo 1791, Biblioteca Estense di Modena, Autografoteca Campori. <a role="doc-backlink" href="#rimando-8a" aria-label="Torna al rimando 8">Torna al testo</a></li>
-        <li id="fonte-9">Giovanni Fantoni, <i>Poesie</i>, Italia [Firenze], 1823, II, p. 104, nota all'epistola al marchese di Fosdinovo. <a role="doc-backlink" href="#rimando-9a" aria-label="Torna al rimando 9">Torna al testo</a></li>
-        <li id="fonte-10">Giosuè Carducci, «La gioventù poetica di Giovanni Fantoni», in <i>Melica e lirica del Settecento</i>, 1909, p. 210. <a role="doc-backlink" href="#rimando-10a" aria-label="Torna al rimando 10">Torna al testo</a></li>
-    </ol>
-</section>
-
-<ArticleFooter {article} />
+<!-- Le fonti dopo «Come citare» e «Hai qualcosa da aggiungere?», prima del rimando (ArticleFooter) -->
+<ArticleFooter {article}>
+    <section role="doc-endnotes" aria-labelledby="fonti">
+        <h2 id="fonti">Fonti</h2>
+        <ol>
+            <li id="fonte-1">Sonetto a stampa <i>In occasione della solenne festività di Santa Cecilia</i>, Massa, Stefano Frediani, 1789; l'originale è nella villa dei Fantoni a Noletta, la
+                <a href="https://commons.wikimedia.org/wiki/File:Sonetto_Santa_Cecilia_Accademia_dei_Dissonanti_Fivizzano_1789.jpg" target="_blank" rel="noopener noreferrer">scansione</a>
+                su Wikimedia Commons. <a role="doc-backlink" href="#rimando-1a" aria-label="Torna al rimando 1">Torna al testo</a></li>
+            <li id="fonte-2"><i>Gazzetta Toscana</i>, 1789, «Fivizzano 3 maggio». <a role="doc-backlink" href="#rimando-2a" aria-label="Torna al rimando 2">Torna al testo</a></li>
+            <li id="fonte-3"><i>Istituti e società musicali in Italia. Statistica</i>, Roma, Direzione di statistica, 1873, pp. 216-217 (dati del 1871-72). <a role="doc-backlink" href="#rimando-3a" aria-label="Torna al rimando 3">Torna al testo</a></li>
+            <li id="fonte-4"><i>Gazzetta musicale di Milano</i>, 1887, supplemento straordinario al n. 23. <a role="doc-backlink" href="#rimando-4a" aria-label="Torna al rimando 4">Torna al testo</a></li>
+            <li id="fonte-5">lunigiana.net, <i>Cento anni di Lunigiana</i>, anno 1987. <a role="doc-backlink" href="#rimando-5a" aria-label="Torna al rimando 5">Torna al testo</a></li>
+            <li id="fonte-6"><i>Gazzetta Toscana</i>, 1788, «Fivizzano 19 gennaio». <a role="doc-backlink" href="#rimando-6a" aria-label="Torna al rimando 6">Torna al testo</a></li>
+            <li id="fonte-7"><i>Gazzetta Toscana</i>, 1787, «Fivizzano 5 maggio». <a role="doc-backlink" href="#rimando-7a" aria-label="Torna al rimando 7">Torna al testo</a></li>
+            <li id="fonte-8">Lettera di Luigi Fantoni al «Sig.r Frediani», 2 marzo 1791, Biblioteca Estense di Modena, Autografoteca Campori. <a role="doc-backlink" href="#rimando-8a" aria-label="Torna al rimando 8">Torna al testo</a></li>
+            <li id="fonte-9">Giovanni Fantoni, <i>Poesie</i>, Italia [Firenze], 1823, II, p. 104, nota all'epistola al marchese di Fosdinovo. <a role="doc-backlink" href="#rimando-9a" aria-label="Torna al rimando 9">Torna al testo</a></li>
+            <li id="fonte-10">Giosuè Carducci, «La gioventù poetica di Giovanni Fantoni», in <i>Melica e lirica del Settecento</i>, 1909, p. 210. <a role="doc-backlink" href="#rimando-10a" aria-label="Torna al rimando 10">Torna al testo</a></li>
+        </ol>
+    </section>
+</ArticleFooter>
 
 <style>
     /*
