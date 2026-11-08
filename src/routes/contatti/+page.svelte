@@ -3,6 +3,7 @@
     import { page } from "$app/state";
     import FaqItem from "$lib/components/FaqItem.svelte";
     import { ensembles } from "$lib/ensembles";
+    import { articles } from "$lib/articles";
     import { bookingFaq } from "$lib/faq";
     import { occasions } from "$lib/occasions";
     import { organization } from "$lib/organization";
@@ -23,6 +24,8 @@
         { key: "donazioni", name: "Donazioni e ricevute", mailbox: "tesoreria" },
         { key: "collaborazioni", name: "Collaborazioni, enti e sponsor", mailbox: "presidente" },
         { key: "stampa", name: "Stampa e media", mailbox: "presidente" },
+        // Errori e aggiunte ai nostri articoli, a chi li scrive (dal 8/11/2026): il link in fondo a ogni articolo
+        { key: "articoli", name: "Errori e aggiunte agli articoli", mailbox: "presidente" },
         { key: "storia", name: MATERIAL, mailbox: "info" },
         { key: "minori", name: "Tutela dei minori", mailbox: "safeguarding" },
         { key: "privacy", name: "Privacy e dati personali", mailbox: "privacy" },
@@ -36,6 +39,11 @@
     let topic = $derived(topics.find(({ key, name }) => key === requested || name === requested)?.name ?? topics[0].name);
     const mailbox = $derived(topics.find(({ name }) => name === topic)?.mailbox ?? "info");
     const isBooking = $derived(topic === BOOKING);
+
+    // Dal fondo di un articolo (&articolo=/articoli/storia/filarmonica) il messaggio comincia con il suo titolo e indirizzo
+    const requestedArticle = $derived(browser ? page.url.searchParams.get("articolo") : null);
+    const reportedArticle = $derived(articles.find(({ href, publisher }) => !publisher && href === requestedArticle));
+    const messageStart = $derived(reportedArticle ? `Articolo «${reportedArticle.title}» (${organization.url}${reportedArticle.href}):\n\n` : "");
 
     // La formazione preferita per un ingaggio: dal link della sua pagina (?formazione=stradella-facendo), altrimenti nessuna
     const NO_PREFERENCE = "Nessuna preferenza";
@@ -146,7 +154,7 @@
 
             <p>
                 <label for="contatto-messaggio">Messaggio</label>
-                <textarea id="contatto-messaggio" name="messaggio" rows="6" required minlength="10" maxlength="2000"></textarea>
+                <textarea id="contatto-messaggio" name="messaggio" rows="6" required minlength="10" maxlength="2000" value={messageStart}></textarea>
             </p>
         </fieldset>
 

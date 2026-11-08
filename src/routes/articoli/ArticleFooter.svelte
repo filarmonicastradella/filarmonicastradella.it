@@ -26,7 +26,7 @@
 
 <section>
     <h2>Hai qualcosa da aggiungere?</h2>
-    <p>Se in questo articolo hai trovato un errore o sai qualcosa da aggiungere, <a href="/contatti#scrivici">scrivici</a>.</p>
+    <p>Se in questo articolo hai trovato un errore o sai qualcosa da aggiungere, <a href="/contatti?motivo=articoli&articolo={encodeURIComponent(article.href ?? '')}#scrivici">scrivici</a>.</p>
 </section>
 
 <p class="rimando"><a href="/articoli">Articoli</a></p>
