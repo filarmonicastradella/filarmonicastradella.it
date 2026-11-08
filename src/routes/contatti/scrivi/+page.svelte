@@ -203,8 +203,8 @@
             <!-- Tutela dei minori: nessun campo in più, chi scrive deve poterlo fare liberamente; prima, i numeri per le emergenze -->
             {#if isSafeguarding}
                 <p>
-                    <strong>Se un minore è in pericolo adesso, chiama il <a href="tel:112">112</a>.</strong> Per un consiglio o una segnalazione,
-                    anche senza dire il tuo nome, c'è il <a href="tel:114">114</a> Emergenza Infanzia, gratuito, a tutte le ore.
+                    <strong>Se un minore è in immediato pericolo, chiama il <a href="tel:112">112</a>.</strong><br />
+                    Per un consiglio o una segnalazione, anche anonima, chiama il <a href="tel:114">114</a>.
                 </p>
             {/if}
 
