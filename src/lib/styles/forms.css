@@ -176,6 +176,18 @@ textarea:hover {
 }
 
 /* Stessa altezza per campi di testo, date ed elenchi a scelta, così quelli affiancati restano allineati */
+/*
+ * Un campo compilato dal sito e non modificabile (il dispositivo nelle segnalazioni sul sito): si legge e si invia (readonly; un campo
+ * disabled non verrebbe inviato), ma ha l'aspetto di un campo spento, con il bordo tratteggiato e il testo secondario.
+ */
+input[readonly],
+input[readonly]:hover {
+    border-style: dashed;
+    border-color: var(--text-muted);
+    background-color: var(--bg);
+    color: var(--text-muted);
+}
+
 input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="hidden"], [type="file"]),
 select {
     block-size: calc(var(--fs-body) * var(--lh-body) + var(--space-3) * 2 + var(--border-width) * 2);

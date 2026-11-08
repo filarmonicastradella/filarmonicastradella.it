@@ -22,20 +22,22 @@
     const RECEIPT = "Ricevute";
 
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
-    // Sette motivi (dal 8/11/2026): uno generico per tutto ciò che è solo un messaggio (domande, iscrizioni, donazioni, collaborazioni,
-    // sponsor, stampa, aggiunte agli articoli), e uno per ogni richiesta che ha campi o avvisi suoi: gli ingaggi, il materiale storico,
+    // Otto motivi (dal 8/11/2026): uno generico per tutto ciò che è solo un messaggio (domande, iscrizioni, donazioni, collaborazioni,
+    // sponsor, stampa), e uno per ogni richiesta che ha campi o avvisi suoi: gli ingaggi, il materiale storico, gli articoli,
     // le ricevute, i problemi con il sito, la privacy, la tutela dei minori. La chiave sceglie il motivo da un link
     // (/contatti/scrivi?motivo=ingaggio); le chiavi dei motivi accorpati restano valide come alias, perché ci sono link e QR che le usano.
     const topics = [
         {
             key: "informazioni",
-            aliases: ["altro", "iscrizione", "donazioni", "articoli", "collaborazioni", "stampa", "sponsor", "enti"],
+            aliases: ["altro", "iscrizione", "donazioni", "collaborazioni", "stampa", "sponsor", "enti"],
             name: "Informazioni",
             mailbox: "info"
         },
         { key: "ingaggio", name: BOOKING, mailbox: "info" },
         { key: "storia", name: MATERIAL, mailbox: "info" },
         { key: "ricevuta", name: RECEIPT, mailbox: "tesoreria" },
+        // Con il gruppo «L'articolo»: un menu con i nostri articoli, già scelto dal link in fondo a ogni articolo (&articolo=)
+        { key: "articoli", name: "Errori e aggiunte agli articoli", mailbox: "info" },
         // Con il gruppo «La pagina»: l'indirizzo (dal link del piè di pagina, &pagina=) e il dispositivo, ricavato dal browser
         { key: "sito", name: "Problemi con il sito", mailbox: "info" },
         { key: "privacy", name: "Privacy e dati personali", mailbox: "privacy" },
@@ -52,20 +54,19 @@
     const mailbox = $derived(topics.find(({ name }) => name === topic)?.mailbox ?? "info");
     const isBooking = $derived(topic === BOOKING);
 
-    // Dal fondo di un articolo (&articolo=/articoli/storia/filarmonica) il messaggio comincia con il suo titolo e indirizzo
+    // I nostri articoli, per il menu del gruppo «L'articolo»; dal fondo di un articolo (&articolo=/articoli/storia/filarmonica) è già scelto
+    // (nell'email arrivano titolo e indirizzo intero)
+    const ourArticles = articles
+        .filter(({ publisher }) => !publisher)
+        .map(({ href, title }) => ({ href, title, value: `${title} – ${organization.url}${href}` }));
     const requestedArticle = $derived(browser ? page.url.searchParams.get("articolo") : null);
-    const reportedArticle = $derived(articles.find(({ href, publisher }) => !publisher && href === requestedArticle));
+    let chosenArticle = $derived(ourArticles.find(({ href }) => href === requestedArticle)?.value ?? "");
     // Dal piè di pagina (&pagina=/calendario) l'indirizzo della pagina da cui si segnala il problema, nel gruppo «La pagina»;
     // solo indirizzi interni, che cominciano con una barra
     const requestedPage = $derived(browser ? page.url.searchParams.get("pagina") : null);
     const reportedPage = $derived(requestedPage && /^\/[\w\-./%]*$/.test(requestedPage) ? requestedPage : null);
     // Il dispositivo e il browser di chi segnala, ricavati dal browser stesso (src/lib/device.ts); in prerender niente
     const device = browser ? describeDevice() : "";
-    const messageStart = $derived(
-        reportedArticle
-            ? `Articolo «${reportedArticle.title}» (${organization.url}${reportedArticle.href}):\n\n`
-            : ""
-    );
 
     // La formazione preferita per un ingaggio: dal link della sua pagina (?formazione=stradella-facendo), altrimenti nessuna
     const NO_PREFERENCE = "Nessuna preferenza";
@@ -74,6 +75,7 @@
     const isMaterial = $derived(topic === MATERIAL);
     const isReceipt = $derived(topic === RECEIPT);
     const isSite = $derived(topics.find(({ name }) => name === topic)?.key === "sito");
+    const isArticle = $derived(topics.find(({ name }) => name === topic)?.key === "articoli");
     const isSafeguarding = $derived(topics.find(({ name }) => name === topic)?.key === "minori");
     const isPrivacy = $derived(topics.find(({ name }) => name === topic)?.key === "privacy");
     // I diritti del GDPR, detti come li direbbe chi scrive (artt. 15, 16, 17, 7.3, 21, 20)
@@ -213,7 +215,7 @@
 
             <p>
                 <label for="contatto-messaggio">Messaggio</label>
-                <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isReceipt} minlength="10" maxlength="2000" value={messageStart}></textarea>
+                <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isReceipt} minlength="10" maxlength="2000"></textarea>
             </p>
 
         </fieldset>
@@ -221,8 +223,25 @@
         <!-- Chi scrive sempre subito dopo il messaggio, con ogni motivo; per il materiale storico si chiama «Chi consegna» -->
         {@render sender()}
 
-        <!-- Un problema con il sito: la pagina (già compilata se si arriva dal link del piè di pagina) e il dispositivo, ricavato dal browser;
-             tutti e due modificabili -->
+        <!-- Errori e aggiunte a un articolo: quale, dal menu dei nostri articoli (nell'email titolo e indirizzo) -->
+        {#if isArticle}
+            <fieldset>
+                <legend>L'articolo</legend>
+
+                <p>
+                    <label for="segnalazione-articolo">Articolo</label>
+                    <select id="segnalazione-articolo" name="articolo" required bind:value={chosenArticle}>
+                        <option value="" disabled>Scegli l'articolo</option>
+                        {#each ourArticles as { href, title, value } (href)}
+                            <option {value}>{title}</option>
+                        {/each}
+                    </select>
+                </p>
+            </fieldset>
+        {/if}
+
+        <!-- Un problema con il sito: la pagina (già compilata se si arriva dal link del piè di pagina, modificabile) e il dispositivo,
+             ricavato dal browser, visibile ma non modificabile (readonly: un campo disabled non verrebbe inviato) -->
         {#if isSite}
             <fieldset>
                 <legend>La pagina</legend>
@@ -234,7 +253,7 @@
 
                 <p>
                     <label for="segnalazione-dispositivo">Dispositivo e browser</label>
-                    <input type="text" id="segnalazione-dispositivo" name="dispositivo" maxlength="160" value={device} />
+                    <input type="text" id="segnalazione-dispositivo" name="dispositivo" maxlength="160" value={device} readonly />
                 </p>
             </fieldset>
         {/if}
