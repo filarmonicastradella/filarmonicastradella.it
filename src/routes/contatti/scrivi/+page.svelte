@@ -36,10 +36,10 @@
         { key: "ingaggio", name: BOOKING, mailbox: "info" },
         { key: "storia", name: MATERIAL, mailbox: "info" },
         { key: "ricevuta", name: RECEIPT, mailbox: "tesoreria" },
-        // Con il gruppo «L'articolo»: un menu con i nostri articoli, già scelto dal link in fondo a ogni articolo (&articolo=)
-        { key: "articoli", name: "Errori e aggiunte agli articoli", mailbox: "info" },
+        // Con il gruppo «L'articolo»: un menu con i nostri articoli, già scelto dal link in fondo a ogni articolo (&articolo=); alla redazione
+        { key: "articoli", name: "Errori e aggiunte agli articoli", mailbox: "redazione" },
         // Con il gruppo «La pagina»: l'indirizzo (dal link del piè di pagina, &pagina=) e il dispositivo, ricavato dal browser
-        { key: "sito", name: "Problemi con il sito", mailbox: "info" },
+        { key: "sito", name: "Problemi con il sito", mailbox: "webmaster" },
         { key: "privacy", name: "Privacy e dati personali", mailbox: "privacy" },
         { key: "minori", name: "Tutela dei minori", mailbox: "safeguarding" }
     ];
