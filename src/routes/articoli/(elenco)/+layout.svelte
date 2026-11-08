@@ -39,6 +39,6 @@
 
 <!-- In fondo all'archivio, sotto l'elenco di ogni categoria: per chi scrive di noi, i materiali per la stampa (come in Contatti) -->
 <section>
-    <h2>Per la stampa</h2>
-    <p>Presentazione, dati, simbolo e contatti per chi scrive di noi: <a href="/contatti/stampa">materiali per la stampa</a>.</p>
+    <h2>Vuoi scrivere di noi?</h2>
+    <p>Presentazione, dati, simbolo e contatti sono nei <a href="/contatti/stampa">materiali per la stampa</a>.</p>
 </section>
