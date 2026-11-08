@@ -1,5 +1,5 @@
 <script lang="ts">
-    import CopyValue from "$lib/components/CopyValue.svelte";
+    import { onMount } from "svelte";
     import { ensembles } from "$lib/ensembles";
     import { legalSeat } from "$lib/locations";
     import { organization } from "$lib/organization";
@@ -8,6 +8,23 @@
     // presentazione da copiare, i dati essenziali, il simbolo e i contatti. Le foto sono in Foto e video, quelle in alta
     // risoluzione su richiesta. Il logo solo per articoli e notizie sulla Filarmonica (regole d'uso dei segni distintivi, art. 6).
     const presentation = `La ${organization.name} è un'associazione musicale di Fivizzano, in Lunigiana, nata nel ${organization.foundingYear}. Riunisce quattro formazioni: ${ensembles.map(({ title }) => title).join(", ").replace(/, ([^,]*)$/, " e $1")}.`;
+
+    // «Copia il testo», a contorno come «Copia i dati» delle donazioni: solo con JS e con gli appunti, poi «Testo copiato» per tre secondi
+    let canCopy = $state(false);
+    let copied = $state(false);
+    onMount(() => {
+        canCopy = !!navigator.clipboard;
+    });
+
+    async function copyPresentation() {
+        try {
+            await navigator.clipboard.writeText(presentation);
+            copied = true;
+            setTimeout(() => (copied = false), 3000);
+        } catch {
+            copied = false;
+        }
+    }
 </script>
 
 <svelte:head>
@@ -23,7 +40,9 @@
 <section>
     <h2>Presentazione</h2>
     <p>{presentation}</p>
-    <p><CopyValue text={presentation}>Copia il testo</CopyValue></p>
+    {#if canCopy}
+        <p><button type="button" onclick={copyPresentation} aria-live="polite"><span hidden={copied}>Copia il testo</span><span hidden={!copied}>Testo copiato</span></button></p>
+    {/if}
 </section>
 
 <section>
