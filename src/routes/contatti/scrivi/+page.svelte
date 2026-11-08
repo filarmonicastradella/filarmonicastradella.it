@@ -52,6 +52,8 @@
     const requestedEnsemble = $derived(browser ? page.url.searchParams.get("formazione") : null);
     let ensemble = $derived(ensembles.find(({ slug }) => slug === requestedEnsemble)?.title ?? NO_PREFERENCE);
     const isMaterial = $derived(topic === MATERIAL);
+    // Il telefono è obbligatorio solo per un ingaggio e per il materiale storico (dal 8/11/2026; prima sempre)
+    const needsPhone = $derived(isBooking || isMaterial);
 
     // Materiale storico: le scansioni si mandano dal modulo, gli originali si portano a un punto di raccolta (gli stessi del calendario)
     let delivery = $state("scansioni");
@@ -99,10 +101,11 @@
             <input type="email" id="contatto-email" name="email" autocomplete="email" required maxlength="120" />
         </p>
 
-        <!-- Molti preferiscono una telefonata o un messaggio WhatsApp a un'email: il telefono lo chiediamo sempre (informativa privacy) -->
+        <!-- Molti preferiscono una telefonata o un messaggio WhatsApp a un'email (informativa privacy): il telefono è facoltativo,
+             tranne per un ingaggio (si richiama per l'evento) e per il materiale storico (va sulla busta degli originali) -->
         <p>
-            <label for="contatto-telefono">Telefono</label>
-            <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" inputmode="tel" required minlength="9" maxlength="20" />
+            <label for="contatto-telefono">Telefono{needsPhone ? "" : " (facoltativo)"}</label>
+            <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" inputmode="tel" required={needsPhone} minlength="9" maxlength="20" />
         </p>
     </fieldset>
 {/snippet}
