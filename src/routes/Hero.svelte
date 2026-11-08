@@ -27,7 +27,7 @@
         <!-- Il motto dell'Accademia de' Filarmonici Dissonanti, dal diploma settecentesco (articoli/storia/filarmonica) -->
         <p>Le dissonanze in un accordo solo</p>
     </hgroup>
-    <p><a href="/contatti?motivo=ingaggio#scrivici">Per il tuo evento</a></p>
+    <p><a href="/contatti?motivo=ingaggio#scrivici">Chiedi un ingaggio</a></p>
     <enhanced:img
         src={cover}
         alt="La Filarmonica in concerto di sera su un palco in piazza nel 1987, sotto lo striscione «Società Filarmonica Fivizzano, 1777-1987, duecento anni e un po'»"
