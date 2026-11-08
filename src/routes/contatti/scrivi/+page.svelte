@@ -256,7 +256,7 @@
                     </fieldset>
                 {/each}
 
-                <p><button type="button" onclick={() => pieces.push(nextPiece++)}>Aggiungi un altro ricordo</button></p>
+                <p><button type="button" onclick={() => pieces.push(nextPiece++)}>Aggiungi un ricordo</button></p>
             </fieldset>
 
             <!-- La dichiarazione di consegna e liberatoria della raccolta, una casella per impegno -->
