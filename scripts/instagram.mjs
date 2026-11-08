@@ -1,21 +1,20 @@
 // Galleria di Instagram: i post si leggono qui, prima della build (e del server di sviluppo), con l'API ufficiale di
-// Instagram (Instagram API with Instagram Login), senza servizi in mezzo. Foto e video si scaricano in static/instagram/
+// Instagram (API Instagram con accesso unificato, dall'app «Sito Filarmonica» su Meta for Developers), senza servizi in mezzo. Foto e video si scaricano in static/instagram/
 // e il sito li pubblica da sé; le pagine leggono solo src/lib/content/instagram.json, già pronto, senza nessuna
 // richiesta a Instagram. Fino al 30/10/2026 il feed passava da Behold, finito in pausa per il limite di visualizzazioni.
 //
-// Il token (INSTAGRAM_TOKEN, in .env e nei segreti del repository) dura 60 giorni: lo script lo rinnova quando è vecchio
-// di una settimana e scrive quello nuovo nel file indicato da INSTAGRAM_TOKEN_FILE, che la GitHub Action salva nel
-// segreto. Se Instagram non risponde, o il token manca, restano le foto dell'ultima volta: la galleria è accessoria.
+// Il token (INSTAGRAM_TOKEN, in .env e nei segreti del repository) è dell'utente di sistema dell'app e non scade: non
+// serve rinnovarlo. Se Instagram non risponde, o il token manca, restano le foto dell'ultima volta: la galleria è accessoria.
 import { existsSync } from "node:fs";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import sharp from "sharp";
 
-const API = "https://graph.instagram.com";
+const API = "https://graph.facebook.com/v23.0";
+const ACCOUNT = "17841439444224332"; // l'account Instagram filarmonicastradella
 const HASHTAG = "#filarmonicastradella"; // solo i post con questo hashtag finiscono sul sito
 const MEDIA_DIR = "static/instagram";
 const DATA_FILE = "src/lib/content/instagram.json";
 const MAX_AGE = 60 * 60 * 1000; // una lettura all'ora al massimo: basta per la build ogni 3 ore
-const REFRESH_AFTER = 7 * 24 * 60 * 60 * 1000;
 const WIDTHS = [320, 640, 1080];
 const ALT_MAX_LENGTH = 140;
 
@@ -90,16 +89,6 @@ async function toSlide(media, post) {
     };
 }
 
-// Rinnovo del token: Instagram lo accetta solo se ha almeno un giorno; quello vecchio vale fino alla sua scadenza
-async function refreshToken(token, previous) {
-    const last = previous?.tokenRefreshedAt ? new Date(previous.tokenRefreshedAt).getTime() : 0;
-    if (Date.now() - last < REFRESH_AFTER) return previous?.tokenRefreshedAt;
-    const { access_token } = await get(`${API}/refresh_access_token?grant_type=ig_refresh_token&access_token=${token}`);
-    if (process.env.INSTAGRAM_TOKEN_FILE) await writeFile(process.env.INSTAGRAM_TOKEN_FILE, access_token);
-    console.log("Instagram: token rinnovato");
-    return new Date().toISOString();
-}
-
 const previous = await readData();
 const token = process.env.INSTAGRAM_TOKEN;
 if (!token) {
@@ -111,18 +100,11 @@ if (previous?.fetchedAt && Date.now() - new Date(previous.fetchedAt).getTime() <
     process.exit(0);
 }
 
-let tokenRefreshedAt = previous?.tokenRefreshedAt;
-try {
-    tokenRefreshedAt = await refreshToken(token, previous);
-} catch (error) {
-    console.warn("Instagram: token non rinnovato:", error.message);
-}
-
 try {
     // Gli ultimi post (tre pagine al massimo); per gli album, ogni foto
     const fields = "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,children{id,media_type,media_url,thumbnail_url}";
     const posts = [];
-    let url = `${API}/me/media?fields=${encodeURIComponent(fields)}&limit=50&access_token=${token}`;
+    let url = `${API}/${ACCOUNT}/media?fields=${encodeURIComponent(fields)}&limit=50&access_token=${token}`;
     for (let page = 0; url && page < 3; page++) {
         const { data, paging } = await get(url);
         posts.push(...data);
@@ -144,10 +126,10 @@ try {
         if (!used.has(file.split(/[-.]/)[0])) await rm(`${MEDIA_DIR}/${file}`);
     }
 
-    await writeFile(DATA_FILE, JSON.stringify({ fetchedAt: new Date().toISOString(), tokenRefreshedAt, slides }, null, 2));
+    await writeFile(DATA_FILE, JSON.stringify({ fetchedAt: new Date().toISOString(), slides }, null, 2));
     console.log(`Instagram: ${slides.length} foto e video da ${posts.length} post`);
 } catch (error) {
     console.warn(`Instagram non aggiornato (${previous?.slides ? "restano le foto dell'ultima volta" : "nessuna copia, solo il rimando a Instagram"}):`, error.message);
     await mkdir("src/lib/content", { recursive: true });
-    await writeFile(DATA_FILE, JSON.stringify({ ...previous, fetchedAt: new Date().toISOString(), tokenRefreshedAt, slides: previous?.slides ?? null }, null, 2));
+    await writeFile(DATA_FILE, JSON.stringify({ ...previous, fetchedAt: new Date().toISOString(), slides: previous?.slides ?? null }, null, 2));
 }
