@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import { goto } from "$app/navigation";
     import { page } from "$app/state";
+    import { legalSeat } from "$lib/locations";
     import { organization } from "$lib/organization";
 
     // I QR stampati nei punti di raccolta portano ancora a /contatti?motivo=storia#scrivici, l'indirizzo del modulo fino all'8/11/2026:
@@ -40,9 +41,12 @@
     -->
 </section>
 
-<!-- Da riattivare insieme a /associazione/sedi:
+<!-- Le sedi, da $lib/locations come nel piè di pagina; per ora solo la legale: le sedi operative si aggiungono qui
+     quando indirizzi e descrizioni sono confermati -->
 <section>
     <h2>Sedi</h2>
-    <p>Indirizzi e mappe della sede legale e delle sedi operative sono nella pagina <a href="/associazione/sedi">Le nostre sedi</a>.</p>
+    <dl>
+        <dt>{legalSeat.name}</dt>
+        <dd><a href={legalSeat.mapsHref} target="_blank" rel="noopener noreferrer">{legalSeat.address.join(", ")}</a></dd>
+    </dl>
 </section>
--->
