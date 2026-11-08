@@ -1,3 +1,28 @@
+<script lang="ts">
+    import { onMount } from "svelte";
+
+    /*
+     * L'IBAN si copia con un clic, senza spazi, pronto da incollare nell'app della banca; per tre secondi al suo posto
+     * c'è «IBAN copiato». È un pulsante con l'aspetto di un link (forms.css), e solo con JS: senza resta testo da copiare.
+     */
+    const iban = "IT52 Z062 3069 9130 0003 0649 193";
+    let canCopy = $state(false);
+    let copied = $state(false);
+    onMount(() => {
+        canCopy = !!navigator.clipboard;
+    });
+
+    async function copyIban() {
+        try {
+            await navigator.clipboard.writeText(iban.replace(/ /g, ""));
+            copied = true;
+            setTimeout(() => (copied = false), 3000);
+        } catch {
+            copied = false;
+        }
+    }
+</script>
+
 <svelte:head>
     <title>Fai una donazione — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Come sostenere la Filarmonica Alessandro Stradella APS con un contributo libero tramite bonifico bancario." />
@@ -14,7 +39,13 @@
         <dt>Beneficiario</dt>
         <dd>Filarmonica Alessandro Stradella APS</dd>
         <dt>IBAN</dt>
-        <dd>IT52 Z062 3069 9130 0003 0649 193</dd>
+        <dd>
+            {#if canCopy}
+                <button type="button" onclick={copyIban} title="Copia l'IBAN" aria-live="polite">{copied ? "IBAN copiato" : iban}</button>
+            {:else}
+                {iban}
+            {/if}
+        </dd>
         <dt>Banca</dt>
         <dd>Crédit Agricole Italia</dd>
         <dt>Causale</dt>
