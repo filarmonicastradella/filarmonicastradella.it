@@ -21,7 +21,7 @@
 <header>
     <h1>Contatti</h1>
     <p>Per informazioni, iscrizioni e concerti scrivici o chiamaci.</p>
-    <p><a href="/contatti/scrivi">Scrivici</a></p>
+    <p><a href="/contatti/scrivi">Scrivi un messaggio</a></p>
 </header>
 
 <section>
