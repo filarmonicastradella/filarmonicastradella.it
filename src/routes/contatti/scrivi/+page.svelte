@@ -505,13 +505,11 @@
                 <legend>Chi ha donato</legend>
 
                 <p>
-                    <input type="radio" id="ricevuta-persona" name="chi_ha_donato" value="persona" bind:group={donor} />
-                    <label for="ricevuta-persona">Una persona: io, che scrivo</label>
-                </p>
-
-                <p>
-                    <input type="radio" id="ricevuta-ente" name="chi_ha_donato" value="ente" bind:group={donor} />
-                    <label for="ricevuta-ente">Un ente o una società</label>
+                    <label for="ricevuta-donatore">Donatore</label>
+                    <select id="ricevuta-donatore" name="chi_ha_donato" required bind:value={donor}>
+                        <option value="persona">Io, che scrivo</option>
+                        <option value="ente">Un ente o una società</option>
+                    </select>
                 </p>
 
                 {#if donor === "persona"}
