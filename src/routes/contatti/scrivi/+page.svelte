@@ -69,6 +69,17 @@
     const isReceipt = $derived(topic === RECEIPT);
     const isSite = $derived(topics.find(({ name }) => name === topic)?.key === "sito");
     const isSafeguarding = $derived(topics.find(({ name }) => name === topic)?.key === "minori");
+    const isPrivacy = $derived(topics.find(({ name }) => name === topic)?.key === "privacy");
+    // I diritti del GDPR, detti come li direbbe chi scrive (artt. 15, 16, 17, 7.3, 21, 20)
+    const privacyRequests = [
+        "Vedere i miei dati",
+        "Correggere i miei dati",
+        "Cancellare i miei dati",
+        "Revocare un consenso",
+        "Oppormi a un trattamento",
+        "Ricevere i miei dati in un file",
+        "Altro"
+    ];
 
     // Chi ha donato: una persona (nascita, codice fiscale, residenza) o un ente (denominazione, codice fiscale o partita IVA, sede)
     let donor = $state("persona");
@@ -167,6 +178,19 @@
                     {/each}
                 </select>
             </p>
+
+            <!-- Privacy: che cosa si chiede, tra i diritti del GDPR; il resto nel messaggio -->
+            {#if isPrivacy}
+                <p>
+                    <label for="contatto-richiesta">Cosa chiedi</label>
+                    <select id="contatto-richiesta" name="richiesta" required>
+                        <option value="" disabled selected>Scegli</option>
+                        {#each privacyRequests as request (request)}
+                            <option>{request}</option>
+                        {/each}
+                    </select>
+                </p>
+            {/if}
 
             <!-- Tutela dei minori: nessun campo in più, chi scrive deve poterlo fare liberamente; prima, i numeri per le emergenze -->
             {#if isSafeguarding}
