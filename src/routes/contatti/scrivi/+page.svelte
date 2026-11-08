@@ -68,6 +68,7 @@
     const isMaterial = $derived(topic === MATERIAL);
     const isReceipt = $derived(topic === RECEIPT);
     const isSite = $derived(topics.find(({ name }) => name === topic)?.key === "sito");
+    const isSafeguarding = $derived(topics.find(({ name }) => name === topic)?.key === "minori");
 
     // Chi ha donato: una persona (nascita, codice fiscale, residenza) o un ente (denominazione, codice fiscale o partita IVA, sede)
     let donor = $state("persona");
@@ -166,6 +167,14 @@
                     {/each}
                 </select>
             </p>
+
+            <!-- Tutela dei minori: nessun campo in più, chi scrive deve poterlo fare liberamente; prima, i numeri per le emergenze -->
+            {#if isSafeguarding}
+                <p>
+                    <strong>Se un minore è in pericolo adesso, chiama il <a href="tel:112">112</a>.</strong> Per un consiglio o una segnalazione,
+                    anche senza dire il tuo nome, c'è il <a href="tel:114">114</a> Emergenza Infanzia, gratuito, a tutte le ore.
+                </p>
+            {/if}
 
             <p>
                 <label for="contatto-messaggio">Messaggio</label>
