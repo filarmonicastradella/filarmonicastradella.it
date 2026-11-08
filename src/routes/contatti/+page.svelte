@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { signaturePattern } from "$lib/signature";
     import { browser } from "$app/environment";
     import { page } from "$app/state";
     import FaqItem from "$lib/components/FaqItem.svelte";
@@ -61,6 +62,9 @@
     // L'anno di un ricordo: al massimo quello in corso (il sito si ricostruisce ogni 3 ore); prima, qualsiasi
     const thisYear = new Date().getFullYear();
     const handsOriginals = $derived(isMaterial && delivery === "originali");
+    // Le firme della consegna, in fondo: nome e cognome di chi consegna e di chi ritira, gli stessi scritti sopra (src/lib/signature.ts)
+    let senderName = $state("");
+    let receiverName = $state("");
     const collectionPoints = [
         "Agenzia Vittoria Assicurazioni Orietti, Fivizzano",
         "Dal libro alla solidarietà, piazza Medicea, Fivizzano",
@@ -86,7 +90,7 @@
 
         <p>
             <label for="contatto-nome">Nome e cognome</label>
-            <input type="text" id="contatto-nome" name="nome" autocomplete="name" required minlength="2" maxlength="120" />
+            <input type="text" id="contatto-nome" name="nome" autocomplete="name" bind:value={senderName} required minlength="2" maxlength="120" />
         </p>
 
         <p>
@@ -192,7 +196,7 @@
 
                     <p>
                         <label for="contatto-ricevuto">Nome e cognome</label>
-                        <input type="text" id="contatto-ricevuto" name="ricevuto_da" required minlength="2" maxlength="120" />
+                        <input type="text" id="contatto-ricevuto" name="ricevuto_da" bind:value={receiverName} required minlength="2" maxlength="120" />
                     </p>
 
                     <p>
@@ -333,6 +337,23 @@
                     <a href="mailto:privacy@filarmonicastradella.it?subject=Revoca%20della%20pubblicazione%20del%20materiale">privacy@filarmonicastradella.it</a>; la revoca non riguarda le mostre,
                     l'archivio né i materiali già stampati.
                 </p>
+            </fieldset>
+
+            <!-- Le firme al posto di una casella di conferma: chi consegna, e per gli originali anche chi ritira -->
+            <fieldset>
+                <legend>{handsOriginals ? "Firme" : "Firma"}</legend>
+
+                <p>
+                    <label for="materiale-firma">Firma di chi consegna: scrivi il tuo nome e cognome</label>
+                    <input type="text" id="materiale-firma" name="firma" autocomplete="off" required minlength="4" maxlength="120" pattern={signaturePattern(senderName)} title="Scrivi il nome e il cognome indicati in «Chi consegna»" />
+                </p>
+
+                {#if handsOriginals}
+                    <p>
+                        <label for="materiale-firma-ritiro">Firma di chi ritira: nome e cognome</label>
+                        <input type="text" id="materiale-firma-ritiro" name="firma_di_chi_ritira" autocomplete="off" required minlength="4" maxlength="120" pattern={signaturePattern(receiverName)} title="Scrivi il nome e il cognome indicati in «Chi ritira»" />
+                    </p>
+                {/if}
             </fieldset>
         {/if}
 

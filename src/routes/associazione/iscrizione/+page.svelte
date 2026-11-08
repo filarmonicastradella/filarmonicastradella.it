@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { signaturePattern } from "$lib/signature";
     import { browser } from "$app/environment";
     import { page } from "$app/state";
 
@@ -41,6 +42,11 @@
 
     const isTooYoung = $derived(age !== null && age < 14);
 
+    // Nome e cognome di chi compila (il genitore per un minore): la firma in fondo deve essere la stessa
+    const names = $state<Record<string, { given: string; family: string }>>({ "": { given: "", family: "" }, genitore_: { given: "", family: "" } });
+    const signer = $derived(names[isMinorenne ? "genitore_" : ""]);
+    const signature = $derived(signaturePattern(`${signer.given} ${signer.family}`, `${signer.family} ${signer.given}`));
+
     type InputEvent = Event & { currentTarget: EventTarget & HTMLInputElement };
 
     function handleCF(e: InputEvent) {
@@ -60,12 +66,12 @@
 {#snippet identityFields(prefix: string, section: string, bindsBirthDate: boolean)}
     <p>
         <label for="{prefix}nome">Nome</label>
-        <input type="text" id="{prefix}nome" name="{prefix}nome" autocomplete={section ? `section-${section} given-name` : "given-name"} required minlength="2" maxlength="50" />
+        <input type="text" id="{prefix}nome" name="{prefix}nome" autocomplete={section ? `section-${section} given-name` : "given-name"} bind:value={names[prefix].given} required minlength="2" maxlength="50" />
     </p>
 
     <p>
         <label for="{prefix}cognome">Cognome</label>
-        <input type="text" id="{prefix}cognome" name="{prefix}cognome" autocomplete={section ? `section-${section} family-name` : "family-name"} required minlength="2" maxlength="50" />
+        <input type="text" id="{prefix}cognome" name="{prefix}cognome" autocomplete={section ? `section-${section} family-name` : "family-name"} bind:value={names[prefix].family} required minlength="2" maxlength="50" />
     </p>
 
     <p>
@@ -304,18 +310,21 @@
                 <legend>Conferma</legend>
 
                 <p>
-                    <input type="checkbox" id="richiesta_iscrizione" name="richiesta_iscrizione" required />
-                    <label for="richiesta_iscrizione">
-                        {#if isChange && isMinorenne}
-                            Chiedo, in qualità di genitore, di aggiornare i dati e i consensi del minore sopra indicato, socio della Filarmonica Alessandro Stradella APS.
-                        {:else if isChange}
-                            Chiedo di aggiornare i miei dati e i miei consensi di socio della Filarmonica Alessandro Stradella APS.
-                        {:else if isMinorenne}
-                            Chiedo, in qualità di genitore, l'iscrizione del minore sopra indicato come socio della Filarmonica Alessandro Stradella APS.
-                        {:else}
-                            Chiedo la mia iscrizione come socio della Filarmonica Alessandro Stradella APS.
-                        {/if}
-                    </label>
+                    {#if isChange && isMinorenne}
+                        Chiedo, in qualità di genitore, di aggiornare i dati e i consensi del minore sopra indicato, socio della Filarmonica Alessandro Stradella APS.
+                    {:else if isChange}
+                        Chiedo di aggiornare i miei dati e i miei consensi di socio della Filarmonica Alessandro Stradella APS.
+                    {:else if isMinorenne}
+                        Chiedo, in qualità di genitore, l'iscrizione del minore sopra indicato come socio della Filarmonica Alessandro Stradella APS.
+                    {:else}
+                        Chiedo la mia iscrizione come socio della Filarmonica Alessandro Stradella APS.
+                    {/if}
+                </p>
+
+                <!-- La firma al posto della casella: nome e cognome di chi compila, gli stessi scritti sopra (src/lib/signature.ts) -->
+                <p>
+                    <label for="firma">{isMinorenne ? "Firma del genitore: scrivi il tuo nome e cognome" : "Firma: scrivi il tuo nome e cognome"}</label>
+                    <input type="text" id="firma" name="firma" autocomplete="off" required minlength="4" maxlength="110" pattern={signature} title="Scrivi il nome e il cognome indicati sopra" />
                 </p>
             </fieldset>
         {/if}
