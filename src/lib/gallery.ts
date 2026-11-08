@@ -9,7 +9,16 @@ export interface GallerySlide {
     height?: number;
     color?: string; // colore dominante, come fondo mentre la foto si carica
     permalink: string;
+    timestamp?: string; // data e didascalia del post da cui viene la foto
+    caption?: string;
     alt: string;
+}
+
+export interface GalleryPost {
+    permalink: string;
+    date?: string; // AAAA-MM-GG, per <time datetime>
+    paragraphs: string[]; // la didascalia, senza hashtag
+    slides: GallerySlide[];
 }
 
 // Le foto di Instagram, scaricate prima della build da scripts/instagram.mjs; `null` se non è mai riuscito a
@@ -17,3 +26,18 @@ export interface GallerySlide {
 const data = import.meta.glob<{ slides: GallerySlide[] | null }>("/src/lib/content/instagram.json", { eager: true, import: "default" });
 
 export const gallery: GallerySlide[] | null = Object.values(data)[0]?.slides ?? null;
+
+// Le foto raggruppate per post, dal più recente come su Instagram: ogni post ha la sua data e la sua didascalia
+export const galleryPosts: GalleryPost[] = Object.values(Object.groupBy(gallery ?? [], ({ permalink }) => permalink)).map((slides) => {
+    const [{ permalink, timestamp, caption = "" }] = slides!;
+    return {
+        permalink,
+        date: timestamp?.slice(0, 10),
+        paragraphs: caption
+            .replace(/#\S+/g, "")
+            .split(/\n\s*\n/)
+            .map((paragraph) => paragraph.trim())
+            .filter(Boolean),
+        slides: slides!
+    };
+});

@@ -85,6 +85,8 @@ async function toSlide(media, post) {
         height,
         color,
         permalink: post.permalink,
+        timestamp: post.timestamp, // la data e la didascalia del post, per raggrupparle in Foto e video
+        caption: post.caption,
         alt: altText(post.caption)
     };
 }
