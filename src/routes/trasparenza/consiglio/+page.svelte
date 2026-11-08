@@ -20,7 +20,7 @@
     </p>
     <!-- La scheda pubblica dell'ente nel RUNTS (stampata il 5/8/2026), con le cariche e le date di nomina: il riscontro ufficiale
          di questa pagina. Solo nomi, cariche e date, nessun codice fiscale; va sostituita a ogni rinnovo del consiglio -->
-    <p><a href="/documents/runts.pdf" type="application/pdf" download>Scarica la scheda del RUNTS</a></p>
+    <p><a href="/documents/runts.pdf" type="application/pdf" download>Scarica la scheda</a></p>
 </header>
 
 <section>
