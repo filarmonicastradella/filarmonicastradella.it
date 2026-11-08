@@ -21,7 +21,8 @@
 {#if history}
     <section>
         <h2>Come citare questo articolo</h2>
-        <p><CopyValue text={citation}>{citation}</CopyValue>.</p>
+        <!-- Il punto dentro il pulsante: un pulsante non va a capo come il testo, e il punto dopo finiva da solo sulla riga sotto -->
+        <p><CopyValue text="{citation}.">{citation}.</CopyValue></p>
     </section>
 {/if}
 
