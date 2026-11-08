@@ -84,7 +84,7 @@
     <h2>Foto</h2>
     <p>
         Le foto dei concerti e delle attività sono in <a href="/associazione/mediateca">Foto e video</a>. Per averle in alta risoluzione, o per
-        una foto di una formazione, scrivi a <a href="mailto:{organization.pressEmail}">{organization.pressEmail}</a>.
+        una foto di una formazione, <a href="mailto:{organization.pressEmail}">contattaci</a>.
     </p>
 </section>
 
