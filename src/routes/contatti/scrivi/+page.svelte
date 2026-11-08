@@ -400,31 +400,8 @@
         {/if}
 
         {#if isReceipt}
-            <fieldset>
-                <legend>La donazione</legend>
-
-                <p>
-                    <label for="ricevuta-data">Data del versamento</label>
-                    <input type="date" id="ricevuta-data" name="data_del_versamento" required max={today} />
-                </p>
-
-                <p>
-                    <label for="ricevuta-importo">Importo in euro</label>
-                    <input type="number" id="ricevuta-importo" name="importo" required min="1" step="0.01" inputmode="decimal" />
-                </p>
-
-                <p>
-                    <label for="ricevuta-modalita">Modalità di pagamento</label>
-                    <select id="ricevuta-modalita" name="modalita_di_pagamento" required bind:value={paymentMethod}>
-                        <option value="" disabled>Scegli</option>
-                        {#each paymentMethods as method (method)}
-                            <option>{method}</option>
-                        {/each}
-                    </select>
-                </p>
-
-                <p>Le donazioni in contanti non danno diritto alle agevolazioni fiscali.</p>
-            </fieldset>
+            <!-- Per la ricevuta: chi scrive, poi chi ha donato (spesso la stessa persona), poi il versamento -->
+            {@render sender()}
 
             <fieldset>
                 <legend>Chi ha donato</legend>
@@ -481,9 +458,35 @@
                     <input type="text" id="ricevuta-comune" name="comune" autocomplete="address-level2" required minlength="2" maxlength="60" />
                 </p>
             </fieldset>
+
+            <fieldset>
+                <legend>La donazione</legend>
+
+                <p>
+                    <label for="ricevuta-data">Data del versamento</label>
+                    <input type="date" id="ricevuta-data" name="data_del_versamento" required max={today} />
+                </p>
+
+                <p>
+                    <label for="ricevuta-importo">Importo in euro</label>
+                    <input type="number" id="ricevuta-importo" name="importo" required min="1" step="0.01" inputmode="decimal" />
+                </p>
+
+                <p>
+                    <label for="ricevuta-modalita">Modalità di pagamento</label>
+                    <select id="ricevuta-modalita" name="modalita_di_pagamento" required bind:value={paymentMethod}>
+                        <option value="" disabled>Scegli</option>
+                        {#each paymentMethods as method (method)}
+                            <option>{method}</option>
+                        {/each}
+                    </select>
+                </p>
+
+                <p>Le donazioni in contanti non danno diritto alle agevolazioni fiscali.</p>
+            </fieldset>
         {/if}
 
-        {#if !isMaterial}
+        {#if !isMaterial && !isReceipt}
             {@render sender()}
         {/if}
 
