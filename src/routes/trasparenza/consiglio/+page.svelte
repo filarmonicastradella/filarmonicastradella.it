@@ -1,5 +1,4 @@
 <script lang="ts">
-
     const office = [
         { role: "Presidente e legale rappresentante", name: "Leonardo Orietti Del Duca" },
         { role: "Vicepresidente", name: "Marta Viola" }
@@ -19,6 +18,9 @@
         Il consiglio direttivo è l'organo di amministrazione dell'associazione. È stato nominato il
         <time datetime="2026-03-22">22 marzo 2026</time>. Il mandato dura un anno.
     </p>
+    <!-- La scheda pubblica dell'ente nel RUNTS (stampata il 5/8/2026), con le cariche e le date di nomina: il riscontro ufficiale
+         di questa pagina. Solo nomi, cariche e date, nessun codice fiscale; va sostituita a ogni rinnovo del consiglio -->
+    <p><a href="/documents/runts.pdf" type="application/pdf" download>Scarica la scheda del RUNTS</a></p>
 </header>
 
 <section>
