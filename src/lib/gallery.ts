@@ -16,8 +16,9 @@ export interface GallerySlide {
 
 export interface GalleryPost {
     permalink: string;
-    date?: string; // AAAA-MM-GG, per <time datetime>
-    paragraphs: string[]; // la didascalia, senza hashtag
+    date: string; // AAAA-MM-GG, per <time datetime> e per le sezioni dei mesi
+    title: string; // la prima frase della didascalia
+    paragraphs: string[]; // il resto della didascalia, senza hashtag
     slides: GallerySlide[];
 }
 
@@ -27,17 +28,23 @@ const data = import.meta.glob<{ slides: GallerySlide[] | null }>("/src/lib/conte
 
 export const gallery: GallerySlide[] | null = Object.values(data)[0]?.slides ?? null;
 
-// Le foto raggruppate per post, dal più recente come su Instagram: ogni post ha la sua data e la sua didascalia
-export const galleryPosts: GalleryPost[] = Object.values(Object.groupBy(gallery ?? [], ({ permalink }) => permalink)).map((slides) => {
-    const [{ permalink, timestamp, caption = "" }] = slides!;
-    return {
-        permalink,
-        date: timestamp?.slice(0, 10),
-        paragraphs: caption
+// Le foto raggruppate per post, dal più recente come su Instagram: ogni post ha la sua data e la sua didascalia, divisa nella
+// prima frase (il titolo) e nei paragrafi che seguono
+export const galleryPosts: GalleryPost[] = Object.values(Object.groupBy(gallery ?? [], ({ permalink }) => permalink))
+    .filter((slides) => slides![0].timestamp)
+    .map((slides) => {
+        const [{ permalink, timestamp, caption = "", alt }] = slides!;
+        const [first = "", ...rest] = caption
             .replace(/#\S+/g, "")
             .split(/\n\s*\n/)
             .map((paragraph) => paragraph.trim())
-            .filter(Boolean),
-        slides: slides!
-    };
-});
+            .filter(Boolean);
+        const [title, ...others] = first.split(/(?<=[.!?])\s+/);
+        return {
+            permalink,
+            date: timestamp!.slice(0, 10),
+            title: title || alt,
+            paragraphs: [others.join(" "), ...rest].filter(Boolean),
+            slides: slides!
+        };
+    });
