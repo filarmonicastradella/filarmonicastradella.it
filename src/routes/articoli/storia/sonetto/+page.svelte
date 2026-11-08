@@ -1,6 +1,7 @@
 <script lang="ts">
     import { findArticle } from "$lib/articles";
     import ArticleHeader from "../../ArticleHeader.svelte";
+    import ArticleFooter from "../../ArticleFooter.svelte";
     // Il fregio inciso del foglio, ricalcato da una scansione e reso in PNG: un solo tratto, nessuna fotografia.
     import puttoImg from "$lib/assets/imgs/putto-sonetto.png?enhanced&w=256;512;768";
     // Copertina: la scansione del foglio originale (la stessa su Wikimedia Commons), in più misure, e la sua anteprima sfocata
@@ -156,7 +157,7 @@
     </ol>
 </section>
 
-<p class="rimando"><a href="/articoli">Articoli</a></p>
+<ArticleFooter {article} />
 
 <style>
     /*

@@ -1,6 +1,7 @@
 <script lang="ts">
     import { findArticle } from "$lib/articles";
     import ArticleHeader from "../../ArticleHeader.svelte";
+    import ArticleFooter from "../../ArticleFooter.svelte";
     // Foto della pagina, in più misure: il browser sceglie quella adatta alla colonna di testo (36rem) e allo schermo.
     import anni30Img from "$lib/assets/imgs/anni_30.jpeg?enhanced&w=400;640;800;1280;1600&quality=40";
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
@@ -428,4 +429,4 @@
     </p>
 </section>
 
-<p class="rimando"><a href="/articoli">Articoli</a></p>
+<ArticleFooter {article} />

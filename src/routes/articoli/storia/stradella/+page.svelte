@@ -2,6 +2,7 @@
 <script lang="ts">
     import { findArticle } from "$lib/articles";
     import ArticleHeader from "../../ArticleHeader.svelte";
+    import ArticleFooter from "../../ArticleFooter.svelte";
     // Copertina: il frontespizio della Serenata a 3, in più misure, e la sua anteprima sfocata
     import serenataImg from "$lib/assets/imgs/serenata-stradella.jpg?enhanced&w=400;640;800;1280;1600&quality=40";
     import serenataPlaceholder from "$lib/assets/imgs/serenata-stradella.jpg?w=24&blur=2&format=webp&inline";
@@ -176,7 +177,7 @@
     </p>
 </section>
 
-<p class="rimando"><a href="/articoli">Articoli</a></p>
+<ArticleFooter {article} />
 
 <style>
     figure :global(img) {

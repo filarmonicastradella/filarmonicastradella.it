@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Snippet } from "svelte";
+    import { onMount, type Snippet } from "svelte";
     import { categoryName, formatArticleDate, type Article } from "$lib/articles";
     import { organization } from "$lib/organization";
 
@@ -7,6 +7,31 @@
     // dell'intestazione (un'introduzione, la foto di copertina) e `style` le proprietà della copertina
     // (--cover-placeholder, --cover-position)
     let { article, children, style }: { article: Article; children?: Snippet; style?: string } = $props();
+
+    /*
+     * Condividi: il menu di condivisione del dispositivo (WhatsApp, Messaggi, mail), dove c'è; altrove copia il link e
+     * per tre secondi dice «Link copiato». Solo con JS: senza, il pulsante non comparirebbe a fare niente.
+     */
+    let canShare = $state(false);
+    let copied = $state(false);
+    onMount(() => {
+        canShare = "share" in navigator || "clipboard" in navigator;
+    });
+
+    async function share() {
+        const url = `${organization.url}${article.href}`;
+        try {
+            if (navigator.share) {
+                await navigator.share({ title: article.title, url });
+            } else {
+                await navigator.clipboard.writeText(url);
+                copied = true;
+                setTimeout(() => (copied = false), 3000);
+            }
+        } catch {
+            // Condivisione annullata: niente da fare
+        }
+    }
 </script>
 
 <header itemscope itemtype="https://schema.org/Article" {style}>
@@ -23,4 +48,7 @@
         {/if}
         <time itemprop="datePublished" datetime={article.date}>{formatArticleDate(article.date)}</time>
     </p>
+    {#if canShare}
+        <p><button type="button" onclick={share} aria-live="polite">{copied ? "Link copiato" : "Condividi"}</button></p>
+    {/if}
 </header>

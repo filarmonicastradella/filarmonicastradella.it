@@ -1,5 +1,6 @@
 <script lang="ts">
     import ArticleHeader from "../../ArticleHeader.svelte";
+    import ArticleFooter from "../../ArticleFooter.svelte";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
@@ -15,4 +16,4 @@
 
 <Content />
 
-<p class="rimando"><a href="/articoli">Articoli</a></p>
+<ArticleFooter article={data.article} />
