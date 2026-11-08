@@ -88,6 +88,8 @@
     let donor = $state("persona");
     // Per cosa è la ricevuta: una donazione o la quota (dal link &per=quota)
     const requestedReceipt = $derived(browser ? page.url.searchParams.get("per") : null);
+    // Il socio della quota: chi scrive (il nome è quello di «Chi scrive») o un'altra persona, per esempio un figlio
+    let member = $state("io");
     let receiptFor = $derived(requestedReceipt === "quota" ? "quota" : "donazione");
     // I contanti non danno diritto alle agevolazioni, ma la ricevuta si fa lo stesso
     const paymentMethods = ["Bonifico", "Carta, online", "Assegno", "Altro pagamento tracciabile", "Contanti"];
@@ -490,9 +492,22 @@
                 <legend>La quota</legend>
 
                 <p>
-                    <label for="quota-socio">Nome e cognome del socio</label>
-                    <input type="text" id="quota-socio" name="socio" autocomplete="off" required minlength="4" maxlength="120" />
+                    <label for="quota-chi">Socio</label>
+                    <select id="quota-chi" name="socio_e" required bind:value={member}>
+                        <option value="io">Io, che scrivo</option>
+                        <option value="altro">Un'altra persona, per esempio mio figlio</option>
+                    </select>
                 </p>
+
+                <!-- Il socio è chi scrive: il nome si copia da «Chi scrive»; altrimenti si scrive -->
+                {#if member === "io"}
+                    <input type="hidden" name="socio" value={senderName} />
+                {:else}
+                    <p>
+                        <label for="quota-socio">Nome e cognome del socio</label>
+                        <input type="text" id="quota-socio" name="socio" autocomplete="off" required minlength="4" maxlength="120" />
+                    </p>
+                {/if}
 
                 <p>
                     <label for="quota-anno">Anno</label>
