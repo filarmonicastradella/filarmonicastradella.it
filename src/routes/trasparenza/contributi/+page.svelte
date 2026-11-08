@@ -11,7 +11,7 @@
     <h1>Contributi pubblici ricevuti</h1>
     <p>Qui l'associazione pubblica l'elenco dei contributi, delle sovvenzioni e dei vantaggi economici ricevuti da pubbliche amministrazioni.</p>
     <!-- Gli stessi dati della tabella, da $lib/contributions, in un file da aprire con un foglio di calcolo -->
-    <p><a href="/trasparenza/contributi.csv" type="text/csv" download>Scarica i dati in CSV</a></p>
+    <p><a href="/trasparenza/contributi.csv" type="text/csv" download>Scarica i dati</a></p>
 </header>
 
 <section>
