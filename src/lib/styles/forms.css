@@ -72,26 +72,6 @@ input[type="file"]::file-selector-button:hover {
     color: var(--text-brand);
 }
 
-/* Un valore da copiare con un clic (l'IBAN in «Fai una donazione»): un pulsante con l'aspetto di un link nel testo */
-main dd > button[type="button"] {
-    display: inline;
-    padding: 0;
-    border: 0;
-    background: none;
-    color: var(--text-brand);
-    font: inherit;
-    text-align: start;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.2em;
-}
-
-main dd > button[type="button"]:hover {
-    border: 0;
-    background: none;
-    color: var(--accent-hover);
-}
-
 form {
     max-inline-size: var(--container-text);
 }

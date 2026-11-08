@@ -2,8 +2,8 @@
     import { onMount } from "svelte";
 
     /*
-     * L'IBAN si copia con un clic, senza spazi, pronto da incollare nell'app della banca; per tre secondi al suo posto
-     * c'è «IBAN copiato». È un pulsante con l'aspetto di un link (forms.css), e solo con JS: senza resta testo da copiare.
+     * «Copia l'IBAN» sotto i dati, come «Aggiungi al tuo calendario» negli eventi: lo copia senza spazi, pronto da
+     * incollare nell'app della banca, e per tre secondi dice «IBAN copiato». Solo con JS: senza, l'IBAN si copia a mano.
      */
     const iban = "IT52 Z062 3069 9130 0003 0649 193";
     let canCopy = $state(false);
@@ -39,18 +39,15 @@
         <dt>Beneficiario</dt>
         <dd>Filarmonica Alessandro Stradella APS</dd>
         <dt>IBAN</dt>
-        <dd>
-            {#if canCopy}
-                <button type="button" onclick={copyIban} title="Copia l'IBAN" aria-live="polite">{copied ? "IBAN copiato" : iban}</button>
-            {:else}
-                {iban}
-            {/if}
-        </dd>
+        <dd>{iban}</dd>
         <dt>Banca</dt>
         <dd>Crédit Agricole Italia</dd>
         <dt>Causale</dt>
         <dd>«Erogazione liberale», seguita da nome, cognome e codice fiscale di chi dona</dd>
     </dl>
+    {#if canCopy}
+        <p><button type="button" onclick={copyIban} aria-live="polite">{copied ? "IBAN copiato" : "Copia l'IBAN"}</button></p>
+    {/if}
 </section>
 
 <!-- Da riattivare quando ci sarà il pulsante PayPal dell'associazione (sostituire hosted_button_id):
