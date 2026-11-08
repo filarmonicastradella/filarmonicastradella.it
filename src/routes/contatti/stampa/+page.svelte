@@ -84,7 +84,7 @@
     <h2>Foto</h2>
     <p>
         Le foto dei concerti e delle attività sono in <a href="/associazione/mediateca">Foto e video</a>. Per averle in alta risoluzione, o per
-        una foto di una formazione, scrivici.
+        una foto di una formazione, scrivi a <a href="mailto:{organization.pressEmail}">{organization.pressEmail}</a>.
     </p>
 </section>
 
@@ -92,7 +92,7 @@
     <h2>Contatti per la stampa</h2>
     <dl>
         <dt>Email</dt>
-        <dd><a href="mailto:{organization.email}?subject=Stampa">{organization.email}</a></dd>
+        <dd><a href="mailto:{organization.pressEmail}">{organization.pressEmail}</a></dd>
         <dt>Telefono</dt>
         <dd><a href="tel:{organization.phone.replaceAll(' ', '')}">{organization.phone}</a></dd>
     </dl>
