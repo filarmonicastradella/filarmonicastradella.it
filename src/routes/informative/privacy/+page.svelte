@@ -43,6 +43,13 @@
             email, telefono, motivo, per gli eventi occasione, data e luogo, per le segnalazioni sul sito la pagina, il dispositivo e il browser, testo del messaggio) solo per risponderti: per email, con una telefonata,
             un SMS o un messaggio WhatsApp. Base giuridica: la tua richiesta (art. 6.1.b).
         </dd>
+        <dt>Foto e video</dt>
+        <dd>
+            Se ci mandi foto o video con il modulo, usiamo i tuoi dati (nome, recapiti, occasione e data, la tua firma) per documentare che li
+            hai fatti tu e che ce ne hai concesso l'uso, e il tuo nome come autore solo se lo autorizzi. Le persone che si riconoscono nelle foto
+            pubblicate possono chiederne la rimozione. Base giuridica: la tua autorizzazione (art. 6.1.a e 6.1.b) e il nostro legittimo interesse
+            a raccontare le nostre attività (art. 6.1.f).
+        </dd>
         <dt>Richiesta di una ricevuta</dt>
         <dd>
             Se ci chiedi una ricevuta, usiamo per una donazione i dati del versamento (data, importo, modalità) e di chi ha donato (luogo e data di

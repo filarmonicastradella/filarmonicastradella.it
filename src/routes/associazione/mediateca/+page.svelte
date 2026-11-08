@@ -28,4 +28,12 @@
     </section>
 {/each}
 
+<section>
+    <h2>Hai foto o video di un nostro concerto?</h2>
+    <p>
+        <a href="/contatti/scrivi?motivo=foto">Mandaceli dal modulo</a>: scegliamo i migliori per Instagram, e da lì arrivano anche su
+        questa pagina.
+    </p>
+</section>
+
 <p class="rimando"><a href="/associazione">Associazione</a></p>

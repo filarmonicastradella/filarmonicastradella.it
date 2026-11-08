@@ -19,10 +19,14 @@
     // La richiesta di una ricevuta (dal 8/11/2026): per una donazione i dati del modello «Ricevuta di erogazione liberale» (art. 83 CTS)
     // della tesoreria, per una persona o per un ente; per la quota bastano il socio e l'anno (il resto è nel libro soci).
     const RECEIPT = "Ricevute";
+    // Foto e video di un concerto o di un'attività (dal 9/11/2026): chi li ha fatti li manda, la redazione sceglie i migliori per
+    // Instagram, e da lì arrivano sul sito (Foto e video). Non è il materiale storico: niente originali né archivio, ma l'autore,
+    // la licenza d'uso, il credito e le persone riconoscibili.
+    const PHOTOS = "Foto e video";
 
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
-    // Sette motivi (dal 8/11/2026): uno generico per tutto ciò che è solo un messaggio (domande, iscrizioni, donazioni, collaborazioni,
-    // sponsor, stampa), e uno per ogni richiesta che ha campi o avvisi suoi: gli ingaggi, il materiale storico, le ricevute, le
+    // Otto motivi (dal 9/11/2026): uno generico per tutto ciò che è solo un messaggio (domande, iscrizioni, donazioni, collaborazioni,
+    // sponsor, stampa), e uno per ogni richiesta che ha campi o avvisi suoi: gli ingaggi, il materiale storico, le foto e i video, le ricevute, le
     // segnalazioni sul sito, la privacy, la tutela dei minori. La chiave sceglie il motivo da un link
     // (/contatti/scrivi?motivo=ingaggio); le chiavi dei motivi accorpati restano valide come alias, perché ci sono link e QR che le usano.
     const topics = [
@@ -34,6 +38,7 @@
         },
         { key: "ingaggio", name: BOOKING, mailbox: "info" },
         { key: "storia", name: MATERIAL, mailbox: "info" },
+        { key: "foto", aliases: ["video"], name: PHOTOS, mailbox: "redazione" },
         { key: "ricevuta", name: RECEIPT, mailbox: "tesoreria" },
         // Problemi, errori e aggiunte in qualsiasi pagina, articoli compresi, con il gruppo «La pagina»: l'indirizzo (dal link del piè di
         // pagina, &pagina=, o da quello in fondo a ogni articolo, &articolo=) e il dispositivo, ricavato dal browser. A webmaster@, o
@@ -70,6 +75,9 @@
     let ensemble = $derived(ensembles.find(({ slug }) => slug === requestedEnsemble)?.title ?? NO_PREFERENCE);
     const isMaterial = $derived(topic === MATERIAL);
     const isReceipt = $derived(topic === RECEIPT);
+    const isPhotos = $derived(topic === PHOTOS);
+    // Le foto si allegano, i video (troppo grandi per il modulo) si mandano con un link: le foto sono obbligatorie solo senza il link
+    let videoLink = $state("");
     const isSite = $derived(topics.find(({ name }) => name === topic)?.key === "sito");
     // Le segnalazioni su un articolo vanno alla redazione, le altre a chi aggiorna il sito
     const mailbox = $derived(isSite && pageAddress.includes("/articoli/") ? "redazione" : topicMailbox);
@@ -127,7 +135,7 @@
 
 <svelte:head>
     <title>Scrivici — Filarmonica Alessandro Stradella</title>
-    <meta name="description" content="Scrivi alla Filarmonica Alessandro Stradella APS di Fivizzano, in Lunigiana: informazioni, ingaggi per eventi, iscrizioni, donazioni e materiale storico." />
+    <meta name="description" content="Scrivi alla Filarmonica Alessandro Stradella APS di Fivizzano, in Lunigiana: informazioni, ingaggi per eventi, iscrizioni, donazioni, materiale storico, foto e video." />
 </svelte:head>
 
 <!-- Chi scrive (o, per il materiale, chi consegna): in un punto diverso del modulo a seconda del motivo -->
@@ -171,7 +179,9 @@
                   ? "Richiesta di ricevuta – Filarmonica Stradella"
                   : isMaterial
                     ? "Materiale storico – Filarmonica Stradella"
-                    : "Nuovo messaggio dal sito – Filarmonica Stradella"}
+                    : isPhotos
+                      ? "Foto e video – Filarmonica Stradella"
+                      : "Nuovo messaggio dal sito – Filarmonica Stradella"}
         />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_next" value="https://filarmonicastradella.it/contatti/grazie{isMaterial ? '/materiale' : ''}" />
@@ -212,7 +222,7 @@
 
             <p>
                 <label for="contatto-messaggio">Messaggio</label>
-                <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isReceipt} minlength="10" maxlength="2000" value={about ? `${about}\n\n` : ""}></textarea>
+                <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isReceipt && !isPhotos} minlength="10" maxlength="2000" value={about ? `${about}\n\n` : ""}></textarea>
             </p>
 
         </fieldset>
@@ -432,6 +442,93 @@
             </fieldset>
         {/if}
 
+        {#if isPhotos}
+            <fieldset>
+                <legend>Il concerto o l'attività</legend>
+
+                <p>
+                    <label for="foto-occasione">Occasione</label>
+                    <input type="text" id="foto-occasione" name="occasione" required minlength="2" maxlength="120" />
+                </p>
+
+                <p>
+                    <label for="foto-data">Data</label>
+                    <input type="date" id="foto-data" name="data" max={today} />
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Le foto e i video</legend>
+
+                <p>
+                    <label for="foto-file">Foto</label>
+                    <input
+                        type="file"
+                        id="foto-file"
+                        name="attachment"
+                        accept="image/jpeg,image/png,image/heic"
+                        multiple
+                        required={!videoLink}
+                    />
+                </p>
+
+                <!-- Un video pesa troppo per un modulo: si carica su un servizio di condivisione e si manda il link -->
+                <p>
+                    <label for="foto-link">Link ai video</label>
+                    <input type="url" id="foto-link" name="link_ai_video" maxlength="500" placeholder="https://" bind:value={videoLink} />
+                </p>
+
+                <p>I video sono troppo grandi per il modulo: caricali su Google Drive, WeTransfer o un servizio simile e incolla qui il link.</p>
+            </fieldset>
+
+            <!-- La liberatoria delle foto, una casella per impegno: l'autore, la licenza d'uso, i minori, il credito -->
+            <fieldset>
+                <legend>Autorizzazioni</legend>
+
+                <p>
+                    <input type="checkbox" id="foto-maggiorenne" name="maggiorenne" value="Sì" required />
+                    <label for="foto-maggiorenne">Dichiaro di essere maggiorenne.</label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="foto-autore" name="autore" value="Sì" required />
+                    <label for="foto-autore">Dichiaro di aver fatto io le foto e i video che mando.</label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="foto-uso" name="uso_gratuito" value="Sì" required />
+                    <label for="foto-uso">
+                        Autorizzo gratuitamente la Filarmonica a pubblicarli sul sito, sui social, sulla stampa e nei suoi materiali, senza limiti di tempo.
+                    </label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="foto-minori" name="minori" value="Sì" required />
+                    <label for="foto-minori">Dichiaro che non si riconoscono minori, o che ho il permesso dei loro genitori.</label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="foto-credito" name="nome_come_autore" value="Sì" />
+                    <label for="foto-credito">Acconsento a indicare il mio nome come autore.</label>
+                </p>
+
+                <p>
+                    La Filarmonica sceglie quali foto e video pubblicare, su Instagram e da lì sul sito. Chi si riconosce può chiederne la rimozione
+                    scrivendo a
+                    <a href="mailto:privacy@filarmonicastradella.it?subject=Rimozione%20di%20una%20foto">privacy@filarmonicastradella.it</a>.
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Firma</legend>
+
+                <p>
+                    <label for="foto-firma">Nome e cognome</label>
+                    <input type="text" id="foto-firma" name="firma" autocomplete="off" required minlength="4" maxlength="120" pattern={signaturePattern(senderName)} title="Scrivi il nome e il cognome indicati in «Chi scrive»" />
+                </p>
+            </fieldset>
+        {/if}
+
         {#if isBooking}
             <fieldset>
                 <legend>L'evento</legend>
@@ -617,7 +714,7 @@
 
         <p>
             <button type="submit">
-                {isBooking ? "Invia la richiesta" : isReceipt ? "Chiedi la ricevuta" : handsOriginals ? "Registra la consegna" : isMaterial ? "Invia il materiale" : "Invia il messaggio"}
+                {isBooking ? "Invia la richiesta" : isReceipt ? "Chiedi la ricevuta" : isPhotos ? "Invia le foto" : handsOriginals ? "Registra la consegna" : isMaterial ? "Invia il materiale" : "Invia il messaggio"}
             </button>
         </p>
     </form>
