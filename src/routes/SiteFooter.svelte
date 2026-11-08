@@ -7,6 +7,7 @@
     import { legalSeat } from "$lib/locations";
     import CopyValue from "$lib/components/CopyValue.svelte";
     import { organization } from "$lib/organization";
+    import { page } from "$app/state";
 
     // "inert" quando il menu aperto copre la pagina (+layout.svelte).
     let { inert = false }: { inert?: boolean } = $props();
@@ -76,11 +77,12 @@
         </ul>
     </nav>
 
-    <!-- Il link per le segnalazioni sul sito (errori, link rotti, dati da correggere): il motivo «Problemi con il sito» del modulo, a webmaster@ -->
+    <!-- Il link per le segnalazioni sul sito (errori, link rotti, dati da correggere): il motivo «Problemi con il sito» del modulo, a webmaster@,
+         con l'indirizzo della pagina da cui si arriva, che il modulo mette in cima al messaggio -->
     <p>
         <small>
             &copy; {new Date().getFullYear()} Filarmonica Alessandro Stradella APS. Tutti i diritti riservati.<br />
-            <a href="/contatti/scrivi?motivo=sito">Segnala un problema con il sito</a>
+            <a href="/contatti/scrivi?motivo=sito&amp;pagina={encodeURIComponent(page.url.pathname)}">Segnala un problema con il sito</a>
         </small>
     </p>
 </footer>

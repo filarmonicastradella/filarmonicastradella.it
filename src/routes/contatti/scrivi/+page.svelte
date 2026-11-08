@@ -49,7 +49,17 @@
     // Dal fondo di un articolo (&articolo=/articoli/storia/filarmonica) il messaggio comincia con il suo titolo e indirizzo
     const requestedArticle = $derived(browser ? page.url.searchParams.get("articolo") : null);
     const reportedArticle = $derived(articles.find(({ href, publisher }) => !publisher && href === requestedArticle));
-    const messageStart = $derived(reportedArticle ? `Articolo «${reportedArticle.title}» (${organization.url}${reportedArticle.href}):\n\n` : "");
+    // Dal piè di pagina (&pagina=/calendario) il messaggio comincia con l'indirizzo della pagina da cui si segnala il problema;
+    // solo indirizzi interni, che cominciano con una barra
+    const requestedPage = $derived(browser ? page.url.searchParams.get("pagina") : null);
+    const reportedPage = $derived(requestedPage && /^\/[\w\-./%]*$/.test(requestedPage) ? requestedPage : null);
+    const messageStart = $derived(
+        reportedArticle
+            ? `Articolo «${reportedArticle.title}» (${organization.url}${reportedArticle.href}):\n\n`
+            : reportedPage
+              ? `Pagina: ${organization.url}${reportedPage}\n\n`
+              : ""
+    );
 
     // La formazione preferita per un ingaggio: dal link della sua pagina (?formazione=stradella-facendo), altrimenti nessuna
     const NO_PREFERENCE = "Nessuna preferenza";
@@ -57,6 +67,7 @@
     let ensemble = $derived(ensembles.find(({ slug }) => slug === requestedEnsemble)?.title ?? NO_PREFERENCE);
     const isMaterial = $derived(topic === MATERIAL);
     const isReceipt = $derived(topic === RECEIPT);
+    const isSite = $derived(topics.find(({ name }) => name === topic)?.key === "sito");
 
     // Chi ha donato: una persona (nascita, codice fiscale, residenza) o un ente (denominazione, codice fiscale o partita IVA, sede)
     let donor = $state("persona");
@@ -160,6 +171,14 @@
                 <label for="contatto-messaggio">Messaggio</label>
                 <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isReceipt} minlength="10" maxlength="2000" value={messageStart}></textarea>
             </p>
+
+            <!-- Per un problema con il sito: su quale dispositivo e con quale browser, facoltativo -->
+            {#if isSite}
+                <p>
+                    <label for="contatto-dispositivo">Dispositivo e browser</label>
+                    <input type="text" id="contatto-dispositivo" name="dispositivo" maxlength="120" />
+                </p>
+            {/if}
         </fieldset>
 
         {#if isMaterial}
