@@ -2,23 +2,32 @@
     import { onMount } from "svelte";
 
     /*
-     * «Copia l'IBAN» sotto i dati, come «Aggiungi al tuo calendario» negli eventi: lo copia senza spazi, pronto da
-     * incollare nell'app della banca, e per tre secondi dice «IBAN copiato». Solo con JS: senza, l'IBAN si copia a mano.
+     * I dati del bonifico si copiano con un clic (solo con JS: senza, si copiano a mano): ogni valore da solo, toccandolo
+     * (un pulsante con l'aspetto di un link, forms.css), oppure tutti insieme con «Copia i dati», per mandarli a qualcuno.
+     * L'IBAN si copia senza spazi, pronto per l'app della banca. Per tre secondi il testo dice che è stato copiato.
      */
     const iban = "IT52 Z062 3069 9130 0003 0649 193";
+    const details = [
+        { term: "Beneficiario", value: "Filarmonica Alessandro Stradella APS", copy: "Filarmonica Alessandro Stradella APS" },
+        { term: "IBAN", value: iban, copy: iban.replace(/ /g, "") },
+        { term: "Banca", value: "Crédit Agricole Italia", copy: "Crédit Agricole Italia" },
+        { term: "Causale", value: "Erogazione liberale", copy: "Erogazione liberale", after: ", seguita da nome, cognome e codice fiscale di chi dona" }
+    ];
+    const allDetails = details.map(({ term, copy, after }) => `${term}: ${copy}${after ?? ""}`).join("\n");
+
     let canCopy = $state(false);
-    let copied = $state(false);
+    let copied = $state<string | null>(null);
     onMount(() => {
         canCopy = !!navigator.clipboard;
     });
 
-    async function copyIban() {
+    async function copy(key: string, text: string) {
         try {
-            await navigator.clipboard.writeText(iban.replace(/ /g, ""));
-            copied = true;
-            setTimeout(() => (copied = false), 3000);
+            await navigator.clipboard.writeText(text);
+            copied = key;
+            setTimeout(() => (copied = copied === key ? null : copied), 3000);
         } catch {
-            copied = false;
+            copied = null;
         }
     }
 </script>
@@ -39,17 +48,17 @@
 <section>
     <h2>Dati per il bonifico</h2>
     <dl>
-        <dt>Beneficiario</dt>
-        <dd>Filarmonica Alessandro Stradella APS</dd>
-        <dt>IBAN</dt>
-        <dd>{iban}</dd>
-        <dt>Banca</dt>
-        <dd>Crédit Agricole Italia</dd>
-        <dt>Causale</dt>
-        <dd>«Erogazione liberale», seguita da nome, cognome e codice fiscale di chi dona</dd>
+        {#each details as { term, value, copy: text, after } (term)}
+            <dt>{term}</dt>
+            <dd>
+                {#if term === "Causale"}«{/if}{#if canCopy}<button type="button" onclick={() => copy(term, text)} title="Copia" aria-live="polite"
+                        >{copied === term ? "Copiato" : value}</button
+                    >{:else}{value}{/if}{#if term === "Causale"}»{/if}{after ?? ""}
+            </dd>
+        {/each}
     </dl>
     {#if canCopy}
-        <p><button type="button" onclick={copyIban} aria-live="polite">{copied ? "IBAN copiato" : "Copia l'IBAN"}</button></p>
+        <p><button type="button" onclick={() => copy("tutti", allDetails)} aria-live="polite">{copied === "tutti" ? "Dati copiati" : "Copia i dati"}</button></p>
     {/if}
 </section>
 
