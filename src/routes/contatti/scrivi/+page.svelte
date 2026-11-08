@@ -179,19 +179,6 @@
                 </select>
             </p>
 
-            <!-- Privacy: che cosa si chiede, tra i diritti del GDPR; il resto nel messaggio -->
-            {#if isPrivacy}
-                <p>
-                    <label for="contatto-richiesta">Cosa chiedi</label>
-                    <select id="contatto-richiesta" name="richiesta" required>
-                        <option value="" disabled selected>Scegli</option>
-                        {#each privacyRequests as request (request)}
-                            <option>{request}</option>
-                        {/each}
-                    </select>
-                </p>
-            {/if}
-
             <!-- Tutela dei minori: nessun campo in più, chi scrive deve poterlo fare liberamente; prima, i numeri per le emergenze -->
             {#if isSafeguarding}
                 <p>
@@ -204,6 +191,19 @@
                 <label for="contatto-messaggio">Messaggio</label>
                 <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isReceipt} minlength="10" maxlength="2000" value={messageStart}></textarea>
             </p>
+
+            <!-- Privacy: che cosa si chiede, tra i diritti del GDPR; il resto nel messaggio -->
+            {#if isPrivacy}
+                <p>
+                    <label for="contatto-richiesta">Cosa chiedi</label>
+                    <select id="contatto-richiesta" name="richiesta" required>
+                        <option value="" disabled selected>Scegli</option>
+                        {#each privacyRequests as request (request)}
+                            <option>{request}</option>
+                        {/each}
+                    </select>
+                </p>
+            {/if}
 
             <!-- Per un problema con il sito: su quale dispositivo e con quale browser, facoltativo -->
             {#if isSite}
