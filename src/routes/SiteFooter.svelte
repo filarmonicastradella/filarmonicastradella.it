@@ -77,7 +77,7 @@
         </ul>
     </nav>
 
-    <!-- Il link per le segnalazioni sul sito (errori, link rotti, dati da correggere): il motivo «Il sito e gli articoli» del modulo, a webmaster@,
+    <!-- Il link per le segnalazioni sul sito (errori, link rotti, dati da correggere): il motivo «Informazioni» del modulo, a info@,
          con l'indirizzo della pagina da cui si arriva, che il modulo mette in cima al messaggio -->
     <p>
         <small>

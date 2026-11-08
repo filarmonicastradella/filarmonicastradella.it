@@ -22,18 +22,15 @@
     const RECEIPT = "Ricevute";
 
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
-    // I motivi sono raggruppati per chi può risolverli più in fretta (dal 8/11/2026, da 12 a 9); restano a sé quelli che cambiano il
-    // modulo (ingaggio, ricevuta, materiale, privacy, minori). La chiave sceglie il motivo da un link (/contatti/scrivi?motivo=ingaggio);
-    // le chiavi dei motivi accorpati restano valide come alias, perché ci sono link e QR che le usano.
+    // Sette motivi (dal 8/11/2026), uno per ogni area: le richieste generiche, gli ingaggi, il materiale storico, i rapporti con enti,
+    // sponsor, stampa e altri soggetti esterni, le ricevute, la privacy, la tutela dei minori. La chiave sceglie il motivo da un link
+    // (/contatti/scrivi?motivo=ingaggio); le chiavi dei motivi accorpati restano valide come alias, perché ci sono link e QR che le usano.
     const topics = [
-        { key: "informazioni", aliases: ["altro"], name: "Informazioni", mailbox: "info" },
+        { key: "informazioni", aliases: ["altro", "iscrizione", "donazioni", "sito", "articoli"], name: "Informazioni", mailbox: "info" },
         { key: "ingaggio", name: BOOKING, mailbox: "info" },
-        { key: "iscrizione", name: "Iscrizione e quote", mailbox: "segreteria" },
-        { key: "ricevuta", name: RECEIPT, mailbox: "tesoreria" },
-        { key: "collaborazioni", aliases: ["donazioni", "stampa"], name: "Donazioni, collaborazioni e stampa", mailbox: "presidente" },
-        // Errori del sito e aggiunte agli articoli, a chi aggiorna il sito: il link nel piè di pagina (&pagina=) e in fondo a ogni articolo (&articolo=)
-        { key: "sito", aliases: ["articoli"], name: "Il sito e gli articoli", mailbox: "webmaster" },
         { key: "storia", name: MATERIAL, mailbox: "info" },
+        { key: "collaborazioni", aliases: ["stampa", "sponsor", "enti"], name: "Collaborazioni, sponsor e stampa", mailbox: "presidente" },
+        { key: "ricevuta", name: RECEIPT, mailbox: "tesoreria" },
         { key: "privacy", name: "Privacy e dati personali", mailbox: "privacy" },
         { key: "minori", name: "Tutela dei minori", mailbox: "safeguarding" }
     ];
@@ -69,7 +66,6 @@
     let ensemble = $derived(ensembles.find(({ slug }) => slug === requestedEnsemble)?.title ?? NO_PREFERENCE);
     const isMaterial = $derived(topic === MATERIAL);
     const isReceipt = $derived(topic === RECEIPT);
-    const isSite = $derived(topics.find(({ name }) => name === topic)?.key === "sito");
     const isSafeguarding = $derived(topics.find(({ name }) => name === topic)?.key === "minori");
     const isPrivacy = $derived(topics.find(({ name }) => name === topic)?.key === "privacy");
     // I diritti del GDPR, detti come li direbbe chi scrive (artt. 15, 16, 17, 7.3, 21, 20)
@@ -85,7 +81,7 @@
 
     // Chi ha donato: una persona (nascita, codice fiscale, residenza) o un ente (denominazione, codice fiscale o partita IVA, sede)
     let donor = $state("persona");
-    // Per cosa è la ricevuta: una donazione, oppure la quota (dal link &per=quota)
+    // Per cosa è la ricevuta: una donazione, la quota (dal link &per=quota) o un altro versamento (contributi per corsi, trasferte, eventi)
     const requestedReceipt = $derived(browser ? page.url.searchParams.get("per") : null);
     let receiptFor = $derived(requestedReceipt === "quota" ? "quota" : "donazione");
     // I contanti non danno diritto alle agevolazioni, ma la ricevuta si fa lo stesso
@@ -210,8 +206,8 @@
                 <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isReceipt} minlength="10" maxlength="2000" value={messageStart}></textarea>
             </p>
 
-            <!-- Per un problema con il sito: su quale dispositivo e con quale browser, facoltativo -->
-            {#if isSite}
+            <!-- Per un problema con il sito (dal link del piè di pagina, con la pagina): su quale dispositivo e con quale browser, facoltativo -->
+            {#if reportedPage}
                 <p>
                     <label for="contatto-dispositivo">Dispositivo e browser</label>
                     <input type="text" id="contatto-dispositivo" name="dispositivo" maxlength="120" />
@@ -471,6 +467,11 @@
                     <input type="radio" id="ricevuta-quota" name="ricevuta_per" value="quota" bind:group={receiptFor} />
                     <label for="ricevuta-quota">Per la quota associativa</label>
                 </p>
+
+                <p>
+                    <input type="radio" id="ricevuta-altro" name="ricevuta_per" value="altro" bind:group={receiptFor} />
+                    <label for="ricevuta-altro">Per un altro versamento, come un corso o una trasferta</label>
+                </p>
             </fieldset>
         {/if}
 
@@ -491,6 +492,25 @@
                 <p>
                     <input type="checkbox" id="quota-detrazione" name="detrazione_ragazzi" value="Sì" />
                     <label for="quota-detrazione">Mi serve per la detrazione delle spese di iscrizione di un ragazzo dai 5 ai 18 anni</label>
+                </p>
+            </fieldset>
+        {:else if isReceipt && receiptFor === "altro"}
+            <fieldset>
+                <legend>Il versamento</legend>
+
+                <p>
+                    <label for="versamento-causale">Per cosa</label>
+                    <input type="text" id="versamento-causale" name="causale" required minlength="3" maxlength="120" />
+                </p>
+
+                <p>
+                    <label for="versamento-data">Data del versamento</label>
+                    <input type="date" id="versamento-data" name="data_del_versamento" required max={today} />
+                </p>
+
+                <p>
+                    <label for="versamento-importo">Importo in euro</label>
+                    <input type="number" id="versamento-importo" name="importo" required min="1" step="0.01" inputmode="decimal" />
                 </p>
             </fieldset>
         {:else if isReceipt}
