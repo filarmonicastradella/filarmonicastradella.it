@@ -1,5 +1,6 @@
 <script lang="ts">
     import { signaturePattern } from "$lib/signature";
+    import { describeDevice } from "$lib/device";
     import { browser } from "$app/environment";
     import { page } from "$app/state";
     import FaqItem from "$lib/components/FaqItem.svelte";
@@ -48,16 +49,16 @@
     // Dal fondo di un articolo (&articolo=/articoli/storia/filarmonica) il messaggio comincia con il suo titolo e indirizzo
     const requestedArticle = $derived(browser ? page.url.searchParams.get("articolo") : null);
     const reportedArticle = $derived(articles.find(({ href, publisher }) => !publisher && href === requestedArticle));
-    // Dal piè di pagina (&pagina=/calendario) il messaggio comincia con l'indirizzo della pagina da cui si segnala il problema;
+    // Dal piè di pagina (&pagina=/calendario) l'indirizzo della pagina da cui si segnala il problema, nel gruppo «La pagina»;
     // solo indirizzi interni, che cominciano con una barra
     const requestedPage = $derived(browser ? page.url.searchParams.get("pagina") : null);
     const reportedPage = $derived(requestedPage && /^\/[\w\-./%]*$/.test(requestedPage) ? requestedPage : null);
+    // Il dispositivo e il browser di chi segnala, ricavati dal browser stesso (src/lib/device.ts); in prerender niente
+    const device = browser ? describeDevice() : "";
     const messageStart = $derived(
         reportedArticle
             ? `Articolo «${reportedArticle.title}» (${organization.url}${reportedArticle.href}):\n\n`
-            : reportedPage
-              ? `Pagina: ${organization.url}${reportedPage}\n\n`
-              : ""
+            : ""
     );
 
     // La formazione preferita per un ingaggio: dal link della sua pagina (?formazione=stradella-facendo), altrimenti nessuna
@@ -206,17 +207,27 @@
                 <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isReceipt} minlength="10" maxlength="2000" value={messageStart}></textarea>
             </p>
 
-            <!-- Per un problema con il sito (dal link del piè di pagina, con la pagina): su quale dispositivo e con quale browser, facoltativo -->
-            {#if reportedPage}
-                <p>
-                    <label for="contatto-dispositivo">Dispositivo e browser</label>
-                    <input type="text" id="contatto-dispositivo" name="dispositivo" maxlength="120" />
-                </p>
-            {/if}
         </fieldset>
 
         <!-- Chi scrive sempre subito dopo il messaggio, con ogni motivo; per il materiale storico si chiama «Chi consegna» -->
         {@render sender()}
+
+        <!-- Un problema con il sito, dal link del piè di pagina: la pagina da cui si arriva e il dispositivo, già compilati e modificabili -->
+        {#if reportedPage}
+            <fieldset>
+                <legend>La pagina</legend>
+
+                <p>
+                    <label for="segnalazione-pagina">Indirizzo</label>
+                    <input type="url" id="segnalazione-pagina" name="pagina" maxlength="300" value="{organization.url}{reportedPage}" />
+                </p>
+
+                <p>
+                    <label for="segnalazione-dispositivo">Dispositivo e browser</label>
+                    <input type="text" id="segnalazione-dispositivo" name="dispositivo" maxlength="160" value={device} />
+                </p>
+            </fieldset>
+        {/if}
 
         {#if isMaterial}
             <fieldset>

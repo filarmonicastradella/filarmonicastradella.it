@@ -5,3 +5,38 @@
  */
 export const isIos = () =>
     /iphone|ipad|ipod/i.test(navigator.userAgent) || (/macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+
+/*
+ * Dispositivo e browser in poche parole, per le segnalazioni sul sito («iPhone, Safari 18, finestra larga 390 px»): si ricavano
+ * dallo user agent, che il browser manda già a ogni pagina, e dalla finestra. Chi scrive li vede nel modulo e li può correggere.
+ * Solo nel browser.
+ */
+const browsers: [string, RegExp][] = [
+    ["Edge", /Edg(?:A|iOS)?\/(\d+)/],
+    ["Samsung Internet", /SamsungBrowser\/(\d+)/],
+    ["Opera", /OPR\/(\d+)/],
+    ["Firefox", /(?:Firefox|FxiOS)\/(\d+)/],
+    ["Chrome", /(?:Chrome|CriOS)\/(\d+)/],
+    ["Safari", /Version\/(\d+)[\d.]* (?:Mobile\/\S+ )?Safari/]
+];
+
+export function describeDevice() {
+    const agent = navigator.userAgent;
+    const system = isIos()
+        ? /iphone|ipod/i.test(agent)
+            ? "iPhone"
+            : "iPad"
+        : /android/i.test(agent)
+          ? "Android"
+          : /windows/i.test(agent)
+            ? "Windows"
+            : /macintosh/i.test(agent)
+              ? "Mac"
+              : /cros/i.test(agent)
+                ? "ChromeOS"
+                : /linux/i.test(agent)
+                  ? "Linux"
+                  : "";
+    const browser = browsers.map(([name, pattern]) => [name, agent.match(pattern)?.[1]]).find(([, version]) => version);
+    return [system, browser && `${browser[0]} ${browser[1]}`, `finestra larga ${window.innerWidth} px`].filter(Boolean).join(", ");
+}

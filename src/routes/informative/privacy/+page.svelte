@@ -40,7 +40,7 @@
         <dt>Messaggi</dt>
         <dd>
             Se ci scrivi per email o con il modulo di contatto, anche per chiederci di suonare a un evento, usiamo i dati che ci dai (nome, indirizzo
-            email, telefono, motivo, per gli eventi occasione, data e luogo, testo del messaggio) solo per risponderti: per email, con una telefonata,
+            email, telefono, motivo, per gli eventi occasione, data e luogo, per le segnalazioni sul sito la pagina, il dispositivo e il browser, testo del messaggio) solo per risponderti: per email, con una telefonata,
             un SMS o un messaggio WhatsApp. Base giuridica: la tua richiesta (art. 6.1.b).
         </dd>
         <dt>Richiesta di una ricevuta</dt>
