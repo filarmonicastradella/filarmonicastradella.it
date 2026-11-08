@@ -382,11 +382,11 @@ body > div > footer li + li {
     margin-block-start: var(--space-2);
 }
 
-body > div > footer a {
+body > div > footer :is(a, button[type="button"][title="Copia"]) {
     color: var(--text);
 }
 
-body > div > footer a:hover {
+body > div > footer :is(a, button[type="button"][title="Copia"]):hover {
     color: var(--accent-hover);
 }
 

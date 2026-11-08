@@ -5,6 +5,7 @@
     import YoutubeIcon from "~icons/simple-icons/youtube";
     // import TiktokIcon from "~icons/simple-icons/tiktok"; // da riattivare con il profilo TikTok (organization.ts e icons qui sotto)
     import { legalSeat } from "$lib/locations";
+    import CopyValue from "$lib/components/CopyValue.svelte";
     import { organization } from "$lib/organization";
 
     // "inert" quando il menu aperto copre la pagina (+layout.svelte).
@@ -53,13 +54,12 @@
 
         <dl>
             <dt>Denominazione</dt>
-            <dd>{organization.name}</dd>
+            <!-- Dati che si ricopiano (in un modulo, in un bonifico): si copiano con un clic -->
+            <dd><CopyValue text={organization.name}>{organization.name}</CopyValue></dd>
             <dt>Codice fiscale</dt>
-            <dd>{organization.taxCode}</dd>
+            <dd><CopyValue text={organization.taxCode}>{organization.taxCode}</CopyValue></dd>
             <dt><abbr title="Registro unico nazionale del Terzo settore">RUNTS</abbr></dt>
-            <dd>
-                <a href={organization.runts.href} target="_blank" rel="noopener noreferrer">{organization.runts.name}</a>
-            </dd>
+            <dd><CopyValue text={organization.runts.name.replace(/\D/g, "")}>{organization.runts.name}</CopyValue></dd>
             <dt>Affiliazione</dt>
             <dd>
                 <a href={organization.affiliation.href} target="_blank" rel="noopener noreferrer">{organization.affiliation.name}</a>

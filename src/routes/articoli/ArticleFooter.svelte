@@ -1,5 +1,6 @@
 <script lang="ts">
     import { formatArticleDate, type Article } from "$lib/articles";
+    import CopyValue from "$lib/components/CopyValue.svelte";
     import { organization } from "$lib/organization";
 
     /*
@@ -20,7 +21,7 @@
 {#if history}
     <section>
         <h2>Come citare questo articolo</h2>
-        <p>{citation}.</p>
+        <p><CopyValue text={citation}>{citation}</CopyValue>.</p>
     </section>
 {/if}
 

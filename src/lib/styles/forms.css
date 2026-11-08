@@ -72,8 +72,11 @@ input[type="file"]::file-selector-button:hover {
     color: var(--text-brand);
 }
 
-/* Un valore da copiare con un clic (i dati del bonifico in «Fai una donazione»): un pulsante con l'aspetto di un link */
-main dd > button[type="button"] {
+/*
+ * Un dato da copiare con un clic (CopyValue: dati del bonifico, dati dell'ente nel piè di pagina, citazione degli
+ * articoli): un pulsante con l'aspetto di un link, riconosciuto dal suo titolo «Copia»
+ */
+button[type="button"][title="Copia"] {
     display: inline;
     padding: 0;
     border: 0;
@@ -86,7 +89,7 @@ main dd > button[type="button"] {
     text-underline-offset: 0.2em;
 }
 
-main dd > button[type="button"]:hover {
+button[type="button"][title="Copia"]:hover {
     border: 0;
     background: none;
     color: var(--accent-hover);

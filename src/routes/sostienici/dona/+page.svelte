@@ -1,9 +1,10 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import CopyValue from "$lib/components/CopyValue.svelte";
 
     /*
      * I dati del bonifico si copiano con un clic (solo con JS: senza, si copiano a mano): ogni valore da solo, toccandolo
-     * (un pulsante con l'aspetto di un link, forms.css), oppure tutti insieme con «Copia i dati», per mandarli a qualcuno.
+     * (CopyValue), oppure tutti insieme con «Copia i dati», per mandarli a qualcuno.
      * L'IBAN si copia senza spazi, pronto per l'app della banca. Per tre secondi il testo dice che è stato copiato.
      */
     const iban = "IT52 Z062 3069 9130 0003 0649 193";
@@ -17,18 +18,18 @@
     const allDetails = details.map(({ term, copy }) => `${term}: ${copy}`).join("\n");
 
     let canCopy = $state(false);
-    let copied = $state<string | null>(null);
+    let copiedAll = $state(false);
     onMount(() => {
         canCopy = !!navigator.clipboard;
     });
 
-    async function copy(key: string, text: string) {
+    async function copyAll() {
         try {
-            await navigator.clipboard.writeText(text);
-            copied = key;
-            setTimeout(() => (copied = copied === key ? null : copied), 3000);
+            await navigator.clipboard.writeText(allDetails);
+            copiedAll = true;
+            setTimeout(() => (copiedAll = false), 3000);
         } catch {
-            copied = null;
+            copiedAll = false;
         }
     }
 </script>
@@ -54,21 +55,13 @@
 <section>
     <h2>Dati per il bonifico</h2>
     <dl>
-        {#each details as { term, value, copy: text } (term)}
+        {#each details as { term, value, copy: copyText } (term)}
             <dt>{term}</dt>
-            <dd>
-                {#if canCopy}
-                    <button type="button" onclick={() => copy(term, text)} title="Copia" aria-live="polite">
-                        {#if copied === term}Copiato{:else}{@render detail(value)}{/if}
-                    </button>
-                {:else}
-                    {@render detail(value)}
-                {/if}
-            </dd>
+            <dd><CopyValue text={copyText}>{@render detail(value)}</CopyValue></dd>
         {/each}
     </dl>
     {#if canCopy}
-        <p><button type="button" onclick={() => copy("tutti", allDetails)} aria-live="polite">{copied === "tutti" ? "Dati copiati" : "Copia i dati"}</button></p>
+        <p><button type="button" onclick={copyAll} aria-live="polite">{copiedAll ? "Dati copiati" : "Copia i dati"}</button></p>
     {/if}
 </section>
 
