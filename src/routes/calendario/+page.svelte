@@ -1,5 +1,4 @@
 <script lang="ts">
-    import CopyLink from "$lib/components/CopyLink.svelte";
     import { isIos } from "$lib/device";
     import { onMount } from "svelte";
     import EventCard from "$lib/components/EventCard.svelte";
@@ -35,14 +34,7 @@
     <h1>Calendario</h1>
     <p>I prossimi concerti e le altre attività pubbliche della Filarmonica Alessandro Stradella di Fivizzano.</p>
     <p><a href={ios ? webcal : google}>Segui il calendario</a></p>
-    <p>
-        <small>
-            I nuovi eventi compaiono da soli nel tuo calendario.
-            {#if !ios}
-                Con altri programmi iscriviti a questo indirizzo <CopyLink href={feed} />
-            {/if}
-        </small>
-    </p>
+    <p><small>I nuovi eventi compaiono da soli nel tuo calendario.</small></p>
     <!-- Senza eventi l'avviso sta nell'intestazione: niente testo sciolto nella pagina -->
     {#if events.length === 0}
         <p>Per ora non ci sono eventi in programma.</p>
