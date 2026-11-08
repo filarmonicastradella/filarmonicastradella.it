@@ -37,6 +37,8 @@
 >
     <h1 itemprop="name">{ensemble.title}</h1>
     <p itemprop="description">{ensemble.summary}</p>
+    <!-- L'azione della pagina: chi cerca una formazione spesso la vuole al suo evento. Il modulo ha già scelto la formazione. -->
+    <p><a href="/contatti/scrivi?motivo=ingaggio&formazione={ensemble.slug}">Chiedi un ingaggio</a></p>
     <link itemprop="url" href="{organization.url}/formazioni/{ensemble.slug}" />
     <link itemprop="parentOrganization" href="{organization.url}/#ente" />
     {#if ensemble.coverImage && ensemble.cover}
@@ -81,14 +83,6 @@
         Per suonare in {ensemble.title} si entra da soci: prima la <a href="/associazione/iscrizione">domanda di iscrizione</a> all'associazione, con la quota annuale di
         12 €, poi la richiesta di entrare nella formazione. Le parti e la sala prove le mette l'associazione, e alcuni strumenti si possono avere in
         prestito.
-    </p>
-</section>
-
-<section>
-    <h2>Per il tuo evento</h2>
-    <p>
-        Vuoi {ensemble.title} al tuo evento?
-        <a href="/contatti/scrivi?motivo=ingaggio&formazione={ensemble.slug}">Chiedici un ingaggio</a>: il modulo ha già scelto la formazione.
     </p>
 </section>
 
