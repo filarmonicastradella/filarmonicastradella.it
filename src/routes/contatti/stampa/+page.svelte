@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import CopyValue from "$lib/components/CopyValue.svelte";
     import { ensembles } from "$lib/ensembles";
     import { legalSeat } from "$lib/locations";
     import { organization } from "$lib/organization";
@@ -47,19 +48,20 @@
 
 <section>
     <h2>In breve</h2>
+    <!-- Ogni dato si copia con un tocco (CopyValue), come i dati dell'ente in Amministrazione trasparente -->
     <dl>
         <dt>Denominazione</dt>
-        <dd>{organization.name}</dd>
+        <dd><CopyValue text={organization.name}>{organization.name}</CopyValue></dd>
         <dt>Fondazione</dt>
-        <dd>{organization.foundingYear}, Fivizzano</dd>
+        <dd><CopyValue text="{organization.foundingYear}, Fivizzano">{organization.foundingYear}, Fivizzano</CopyValue></dd>
         <dt>Sede legale</dt>
-        <dd>{legalSeat.address.join(", ")}</dd>
+        <dd><CopyValue text={legalSeat.address.join(", ")}>{legalSeat.address.join(", ")}</CopyValue></dd>
         <dt>Formazioni</dt>
         {#each ensembles as { slug, title } (slug)}
-            <dd><a href="/formazioni/{slug}">{title}</a></dd>
+            <dd><CopyValue text={title}>{title}</CopyValue></dd>
         {/each}
         <dt>Affiliazione</dt>
-        <dd>{organization.affiliation.name}</dd>
+        <dd><CopyValue text={organization.affiliation.name}>{organization.affiliation.name}</CopyValue></dd>
     </dl>
 </section>
 
