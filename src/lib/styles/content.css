@@ -50,6 +50,7 @@ a[target="_blank"]::after {
 /* Le icone dei social e le immagini parlano da sole: niente freccia, ma resta il testo per gli screen reader */
 body > div > footer > nav:first-child a::after,
 a[target="_blank"]:has(img)::after {
+    position: absolute; /* fuori dal flusso: altrimenti sotto un'immagine resta una riga vuota */
     inline-size: 0;
     margin: 0;
     background: none;
