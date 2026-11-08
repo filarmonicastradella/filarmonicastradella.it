@@ -1,3 +1,7 @@
+<script lang="ts">
+    import { amountFormat, contributions } from "$lib/contributions";
+</script>
+
 <svelte:head>
     <title>Contributi pubblici ricevuti — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="L'elenco dei contributi e dei vantaggi economici ricevuti da pubbliche amministrazioni, pubblicato per trasparenza." />
@@ -6,6 +10,8 @@
 <header>
     <h1>Contributi pubblici ricevuti</h1>
     <p>Qui l'associazione pubblica l'elenco dei contributi, delle sovvenzioni e dei vantaggi economici ricevuti da pubbliche amministrazioni.</p>
+    <!-- Gli stessi dati della tabella, da $lib/contributions, in un file da aprire con un foglio di calcolo -->
+    <p><a href="/trasparenza/contributi.csv" type="text/csv" download>Scarica i dati in CSV</a></p>
 </header>
 
 <section>
@@ -20,9 +26,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td colspan="4">Finora l'associazione non ha ricevuto contributi pubblici.</td>
-            </tr>
+            {#each contributions as { year, grantor, amount, purpose }, index (index)}
+                <tr>
+                    <td>{year}</td>
+                    <td>{grantor}</td>
+                    <td>{amountFormat.format(amount)}</td>
+                    <td>{purpose}</td>
+                </tr>
+            {:else}
+                <tr>
+                    <td colspan="4">Finora l'associazione non ha ricevuto contributi pubblici.</td>
+                </tr>
+            {/each}
         </tbody>
     </table>
 </section>
