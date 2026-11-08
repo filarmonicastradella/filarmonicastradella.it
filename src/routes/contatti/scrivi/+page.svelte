@@ -82,7 +82,7 @@
 
     // Chi ha donato: una persona (nascita, codice fiscale, residenza) o un ente (denominazione, codice fiscale o partita IVA, sede)
     let donor = $state("persona");
-    // Per cosa è la ricevuta: una donazione, la quota (dal link &per=quota) o un altro versamento (contributi per corsi, trasferte, eventi)
+    // Per cosa è la ricevuta: una donazione o la quota (dal link &per=quota)
     const requestedReceipt = $derived(browser ? page.url.searchParams.get("per") : null);
     let receiptFor = $derived(requestedReceipt === "quota" ? "quota" : "donazione");
     // I contanti non danno diritto alle agevolazioni, ma la ricevuta si fa lo stesso
@@ -478,11 +478,6 @@
                     <input type="radio" id="ricevuta-quota" name="ricevuta_per" value="quota" bind:group={receiptFor} />
                     <label for="ricevuta-quota">Per la quota associativa</label>
                 </p>
-
-                <p>
-                    <input type="radio" id="ricevuta-altro" name="ricevuta_per" value="altro" bind:group={receiptFor} />
-                    <label for="ricevuta-altro">Per un altro versamento, come un corso o una trasferta</label>
-                </p>
             </fieldset>
         {/if}
 
@@ -503,25 +498,6 @@
                 <p>
                     <input type="checkbox" id="quota-detrazione" name="detrazione_ragazzi" value="Sì" />
                     <label for="quota-detrazione">Mi serve per la detrazione delle spese di iscrizione di un ragazzo dai 5 ai 18 anni</label>
-                </p>
-            </fieldset>
-        {:else if isReceipt && receiptFor === "altro"}
-            <fieldset>
-                <legend>Il versamento</legend>
-
-                <p>
-                    <label for="versamento-causale">Per cosa</label>
-                    <input type="text" id="versamento-causale" name="causale" required minlength="3" maxlength="120" />
-                </p>
-
-                <p>
-                    <label for="versamento-data">Data del versamento</label>
-                    <input type="date" id="versamento-data" name="data_del_versamento" required max={today} />
-                </p>
-
-                <p>
-                    <label for="versamento-importo">Importo in euro</label>
-                    <input type="number" id="versamento-importo" name="importo" required min="1" step="0.01" inputmode="decimal" />
                 </p>
             </fieldset>
         {:else if isReceipt}
