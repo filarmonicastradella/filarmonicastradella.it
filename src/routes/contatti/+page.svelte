@@ -50,3 +50,8 @@
         <dd><a href={legalSeat.mapsHref} target="_blank" rel="noopener noreferrer">{legalSeat.address.join(", ")}</a></dd>
     </dl>
 </section>
+
+<section>
+    <h2>Per la stampa</h2>
+    <p>Presentazione, dati, simbolo e contatti per chi scrive di noi: <a href="/contatti/stampa">materiali per la stampa</a>.</p>
+</section>

@@ -48,3 +48,11 @@
     </TimelineSections>
 {/if}
 
+<!-- Chi guarda dove suoniamo può volerci al suo evento: l'invito porta alla pagina degli ingaggi, che spiega occasioni e formazioni -->
+<section>
+    <h2>La Filarmonica al tuo evento</h2>
+    <p>
+        Un matrimonio, una festa di paese, una ricorrenza? Le nostre formazioni possono suonare anche per te:
+        <a href="/contatti/ingaggi">ecco come chiederci un ingaggio</a>.
+    </p>
+</section>
