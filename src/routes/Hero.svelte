@@ -13,6 +13,7 @@
     import cover from "$lib/assets/imgs/bicentenario-1987.jpg?enhanced&w=2048;1600;1280;960;640";
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
     import coverPlaceholder from "$lib/assets/imgs/bicentenario-1987.jpg?w=24&blur=2&format=webp&inline";
+    import { organization } from "$lib/organization";
 </script>
 
 <!--
@@ -25,7 +26,7 @@
         <p>Fivizzano · dal 1777</p>
         <h1>Filarmonica <span>Alessandro <em>Stradella</em></span></h1>
         <!-- Il motto dell'Accademia de' Filarmonici Dissonanti, dal diploma settecentesco (articoli/storia/filarmonica) -->
-        <p>Le dissonanze in un accordo solo</p>
+        <p>{organization.motto}</p>
     </hgroup>
     <p><a href="/contatti/scrivi?motivo=ingaggio">Chiedi un ingaggio</a></p>
     <enhanced:img

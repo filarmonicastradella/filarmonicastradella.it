@@ -11,6 +11,8 @@ export const organization = {
     pressEmail: "stampa@filarmonicastradella.it", // per i giornalisti, in Materiali per la stampa (dal 9/11/2026)
     phone: "+39 350 536 3110",
     foundingYear: "1777",
+    // Il motto dell'Accademia de' Filarmonici Dissonanti, dal diploma settecentesco: nella prima schermata della home e nei materiali per la stampa
+    motto: "Le dissonanze in un accordo solo",
     // Il RUNTS non ha un indirizzo diretto per la scheda di un ente, e la ricerca pubblica serve a poco: il numero si copia (CopyValue)
     runts: { name: "Repertorio n. 176207" },
     pec: "filarmonicastradella@pec.it",

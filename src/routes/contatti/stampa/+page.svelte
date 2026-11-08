@@ -14,6 +14,7 @@
     const facts = [
         { term: "Denominazione", values: [organization.name] },
         { term: "Fondazione", values: [`${organization.foundingYear}, Fivizzano`] },
+        { term: "Motto", values: [`«${organization.motto}»`] },
         { term: "Sede legale", values: [legalSeat.address.join(", ")] },
         { term: "Formazioni", values: ensembles.map(({ title }) => title) },
         { term: "Affiliazione", values: [organization.affiliation.name] }
