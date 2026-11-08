@@ -18,8 +18,7 @@
     const BOOKING = "Ingaggio per un evento";
     const MATERIAL = "Materiale storico";
     // La richiesta di una ricevuta (dal 8/11/2026): per una donazione i dati del modello «Ricevuta di erogazione liberale» (art. 83 CTS)
-    // della tesoreria, per una persona o per un ente; per la quota bastano il socio e l'anno (il resto è nel libro soci), e se serve
-    // l'attestazione per la detrazione delle spese di iscrizione dei ragazzi dai 5 ai 18 anni a una banda (art. 15, lett. e-quater, TUIR).
+    // della tesoreria, per una persona o per un ente; per la quota bastano il socio e l'anno (il resto è nel libro soci).
     const RECEIPT = "Ricevute";
 
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
@@ -498,11 +497,6 @@
                 <p>
                     <label for="quota-anno">Anno</label>
                     <input type="number" id="quota-anno" name="anno" required min="2026" max={thisYear + 1} step="1" inputmode="numeric" value={thisYear} />
-                </p>
-
-                <p>
-                    <input type="checkbox" id="quota-detrazione" name="detrazione_ragazzi" value="Sì" />
-                    <label for="quota-detrazione">Mi serve per la detrazione delle spese di iscrizione di un ragazzo dai 5 ai 18 anni</label>
                 </p>
             </fieldset>
         {:else if isReceipt}
