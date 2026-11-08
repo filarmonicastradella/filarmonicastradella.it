@@ -214,10 +214,8 @@
             {/if}
         </fieldset>
 
-        <!-- Chi scrive sempre subito dopo il messaggio, con ogni motivo; per il materiale storico è «Chi consegna», dopo il metodo -->
-        {#if !isMaterial}
-            {@render sender()}
-        {/if}
+        <!-- Chi scrive sempre subito dopo il messaggio, con ogni motivo; per il materiale storico si chiama «Chi consegna» -->
+        {@render sender()}
 
         {#if isMaterial}
             <fieldset>
@@ -233,8 +231,6 @@
                     <label for="consegna-originali">Consegno gli originali a un punto di raccolta</label>
                 </p>
             </fieldset>
-
-            {@render sender()}
 
             <!-- Gli originali portati a un punto di raccolta: compila chi ritira, con chi consegna accanto -->
             {#if handsOriginals}
