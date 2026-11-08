@@ -16,6 +16,9 @@
     // chi ritira il materiale nei punti di raccolta (personale di quell'ente, che ne prende la custodia) aiuta a compilarlo chi non usa il telefono.
     const BOOKING = "Ingaggio per un evento";
     const MATERIAL = "Materiale storico";
+    // La richiesta della ricevuta di una donazione (dal 8/11/2026): i dati del modello «Ricevuta di erogazione liberale»
+    // (art. 83 CTS) della tesoreria, per una persona o per un ente. Le ricevute delle quote non si chiedono: si fanno dal libro soci.
+    const RECEIPT = "Ricevuta di una donazione";
 
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
     // La chiave sceglie il motivo da un link: /contatti/scrivi?motivo=ingaggio
@@ -23,7 +26,8 @@
         { key: "informazioni", name: "Informazioni generali", mailbox: "info" },
         { key: "ingaggio", name: BOOKING, mailbox: "info" },
         { key: "iscrizione", name: "Iscrizione e quote", mailbox: "segreteria" },
-        { key: "donazioni", name: "Donazioni e ricevute", mailbox: "tesoreria" },
+        { key: "donazioni", name: "Donazioni e sponsor", mailbox: "tesoreria" },
+        { key: "ricevuta", name: RECEIPT, mailbox: "tesoreria" },
         { key: "collaborazioni", name: "Collaborazioni, enti e sponsor", mailbox: "presidente" },
         { key: "stampa", name: "Stampa e media", mailbox: "presidente" },
         // Errori e aggiunte ai nostri articoli, a chi li scrive (dal 8/11/2026): il link in fondo a ogni articolo
@@ -52,6 +56,15 @@
     const requestedEnsemble = $derived(browser ? page.url.searchParams.get("formazione") : null);
     let ensemble = $derived(ensembles.find(({ slug }) => slug === requestedEnsemble)?.title ?? NO_PREFERENCE);
     const isMaterial = $derived(topic === MATERIAL);
+    const isReceipt = $derived(topic === RECEIPT);
+
+    // Chi ha donato: una persona (nascita, codice fiscale, residenza) o un ente (denominazione, codice fiscale o partita IVA, sede)
+    let donor = $state("persona");
+    // I contanti non danno diritto alle agevolazioni, ma la ricevuta si fa lo stesso
+    const paymentMethods = ["Bonifico", "Carta, online", "Assegno", "Altro pagamento tracciabile", "Contanti"];
+    // Dalla pagina di ringraziamento di Stripe (&modalita=carta) la modalità è già scelta
+    const requestedMethod = $derived(browser ? page.url.searchParams.get("modalita") : null);
+    let paymentMethod = $derived(requestedMethod === "carta" ? "Carta, online" : "");
 
     // Materiale storico: le scansioni si mandano dal modulo, gli originali si portano a un punto di raccolta (gli stessi del calendario)
     let delivery = $state("scansioni");
@@ -121,9 +134,11 @@
             name="_subject"
             value={isBooking
                 ? "Richiesta per un evento – Filarmonica Stradella"
-                : isMaterial
-                  ? "Materiale storico – Filarmonica Stradella"
-                  : "Nuovo messaggio dal sito – Filarmonica Stradella"}
+                : isReceipt
+                  ? "Richiesta di ricevuta per una donazione – Filarmonica Stradella"
+                  : isMaterial
+                    ? "Materiale storico – Filarmonica Stradella"
+                    : "Nuovo messaggio dal sito – Filarmonica Stradella"}
         />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_next" value="https://filarmonicastradella.it/contatti/grazie{isMaterial ? '/materiale' : ''}" />
@@ -143,7 +158,7 @@
 
             <p>
                 <label for="contatto-messaggio">Messaggio</label>
-                <textarea id="contatto-messaggio" name="messaggio" rows="6" required minlength="10" maxlength="2000" value={messageStart}></textarea>
+                <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isReceipt} minlength="10" maxlength="2000" value={messageStart}></textarea>
             </p>
         </fieldset>
 
@@ -384,6 +399,90 @@
             </fieldset>
         {/if}
 
+        {#if isReceipt}
+            <fieldset>
+                <legend>La donazione</legend>
+
+                <p>
+                    <label for="ricevuta-data">Data del versamento</label>
+                    <input type="date" id="ricevuta-data" name="data_del_versamento" required max={today} />
+                </p>
+
+                <p>
+                    <label for="ricevuta-importo">Importo in euro</label>
+                    <input type="number" id="ricevuta-importo" name="importo" required min="1" step="0.01" inputmode="decimal" />
+                </p>
+
+                <p>
+                    <label for="ricevuta-modalita">Modalità di pagamento</label>
+                    <select id="ricevuta-modalita" name="modalita_di_pagamento" required bind:value={paymentMethod}>
+                        <option value="" disabled>Scegli</option>
+                        {#each paymentMethods as method (method)}
+                            <option>{method}</option>
+                        {/each}
+                    </select>
+                </p>
+
+                <p>Le donazioni in contanti non danno diritto alle agevolazioni fiscali.</p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Chi ha donato</legend>
+
+                <p>
+                    <input type="radio" id="ricevuta-persona" name="chi_ha_donato" value="persona" bind:group={donor} />
+                    <label for="ricevuta-persona">Una persona: io, che scrivo</label>
+                </p>
+
+                <p>
+                    <input type="radio" id="ricevuta-ente" name="chi_ha_donato" value="ente" bind:group={donor} />
+                    <label for="ricevuta-ente">Un ente o una società</label>
+                </p>
+
+                {#if donor === "persona"}
+                    <p>
+                        <label for="ricevuta-luogo-nascita">Luogo di nascita</label>
+                        <input type="text" id="ricevuta-luogo-nascita" name="luogo_di_nascita" required minlength="2" maxlength="80" />
+                    </p>
+
+                    <p>
+                        <label for="ricevuta-data-nascita">Data di nascita</label>
+                        <input type="date" id="ricevuta-data-nascita" name="data_di_nascita" autocomplete="bday" required max={today} />
+                    </p>
+
+                    <p>
+                        <label for="ricevuta-codice_fiscale">Codice fiscale</label>
+                        <input type="text" id="ricevuta-codice_fiscale" name="codice_fiscale" required minlength="16" maxlength="16" pattern={"[A-Za-z0-9]{16}"} autocapitalize="characters" spellcheck="false" />
+                    </p>
+                {:else}
+                    <p>
+                        <label for="ricevuta-ente-nome">Denominazione</label>
+                        <input type="text" id="ricevuta-ente-nome" name="denominazione" autocomplete="organization" required minlength="2" maxlength="120" />
+                    </p>
+
+                    <p>
+                        <label for="ricevuta-ente-codice">Codice fiscale o partita IVA</label>
+                        <input type="text" id="ricevuta-ente-codice" name="codice_fiscale_o_partita_iva" required minlength="11" maxlength="16" pattern={"[A-Za-z0-9]{11}|[A-Za-z0-9]{16}"} autocapitalize="characters" spellcheck="false" />
+                    </p>
+                {/if}
+
+                <p>
+                    <label for="ricevuta-indirizzo">{donor === "persona" ? "Indirizzo di residenza" : "Indirizzo della sede"}</label>
+                    <input type="text" id="ricevuta-indirizzo" name="indirizzo" autocomplete="address-line1" required minlength="4" maxlength="120" />
+                </p>
+
+                <p>
+                    <label for="ricevuta_cap">CAP</label>
+                    <input type="text" id="ricevuta_cap" name="cap" autocomplete="postal-code" inputmode="numeric" required minlength="5" maxlength="5" pattern={"[0-9]{5}"} />
+                </p>
+
+                <p>
+                    <label for="ricevuta-comune">Comune</label>
+                    <input type="text" id="ricevuta-comune" name="comune" autocomplete="address-level2" required minlength="2" maxlength="60" />
+                </p>
+            </fieldset>
+        {/if}
+
         {#if !isMaterial}
             {@render sender()}
         {/if}
@@ -404,7 +503,7 @@
 
         <p>
             <button type="submit">
-                {isBooking ? "Invia la richiesta" : handsOriginals ? "Registra la consegna" : isMaterial ? "Invia il materiale" : "Invia il messaggio"}
+                {isBooking ? "Invia la richiesta" : isReceipt ? "Chiedi la ricevuta" : handsOriginals ? "Registra la consegna" : isMaterial ? "Invia il materiale" : "Invia il messaggio"}
             </button>
         </p>
     </form>
