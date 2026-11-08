@@ -66,4 +66,12 @@
         </a>
     </li>
     -->
+    <!-- Da riattivare quando su Instagram ci sono una decina di post con #filarmonicastradella (rinominare associazione/mediateca/_page.svelte in +page.svelte):
+    <li>
+        <a href="/associazione/mediateca">
+            <h2>Foto e video</h2>
+            <p>I nostri concerti e le nostre attività, dal profilo Instagram.</p>
+        </a>
+    </li>
+    -->
 </ul>
