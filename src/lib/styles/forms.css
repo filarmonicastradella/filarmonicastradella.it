@@ -144,6 +144,17 @@ label {
     font-weight: var(--fw-text-strong);
 }
 
+/*
+ * I campi obbligatori hanno un asterisco dopo l'etichetta, spiegato sopra il modulo («I campi con * sono obbligatori»); quelli
+ * facoltativi niente, mai «(facoltativo)». Solo a vista: il testo alternativo vuoto lo nasconde agli screen reader, che dal campo
+ * sentono già «obbligatorio» (chi non conosce la sintassi con la barra tiene la prima dichiarazione).
+ */
+form p:has(> :required) > label::after {
+    content: " *";
+    content: " *" / "";
+    color: var(--text-brand);
+}
+
 input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="hidden"]),
 select,
 textarea {

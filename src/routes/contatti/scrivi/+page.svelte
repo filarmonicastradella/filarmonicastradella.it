@@ -104,7 +104,7 @@
         <!-- Molti preferiscono una telefonata o un messaggio WhatsApp a un'email (informativa privacy): il telefono è facoltativo,
              tranne per un ingaggio (si richiama per l'evento) e per il materiale storico (va sulla busta degli originali) -->
         <p>
-            <label for="contatto-telefono">Telefono{needsPhone ? "" : " (facoltativo)"}</label>
+            <label for="contatto-telefono">Telefono</label>
             <input type="tel" id="contatto-telefono" name="telefono" autocomplete="tel" inputmode="tel" required={needsPhone} minlength="9" maxlength="20" />
         </p>
     </fieldset>
@@ -117,6 +117,7 @@
 
 <section>
     <h2>Compila il modulo</h2>
+    <p>I campi con * sono obbligatori.</p>
     <form action="https://formsubmit.co/{mailbox}@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
         <input
             type="hidden"
