@@ -30,7 +30,7 @@
 <header>
     <h1>Articoli</h1>
     <p>La nostra identità, la storia, la didattica, le notizie e gli articoli dei giornali che parlano di noi.</p>
-    <p><a href="/articoli.xml" type="application/atom+xml" onclick={copyFeed} aria-live="polite">{copied ? "Link copiato" : "Segui il feed"}</a></p>
+    <p><a href="/articoli.xml" type="application/atom+xml" onclick={copyFeed} aria-live="polite"><span hidden={copied}>Segui il feed</span><span hidden={!copied}>Link copiato</span></a></p>
 </header>
 
 <CategoryNav />

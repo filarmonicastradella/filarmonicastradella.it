@@ -49,6 +49,6 @@
         <time itemprop="datePublished" datetime={article.date}>{formatArticleDate(article.date)}</time>
     </p>
     {#if canShare}
-        <p><button type="button" onclick={share} aria-live="polite">{copied ? "Link copiato" : "Condividi l'articolo"}</button></p>
+        <p><button type="button" onclick={share} aria-live="polite"><span hidden={copied}>Condividi l'articolo</span><span hidden={!copied}>Link copiato</span></button></p>
     {/if}
 </header>

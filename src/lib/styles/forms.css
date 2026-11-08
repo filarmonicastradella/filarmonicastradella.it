@@ -73,11 +73,30 @@ input[type="file"]::file-selector-button:hover {
 }
 
 /*
+ * Pulsanti e link che per tre secondi dicono di aver copiato («Copiato», «Link copiato»): le due scritte stanno una
+ * sopra l'altra e se ne vede una sola, così il pulsante non cambia misura e la pagina non si sposta. Quella nascosta
+ * ha l'attributo hidden, che senza CSS la toglie del tutto; qui tiene solo il posto. aria-live fa leggere il cambio.
+ */
+html :is(a, button)[aria-live] {
+    display: inline-grid;
+}
+
+:is(a, button)[aria-live] > span {
+    grid-area: 1 / 1;
+}
+
+:is(a, button)[aria-live] > [hidden] {
+    display: block;
+    visibility: hidden;
+}
+
+/*
  * Un dato da copiare con un clic (CopyValue: dati del bonifico, dati dell'ente nel piè di pagina, citazione degli
  * articoli): un pulsante con l'aspetto di un link, riconosciuto dal suo titolo «Copia»
  */
 button[type="button"][title="Copia"] {
-    display: inline;
+    display: inline-grid;
+    justify-items: start;
     padding: 0;
     border: 0;
     background: none;

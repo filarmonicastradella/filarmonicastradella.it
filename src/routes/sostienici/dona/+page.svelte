@@ -61,7 +61,7 @@
         {/each}
     </dl>
     {#if canCopy}
-        <p><button type="button" onclick={copyAll} aria-live="polite">{copiedAll ? "Dati copiati" : "Copia i dati"}</button></p>
+        <p><button type="button" onclick={copyAll} aria-live="polite"><span hidden={copiedAll}>Copia i dati</span><span hidden={!copiedAll}>Dati copiati</span></button></p>
     {/if}
 </section>
 
