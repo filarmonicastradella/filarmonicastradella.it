@@ -8,7 +8,7 @@
 
     /*
      * Il feed degli articoli (articoli.xml): il pulsante copia il link, da incollare nel lettore di notizie, e per tre
-     * secondi dice «Link copiato», come «Condividi» negli articoli. Senza JS, o senza appunti, porta al file come d'uso;
+     * secondi dice «Link copiato», come «Condividi l'articolo» negli articoli. Senza JS, o senza appunti, porta al file come d'uso;
      * Ctrl e clic centrale restano quelli del browser.
      */
     const feed = `${organization.url}/articoli.xml`;
