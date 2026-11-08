@@ -43,11 +43,11 @@
             email, telefono, motivo, per gli eventi occasione, data e luogo, testo del messaggio) solo per risponderti: per email, con una telefonata,
             un SMS o un messaggio WhatsApp. Base giuridica: la tua richiesta (art. 6.1.b).
         </dd>
-        <dt>Ricevuta di una donazione</dt>
+        <dt>Richiesta di una ricevuta</dt>
         <dd>
-            Se ci chiedi la ricevuta di una donazione, usiamo i dati del versamento (data, importo, modalità) e di chi ha donato (luogo e data di
-            nascita, codice fiscale e residenza; per un ente denominazione, codice fiscale o partita IVA e sede) per emettere la ricevuta e tenere la
-            contabilità. Base giuridica: la tua richiesta (art. 6.1.b) e gli obblighi di legge (art. 6.1.c).
+            Se ci chiedi una ricevuta, usiamo per una donazione i dati del versamento (data, importo, modalità) e di chi ha donato (luogo e data di
+            nascita, codice fiscale e residenza; per un ente denominazione, codice fiscale o partita IVA e sede), per la quota il nome del socio e
+            l'anno, per emettere la ricevuta e tenere la contabilità. Base giuridica: la tua richiesta (art. 6.1.b) e gli obblighi di legge (art. 6.1.c).
         </dd>
         <dt>Richiesta di iscrizione</dt>
         <dd>

@@ -16,21 +16,21 @@
     // chi ritira il materiale nei punti di raccolta (personale di quell'ente, che ne prende la custodia) aiuta a compilarlo chi non usa il telefono.
     const BOOKING = "Ingaggio per un evento";
     const MATERIAL = "Materiale storico";
-    // La richiesta della ricevuta di una donazione (dal 8/11/2026): i dati del modello «Ricevuta di erogazione liberale»
-    // (art. 83 CTS) della tesoreria, per una persona o per un ente. Le ricevute delle quote non si chiedono: si fanno dal libro soci.
-    const RECEIPT = "Ricevuta di una donazione";
+    // La richiesta di una ricevuta (dal 8/11/2026): per una donazione i dati del modello «Ricevuta di erogazione liberale» (art. 83 CTS)
+    // della tesoreria, per una persona o per un ente; per la quota bastano il socio e l'anno (il resto è nel libro soci), e se serve
+    // l'attestazione per la detrazione delle spese di iscrizione dei ragazzi dai 5 ai 18 anni a una banda (art. 15, lett. e-quater, TUIR).
+    const RECEIPT = "Ricevute";
 
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
-    // I motivi sono raggruppati per chi può risolverli più in fretta (dal 8/11/2026, da 12 a 10); restano a sé quelli che cambiano il
+    // I motivi sono raggruppati per chi può risolverli più in fretta (dal 8/11/2026, da 12 a 9); restano a sé quelli che cambiano il
     // modulo (ingaggio, ricevuta, materiale, privacy, minori). La chiave sceglie il motivo da un link (/contatti/scrivi?motivo=ingaggio);
     // le chiavi dei motivi accorpati restano valide come alias, perché ci sono link e QR che le usano.
     const topics = [
         { key: "informazioni", aliases: ["altro"], name: "Informazioni", mailbox: "info" },
         { key: "ingaggio", name: BOOKING, mailbox: "info" },
         { key: "iscrizione", name: "Iscrizione e quote", mailbox: "segreteria" },
-        { key: "donazioni", name: "Donazioni e sponsor", mailbox: "tesoreria" },
         { key: "ricevuta", name: RECEIPT, mailbox: "tesoreria" },
-        { key: "collaborazioni", aliases: ["stampa"], name: "Enti, collaborazioni e stampa", mailbox: "presidente" },
+        { key: "collaborazioni", aliases: ["donazioni", "stampa"], name: "Donazioni, collaborazioni e stampa", mailbox: "presidente" },
         // Errori del sito e aggiunte agli articoli, a chi aggiorna il sito: il link nel piè di pagina (&pagina=) e in fondo a ogni articolo (&articolo=)
         { key: "sito", aliases: ["articoli"], name: "Il sito e gli articoli", mailbox: "webmaster" },
         { key: "storia", name: MATERIAL, mailbox: "info" },
@@ -85,6 +85,9 @@
 
     // Chi ha donato: una persona (nascita, codice fiscale, residenza) o un ente (denominazione, codice fiscale o partita IVA, sede)
     let donor = $state("persona");
+    // Per cosa è la ricevuta: una donazione, oppure la quota (dal link &per=quota)
+    const requestedReceipt = $derived(browser ? page.url.searchParams.get("per") : null);
+    let receiptFor = $derived(requestedReceipt === "quota" ? "quota" : "donazione");
     // I contanti non danno diritto alle agevolazioni, ma la ricevuta si fa lo stesso
     const paymentMethods = ["Bonifico", "Carta, online", "Assegno", "Altro pagamento tracciabile", "Contanti"];
     // Dalla pagina di ringraziamento di Stripe (&modalita=carta) la modalità è già scelta
@@ -160,7 +163,7 @@
             value={isBooking
                 ? "Richiesta per un evento – Filarmonica Stradella"
                 : isReceipt
-                  ? "Richiesta di ricevuta per una donazione – Filarmonica Stradella"
+                  ? "Richiesta di ricevuta – Filarmonica Stradella"
                   : isMaterial
                     ? "Materiale storico – Filarmonica Stradella"
                     : "Nuovo messaggio dal sito – Filarmonica Stradella"}
@@ -456,6 +459,41 @@
         {/if}
 
         {#if isReceipt}
+            <fieldset>
+                <legend>La ricevuta</legend>
+
+                <p>
+                    <input type="radio" id="ricevuta-donazione" name="ricevuta_per" value="donazione" bind:group={receiptFor} />
+                    <label for="ricevuta-donazione">Per una donazione</label>
+                </p>
+
+                <p>
+                    <input type="radio" id="ricevuta-quota" name="ricevuta_per" value="quota" bind:group={receiptFor} />
+                    <label for="ricevuta-quota">Per la quota associativa</label>
+                </p>
+            </fieldset>
+        {/if}
+
+        {#if isReceipt && receiptFor === "quota"}
+            <fieldset>
+                <legend>La quota</legend>
+
+                <p>
+                    <label for="quota-socio">Nome e cognome del socio</label>
+                    <input type="text" id="quota-socio" name="socio" autocomplete="off" required minlength="4" maxlength="120" />
+                </p>
+
+                <p>
+                    <label for="quota-anno">Anno</label>
+                    <input type="number" id="quota-anno" name="anno" required min="2026" max={thisYear + 1} step="1" inputmode="numeric" value={thisYear} />
+                </p>
+
+                <p>
+                    <input type="checkbox" id="quota-detrazione" name="detrazione_ragazzi" value="Sì" />
+                    <label for="quota-detrazione">Mi serve per la detrazione delle spese di iscrizione di un ragazzo dai 5 ai 18 anni</label>
+                </p>
+            </fieldset>
+        {:else if isReceipt}
             <!-- Per la ricevuta, dopo chi scrive: chi ha donato (spesso la stessa persona), poi il versamento -->
             <fieldset>
                 <legend>Chi ha donato</legend>

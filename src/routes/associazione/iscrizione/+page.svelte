@@ -341,7 +341,10 @@
     <h2>Domande frequenti</h2>
     <details>
         <summary>Quanto costa iscriversi?</summary>
-        <p>La quota annuale è di 12 € e si rinnova entro il 31 dicembre.</p>
+        <p>
+            La quota annuale è di 12 € e si rinnova entro il 31 dicembre. Per la ricevuta, anche per la detrazione delle spese di iscrizione dei
+            ragazzi dai 5 ai 18 anni, c'è il <a href="/contatti/scrivi?motivo=ricevuta&amp;per=quota">modulo per le ricevute</a>.
+        </p>
     </details>
     <details>
         <summary>Che impegno è richiesto? C'è un obbligo di presenza?</summary>
