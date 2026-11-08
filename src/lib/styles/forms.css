@@ -96,7 +96,9 @@ html :is(a, button)[aria-live] {
  */
 button[type="button"][title="Copia"] {
     display: inline-grid;
-    justify-items: start;
+    /* In alto a sinistra, come il testo: i pulsanti di base centrano il contenuto */
+    place-items: start;
+    place-content: start;
     padding: 0;
     border: 0;
     background: none;
