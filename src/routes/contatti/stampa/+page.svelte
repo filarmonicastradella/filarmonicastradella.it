@@ -10,20 +10,31 @@
     // risoluzione su richiesta. Il logo solo per articoli e notizie sulla Filarmonica (regole d'uso dei segni distintivi, art. 6).
     const presentation = `La ${organization.name} è un'associazione musicale di Fivizzano, in Lunigiana, nata nel ${organization.foundingYear}. Riunisce quattro formazioni: ${ensembles.map(({ title }) => title).join(", ").replace(/, ([^,]*)$/, " e $1")}.`;
 
-    // «Copia il testo», a contorno come «Copia i dati» delle donazioni: solo con JS e con gli appunti, poi «Testo copiato» per tre secondi
+    // I dati essenziali, ognuno da copiare con un tocco, oppure tutti insieme con «Copia i dati», come nelle donazioni
+    const facts = [
+        { term: "Denominazione", values: [organization.name] },
+        { term: "Fondazione", values: [`${organization.foundingYear}, Fivizzano`] },
+        { term: "Sede legale", values: [legalSeat.address.join(", ")] },
+        { term: "Formazioni", values: ensembles.map(({ title }) => title) },
+        { term: "Affiliazione", values: [organization.affiliation.name] }
+    ];
+    const allFacts = facts.map(({ term, values }) => `${term}: ${values.join(", ")}`).join("\n");
+
+    // «Copia il testo» e «Copia i dati», a contorno come «Copia i dati» delle donazioni: solo con JS e con gli appunti, poi per
+    // tre secondi dicono che è fatto
     let canCopy = $state(false);
-    let copied = $state(false);
+    let copied = $state<"testo" | "dati" | null>(null);
     onMount(() => {
         canCopy = !!navigator.clipboard;
     });
 
-    async function copyPresentation() {
+    async function copy(text: string, what: "testo" | "dati") {
         try {
-            await navigator.clipboard.writeText(presentation);
-            copied = true;
-            setTimeout(() => (copied = false), 3000);
+            await navigator.clipboard.writeText(text);
+            copied = what;
+            setTimeout(() => (copied = null), 3000);
         } catch {
-            copied = false;
+            copied = null;
         }
     }
 </script>
@@ -42,27 +53,24 @@
     <h2>Presentazione</h2>
     <p>{presentation}</p>
     {#if canCopy}
-        <p><button type="button" onclick={copyPresentation} aria-live="polite"><span hidden={copied}>Copia il testo</span><span hidden={!copied}>Testo copiato</span></button></p>
+        <p><button type="button" onclick={() => copy(presentation, "testo")} aria-live="polite"><span hidden={copied === "testo"}>Copia il testo</span><span hidden={copied !== "testo"}>Testo copiato</span></button></p>
     {/if}
 </section>
 
 <section>
     <h2>In breve</h2>
-    <!-- Ogni dato si copia con un tocco (CopyValue), come i dati dell'ente in Amministrazione trasparente -->
+    <!-- Ogni dato si copia con un tocco (CopyValue), come i dati dell'ente in Amministrazione trasparente, o tutti insieme -->
     <dl>
-        <dt>Denominazione</dt>
-        <dd><CopyValue text={organization.name}>{organization.name}</CopyValue></dd>
-        <dt>Fondazione</dt>
-        <dd><CopyValue text="{organization.foundingYear}, Fivizzano">{organization.foundingYear}, Fivizzano</CopyValue></dd>
-        <dt>Sede legale</dt>
-        <dd><CopyValue text={legalSeat.address.join(", ")}>{legalSeat.address.join(", ")}</CopyValue></dd>
-        <dt>Formazioni</dt>
-        {#each ensembles as { slug, title } (slug)}
-            <dd><CopyValue text={title}>{title}</CopyValue></dd>
+        {#each facts as { term, values } (term)}
+            <dt>{term}</dt>
+            {#each values as value (value)}
+                <dd><CopyValue text={value}>{value}</CopyValue></dd>
+            {/each}
         {/each}
-        <dt>Affiliazione</dt>
-        <dd><CopyValue text={organization.affiliation.name}>{organization.affiliation.name}</CopyValue></dd>
     </dl>
+    {#if canCopy}
+        <p><button type="button" onclick={() => copy(allFacts, "dati")} aria-live="polite"><span hidden={copied === "dati"}>Copia i dati</span><span hidden={copied !== "dati"}>Dati copiati</span></button></p>
+    {/if}
 </section>
 
 <section>
