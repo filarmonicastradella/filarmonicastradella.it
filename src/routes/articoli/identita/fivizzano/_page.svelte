@@ -112,7 +112,7 @@
     <p>
         Dal <time datetime="2026-12-05">5</time> all'<time datetime="2026-12-08">8 dicembre 2026</time> la Biblioteca civica Abate E. Gerini ospita la
         mostra «La tradizione bandistica in Lunigiana». Intanto raccogliamo foto e ricordi delle bande di Fivizzano e delle frazioni. Se hai qualcosa da
-        raccontare o da mostrarci, <a href="/contatti?motivo=storia#scrivici">scrivici</a>.
+        raccontare o da mostrarci, <a href="/contatti/scrivi?motivo=storia">scrivici</a>.
     </p>
 </section>
 

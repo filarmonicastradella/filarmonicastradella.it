@@ -88,7 +88,7 @@
     <h2>Per il tuo evento</h2>
     <p>
         Vuoi {ensemble.title} al tuo evento?
-        <a href="/contatti?motivo=ingaggio&formazione={ensemble.slug}#scrivici">Chiedici un ingaggio</a>: il modulo ha già scelto la formazione.
+        <a href="/contatti/scrivi?motivo=ingaggio&formazione={ensemble.slug}">Chiedici un ingaggio</a>: il modulo ha già scelto la formazione.
     </p>
 </section>
 

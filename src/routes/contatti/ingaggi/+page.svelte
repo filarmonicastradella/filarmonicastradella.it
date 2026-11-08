@@ -7,7 +7,7 @@
 
     // La pagina per chi cerca musica per un evento (dal 3/11/2026): spiega occasioni e formazioni e porta al modulo di Contatti,
     // che resta l'unico modulo. I dati strutturati descrivono il servizio offerto dall'ente in Lunigiana.
-    const form = "/contatti?motivo=ingaggio#scrivici";
+    const form = "/contatti/scrivi?motivo=ingaggio";
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "Service",

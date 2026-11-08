@@ -73,4 +73,4 @@
     </div>
 </dl>
 
-<p>Non trovi la risposta? <a href="/contatti#scrivici">Scrivici</a>.</p>
+<p>Non trovi la risposta? <a href="/contatti/scrivi">Scrivici</a>.</p>

@@ -37,4 +37,4 @@
     </li>
 </ul>
 
-<p>Vuoi collaborare con noi? <a href="/contatti#scrivici">Scrivici</a>.</p>
+<p>Vuoi collaborare con noi? <a href="/contatti/scrivi">Scrivici</a>.</p>

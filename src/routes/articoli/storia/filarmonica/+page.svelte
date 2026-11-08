@@ -325,7 +325,7 @@
     <h2>Hai materiale sulla nostra storia?</h2>
     <p>
         Fotografie, programmi di sala, documenti, registrazioni: molta della nostra storia è conservata nelle case di chi l'ha vissuta. Se hai
-        qualcosa che riguarda la Filarmonica, scrivici dal <a href="/contatti?motivo=storia#scrivici">modulo di contatto</a> scegliendo «Materiale storico»: ci
+        qualcosa che riguarda la Filarmonica, scrivici dal <a href="/contatti/scrivi?motivo=storia">modulo di contatto</a> scegliendo «Materiale storico»: ci
         accordiamo per l'invio o per farne una copia.
     </p>
 </section>
