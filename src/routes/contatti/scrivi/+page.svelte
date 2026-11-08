@@ -21,28 +21,30 @@
     const RECEIPT = "Ricevuta di una donazione";
 
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
-    // La chiave sceglie il motivo da un link: /contatti/scrivi?motivo=ingaggio
+    // I motivi sono raggruppati per chi può risolverli più in fretta (dal 8/11/2026, da 12 a 10); restano a sé quelli che cambiano il
+    // modulo (ingaggio, ricevuta, materiale, privacy, minori). La chiave sceglie il motivo da un link (/contatti/scrivi?motivo=ingaggio);
+    // le chiavi dei motivi accorpati restano valide come alias, perché ci sono link e QR che le usano.
     const topics = [
-        { key: "informazioni", name: "Informazioni generali", mailbox: "info" },
+        { key: "informazioni", aliases: ["altro"], name: "Informazioni", mailbox: "info" },
         { key: "ingaggio", name: BOOKING, mailbox: "info" },
         { key: "iscrizione", name: "Iscrizione e quote", mailbox: "segreteria" },
         { key: "donazioni", name: "Donazioni e sponsor", mailbox: "tesoreria" },
         { key: "ricevuta", name: RECEIPT, mailbox: "tesoreria" },
-        { key: "collaborazioni", name: "Collaborazioni, enti e sponsor", mailbox: "presidente" },
-        { key: "stampa", name: "Stampa e media", mailbox: "presidente" },
-        // Errori e aggiunte ai nostri articoli, a chi li scrive (dal 8/11/2026): il link in fondo a ogni articolo
-        { key: "articoli", name: "Errori e aggiunte agli articoli", mailbox: "presidente" },
+        { key: "collaborazioni", aliases: ["stampa"], name: "Enti, collaborazioni e stampa", mailbox: "presidente" },
+        // Errori del sito e aggiunte agli articoli, a chi aggiorna il sito: il link nel piè di pagina (&pagina=) e in fondo a ogni articolo (&articolo=)
+        { key: "sito", aliases: ["articoli"], name: "Il sito e gli articoli", mailbox: "webmaster" },
         { key: "storia", name: MATERIAL, mailbox: "info" },
-        { key: "minori", name: "Tutela dei minori", mailbox: "safeguarding" },
         { key: "privacy", name: "Privacy e dati personali", mailbox: "privacy" },
-        { key: "sito", name: "Problemi con il sito", mailbox: "webmaster" },
-        { key: "altro", name: "Altro", mailbox: "info" }
+        { key: "minori", name: "Tutela dei minori", mailbox: "safeguarding" }
     ];
 
-    // Il motivo scelto dal link (chiave o nome intero), aggiornato anche se si arriva da un altro link della stessa pagina;
+    // Il motivo scelto dal link (chiave, alias o nome intero), aggiornato anche se si arriva da un altro link della stessa pagina;
     // poi si cambia dal menu. In prerender non c'è l'indirizzo.
     const requested = $derived(browser ? page.url.searchParams.get("motivo") : null);
-    let topic = $derived(topics.find(({ key, name }) => key === requested || name === requested)?.name ?? topics[0].name);
+    let topic = $derived(
+        topics.find(({ key, aliases, name }) => requested !== null && (key === requested || aliases?.includes(requested) || name === requested))?.name ??
+            topics[0].name
+    );
     const mailbox = $derived(topics.find(({ name }) => name === topic)?.mailbox ?? "info");
     const isBooking = $derived(topic === BOOKING);
 
