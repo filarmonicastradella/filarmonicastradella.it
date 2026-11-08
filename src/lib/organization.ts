@@ -16,6 +16,9 @@ export const organization = {
         href: "https://servizi.lavoro.gov.it/runts/it-it/Ricerca-enti"
     },
     pec: "filarmonicastradella@pec.it",
+    // La donazione online con Stripe (dal 8/11/2026): importo libero, minimo 5 €; dopo il pagamento torna a /sostienici/dona/grazie.
+    // Il pulsante «Dona ora» di Sostienici e di Fai una donazione
+    donationHref: "https://donate.stripe.com/7sY28q5gW0o84A2fHC04800",
     affiliation: {
         name: "ANBIMA APS",
         href: "https://www.anbima.it/massacarrara/regionetoscana-massacarrara-unita-di-base"

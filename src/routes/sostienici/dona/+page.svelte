@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import CopyValue from "$lib/components/CopyValue.svelte";
+    import { organization } from "$lib/organization";
 
     /*
      * I dati del bonifico si copiano con un clic (solo con JS: senza, si copiano a mano): ogni valore da solo, toccandolo
@@ -49,7 +50,7 @@
     <p>Puoi sostenere i nostri progetti con un contributo libero, con carta, Apple Pay o Google Pay oppure con un bonifico bancario.</p>
     <!-- La donazione online (dal 8/11/2026): la pagina di pagamento di Stripe, con l'importo scelto da chi dona (minimo 5 €)
          e il codice fiscale facoltativo per la ricevuta; dopo il pagamento torna a /sostienici/dona/grazie -->
-    <p><a href="https://donate.stripe.com/7sY28q5gW0o84A2fHC04800">Dona ora</a></p>
+    <p><a href={organization.donationHref}>Dona ora</a></p>
 </header>
 
 <section>
