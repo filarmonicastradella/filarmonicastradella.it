@@ -23,14 +23,19 @@
     const RECEIPT = "Ricevute";
 
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
-    // Sette motivi (dal 8/11/2026), uno per ogni area: le richieste generiche, gli ingaggi, il materiale storico, i rapporti con enti,
-    // sponsor, stampa e altri soggetti esterni, le ricevute, la privacy, la tutela dei minori. La chiave sceglie il motivo da un link
+    // Sei motivi (dal 8/11/2026): uno generico per tutto ciò che è solo un messaggio (domande, iscrizioni, donazioni, collaborazioni,
+    // sponsor, stampa, segnalazioni sul sito e sugli articoli), e uno per ogni richiesta che ha campi o avvisi suoi: gli ingaggi,
+    // il materiale storico, le ricevute, la privacy, la tutela dei minori. La chiave sceglie il motivo da un link
     // (/contatti/scrivi?motivo=ingaggio); le chiavi dei motivi accorpati restano valide come alias, perché ci sono link e QR che le usano.
     const topics = [
-        { key: "informazioni", aliases: ["altro", "iscrizione", "donazioni", "sito", "articoli"], name: "Informazioni", mailbox: "info" },
+        {
+            key: "informazioni",
+            aliases: ["altro", "iscrizione", "donazioni", "sito", "articoli", "collaborazioni", "stampa", "sponsor", "enti"],
+            name: "Informazioni",
+            mailbox: "info"
+        },
         { key: "ingaggio", name: BOOKING, mailbox: "info" },
         { key: "storia", name: MATERIAL, mailbox: "info" },
-        { key: "collaborazioni", aliases: ["stampa", "sponsor", "enti"], name: "Collaborazioni, sponsor e stampa", mailbox: "presidente" },
         { key: "ricevuta", name: RECEIPT, mailbox: "tesoreria" },
         { key: "privacy", name: "Privacy e dati personali", mailbox: "privacy" },
         { key: "minori", name: "Tutela dei minori", mailbox: "safeguarding" }
