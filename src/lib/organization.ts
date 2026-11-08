@@ -10,11 +10,8 @@ export const organization = {
     email: "info@filarmonicastradella.it",
     phone: "+39 350 536 3110",
     foundingYear: "1777",
-    // Il RUNTS non ha un indirizzo diretto per la scheda di un ente: il link porta alla ricerca pubblica
-    runts: {
-        name: "Repertorio n. 176207",
-        href: "https://servizi.lavoro.gov.it/runts/it-it/Ricerca-enti"
-    },
+    // Il RUNTS non ha un indirizzo diretto per la scheda di un ente, e la ricerca pubblica serve a poco: il numero si copia (CopyValue)
+    runts: { name: "Repertorio n. 176207" },
     pec: "filarmonicastradella@pec.it",
     // La donazione online con Stripe (dal 8/11/2026): importo libero, minimo 5 €; dopo il pagamento torna a /sostienici/dona/grazie.
     // Il pulsante «Dona ora» di Sostienici e di Fai una donazione

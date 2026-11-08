@@ -1,4 +1,5 @@
 <script lang="ts">
+    import CopyValue from "$lib/components/CopyValue.svelte";
     import { legalSeat } from "$lib/locations";
     import { organization } from "$lib/organization";
 </script>
@@ -17,15 +18,13 @@
     <h2>Dati dell'ente</h2>
     <dl>
         <dt>Denominazione</dt>
-        <dd>{organization.name}</dd>
+        <dd><CopyValue text={organization.name}>{organization.name}</CopyValue></dd>
         <dt>Codice fiscale</dt>
-        <dd>{organization.taxCode}</dd>
+        <dd><CopyValue text={organization.taxCode}>{organization.taxCode}</CopyValue></dd>
         <dt><abbr title="Registro unico nazionale del Terzo settore">RUNTS</abbr></dt>
-        <dd>
-            <a href={organization.runts.href} target="_blank" rel="noopener noreferrer">{organization.runts.name}</a>
-        </dd>
+        <dd><CopyValue text={organization.runts.name.replace(/\D/g, "")}>{organization.runts.name}</CopyValue></dd>
         <dt>Sede legale</dt>
-        <dd>{legalSeat.address.join(", ")}</dd>
+        <dd><a href={legalSeat.mapsHref} target="_blank" rel="noopener noreferrer">{legalSeat.address.join(", ")}</a></dd>
         <dt>PEC</dt>
         <dd><a href="mailto:{organization.pec}">{organization.pec}</a></dd>
     </dl>
