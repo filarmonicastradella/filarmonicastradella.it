@@ -189,7 +189,7 @@
         <li>
             <a href="/sostienici/dona">
                 <h3>Erogazioni liberali</h3>
-                <p>Sostieni i nostri progetti con un contributo libero tramite bonifico bancario. Le erogazioni a favore delle APS godono delle agevolazioni fiscali previste dalla normativa vigente.</p>
+                <p>Sostieni i nostri progetti con un contributo libero, online o con un bonifico bancario. Le erogazioni a favore delle APS godono delle agevolazioni fiscali previste dalla normativa vigente.</p>
             </a>
         </li>
         [5x1000: da riattivare quando l'associazione è beneficiaria (rinominare anche support/5x1000/_page.svelte in +page.svelte).

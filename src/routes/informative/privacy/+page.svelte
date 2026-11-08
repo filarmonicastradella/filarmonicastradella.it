@@ -48,6 +48,13 @@
             Dati anagrafici, residenza e domicilio, recapiti e documento di identità; per i minori anche i dati del genitore. Servono a valutare la
             domanda e a tenere il libro dei soci. Base giuridica: il rapporto associativo (art. 6.1.b) e gli obblighi di legge (art. 6.1.c).
         </dd>
+        <dt>Donazioni</dt>
+        <dd>
+            Se doni online, nome, indirizzo email, importo e, se lo indichi, codice fiscale; i dati della carta li tratta solo Stripe e noi non li
+            vediamo. Se doni con un bonifico, i dati che compaiono nel versamento. Servono a registrare la donazione, a mandarti la ricevuta e, se
+            hai dato il codice fiscale, la ricevuta per la detrazione. Base giuridica: gli obblighi contabili e fiscali (art. 6.1.c) e la tua
+            richiesta di ricevuta (art. 6.1.b).
+        </dd>
         <dt>Consensi facoltativi</dt>
         <dd>
             Comunicazioni via email o messaggistica, uso delle immagini e pubblicazione del nome nell'elenco dei musicisti del sito (per i minori
@@ -72,6 +79,8 @@
         <dd>ospita il sito.</dd>
         <dt>formsubmit.co</dt>
         <dd>inoltra via email all'associazione i dati dei moduli di contatto e di iscrizione.</dd>
+        <dt>Stripe</dt>
+        <dd>gestisce i pagamenti delle donazioni online, con i dati della carta, come titolare autonomo per gli obblighi antiriciclaggio e antifrode.</dd>
         <dt>Instagram</dt>
         <dd>forniscono le foto della galleria, che il sito copia quando viene preparato: il tuo browser non si collega ai loro server, se non quando apri un post su Instagram.</dd>
     </dl>
@@ -95,6 +104,8 @@
     <dl>
         <dt>Messaggi</dt>
         <dd>il tempo necessario a rispondere, e comunque non oltre 12 mesi.</dd>
+        <dt>Donazioni</dt>
+        <dd>10 anni, come la documentazione contabile.</dd>
         <dt>Domande di iscrizione non accolte</dt>
         <dd>cancellate entro 3 mesi dalla decisione.</dd>
         <dt>Dati dei soci</dt>

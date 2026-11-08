@@ -27,7 +27,7 @@
     <li>
         <a href="/sostienici/dona">
             <h2>Fai una donazione</h2>
-            <p>Un contributo libero tramite bonifico bancario, con le agevolazioni fiscali previste per le APS.</p>
+            <p>Un contributo libero, online o con un bonifico bancario, con le agevolazioni fiscali previste per le APS.</p>
         </a>
     </li>
     <!-- 5x1000: link segnaposto senza href finché l'associazione non è beneficiaria; poi href="/sostienici/5x1000" e rinominare support/5x1000/_page.svelte in +page.svelte -->

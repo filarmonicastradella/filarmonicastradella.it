@@ -25,12 +25,15 @@
 
 <svelte:head>
     <title>Fai una donazione — Filarmonica Alessandro Stradella</title>
-    <meta name="description" content="Come sostenere la Filarmonica Alessandro Stradella APS con un contributo libero tramite bonifico bancario." />
+    <meta name="description" content="Come sostenere la Filarmonica Alessandro Stradella APS con un contributo libero: online con carta, Apple Pay o Google Pay, oppure con un bonifico bancario." />
 </svelte:head>
 
 <header>
     <h1>Fai una donazione</h1>
-    <p>Puoi sostenere i nostri progetti con un contributo libero tramite bonifico bancario.</p>
+    <p>Puoi sostenere i nostri progetti con un contributo libero, con carta, Apple Pay o Google Pay oppure con un bonifico bancario.</p>
+    <!-- La donazione online (dal 8/11/2026): la pagina di pagamento di Stripe, con l'importo scelto da chi dona (minimo 5 €)
+         e il codice fiscale facoltativo per la ricevuta; dopo il pagamento torna a /sostienici/dona/grazie -->
+    <p><a href="https://donate.stripe.com/7sY28q5gW0o84A2fHC04800">Dona ora</a></p>
 </header>
 
 <section>
