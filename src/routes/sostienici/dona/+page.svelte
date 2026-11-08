@@ -11,9 +11,10 @@
         { term: "Beneficiario", value: "Filarmonica Alessandro Stradella APS", copy: "Filarmonica Alessandro Stradella APS" },
         { term: "IBAN", value: iban, copy: iban.replace(/ /g, "") },
         { term: "Banca", value: "Crédit Agricole Italia", copy: "Crédit Agricole Italia" },
-        { term: "Causale", value: "Erogazione liberale", copy: "Erogazione liberale", after: ", seguita da nome, cognome e codice fiscale di chi dona" }
+        // Un modello: le parti tra parentesi quadre (in <var> nella pagina) le sostituisce chi dona con i suoi dati
+        { term: "Causale", value: "Erogazione liberale – [nome e cognome] – [codice fiscale]", copy: "Erogazione liberale – [nome e cognome] – [codice fiscale]" }
     ];
-    const allDetails = details.map(({ term, copy, after }) => `${term}: ${copy}${after ?? ""}`).join("\n");
+    const allDetails = details.map(({ term, copy }) => `${term}: ${copy}`).join("\n");
 
     let canCopy = $state(false);
     let copied = $state<string | null>(null);
@@ -32,6 +33,11 @@
     }
 </script>
 
+<!-- Un dato del bonifico: nella causale le parti da sostituire, tra parentesi quadre, diventano variabili (<var>) -->
+{#snippet detail(value: string)}
+    {#each value.split(/\[([^\]]+)\]/) as part, i (i)}{#if i % 2}<var>{part}</var>{:else}{part}{/if}{/each}
+{/snippet}
+
 <svelte:head>
     <title>Fai una donazione — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Come sostenere la Filarmonica Alessandro Stradella APS con un contributo libero: online con carta, Apple Pay o Google Pay, oppure con un bonifico bancario." />
@@ -48,12 +54,16 @@
 <section>
     <h2>Dati per il bonifico</h2>
     <dl>
-        {#each details as { term, value, copy: text, after } (term)}
+        {#each details as { term, value, copy: text } (term)}
             <dt>{term}</dt>
             <dd>
-                {#if term === "Causale"}«{/if}{#if canCopy}<button type="button" onclick={() => copy(term, text)} title="Copia" aria-live="polite"
-                        >{copied === term ? "Copiato" : value}</button
-                    >{:else}{value}{/if}{#if term === "Causale"}»{/if}{after ?? ""}
+                {#if canCopy}
+                    <button type="button" onclick={() => copy(term, text)} title="Copia" aria-live="polite">
+                        {#if copied === term}Copiato{:else}{@render detail(value)}{/if}
+                    </button>
+                {:else}
+                    {@render detail(value)}
+                {/if}
             </dd>
         {/each}
     </dl>
