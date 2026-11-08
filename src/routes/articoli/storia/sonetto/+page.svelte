@@ -76,8 +76,11 @@
         di Fivizzano, fondata nel 1779»<sup><a href="#fonte-4" role="doc-noteref" id="rimando-4a" aria-label="Fonte 4">4</a></sup>.
     </p>
     <p>
-        Le fonti ottocentesche datano la fondazione al 1779, l'anno del riconoscimento ufficiale; la tradizione della Filarmonica, già celebrata nel
-        <time datetime="1987">1987</time> con i 210 anni<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5a" aria-label="Fonte 5">5</a></sup>, la fa risalire al <time datetime="1777">1777</time>.
+        Le fonti ottocentesche datano la fondazione al 1779, l'anno del riconoscimento ufficiale; la tradizione della Filarmonica la fa risalire al
+        <time datetime="1777">1777</time>, ed è già viva un secolo dopo: nel <time datetime="1877">1877</time> un corrispondente da Fivizzano la chiama
+        «la Centenaria Società Filarmonica», e nel <time datetime="1878">1878</time> la sua banda è quella della «Secolare Società
+        Filarmonica»<sup><a href="#fonte-11" role="doc-noteref" id="rimando-11a" aria-label="Fonte 11">11</a></sup>. Nel <time datetime="1987">1987</time>
+        la Filarmonica ha festeggiato i 210 anni<sup><a href="#fonte-5" role="doc-noteref" id="rimando-5a" aria-label="Fonte 5">5</a></sup>.
     </p>
 </section>
 
@@ -156,6 +159,7 @@
             <li id="fonte-8">Lettera di Luigi Fantoni al «Sig.r Frediani», 2 marzo 1791, Biblioteca Estense di Modena, Autografoteca Campori. <a role="doc-backlink" href="#rimando-8a" aria-label="Torna al rimando 8">Torna al testo</a></li>
             <li id="fonte-9">Giovanni Fantoni, <i>Poesie</i>, Italia [Firenze], 1823, II, p. 104, nota all'epistola al marchese di Fosdinovo. <a role="doc-backlink" href="#rimando-9a" aria-label="Torna al rimando 9">Torna al testo</a></li>
             <li id="fonte-10">Giosuè Carducci, «La gioventù poetica di Giovanni Fantoni», in <i>Melica e lirica del Settecento</i>, 1909, p. 210. <a role="doc-backlink" href="#rimando-10a" aria-label="Torna al rimando 10">Torna al testo</a></li>
+            <li id="fonte-11">Corrispondenze da Fivizzano, <i>La Nazione</i>, 15 settembre e 4 ottobre 1877, aprile 1878. <a role="doc-backlink" href="#rimando-11a" aria-label="Torna al rimando 11">Torna al testo</a></li>
         </ol>
     </section>
 </ArticleFooter>
