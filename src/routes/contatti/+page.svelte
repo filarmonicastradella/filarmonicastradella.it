@@ -344,13 +344,13 @@
                 <legend>{handsOriginals ? "Firme" : "Firma"}</legend>
 
                 <p>
-                    <label for="materiale-firma">Firma di chi consegna: scrivi il tuo nome e cognome</label>
+                    <label for="materiale-firma">Nome e cognome di chi consegna</label>
                     <input type="text" id="materiale-firma" name="firma" autocomplete="off" required minlength="4" maxlength="120" pattern={signaturePattern(senderName)} title="Scrivi il nome e il cognome indicati in «Chi consegna»" />
                 </p>
 
                 {#if handsOriginals}
                     <p>
-                        <label for="materiale-firma-ritiro">Firma di chi ritira: nome e cognome</label>
+                        <label for="materiale-firma-ritiro">Nome e cognome di chi ritira</label>
                         <input type="text" id="materiale-firma-ritiro" name="firma_di_chi_ritira" autocomplete="off" required minlength="4" maxlength="120" pattern={signaturePattern(receiverName)} title="Scrivi il nome e il cognome indicati in «Chi ritira»" />
                     </p>
                 {/if}

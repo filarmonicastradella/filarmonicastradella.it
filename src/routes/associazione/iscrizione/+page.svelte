@@ -307,7 +307,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>Conferma</legend>
+                <legend>Firma</legend>
 
                 <p>
                     {#if isChange && isMinorenne}
@@ -323,7 +323,7 @@
 
                 <!-- La firma al posto della casella: nome e cognome di chi compila, gli stessi scritti sopra (src/lib/signature.ts) -->
                 <p>
-                    <label for="firma">{isMinorenne ? "Firma del genitore: scrivi il tuo nome e cognome" : "Firma: scrivi il tuo nome e cognome"}</label>
+                    <label for="firma">{isMinorenne ? "Nome e cognome del genitore" : "Nome e cognome"}</label>
                     <input type="text" id="firma" name="firma" autocomplete="off" required minlength="4" maxlength="110" pattern={signature} title="Scrivi il nome e il cognome indicati sopra" />
                 </p>
             </fieldset>
