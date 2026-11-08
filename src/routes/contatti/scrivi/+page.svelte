@@ -179,19 +179,6 @@
                 </select>
             </p>
 
-            <!-- Tutela dei minori: nessun campo in più, chi scrive deve poterlo fare liberamente; prima, i numeri per le emergenze -->
-            {#if isSafeguarding}
-                <p>
-                    <strong>Se un minore è in pericolo adesso, chiama il <a href="tel:112">112</a>.</strong> Per un consiglio o una segnalazione,
-                    anche senza dire il tuo nome, c'è il <a href="tel:114">114</a> Emergenza Infanzia, gratuito, a tutte le ore.
-                </p>
-            {/if}
-
-            <p>
-                <label for="contatto-messaggio">Messaggio</label>
-                <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isReceipt} minlength="10" maxlength="2000" value={messageStart}></textarea>
-            </p>
-
             <!-- Privacy: che cosa si chiede, tra i diritti del GDPR; il resto nel messaggio -->
             {#if isPrivacy}
                 <p>
@@ -204,6 +191,19 @@
                     </select>
                 </p>
             {/if}
+
+            <!-- Tutela dei minori: nessun campo in più, chi scrive deve poterlo fare liberamente; prima, i numeri per le emergenze -->
+            {#if isSafeguarding}
+                <p>
+                    <strong>Se un minore è in pericolo adesso, chiama il <a href="tel:112">112</a>.</strong> Per un consiglio o una segnalazione,
+                    anche senza dire il tuo nome, c'è il <a href="tel:114">114</a> Emergenza Infanzia, gratuito, a tutte le ore.
+                </p>
+            {/if}
+
+            <p>
+                <label for="contatto-messaggio">Messaggio</label>
+                <textarea id="contatto-messaggio" name="messaggio" rows="6" required={!isReceipt} minlength="10" maxlength="2000" value={messageStart}></textarea>
+            </p>
 
             <!-- Per un problema con il sito: su quale dispositivo e con quale browser, facoltativo -->
             {#if isSite}
