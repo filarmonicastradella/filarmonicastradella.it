@@ -22,20 +22,22 @@
     const RECEIPT = "Ricevute";
 
     // A chi arriva il messaggio, secondo il motivo. Senza JS l'indirizzo resta quello del primo motivo, info@.
-    // Sei motivi (dal 8/11/2026): uno generico per tutto ciò che è solo un messaggio (domande, iscrizioni, donazioni, collaborazioni,
-    // sponsor, stampa, segnalazioni sul sito e sugli articoli), e uno per ogni richiesta che ha campi o avvisi suoi: gli ingaggi,
-    // il materiale storico, le ricevute, la privacy, la tutela dei minori. La chiave sceglie il motivo da un link
+    // Sette motivi (dal 8/11/2026): uno generico per tutto ciò che è solo un messaggio (domande, iscrizioni, donazioni, collaborazioni,
+    // sponsor, stampa, aggiunte agli articoli), e uno per ogni richiesta che ha campi o avvisi suoi: gli ingaggi, il materiale storico,
+    // le ricevute, i problemi con il sito, la privacy, la tutela dei minori. La chiave sceglie il motivo da un link
     // (/contatti/scrivi?motivo=ingaggio); le chiavi dei motivi accorpati restano valide come alias, perché ci sono link e QR che le usano.
     const topics = [
         {
             key: "informazioni",
-            aliases: ["altro", "iscrizione", "donazioni", "sito", "articoli", "collaborazioni", "stampa", "sponsor", "enti"],
+            aliases: ["altro", "iscrizione", "donazioni", "articoli", "collaborazioni", "stampa", "sponsor", "enti"],
             name: "Informazioni",
             mailbox: "info"
         },
         { key: "ingaggio", name: BOOKING, mailbox: "info" },
         { key: "storia", name: MATERIAL, mailbox: "info" },
         { key: "ricevuta", name: RECEIPT, mailbox: "tesoreria" },
+        // Con il gruppo «La pagina»: l'indirizzo (dal link del piè di pagina, &pagina=) e il dispositivo, ricavato dal browser
+        { key: "sito", name: "Problemi con il sito", mailbox: "info" },
         { key: "privacy", name: "Privacy e dati personali", mailbox: "privacy" },
         { key: "minori", name: "Tutela dei minori", mailbox: "safeguarding" }
     ];
@@ -71,6 +73,7 @@
     let ensemble = $derived(ensembles.find(({ slug }) => slug === requestedEnsemble)?.title ?? NO_PREFERENCE);
     const isMaterial = $derived(topic === MATERIAL);
     const isReceipt = $derived(topic === RECEIPT);
+    const isSite = $derived(topics.find(({ name }) => name === topic)?.key === "sito");
     const isSafeguarding = $derived(topics.find(({ name }) => name === topic)?.key === "minori");
     const isPrivacy = $derived(topics.find(({ name }) => name === topic)?.key === "privacy");
     // I diritti del GDPR, detti come li direbbe chi scrive (artt. 15, 16, 17, 7.3, 21, 20)
@@ -218,14 +221,15 @@
         <!-- Chi scrive sempre subito dopo il messaggio, con ogni motivo; per il materiale storico si chiama «Chi consegna» -->
         {@render sender()}
 
-        <!-- Un problema con il sito, dal link del piè di pagina: la pagina da cui si arriva e il dispositivo, già compilati e modificabili -->
-        {#if reportedPage}
+        <!-- Un problema con il sito: la pagina (già compilata se si arriva dal link del piè di pagina) e il dispositivo, ricavato dal browser;
+             tutti e due modificabili -->
+        {#if isSite}
             <fieldset>
                 <legend>La pagina</legend>
 
                 <p>
-                    <label for="segnalazione-pagina">Indirizzo</label>
-                    <input type="url" id="segnalazione-pagina" name="pagina" maxlength="300" value="{organization.url}{reportedPage}" />
+                    <label for="segnalazione-pagina">Indirizzo della pagina</label>
+                    <input type="url" id="segnalazione-pagina" name="pagina" maxlength="300" value={reportedPage ? `${organization.url}${reportedPage}` : ""} />
                 </p>
 
                 <p>
