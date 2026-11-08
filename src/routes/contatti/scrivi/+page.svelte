@@ -214,6 +214,11 @@
             {/if}
         </fieldset>
 
+        <!-- Chi scrive sempre subito dopo il messaggio, con ogni motivo; per il materiale storico è «Chi consegna», dopo il metodo -->
+        {#if !isMaterial}
+            {@render sender()}
+        {/if}
+
         {#if isMaterial}
             <fieldset>
                 <legend>Metodo</legend>
@@ -452,9 +457,7 @@
         {/if}
 
         {#if isReceipt}
-            <!-- Per la ricevuta: chi scrive, poi chi ha donato (spesso la stessa persona), poi il versamento -->
-            {@render sender()}
-
+            <!-- Per la ricevuta, dopo chi scrive: chi ha donato (spesso la stessa persona), poi il versamento -->
             <fieldset>
                 <legend>Chi ha donato</legend>
 
@@ -538,9 +541,6 @@
             </fieldset>
         {/if}
 
-        {#if !isMaterial && !isReceipt}
-            {@render sender()}
-        {/if}
 
         <p>
             <input type="checkbox" id="contatto-privacy" name="consenso_privacy" value="Sì" required />
