@@ -232,48 +232,6 @@
                 </p>
             </fieldset>
 
-            <!-- Gli originali portati a un punto di raccolta: compila chi ritira, con chi consegna accanto -->
-            {#if handsOriginals}
-                <fieldset>
-                    <legend>Chi ritira</legend>
-
-                    <p>
-                        <label for="contatto-punto">Punto di raccolta</label>
-                        <select id="contatto-punto" name="punto_di_raccolta" required>
-                            <option value="" disabled selected>Scegli il punto di raccolta</option>
-                            {#each collectionPoints as point (point)}
-                                <option>{point}</option>
-                            {/each}
-                        </select>
-                    </p>
-
-                    <p>
-                        <label for="contatto-ricevuto">Nome e cognome</label>
-                        <input type="text" id="contatto-ricevuto" name="ricevuto_da" bind:value={receiverName} required minlength="2" maxlength="120" />
-                    </p>
-
-                    <p>
-                    Il nome di chi ritira serve a documentare la consegna e la custodia:
-                    <a href="/informative/materiale" target="_blank" rel="noopener noreferrer">informativa per la raccolta del materiale</a>.
-                </p>
-
-                <!-- Chi ritira è del punto di raccolta, non della Filarmonica: guarda il documento di chi consegna senza copiarlo, e prende
-                     gli originali in custodia per il suo ente fino alla restituzione -->
-                    <p>
-                        <input type="checkbox" id="contatto-documento-visto" name="documento_verificato" value="Sì" required />
-                        <label for="contatto-documento-visto">Dichiaro di aver verificato l'identità di chi consegna con un documento.</label>
-                    </p>
-
-                <p>
-                    <input type="checkbox" id="contatto-custodia" name="presa_in_custodia" value="Sì" required />
-                    <label for="contatto-custodia">
-                        Dichiaro di prendere in custodia gli originali per il punto di raccolta indicato, gratuitamente, fino alla loro
-                        restituzione.
-                    </label>
-                </p>
-                </fieldset>
-            {/if}
-
             <fieldset>
                 <legend>Il materiale</legend>
 
@@ -326,6 +284,49 @@
 
                 <p><button type="button" onclick={() => pieces.push(nextPiece++)}>Aggiungi un ricordo</button></p>
             </fieldset>
+
+            <!-- Gli originali portati a un punto di raccolta: compila chi ritira. Viene dopo il materiale, perché i gruppi che ci sono
+                 già con il metodo di base (le scansioni) restano al loro posto, e quelli in più si aggiungono dopo -->
+            {#if handsOriginals}
+                <fieldset>
+                    <legend>Chi ritira</legend>
+
+                    <p>
+                        <label for="contatto-punto">Punto di raccolta</label>
+                        <select id="contatto-punto" name="punto_di_raccolta" required>
+                            <option value="" disabled selected>Scegli il punto di raccolta</option>
+                            {#each collectionPoints as point (point)}
+                                <option>{point}</option>
+                            {/each}
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="contatto-ricevuto">Nome e cognome</label>
+                        <input type="text" id="contatto-ricevuto" name="ricevuto_da" bind:value={receiverName} required minlength="2" maxlength="120" />
+                    </p>
+
+                    <p>
+                    Il nome di chi ritira serve a documentare la consegna e la custodia:
+                    <a href="/informative/materiale" target="_blank" rel="noopener noreferrer">informativa per la raccolta del materiale</a>.
+                </p>
+
+                <!-- Chi ritira è del punto di raccolta, non della Filarmonica: guarda il documento di chi consegna senza copiarlo, e prende
+                     gli originali in custodia per il suo ente fino alla restituzione -->
+                    <p>
+                        <input type="checkbox" id="contatto-documento-visto" name="documento_verificato" value="Sì" required />
+                        <label for="contatto-documento-visto">Dichiaro di aver verificato l'identità di chi consegna con un documento.</label>
+                    </p>
+
+                <p>
+                    <input type="checkbox" id="contatto-custodia" name="presa_in_custodia" value="Sì" required />
+                    <label for="contatto-custodia">
+                        Dichiaro di prendere in custodia gli originali per il punto di raccolta indicato, gratuitamente, fino alla loro
+                        restituzione.
+                    </label>
+                </p>
+                </fieldset>
+            {/if}
 
             <!-- La dichiarazione di consegna e liberatoria della raccolta, una casella per impegno -->
             <fieldset>
