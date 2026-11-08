@@ -117,7 +117,6 @@
 
 <section>
     <h2>Compila il modulo</h2>
-    <p>I campi con * sono obbligatori.</p>
     <form action="https://formsubmit.co/{mailbox}@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
         <input
             type="hidden"
@@ -402,6 +401,8 @@
                 {/if}
             </label>
         </p>
+
+        <p><small>I campi con * sono obbligatori.</small></p>
 
         <p>
             <button type="submit">

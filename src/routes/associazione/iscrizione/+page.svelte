@@ -134,7 +134,6 @@
 
 <section>
     <h2>Compila la domanda</h2>
-    <p>I campi con * sono obbligatori.</p>
     <form action="https://formsubmit.co/segreteria@filarmonicastradella.it" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_subject" value={isChange ? "Variazione dei dati di un socio – Filarmonica Stradella" : "Nuova domanda di iscrizione – Filarmonica Stradella"} />
         <input type="hidden" name="_template" value="table" />
@@ -329,6 +328,8 @@
                 </p>
             </fieldset>
         {/if}
+
+        <p><small>I campi con * sono obbligatori.</small></p>
 
         <p>
             <button type="submit" disabled={isTooYoung}>{isChange ? "Invia la domanda di variazione" : "Invia la domanda di iscrizione"}</button>
