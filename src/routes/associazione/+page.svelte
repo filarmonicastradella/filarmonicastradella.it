@@ -38,6 +38,12 @@
             <p>Per diventare socio con la quota annuale di 12 €, o per aggiornare i tuoi dati e i consensi.</p>
         </a>
     </li>
+    <li>
+        <a href="/associazione/mediateca">
+            <h2>Foto e video</h2>
+            <p>I nostri concerti e le nostre attività, dal profilo Instagram.</p>
+        </a>
+    </li>
     <!-- SOSPESA finché non ci sono i consensi alla pubblicazione dei nomi (rinominare about/musicians/_page.svelte in +page.svelte):
     <li>
         <a href="/associazione/musicisti">
@@ -63,14 +69,6 @@
         <a href="/associazione/traguardi">
             <h2>Riconoscimenti e traguardi</h2>
             <p>I riconoscimenti ricevuti e i traguardi raggiunti.</p>
-        </a>
-    </li>
-    -->
-    <!-- Da riattivare quando su Instagram ci sono una decina di post con #filarmonicastradella (rinominare associazione/mediateca/_page.svelte in +page.svelte):
-    <li>
-        <a href="/associazione/mediateca">
-            <h2>Foto e video</h2>
-            <p>I nostri concerti e le nostre attività, dal profilo Instagram.</p>
         </a>
     </li>
     -->

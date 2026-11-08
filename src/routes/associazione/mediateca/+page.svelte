@@ -1,10 +1,6 @@
 <script lang="ts">
     import InstagramGrid from "$lib/components/InstagramGrid.svelte";
     import { gallery } from "$lib/gallery";
-
-    // Pagina disattivata finché su Instagram non ci sono abbastanza post con #filarmonicastradella da aggiungere
-    // qualcosa alla galleria in home (una decina): per attivarla rinominare _page.svelte in +page.svelte e togliere
-    // il commento dalla scheda in Associazione.
 </script>
 
 <svelte:head>
