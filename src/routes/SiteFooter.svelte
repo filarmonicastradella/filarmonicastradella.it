@@ -76,5 +76,11 @@
         </ul>
     </nav>
 
-    <p><small>&copy; {new Date().getFullYear()} Filarmonica Alessandro Stradella APS. Tutti i diritti riservati.</small></p>
+    <!-- Il link per le segnalazioni sul sito (errori, link rotti, dati da correggere): il motivo «Problemi con il sito» del modulo, a webmaster@ -->
+    <p>
+        <small>
+            &copy; {new Date().getFullYear()} Filarmonica Alessandro Stradella APS. Tutti i diritti riservati.
+            <a href="/contatti/scrivi?motivo=sito">Segnala un problema con il sito</a>
+        </small>
+    </p>
 </footer>
