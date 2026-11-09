@@ -6,7 +6,7 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 
 **Tipo.** **D** = serve una tua decisione. **F** = la soluzione è chiara, basta farla.
 
-**Fonti.** R = revisione (R3.6 è la parte 3, punto 6); PA, PB, PC = proposte di design, parti A, B, C (PAc = correzioni, PAm = miglioramenti, PAi = idee); N = riprogettazione; T = `TODO.md`; S = emerso in sessione; BR = confronto con il sito della banda di Rovato (`bandadirovato.it`, 9/11/2026).
+**Fonti.** R = revisione (R3.6 è la parte 3, punto 6); PA, PB, PC = proposte di design, parti A, B, C (PAc = correzioni, PAm = miglioramenti, PAi = idee); N = riprogettazione; T = `TODO.md`; S = emerso in sessione; BR, BA, FE = siti di altre bande presi a modello il 9/11/2026: Rovato (`bandadirovato.it`), Bagnone (`filarmonicabagnone.it`), Felina (`bandafelina.it`).
 
 **Stato delle voci.** Ho tolto quelle che i report e i commit danno per risolte, e ho ricontrollato sul codice, con ricerche mirate, soprattutto i testi. Non è una verifica riga per riga: se una voce risulta già fatta, si toglie. La modifica ancora aperta a `layout.css` è indicata in 3.1.
 
@@ -162,7 +162,7 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 
 - [ ] 9.1 **D** — Mettere in evidenza i giovani: l'età media sotto i 18 anni è un dato forte, con le liberatorie. (T)
 - [ ] 9.2 **F** — Consiglio direttivo e rendiconto online. (T)
-- [ ] 9.3 **D** — Numeri d'impatto. Modello: la home della banda di Rovato, sotto la storia, ha tre numeri fermi («64 musicanti, 50 allievi, 35 membri Junior Band») che dicono subito quanto è grande la realtà. Per noi: musicisti, formazioni (quattro), anno di fondazione (1777), magari i concerti dell'anno; numeri scritti, senza contatori animati (vietati dal Movimento di `DESIGN.md`), in un `<dl>`; da aggiornare a mano, quindi in un punto solo (`organization.ts`). (T, BR)
+- [ ] 9.3 **D** — Numeri d'impatto. Modello: la home della banda di Rovato, sotto la storia, ha tre numeri fermi («64 musicanti, 50 allievi, 35 membri Junior Band») che dicono subito quanto è grande la realtà. Per noi: musicisti, formazioni (quattro), anno di fondazione (1777), magari i concerti dell'anno; in evidenza in home; i valori in un punto solo (`organization.ts`). (T, BR)
 - [ ] 9.4 **F** — Partner e patrocini con i loghi. (T)
 - [ ] 9.5 **D** — Notizie regolari, almeno una al mese. (T)
 - [ ] 9.6 **D** — Ingaggi: video brevi, «Dove abbiamo suonato». (T)
@@ -172,4 +172,13 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 - [ ] 9.10 **D** — **Locandina scaricabile degli eventi** («Scarica il flyer» a Rovato): la locandina come file, comoda da girare su WhatsApp. Per noi: l'immagine allegata all'evento di Google Calendar, letta alla build e pubblicata con la pagina dell'evento, con un link a contorno «Scarica la locandina» (come i link ai file con il tipo); senza allegato, niente link. Da verificare: come l'API di Calendar espone gli allegati di Drive e se sono pubblici. (BR)
 - [ ] 9.11 **D** — **La scuola in home**, se un giorno ci sarà una scuola organizzata: Rovato ha in home una sezione con un blocco per tipo di corso (strumenti, corsi collettivi e Junior Band, propedeutica Gordon per la I e II elementare, adulti, progetto nelle scuole primarie) e una pagina Scuola con insegnanti e metodi. Oggi per noi non serve: l'iscrizione è in Associazione. (BR)
 
-**Da Rovato da non prendere** (BR, 9/11/2026): banner dei cookie con «se continui accetti» (non conforme al GDPR; noi non abbiamo cookie da chiedere); testo grigio chiaro #999 su bianco, sotto il contrasto minimo; zoom bloccato sul telefono (`maximum-scale=1`); notizie in uno slider con gli stessi blocchi ripetuti; «Read more» in inglese; refusi; nessun dato strutturato.
+- [ ] 9.12 **D** — **Occhiello di luogo e anno in cima alla home**, come Felina («Felina · Appennino reggiano · Dal 1870») e Bagnone («dal 1831»): per noi «Fivizzano · Lunigiana · Dal 1777». (FE, BA)
+- [ ] 9.13 **D** — **Foto d'archivio in home con la didascalia** «Dal nostro archivio, la formazione nel 2006» (Felina): una foto storica della Filarmonica con anno e occasione, che lega la storia a oggi. (FE)
+- [ ] 9.14 **D** — **«Il primo passo? Iniziare a suonare.»** (Felina): l'invito a suonare in home con l'elenco degli strumenti che si possono imparare o che cerchiamo, e un contatto diretto. Da unire alla sezione «Suona con noi» della home. (FE)
+- [ ] 9.15 **D** — **Contatto con una persona per argomento**, come Felina («Scuola di musica · Sandra», con il telefono): chi vuole iniziare a suonare scrive o telefona a qualcuno con un nome. (FE)
+- [ ] 9.16 **D** — **Progetti finanziati raccontati in home**, come «L'Appennino che RiSuona» di Felina (progetto regionale con le scuole, cofinanziato dal FSE+, con i loghi degli enti e il riferimento della delibera): dà credibilità con i finanziatori. Per noi: i progetti con contributi pubblici, collegati a `/trasparenza/contributi`. Da unire a 9.4. (FE)
+- [ ] 9.17 **D** — **Progetti con le scuole**: Felina (percorsi gratuiti di 60 ore nelle primarie e medie, con due istituti comprensivi) e Rovato («Fare musica», avvicinamento alla banda nella primaria). Idea di attività, prima che di sito. (FE, BR)
+- [ ] 9.18 **D** — **Raccolta fondi per un obiettivo preciso**, come Bagnone per le divise nuove: un traguardo concreto convince più della donazione generica. Pagina o sezione in Sostienici con obiettivo, cifra e a che punto siamo. (BA)
+- [ ] 9.19 **D** — **Open day**: Bagnone apre la sede un pomeriggio per provare fiati e percussioni («cercasi nuovi talenti»). Evento in calendario e notizia, con il link all'iscrizione. (BA)
+- [ ] 9.20 **D** — **Paragrafo per Google in fondo alla home**, come Bagnone («banda musicale e scuola di musica in Lunigiana»): testo con le parole che si cercano (Filarmonica, Fivizzano, Lunigiana, orchestra, banda di altri enti esclusa) e i link interni alle pagine principali. (BA)
+- [ ] 9.21 **D** — **Storia per direttori e premi**, come Rovato: i maestri in ordine con gli anni, e i premi ai concorsi. Da vedere con la regola sui direttori (nessun rilievo a un direttore di oggi; i maestri storici sono un'altra cosa). (BR)
