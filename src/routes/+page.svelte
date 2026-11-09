@@ -56,7 +56,8 @@
         // L'iscrizione al Registro unico nazionale del Terzo settore
         identifier: { "@type": "PropertyValue", propertyID: "RUNTS", value: organization.runts.name.replace(/\D/g, "") },
         memberOf: { "@type": "Organization", name: organization.affiliation.name, url: organization.affiliation.href },
-        sameAs: [...organization.references, ...organization.socials.filter(({ profile }) => profile).map(({ href }) => href)]
+        hasMap: organization.mapsProfile,
+        sameAs: [...organization.references, organization.mapsProfile, ...organization.socials.filter(({ profile }) => profile).map(({ href }) => href)]
     };
     const structuredData = {
         "@context": "https://schema.org",
