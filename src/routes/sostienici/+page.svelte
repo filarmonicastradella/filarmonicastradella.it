@@ -1,3 +1,7 @@
+<script lang="ts">
+    import { organization } from "$lib/organization";
+</script>
+
 <svelte:head>
     <title>Sostienici — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Come sostenere la Filarmonica Alessandro Stradella APS: con una donazione e, quando sarà possibile, con il 5x1000." />
@@ -9,7 +13,9 @@
         Suonare costa, e chi suona da solo lo sa bene. Con le donazioni la Filarmonica si fa carico di ciò che un singolo musicista
         difficilmente potrebbe sostenere.
     </p>
-    <!-- «Dona ora» sta solo in Fai una donazione, la pagina delle erogazioni (dal 9/11/2026): qui le schede portano lì -->
+    <!-- La donazione online con Stripe, a contorno (rel="external", forms.css): il pulsante pieno «Dona ora», l'azione, sta in Fai una
+         donazione, la pagina delle erogazioni (dal 9/11/2026) -->
+    <p><a href={organization.donationHref} rel="external">Dona online</a></p>
 </header>
 
 <ul>
