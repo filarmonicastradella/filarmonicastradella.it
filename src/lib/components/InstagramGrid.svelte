@@ -3,7 +3,8 @@
 
     // La griglia delle foto e dei video di Instagram, per la galleria in home e per Foto e video. Con `featured` (la home), da 64rem
     // la prima foto è grande nella prima colonna delle sezioni e le altre sei piccole nella seconda, su due righe; sotto, le prime quattro.
-    let { slides, featured = false }: { slides: GallerySlide[]; featured?: boolean } = $props();
+    // `placeholders`: caselle segnaposto dopo le foto, finché non ce ne sono abbastanza per riempire la griglia
+    let { slides, featured = false, placeholders = 0 }: { slides: GallerySlide[]; featured?: boolean; placeholders?: number } = $props();
 
     // Le foto sono ritagliate in 4:5 (la grande alla misura del suo riquadro): una foto orizzontale riempie l'altezza, quindi serve un
     // file più largo della casella, di quanto è più larga. Senza questo il browser sceglie un file troppo piccolo e la foto si sgrana.
@@ -54,6 +55,14 @@
             </figure>
         </li>
     {/each}
+    <!-- SEGNAPOSTO: le caselle vuote della griglia, finché su Instagram non ci sono abbastanza post con #filarmonicastradella -->
+    {#each { length: placeholders }, i (i)}
+        <li>
+            <figure>
+                <p>[Foto da Instagram]</p>
+            </figure>
+        </li>
+    {/each}
 </ul>
 
 <style>
@@ -89,6 +98,17 @@
         inline-size: 100%;
         aspect-ratio: 4 / 5;
         object-fit: cover;
+    }
+
+    /* Il segnaposto: una casella 4:5 come le foto, sul fondo rialzato, con la scritta tra parentesi quadre */
+    figure:has(> p) {
+        display: grid;
+        place-items: center;
+        block-size: 100%;
+        aspect-ratio: 4 / 5;
+        background-color: var(--bg-raised);
+        color: var(--text-muted);
+        font-size: var(--fs-small);
     }
 
     /* Nella home, sotto 64rem, le prime quattro foto: due righe da due */

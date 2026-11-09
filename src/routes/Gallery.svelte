@@ -14,7 +14,7 @@
 {#if shown.length > 0}
     <section>
         <h2>Momenti in musica</h2>
-        <InstagramGrid slides={shown} featured />
+        <InstagramGrid slides={shown} featured placeholders={SHOWN - shown.length} />
 
         <!-- Come ogni sezione della home, finisce con il rimando alla pagina che riassume: tutte le foto, per post. Instagram è in Foto e
              video, nel piè di pagina e in ogni foto -->
