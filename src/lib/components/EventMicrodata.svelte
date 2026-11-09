@@ -40,5 +40,9 @@
     <meta itemprop="price" content="0" />
     <meta itemprop="priceCurrency" content="EUR" />
     <link itemprop="availability" href="https://schema.org/InStock" />
+    <!-- Da quando si sa dell'ingresso: da quando l'evento è in calendario -->
+    {#if event.created}
+        <meta itemprop="validFrom" content={event.created} />
+    {/if}
     <link itemprop="url" href={pageUrl} />
 </span>

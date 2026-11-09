@@ -111,7 +111,9 @@ function toEventItem(evt: any): EventItem {
         location: guillemets(oneLine(evt.location ?? "")),
         start: evt.start.dateTime || evt.start.date,
         end: evt.end?.dateTime || evt.end?.date || "",
-        ensembles: eventEnsembles(evt)
+        ensembles: eventEnsembles(evt),
+        created: evt.created ?? "",
+        updated: evt.updated ?? ""
     };
 }
 

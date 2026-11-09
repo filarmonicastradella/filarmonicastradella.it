@@ -9,6 +9,10 @@ export interface EventItem {
     end: string;
     /** Le formazioni che suonano, dagli hashtag della descrizione */
     ensembles: { slug: string; title: string }[];
+    /** Quando l'evento è stato messo in calendario e quando è stato modificato l'ultima volta (ISO, da Google Calendar):
+     *  il primo per «validFrom» dell'ingresso nei microdati, il secondo per «lastmod» nella sitemap */
+    created: string;
+    updated: string;
 }
 
 // Un evento è ancora da mostrare finché non è finito (le date "tutto il giorno" finiscono il giorno dopo).
