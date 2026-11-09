@@ -5,7 +5,8 @@
     // `null` quando il feed non era raggiungibile durante la build.
     let { slides }: { slides: GallerySlide[] | null } = $props();
 
-    // Le ultime sette foto: da 64rem una grande e sei piccole, sotto le prime quattro (InstagramGrid). Le altre sono in Foto e video.
+    // Le ultime sette foto: una grande e le altre piccole, sette da 64rem, cinque da 40rem, quattro sul telefono (InstagramGrid).
+    // Le altre sono in Foto e video.
     const SHOWN = 7;
     const shown = $derived(slides?.slice(0, SHOWN) ?? []);
 </script>
