@@ -31,7 +31,7 @@ export const operationalSeats: Location[] = [
     {
         id: "sede-serricciolo",
         name: "Sede operativa di Aulla",
-        address: ["Circolo Culturale «Giovanni Fantoni»", "Via la Spezia 7", "54011 Serricciolo, Aulla (MS)"],
+        address: ["Via la Spezia 7", "54011 Serricciolo, Aulla (MS)"],
         description: "Presso il Circolo Fantoni, attiva per le iniziative e gli incontri sul territorio.",
         mapsHref: "https://maps.app.goo.gl/FYszuhGgyCZdf5zm6",
         mapEmbed: "https://maps.google.com/maps?q=Via+la+Spezia+7,+Serricciolo,+Aulla+MS&output=embed"
