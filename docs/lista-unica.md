@@ -6,7 +6,7 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 
 **Tipo.** **D** = serve una tua decisione. **F** = la soluzione è chiara, basta farla.
 
-**Fonti.** R = revisione (R3.6 è la parte 3, punto 6); PA, PB, PC = proposte di design, parti A, B, C (PAc = correzioni, PAm = miglioramenti, PAi = idee); N = riprogettazione; T = `TODO.md`; S = emerso in sessione.
+**Fonti.** R = revisione (R3.6 è la parte 3, punto 6); PA, PB, PC = proposte di design, parti A, B, C (PAc = correzioni, PAm = miglioramenti, PAi = idee); N = riprogettazione; T = `TODO.md`; S = emerso in sessione; BR = confronto con il sito della banda di Rovato (`bandadirovato.it`, 9/11/2026).
 
 **Stato delle voci.** Ho tolto quelle che i report e i commit danno per risolte, e ho ricontrollato sul codice, con ricerche mirate, soprattutto i testi. Non è una verifica riga per riga: se una voce risulta già fatta, si toglie. La modifica ancora aperta a `layout.css` è indicata in 3.1.
 
@@ -162,9 +162,14 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 
 - [ ] 9.1 **D** — Mettere in evidenza i giovani: l'età media sotto i 18 anni è un dato forte, con le liberatorie. (T)
 - [ ] 9.2 **F** — Consiglio direttivo e rendiconto online. (T)
-- [ ] 9.3 **D** — Numeri d'impatto. (T)
+- [ ] 9.3 **D** — Numeri d'impatto. Modello: la home della banda di Rovato, sotto la storia, ha tre numeri fermi («64 musicanti, 50 allievi, 35 membri Junior Band») che dicono subito quanto è grande la realtà. Per noi: musicisti, formazioni (quattro), anno di fondazione (1777), magari i concerti dell'anno; numeri scritti, senza contatori animati (vietati dal Movimento di `DESIGN.md`), in un `<dl>`; da aggiornare a mano, quindi in un punto solo (`organization.ts`). (T, BR)
 - [ ] 9.4 **F** — Partner e patrocini con i loghi. (T)
 - [ ] 9.5 **D** — Notizie regolari, almeno una al mese. (T)
 - [ ] 9.6 **D** — Ingaggi: video brevi, «Dove abbiamo suonato». (T)
 - [ ] 9.7 **F** — Musicisti: manca la sezione Archi. (T)
 - [ ] 9.8 **D** — Articolo sui luoghi della musica a Fivizzano. (S)
+- [ ] 9.9 **D** — **Pagina dei 250 anni, «1777 | 2027»**, da preparare prima che cominci il 2027. Modello: Rovato ha una pagina per i suoi 200 anni («1824 | 2024», `bandadirovato.it/eventi200.html`) con tutti gli appuntamenti dei festeggiamenti, e in home un richiamo «Rivedi tutti gli appuntamenti». Per noi: gli eventi dell'anniversario (dal calendario, per esempio con un hashtag `#250anni` come per le formazioni), un rimando alla storia, i materiali per la stampa; richiamo in home per tutto il 2027, poi la pagina resta come archivio. Da decidere: indirizzo (sotto Associazione o Calendario), nome, se ha un logo celebrativo. (BR)
+- [ ] 9.10 **D** — **Locandina scaricabile degli eventi** («Scarica il flyer» a Rovato): la locandina come file, comoda da girare su WhatsApp. Per noi: l'immagine allegata all'evento di Google Calendar, letta alla build e pubblicata con la pagina dell'evento, con un link a contorno «Scarica la locandina» (come i link ai file con il tipo); senza allegato, niente link. Da verificare: come l'API di Calendar espone gli allegati di Drive e se sono pubblici. (BR)
+- [ ] 9.11 **D** — **La scuola in home**, se un giorno ci sarà una scuola organizzata: Rovato ha in home una sezione con un blocco per tipo di corso (strumenti, corsi collettivi e Junior Band, propedeutica Gordon per la I e II elementare, adulti, progetto nelle scuole primarie) e una pagina Scuola con insegnanti e metodi. Oggi per noi non serve: l'iscrizione è in Associazione. (BR)
+
+**Da Rovato da non prendere** (BR, 9/11/2026): banner dei cookie con «se continui accetti» (non conforme al GDPR; noi non abbiamo cookie da chiedere); testo grigio chiaro #999 su bianco, sotto il contrasto minimo; zoom bloccato sul telefono (`maximum-scale=1`); notizie in uno slider con gli stessi blocchi ripetuti; «Read more» in inglese; refusi; nessun dato strutturato.
