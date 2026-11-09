@@ -157,34 +157,37 @@
      * - Da 64rem la impagina la pagina Foto e video, insieme alla data e alla didascalia del post (la griglia diventa trasparente,
      *   display: contents): la grande sotto la data, le piccole sotto la didascalia.
      */
-    ul:not([data-featured]) {
-        --row: calc((100cqi - 2 * var(--space-2)) / 3 * 3 / 4);
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        /* La prima riga è quella della grande, alta quanto la foto in 4:3; le altre hanno l'altezza delle piccole */
-        grid-template-rows: auto;
-        grid-auto-rows: var(--row);
+    /* Le piccole riempiono la loro casella, alta quanto la riga (a ogni larghezza) */
+    ul:not([data-featured]) > li:not(:first-child) :is(img, video) {
+        block-size: 100%;
+        aspect-ratio: auto;
+    }
 
-        & > li {
-            grid-column: span 2;
-        }
+    /* Solo sotto 64rem: da lì in su impagina la pagina, e queste regole (più specifiche delle sue) la scavalcherebbero */
+    @media (width < 64rem) {
+        ul:not([data-featured]) {
+            --row: calc((100cqi - 2 * var(--space-2)) / 3 * 3 / 4);
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            /* La prima riga è quella della grande, alta quanto la foto in 4:3; le altre hanno l'altezza delle piccole */
+            grid-template-rows: auto;
+            grid-auto-rows: var(--row);
 
-        & > li:first-child {
-            grid-column: 1 / -1;
-            grid-row: auto;
-        }
+            & > li {
+                grid-column: span 2;
+            }
 
-        & > li:nth-last-child(2):nth-child(3n + 2),
-        & > li:last-child:nth-child(3n) {
-            grid-column: span 3;
-        }
+            & > li:first-child {
+                grid-column: 1 / -1;
+            }
 
-        & > li:last-child:nth-child(3n + 2) {
-            grid-column: 1 / -1;
-        }
+            & > li:nth-last-child(2):nth-child(3n + 2),
+            & > li:last-child:nth-child(3n) {
+                grid-column: span 3;
+            }
 
-        & > li:not(:first-child) :is(img, video) {
-            block-size: 100%;
-            aspect-ratio: auto;
+            & > li:last-child:nth-child(3n + 2) {
+                grid-column: 1 / -1;
+            }
         }
     }
 
