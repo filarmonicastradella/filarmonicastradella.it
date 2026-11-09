@@ -1,6 +1,6 @@
 // Le occasioni in cui la Filarmonica suona: chi organizza ragiona per occasioni, la formazione adatta la proponiamo noi.
 // Niente funzioni religiose né eventi di partito (associazione laica e apartitica, vedi le domande frequenti); i convegni
-// sono tra le occasioni più frequenti. Le usano la pagina degli ingaggi e il modulo di Contatti.
+// sono tra le occasioni più frequenti. Le usano la pagina degli ingaggi e il modulo Scrivici.
 export const occasions = [
     "Concerto, rassegna o festival",
     "Convegno o conferenza",

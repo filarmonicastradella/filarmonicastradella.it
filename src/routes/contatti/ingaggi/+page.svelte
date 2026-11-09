@@ -5,8 +5,8 @@
     import { occasions } from "$lib/occasions";
     import { organization } from "$lib/organization";
 
-    // La pagina per chi cerca musica per un evento (dal 3/11/2026): spiega occasioni e formazioni e porta al modulo di Contatti,
-    // che resta l'unico modulo. I dati strutturati descrivono il servizio offerto dall'ente in Lunigiana.
+    // La pagina per chi cerca musica per un evento (dal 3/11/2026): spiega occasioni e formazioni e porta al modulo Scrivici
+    // (/contatti/scrivi), che resta l'unico modulo. I dati strutturati descrivono il servizio offerto dall'ente in Lunigiana.
     const form = "/contatti/scrivi?motivo=ingaggio";
     const structuredData = {
         "@context": "https://schema.org",
@@ -67,7 +67,7 @@
 <section>
     <h2>Come chiedere</h2>
     <p>
-        Scrivici con il <a href={form}>modulo di Contatti</a>: dicci l'occasione, la data e il luogo, e ti rispondiamo con la disponibilità e una
+        Compila la <a href={form}>richiesta di ingaggio</a>: dicci l'occasione, la data e il luogo, e ti rispondiamo con la disponibilità e una
         proposta.
     </p>
 </section>

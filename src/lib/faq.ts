@@ -29,7 +29,7 @@ export const faq = {
     }
 } satisfies Record<string, FaqItem>;
 
-// Le domande sugli ingaggi: nella pagina La Filarmonica al tuo evento e in Contatti quando il motivo è un ingaggio
+// Le domande sugli ingaggi: nella pagina La Filarmonica al tuo evento e nel modulo Scrivici quando il motivo è un ingaggio
 export const bookingFaq: FaqItem[] = [
     { question: "Dove suonate?", answer: "Ci spostiamo in tutta la Lunigiana." },
     {

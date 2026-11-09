@@ -14,7 +14,7 @@
 
 <svelte:head>
     <title>Contatti — Filarmonica Alessandro Stradella</title>
-    <meta name="description" content="Telefono, email e modulo di contatto della Filarmonica Alessandro Stradella APS di Fivizzano, in Lunigiana: informazioni, iscrizioni, donazioni ed eventi." />
+    <meta name="description" content="Telefono, email, sede e modulo per scriverci della Filarmonica Alessandro Stradella APS di Fivizzano, in Lunigiana: informazioni, iscrizioni, donazioni ed eventi." />
 </svelte:head>
 
 <!-- Recapiti e sedi; il modulo per scriverci ha una pagina sua, /contatti/scrivi (dal 8/11/2026) -->
