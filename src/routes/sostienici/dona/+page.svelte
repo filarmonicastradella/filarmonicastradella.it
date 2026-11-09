@@ -47,10 +47,13 @@
 
 <header>
     <h1>Fai una donazione</h1>
-    <p>Puoi sostenere i nostri progetti con un contributo libero, con carta, Apple Pay o Google Pay oppure con un bonifico bancario.</p>
     <!-- La donazione online (dal 8/11/2026): la pagina di pagamento di Stripe, con l'importo scelto da chi dona (minimo 5 €)
-         e il codice fiscale facoltativo per la ricevuta; dopo il pagamento torna a /sostienici/dona/grazie -->
-    <p><a href={organization.donationHref}>Dona ora</a></p>
+         e il codice fiscale facoltativo per la ricevuta; dopo il pagamento torna a /sostienici/dona/grazie. Il pulsante «Dona ora»
+         sta nella pagina superiore, Sostienici: qui non si ripete, e chi arriva direttamente trova il link nel testo -->
+    <p>
+        Puoi sostenere i nostri progetti con un contributo libero, <a href={organization.donationHref}>con carta, Apple Pay o Google Pay</a> oppure
+        con un bonifico bancario.
+    </p>
 </header>
 
 <section>
