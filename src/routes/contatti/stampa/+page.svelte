@@ -90,7 +90,7 @@
 </section>
 
 <section>
-    <h2>Contatti per la stampa</h2>
+    <h2>Contatti</h2>
     <dl>
         <dt>Email</dt>
         <dd><a href="mailto:{organization.pressEmail}">{organization.pressEmail}</a></dd>
