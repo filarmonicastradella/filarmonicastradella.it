@@ -28,6 +28,14 @@ const data = import.meta.glob<{ slides: GallerySlide[] | null }>("/src/lib/conte
 
 export const gallery: GallerySlide[] | null = Object.values(data)[0]?.slides ?? null;
 
+// La didascalia di un post da leggere: senza hashtag, divisa in paragrafi (nella pagina Foto e video e nella sua finestra)
+export const captionParagraphs = (caption = "") =>
+    caption
+        .replace(/#\S+/g, "")
+        .split(/\n\s*\n/)
+        .map((paragraph) => paragraph.trim())
+        .filter(Boolean);
+
 // L'ancora di un post in Foto e video: il codice del post nell'indirizzo di Instagram (https://www.instagram.com/p/<codice>/)
 export const postAnchor = (permalink: string) => `post-${permalink.split("/").filter(Boolean).pop()}`;
 
@@ -35,16 +43,12 @@ export const postAnchor = (permalink: string) => `post-${permalink.split("/").fi
 export const galleryPosts: GalleryPost[] = Object.values(Object.groupBy(gallery ?? [], ({ permalink }) => permalink))
     .filter((slides) => slides![0].timestamp)
     .map((slides) => {
-        const [{ permalink, timestamp, caption = "" }] = slides!;
+        const [{ permalink, timestamp, caption }] = slides!;
         return {
             permalink,
             anchor: postAnchor(permalink),
             date: timestamp!.slice(0, 10),
-            paragraphs: caption
-                .replace(/#\S+/g, "")
-                .split(/\n\s*\n/)
-                .map((paragraph) => paragraph.trim())
-                .filter(Boolean),
+            paragraphs: captionParagraphs(caption),
             slides: slides!
         };
     });

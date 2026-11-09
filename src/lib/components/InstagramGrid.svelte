@@ -3,7 +3,7 @@
     import ChevronRightIcon from "~icons/heroicons/chevron-right-20-solid";
     import PlayIcon from "~icons/heroicons/play-20-solid";
     import { formatArticleDate } from "$lib/articles";
-    import type { GallerySlide } from "$lib/gallery";
+    import { captionParagraphs, type GallerySlide } from "$lib/gallery";
 
     // La griglia delle foto e dei video di Instagram, per la galleria in home e per Foto e video. Con `featured` (la home) la prima
     // foto è grande e le altre piccole intorno, in tre composizioni secondo la larghezza (nello stile, sotto).
@@ -132,7 +132,12 @@
                     {#if current.timestamp}
                         <p><time itemprop="datePublished" datetime={current.timestamp.slice(0, 10)}>{formatArticleDate(current.timestamp.slice(0, 10))}</time></p>
                     {/if}
-                    <p itemprop="description">{current.alt}</p>
+                    <!-- La didascalia intera (il testo alternativo della foto è solo la prima frase, per gli screen reader) -->
+                    <div itemprop="description">
+                        {#each captionParagraphs(current.caption) as paragraph, i (i)}
+                            <p>{paragraph}</p>
+                        {/each}
+                    </div>
                 </figcaption>
             </figure>
             <p>
@@ -268,8 +273,12 @@
         gap: var(--space-2);
         font-size: var(--fs-small);
 
-        & > p {
+        & p {
             margin: 0;
+        }
+
+        & p + p {
+            margin-block-start: var(--space-2);
         }
 
         & > [itemprop="description"] {
