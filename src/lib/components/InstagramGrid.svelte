@@ -21,7 +21,8 @@
         const ratio = slide.width && slide.height ? slide.width / slide.height : 4 / 5;
         const crop = Math.max(1, ratio * (5 / 4));
         if (!featured) return `(min-width: 64rem) ${Math.ceil(16 * crop)}rem, ${Math.ceil(50 * crop)}vw`;
-        const [wide, narrow] = index === 0 ? [Math.max(27, 29 * ratio), 100 * crop] : [12 * crop, 34 * crop];
+        // Sotto 64rem la grande è in 4:3: una foto più larga riempie l'altezza
+        const [wide, narrow] = index === 0 ? [Math.max(27, 29 * ratio), 100 * Math.max(1, ratio * (3 / 4))] : [12 * crop, 34 * crop];
         return `(min-width: 64rem) ${Math.ceil(wide)}rem, ${Math.ceil(narrow)}vw`;
     };
 </script>
@@ -135,7 +136,8 @@
     /*
      * Nella home (featured) la foto più recente comanda e le altre fanno da contorno, a ogni larghezza (le caselle in più, foto o
      * segnaposto, si nascondono):
-     * - fino a 64rem la grande a tutta larghezza, in 4:5, e sotto tre piccole in una riga (quattro foto);
+     * - fino a 64rem la grande a tutta larghezza, in 4:3 (in 4:5 su un tablet sarebbe più alta dello schermo; le foto sono quasi
+     *   tutte orizzontali), e sotto tre piccole in una riga, in 4:5 (quattro foto);
      * - da 64rem la griglia segue le due colonne delle sezioni (layout.css): la grande nella prima colonna, alta due righe, e nella
      *   seconda, larga quanto la colonna di testo, sei piccole su due righe (sette foto). Le righe hanno l'altezza delle piccole in
      *   4:5, così la grande non cambia misura.
@@ -145,6 +147,10 @@
 
         & > li:first-child {
             grid-column: 1 / -1;
+        }
+
+        & > li:first-child :is(img, video, figure:has(> p)) {
+            aspect-ratio: 4 / 3;
         }
 
         & > li:nth-child(n + 5) {
@@ -173,7 +179,7 @@
                 block-size: 100%;
             }
 
-            & > li:first-child :is(img, video) {
+            & > li:first-child :is(img, video, figure:has(> p)) {
                 aspect-ratio: auto;
             }
         }
