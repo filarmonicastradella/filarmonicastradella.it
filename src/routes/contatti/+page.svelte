@@ -2,8 +2,11 @@
     import { onMount } from "svelte";
     import { goto } from "$app/navigation";
     import { page } from "$app/state";
-    import { legalSeat } from "$lib/locations";
+    import { legalSeat, operationalSeats } from "$lib/locations";
     import { organization } from "$lib/organization";
+
+    // Le sedi in Contatti: la legale e, delle operative, per ora solo Via Radda 7 a Fivizzano
+    const seats = [legalSeat, ...operationalSeats.filter(({ id }) => id === "sede-fivizzano")];
 
     // I QR stampati nei punti di raccolta portano ancora a /contatti?motivo=storia#scrivici, l'indirizzo del modulo fino all'8/11/2026:
     // con un motivo nell'indirizzo si passa subito al modulo, che lo sceglie. Senza JS resta il pulsante «Scrivici».
@@ -41,13 +44,15 @@
     -->
 </section>
 
-<!-- Le sedi, da $lib/locations come nel piè di pagina; per ora solo la legale: le sedi operative si aggiungono qui
+<!-- Le sedi, da $lib/locations come nel piè di pagina: la legale e la sede operativa di Fivizzano; Serricciolo si aggiunge qui
      quando indirizzi e descrizioni sono confermati -->
 <section>
     <h2>Sedi</h2>
     <dl>
-        <dt>{legalSeat.name}</dt>
-        <dd><a href={legalSeat.mapsHref} target="_blank" rel="noopener noreferrer">{legalSeat.address.join(", ")}</a></dd>
+        {#each seats as { id, name, address, mapsHref } (id)}
+            <dt>{name}</dt>
+            <dd><a href={mapsHref} target="_blank" rel="noopener noreferrer">{address.join(", ")}</a></dd>
+        {/each}
     </dl>
 </section>
 

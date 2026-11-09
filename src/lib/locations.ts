@@ -16,6 +16,7 @@ export const legalSeat: Location = {
     mapsHref: "https://maps.google.com/?q=Via+Stretta+5+54013+Fivizzano+MS"
 };
 
+// In Contatti c'è per ora solo quella di Fivizzano (dal 9/11/2026): Serricciolo si aggiunge quando indirizzo e descrizione sono confermati
 export const operationalSeats: Location[] = [
     {
         id: "sede-fivizzano",
