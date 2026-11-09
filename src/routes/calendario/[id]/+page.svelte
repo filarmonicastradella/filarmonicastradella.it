@@ -20,10 +20,10 @@
     });
     // Il resto dell'indirizzo, dopo il nome del luogo
     const address = $derived(event.location.split(",").slice(1).join(",").trim());
-    // Le domande servono a chi ci deve ancora andare: per gli eventi passati non si mostrano. La build genera solo
-    // eventi in programma; nel browser si ricontrolla dopo il montaggio, così l'HTML del prerender resta valido.
+    // Le domande e «Aggiungi al tuo calendario» servono a chi ci deve ancora andare: per gli eventi passati non si mostrano.
+    // La build sa quali erano già conclusi; nel browser si ricontrolla dopo il montaggio, per quelli finiti dopo la build.
     let now = $state<Date>();
-    const upcoming = $derived(!now || hasNotEnded(event, now));
+    const upcoming = $derived(!data.past && (!now || hasNotEnded(event, now)));
     // Aggiungi al tuo calendario: Google Calendar già compilato (Android, computer, senza JS), il file .ics su iPhone e iPad
     const google = $derived(googleCalendarHref(event, `${organization.url}/calendario/${event.id}`));
     let ios = $state(false);
@@ -96,10 +96,8 @@
             </dd>
         {/if}
     </dl>
-    {#if ios}
-        <p><a href="/calendario/{event.id}.ics" download>Aggiungi al tuo calendario</a></p>
-    {:else}
-        <p><a href={google}>Aggiungi al tuo calendario</a></p>
+    {#if upcoming}
+        <p><a href={ios ? `/calendario/${event.id}.ics` : google} download={ios || undefined}>Aggiungi al tuo calendario</a></p>
     {/if}
 </section>
 
@@ -122,4 +120,9 @@
     </section>
 {/if}
 
-<p class="rimando"><a href="/calendario">Calendario</a></p>
+<!-- Il rimando alla pagina che elenca l'evento: il Calendario o, quando è passato, Eventi passati -->
+{#if data.past}
+    <p class="rimando"><a href="/calendario/archivio">Eventi passati</a></p>
+{:else}
+    <p class="rimando"><a href="/calendario">Calendario</a></p>
+{/if}

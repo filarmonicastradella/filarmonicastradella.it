@@ -48,6 +48,14 @@
     </TimelineSections>
 {/if}
 
+<!-- Gli eventi già conclusi hanno una pagina loro, impaginata come questa -->
+{#if data.hasPast}
+    <section>
+        <h2>Eventi passati</h2>
+        <p>I concerti e gli appuntamenti che ci sono già stati, mese per mese: <a href="/calendario/archivio">eventi passati</a>.</p>
+    </section>
+{/if}
+
 <!-- Chi guarda dove suoniamo può volerci al suo evento: l'invito porta alla pagina degli ingaggi, che spiega occasioni e formazioni -->
 <section>
     <h2>Al tuo evento</h2>

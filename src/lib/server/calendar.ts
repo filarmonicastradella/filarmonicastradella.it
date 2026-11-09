@@ -1,7 +1,7 @@
 import { GOOGLE_CALENDAR_API_KEY } from "$env/static/private";
 import sanitizeHtml from "sanitize-html";
 import { ensembles } from "$lib/ensembles";
-import type { EventItem } from "$lib/events";
+import { hasNotEnded, type EventItem } from "$lib/events";
 
 const CALENDAR_ID = "10769a48a48eab07981c5dc931bd2a4b4b629eae0cbfcc9a92c16f5391156d47@group.calendar.google.com";
 const API_URL = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events`;
@@ -115,19 +115,31 @@ function toEventItem(evt: any): EventItem {
     };
 }
 
-async function fetchUpcomingEvents(): Promise<EventItem[]> {
-    const params = new URLSearchParams({
-        key: GOOGLE_CALENDAR_API_KEY,
-        timeMin: new Date().toISOString(),
-        maxResults: "250",
-        orderBy: "startTime",
-        singleEvents: "true"
-    });
-    const res = await fetch(`${API_URL}?${params}`);
-    if (!res.ok) throw new Error(`Google Calendar API: ${res.status}`);
-    const data = await res.json();
+/*
+ * Tutti gli eventi pubblici, passati e in programma (dal 9/11/2026, prima solo quelli in programma): le pagine degli eventi restano
+ * online anche dopo la data, così i link che le citano non si rompono, e quelli passati vanno in Eventi passati. Il limite in avanti
+ * (18 mesi) serve agli eventi ricorrenti senza fine, che altrimenti si ripeterebbero all'infinito; le pagine dell'API si seguono tutte.
+ */
+async function fetchEvents(): Promise<EventItem[]> {
+    const items: any[] = [];
+    let pageToken: string | undefined;
+    do {
+        const params = new URLSearchParams({
+            key: GOOGLE_CALENDAR_API_KEY,
+            timeMax: new Date(Date.now() + 548 * 86_400_000).toISOString(),
+            maxResults: "2500",
+            orderBy: "startTime",
+            singleEvents: "true",
+            ...(pageToken && { pageToken })
+        });
+        const res = await fetch(`${API_URL}?${params}`);
+        if (!res.ok) throw new Error(`Google Calendar API: ${res.status}`);
+        const data = await res.json();
+        items.push(...(data.items ?? []));
+        pageToken = data.nextPageToken;
+    } while (pageToken);
 
-    return (data.items ?? []).filter((evt: any) => !isInternal(evt)).map(toEventItem);
+    return items.filter((evt) => !isInternal(evt)).map(toEventItem);
 }
 
 /*
@@ -140,11 +152,19 @@ const isInternal = (evt: any) => /^\s*prove\b/i.test(evt.summary ?? "") || /crea
 // Le pagine della stessa build condividono una sola richiesta al calendario.
 let cache: { at: number; events: Promise<EventItem[]> } | undefined;
 
-export function getUpcomingEvents(): Promise<EventItem[]> {
+// Tutti gli eventi pubblici, dal più vecchio: per le pagine dei singoli eventi e la mappa del sito
+export function getEvents(): Promise<EventItem[]> {
     if (!cache || Date.now() - cache.at > CACHE_MS) {
-        const events = fetchUpcomingEvents();
+        const events = fetchEvents();
         events.catch(() => (cache = undefined));
         cache = { at: Date.now(), events };
     }
     return cache.events;
 }
+
+// Gli eventi in programma al momento della build, dal più vicino
+export const getUpcomingEvents = async () => (await getEvents()).filter((event) => hasNotEnded(event, new Date()));
+
+// Gli eventi già conclusi, dal più recente
+export const getPastEvents = async () =>
+    (await getEvents()).filter((event) => !hasNotEnded(event, new Date())).reverse();

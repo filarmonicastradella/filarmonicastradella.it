@@ -1,4 +1,5 @@
-import { getUpcomingEvents } from "$lib/server/calendar";
+import { getPastEvents, getUpcomingEvents } from "$lib/server/calendar";
 import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = async () => ({ events: await getUpcomingEvents() });
+// Gli eventi in programma; di quelli passati basta sapere se ce ne sono, per il rimando a Eventi passati
+export const load: PageServerLoad = async () => ({ events: await getUpcomingEvents(), hasPast: (await getPastEvents()).length > 0 });

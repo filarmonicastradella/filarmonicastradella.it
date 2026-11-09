@@ -1,4 +1,4 @@
-import { getUpcomingEvents } from "$lib/server/calendar";
+import { getEvents } from "$lib/server/calendar";
 import { ensembles } from "$lib/ensembles";
 import { activeCategories, articles } from "$lib/articles";
 import { organization } from "$lib/organization";
@@ -16,7 +16,7 @@ const pages = Object.keys(import.meta.glob("/src/routes/**/+page.svelte"))
     .filter((path) => !EXCLUDED.test(path));
 
 export const GET: RequestHandler = async () => {
-    const events = await getUpcomingEvents();
+    const events = await getEvents(); // anche i passati: le loro pagine restano online
 
     const paths = [
         ...pages,
