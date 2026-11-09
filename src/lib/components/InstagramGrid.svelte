@@ -3,8 +3,15 @@
 
     // La griglia delle foto e dei video di Instagram, per la galleria in home e per Foto e video. Con `featured` (la home), da 64rem
     // la prima foto è grande nella prima colonna delle sezioni e le altre sei piccole nella seconda, su due righe; sotto, le prime quattro.
-    // `placeholders`: caselle segnaposto dopo le foto, finché non ce ne sono abbastanza per riempire la griglia
-    let { slides, featured = false, placeholders = 0 }: { slides: GallerySlide[]; featured?: boolean; placeholders?: number } = $props();
+    // `placeholders`: caselle segnaposto dopo le foto, finché non ce ne sono abbastanza per riempire la griglia.
+    // `link`: dove porta ogni casella, foto o video (la home porta al post in Foto e video); senza, le foto aprono il post su Instagram
+    // e i video si guardano lì, con il player del browser
+    let {
+        slides,
+        featured = false,
+        placeholders = 0,
+        link
+    }: { slides: GallerySlide[]; featured?: boolean; placeholders?: number; link?: (slide: GallerySlide) => string } = $props();
 
     // Le foto sono ritagliate in 4:5 (la grande alla misura del suo riquadro): una foto orizzontale riempie l'altezza, quindi serve un
     // file più largo della casella, di quanto è più larga. Senza questo il browser sceglie un file troppo piccolo e la foto si sgrana.
@@ -24,7 +31,20 @@
         <!-- Nella figura, la griglia ha il titolo sopra e tutta la larghezza, come le schede (layout.css) -->
         <li style:background-color={slide.color}>
             <figure>
-                {#if slide.mediaType === "VIDEO"}
+                {#if link}
+                    <!-- Anche il video è un'immagine, il suo fotogramma di copertina: si guarda nella pagina dove porta il link -->
+                    <a href={link(slide)}>
+                        <img
+                            src={slide.imageUrl}
+                            srcset={slide.srcset}
+                            sizes={sizes(slide, index)}
+                            width={slide.width}
+                            height={slide.height}
+                            alt={slide.mediaType === "VIDEO" ? `Video: ${slide.alt}` : slide.alt}
+                            loading="lazy"
+                        />
+                    </a>
+                {:else if slide.mediaType === "VIDEO"}
                     <!-- Mai in riproduzione automatica (docs/DESIGN.md, Movimento) -->
                     <!-- svelte-ignore a11y_media_has_caption -->
                     <video

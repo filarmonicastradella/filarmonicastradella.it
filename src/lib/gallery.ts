@@ -16,6 +16,7 @@ export interface GallerySlide {
 
 export interface GalleryPost {
     permalink: string;
+    anchor: string; // l'ancora del post in Foto e video, per arrivarci dalla galleria in home
     date: string; // AAAA-MM-GG, per <time datetime> e per le sezioni dei mesi
     title: string; // la prima frase della didascalia
     paragraphs: string[]; // il resto della didascalia, senza hashtag
@@ -27,6 +28,9 @@ export interface GalleryPost {
 const data = import.meta.glob<{ slides: GallerySlide[] | null }>("/src/lib/content/instagram.json", { eager: true, import: "default" });
 
 export const gallery: GallerySlide[] | null = Object.values(data)[0]?.slides ?? null;
+
+// L'ancora di un post in Foto e video: il codice del post nell'indirizzo di Instagram (https://www.instagram.com/p/<codice>/)
+export const postAnchor = (permalink: string) => `post-${permalink.split("/").filter(Boolean).pop()}`;
 
 // Le foto raggruppate per post, dal più recente come su Instagram: ogni post ha la sua data e la sua didascalia, divisa nella
 // prima frase (il titolo) e nei paragrafi che seguono
@@ -42,6 +46,7 @@ export const galleryPosts: GalleryPost[] = Object.values(Object.groupBy(gallery 
         const [title, ...others] = first.split(/(?<=[.!?])\s+/);
         return {
             permalink,
+            anchor: postAnchor(permalink),
             date: timestamp!.slice(0, 10),
             title: title || alt,
             paragraphs: [others.join(" "), ...rest].filter(Boolean),

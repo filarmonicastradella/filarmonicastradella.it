@@ -21,7 +21,7 @@
 {#if galleryPosts.length > 0}
     <TimelineSections items={galleryPosts} date={(post) => post.date}>
         {#snippet entry(post, level)}
-            <article itemscope itemtype="https://schema.org/SocialMediaPosting">
+            <article id={post.anchor} itemscope itemtype="https://schema.org/SocialMediaPosting">
                 <div>
                     <p><time itemprop="datePublished" datetime={post.date}>{formatArticleDate(post.date)}</time></p>
                     <svelte:element this={`h${level}`} itemprop="headline">{post.title}</svelte:element>
