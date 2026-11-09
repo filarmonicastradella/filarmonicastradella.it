@@ -99,7 +99,7 @@
      propone anche la fotocamera: si fotografano fronte e retro al momento, due file insieme (multiple) -->
 {#snippet identityDocument()}
     <p>
-        <label for="documento_identita">Documento di identità, fronte e retro (PDF, JPG o PNG: dal telefono puoi fotografarlo)</label>
+        <label for="documento_identita">Documento di identità (PDF, JPG o PNG)</label>
         <input type="file" id="documento_identita" name="attachment" required multiple accept="application/pdf,image/jpeg,image/png" />
     </p>
 {/snippet}
