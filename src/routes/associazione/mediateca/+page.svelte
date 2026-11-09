@@ -25,6 +25,8 @@
                 <div>
                     <!-- La didascalia di Instagram non è un titolo: il titolo del post è la sua data, con l'aspetto delle date -->
                     <svelte:element this={`h${level}`}><time itemprop="datePublished" datetime={post.date}>{formatArticleDate(post.date)}</time></svelte:element>
+                    <!-- Il post su Instagram, sotto la data (a contorno, come «Seguici su Instagram») -->
+                    <p><a itemprop="url" href={post.permalink} target="_blank" rel="noopener noreferrer">Vedi su Instagram</a></p>
                     {#if post.paragraphs.length > 0}
                         <div itemprop="description">
                             {#each post.paragraphs as paragraph, i (i)}
@@ -32,7 +34,6 @@
                             {/each}
                         </div>
                     {/if}
-                    <link itemprop="url" href={post.permalink} />
                 </div>
                 <InstagramGrid slides={post.slides} />
             </article>
@@ -59,9 +60,17 @@
         block-size: auto;
     }
 
-    /* Nella riga d'agenda la data (qui il titolo) sta a sinistra, dove le schede hanno la data, e la didascalia a destra dall'alto */
+    /*
+     * Nella riga d'agenda la data (qui il titolo) sta a sinistra, dove le schede hanno la data, con sotto «Vedi su Instagram», e la
+     * didascalia a destra dall'alto; sul telefono una sotto l'altra, in quest'ordine
+     */
     article > div > :global(:is(h3, h4)) {
-        grid-area: 1 / 1 / 3 / 2;
+        grid-area: 1 / 1;
+    }
+
+    article > div > p:has(> a) {
+        grid-area: 2 / 1;
+        align-self: start;
     }
 
     article > div > [itemprop="description"] {

@@ -2,8 +2,7 @@
     import ChevronLeftIcon from "~icons/heroicons/chevron-left-20-solid";
     import ChevronRightIcon from "~icons/heroicons/chevron-right-20-solid";
     import PlayIcon from "~icons/heroicons/play-20-solid";
-    import { formatArticleDate } from "$lib/articles";
-    import { captionParagraphs, type GallerySlide } from "$lib/gallery";
+    import type { GallerySlide } from "$lib/gallery";
 
     // La griglia delle foto e dei video di Instagram, per la galleria in home e per Foto e video. Con `featured` (la home) la prima
     // foto è grande e le altre piccole intorno, in tre composizioni secondo la larghezza (nello stile, sotto).
@@ -35,8 +34,8 @@
         return `(min-width: 64rem) ${Math.ceil(wide)}rem, (min-width: 40rem) ${Math.ceil(middle)}vw, ${Math.ceil(narrow)}vw`;
     };
 
-    // La finestra di Foto e video (dal 9/11/2026): la foto alla misura dello schermo, o il video con il player del browser, che non
-    // parte da solo (docs/DESIGN.md, Movimento), con la didascalia breve e il link al post. Si chiude con Esc (il <dialog> lo fa da sé),
+    // La finestra di Foto e video (dal 9/11/2026): solo la foto alla misura dello schermo, o il video con il player del browser, che
+    // non parte da solo (docs/DESIGN.md, Movimento); data, didascalia e link al post sono nella pagina. Si chiude con Esc (il <dialog> lo fa da sé),
     // con «Chiudi» o toccando fuori; chiudendo il video si ferma, perché sparisce. «Precedente» e «Successiva» (anche con i tasti
     // freccia) passano alle altre foto della stessa griglia, cioè dello stesso post; alla prima e all'ultima sono spenti.
     let dialog = $state<HTMLDialogElement>();
@@ -120,28 +119,14 @@
         onkeydown={keydown}
     >
         {#if current}
-            <!-- I microdati del post (la data riconoscibile come le altre date in testa, typography.css) -->
-            <figure itemscope itemtype="https://schema.org/SocialMediaPosting">
-                {#if current.mediaType === "VIDEO"}
-                    <!-- svelte-ignore a11y_media_has_caption -->
-                    <video src={current.mediaUrl} poster={current.thumbnailUrl} width={current.width} height={current.height} controls playsinline></video>
-                {:else}
-                    <img src={current.imageUrl} srcset={current.srcset} sizes="90vw" width={current.width} height={current.height} alt={current.alt} />
-                {/if}
-                <figcaption>
-                    {#if current.timestamp}
-                        <p><time itemprop="datePublished" datetime={current.timestamp.slice(0, 10)}>{formatArticleDate(current.timestamp.slice(0, 10))}</time></p>
-                    {/if}
-                    <!-- La didascalia intera (il testo alternativo della foto è solo la prima frase, per gli screen reader) -->
-                    <div itemprop="description">
-                        {#each captionParagraphs(current.caption) as paragraph, i (i)}
-                            <p>{paragraph}</p>
-                        {/each}
-                    </div>
-                </figcaption>
-            </figure>
+            <!-- Solo la foto o il video: data, didascalia e link a Instagram stanno nella pagina, accanto alla griglia -->
+            {#if current.mediaType === "VIDEO"}
+                <!-- svelte-ignore a11y_media_has_caption -->
+                <video src={current.mediaUrl} poster={current.thumbnailUrl} width={current.width} height={current.height} controls playsinline></video>
+            {:else}
+                <img src={current.imageUrl} srcset={current.srcset} sizes="90vw" width={current.width} height={current.height} alt={current.alt} />
+            {/if}
             <p>
-                <a href={current.permalink} target="_blank" rel="noopener noreferrer">Apri su Instagram</a>
                 <button type="button" onclick={() => go(-1)} disabled={index === 0}><ChevronLeftIcon aria-hidden="true" /> Precedente</button>
                 <button type="button" onclick={() => go(1)} disabled={index === slides.length - 1}>Successiva <ChevronRightIcon aria-hidden="true" /></button>
                 <button type="button" onclick={() => dialog?.close()}>Chiudi</button>
@@ -214,10 +199,10 @@
     }
 
     /*
-     * La finestra: sul fondo rialzato, che si stacca dal velo scuro dietro (--backdrop); la foto intera (non ritagliata) alla misura che ci sta, la data, la didascalia e, sotto, «Apri su Instagram» a sinistra e i pulsanti a destra. Compare sfumando (--duration-slow, solo
+     * La finestra: sul fondo rialzato, che si stacca dal velo scuro dietro (--backdrop); la foto intera (non ritagliata) alla misura che ci sta e, sotto, i pulsanti. Compare sfumando (--duration-slow, solo
      * opacità); mentre è aperta la pagina sotto non scorre.
-     * Misura fissa, quasi tutto lo schermo (al massimo 80rem di larghezza), uguale per ogni foto: così data, didascalia e pulsanti
-     * stanno sempre nello stesso punto, in fondo, e passando da una foto all'altra i pulsanti non si spostano. La foto prende lo
+     * Misura fissa, quasi tutto lo schermo (al massimo 80rem di larghezza), uguale per ogni foto: così i pulsanti
+     * stanno sempre nello stesso punto, in fondo, e passando da una foto all'altra non si spostano. La foto prende lo
      * spazio che resta, intera.
      */
     dialog {
@@ -237,12 +222,6 @@
         display: grid;
         grid-template-rows: minmax(0, 1fr) auto;
         animation: fade-in var(--duration-slow) var(--ease);
-    }
-
-    dialog figure {
-        display: grid;
-        grid-template-rows: minmax(0, 1fr) auto;
-        min-block-size: 0;
     }
 
     /* All'apertura il fuoco va sulla finestra stessa: il suo contorno non serve, i comandi dentro hanno il loro */
@@ -267,25 +246,6 @@
         object-fit: contain;
     }
 
-    /* Sotto la foto la data e, sotto, la didascalia, a ogni larghezza */
-    dialog figcaption {
-        display: grid;
-        gap: var(--space-2);
-        font-size: var(--fs-small);
-
-        & p {
-            margin: 0;
-        }
-
-        & p + p {
-            margin-block-start: var(--space-2);
-        }
-
-        & > [itemprop="description"] {
-            color: var(--text-muted);
-        }
-    }
-
     /* La riga dei comandi è larga quanto la finestra, non quanto una colonna di testo come gli altri paragrafi: «Chiudi» va al bordo destro */
     dialog > p {
         max-inline-size: none;
@@ -295,13 +255,9 @@
         margin: var(--space-4) 0 0;
     }
 
-    /*
-     * «Apri su Instagram» a sinistra, i pulsanti insieme a destra: «Precedente», «Successiva», «Chiudi», tutti alti uguali (si allungano
-     * all'altezza della riga, anche «Chiudi», che non ha l'icona)
-     */
-    dialog > p > a {
-        align-self: center;
-        margin-inline-end: auto;
+    /* «Precedente» e «Successiva» a sinistra, «Chiudi» a destra, tutti alti uguali (si allungano all'altezza della riga, anche «Chiudi», che non ha l'icona) */
+    dialog > p > button:last-child {
+        margin-inline-start: auto;
     }
 
     dialog > p > button > :global(svg) {
