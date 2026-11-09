@@ -134,4 +134,12 @@ for (const [from, to] of Object.entries(redirects)) {
     await writeFile(`${BUILD}${from}.html`, page(to));
     written++;
 }
-console.log(`Rimandi dai vecchi indirizzi: ${written}`);
+// Una sitemap temporanea con i vecchi indirizzi (dal 9/11/2026), come consiglia Google dopo un cambio di indirizzi: la visita
+// tutta in poco tempo, trova i rimandi e mette nei risultati i nuovi. Da togliere (anche da robots.txt) quando in Search Console
+// i vecchi indirizzi risultano tutti «Pagina con reindirizzamento»
+const urls = Object.keys(redirects)
+    .sort()
+    .map((from) => `    <url><loc>${SITE}${from}</loc></url>`)
+    .join("\n");
+await writeFile(`${BUILD}/sitemap-vecchi.xml`, `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
+console.log(`Rimandi dai vecchi indirizzi: ${written}, anche in sitemap-vecchi.xml`);

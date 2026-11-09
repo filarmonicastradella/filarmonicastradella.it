@@ -2,3 +2,5 @@ User-agent: *
 Disallow:
 
 Sitemap: https://filarmonicastradella.it/sitemap.xml
+# I vecchi indirizzi, con i rimandi ai nuovi: temporanea (scripts/redirects.mjs)
+Sitemap: https://filarmonicastradella.it/sitemap-vecchi.xml
