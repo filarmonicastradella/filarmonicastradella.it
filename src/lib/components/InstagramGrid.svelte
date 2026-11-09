@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import ChevronLeftIcon from "~icons/heroicons/chevron-left-20-solid";
     import ChevronRightIcon from "~icons/heroicons/chevron-right-20-solid";
     import PlayIcon from "~icons/heroicons/play-20-solid";
@@ -54,6 +55,40 @@
     const go = (step: -1 | 1) => {
         if (index !== null && slides[index + step]) index += step;
     };
+
+    /*
+     * «Condividi» nella finestra: il menu di condivisione del dispositivo con la foto stessa (a WhatsApp, alle storie di Instagram…),
+     * convertita in JPEG perché il WebP del sito non tutte le app lo accettano come foto; dove i file non si possono condividere, e per
+     * i video, troppo pesanti, il link alla pagina. Solo dove il dispositivo ha il menu di condivisione.
+     */
+    let canShare = $state(false);
+    onMount(() => {
+        canShare = "share" in navigator;
+    });
+
+    async function jpeg(src: string) {
+        const image = new Image();
+        image.src = src;
+        await image.decode();
+        const canvas = document.createElement("canvas");
+        canvas.width = image.naturalWidth;
+        canvas.height = image.naturalHeight;
+        canvas.getContext("2d")!.drawImage(image, 0, 0);
+        const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.9));
+        return blob && new File([blob], "filarmonica-stradella.jpg", { type: "image/jpeg" });
+    }
+
+    async function share() {
+        if (!current) return;
+        const url = location.href;
+        try {
+            const file = current.mediaType === "IMAGE" && current.imageUrl ? await jpeg(current.imageUrl) : null;
+            if (file && navigator.canShare?.({ files: [file] })) await navigator.share({ files: [file], title: current.alt });
+            else await navigator.share({ title: current.alt, url });
+        } catch {
+            // Condivisione annullata: niente da fare
+        }
+    }
 
     // Le frecce della tastiera, tranne quando il fuoco è sul video, dove servono a spostarsi nel video
     function keydown(event: KeyboardEvent) {
@@ -132,6 +167,9 @@
             <p>
                 <button type="button" onclick={() => go(-1)} disabled={index === 0}><ChevronLeftIcon aria-hidden="true" /> Precedente</button>
                 <button type="button" onclick={() => go(1)} disabled={index === slides.length - 1}>Successiva <ChevronRightIcon aria-hidden="true" /></button>
+                {#if canShare}
+                    <button type="button" onclick={share}>Condividi</button>
+                {/if}
                 <button type="button" onclick={() => dialog?.close()}>Chiudi</button>
             </p>
         {/if}
@@ -359,8 +397,9 @@
         margin: var(--space-4) 0 0;
     }
 
-    /* «Precedente» e «Successiva» a sinistra, «Chiudi» a destra, tutti alti uguali (si allungano all'altezza della riga, anche «Chiudi», che non ha l'icona) */
-    dialog > p > button:last-child {
+    /* «Precedente» e «Successiva» a sinistra, «Condividi» (dove c'è) e «Chiudi» a destra, tutti alti uguali (si allungano all'altezza
+       della riga, anche quelli senza icona) */
+    dialog > p > button:nth-child(3) {
         margin-inline-start: auto;
     }
 
