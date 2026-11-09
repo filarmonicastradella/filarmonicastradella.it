@@ -209,14 +209,20 @@
     }
 
     /*
-     * La finestra: sul fondo della pagina, alta al massimo quasi tutto lo schermo; la foto intera (non ritagliata) alla misura che
-     * ci sta, la data e la didascalia e, sotto, «Apri su Instagram» a sinistra e i pulsanti a destra. Compare sfumando (--duration-slow, solo
+     * La finestra: sul fondo della pagina; la foto intera (non ritagliata) alla misura che ci sta, la data e la didascalia e, sotto, «Apri su Instagram» a sinistra e i pulsanti a destra. Compare sfumando (--duration-slow, solo
      * opacità); mentre è aperta la pagina sotto non scorre.
+     */
+    /*
+     * Misura fissa, quasi tutto lo schermo (al massimo 80rem di larghezza), uguale per ogni foto: così data, didascalia e pulsanti
+     * stanno sempre nello stesso punto, in fondo, e passando da una foto all'altra i pulsanti non si spostano. La foto prende lo
+     * spazio che resta, intera.
      */
     dialog {
         box-sizing: border-box;
-        max-inline-size: min(100vw - 2 * var(--space-4), 80rem);
-        max-block-size: calc(100dvh - 2 * var(--space-4));
+        inline-size: min(100vw - 2 * var(--space-4), 80rem);
+        block-size: calc(100dvh - 2 * var(--space-4));
+        max-inline-size: none;
+        max-block-size: none;
         padding: var(--space-4);
         border: none;
         border-radius: var(--radius);
@@ -225,7 +231,15 @@
     }
 
     dialog[open] {
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) auto;
         animation: fade-in var(--duration-slow) var(--ease);
+    }
+
+    dialog figure {
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) auto;
+        min-block-size: 0;
     }
 
     /* All'apertura il fuoco va sulla finestra stessa: il suo contorno non serve, i comandi dentro hanno il loro */
@@ -243,10 +257,9 @@
 
     dialog :is(img, video) {
         display: block;
-        inline-size: auto;
-        max-inline-size: 100%;
-        max-block-size: calc(100dvh - 12rem);
-        margin-inline: auto;
+        inline-size: 100%;
+        block-size: 100%;
+        min-block-size: 0;
         aspect-ratio: auto;
         object-fit: contain;
     }
