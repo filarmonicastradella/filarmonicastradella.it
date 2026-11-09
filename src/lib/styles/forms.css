@@ -6,7 +6,7 @@
  * Secondario: contorno inchiostro; lo hanno anche i link che scaricano o aprono un file (a[download], e a[type]
  * con il tipo del file, come il feed degli articoli e lo statuto in PDF, anche nell'intestazione),
  * i link verso un calendario («Aggiungi al tuo calendario» degli eventi e «Segui il calendario», anche
- * nell'intestazione: il file o webcal:// su iPhone, altrove Google Calendar; seguire è per pochi, come «Segui il feed» e «Seguici su Instagram» in Foto e video), i link esterni nell'intestazione che non sono l'azione della pagina (rel="external", come «Dona online» in Sostienici: l'azione, «Dona ora», è in Fai una donazione) e «Sostienici» nel menu, che è su ogni pagina e non deve
+ * nell'intestazione: il file o webcal:// su iPhone, altrove Google Calendar; seguire è per pochi, come «Segui il feed» e «Seguici su Instagram» in Foto e video), i link esterni nell'intestazione che non sono l'azione della pagina (rel="external", come «Dona ora» in Erogazione liberale, che è a contorno perché il pulsante pieno è in Sostienici) e «Sostienici» nel menu, che è su ogni pagina e non deve
  * fare concorrenza all'azione della pagina.
  * Campi: fondo rialzato e bordo sottile come le schede, angoli quasi vivi.
  */

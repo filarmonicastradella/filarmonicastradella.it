@@ -41,16 +41,17 @@
 {/snippet}
 
 <svelte:head>
-    <title>Fai una donazione — Filarmonica Alessandro Stradella</title>
+    <title>Erogazione liberale — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Come sostenere la Filarmonica Alessandro Stradella APS con un contributo libero: online con carta, Apple Pay o Google Pay, oppure con un bonifico bancario." />
 </svelte:head>
 
 <header>
-    <h1>Fai una donazione</h1>
+    <h1>Erogazione liberale</h1>
     <p>Puoi sostenere i nostri progetti con un contributo libero, con carta, Apple Pay o Google Pay oppure con un bonifico bancario.</p>
     <!-- La donazione online (dal 8/11/2026): la pagina di pagamento di Stripe, con l'importo scelto da chi dona (minimo 5 €)
-         e il codice fiscale facoltativo per la ricevuta; dopo il pagamento torna a /sostienici/dona/grazie -->
-    <p><a href={organization.donationHref}>Dona ora</a></p>
+         e il codice fiscale facoltativo per la ricevuta; dopo il pagamento torna a /sostienici/dona/grazie. Qui a contorno
+         (rel="external", forms.css): il pulsante pieno è in Sostienici, la pagina superiore -->
+    <p><a href={organization.donationHref} rel="external">Dona ora</a></p>
 </header>
 
 <section>

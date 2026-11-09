@@ -16,6 +16,6 @@
         { "name": "Calendario", "url": "/calendario" },
         { "name": "Foto e video", "url": "/associazione/mediateca" },
         { "name": "Scrivici", "url": "/contatti/scrivi" },
-        { "name": "Fai una donazione", "short_name": "Dona", "url": "/sostienici/dona" }
+        { "name": "Erogazione liberale", "short_name": "Dona", "url": "/sostienici/dona" }
     ]
 }

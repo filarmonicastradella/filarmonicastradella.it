@@ -13,9 +13,9 @@
         Suonare costa, e chi suona da solo lo sa bene. Con le donazioni la Filarmonica si fa carico di ciò che un singolo musicista
         difficilmente potrebbe sostenere.
     </p>
-    <!-- La donazione online con Stripe, a contorno (rel="external", forms.css): il pulsante pieno «Dona ora», l'azione, sta in Fai una
-         donazione, la pagina delle erogazioni (dal 9/11/2026) -->
-    <p><a href={organization.donationHref} rel="external">Dona online</a></p>
+    <!-- Il modo più comodo per donare, con un clic: la pagina di pagamento di Stripe (carta, Apple Pay, Google Pay). Pieno qui, l'azione
+         della pagina; in Erogazione liberale lo stesso pulsante è a contorno -->
+    <p><a href={organization.donationHref}>Dona ora</a></p>
 </header>
 
 <ul>
@@ -33,7 +33,7 @@
     -->
     <li>
         <a href="/sostienici/dona">
-            <h2>Fai una donazione</h2>
+            <h2>Erogazione liberale</h2>
             <p>Un contributo libero, online o con un bonifico bancario, con le agevolazioni fiscali previste per le APS.</p>
         </a>
     </li>
