@@ -397,9 +397,9 @@ main > nav a {
     text-decoration: none;
 }
 
-/* La pagina in cui ci si trova (le categorie degli articoli) */
+/* La pagina in cui ci si trova (le categorie degli articoli): scura, testo e sottolineatura, anche al passaggio del mouse */
 main > nav a[aria-current="page"] {
-    color: var(--text-brand);
+    color: var(--text);
     text-decoration: underline;
     text-decoration-thickness: var(--rule-width);
     text-underline-offset: var(--space-2);
