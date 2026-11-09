@@ -16,7 +16,7 @@ export const legalSeat: Location = {
     mapsHref: "https://maps.google.com/?q=Via+Stretta+5+54013+Fivizzano+MS"
 };
 
-// In Contatti c'è per ora solo quella di Fivizzano (dal 9/11/2026): Serricciolo si aggiunge quando indirizzo e descrizione sono confermati
+// In Contatti tutte e due (dal 9/11/2026). Serricciolo è una frazione di Aulla, non di Fivizzano (CAP 54011)
 export const operationalSeats: Location[] = [
     {
         id: "sede-fivizzano",
@@ -30,10 +30,10 @@ export const operationalSeats: Location[] = [
     },
     {
         id: "sede-serricciolo",
-        name: "Sede operativa di Serricciolo",
-        address: ["Circolo Culturale \"Giovanni Fantoni\"", "Via la Spezia 7", "54013 Serricciolo, Fivizzano (MS)"],
+        name: "Sede operativa di Aulla",
+        address: ["Circolo Culturale «Giovanni Fantoni»", "Via la Spezia 7", "54011 Serricciolo, Aulla (MS)"],
         description: "Presso il Circolo Fantoni, attiva per le iniziative e gli incontri sul territorio.",
         mapsHref: "https://maps.app.goo.gl/FYszuhGgyCZdf5zm6",
-        mapEmbed: "https://maps.google.com/maps?q=Via+la+Spezia+7,+Serricciolo,+Fivizzano+MS&output=embed"
+        mapEmbed: "https://maps.google.com/maps?q=Via+la+Spezia+7,+Serricciolo,+Aulla+MS&output=embed"
     }
 ];
