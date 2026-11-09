@@ -10,7 +10,7 @@ import icon from "../../../static/apple-touch-icon.png?inline";
  */
 const text = (value: string) => value.replace(/[\;,]/g, (c) => `\\${c}`);
 
-// La sede legale come indirizzo: «Via Stretta 5», «54013 Fivizzano (MS)»
+// La sede legale come indirizzo: «Via Porta Nuova 1», «54013 Fivizzano (MS)»
 const [street, place] = legalSeat.address;
 const [, postalCode, city, province] = place.match(/^(\d{5}) (.+) \((\w+)\)$/)!;
 
