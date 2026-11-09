@@ -24,9 +24,12 @@
     const sizes = (slide: GallerySlide, index: number) => {
         const ratio = slide.width && slide.height ? slide.width / slide.height : 4 / 5;
         const crop = Math.max(1, ratio * (5 / 4));
+        // Foto e video: la grande circa 27rem da 64rem (36rem se è sola) e tutto lo schermo sotto; le piccole fino a metà della colonna
+        // di testo (18rem) da 64rem e metà dello schermo sotto. Una foto più larga del 4:3 riempie l'altezza.
         if (!featured) {
             const landscapeCrop = Math.max(1, ratio * (3 / 4));
-            return `(min-width: 64rem) ${Math.ceil(16 * landscapeCrop)}rem, ${Math.ceil(50 * landscapeCrop)}vw`;
+            const [wide, narrow] = index === 0 ? [slides.length === 1 ? 36 : 27, 100] : [18, 50];
+            return `(min-width: 64rem) ${Math.ceil(wide * landscapeCrop)}rem, ${Math.ceil(narrow * landscapeCrop)}vw`;
         }
         // Sul telefono la grande è in 4:3: una foto più larga riempie l'altezza
         const [wide, middle, narrow] =
@@ -136,20 +139,121 @@
 {/if}
 
 <style>
-    /*
-     * Sotto il titolo, a tutta larghezza: due foto per riga su telefono, quattro per riga da 64rem in su, angoli quasi vivi.
-     */
+    /* Sotto il titolo, a tutta larghezza, angoli quasi vivi */
     ul {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
         gap: var(--space-2);
         padding: 0;
         list-style: none;
     }
 
+    /*
+     * Foto e video (senza featured): come nella home la prima foto comanda e le altre fanno da contorno, ma senza segnaposto: la griglia
+     * si adatta al numero di foto del post. Le piccole stanno tre per riga su una griglia di sei colonne; nell'ultima riga, se ne resta
+     * una prende tutta la riga, se ne restano due metà ciascuna, così non restano caselle vuote. Le righe delle piccole hanno
+     * un'altezza fissa (quella di una piccola in 4:3), così le foto più larghe dell'ultima riga restano allineate.
+     * - Sotto 64rem: la grande a tutta larghezza in 4:3, sotto le piccole (la riga si misura sulla larghezza della scheda, che è un
+     *   contenitore: content.css).
+     * - Da 64rem: la grande nella prima colonna delle sezioni, alta quanto tutte le righe delle piccole, e le piccole nella seconda,
+     *   larga quanto la colonna di testo. Una foto sola sta nella seconda colonna, sotto la didascalia.
+     */
+    ul:not([data-featured]) {
+        --row: calc((100cqi - 2 * var(--space-2)) / 3 * 3 / 4);
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        /* La prima riga è quella della grande, alta quanto la foto in 4:3; le altre hanno l'altezza delle piccole */
+        grid-template-rows: auto;
+        grid-auto-rows: var(--row);
+
+        & > li {
+            grid-column: span 2;
+        }
+
+        & > li:first-child {
+            grid-column: 1 / -1;
+            grid-row: auto;
+        }
+
+        & > li:nth-last-child(2):nth-child(3n + 2),
+        & > li:last-child:nth-child(3n) {
+            grid-column: span 3;
+        }
+
+        & > li:last-child:nth-child(3n + 2) {
+            grid-column: 1 / -1;
+        }
+
+        & > li:not(:first-child) :is(img, video) {
+            block-size: 100%;
+            aspect-ratio: auto;
+        }
+    }
+
     @media (min-width: 64rem) {
-        ul {
-            grid-template-columns: repeat(4, 1fr);
+        ul:not([data-featured]) {
+            --small: calc((var(--container-text) - 5 * var(--space-2)) / 6);
+            --row: calc((var(--small) * 2 + var(--space-2)) * 3 / 4);
+            grid-template-columns: minmax(0, 1fr) repeat(6, var(--small));
+            grid-template-rows: none;
+
+            /* La grande: alta quanto tutte le righe delle piccole (tre per riga), con lo stacco tra le colonne delle sezioni */
+            & > li:first-child {
+                grid-column: 1;
+                margin-inline-end: calc(var(--space-6) - var(--space-2));
+            }
+
+            & > li:first-child :is(figure, a, img, video) {
+                block-size: 100%;
+            }
+
+            & > li:first-child :is(img, video) {
+                aspect-ratio: auto;
+            }
+
+            & > li:not(:first-child):last-child:nth-child(3n + 2) {
+                grid-column: 2 / -1;
+            }
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(2)) > li:first-child {
+            grid-row: span 1;
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(5)) > li:first-child {
+            grid-row: span 2;
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(8)) > li:first-child {
+            grid-row: span 3;
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(11)) > li:first-child {
+            grid-row: span 4;
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(14)) > li:first-child {
+            grid-row: span 5;
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(17)) > li:first-child {
+            grid-row: span 6;
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(20)) > li:first-child {
+            grid-row: span 7;
+        }
+
+        /* Una foto sola: nella seconda colonna, sotto la didascalia, in 4:3 */
+        ul:not([data-featured]):not(:has(> li:nth-child(2))) {
+            grid-auto-rows: auto;
+
+            & > li:first-child {
+                grid-column: 2 / -1;
+                margin-inline-end: 0;
+            }
+
+            & > li:first-child :is(img, video) {
+                aspect-ratio: 4 / 3;
+            }
         }
     }
 
