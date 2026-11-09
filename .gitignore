@@ -8,6 +8,7 @@ node_modules
 /.svelte-kit
 # Galleria di Instagram, scaricata prima della build (scripts/instagram.mjs)
 /static/instagram
+/.cache
 /src/lib/content/instagram.json
 /build
 

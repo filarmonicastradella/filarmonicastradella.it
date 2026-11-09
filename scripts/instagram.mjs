@@ -12,7 +12,9 @@ import sharp from "sharp";
 const API = "https://graph.facebook.com/v23.0";
 const ACCOUNT = "17841439444224332"; // l'account Instagram filarmonicastradella
 const HASHTAG = "#filarmonicastradella"; // solo i post con questo hashtag finiscono sul sito
-const MEDIA_DIR = "static/instagram";
+const MEDIA_DIR = "static/instagram"; // quello che il sito pubblica: le misure in WebP e i video
+// Gli originali, da cui nascono le misure: fuori da static, così non si pubblicano (il sito non li usa)
+const ORIGINALS_DIR = ".cache/instagram";
 const DATA_FILE = "src/lib/content/instagram.json";
 const MAX_AGE = 60 * 60 * 1000; // una lettura all'ora al massimo: basta per la build ogni 3 ore
 const WIDTHS = [320, 640, 1080];
@@ -41,24 +43,24 @@ const altText = (caption = "") => {
     return alt || "Foto dal profilo Instagram della Filarmonica";
 };
 
-// Scarica un file una volta sola: il nome dipende dall'id del contenuto, che su Instagram non cambia
-async function download(url, file) {
-    if (!existsSync(`${MEDIA_DIR}/${file}`)) {
+// Scarica un file una volta sola, nella cartella indicata: il nome dipende dall'id del contenuto, che su Instagram non cambia
+async function download(url, file, dir = MEDIA_DIR) {
+    if (!existsSync(`${dir}/${file}`)) {
         const res = await fetch(url);
         if (!res.ok) throw new Error(`${url}: ${res.status}`);
-        await writeFile(`${MEDIA_DIR}/${file}`, Buffer.from(await res.arrayBuffer()));
+        await writeFile(`${dir}/${file}`, Buffer.from(await res.arrayBuffer()));
     }
     return file;
 }
 
 // Le misure per il srcset, in WebP, e il colore dominante come fondo mentre la foto si carica
 async function sizes(original, id) {
-    const image = sharp(`${MEDIA_DIR}/${original}`);
+    const image = sharp(`${ORIGINALS_DIR}/${original}`);
     const { width, height } = await image.metadata();
     const files = [];
     for (const w of WIDTHS.filter((w) => w < width).concat(width)) {
         const file = `${id}-${w}.webp`;
-        if (!existsSync(`${MEDIA_DIR}/${file}`)) await sharp(`${MEDIA_DIR}/${original}`).resize(w).webp({ quality: 75 }).toFile(`${MEDIA_DIR}/${file}`);
+        if (!existsSync(`${MEDIA_DIR}/${file}`)) await sharp(`${ORIGINALS_DIR}/${original}`).resize(w).webp({ quality: 75 }).toFile(`${MEDIA_DIR}/${file}`);
         files.push({ file, width: w });
     }
     const { dominant } = await image.stats();
@@ -69,7 +71,7 @@ async function toSlide(media, post) {
     const video = media.media_type === "VIDEO";
     const imageSource = video ? media.thumbnail_url : media.media_url;
     if (!imageSource) return undefined;
-    const original = await download(imageSource, `${media.id}.jpg`);
+    const original = await download(imageSource, `${media.id}.jpg`, ORIGINALS_DIR);
     const { files, width, height, color } = await sizes(original, media.id);
     const large = files.at(-1).file;
     const videoFile = video && media.media_url ? await download(media.media_url, `${media.id}.mp4`) : undefined;
@@ -115,6 +117,7 @@ try {
     }
 
     await mkdir(MEDIA_DIR, { recursive: true });
+    await mkdir(ORIGINALS_DIR, { recursive: true });
     const slides = [];
     for (const post of posts.filter(({ caption }) => caption?.toLowerCase().includes(HASHTAG))) {
         for (const media of post.children?.data ?? [post]) {
@@ -123,10 +126,13 @@ try {
         }
     }
 
-    // Via i file dei post tolti da Instagram o senza più l'hashtag (si tengono gli originali, da cui nascono le misure)
-    const used = new Set(slides.flatMap(({ id }) => [id]));
-    for (const file of await readdir(MEDIA_DIR)) {
-        if (!used.has(file.split(/[-.]/)[0])) await rm(`${MEDIA_DIR}/${file}`);
+    // Via i file dei post tolti da Instagram o senza più l'hashtag, pubblicati e originali; e gli originali rimasti in static
+    // dalle versioni precedenti dello script
+    const used = new Set(slides.map(({ id }) => id));
+    for (const dir of [MEDIA_DIR, ORIGINALS_DIR]) {
+        for (const file of await readdir(dir)) {
+            if (!used.has(file.split(/[-.]/)[0]) || (dir === MEDIA_DIR && file.endsWith(".jpg"))) await rm(`${dir}/${file}`);
+        }
     }
 
     await writeFile(DATA_FILE, JSON.stringify({ fetchedAt: new Date().toISOString(), slides }, null, 2));

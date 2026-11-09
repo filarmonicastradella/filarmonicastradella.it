@@ -33,6 +33,7 @@ jobs:
         with:
           path: |
             static/instagram
+            .cache/instagram
             src/lib/content/instagram.json
           key: instagram-${{ github.run_id }}
           restore-keys: instagram-
