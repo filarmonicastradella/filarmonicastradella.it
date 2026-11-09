@@ -1,7 +1,34 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import CopyValue from "$lib/components/CopyValue.svelte";
     import { legalSeat } from "$lib/locations";
     import { organization } from "$lib/organization";
+
+    // I dati dell'ente si copiano uno per uno (CopyValue) oppure tutti insieme con «Copia i dati», come i dati del bonifico
+    // nelle donazioni: solo con JS e con gli appunti; per tre secondi il pulsante dice «Dati copiati»
+    const allData = [
+        `Denominazione: ${organization.name}`,
+        `Codice fiscale: ${organization.taxCode}`,
+        `RUNTS: ${organization.runts.name}`,
+        `Sede legale: ${legalSeat.address.join(", ")}`,
+        `PEC: ${organization.pec}`
+    ].join("\n");
+
+    let canCopy = $state(false);
+    let copiedAll = $state(false);
+    onMount(() => {
+        canCopy = !!navigator.clipboard;
+    });
+
+    async function copyAll() {
+        try {
+            await navigator.clipboard.writeText(allData);
+            copiedAll = true;
+            setTimeout(() => (copiedAll = false), 3000);
+        } catch {
+            copiedAll = false;
+        }
+    }
 </script>
 
 <svelte:head>
@@ -28,6 +55,9 @@
         <dt>PEC</dt>
         <dd><a href="mailto:{organization.pec}">{organization.pec}</a></dd>
     </dl>
+    {#if canCopy}
+        <p><button type="button" onclick={copyAll} aria-live="polite"><span hidden={copiedAll}>Copia i dati</span><span hidden={!copiedAll}>Dati copiati</span></button></p>
+    {/if}
 </section>
 
 <section>
