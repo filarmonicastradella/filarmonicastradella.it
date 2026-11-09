@@ -3,7 +3,7 @@
     import { ensembles } from "$lib/ensembles";
     import { bookingFaq } from "$lib/faq";
     import { occasions } from "$lib/occasions";
-    import { organization, whatsappHref } from "$lib/organization";
+    import { organization } from "$lib/organization";
 
     // La pagina per chi cerca musica per un evento (dal 3/11/2026): spiega occasioni e formazioni e porta al modulo Scrivici
     // (/contatti/scrivi), che resta l'unico modulo. I dati strutturati descrivono il servizio offerto dall'ente in Lunigiana.
@@ -55,7 +55,6 @@
         all'occasione.
     </p>
     <p><a href={form}>Chiedi un ingaggio</a></p>
-    <p><a href={whatsappHref("Ciao, vorrei informazioni per avere la Filarmonica a un evento.")}>Scrivici su WhatsApp</a></p>
 </header>
 
 <section>

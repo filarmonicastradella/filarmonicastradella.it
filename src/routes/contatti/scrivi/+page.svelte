@@ -7,7 +7,7 @@
     import { ensembles } from "$lib/ensembles";
     import { bookingFaq } from "$lib/faq";
     import { occasions } from "$lib/occasions";
-    import { organization, whatsappHref } from "$lib/organization";
+    import { organization } from "$lib/organization";
 
     // Il modulo per scriverci, in una pagina sua sotto Contatti (dal 8/11/2026, prima in Contatti stessa).
     // Un solo modulo per scriverci e per chiedere un ingaggio (dal 1/11/2026, prima l'ingaggio aveva un modulo suo in /booking):
@@ -165,8 +165,6 @@
 <header>
     <h1>Scrivici</h1>
     <p>Scegli il motivo: il messaggio arriva direttamente a chi se ne occupa, e ti rispondiamo per email o per telefono.</p>
-    <!-- Per una domanda veloce molti preferiscono WhatsApp; il modulo resta per tutto quello che ha dati o allegati -->
-    <p><a href={whatsappHref("Ciao, ")}>Scrivici su WhatsApp</a></p>
 </header>
 
 <section>
