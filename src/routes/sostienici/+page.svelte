@@ -1,6 +1,3 @@
-<script lang="ts">
-</script>
-
 <svelte:head>
     <title>Sostienici — Filarmonica Alessandro Stradella</title>
     <meta name="description" content="Come sostenere la Filarmonica Alessandro Stradella APS: con una donazione e, quando sarà possibile, con il 5x1000." />
