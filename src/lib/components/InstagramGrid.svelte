@@ -1,20 +1,24 @@
 <script lang="ts">
     import type { GallerySlide } from "$lib/gallery";
 
-    // La griglia delle foto e dei video di Instagram, per la galleria in home e per Foto e video
-    let { slides }: { slides: GallerySlide[] } = $props();
+    // La griglia delle foto e dei video di Instagram, per la galleria in home e per Foto e video. Con `featured` (la home), da 64rem
+    // la prima foto è grande nella prima colonna delle sezioni e le altre sei piccole nella seconda, su due righe; sotto, le prime quattro.
+    let { slides, featured = false }: { slides: GallerySlide[]; featured?: boolean } = $props();
 
-    // Ogni foto occupa un quarto del contenitore da 64rem in su (circa 16rem) e metà dello schermo sotto, ed è
-    // ritagliata in 4:5: una foto orizzontale riempie l'altezza, quindi serve un file più largo della
-    // casella, di quanto è più larga del 4:5. Senza questo il browser sceglie un file troppo piccolo e la foto si sgrana.
-    const sizes = (slide: GallerySlide) => {
-        const crop = slide.width && slide.height ? Math.max(1, (slide.width / slide.height) * (5 / 4)) : 1;
-        return `(min-width: 64rem) ${Math.ceil(16 * crop)}rem, ${Math.ceil(50 * crop)}vw`;
+    // Le foto sono ritagliate in 4:5 (la grande alla misura del suo riquadro): una foto orizzontale riempie l'altezza, quindi serve un
+    // file più largo della casella, di quanto è più larga. Senza questo il browser sceglie un file troppo piccolo e la foto si sgrana.
+    // Da 64rem: un quarto del contenitore (circa 16rem), oppure nella home la grande (circa 27rem per 29) e le piccole (circa 12rem);
+    // sotto, metà dello schermo.
+    const sizes = (slide: GallerySlide, index: number) => {
+        const ratio = slide.width && slide.height ? slide.width / slide.height : 4 / 5;
+        const crop = Math.max(1, ratio * (5 / 4));
+        const wide = !featured ? 16 * crop : index === 0 ? Math.max(27, 29 * ratio) : 12 * crop;
+        return `(min-width: 64rem) ${Math.ceil(wide)}rem, ${Math.ceil(50 * crop)}vw`;
     };
 </script>
 
-<ul>
-    {#each slides as slide (slide.id)}
+<ul data-featured={featured || undefined}>
+    {#each slides as slide, index (slide.id)}
         <!-- Il colore dominante della foto fa da fondo finché l'immagine non arriva -->
         <!-- Nella figura, la griglia ha il titolo sopra e tutta la larghezza, come le schede (layout.css) -->
         <li style:background-color={slide.color}>
@@ -39,7 +43,7 @@
                         <img
                             src={slide.imageUrl}
                             srcset={slide.srcset}
-                            sizes={sizes(slide)}
+                            sizes={sizes(slide, index)}
                             width={slide.width}
                             height={slide.height}
                             alt={slide.alt}
@@ -85,5 +89,41 @@
         inline-size: 100%;
         aspect-ratio: 4 / 5;
         object-fit: cover;
+    }
+
+    /* Nella home, sotto 64rem, le prime quattro foto: due righe da due */
+    [data-featured] > li:nth-child(n + 5) {
+        display: none;
+    }
+
+    /*
+     * Nella home, da 64rem, la griglia segue le due colonne delle sezioni (layout.css): nella prima la foto più recente, grande e
+     * alta due righe; nella seconda, larga quanto la colonna di testo, sei foto piccole su due righe. Le righe hanno l'altezza delle
+     * piccole in 4:5, così se le foto sono meno di sette restano spazi vuoti e la grande non cambia misura.
+     */
+    @media (min-width: 64rem) {
+        [data-featured] {
+            --small: calc((var(--container-text) - 2 * var(--space-2)) / 3);
+            grid-template-columns: minmax(0, 1fr) repeat(3, var(--small));
+            grid-template-rows: repeat(2, calc(var(--small) * 5 / 4));
+        }
+
+        [data-featured] > li:nth-child(n + 5) {
+            display: block;
+        }
+
+        /* La grande: lo stacco tra le colonne delle sezioni, non quello tra le foto */
+        [data-featured] > li:first-child {
+            grid-row: span 2;
+            margin-inline-end: calc(var(--space-6) - var(--space-2));
+        }
+
+        [data-featured] > li:first-child :is(figure, a, img, video) {
+            block-size: 100%;
+        }
+
+        [data-featured] > li:first-child :is(img, video) {
+            aspect-ratio: auto;
+        }
     }
 </style>

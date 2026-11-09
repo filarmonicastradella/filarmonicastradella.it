@@ -5,8 +5,8 @@
     // `null` quando il feed non era raggiungibile durante la build.
     let { slides }: { slides: GallerySlide[] | null } = $props();
 
-    // Le ultime quattro foto: una riga da 64rem in su, due righe da due sotto. Le altre sono in Foto e video.
-    const SHOWN = 4;
+    // Le ultime sette foto: da 64rem una grande e sei piccole, sotto le prime quattro (InstagramGrid). Le altre sono in Foto e video.
+    const SHOWN = 7;
     const shown = $derived(slides?.slice(0, SHOWN) ?? []);
 </script>
 
@@ -14,7 +14,7 @@
 {#if shown.length > 0}
     <section>
         <h2>Momenti in musica</h2>
-        <InstagramGrid slides={shown} />
+        <InstagramGrid slides={shown} featured />
 
         <!-- Come ogni sezione della home, finisce con il rimando alla pagina che riassume: tutte le foto, per post. Instagram è in Foto e
              video, nel piè di pagina e in ogni foto -->
