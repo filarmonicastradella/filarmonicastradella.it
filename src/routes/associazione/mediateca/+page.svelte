@@ -84,4 +84,114 @@
     article > div + :global(ul) {
         margin-block-start: var(--space-5);
     }
+
+    /*
+     * Da 64rem la data, la didascalia e le foto del post stanno in una griglia sola (la parte di testo e la griglia delle foto diventano
+     * trasparenti, display: contents): a sinistra la data e sotto la foto grande, che arriva fino in fondo alle piccole; a destra la
+     * didascalia e sotto le piccole, tre per riga su sei colonne larghe in tutto quanto la colonna di testo. La foto grande non decide
+     * l'altezza delle righe (contain: size): la riempie. Il filetto in alto della scheda passa all'articolo. Una foto sola sta a destra,
+     * sotto la didascalia.
+     */
+    @media (min-width: 64rem) {
+        article {
+            --small: calc((var(--container-text) - 5 * var(--space-2)) / 6);
+            --row: calc((var(--small) * 2 + var(--space-2)) * 3 / 4);
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) repeat(6, var(--small));
+            grid-template-rows: auto auto;
+            grid-auto-rows: var(--row);
+            gap: var(--space-2);
+            align-items: baseline;
+            padding-block-start: var(--space-5);
+            border-block-start: var(--rule-width) solid var(--border);
+        }
+
+        article > div,
+        article > div + :global(ul) {
+            display: contents;
+        }
+
+        article > div > :global(:is(h3, h4)) {
+            grid-area: 1 / 1;
+            margin-inline-end: calc(var(--space-6) - var(--space-2));
+        }
+
+        article > div > [itemprop="description"] {
+            grid-area: 1 / 2 / 3 / -1;
+            margin-block-end: var(--space-3);
+        }
+
+        article > :global(ul) > :global(li) {
+            align-self: stretch;
+        }
+
+        article > :global(ul) > :global(li:first-child) {
+            grid-column: 1;
+            grid-row: 2 / span 2;
+            margin-inline-end: calc(var(--space-6) - var(--space-2));
+            contain: size;
+        }
+
+        article:has(li:nth-child(5)) > :global(ul) > :global(li:first-child) {
+            grid-row: 2 / span 3;
+        }
+
+        article:has(li:nth-child(8)) > :global(ul) > :global(li:first-child) {
+            grid-row: 2 / span 4;
+        }
+
+        article:has(li:nth-child(11)) > :global(ul) > :global(li:first-child) {
+            grid-row: 2 / span 5;
+        }
+
+        article:has(li:nth-child(14)) > :global(ul) > :global(li:first-child) {
+            grid-row: 2 / span 6;
+        }
+
+        article:has(li:nth-child(17)) > :global(ul) > :global(li:first-child) {
+            grid-row: 2 / span 7;
+        }
+
+        article:has(li:nth-child(20)) > :global(ul) > :global(li:first-child) {
+            grid-row: 2 / span 8;
+        }
+
+        article > :global(ul) > :global(li:first-child) :global(:is(figure, a, img, video)) {
+            block-size: 100%;
+        }
+
+        article > :global(ul) > :global(li:first-child) :global(:is(img, video)) {
+            aspect-ratio: auto;
+        }
+
+        /* Le piccole a destra: due colonne ciascuna, tre per riga; l'ultima riga si allarga (InstagramGrid) entro la colonna di destra */
+        article > :global(ul) > :global(li:not(:first-child)) {
+            grid-column: span 2;
+        }
+
+        article > :global(ul) > :global(li:nth-last-child(2):nth-child(3n + 2)),
+        article > :global(ul) > :global(li:last-child:nth-child(3n)) {
+            grid-column: span 3;
+        }
+
+        article > :global(ul) > :global(li:not(:first-child):last-child:nth-child(3n + 2)) {
+            grid-column: 2 / -1;
+        }
+
+        /* Una foto sola: a destra sotto la didascalia, in 4:3 */
+        article:not(:has(li:nth-child(2))) {
+            grid-auto-rows: auto;
+        }
+
+        article:not(:has(li:nth-child(2))) > :global(ul) > :global(li:first-child) {
+            grid-column: 2 / -1;
+            grid-row: 3;
+            margin-inline-end: 0;
+            contain: none;
+        }
+
+        article:not(:has(li:nth-child(2))) > :global(ul) > :global(li:first-child) :global(:is(img, video)) {
+            aspect-ratio: 4 / 3;
+        }
+    }
 </style>
