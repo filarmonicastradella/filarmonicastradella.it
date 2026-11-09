@@ -25,8 +25,6 @@
                 <div>
                     <!-- La didascalia di Instagram non è un titolo: il titolo del post è la sua data, con l'aspetto delle date -->
                     <svelte:element this={`h${level}`}><time itemprop="datePublished" datetime={post.date}>{formatArticleDate(post.date)}</time></svelte:element>
-                    <!-- Il post su Instagram, sotto la data (a contorno, come «Seguici su Instagram») -->
-                    <p><a itemprop="url" href={post.permalink} target="_blank" rel="noopener noreferrer">Vedi su Instagram</a></p>
                     {#if post.paragraphs.length > 0}
                         <div itemprop="description">
                             {#each post.paragraphs as paragraph, i (i)}
@@ -34,6 +32,8 @@
                             {/each}
                         </div>
                     {/if}
+                    <!-- Il post su Instagram, sotto la didascalia (a contorno, come «Seguici su Instagram») -->
+                    <p><a itemprop="url" href={post.permalink} target="_blank" rel="noopener noreferrer">Vedi su Instagram</a></p>
                 </div>
                 <InstagramGrid slides={post.slides} />
             </article>
@@ -61,20 +61,20 @@
     }
 
     /*
-     * Nella riga d'agenda la data (qui il titolo) sta a sinistra, dove le schede hanno la data, con sotto «Vedi su Instagram», e la
-     * didascalia a destra dall'alto; sul telefono una sotto l'altra, in quest'ordine
+     * Nella riga d'agenda la data (qui il titolo) sta a sinistra, dove le schede hanno la data, e a destra la didascalia con sotto
+     * «Vedi su Instagram»; sul telefono una sotto l'altra, in quest'ordine
      */
     article > div > :global(:is(h3, h4)) {
-        grid-area: 1 / 1;
-    }
-
-    article > div > p:has(> a) {
-        grid-area: 2 / 1;
-        align-self: start;
+        grid-area: 1 / 1 / 3 / 2;
     }
 
     article > div > [itemprop="description"] {
-        grid-area: 1 / 2 / 3 / 3;
+        grid-area: 1 / 2;
+    }
+
+    article > div > p:has(> a) {
+        grid-area: 2 / 2;
+        align-self: start;
     }
 
     /* La data e la prima riga della didascalia sulla stessa linea di base; tra i paragrafi lo stacco del testo (layout.css) */
