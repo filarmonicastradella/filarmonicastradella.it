@@ -23,7 +23,6 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 - [ ] 1.1 **F** — **FormSubmit: finché le caselle non sono attivate i messaggi dei moduli si perdono.** È la voce più urgente della lista. Poi sostituire gli indirizzi con gli alias. (T, R3.23)
 - [ ] 1.2 **F** — Certificato per `www`: chi arriva da `https://www.` vede un errore di sicurezza. (R3.1, T)
 - [ ] 1.3 **F** — PayPal: manca l'ID vero del pulsante di donazione. (T)
-- [ ] 1.4 **F** — Token di Instagram: senza, la galleria resta vuota. (T)
 - [ ] 1.5 **F** — Google Calendar, i testi degli eventi: maiuscole nei titoli, «Bandistica», il «voi» di «Aspettate di sentire il bis», la biblioteca scritta in due modi, autori per esteso. (R5, T)
 - [ ] 1.6 **D** — Google Calendar: le «feste patronali» nella descrizione della mostra vanno bene? (R5, T)
 - [ ] 1.7 **F** — Consulente: consensi dei moduli contro base giuridica dell'informativa. (R5b.13, T)
@@ -32,7 +31,6 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 
 ## 2. Funzioni del sito
 
-- [ ] 2.1 **D** — Gli eventi passati danno 404 il giorno dopo: l'indirizzo citato dalla stampa muore. Sezione «Eventi passati» o rimando? (R3.6, T)
 - [ ] 2.2 **D** — Senza JS, sotto 64rem, il menu non si apre: voci anche nel piè di pagina, o pannello nascosto con `@media (scripting: enabled)`. (R2.3, T)
 - [ ] 2.3 **F** — Senza JS la domanda di un minore parte come quella di un adulto. (R2b.3, T)
 - [ ] 2.4 **F** — La 404 è vuota senza JS: generarne una vera alla build. (R3.14, T)
@@ -44,6 +42,7 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 - [ ] 2.10 **F** — Documenti dell'associazione: visualizzazione unica in Markdown, tranne lo statuto. (T, AGENTS)
 - [ ] 2.11 **F** — Pagine future (interviste, riconoscimenti): nascono come articoli, con le fonti. (T, S)
 - [ ] 2.12 **D** — Stampa: oggi si stampano intestazione, menu e corde. Serve un `@media print`? (PAm8)
+- [ ] 2.13 **F** — Finestra di Foto e video (`InstagramGrid`): mostrare anche la data del post, e le frecce per passare alla foto precedente e alla successiva (anche con i tasti freccia). (9/11/2026)
 
 ## 3. Design: ritocchi al sistema attuale
 

@@ -97,7 +97,8 @@ if (!token) {
     console.warn("Instagram: manca INSTAGRAM_TOKEN, restano le foto dell'ultima volta");
     process.exit(0);
 }
-if (previous?.fetchedAt && Date.now() - new Date(previous.fetchedAt).getTime() < MAX_AGE) {
+// Si salta solo se l'ultima lettura è andata a buon fine: dopo un errore si riprova subito
+if (previous?.slides && previous.fetchedAt && Date.now() - new Date(previous.fetchedAt).getTime() < MAX_AGE) {
     console.log("Instagram: post già letti nell'ultima ora");
     process.exit(0);
 }
