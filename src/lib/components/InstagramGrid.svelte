@@ -211,8 +211,6 @@
     /*
      * La finestra: sul fondo della pagina; la foto intera (non ritagliata) alla misura che ci sta, la data e la didascalia e, sotto, «Apri su Instagram» a sinistra e i pulsanti a destra. Compare sfumando (--duration-slow, solo
      * opacità); mentre è aperta la pagina sotto non scorre.
-     */
-    /*
      * Misura fissa, quasi tutto lo schermo (al massimo 80rem di larghezza), uguale per ogni foto: così data, didascalia e pulsanti
      * stanno sempre nello stesso punto, in fondo, e passando da una foto all'altra i pulsanti non si spostano. La foto prende lo
      * spazio che resta, intera.
