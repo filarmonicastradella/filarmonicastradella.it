@@ -8,7 +8,7 @@
     import { articleKey, articles } from "$lib/articles";
     import { hasNotEnded } from "$lib/events";
     import { operationalSeats } from "$lib/locations";
-    import { organization } from "$lib/organization";
+    import { organization, whatsappHref } from "$lib/organization";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
@@ -100,6 +100,7 @@
         12 €, poi la richiesta di entrare nella formazione. Le parti e la sala prove le mette l'associazione, e alcuni strumenti si possono avere in
         prestito.
     </p>
+    <p><a href={whatsappHref(`Ciao, vorrei suonare in ${ensemble.title}.`)}>Chiedi su WhatsApp</a></p>
 </section>
 
 {#if events.length > 0}

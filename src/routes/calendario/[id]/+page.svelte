@@ -6,7 +6,7 @@
     import { isIos } from "$lib/device";
     import { directionsHref, eventAddress, eventDate, eventPlace, eventTime, eventWhen, googleCalendarHref, hasNotEnded } from "$lib/events";
     import { faq } from "$lib/faq";
-    import { organization, titleSuffix } from "$lib/organization";
+    import { organization, titleSuffix, whatsappHref } from "$lib/organization";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
@@ -129,6 +129,7 @@
     </dl>
     {#if upcoming}
         <p><a href={ios ? `/calendario/${event.id}.ics` : google} download={ios || undefined}>Aggiungi al tuo calendario</a></p>
+        <p><a href={whatsappHref(`Ciao, vorrei informazioni su «${event.summary}» (${date}).`)}>Chiedi su WhatsApp</a></p>
     {/if}
 </section>
 

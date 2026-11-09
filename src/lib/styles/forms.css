@@ -6,7 +6,7 @@
  * Secondario: contorno inchiostro; lo hanno anche i link che scaricano o aprono un file (a[download], e a[type]
  * con il tipo del file, come il feed degli articoli e lo statuto in PDF, anche nell'intestazione),
  * i link verso un calendario («Aggiungi al tuo calendario» degli eventi e «Segui il calendario», anche
- * nell'intestazione: il file o webcal:// su iPhone, altrove Google Calendar; seguire è per pochi, come «Segui il feed» e «Seguici su Instagram» in Foto e video) e «Sostienici» nel menu, che è su ogni pagina e non deve
+ * nell'intestazione: il file o webcal:// su iPhone, altrove Google Calendar; seguire è per pochi, come «Segui il feed» e «Seguici su Instagram» in Foto e video) e i link a WhatsApp («Scrivici su WhatsApp», con il messaggio già scritto: un'alternativa al modulo, non l'azione principale) e «Sostienici» nel menu, che è su ogni pagina e non deve
  * fare concorrenza all'azione della pagina.
  * Campi: fondo rialzato e bordo sottile come le schede, angoli quasi vivi.
  */
@@ -17,9 +17,9 @@ input[type="button"],
 main a[download],
 main a[type],
 main a:is([href^="webcal:"], [href^="https://calendar.google.com/"]),
-main p > a:is([href^="https://instagram.com/"], [href^="https://www.instagram.com/"]):only-child,
+main p > a:is([href^="https://instagram.com/"], [href^="https://www.instagram.com/"], [href^="https://wa.me/"]):only-child,
 body > div > header nav > p > a,
-main > header > p > a:only-child:not(:has(> [itemprop="articleSection"]), [type], [href^="webcal:"], [href^="https://calendar.google.com/"], [href^="https://instagram.com/"], [href^="https://www.instagram.com/"]) {
+main > header > p > a:only-child:not(:has(> [itemprop="articleSection"]), [type], [href^="webcal:"], [href^="https://calendar.google.com/"], [href^="https://instagram.com/"], [href^="https://www.instagram.com/"], [href^="https://wa.me/"]) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -43,7 +43,7 @@ main > header > p > a:only-child:not(:has(> [itemprop="articleSection"]), [type]
 button:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover,
-main > header > p > a:only-child:not(:has(> [itemprop="articleSection"]), [type], [href^="webcal:"], [href^="https://calendar.google.com/"], [href^="https://instagram.com/"], [href^="https://www.instagram.com/"]):hover {
+main > header > p > a:only-child:not(:has(> [itemprop="articleSection"]), [type], [href^="webcal:"], [href^="https://calendar.google.com/"], [href^="https://instagram.com/"], [href^="https://www.instagram.com/"], [href^="https://wa.me/"]):hover {
     border-color: var(--accent-hover);
     background-color: var(--accent-hover);
     color: var(--on-accent);
@@ -54,7 +54,7 @@ main button[type="button"],
 main a[download],
 main a[type],
 main a:is([href^="webcal:"], [href^="https://calendar.google.com/"]),
-main p > a:is([href^="https://instagram.com/"], [href^="https://www.instagram.com/"]):only-child,
+main p > a:is([href^="https://instagram.com/"], [href^="https://www.instagram.com/"], [href^="https://wa.me/"]):only-child,
 body > div > header nav > p > a,
 input[type="file"]::file-selector-button {
     border: var(--border-width) solid var(--border-strong);
@@ -67,7 +67,7 @@ main button[type="button"]:hover,
 main a[download]:hover,
 main a[type]:hover,
 main a:is([href^="webcal:"], [href^="https://calendar.google.com/"]):hover,
-main p > a:is([href^="https://instagram.com/"], [href^="https://www.instagram.com/"]):only-child:hover,
+main p > a:is([href^="https://instagram.com/"], [href^="https://www.instagram.com/"], [href^="https://wa.me/"]):only-child:hover,
 body > div > header nav > p > a:hover,
 input[type="file"]::file-selector-button:hover {
     border-color: var(--text-brand);

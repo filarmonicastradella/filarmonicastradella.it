@@ -3,6 +3,12 @@
 // Dopo il titolo di ogni pagina, nel <title>
 export const titleSuffix = " — Filarmonica Alessandro Stradella";
 
+/*
+ * Scrivere su WhatsApp, il modo che quasi tutti preferiscono (dal 9/11/2026): il link apre la chat con il numero della Filarmonica e,
+ * se c'è, il messaggio già scritto, da completare e mandare. Sul computer apre WhatsApp Web o l'app.
+ */
+export const whatsappHref = (text?: string) => `https://wa.me/393505363110${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+
 export const organization = {
     name: "Filarmonica Alessandro Stradella APS",
     url: "https://filarmonicastradella.it",
@@ -33,7 +39,7 @@ export const organization = {
     socials: [
         { name: "Instagram", href: "https://instagram.com/filarmonicastradella", profile: true },
         { name: "Facebook", href: "https://facebook.com/filarmonicastradella", profile: true },
-        { name: "WhatsApp", href: "https://wa.me/393505363110", profile: false },
+        { name: "WhatsApp", href: whatsappHref(), profile: false },
         { name: "YouTube", href: "https://youtube.com/@filarmonicastradella", profile: true }
         // { name: "TikTok", href: "https://tiktok.com/@filarmonicastradella", profile: true } // quando ci sarà il profilo (e l'icona nel footer)
     ]

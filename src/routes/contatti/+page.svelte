@@ -3,7 +3,7 @@
     import { goto } from "$app/navigation";
     import { page } from "$app/state";
     import { legalSeat, operationalSeats } from "$lib/locations";
-    import { organization } from "$lib/organization";
+    import { organization, whatsappHref } from "$lib/organization";
 
     // Le sedi in Contatti: la legale e le due operative, Via Radda 7 a Fivizzano e il Circolo Fantoni a Serricciolo (Aulla)
     const seats = [legalSeat, ...operationalSeats];
@@ -25,6 +25,7 @@
     <h1>Contatti</h1>
     <p>Per informazioni, iscrizioni e concerti scrivici o chiamaci.</p>
     <p><a href="/contatti/scrivi">Scrivi un messaggio</a></p>
+    <p><a href={whatsappHref("Ciao, ")}>Scrivici su WhatsApp</a></p>
 </header>
 
 <section>

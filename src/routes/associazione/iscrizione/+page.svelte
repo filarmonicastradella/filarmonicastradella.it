@@ -2,6 +2,7 @@
     import { signaturePattern } from "$lib/signature";
     import { browser } from "$app/environment";
     import { page } from "$app/state";
+    import { whatsappHref } from "$lib/organization";
 
     // Iscrizione o variazione dei dati e dei consensi di un socio (dal 1/11/2026, prima i consensi avevano un modulo loro):
     // stesso modulo e stessi campi, cambiano solo la richiesta e l'oggetto dell'email. "?modo=variazione" la sceglie da un link.
@@ -130,6 +131,7 @@
         Per iscriverti come socio o, se lo sei già, per aggiornare i tuoi dati e i consensi. Il consiglio direttivo esamina le nuove domande e ti comunica
         l'esito per email.
     </p>
+    <p><a href={whatsappHref("Ciao, vorrei informazioni per iscrivermi alla Filarmonica.")}>Chiedi su WhatsApp</a></p>
 </header>
 
 <section>

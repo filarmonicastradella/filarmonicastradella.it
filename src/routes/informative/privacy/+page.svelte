@@ -98,7 +98,7 @@
         <dd>forniscono le foto della galleria, che il sito copia quando viene preparato: il tuo browser non si collega ai loro server, se non quando apri un post su Instagram.</dd>
     </dl>
     <p>
-        Se ti rispondiamo con WhatsApp, il tuo numero e i messaggi passano anche dai server di WhatsApp (Meta), secondo le sue condizioni.
+        Se ci scrivi o ti rispondiamo con WhatsApp, il tuo numero e i messaggi passano anche dai server di WhatsApp (Meta), secondo le sue condizioni.
     </p>
     <p>
         Il sito legge il calendario degli eventi da Google mentre viene preparato, non durante la tua visita: Google non riceve i tuoi dati. I dati
