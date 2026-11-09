@@ -2,6 +2,7 @@
     import ChevronLeftIcon from "~icons/heroicons/chevron-left-20-solid";
     import ChevronRightIcon from "~icons/heroicons/chevron-right-20-solid";
     import PlayIcon from "~icons/heroicons/play-20-solid";
+    import { formatArticleDate } from "$lib/articles";
     import type { GallerySlide } from "$lib/gallery";
 
     // La griglia delle foto e dei video di Instagram, per la galleria in home e per Foto e video. Con `featured` (la home) la prima
@@ -119,14 +120,20 @@
         onkeydown={keydown}
     >
         {#if current}
-            <figure>
+            <!-- I microdati del post (la data riconoscibile come le altre date in testa, typography.css) -->
+            <figure itemscope itemtype="https://schema.org/SocialMediaPosting">
                 {#if current.mediaType === "VIDEO"}
                     <!-- svelte-ignore a11y_media_has_caption -->
                     <video src={current.mediaUrl} poster={current.thumbnailUrl} width={current.width} height={current.height} controls playsinline></video>
                 {:else}
                     <img src={current.imageUrl} srcset={current.srcset} sizes="90vw" width={current.width} height={current.height} alt={current.alt} />
                 {/if}
-                <figcaption>{current.alt}</figcaption>
+                <figcaption>
+                    {#if current.timestamp}
+                        <p><time itemprop="datePublished" datetime={current.timestamp.slice(0, 10)}>{formatArticleDate(current.timestamp.slice(0, 10))}</time></p>
+                    {/if}
+                    <p itemprop="description">{current.alt}</p>
+                </figcaption>
             </figure>
             <p>
                 <a href={current.permalink} target="_blank" rel="noopener noreferrer">Apri su Instagram</a>
@@ -203,7 +210,7 @@
 
     /*
      * La finestra: sul fondo della pagina, alta al massimo quasi tutto lo schermo; la foto intera (non ritagliata) alla misura che
-     * ci sta, la didascalia e, sotto, «Apri su Instagram» a sinistra e i pulsanti a destra. Compare sfumando (--duration-slow, solo
+     * ci sta, la data e la didascalia e, sotto, «Apri su Instagram» a sinistra e i pulsanti a destra. Compare sfumando (--duration-slow, solo
      * opacità); mentre è aperta la pagina sotto non scorre.
      */
     dialog {
@@ -244,9 +251,30 @@
         object-fit: contain;
     }
 
+    /* Sotto la foto la data e la didascalia: una sopra l'altra, e da 40rem su due colonne come le righe d'agenda, la data a sinistra */
     dialog figcaption {
-        color: var(--text-muted);
+        display: grid;
+        gap: var(--space-2) var(--space-6);
         font-size: var(--fs-small);
+
+        & > p {
+            margin: 0;
+        }
+
+        & > [itemprop="description"] {
+            color: var(--text-muted);
+        }
+    }
+
+    @media (min-width: 40rem) {
+        dialog figcaption {
+            grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
+            align-items: baseline;
+
+            & > [itemprop="description"]:only-child {
+                grid-column: 2;
+            }
+        }
     }
 
     /* La riga dei comandi è larga quanto la finestra, non quanto una colonna di testo come gli altri paragrafi: «Chiudi» va al bordo destro */

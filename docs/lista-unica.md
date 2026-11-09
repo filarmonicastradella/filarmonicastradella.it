@@ -42,7 +42,6 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 - [ ] 2.10 **F** — Documenti dell'associazione: visualizzazione unica in Markdown, tranne lo statuto. (T, AGENTS)
 - [ ] 2.11 **F** — Pagine future (interviste, riconoscimenti): nascono come articoli, con le fonti. (T, S)
 - [ ] 2.12 **D** — Stampa: oggi si stampano intestazione, menu e corde. Serve un `@media print`? (PAm8)
-- [ ] 2.13 **F** — Finestra di Foto e video (`InstagramGrid`): mostrare anche la data del post (le frecce per passare tra le foto ci sono dal 9/11/2026). (9/11/2026)
 
 ## 3. Design: ritocchi al sistema attuale
 
