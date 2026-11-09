@@ -1,11 +1,12 @@
 <script lang="ts">
+    import PlayIcon from "~icons/heroicons/play-20-solid";
     import type { GallerySlide } from "$lib/gallery";
 
     // La griglia delle foto e dei video di Instagram, per la galleria in home e per Foto e video. Con `featured` (la home) la prima
     // foto è grande e le altre piccole intorno, in tre composizioni secondo la larghezza (nello stile, sotto).
     // `placeholders`: caselle segnaposto dopo le foto, finché non ce ne sono abbastanza per riempire la griglia.
-    // `link`: dove porta ogni casella, foto o video (la home porta al post in Foto e video); senza, le foto aprono il post su Instagram
-    // e i video si guardano lì, con il player del browser
+    // `link`: dove porta ogni casella, foto o video (la home porta al post in Foto e video). Senza (Foto e video), ogni casella apre
+    // la foto grande o il video in una finestra (sotto); senza JS, il file
     let {
         slides,
         featured = false,
@@ -30,6 +31,18 @@
             index === 0 ? [Math.max(27, 29 * ratio), 50 * crop, 100 * Math.max(1, ratio * (3 / 4))] : [12 * crop, 25 * crop, 34 * crop];
         return `(min-width: 64rem) ${Math.ceil(wide)}rem, (min-width: 40rem) ${Math.ceil(middle)}vw, ${Math.ceil(narrow)}vw`;
     };
+
+    // La finestra di Foto e video (dal 9/11/2026): la foto alla misura dello schermo, o il video con il player del browser, che non
+    // parte da solo (docs/DESIGN.md, Movimento), con la didascalia breve e il link al post. Si chiude con Esc (il <dialog> lo fa da sé),
+    // con «Chiudi» o toccando fuori; chiudendo il video si ferma, perché sparisce.
+    let dialog = $state<HTMLDialogElement>();
+    let current = $state<GallerySlide | null>(null);
+
+    function show(slide: GallerySlide, event: MouseEvent) {
+        event.preventDefault();
+        current = slide;
+        dialog?.showModal();
+    }
 </script>
 
 <ul data-featured={featured || undefined}>
@@ -51,23 +64,9 @@
                             loading="lazy"
                         />
                     </a>
-                {:else if slide.mediaType === "VIDEO"}
-                    <!-- Mai in riproduzione automatica (docs/DESIGN.md, Movimento) -->
-                    <!-- svelte-ignore a11y_media_has_caption -->
-                    <video
-                        src={slide.mediaUrl}
-                        poster={slide.thumbnailUrl}
-                        width={slide.width}
-                        height={slide.height}
-                        aria-label={slide.alt}
-                        controls
-                        preload="none"
-                        playsinline
-                    >
-                        <a href={slide.mediaUrl}>Scarica il video</a>
-                    </video>
                 {:else}
-                    <a href={slide.permalink} target="_blank" rel="noopener noreferrer">
+                    <!-- Il link porta al file, la foto grande o il video: con JS si apre nella finestra -->
+                    <a href={slide.mediaUrl} onclick={(event) => show(slide, event)}>
                         <img
                             src={slide.imageUrl}
                             srcset={slide.srcset}
@@ -77,6 +76,9 @@
                             alt={slide.alt}
                             loading="lazy"
                         />
+                        {#if slide.mediaType === "VIDEO"}
+                            <span><PlayIcon aria-hidden="true" /> Video</span>
+                        {/if}
                     </a>
                 {/if}
             </figure>
@@ -91,6 +93,27 @@
         </li>
     {/each}
 </ul>
+
+{#if !link}
+    <!-- Toccando fuori dalla finestra (sul fondo) si chiude; con la tastiera c'è Esc -->
+    <dialog bind:this={dialog} aria-label={current?.alt} onclose={() => (current = null)} onclick={(event) => event.target === dialog && dialog.close()}>
+        {#if current}
+            <figure>
+                {#if current.mediaType === "VIDEO"}
+                    <!-- svelte-ignore a11y_media_has_caption -->
+                    <video src={current.mediaUrl} poster={current.thumbnailUrl} width={current.width} height={current.height} controls playsinline></video>
+                {:else}
+                    <img src={current.imageUrl} srcset={current.srcset} sizes="90vw" width={current.width} height={current.height} alt={current.alt} />
+                {/if}
+                <figcaption>{current.alt}</figcaption>
+            </figure>
+            <p>
+                <a href={current.permalink} target="_blank" rel="noopener noreferrer">Apri su Instagram</a>
+                <button type="button" onclick={() => dialog?.close()}>Chiudi</button>
+            </p>
+        {/if}
+    </dialog>
+{/if}
 
 <style>
     /*
@@ -116,7 +139,28 @@
     }
 
     a:has(img) {
+        position: relative;
         display: block;
+    }
+
+    /* Sul fotogramma di un video, in basso a sinistra: «Video» con l'icona, sul fondo scuro perché si legga su ogni foto */
+    a > span {
+        position: absolute;
+        inset-block-end: var(--space-2);
+        inset-inline-start: var(--space-2);
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-1);
+        padding: var(--space-1) var(--space-2);
+        border-radius: var(--radius);
+        background-color: var(--bg-inverse);
+        color: var(--text-inverse);
+        font-size: var(--fs-small);
+    }
+
+    a > span > :global(svg) {
+        inline-size: 1em;
+        block-size: 1em;
     }
 
     /*
@@ -132,6 +176,69 @@
 
     [data-featured] :is(img, video) {
         aspect-ratio: 4 / 5;
+    }
+
+    /*
+     * La finestra: sul fondo della pagina, alta al massimo quasi tutto lo schermo; la foto intera (non ritagliata) alla misura che
+     * ci sta, la didascalia e, sotto, «Apri su Instagram» a sinistra e «Chiudi» a destra. Compare sfumando (--duration-slow, solo
+     * opacità); mentre è aperta la pagina sotto non scorre.
+     */
+    dialog {
+        box-sizing: border-box;
+        max-inline-size: min(100vw - 2 * var(--space-4), 80rem);
+        max-block-size: calc(100dvh - 2 * var(--space-4));
+        padding: var(--space-4);
+        border: none;
+        border-radius: var(--radius);
+        background-color: var(--bg);
+        color: var(--text);
+    }
+
+    dialog[open] {
+        animation: fade-in var(--duration-slow) var(--ease);
+    }
+
+    /* All'apertura il fuoco va sulla finestra stessa: il suo contorno non serve, i comandi dentro hanno il loro */
+    dialog:focus-visible {
+        outline: none;
+    }
+
+    dialog::backdrop {
+        background-color: color-mix(in srgb, var(--bg-inverse) 85%, transparent);
+    }
+
+    :global(html:has(dialog[open])) {
+        overflow: hidden;
+    }
+
+    dialog :is(img, video) {
+        display: block;
+        inline-size: auto;
+        max-inline-size: 100%;
+        max-block-size: calc(100dvh - 12rem);
+        margin-inline: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
+    }
+
+    dialog figcaption {
+        color: var(--text-muted);
+        font-size: var(--fs-small);
+    }
+
+    dialog > p {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
+        margin: var(--space-4) 0 0;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
     }
 
     /* Il segnaposto: una casella 4:5 come le foto della home, sul fondo rialzato, con la scritta tra parentesi quadre */
