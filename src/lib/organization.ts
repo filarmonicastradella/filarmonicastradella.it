@@ -23,6 +23,10 @@ export const organization = {
         name: "ANBIMA APS",
         href: "https://www.anbima.it/massacarrara/regionetoscana-massacarrara-unita-di-base"
     },
+    // Il ruolo nell'associazione di chi firma gli articoli, per i microdati (jobTitle dell'autore)
+    authorRoles: { "Leonardo Orietti Del Duca": "Presidente" } as Record<string, string>,
+    // Le voci su di noi nelle enciclopedie: tra i "sameAs" dei dati strutturati, come i profili social (dal 9/11/2026)
+    references: ["https://it.wikipedia.org/wiki/Filarmonica_Alessandro_Stradella", "https://www.wikidata.org/wiki/Q141869181"],
     // I profili social; WhatsApp è un contatto, non un profilo, quindi non va tra i "sameAs" dei dati strutturati.
     socials: [
         { name: "Instagram", href: "https://instagram.com/filarmonicastradella", profile: true },

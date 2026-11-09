@@ -2,6 +2,7 @@
 title: Stradella Facendo
 summary: "L'orchestra di fiati della Filarmonica, dedicata al repertorio da concerto e alla cura del dettaglio sonoro."
 genre: ["Musica per orchestra di fiati", "Concert band"]
+founded: 2026
 order: 1
 cover:
     alt: "Stradella Facendo in concerto nel Museo di San Giovanni degli Agostiniani a Fivizzano: chi dirige davanti, flauti, clarinetti, sassofoni e ottoni"

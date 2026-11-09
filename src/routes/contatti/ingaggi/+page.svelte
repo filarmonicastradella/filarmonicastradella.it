@@ -15,8 +15,14 @@
         serviceType: "Musica dal vivo per eventi",
         description: "Concerti, cerimonie civili, feste in piazza, convegni e feste private in Lunigiana, con la formazione adatta all'occasione.",
         provider: { "@id": `${organization.url}/#ente` },
-        areaServed: { "@type": "Place", name: "Lunigiana" },
+        // Soprattutto in Lunigiana, ma andiamo ovunque se ne vale la pena
+        areaServed: [
+            { "@type": "Place", name: "Lunigiana" },
+            { "@type": "Country", name: "Italia" }
+        ],
         url: `${organization.url}/contatti/ingaggi`,
+        // Nessun compenso: il rimborso delle spese documentate, e un'offerta libera di chi partecipa
+        offers: { "@type": "Offer", description: "Rimborso delle spese documentate; offerta libera dei partecipanti.", priceCurrency: "EUR" },
         image: `${organization.url}/anteprima.jpg`,
         // Le occasioni, come catalogo: chi cerca «musica per matrimonio» o «banda per sagra» trova la stessa offerta
         hasOfferCatalog: {

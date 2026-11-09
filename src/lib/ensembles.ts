@@ -5,6 +5,10 @@ interface EnsembleMetadata {
     title: string;
     summary: string;
     order: number;
+    /** L'anno in cui la formazione è nata (foundingDate di MusicGroup) */
+    founded?: number;
+    /** La sede dove prova, tra le sedi operative di locations.ts (di base quella di Fivizzano) */
+    seat?: string;
     /** I generi, per i motori di ricerca (genre di MusicGroup) */
     genre?: string[];
     /** L'organico: gli strumenti divisi per sezione (legni, ottoni, archi...) */

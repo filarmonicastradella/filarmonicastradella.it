@@ -56,7 +56,12 @@
     {@render children?.()}
     <p>
         {#if article.author}
-            di <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{article.author}</span></span> ·
+            di <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{article.author}</span
+                >{#if organization.authorRoles[article.author]}<meta itemprop="jobTitle" content={organization.authorRoles[article.author]} /><link
+                        itemprop="memberOf"
+                        href="{organization.url}/#ente"
+                    />{/if}</span
+            > ·
         {/if}
         <time itemprop="datePublished" datetime={article.date}>{formatArticleDate(article.date)}</time>
     </p>

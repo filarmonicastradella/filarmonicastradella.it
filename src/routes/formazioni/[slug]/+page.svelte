@@ -3,14 +3,18 @@
     import ArticleCard from "$lib/components/ArticleCard.svelte";
     import EventCard from "$lib/components/EventCard.svelte";
     import FaqItem from "$lib/components/FaqItem.svelte";
+    import PostalAddress from "$lib/components/PostalAddress.svelte";
     import { faq } from "$lib/faq";
     import { articleKey, articles } from "$lib/articles";
     import { hasNotEnded } from "$lib/events";
+    import { operationalSeats } from "$lib/locations";
     import { organization } from "$lib/organization";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
     const ensemble = $derived(data.ensemble);
+    // La sede dove prova (per i microdati): quella indicata nel Markdown, di base Fivizzano
+    const seat = $derived(operationalSeats.find(({ id }) => id === (ensemble.seat ?? "sede-fivizzano"))!);
     // Gli articoli, nostri o dei giornali, che hanno la formazione tra i tag (l'hashtag senza il cancelletto)
     const related = $derived(articles.filter((article) => article.ensembles?.some((tag) => `#${tag}` === ensemble.hashtag)));
 
@@ -41,11 +45,16 @@
     <p><a href="/contatti/scrivi?motivo=ingaggio&formazione={ensemble.slug}">Chiedi un ingaggio</a></p>
     <link itemprop="url" href="{organization.url}/formazioni/{ensemble.slug}" />
     <link itemprop="parentOrganization" href="{organization.url}/#ente" />
-    <!-- Per i motori di ricerca: i generi e la città dove la formazione prova e suona di più -->
+    <!-- Per i motori di ricerca: l'anno di nascita, i generi e la sede dove la formazione prova -->
+    {#if ensemble.founded}
+        <meta itemprop="foundingDate" content={String(ensemble.founded)} />
+    {/if}
     {#each ensemble.genre ?? [] as genre (genre)}
         <meta itemprop="genre" content={genre} />
     {/each}
-    <span itemprop="location" itemscope itemtype="https://schema.org/Place"><meta itemprop="name" content="Fivizzano" /></span>
+    <span itemprop="location" itemscope itemtype="https://schema.org/Place"
+        ><meta itemprop="name" content={seat.name} /><PostalAddress address={seat.address.join(", ").replace(/ \((\w+)\)$/, " $1")} /></span
+    >
     {#if ensemble.coverImage && ensemble.cover}
         <enhanced:img src={ensemble.coverImage.picture} alt={ensemble.cover.alt} sizes="100vw" fetchpriority="high" itemprop="image" />
     {:else}

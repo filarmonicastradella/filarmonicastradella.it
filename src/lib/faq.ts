@@ -31,7 +31,11 @@ export const faq = {
 
 // Le domande sugli ingaggi: nella pagina La Filarmonica al tuo evento e nel modulo Scrivici quando il motivo è un ingaggio
 export const bookingFaq: FaqItem[] = [
-    { question: "Dove suonate?", answer: "Ci spostiamo in tutta la Lunigiana." },
+    { question: "Dove suonate?", answer: "In tutta la Lunigiana, e anche più lontano quando l'occasione lo merita." },
+    {
+        question: "Quanto costa?",
+        answer: "Non chiediamo un compenso: solo il rimborso delle spese documentate. Durante l'evento chi partecipa può lasciare un'offerta libera per l'associazione."
+    },
     {
         question: "Suonate a funzioni religiose o a iniziative di partito?",
         answer:
