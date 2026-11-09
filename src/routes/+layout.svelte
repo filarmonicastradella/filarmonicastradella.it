@@ -59,6 +59,8 @@
 <svelte:head>
     <link rel="icon" href={favicon} />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Il sito si può aggiungere alla schermata Home come un'app, con le scorciatoie tenendo premuta l'icona -->
+    <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="preload" href={jakartaFont} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href={cormorantFont} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="canonical" href={organization.url + page.url.pathname} />
