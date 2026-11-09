@@ -10,7 +10,7 @@
     // foto d'archivio.
     // import cover from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?enhanced&w=2048;1600;1280;960;640";
     // import coverPlaceholder from "$lib/assets/imgs/ensembles/stradella-facendo.jpg?w=24&blur=2&format=webp&inline";
-    import cover from "$lib/assets/imgs/bicentenario-1987.jpg?enhanced&w=2048;1600;1280;960;640";
+    import cover from "$lib/assets/imgs/bicentenario-1987.jpg?enhanced&w=1557;1280;960;640";
     // Anteprima sfocata della copertina, visibile subito mentre la foto si carica
     import coverPlaceholder from "$lib/assets/imgs/bicentenario-1987.jpg?w=24&blur=2&format=webp&inline";
     import { organization } from "$lib/organization";
