@@ -226,7 +226,9 @@
         font-size: var(--fs-small);
     }
 
+    /* La riga dei comandi è larga quanto la finestra, non quanto una colonna di testo come gli altri paragrafi: «Chiudi» va al bordo destro */
     dialog > p {
+        max-inline-size: none;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
