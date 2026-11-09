@@ -11,9 +11,9 @@ export interface Location {
 export const legalSeat: Location = {
     id: "sede-legale",
     name: "Sede legale",
-    address: ["Via Porta Nuova 1", "54013 Fivizzano (MS)"],
+    address: ["Via Stretta 5", "54013 Fivizzano (MS)"],
     description: "Sede legale dell'associazione.",
-    mapsHref: "https://maps.google.com/?q=Via+Porta+Nuova+1+54013+Fivizzano+MS"
+    mapsHref: "https://maps.google.com/?q=Via+Stretta+5+54013+Fivizzano+MS"
 };
 
 // In Contatti tutte e due (dal 9/11/2026). Serricciolo è una frazione di Aulla, non di Fivizzano (CAP 54011)
