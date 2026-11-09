@@ -28,10 +28,34 @@
     // Aggiungi al tuo calendario: Google Calendar già compilato (Android, computer, senza JS), il file .ics su iPhone e iPad
     const google = $derived(googleCalendarHref(event, `${organization.url}/calendario/${event.id}`));
     let ios = $state(false);
+
+    /*
+     * Condividi l'evento, come «Condividi l'articolo»: il menu di condivisione del dispositivo (WhatsApp, Messaggi, mail),
+     * con titolo, data e luogo nel testo; altrove copia il link e per tre secondi dice «Link copiato». Solo con JS.
+     */
+    let canShare = $state(false);
+    let copied = $state(false);
+
     onMount(() => {
         now = new Date();
         ios = isIos();
+        canShare = "share" in navigator || "clipboard" in navigator;
     });
+
+    async function share() {
+        const url = `${organization.url}/calendario/${event.id}`;
+        try {
+            if (navigator.share) {
+                await navigator.share({ title: event.summary, text: [event.summary, date, place].filter(Boolean).join(" · "), url });
+            } else {
+                await navigator.clipboard.writeText(url);
+                copied = true;
+                setTimeout(() => (copied = false), 3000);
+            }
+        } catch {
+            // Condivisione annullata: niente da fare
+        }
+    }
     // Titoli lunghi senza il nome della Filarmonica, così il titolo resta entro i 70 caratteri che i motori mostrano
     const pageTitle = $derived(event.summary.length + titleSuffix.length > 70 ? event.summary : event.summary + titleSuffix);
 </script>
@@ -57,6 +81,9 @@
         <meta itemprop="description" content={event.description} />
     {/if}
     <h1 itemprop="name">{event.summary}</h1>
+    {#if canShare}
+        <p><button type="button" onclick={share} aria-live="polite"><span hidden={copied}>Condividi l'evento</span><span hidden={!copied}>Link copiato</span></button></p>
+    {/if}
 </header>
 
 <!-- La descrizione del calendario, già pulita alla build (src/lib/server/calendar.ts): paragrafi, elenchi, link -->
