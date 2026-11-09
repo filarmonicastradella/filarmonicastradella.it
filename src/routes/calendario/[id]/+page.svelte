@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import EventMicrodata from "$lib/components/EventMicrodata.svelte";
     import FaqItem from "$lib/components/FaqItem.svelte";
     import { isIos } from "$lib/device";
     import { eventDate, eventPlace, eventTime, eventWhen, googleCalendarHref, hasNotEnded } from "$lib/events";
@@ -46,14 +47,9 @@
 -->
 <header itemscope itemtype="https://schema.org/Event" itemid="{organization.url}/calendario/{event.id}#evento" itemref="evento-dettagli">
     <p><time itemprop="startDate" datetime={event.start}>{date}</time></p>
-    <!-- Per i motori di ricerca: indirizzo della pagina, stato, evento dal vivo, organizzatore (l'ente, come nella home) -->
+    <!-- Per i motori di ricerca: l'indirizzo della pagina e, come nella scheda, stato, organizzatore, chi suona, immagine, ingresso -->
     <link itemprop="url" href="{organization.url}/calendario/{event.id}" />
-    <link itemprop="eventStatus" href="https://schema.org/EventScheduled" />
-    <link itemprop="eventAttendanceMode" href="https://schema.org/OfflineEventAttendanceMode" />
-    <link itemprop="organizer" href="{organization.url}/#ente" />
-    {#each event.ensembles as { slug } (slug)}
-        <link itemprop="performer" href="{organization.url}/formazioni/{slug}#formazione" />
-    {/each}
+    <EventMicrodata {event} />
     {#if event.end}
         <meta itemprop="endDate" content={event.end} />
     {/if}

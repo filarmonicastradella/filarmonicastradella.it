@@ -1,5 +1,6 @@
 <script lang="ts">
     import { eventDate, eventPlace, eventTime, type EventItem } from "$lib/events";
+    import EventMicrodata from "$lib/components/EventMicrodata.svelte";
     import { organization } from "$lib/organization";
 
     // `level` è il livello del titolo, da scegliere in base a dove compare la scheda.
@@ -33,6 +34,7 @@
             <p itemprop="description">{event.description}</p>
         {/if}
     </a>
+    <EventMicrodata {event} />
 </article>
 
 <style>
