@@ -297,7 +297,8 @@
                             <input type="text" id="ricordo-{piece}-autore" name="ricordo_{i + 1}_autore" maxlength="120" />
                         </p>
 
-                        <!-- Un file per ricordo: la scansione mandata da casa, o la foto fatta da chi ritira l'originale -->
+                        <!-- Un file per ricordo: la scansione mandata da casa, o la foto fatta da chi ritira l'originale, che dal telefono
+                             apre subito la fotocamera posteriore (capture) -->
                         <p>
                             <label for="ricordo-{piece}-file">{handsOriginals ? "Foto alla consegna" : "File"}</label>
                             <input
@@ -306,6 +307,7 @@
                                 name="attachment"
                                 required
                                 accept={handsOriginals ? "image/jpeg,image/png" : "image/jpeg,image/png,application/pdf"}
+                                capture={handsOriginals ? "environment" : undefined}
                             />
                         </p>
 

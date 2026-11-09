@@ -95,10 +95,11 @@
     </p>
 {/snippet}
 
-<!-- Il documento di chi firma la domanda: chi si iscrive, o per un minore il genitore, accanto ai suoi dati -->
+<!-- Il documento di chi firma la domanda: chi si iscrive, o per un minore il genitore, accanto ai suoi dati. Dal telefono il campo
+     propone anche la fotocamera: si fotografano fronte e retro al momento, due file insieme (multiple) -->
 {#snippet identityDocument()}
     <p>
-        <label for="documento_identita">Documento di identità (PDF, JPG o PNG)</label>
+        <label for="documento_identita">Documento di identità, fronte e retro (PDF, JPG o PNG: dal telefono puoi fotografarlo)</label>
         <input type="file" id="documento_identita" name="attachment" required multiple accept="application/pdf,image/jpeg,image/png" />
     </p>
 {/snippet}
