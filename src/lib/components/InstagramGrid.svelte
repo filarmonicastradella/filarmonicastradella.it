@@ -154,8 +154,8 @@
      * un'altezza fissa (quella di una piccola in 4:3), così le foto più larghe dell'ultima riga restano allineate.
      * - Sotto 64rem: la grande a tutta larghezza in 4:3, sotto le piccole (la riga si misura sulla larghezza della scheda, che è un
      *   contenitore: content.css).
-     * - Da 64rem la impagina la pagina Foto e video, insieme alla data e alla didascalia del post (la griglia diventa trasparente,
-     *   display: contents): la grande sotto la data, le piccole sotto la didascalia.
+     * - Da 64rem: la grande nella prima colonna delle sezioni, alta quanto tutte le righe delle piccole, e le piccole nella seconda,
+     *   larga quanto la colonna di testo. Una foto sola sta nella seconda colonna, sotto la didascalia.
      */
     ul:not([data-featured]) {
         --row: calc((100cqi - 2 * var(--space-2)) / 3 * 3 / 4);
@@ -185,6 +185,75 @@
         & > li:not(:first-child) :is(img, video) {
             block-size: 100%;
             aspect-ratio: auto;
+        }
+    }
+
+    @media (min-width: 64rem) {
+        ul:not([data-featured]) {
+            --small: calc((var(--container-text) - 5 * var(--space-2)) / 6);
+            --row: calc((var(--small) * 2 + var(--space-2)) * 3 / 4);
+            grid-template-columns: minmax(0, 1fr) repeat(6, var(--small));
+            grid-template-rows: none;
+
+            /* La grande: alta quanto tutte le righe delle piccole (tre per riga), con lo stacco tra le colonne delle sezioni */
+            & > li:first-child {
+                grid-column: 1;
+                margin-inline-end: calc(var(--space-6) - var(--space-2));
+            }
+
+            & > li:first-child :is(figure, a, img, video) {
+                block-size: 100%;
+            }
+
+            & > li:first-child :is(img, video) {
+                aspect-ratio: auto;
+            }
+
+            & > li:not(:first-child):last-child:nth-child(3n + 2) {
+                grid-column: 2 / -1;
+            }
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(2)) > li:first-child {
+            grid-row: span 1;
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(5)) > li:first-child {
+            grid-row: span 2;
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(8)) > li:first-child {
+            grid-row: span 3;
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(11)) > li:first-child {
+            grid-row: span 4;
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(14)) > li:first-child {
+            grid-row: span 5;
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(17)) > li:first-child {
+            grid-row: span 6;
+        }
+
+        ul:not([data-featured]):has(> li:nth-child(20)) > li:first-child {
+            grid-row: span 7;
+        }
+
+        /* Una foto sola: nella seconda colonna, sotto la didascalia, in 4:3 */
+        ul:not([data-featured]):not(:has(> li:nth-child(2))) {
+            grid-auto-rows: auto;
+
+            & > li:first-child {
+                grid-column: 2 / -1;
+                margin-inline-end: 0;
+            }
+
+            & > li:first-child :is(img, video) {
+                aspect-ratio: 4 / 3;
+            }
         }
     }
 
