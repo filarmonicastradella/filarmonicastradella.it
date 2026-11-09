@@ -1,6 +1,5 @@
-import { execSync } from "node:child_process";
-import { existsSync } from "node:fs";
 import { getEvents } from "$lib/server/calendar";
+import { articleModified, gitDates, latest } from "$lib/server/git";
 import { ensembles } from "$lib/ensembles";
 import { activeCategories, articles } from "$lib/articles";
 import { organization } from "$lib/organization";
@@ -19,28 +18,6 @@ const pageFiles = new Map(
 );
 
 /*
- * L'ultima modifica di ogni file, dalla storia di git (un solo comando per tutti): serve la storia intera, per questo la
- * GitHub Action fa il checkout con fetch-depth: 0. Senza git (o fuori dal repository) le pagine restano senza data.
- */
-function gitDates() {
-    const dates = new Map<string, string>();
-    try {
-        let date = "";
-        for (const line of execSync("git log --format=@%cI --name-only", { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 }).split("\n")) {
-            if (line.startsWith("@")) date = line.slice(1);
-            else if (line && !dates.has(line)) dates.set(line, date);
-        }
-    } catch {
-        console.warn("Sitemap: git non disponibile, pagine senza data di modifica");
-    }
-    return dates;
-}
-
-// La più recente di più date (ISO, anche con orari e fusi diversi); undefined se non ce n'è nessuna
-const latest = (...dates: (string | undefined)[]) =>
-    dates.filter((date): date is string => !!date).sort((a, b) => new Date(b).getTime() - new Date(a).getTime())[0];
-
-/*
  * La data di ultima modifica (lastmod) di ogni indirizzo, perché Google rilegga prima le pagine nuove o cambiate (dal 9/11/2026):
  * gli eventi dalla modifica su Google Calendar; le pagine, le formazioni e gli articoli dall'ultimo commit del loro file
  * (gli articoli almeno dalla data di pubblicazione); gli elenchi dalla più recente tra il loro file e quello che elencano.
@@ -55,11 +32,7 @@ export const GET: RequestHandler = async () => {
     const eventDates = events.map(({ updated }) => updated);
     for (const { id, updated } of events) lastmod.set(`/calendario/${id}`, updated);
 
-    const ownArticles = articles.filter(({ publisher }) => !publisher);
-    for (const { href, date, category, slug } of ownArticles) {
-        const file = [`src/lib/content/articles/${date}-${slug}.md`, `src/routes/articoli/${category}/${slug}/+page.svelte`].find(existsSync);
-        lastmod.set(href!, latest(date, file && git.get(file)));
-    }
+    for (const [href, date] of Object.entries(articleModified())) lastmod.set(href, date);
     // Gli elenchi degli articoli anche con quelli dei giornali, che vi compaiono con la loro data
     const articleDate = (list: typeof articles) => latest(...list.map(({ href, date }) => (href && lastmod.get(href)) || date));
     lastmod.set("/articoli", latest(lastmod.get("/articoli"), articleDate(articles)));

@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount, type Snippet } from "svelte";
+    import { page } from "$app/state";
     import { categoryName, formatArticleDate, type Article } from "$lib/articles";
     import { organization } from "$lib/organization";
 
@@ -7,6 +8,9 @@
     // dell'intestazione (un'introduzione, la foto di copertina) e `style` le proprietà della copertina
     // (--cover-placeholder, --cover-position)
     let { article, children, style }: { article: Article; children?: Snippet; style?: string } = $props();
+
+    // L'ultima modifica, dalla storia di git (articoli/+layout.server.ts), per i motori di ricerca
+    const modified = $derived((page.data.articleModified as Record<string, string> | undefined)?.[article.href!]);
 
     /*
      * Condividi: il menu di condivisione del dispositivo (WhatsApp, Messaggi, mail), dove c'è; altrove copia il link e
@@ -39,6 +43,14 @@
     <p><a href="/articoli/{article.category}"><span itemprop="articleSection">{categoryName(article.category)}</span></a></p>
     <link itemprop="mainEntityOfPage" href="{organization.url}{article.href}" />
     <link itemprop="publisher" href="{organization.url}/#ente" />
+    <meta itemprop="inLanguage" content="it-IT" />
+    {#if modified}
+        <meta itemprop="dateModified" content={modified} />
+    {/if}
+    <!-- Senza una foto di copertina (itemprop="image" nell'intestazione), l'immagine comune del sito -->
+    {#if !children}
+        <link itemprop="image" href="{organization.url}/anteprima.jpg" />
+    {/if}
     <h1 itemprop="headline">{article.title}</h1>
     <p itemprop="description">{article.excerpt}</p>
     {@render children?.()}

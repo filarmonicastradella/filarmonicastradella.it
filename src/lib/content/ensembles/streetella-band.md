@@ -1,6 +1,7 @@
 ---
 title: Streetella Band
 summary: "La street band della Filarmonica: musica in movimento, tra l'energia della festa e l'impatto sonoro di una formazione itinerante."
+genre: "Street band"
 order: 2
 lineup:
     - name: Legni

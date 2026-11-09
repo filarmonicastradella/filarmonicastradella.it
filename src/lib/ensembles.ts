@@ -5,6 +5,8 @@ interface EnsembleMetadata {
     title: string;
     summary: string;
     order: number;
+    /** Il genere, per i motori di ricerca (genre di MusicGroup); solo dove è chiaro */
+    genre?: string;
     /** L'organico: gli strumenti divisi per sezione (legni, ottoni, archi...) */
     lineup: { name: string; instruments: string[] }[];
     /** La foto di copertina (il file è in src/lib/assets/imgs/ensembles/, con lo slug come nome) */

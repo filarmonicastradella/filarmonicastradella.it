@@ -30,7 +30,17 @@ const pageNames = new Map<string, string>(
 for (const { slug, name } of categories) pageNames.set(`/articoli/${slug}`, name);
 
 // Tipo della pagina per i motori di ricerca, dove dice qualcosa in più di una pagina qualunque
-const pageTypes: Record<string, string> = { "/associazione": "AboutPage", "/contatti": "ContactPage" };
+// (gli elenchi sono CollectionPage: calendario, archivio degli eventi, articoli e categorie, formazioni, foto e video)
+const pageTypes: Record<string, string> = {
+    "/associazione": "AboutPage",
+    "/contatti": "ContactPage",
+    "/calendario": "CollectionPage",
+    "/calendario/archivio": "CollectionPage",
+    "/articoli": "CollectionPage",
+    "/formazioni": "CollectionPage",
+    "/associazione/mediateca": "CollectionPage",
+    ...Object.fromEntries(categories.map(({ slug }) => [`/articoli/${slug}`, "CollectionPage"]))
+};
 
 // Percorso di navigazione (BreadcrumbList): la home, le pagine di livello superiore che esistono, la pagina stessa
 function breadcrumb(path: string, title: string) {
@@ -94,6 +104,15 @@ export const handle: Handle = ({ event, resolve }) =>
                         .replace(/(<meta property="og:image:height" content=")[^"]*/, `$1${attribute("height") ?? ""}`)
                         .replace(/(<meta property="og:image:alt" content=")[^"]*/, `$1${attribute("alt") ?? ""}`);
                 }
+            } else {
+                // Negli eventi l'immagine dei microdati (la copertina della formazione che suona), di cui non si sanno le misure
+                const linked = header.match(/<link itemprop="image" href="([^"]+)"/)?.[1];
+                if (linked && !linked.endsWith("/anteprima.jpg")) {
+                    html = html
+                        .replace(/(<meta property="og:image" content=")[^"]*/, `$1${linked}`)
+                        .replace(/\s*<meta property="og:image:(?:width|height)" content="[^"]*"\s*\/?>/g, "")
+                        .replace(/(<meta property="og:image:alt" content=")[^"]*/, "$1Foto della formazione che suona all'evento");
+                }
             }
 
             // Negli articoli l'anteprima è di tipo articolo, con la data di pubblicazione dell'intestazione
@@ -104,6 +123,7 @@ export const handle: Handle = ({ event, resolve }) =>
             }
 
             const path = event.url.pathname.replace(/\/$/, "") || "/";
+            const image = html.match(/<meta property="og:image" content="([^"]*)"/)?.[1];
 
             // Dati strutturati comuni: tipo di pagina, percorso di navigazione e domande frequenti (JSON-LD), collegati al
             // sito e all'ente descritti nella home. La home ha i suoi.
@@ -115,6 +135,9 @@ export const handle: Handle = ({ event, resolve }) =>
                     "@type": questions.length ? "FAQPage" : (pageTypes[path] ?? "WebPage"),
                     name,
                     url: organization.url + path,
+                    ...(description && { description: plainText(description) }),
+                    // L'immagine dell'anteprima: la copertina della pagina, o quella comune del sito
+                    ...(image && { primaryImageOfPage: { "@type": "ImageObject", url: image } }),
                     inLanguage: "it-IT",
                     isPartOf: { "@id": `${organization.url}/#sito` },
                     publisher: { "@id": `${organization.url}/#ente` },

@@ -16,7 +16,18 @@
         description: "Concerti, cerimonie civili, feste in piazza, convegni e feste private in Lunigiana, con la formazione adatta all'occasione.",
         provider: { "@id": `${organization.url}/#ente` },
         areaServed: { "@type": "Place", name: "Lunigiana" },
-        url: `${organization.url}/contatti/ingaggi`
+        url: `${organization.url}/contatti/ingaggi`,
+        image: `${organization.url}/anteprima.jpg`,
+        // Le occasioni, come catalogo: chi cerca «musica per matrimonio» o «banda per sagra» trova la stessa offerta
+        hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Occasioni",
+            itemListElement: occasions
+                .filter((occasion) => occasion !== "Altro")
+                .map((occasion) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: occasion } }))
+        },
+        // La richiesta si fa con il modulo
+        potentialAction: { "@type": "CommunicateAction", target: organization.url + form, name: "Chiedi un ingaggio" }
     };
     // "<" come \u003c: nessun testo dei dati può chiudere lo script prima del tempo
     const structuredDataScript = `<script type="application/ld+json">${JSON.stringify(structuredData).replace(/</g, "\\u003c")}<\/script>`;

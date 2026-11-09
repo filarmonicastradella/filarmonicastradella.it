@@ -2,8 +2,9 @@
     import { onMount } from "svelte";
     import EventMicrodata from "$lib/components/EventMicrodata.svelte";
     import FaqItem from "$lib/components/FaqItem.svelte";
+    import PostalAddress from "$lib/components/PostalAddress.svelte";
     import { isIos } from "$lib/device";
-    import { eventDate, eventPlace, eventTime, eventWhen, googleCalendarHref, hasNotEnded } from "$lib/events";
+    import { eventAddress, eventDate, eventPlace, eventTime, eventWhen, googleCalendarHref, hasNotEnded } from "$lib/events";
     import { faq } from "$lib/faq";
     import { organization, titleSuffix } from "$lib/organization";
     import type { PageProps } from "./$types";
@@ -19,8 +20,7 @@
         const text = `${event.summary}: ${when}${place ? `, ${place}` : ""}.${event.description ? ` ${event.description.replace(/\s+/g, " ")}` : ""}`;
         return text.length > 160 ? `${text.slice(0, 159).replace(/\s+\S*$/, "")}…` : text;
     });
-    // Il resto dell'indirizzo, dopo il nome del luogo
-    const address = $derived(event.location.split(",").slice(1).join(",").trim());
+    const address = $derived(eventAddress(event));
     // Le domande e «Aggiungi al tuo calendario» servono a chi ci deve ancora andare: per gli eventi passati non si mostrano.
     // La build sa quali erano già conclusi; nel browser si ricontrolla dopo il montaggio, per quelli finiti dopo la build.
     let now = $state<Date>();
@@ -113,8 +113,11 @@
                     <br />
                     <!-- Il microdato sul testo, non sul link: su un <a> il valore sarebbe l'indirizzo di Google Maps -->
                     <a href="https://maps.google.com/?q={encodeURIComponent(event.location)}" target="_blank" rel="noopener noreferrer"
-                        ><span itemprop="address">{address}</span></a
+                        ><PostalAddress {address}>{address}</PostalAddress></a
                     >
+                {:else}
+                    <!-- Solo il nome del luogo: è anche il suo indirizzo, che per Google è obbligatorio -->
+                    <PostalAddress address={event.location} />
                 {/if}
             </dd>
         {/if}

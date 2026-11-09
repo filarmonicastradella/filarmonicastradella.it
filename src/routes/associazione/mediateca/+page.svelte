@@ -3,6 +3,7 @@
     import TimelineSections from "$lib/components/TimelineSections.svelte";
     import { formatArticleDate } from "$lib/articles";
     import { galleryPosts } from "$lib/gallery";
+    import { organization } from "$lib/organization";
 </script>
 
 <svelte:head>
@@ -33,6 +34,15 @@
                         </div>
                     {/if}
                     <link itemprop="url" href={post.permalink} />
+                    <!-- Per i motori di ricerca: chi pubblica (la Filarmonica, che è anche l'autrice) e le foto del post -->
+                    <link itemprop="author" href="{organization.url}/#ente" />
+                    <link itemprop="publisher" href="{organization.url}/#ente" />
+                    <meta itemprop="inLanguage" content="it-IT" />
+                    {#each post.slides as slide (slide.id)}
+                        {#if slide.imageUrl}
+                            <link itemprop="image" href={organization.url + slide.imageUrl} />
+                        {/if}
+                    {/each}
                 </div>
                 <InstagramGrid slides={post.slides} />
             </article>

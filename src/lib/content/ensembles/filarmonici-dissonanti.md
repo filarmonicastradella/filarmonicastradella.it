@@ -1,6 +1,7 @@
 ---
 title: Filarmonici Dissonanti
 summary: "Un viaggio nel tempo attraverso la musica medievale, rinascimentale e barocca, secondo i criteri dell'interpretazione storicamente informata."
+genre: "Musica antica"
 order: 4
 lineup:
     - name: Fiati

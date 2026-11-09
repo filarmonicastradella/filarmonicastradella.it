@@ -72,6 +72,20 @@ export function eventWhen(event: EventItem): string {
 /** Il nome del luogo: il calendario dà spesso l'indirizzo completo, qui basta la parte prima della prima virgola. */
 export const eventPlace = (event: EventItem) => event.location.split(",")[0].trim();
 
+/** Il resto dell'indirizzo, dopo il nome del luogo (vuoto se il calendario dà solo il nome). */
+export const eventAddress = (event: EventItem) => event.location.split(",").slice(1).join(",").trim();
+
+/*
+ * L'indirizzo di un luogo del calendario diviso nelle sue parti, per i microdati (PostalAddress): Google Calendar lo scrive
+ * come «Via Galileo Galilei, 4, 54011 Aulla MS, Italia» (la via può mancare, il paese anche). Se non ha questa forma, undefined.
+ */
+export function postalAddress(address: string) {
+    const match = address.match(/^(?:(.*?),\s*)?(\d{5})\s+(.+?)\s+([A-Z]{2})(?:,\s*Italia)?$/);
+    if (!match) return undefined;
+    const [, streetAddress, postalCode, addressLocality, addressRegion] = match;
+    return { streetAddress, postalCode, addressLocality, addressRegion, addressCountry: "IT" };
+}
+
 /*
  * Il link per aggiungere un evento a Google Calendar, già compilato (titolo, date, luogo, descrizione): su Android
  * l'app di Google non apre i file .ics. Date "tutto il giorno" come AAAAMMGG con la fine esclusa, orari in UTC.

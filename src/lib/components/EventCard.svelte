@@ -1,6 +1,7 @@
 <script lang="ts">
-    import { eventDate, eventPlace, eventTime, type EventItem } from "$lib/events";
+    import { eventAddress, eventDate, eventPlace, eventTime, type EventItem } from "$lib/events";
     import EventMicrodata from "$lib/components/EventMicrodata.svelte";
+    import PostalAddress from "$lib/components/PostalAddress.svelte";
     import { organization } from "$lib/organization";
 
     // `level` è il livello del titolo, da scegliere in base a dove compare la scheda.
@@ -21,7 +22,7 @@
             {#if time || place}
                 <br /><span
                     >{time}{separator}{#if place}<span itemprop="location" itemscope itemtype="https://schema.org/Place"
-                            ><span itemprop="name">{place}</span><meta itemprop="address" content={event.location} /></span
+                            ><span itemprop="name">{place}</span><PostalAddress address={eventAddress(event) || event.location} /></span
                         >{/if}</span
                 >
             {/if}

@@ -5,7 +5,7 @@
     import ArticleCard from "$lib/components/ArticleCard.svelte";
     import { articleKey, articles } from "$lib/articles";
     import { ensembles } from "$lib/ensembles";
-    import { legalSeat } from "$lib/locations";
+    import { legalSeat, operationalSeats } from "$lib/locations";
     // Il corsivo serve solo al titolo della home: richiesto subito, solo qui
     import cormorantItalicFont from "@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-italic.woff2?url";
     import { organization } from "$lib/organization";
@@ -15,14 +15,19 @@
 
     // Dati strutturati dell'associazione per i motori di ricerca: un ente non profit (NGO, sottotipo di
     // Organization), con le formazioni come MusicGroup e la Lunigiana come zona in cui opera.
-    const [street, place] = legalSeat.address;
-    const [, postalCode, locality, region] = place.match(/^(\d{5}) (.+) \((\w+)\)$/) ?? [];
+    // Un indirizzo di locations.ts («Via Stretta 5», «54013 Fivizzano (MS)») come indirizzo postale
+    const postalAddress = ([street, place]: string[]) => {
+        const [, postalCode, addressLocality, addressRegion] = place.match(/^(\d{5}) (.+) \((\w+)\)$/) ?? [];
+        return { "@type": "PostalAddress", streetAddress: street, postalCode, addressLocality, addressRegion, addressCountry: "IT" };
+    };
     // L'ente e il sito, con un "@id" a cui rimandano le altre pagine (hooks.server.ts, eventi, articoli, formazioni)
     const ente = {
         "@type": "NGO",
         "@id": `${organization.url}/#ente`,
         name: organization.name,
+        legalName: organization.name,
         alternateName: "Filarmonica Alessandro Stradella",
+        slogan: organization.motto,
         description: "Associazione musicale di Fivizzano, in Lunigiana, dal 1777.",
         url: `${organization.url}/`,
         logo: `${organization.url}/logo.png`,
@@ -37,10 +42,19 @@
             description: summary,
             url: `${organization.url}/formazioni/${slug}`
         })),
-        address: { "@type": "PostalAddress", streetAddress: street, postalCode, addressLocality: locality, addressRegion: region, addressCountry: "IT" },
+        address: postalAddress(legalSeat.address),
+        // Le sedi operative, dove si prova e si fanno le iniziative
+        location: operationalSeats.map(({ name, address, mapsHref }) => ({ "@type": "Place", name, address: postalAddress(address), hasMap: mapsHref })),
         email: organization.email,
         telephone: organization.phone,
+        // I recapiti per argomento: quelli generali e quelli per la stampa
+        contactPoint: [
+            { "@type": "ContactPoint", contactType: "informazioni", email: organization.email, telephone: organization.phone, availableLanguage: "it" },
+            { "@type": "ContactPoint", contactType: "stampa", email: organization.pressEmail, url: `${organization.url}/contatti/stampa`, availableLanguage: "it" }
+        ],
         taxID: organization.taxCode,
+        // L'iscrizione al Registro unico nazionale del Terzo settore
+        identifier: { "@type": "PropertyValue", propertyID: "RUNTS", value: organization.runts.name.replace(/\D/g, "") },
         memberOf: { "@type": "Organization", name: organization.affiliation.name, url: organization.affiliation.href },
         sameAs: organization.socials.filter(({ profile }) => profile).map(({ href }) => href)
     };
@@ -54,6 +68,7 @@
                 url: `${organization.url}/`,
                 name: "Filarmonica Alessandro Stradella",
                 alternateName: "Filarmonica Stradella",
+                description: "Il sito della Filarmonica Alessandro Stradella APS: formazioni, calendario dei concerti, articoli, iscrizione e sostegno.",
                 inLanguage: "it-IT",
                 publisher: { "@id": ente["@id"] }
             }
