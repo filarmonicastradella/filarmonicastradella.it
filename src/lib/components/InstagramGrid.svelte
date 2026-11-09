@@ -16,14 +16,13 @@
     // Le foto sono ritagliate in 4:5 (la grande alla misura del suo riquadro): una foto orizzontale riempie l'altezza, quindi serve un
     // file più largo della casella, di quanto è più larga. Senza questo il browser sceglie un file troppo piccolo e la foto si sgrana.
     // Senza featured: un quarto del contenitore da 64rem (circa 16rem), metà dello schermo sotto. Nella home (featured): da 64rem la
-    // grande circa 27rem per 29 e le piccole circa 12rem; da 40rem la grande metà dello schermo e le piccole un quarto; sotto, la
-    // grande tutto lo schermo e le piccole un terzo.
+    // grande circa 27rem per 29 e le piccole circa 12rem; sotto, la grande tutto lo schermo e le piccole un terzo.
     const sizes = (slide: GallerySlide, index: number) => {
         const ratio = slide.width && slide.height ? slide.width / slide.height : 4 / 5;
         const crop = Math.max(1, ratio * (5 / 4));
         if (!featured) return `(min-width: 64rem) ${Math.ceil(16 * crop)}rem, ${Math.ceil(50 * crop)}vw`;
-        const [wide, middle, narrow] = index === 0 ? [Math.max(27, 29 * ratio), 50 * crop, 100 * crop] : [12 * crop, 25 * crop, 34 * crop];
-        return `(min-width: 64rem) ${Math.ceil(wide)}rem, (min-width: 40rem) ${Math.ceil(middle)}vw, ${Math.ceil(narrow)}vw`;
+        const [wide, narrow] = index === 0 ? [Math.max(27, 29 * ratio), 100 * crop] : [12 * crop, 34 * crop];
+        return `(min-width: 64rem) ${Math.ceil(wide)}rem, ${Math.ceil(narrow)}vw`;
     };
 </script>
 
@@ -136,11 +135,10 @@
     /*
      * Nella home (featured) la foto più recente comanda e le altre fanno da contorno, a ogni larghezza (le caselle in più, foto o
      * segnaposto, si nascondono):
-     * - sul telefono la grande a tutta larghezza, in 4:5, e sotto tre piccole in una riga (quattro foto);
-     * - da 40rem la grande a sinistra, larga metà e alta due righe, e a destra quattro piccole in due righe da due (cinque foto);
-     * - da 64rem la griglia segue le due colonne delle sezioni (layout.css): la grande nella prima colonna, e nella seconda, larga
-     *   quanto la colonna di testo, sei piccole su due righe (sette foto). Le righe hanno l'altezza delle piccole in 4:5, così la
-     *   grande non cambia misura.
+     * - fino a 64rem la grande a tutta larghezza, in 4:5, e sotto tre piccole in una riga (quattro foto);
+     * - da 64rem la griglia segue le due colonne delle sezioni (layout.css): la grande nella prima colonna, alta due righe, e nella
+     *   seconda, larga quanto la colonna di testo, sei piccole su due righe (sette foto). Le righe hanno l'altezza delle piccole in
+     *   4:5, così la grande non cambia misura.
      */
     [data-featured] {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -154,29 +152,6 @@
         }
     }
 
-    @media (min-width: 40rem) {
-        [data-featured] {
-            grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr));
-
-            & > li:first-child {
-                grid-column: auto;
-                grid-row: span 2;
-            }
-
-            & > li:nth-child(5) {
-                display: block;
-            }
-
-            & > li:first-child :is(figure, a, img, video) {
-                block-size: 100%;
-            }
-
-            & > li:first-child :is(img, video) {
-                aspect-ratio: auto;
-            }
-        }
-    }
-
     @media (min-width: 64rem) {
         [data-featured] {
             --small: calc((var(--container-text) - 2 * var(--space-2)) / 3);
@@ -187,9 +162,19 @@
                 display: block;
             }
 
-            /* La grande: lo stacco tra le colonne delle sezioni, non quello tra le foto */
+            /* La grande: alta due righe, con lo stacco tra le colonne delle sezioni, non quello tra le foto */
             & > li:first-child {
+                grid-column: auto;
+                grid-row: span 2;
                 margin-inline-end: calc(var(--space-6) - var(--space-2));
+            }
+
+            & > li:first-child :is(figure, a, img, video) {
+                block-size: 100%;
+            }
+
+            & > li:first-child :is(img, video) {
+                aspect-ratio: auto;
             }
         }
     }
