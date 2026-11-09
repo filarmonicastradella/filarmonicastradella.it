@@ -15,13 +15,16 @@
 
     // Le foto sono ritagliate in 4:5 (la grande alla misura del suo riquadro): una foto orizzontale riempie l'altezza, quindi serve un
     // file più largo della casella, di quanto è più larga. Senza questo il browser sceglie un file troppo piccolo e la foto si sgrana.
-    // Senza featured: un quarto del contenitore da 64rem (circa 16rem), metà dello schermo sotto. Nella home (featured): da 64rem la
+    // Senza featured (Foto e video, in 4:3): un quarto del contenitore da 64rem (circa 16rem), metà dello schermo sotto. Nella home (featured): da 64rem la
     // grande circa 27rem per 29 e le piccole circa 12rem; da 40rem la grande metà dello schermo e le piccole un quarto; sotto, la
     // grande tutto lo schermo e le piccole un terzo.
     const sizes = (slide: GallerySlide, index: number) => {
         const ratio = slide.width && slide.height ? slide.width / slide.height : 4 / 5;
         const crop = Math.max(1, ratio * (5 / 4));
-        if (!featured) return `(min-width: 64rem) ${Math.ceil(16 * crop)}rem, ${Math.ceil(50 * crop)}vw`;
+        if (!featured) {
+            const landscapeCrop = Math.max(1, ratio * (3 / 4));
+            return `(min-width: 64rem) ${Math.ceil(16 * landscapeCrop)}rem, ${Math.ceil(50 * landscapeCrop)}vw`;
+        }
         // Sul telefono la grande è in 4:3: una foto più larga riempie l'altezza
         const [wide, middle, narrow] =
             index === 0 ? [Math.max(27, 29 * ratio), 50 * crop, 100 * Math.max(1, ratio * (3 / 4))] : [12 * crop, 25 * crop, 34 * crop];
@@ -91,8 +94,7 @@
 
 <style>
     /*
-     * Sotto il titolo, a tutta larghezza: due foto per riga su telefono, quattro per riga da 64rem in su,
-     * come la griglia di un profilo Instagram. Formato 4:5 come i post social (docs/DESIGN.md), angoli quasi vivi.
+     * Sotto il titolo, a tutta larghezza: due foto per riga su telefono, quattro per riga da 64rem in su, angoli quasi vivi.
      */
     ul {
         display: grid;
@@ -117,14 +119,22 @@
         display: block;
     }
 
+    /*
+     * In Foto e video le foto sono in 4:3, quasi il formato intero delle foto di concerto, che sono orizzontali: lì si guardano.
+     * Nella home, che è un'anteprima, in 4:5 come i post social (sotto).
+     */
     img,
     video {
         inline-size: 100%;
-        aspect-ratio: 4 / 5;
+        aspect-ratio: 4 / 3;
         object-fit: cover;
     }
 
-    /* Il segnaposto: una casella 4:5 come le foto, sul fondo rialzato, con la scritta tra parentesi quadre */
+    [data-featured] :is(img, video) {
+        aspect-ratio: 4 / 5;
+    }
+
+    /* Il segnaposto: una casella 4:5 come le foto della home, sul fondo rialzato, con la scritta tra parentesi quadre */
     figure:has(> p) {
         display: grid;
         place-items: center;

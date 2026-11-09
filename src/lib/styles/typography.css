@@ -124,9 +124,11 @@ figcaption {
  * Occhielli: le date in testa a schede ed eventi (la data all'inizio del primo paragrafo, riconoscibile dai
  * microdati), la categoria degli articoli e la testata nella rassegna stampa, le etichette e le voci delle coppie etichetta/valore. Le date
  * dentro un testo, o accanto all'autore nella firma di un articolo, restano testo. Anche i titoli delle colonne del piè
- * di pagina: tre titoli in Cormorant affiancati erano proprio quello che docs/DESIGN.md vieta.
+ * di pagina: tre titoli in Cormorant affiancati erano proprio quello che docs/DESIGN.md vieta. Anche la data che fa da
+ * titolo a un post in Foto e video (un titolo fatto solo della data).
  */
-p:first-child > time[itemprop]:first-child {
+p:first-child > time[itemprop]:first-child,
+:is(h3, h4) > time[itemprop]:only-child {
     font-family: var(--font-text);
     font-size: var(--fs-eyebrow);
     font-weight: var(--fw-text-strong);
@@ -155,6 +157,7 @@ th {
 }
 
 p:first-child > time[itemprop]:first-child,
+:is(h3, h4) > time[itemprop]:only-child,
 [itemprop="articleSection"],
 a:has(> [itemprop="articleSection"]),
 p:first-child > [itemprop="publisher"] {

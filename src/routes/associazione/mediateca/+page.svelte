@@ -17,14 +17,14 @@
 </header>
 
 <!-- Come il calendario: sezioni per mese (e per anno, se più di uno) con l'indice in cima, e un post per riga d'agenda, la data a
-     sinistra, la prima frase della didascalia come titolo e il resto a destra; sotto, le sue foto -->
+     sinistra e la didascalia a destra; sotto, le sue foto -->
 {#if galleryPosts.length > 0}
     <TimelineSections items={galleryPosts} date={(post) => post.date}>
         {#snippet entry(post, level)}
             <article id={post.anchor} itemscope itemtype="https://schema.org/SocialMediaPosting">
                 <div>
-                    <p><time itemprop="datePublished" datetime={post.date}>{formatArticleDate(post.date)}</time></p>
-                    <svelte:element this={`h${level}`} itemprop="headline">{post.title}</svelte:element>
+                    <!-- La didascalia di Instagram non è un titolo: il titolo del post è la sua data, con l'aspetto delle date -->
+                    <svelte:element this={`h${level}`}><time itemprop="datePublished" datetime={post.date}>{formatArticleDate(post.date)}</time></svelte:element>
                     {#if post.paragraphs.length > 0}
                         <div itemprop="description">
                             {#each post.paragraphs as paragraph, i (i)}
@@ -57,6 +57,15 @@
      */
     article > div {
         block-size: auto;
+    }
+
+    /* Nella riga d'agenda la data (qui il titolo) sta a sinistra, dove le schede hanno la data, e la didascalia a destra dall'alto */
+    article > div > :global(:is(h3, h4)) {
+        grid-area: 1 / 1 / 3 / 2;
+    }
+
+    article > div > [itemprop="description"] {
+        grid-area: 1 / 2 / 3 / 3;
     }
 
     article > div + :global(ul) {
