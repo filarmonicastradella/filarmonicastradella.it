@@ -24,8 +24,14 @@ declare module "*&inline" {
     export default src;
 }
 
-// La foto della hero, a tutta larghezza: anche 2048 per gli schermi grandi (`?enhanced&w=2048;1600;1280;960;640`).
+// Le foto a tutta larghezza: anche 2048 per gli schermi grandi (`?enhanced&w=2048;1600;1280;960;640`, le pagine su Fivizzano).
 declare module "*?enhanced&w=2048;1600;1280;960;640" {
+    const picture: import("vite-imagetools").Picture;
+    export default picture;
+}
+
+// La foto della hero: fino alla larghezza del file, 1557, senza ingrandirlo (`?enhanced&w=1557;1280;960;640`).
+declare module "*?enhanced&w=1557;1280;960;640" {
     const picture: import("vite-imagetools").Picture;
     export default picture;
 }
