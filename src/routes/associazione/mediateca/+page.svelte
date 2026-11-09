@@ -68,6 +68,19 @@
         grid-area: 1 / 2 / 3 / 3;
     }
 
+    /* La data e la prima riga della didascalia sulla stessa linea di base; tra i paragrafi lo stacco del testo (layout.css) */
+    article > div {
+        align-items: baseline;
+    }
+
+    [itemprop="description"] > p {
+        margin: 0;
+    }
+
+    [itemprop="description"] > p + p {
+        margin-block-start: var(--space-5);
+    }
+
     article > div + :global(ul) {
         margin-block-start: var(--space-5);
     }
