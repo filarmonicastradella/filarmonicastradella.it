@@ -32,8 +32,7 @@
                             {/each}
                         </div>
                     {/if}
-                    <!-- Il post su Instagram, sotto la didascalia (a contorno, come «Seguici su Instagram») -->
-                    <p><a itemprop="url" href={post.permalink} target="_blank" rel="noopener noreferrer">Vedi su Instagram</a></p>
+                    <link itemprop="url" href={post.permalink} />
                 </div>
                 <InstagramGrid slides={post.slides} />
             </article>
@@ -60,21 +59,13 @@
         block-size: auto;
     }
 
-    /*
-     * Nella riga d'agenda la data (qui il titolo) sta a sinistra, dove le schede hanno la data, e a destra la didascalia con sotto
-     * «Vedi su Instagram»; sul telefono una sotto l'altra, in quest'ordine
-     */
+    /* Nella riga d'agenda la data (qui il titolo) sta a sinistra, dove le schede hanno la data, e la didascalia a destra dall'alto */
     article > div > :global(:is(h3, h4)) {
         grid-area: 1 / 1 / 3 / 2;
     }
 
     article > div > [itemprop="description"] {
-        grid-area: 1 / 2;
-    }
-
-    article > div > p:has(> a) {
-        grid-area: 2 / 2;
-        align-self: start;
+        grid-area: 1 / 2 / 3 / 3;
     }
 
     /* La data e la prima riga della didascalia sulla stessa linea di base; tra i paragrafi lo stacco del testo (layout.css) */

@@ -35,7 +35,7 @@
     };
 
     // La finestra di Foto e video (dal 9/11/2026): solo la foto alla misura dello schermo, o il video con il player del browser, che
-    // non parte da solo (docs/DESIGN.md, Movimento); data, didascalia e link al post sono nella pagina. Si chiude con Esc (il <dialog> lo fa da sé),
+    // non parte da solo (docs/DESIGN.md, Movimento); data e didascalia sono nella pagina. Si chiude con Esc (il <dialog> lo fa da sé),
     // con «Chiudi» o toccando fuori; chiudendo il video si ferma, perché sparisce. «Precedente» e «Successiva» (anche con i tasti
     // freccia) passano alle altre foto della stessa griglia, cioè dello stesso post; alla prima e all'ultima sono spenti.
     let dialog = $state<HTMLDialogElement>();
@@ -119,7 +119,7 @@
         onkeydown={keydown}
     >
         {#if current}
-            <!-- Solo la foto o il video: data, didascalia e link a Instagram stanno nella pagina, accanto alla griglia -->
+            <!-- Solo la foto o il video: data e didascalia stanno nella pagina, accanto alla griglia -->
             {#if current.mediaType === "VIDEO"}
                 <!-- svelte-ignore a11y_media_has_caption -->
                 <video src={current.mediaUrl} poster={current.thumbnailUrl} width={current.width} height={current.height} controls playsinline></video>
