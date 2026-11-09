@@ -37,6 +37,8 @@
     --border-strong: var(--color-inchiostro);
     --focus-ring: var(--color-bordeaux);
     --corde-color: var(--color-bordeaux);
+    /* Il velo dietro le finestre (Foto e video): inchiostro quasi pieno, neutro, uguale nei due temi (il fondo inverso del tema scuro è bordeaux) */
+    --backdrop: color-mix(in srgb, var(--color-inchiostro) 90%, transparent);
     /* Il velo sulle foto delle copertine (layout.css): leggero sulla carta, più scuro nel tema scuro */
     --cover-veil: linear-gradient(
         color-mix(in srgb, var(--color-bordeaux-notte) 20%, transparent),

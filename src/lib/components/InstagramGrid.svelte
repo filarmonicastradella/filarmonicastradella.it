@@ -209,7 +209,7 @@
     }
 
     /*
-     * La finestra: sul fondo della pagina; la foto intera (non ritagliata) alla misura che ci sta, la data e la didascalia e, sotto, «Apri su Instagram» a sinistra e i pulsanti a destra. Compare sfumando (--duration-slow, solo
+     * La finestra: sul fondo rialzato, che si stacca dal velo scuro dietro (--backdrop); la foto intera (non ritagliata) alla misura che ci sta, la data, la didascalia e, sotto, «Apri su Instagram» a sinistra e i pulsanti a destra. Compare sfumando (--duration-slow, solo
      * opacità); mentre è aperta la pagina sotto non scorre.
      * Misura fissa, quasi tutto lo schermo (al massimo 80rem di larghezza), uguale per ogni foto: così data, didascalia e pulsanti
      * stanno sempre nello stesso punto, in fondo, e passando da una foto all'altra i pulsanti non si spostano. La foto prende lo
@@ -224,7 +224,7 @@
         padding: var(--space-4);
         border: none;
         border-radius: var(--radius);
-        background-color: var(--bg);
+        background-color: var(--bg-raised);
         color: var(--text);
     }
 
@@ -246,7 +246,7 @@
     }
 
     dialog::backdrop {
-        background-color: color-mix(in srgb, var(--bg-inverse) 85%, transparent);
+        background-color: var(--backdrop);
     }
 
     :global(html:has(dialog[open])) {
@@ -262,10 +262,10 @@
         object-fit: contain;
     }
 
-    /* Sotto la foto la data e la didascalia: una sopra l'altra, e da 40rem su due colonne come le righe d'agenda, la data a sinistra */
+    /* Sotto la foto la data e, sotto, la didascalia, a ogni larghezza */
     dialog figcaption {
         display: grid;
-        gap: var(--space-2) var(--space-6);
+        gap: var(--space-2);
         font-size: var(--fs-small);
 
         & > p {
@@ -277,29 +277,21 @@
         }
     }
 
-    @media (min-width: 40rem) {
-        dialog figcaption {
-            grid-template-columns: minmax(0, 1fr) minmax(0, var(--container-text));
-            align-items: baseline;
-
-            & > [itemprop="description"]:only-child {
-                grid-column: 2;
-            }
-        }
-    }
-
     /* La riga dei comandi è larga quanto la finestra, non quanto una colonna di testo come gli altri paragrafi: «Chiudi» va al bordo destro */
     dialog > p {
         max-inline-size: none;
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
         gap: var(--space-2);
         margin: var(--space-4) 0 0;
     }
 
-    /* «Apri su Instagram» a sinistra, i pulsanti insieme a destra: «Precedente», «Successiva», «Chiudi» */
+    /*
+     * «Apri su Instagram» a sinistra, i pulsanti insieme a destra: «Precedente», «Successiva», «Chiudi», tutti alti uguali (si allungano
+     * all'altezza della riga, anche «Chiudi», che non ha l'icona)
+     */
     dialog > p > a {
+        align-self: center;
         margin-inline-end: auto;
     }
 
