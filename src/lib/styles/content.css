@@ -141,9 +141,9 @@ ol:has(> li > article > :is(a, div) > :is(h2, h3, h4)) {
     grid-template-columns: minmax(0, 1fr);
 }
 
-/* Il rimando sotto un'agenda («Tutti gli eventi» in home) parte dalla colonna dei titoli, come gli altri rimandi */
+/* Il rimando sotto un'agenda («Calendario» in home) o una griglia di foto («Foto e video») parte dalla colonna dei titoli, come gli altri rimandi */
 @media (min-width: 64rem) {
-    section:has(> ol > li > article) > .rimando {
+    section:has(> ol > li > article, > ul > li > figure) > .rimando {
         inline-size: min(100%, var(--container-text));
         margin-inline-start: auto;
     }
