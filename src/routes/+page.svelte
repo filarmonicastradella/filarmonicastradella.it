@@ -82,10 +82,8 @@
 <section>
     <h2>Chi siamo</h2>
     <p>
-        Dal 1777 la Filarmonica fa musica a Fivizzano, in Lunigiana: una storia lunga quasi due secoli e mezzo. Oggi riunisce quattro formazioni
-        ({#each ensembles as { slug, title }, i (slug)}{i === 0 ? "" : i === ensembles.length - 1 ? " e " : ", "}<a href="/formazioni/{slug}"
-                >{title}</a
-            >{/each}) e porta il suo repertorio nelle sale e nelle piazze del territorio.
+        Dal 1777 la Filarmonica fa musica a Fivizzano, in Lunigiana: una storia lunga quasi due secoli e mezzo. Oggi riunisce
+        <a href="/formazioni">quattro formazioni</a> e porta il suo repertorio nelle sale e nelle piazze del territorio.
     </p>
     <p class="rimando"><a href="/associazione">Associazione</a></p>
 </section>
