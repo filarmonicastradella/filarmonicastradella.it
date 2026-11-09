@@ -75,6 +75,14 @@ input[type="file"]::file-selector-button:hover {
     color: var(--text-brand);
 }
 
+/* Un pulsante spento (per esempio «Successiva» sull'ultima foto): il bordo e il testo attenuati, e niente cambia al passaggio del mouse */
+main button[type="button"]:disabled,
+main button[type="button"]:disabled:hover {
+    border-color: var(--border);
+    color: var(--text-muted);
+    cursor: default;
+}
+
 /*
  * Pulsanti e link che per tre secondi dicono di aver copiato («Copiato», «Link copiato»): le due scritte stanno una
  * sopra l'altra e se ne vede una sola, così il pulsante non cambia misura e la pagina non si sposta. Quella nascosta

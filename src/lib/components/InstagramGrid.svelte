@@ -1,4 +1,6 @@
 <script lang="ts">
+    import ChevronLeftIcon from "~icons/heroicons/chevron-left-20-solid";
+    import ChevronRightIcon from "~icons/heroicons/chevron-right-20-solid";
     import PlayIcon from "~icons/heroicons/play-20-solid";
     import type { GallerySlide } from "$lib/gallery";
 
@@ -34,14 +36,27 @@
 
     // La finestra di Foto e video (dal 9/11/2026): la foto alla misura dello schermo, o il video con il player del browser, che non
     // parte da solo (docs/DESIGN.md, Movimento), con la didascalia breve e il link al post. Si chiude con Esc (il <dialog> lo fa da sé),
-    // con «Chiudi» o toccando fuori; chiudendo il video si ferma, perché sparisce.
+    // con «Chiudi» o toccando fuori; chiudendo il video si ferma, perché sparisce. «Precedente» e «Successiva» (anche con i tasti
+    // freccia) passano alle altre foto della stessa griglia, cioè dello stesso post; alla prima e all'ultima sono spenti.
     let dialog = $state<HTMLDialogElement>();
-    let current = $state<GallerySlide | null>(null);
+    let index = $state<number | null>(null);
+    const current = $derived(index === null ? null : slides[index]);
 
-    function show(slide: GallerySlide, event: MouseEvent) {
+    function show(slideIndex: number, event: MouseEvent) {
         event.preventDefault();
-        current = slide;
+        index = slideIndex;
         dialog?.showModal();
+    }
+
+    const go = (step: -1 | 1) => {
+        if (index !== null && slides[index + step]) index += step;
+    };
+
+    // Le frecce della tastiera, tranne quando il fuoco è sul video, dove servono a spostarsi nel video
+    function keydown(event: KeyboardEvent) {
+        if (event.target instanceof HTMLVideoElement) return;
+        if (event.key === "ArrowLeft") go(-1);
+        if (event.key === "ArrowRight") go(1);
     }
 </script>
 
@@ -66,7 +81,7 @@
                     </a>
                 {:else}
                     <!-- Il link porta al file, la foto grande o il video: con JS si apre nella finestra -->
-                    <a href={slide.mediaUrl} onclick={(event) => show(slide, event)}>
+                    <a href={slide.mediaUrl} onclick={(event) => show(index, event)}>
                         <img
                             src={slide.imageUrl}
                             srcset={slide.srcset}
@@ -96,7 +111,13 @@
 
 {#if !link}
     <!-- Toccando fuori dalla finestra (sul fondo) si chiude; con la tastiera c'è Esc -->
-    <dialog bind:this={dialog} aria-label={current?.alt} onclose={() => (current = null)} onclick={(event) => event.target === dialog && dialog.close()}>
+    <dialog
+        bind:this={dialog}
+        aria-label={current?.alt}
+        onclose={() => (index = null)}
+        onclick={(event) => event.target === dialog && dialog.close()}
+        onkeydown={keydown}
+    >
         {#if current}
             <figure>
                 {#if current.mediaType === "VIDEO"}
@@ -109,6 +130,8 @@
             </figure>
             <p>
                 <a href={current.permalink} target="_blank" rel="noopener noreferrer">Apri su Instagram</a>
+                <button type="button" onclick={() => go(-1)} disabled={index === 0}><ChevronLeftIcon aria-hidden="true" /> Precedente</button>
+                <button type="button" onclick={() => go(1)} disabled={index === slides.length - 1}>Successiva <ChevronRightIcon aria-hidden="true" /></button>
                 <button type="button" onclick={() => dialog?.close()}>Chiudi</button>
             </p>
         {/if}
@@ -180,7 +203,7 @@
 
     /*
      * La finestra: sul fondo della pagina, alta al massimo quasi tutto lo schermo; la foto intera (non ritagliata) alla misura che
-     * ci sta, la didascalia e, sotto, «Apri su Instagram» a sinistra e «Chiudi» a destra. Compare sfumando (--duration-slow, solo
+     * ci sta, la didascalia e, sotto, «Apri su Instagram» a sinistra e i pulsanti a destra. Compare sfumando (--duration-slow, solo
      * opacità); mentre è aperta la pagina sotto non scorre.
      */
     dialog {
@@ -232,9 +255,18 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: space-between;
-        gap: var(--space-4);
+        gap: var(--space-2);
         margin: var(--space-4) 0 0;
+    }
+
+    /* «Apri su Instagram» a sinistra, i pulsanti insieme a destra: «Precedente», «Successiva», «Chiudi» */
+    dialog > p > a {
+        margin-inline-end: auto;
+    }
+
+    dialog > p > button > :global(svg) {
+        inline-size: 1.25rem;
+        block-size: 1.25rem;
     }
 
     @keyframes fade-in {
