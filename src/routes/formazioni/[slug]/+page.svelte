@@ -41,10 +41,10 @@
     <p><a href="/contatti/scrivi?motivo=ingaggio&formazione={ensemble.slug}">Chiedi un ingaggio</a></p>
     <link itemprop="url" href="{organization.url}/formazioni/{ensemble.slug}" />
     <link itemprop="parentOrganization" href="{organization.url}/#ente" />
-    <!-- Per i motori di ricerca: il genere, dove è chiaro, e la città dove la formazione prova e suona di più -->
-    {#if ensemble.genre}
-        <meta itemprop="genre" content={ensemble.genre} />
-    {/if}
+    <!-- Per i motori di ricerca: i generi e la città dove la formazione prova e suona di più -->
+    {#each ensemble.genre ?? [] as genre (genre)}
+        <meta itemprop="genre" content={genre} />
+    {/each}
     <span itemprop="location" itemscope itemtype="https://schema.org/Place"><meta itemprop="name" content="Fivizzano" /></span>
     {#if ensemble.coverImage && ensemble.cover}
         <enhanced:img src={ensemble.coverImage.picture} alt={ensemble.cover.alt} sizes="100vw" fetchpriority="high" itemprop="image" />

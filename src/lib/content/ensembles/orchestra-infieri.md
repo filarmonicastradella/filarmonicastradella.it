@@ -1,6 +1,7 @@
 ---
 title: Orchestra Infieri
 summary: "L'orchestra mista della Filarmonica, dove archi e fiati suonano insieme."
+genre: ["Musica classica", "Musica sinfonica"]
 order: 3
 # SEGNAPOSTO: l'autore della foto è da verificare (la stessa foto della Storia della Filarmonica)
 cover:
