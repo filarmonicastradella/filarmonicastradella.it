@@ -25,8 +25,8 @@ export const organization = {
     },
     // Il ruolo nell'associazione di chi firma gli articoli, per i microdati (jobTitle dell'autore)
     authorRoles: { "Leonardo Orietti Del Duca": "Presidente" } as Record<string, string>,
-    // Le voci su di noi nelle enciclopedie: tra i "sameAs" dei dati strutturati, come i profili social (dal 9/11/2026)
-    references: ["https://it.wikipedia.org/wiki/Filarmonica_Alessandro_Stradella", "https://www.wikidata.org/wiki/Q141869181"],
+    // Le voci su di noi nelle enciclopedie e nell'elenco degli enti di Cesvot (il centro servizi per il volontariato toscano): tra i "sameAs" dei dati strutturati, come i profili social (dal 9/11/2026)
+    references: ["https://it.wikipedia.org/wiki/Filarmonica_Alessandro_Stradella", "https://www.wikidata.org/wiki/Q141869181", "https://my.cesvot.it/151960"],
     // La scheda dell'associazione su Google Maps (profilo dell'attività), con l'indirizzo stabile del suo identificativo
     mapsProfile: "https://maps.google.com/?cid=7810320797399219292",
     // I profili social; WhatsApp è un contatto, non un profilo, quindi non va tra i "sameAs" dei dati strutturati.
