@@ -72,6 +72,15 @@ export function eventWhen(event: EventItem): string {
 /** Il nome del luogo: il calendario dà spesso l'indirizzo completo, qui basta la parte prima della prima virgola. */
 export const eventPlace = (event: EventItem) => event.location.split(",")[0].trim();
 
+/*
+ * Le indicazioni stradali fino al luogo: sul telefono aprono l'app delle mappe con il percorso già impostato. Su iPhone e iPad
+ * Mappe di Apple (`isIos`), altrove Google Maps (l'app su Android, il sito sul computer).
+ */
+export const directionsHref = (event: EventItem, ios: boolean) =>
+    ios
+        ? `https://maps.apple.com/?daddr=${encodeURIComponent(event.location)}`
+        : `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(event.location)}`;
+
 /** Il resto dell'indirizzo, dopo il nome del luogo (vuoto se il calendario dà solo il nome). */
 export const eventAddress = (event: EventItem) => event.location.split(",").slice(1).join(",").trim();
 

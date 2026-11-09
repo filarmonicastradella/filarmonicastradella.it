@@ -4,7 +4,7 @@
     import FaqItem from "$lib/components/FaqItem.svelte";
     import PostalAddress from "$lib/components/PostalAddress.svelte";
     import { isIos } from "$lib/device";
-    import { eventAddress, eventDate, eventPlace, eventTime, eventWhen, googleCalendarHref, hasNotEnded } from "$lib/events";
+    import { directionsHref, eventAddress, eventDate, eventPlace, eventTime, eventWhen, googleCalendarHref, hasNotEnded } from "$lib/events";
     import { faq } from "$lib/faq";
     import { organization, titleSuffix } from "$lib/organization";
     import type { PageProps } from "./$types";
@@ -115,7 +115,12 @@
                     <a href="https://maps.google.com/?q={encodeURIComponent(event.location)}" target="_blank" rel="noopener noreferrer"
                         ><PostalAddress {address}>{address}</PostalAddress></a
                     >
-                {:else}
+                {/if}
+                {#if upcoming}
+                    <!-- Il percorso nell'app delle mappe del telefono, solo per chi ci deve ancora andare -->
+                    <br /><a href={directionsHref(event, ios)} target="_blank" rel="noopener noreferrer">Come arrivare</a>
+                {/if}
+                {#if !address}
                     <!-- Solo il nome del luogo: è anche il suo indirizzo, che per Google è obbligatorio -->
                     <PostalAddress address={event.location} />
                 {/if}
