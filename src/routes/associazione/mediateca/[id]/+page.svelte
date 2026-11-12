@@ -8,7 +8,7 @@
 
     /*
      * La pagina di una foto o di un video di Foto e video (dal 12/11/2026): l'indirizzo che si condivide, anche dalla finestra
-     * della griglia, che lo mette nella barra degli indirizzi. La data in occhiello, che cosa è nel titolo, la didascalia del
+     * della griglia, che lo mette nella barra degli indirizzi. «Foto» o «Video» in occhiello, la data del post come titolo, la didascalia del
      * post come presentazione, poi la foto intera o il video con il player del browser, le altre foto dello stesso post e il
      * rimando al post in Foto e video. L'anteprima dei link (hooks.server.ts) è la foto stessa, o il fotogramma del video.
      */
@@ -16,7 +16,8 @@
     const post = $derived(data.post);
     const slide = $derived(post.slides[data.index]);
     const video = $derived(slide.mediaType === "VIDEO");
-    const heading = $derived(`${video ? "Video" : "Foto"}${post.slides.length > 1 ? ` ${data.index + 1} di ${post.slides.length}` : ""}`);
+    // Come in Foto e video, il titolo è la data del post (una didascalia di Instagram non è un titolo); in occhiello che cosa è
+    const kind = $derived(video ? "Video" : "Foto");
     const date = $derived(formatArticleDate(post.date));
     const previous = $derived(post.slides[data.index - 1]);
     const next = $derived(post.slides[data.index + 1]);
@@ -29,7 +30,7 @@
     });
 
     async function sharePage() {
-        if ((await share({ title: `${heading} del ${date}`, url: organization.url + slidePath(slide) })) === "copied") {
+        if ((await share({ title: `${kind} del ${date}`, url: organization.url + slidePath(slide) })) === "copied") {
             copied = true;
             setTimeout(() => (copied = false), 3000);
         }
@@ -37,13 +38,13 @@
 </script>
 
 <svelte:head>
-    <title>{heading} del {date}{titleSuffix}</title>
+    <title>{kind} del {date}{titleSuffix}</title>
     <meta name="description" content={slide.alt} />
 </svelte:head>
 
 <header itemscope itemtype="https://schema.org/SocialMediaPosting">
-    <p><time itemprop="datePublished" datetime={post.date}>{date}</time></p>
-    <h1>{heading}</h1>
+    <p>{kind}</p>
+    <h1><time itemprop="datePublished" datetime={post.date}>{date}</time></h1>
     {#each post.paragraphs as paragraph, i (i)}
         <p itemprop="description">{paragraph}</p>
     {/each}
