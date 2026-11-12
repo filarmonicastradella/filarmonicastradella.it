@@ -79,7 +79,7 @@
     /*
      * «Condividi» nella finestra: il menu di condivisione del dispositivo con la foto stessa (a WhatsApp, alle storie di Instagram…),
      * convertita in JPEG perché il WebP del sito non tutte le app lo accettano come foto; dove i file non si possono condividere, e per
-     * i video, troppo pesanti, il link alla pagina. Solo dove il dispositivo ha il menu di condivisione; se il dispositivo rifiuta,
+     * i video, troppo pesanti, il link alla pagina. Sul computer copia il link della pagina della foto; se il dispositivo rifiuta,
      * il link si copia e il pulsante dice «Link copiato» (`$lib/share`). La foto si prepara già quando compare nella finestra: il
      * menu si apre solo subito dopo il tocco, e convertirla al momento farebbe perdere il tocco.
      */
@@ -87,7 +87,7 @@
     let copied = $state(false);
     let photo: { id: string; file: Promise<File | null> } | undefined;
     onMount(() => {
-        canShare = "share" in navigator;
+        canShare = "share" in navigator || "clipboard" in navigator;
     });
 
     async function jpeg(src: string) {
