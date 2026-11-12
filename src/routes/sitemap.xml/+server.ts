@@ -2,6 +2,7 @@ import { getEvents } from "$lib/server/calendar";
 import { articleModified, gitDates, latest } from "$lib/server/git";
 import { ensembles } from "$lib/ensembles";
 import { activeCategories, articles } from "$lib/articles";
+import { galleryPosts, slidePath } from "$lib/gallery";
 import { organization } from "$lib/organization";
 import type { RequestHandler } from "./$types";
 
@@ -44,6 +45,9 @@ export const GET: RequestHandler = async () => {
         const playing = events.filter(({ ensembles }) => ensembles.some((ensemble) => ensemble.slug === slug)).map(({ updated }) => updated);
         lastmod.set(`/formazioni/${slug}`, latest(git.get(`src/lib/content/ensembles/${slug}.md`), git.get("src/routes/formazioni/[slug]/+page.svelte"), ...playing));
     }
+
+    // Le pagine delle foto e dei video di Foto e video, con la data del post (dal 12/11/2026)
+    for (const { slides } of galleryPosts) for (const slide of slides) lastmod.set(slidePath(slide), slide.timestamp);
 
     for (const path of ["/", "/calendario", "/calendario/archivio"]) lastmod.set(path, latest(lastmod.get(path), ...eventDates));
     lastmod.set("/", latest(lastmod.get("/"), articleDate(articles)));

@@ -7,7 +7,10 @@ declare global {
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
-		// interface PageState {}
+		// La foto o il video aperto nella finestra di Foto e video, con il suo indirizzo nella barra (InstagramGrid)
+		interface PageState {
+			photo?: string;
+		}
 		// interface Platform {}
 	}
 }

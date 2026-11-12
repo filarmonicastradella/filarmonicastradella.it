@@ -63,8 +63,11 @@ async function sizes(original, id) {
         if (!existsSync(`${MEDIA_DIR}/${file}`)) await sharp(`${ORIGINALS_DIR}/${original}`).resize(w).webp({ quality: 75 }).toFile(`${MEDIA_DIR}/${file}`);
         files.push({ file, width: w });
     }
+    // L'anteprima dei link alla pagina della foto (WhatsApp e simili non mostrano sempre il WebP): un JPEG largo al massimo 1200 px
+    const preview = `${id}-anteprima.jpg`;
+    if (!existsSync(`${MEDIA_DIR}/${preview}`)) await sharp(`${ORIGINALS_DIR}/${original}`).resize(Math.min(1200, width)).jpeg({ quality: 80 }).toFile(`${MEDIA_DIR}/${preview}`);
     const { dominant } = await image.stats();
-    return { files, width, height, color: `rgb(${dominant.r} ${dominant.g} ${dominant.b})` };
+    return { files, preview, width, height, color: `rgb(${dominant.r} ${dominant.g} ${dominant.b})` };
 }
 
 async function toSlide(media, post) {
@@ -72,7 +75,7 @@ async function toSlide(media, post) {
     const imageSource = video ? media.thumbnail_url : media.media_url;
     if (!imageSource) return undefined;
     const original = await download(imageSource, `${media.id}.jpg`, ORIGINALS_DIR);
-    const { files, width, height, color } = await sizes(original, media.id);
+    const { files, preview, width, height, color } = await sizes(original, media.id);
     const large = files.at(-1).file;
     const videoFile = video && media.media_url ? await download(media.media_url, `${media.id}.mp4`) : undefined;
 
@@ -83,6 +86,7 @@ async function toSlide(media, post) {
         thumbnailUrl: `/instagram/${large}`,
         imageUrl: `/instagram/${large}`,
         srcset: files.map(({ file, width }) => `/instagram/${file} ${width}w`).join(", "),
+        previewUrl: `/instagram/${preview}`, // l'anteprima dei link alla pagina della foto, in JPEG
         width,
         height,
         color,
@@ -131,7 +135,7 @@ try {
     const used = new Set(slides.map(({ id }) => id));
     for (const dir of [MEDIA_DIR, ORIGINALS_DIR]) {
         for (const file of await readdir(dir)) {
-            if (!used.has(file.split(/[-.]/)[0]) || (dir === MEDIA_DIR && file.endsWith(".jpg"))) await rm(`${dir}/${file}`);
+            if (!used.has(file.split(/[-.]/)[0]) || (dir === MEDIA_DIR && file.endsWith(".jpg") && !file.endsWith("-anteprima.jpg"))) await rm(`${dir}/${file}`);
         }
     }
 

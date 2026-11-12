@@ -5,6 +5,7 @@ export interface GallerySlide {
     thumbnailUrl?: string;
     imageUrl?: string;
     srcset?: string; // le misure scaricate, perché il browser scelga la più adatta
+    previewUrl?: string; // l'anteprima dei link alla pagina della foto, in JPEG
     width?: number;
     height?: number;
     color?: string; // colore dominante, come fondo mentre la foto si carica
@@ -38,6 +39,9 @@ export const captionParagraphs = (caption = "") =>
 
 // L'ancora di un post in Foto e video: il codice del post nell'indirizzo di Instagram (https://www.instagram.com/p/<codice>/)
 export const postAnchor = (permalink: string) => `post-${permalink.split("/").filter(Boolean).pop()}`;
+
+// La pagina di una foto o di un video (dal 12/11/2026): un indirizzo per ognuno, che si condivide e porta lì
+export const slidePath = (slide: GallerySlide) => `/associazione/mediateca/${slide.id}`;
 
 // Le foto raggruppate per post, dal più recente come su Instagram: ogni post ha la sua data e la sua didascalia, divisa in paragrafi
 export const galleryPosts: GalleryPost[] = Object.values(Object.groupBy(gallery ?? [], ({ permalink }) => permalink))
