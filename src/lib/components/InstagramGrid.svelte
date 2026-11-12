@@ -1,12 +1,12 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { share } from "$lib/share";
-    import { goto, pushState, replaceState } from "$app/navigation";
+    import { pushState, replaceState } from "$app/navigation";
     import { page } from "$app/state";
     import ChevronLeftIcon from "~icons/heroicons/chevron-left-20-solid";
     import ChevronRightIcon from "~icons/heroicons/chevron-right-20-solid";
     import PlayIcon from "~icons/heroicons/play-20-solid";
-    import { postAnchor, slidePath, type GallerySlide } from "$lib/gallery";
+    import { slidePath, type GallerySlide } from "$lib/gallery";
 
     // La griglia delle foto e dei video di Instagram, per la galleria in home e per Foto e video. Con `featured` (la home) la prima
     // foto è grande e le altre piccole intorno, in tre composizioni secondo la larghezza (nello stile, sotto).
@@ -17,9 +17,8 @@
         slides,
         featured = false,
         placeholders = 0,
-        link,
-        opened
-    }: { slides: GallerySlide[]; featured?: boolean; placeholders?: number; link?: (slide: GallerySlide) => string; opened?: string } = $props();
+        link
+    }: { slides: GallerySlide[]; featured?: boolean; placeholders?: number; link?: (slide: GallerySlide) => string } = $props();
 
     // Le foto sono ritagliate in 4:5 (la grande alla misura del suo riquadro): una foto orizzontale riempie l'altezza, quindi serve un
     // file più largo della casella, di quanto è più larga. Senza questo il browser sceglie un file troppo piccolo e la foto si sgrana.
@@ -49,12 +48,9 @@
     // Ogni foto ha il suo indirizzo, la sua pagina (dal 12/11/2026, `slidePath`): la casella porta lì, e con JS la finestra si apre
     // sopra Foto e video con quell'indirizzo nella barra (shallow routing di SvelteKit: `pushState`, e la foto aperta in
     // `page.state.photo`). Così il link che si condivide porta alla foto, e «indietro» sul telefono chiude la finestra.
-    // Chi arriva dal link di una foto (`opened`, la pagina `[id]`) la trova già aperta; chiudendo torna a Foto e video, al post.
     let dialog = $state<HTMLDialogElement>();
-    let dismissed = $state(false);
-    const selected = $derived(page.state.photo ?? (dismissed ? undefined : opened));
     const index = $derived.by(() => {
-        const found = slides.findIndex(({ id }) => id === selected);
+        const found = slides.findIndex(({ id }) => id === page.state.photo);
         return found === -1 ? null : found;
     });
     const current = $derived(index === null ? null : slides[index]);
@@ -63,27 +59,16 @@
         // Con i tasti per aprire in un'altra scheda o finestra, il link fa da sé
         if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
-        pushState(slidePath(slide), { photo: slide.id, pushed: true });
+        pushState(slidePath(slide), { photo: slide.id });
         preparePhoto(slide);
     }
 
     const go = (step: -1 | 1) => {
         const next = index === null ? undefined : slides[index + step];
         if (!next) return;
-        replaceState(slidePath(next), { photo: next.id, pushed: page.state.pushed });
+        replaceState(slidePath(next), { photo: next.id });
         preparePhoto(next);
     };
-
-    // Chiudere: se la finestra è stata aperta da Foto e video si torna indietro (come «indietro» sul telefono); se si è arrivati dal
-    // link della foto, si va a Foto e video, al post, al posto dell'indirizzo della foto
-    function closed() {
-        if (!current) return;
-        if (page.state.pushed) history.back();
-        else {
-            dismissed = true;
-            goto(`/associazione/mediateca#${postAnchor(current.permalink)}`, { replaceState: true });
-        }
-    }
 
     // La finestra segue la foto scelta: si apre quando c'è, si chiude quando non c'è più (anche con «indietro»)
     const followSelection = (node: HTMLDialogElement) => {
@@ -197,7 +182,7 @@
     <dialog
         bind:this={dialog}
         aria-label={current?.alt}
-        onclose={closed}
+        onclose={() => current && history.back()}
         {@attach followSelection}
         onclick={(event) => event.target === dialog && dialog.close()}
         onkeydown={keydown}
