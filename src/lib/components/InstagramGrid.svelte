@@ -1,18 +1,12 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-    import { share } from "$lib/share";
-    import { pushState, replaceState } from "$app/navigation";
-    import { page } from "$app/state";
-    import ChevronLeftIcon from "~icons/heroicons/chevron-left-20-solid";
-    import ChevronRightIcon from "~icons/heroicons/chevron-right-20-solid";
     import PlayIcon from "~icons/heroicons/play-20-solid";
     import { slidePath, type GallerySlide } from "$lib/gallery";
 
     // La griglia delle foto e dei video di Instagram, per la galleria in home e per Foto e video. Con `featured` (la home) la prima
     // foto è grande e le altre piccole intorno, in tre composizioni secondo la larghezza (nello stile, sotto).
     // `placeholders`: caselle segnaposto dopo le foto, finché non ce ne sono abbastanza per riempire la griglia.
-    // `link`: dove porta ogni casella, foto o video (la home porta al post in Foto e video). Senza (Foto e video), ogni casella apre
-    // la foto grande o il video in una finestra (sotto); senza JS, il file
+    // `link`: dove porta ogni casella, foto o video (la home porta al post in Foto e video). Senza (Foto e video), ogni casella porta
+    // alla pagina della sua foto o del suo video (`slidePath`, dal 12/11/2026, al posto della finestra che c'era prima)
     let {
         slides,
         featured = false,
@@ -40,92 +34,6 @@
             index === 0 ? [Math.max(27, 29 * ratio), 50 * crop, 100 * Math.max(1, ratio * (3 / 4))] : [12 * crop, 25 * crop, 34 * crop];
         return `(min-width: 64rem) ${Math.ceil(wide)}rem, (min-width: 40rem) ${Math.ceil(middle)}vw, ${Math.ceil(narrow)}vw`;
     };
-
-    // La finestra di Foto e video (dal 9/11/2026): solo la foto alla misura dello schermo, o il video con il player del browser, che
-    // non parte da solo (docs/DESIGN.md, Movimento); data e didascalia sono nella pagina. Si chiude con Esc (il <dialog> lo fa da sé),
-    // con «Chiudi» o toccando fuori; chiudendo il video si ferma, perché sparisce. «Precedente» e «Successiva» (anche con i tasti
-    // freccia) passano alle altre foto della stessa griglia, cioè dello stesso post; alla prima e all'ultima sono spenti.
-    // Ogni foto ha il suo indirizzo, la sua pagina (dal 12/11/2026, `slidePath`): la casella porta lì, e con JS la finestra si apre
-    // sopra Foto e video con quell'indirizzo nella barra (shallow routing di SvelteKit: `pushState`, e la foto aperta in
-    // `page.state.photo`). Così il link che si condivide porta alla foto, e «indietro» sul telefono chiude la finestra.
-    let dialog = $state<HTMLDialogElement>();
-    const index = $derived.by(() => {
-        const found = slides.findIndex(({ id }) => id === page.state.photo);
-        return found === -1 ? null : found;
-    });
-    const current = $derived(index === null ? null : slides[index]);
-
-    function show(slide: GallerySlide, event: MouseEvent) {
-        // Con i tasti per aprire in un'altra scheda o finestra, il link fa da sé
-        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-        event.preventDefault();
-        pushState(slidePath(slide), { photo: slide.id });
-        preparePhoto(slide);
-    }
-
-    const go = (step: -1 | 1) => {
-        const next = index === null ? undefined : slides[index + step];
-        if (!next) return;
-        replaceState(slidePath(next), { photo: next.id });
-        preparePhoto(next);
-    };
-
-    // La finestra segue la foto scelta: si apre quando c'è, si chiude quando non c'è più (anche con «indietro»)
-    const followSelection = (node: HTMLDialogElement) => {
-        if (current && !node.open) node.showModal();
-        if (!current && node.open) node.close();
-    };
-
-    /*
-     * «Condividi» nella finestra: il menu di condivisione del dispositivo con la foto stessa (a WhatsApp, alle storie di Instagram…),
-     * convertita in JPEG perché il WebP del sito non tutte le app lo accettano come foto; dove i file non si possono condividere, e per
-     * i video, troppo pesanti, il link alla pagina. Sul computer copia il link della pagina della foto; se il dispositivo rifiuta,
-     * il link si copia e il pulsante dice «Link copiato» (`$lib/share`). La foto si prepara già quando compare nella finestra: il
-     * menu si apre solo subito dopo il tocco, e convertirla al momento farebbe perdere il tocco.
-     */
-    let canShare = $state(false);
-    let copied = $state(false);
-    let photo: { id: string; file: Promise<File | null> } | undefined;
-    onMount(() => {
-        canShare = "share" in navigator || "clipboard" in navigator;
-    });
-
-    async function jpeg(src: string) {
-        const image = new Image();
-        image.src = src;
-        await image.decode();
-        const canvas = document.createElement("canvas");
-        canvas.width = image.naturalWidth;
-        canvas.height = image.naturalHeight;
-        canvas.getContext("2d")!.drawImage(image, 0, 0);
-        const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.9));
-        return blob && new File([blob], "filarmonica-stradella.jpg", { type: "image/jpeg" });
-    }
-
-    // La foto in JPEG della slide nella finestra, preparata quando compare (in show e go)
-    function preparePhoto(slide: GallerySlide) {
-        photo = { id: slide.id, file: slide.mediaType === "IMAGE" && slide.imageUrl ? jpeg(slide.imageUrl).catch(() => null) : Promise.resolve(null) };
-    }
-
-    async function sharePhoto() {
-        if (!current) return;
-        if (photo?.id !== current.id) preparePhoto(current);
-        const file = await photo!.file;
-        let result = await share(file ? { files: [file], title: current.alt } : { title: current.alt, url: location.href });
-        // Se il dispositivo rifiuta la foto, il link
-        if (result === "failed" && file) result = await share({ title: current.alt, url: location.href });
-        if (result === "copied") {
-            copied = true;
-            setTimeout(() => (copied = false), 3000);
-        }
-    }
-
-    // Le frecce della tastiera, tranne quando il fuoco è sul video, dove servono a spostarsi nel video
-    function keydown(event: KeyboardEvent) {
-        if (event.target instanceof HTMLVideoElement) return;
-        if (event.key === "ArrowLeft") go(-1);
-        if (event.key === "ArrowRight") go(1);
-    }
 </script>
 
 <ul data-featured={featured || undefined}>
@@ -148,8 +56,8 @@
                         />
                     </a>
                 {:else}
-                    <!-- Il link porta alla pagina della foto o del video: con JS si apre nella finestra, con l'indirizzo della pagina -->
-                    <a href={slidePath(slide)} onclick={(event) => show(slide, event)}>
+                    <!-- Il link porta alla pagina della foto o del video -->
+                    <a href={slidePath(slide)}>
                         <img
                             src={slide.imageUrl}
                             srcset={slide.srcset}
@@ -176,38 +84,6 @@
         </li>
     {/each}
 </ul>
-
-{#if !link}
-    <!-- Toccando fuori dalla finestra (sul fondo) si chiude; con la tastiera c'è Esc -->
-    <dialog
-        bind:this={dialog}
-        aria-label={current?.alt}
-        onclose={() => current && history.back()}
-        {@attach followSelection}
-        onclick={(event) => event.target === dialog && dialog.close()}
-        onkeydown={keydown}
-    >
-        {#if current}
-            <!-- Solo la foto o il video: data e didascalia stanno nella pagina, accanto alla griglia -->
-            {#if current.mediaType === "VIDEO"}
-                <!-- svelte-ignore a11y_media_has_caption -->
-                <video src={current.mediaUrl} poster={current.thumbnailUrl} width={current.width} height={current.height} controls playsinline></video>
-            {:else}
-                <img src={current.imageUrl} srcset={current.srcset} sizes="90vw" width={current.width} height={current.height} alt={current.alt} />
-            {/if}
-            <p>
-                <button type="button" onclick={() => go(-1)} disabled={index === 0}><ChevronLeftIcon aria-hidden="true" /> Precedente</button>
-                <button type="button" onclick={() => go(1)} disabled={index === slides.length - 1}>Successiva <ChevronRightIcon aria-hidden="true" /></button>
-                {#if canShare}
-                    <button type="button" onclick={sharePhoto} aria-live="polite"
-                        ><span hidden={copied}>Condividi</span><span hidden={!copied}>Link copiato</span></button
-                    >
-                {/if}
-                <button type="button" onclick={() => dialog?.close()}>Chiudi</button>
-            </p>
-        {/if}
-    </dialog>
-{/if}
 
 <style>
     /* Sotto il titolo, a tutta larghezza, angoli quasi vivi */
@@ -253,7 +129,7 @@
             grid-column: 1 / -1;
         }
 
-        & > li:not(:first-child) :is(img, video) {
+        & > li:not(:first-child) img {
             block-size: 100%;
             aspect-ratio: auto;
         }
@@ -272,11 +148,11 @@
                 margin-inline-end: calc(var(--space-6) - var(--space-2));
             }
 
-            & > li:first-child :is(figure, a, img, video) {
+            & > li:first-child :is(figure, a, img) {
                 block-size: 100%;
             }
 
-            & > li:first-child :is(img, video) {
+            & > li:first-child img {
                 aspect-ratio: auto;
             }
 
@@ -322,7 +198,7 @@
                 margin-inline-end: 0;
             }
 
-            & > li:first-child :is(img, video) {
+            & > li:first-child img {
                 aspect-ratio: 4 / 3;
             }
         }
@@ -362,89 +238,14 @@
      * In Foto e video le foto sono in 4:3, quasi il formato intero delle foto di concerto, che sono orizzontali: lì si guardano.
      * Nella home, che è un'anteprima, in 4:5 come i post social (sotto).
      */
-    img,
-    video {
+    img {
         inline-size: 100%;
         aspect-ratio: 4 / 3;
         object-fit: cover;
     }
 
-    [data-featured] :is(img, video) {
+    [data-featured] img {
         aspect-ratio: 4 / 5;
-    }
-
-    /*
-     * La finestra: sul fondo rialzato, che si stacca dal velo scuro dietro (--backdrop); la foto intera (non ritagliata) alla misura che ci sta e, sotto, i pulsanti. Compare sfumando (--duration-slow, solo
-     * opacità); mentre è aperta la pagina sotto non scorre.
-     * Misura fissa, quasi tutto lo schermo (al massimo 80rem di larghezza), uguale per ogni foto: così i pulsanti
-     * stanno sempre nello stesso punto, in fondo, e passando da una foto all'altra non si spostano. La foto prende lo
-     * spazio che resta, intera.
-     */
-    dialog {
-        box-sizing: border-box;
-        inline-size: min(100vw - 2 * var(--space-4), 80rem);
-        block-size: calc(100dvh - 2 * var(--space-4));
-        max-inline-size: none;
-        max-block-size: none;
-        padding: var(--space-4);
-        border: none;
-        border-radius: var(--radius);
-        background-color: var(--bg-raised);
-        color: var(--text);
-    }
-
-    dialog[open] {
-        display: grid;
-        grid-template-rows: minmax(0, 1fr) auto;
-        animation: fade-in var(--duration-slow) var(--ease);
-    }
-
-    /* All'apertura il fuoco va sulla finestra stessa: il suo contorno non serve, i comandi dentro hanno il loro */
-    dialog:focus-visible {
-        outline: none;
-    }
-
-    dialog::backdrop {
-        background-color: var(--backdrop);
-    }
-
-    :global(html:has(dialog[open])) {
-        overflow: hidden;
-    }
-
-    dialog :is(img, video) {
-        display: block;
-        inline-size: 100%;
-        block-size: 100%;
-        min-block-size: 0;
-        aspect-ratio: auto;
-        object-fit: contain;
-    }
-
-    /* La riga dei comandi è larga quanto la finestra, non quanto una colonna di testo come gli altri paragrafi: «Chiudi» va al bordo destro */
-    dialog > p {
-        max-inline-size: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-2);
-        margin: var(--space-4) 0 0;
-    }
-
-    /* «Precedente» e «Successiva» a sinistra, «Condividi» (dove c'è) e «Chiudi» a destra, tutti alti uguali (si allungano all'altezza
-       della riga, anche quelli senza icona) */
-    dialog > p > button:nth-child(3) {
-        margin-inline-start: auto;
-    }
-
-    dialog > p > button > :global(svg) {
-        inline-size: 1.25rem;
-        block-size: 1.25rem;
-    }
-
-    @keyframes fade-in {
-        from {
-            opacity: 0;
-        }
     }
 
     /* Il segnaposto: una casella 4:5 come le foto della home, sul fondo rialzato, con la scritta tra parentesi quadre */
@@ -475,7 +276,7 @@
             grid-column: 1 / -1;
         }
 
-        & > li:first-child :is(img, video, figure:has(> p)) {
+        & > li:first-child :is(img, figure:has(> p)) {
             aspect-ratio: 4 / 3;
         }
 
@@ -498,11 +299,11 @@
                 grid-row: span 2;
             }
 
-            & > li:first-child :is(figure, a, img, video) {
+            & > li:first-child :is(figure, a, img) {
                 block-size: 100%;
             }
 
-            & > li:first-child :is(img, video, figure:has(> p)) {
+            & > li:first-child :is(img, figure:has(> p)) {
                 aspect-ratio: auto;
             }
         }
