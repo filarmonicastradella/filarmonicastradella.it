@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import { share } from "$lib/share";
     import ChevronLeftIcon from "~icons/heroicons/chevron-left-20-solid";
     import ChevronRightIcon from "~icons/heroicons/chevron-right-20-solid";
     import PlayIcon from "~icons/heroicons/play-20-solid";
@@ -49,19 +50,27 @@
     function show(slideIndex: number, event: MouseEvent) {
         event.preventDefault();
         index = slideIndex;
+        preparePhoto();
         dialog?.showModal();
     }
 
     const go = (step: -1 | 1) => {
-        if (index !== null && slides[index + step]) index += step;
+        if (index !== null && slides[index + step]) {
+            index += step;
+            preparePhoto();
+        }
     };
 
     /*
      * «Condividi» nella finestra: il menu di condivisione del dispositivo con la foto stessa (a WhatsApp, alle storie di Instagram…),
      * convertita in JPEG perché il WebP del sito non tutte le app lo accettano come foto; dove i file non si possono condividere, e per
-     * i video, troppo pesanti, il link alla pagina. Solo dove il dispositivo ha il menu di condivisione.
+     * i video, troppo pesanti, il link alla pagina. Solo dove il dispositivo ha il menu di condivisione; se il dispositivo rifiuta,
+     * il link si copia e il pulsante dice «Link copiato» (`$lib/share`). La foto si prepara già quando compare nella finestra: il
+     * menu si apre solo subito dopo il tocco, e convertirla al momento farebbe perdere il tocco.
      */
     let canShare = $state(false);
+    let copied = $state(false);
+    let photo: Promise<File | null> | undefined;
     onMount(() => {
         canShare = "share" in navigator;
     });
@@ -78,15 +87,21 @@
         return blob && new File([blob], "filarmonica-stradella.jpg", { type: "image/jpeg" });
     }
 
-    async function share() {
+    // La foto in JPEG della slide nella finestra, preparata quando compare (in show e go)
+    function preparePhoto() {
+        const slide = index === null ? null : slides[index];
+        photo = slide?.mediaType === "IMAGE" && slide.imageUrl ? jpeg(slide.imageUrl).catch(() => null) : undefined;
+    }
+
+    async function sharePhoto() {
         if (!current) return;
-        const url = location.href;
-        try {
-            const file = current.mediaType === "IMAGE" && current.imageUrl ? await jpeg(current.imageUrl) : null;
-            if (file && navigator.canShare?.({ files: [file] })) await navigator.share({ files: [file], title: current.alt });
-            else await navigator.share({ title: current.alt, url });
-        } catch {
-            // Condivisione annullata: niente da fare
+        const file = await photo;
+        let result = await share(file ? { files: [file], title: current.alt } : { title: current.alt, url: location.href });
+        // Se il dispositivo rifiuta la foto, il link
+        if (result === "failed" && file) result = await share({ title: current.alt, url: location.href });
+        if (result === "copied") {
+            copied = true;
+            setTimeout(() => (copied = false), 3000);
         }
     }
 
@@ -168,7 +183,9 @@
                 <button type="button" onclick={() => go(-1)} disabled={index === 0}><ChevronLeftIcon aria-hidden="true" /> Precedente</button>
                 <button type="button" onclick={() => go(1)} disabled={index === slides.length - 1}>Successiva <ChevronRightIcon aria-hidden="true" /></button>
                 {#if canShare}
-                    <button type="button" onclick={share}>Condividi</button>
+                    <button type="button" onclick={sharePhoto} aria-live="polite"
+                        ><span hidden={copied}>Condividi</span><span hidden={!copied}>Link copiato</span></button
+                    >
                 {/if}
                 <button type="button" onclick={() => dialog?.close()}>Chiudi</button>
             </p>

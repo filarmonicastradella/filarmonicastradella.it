@@ -3,6 +3,7 @@
     import { page } from "$app/state";
     import { categoryName, formatArticleDate, type Article } from "$lib/articles";
     import { organization } from "$lib/organization";
+    import { share } from "$lib/share";
 
     // Intestazione di ogni articolo: categoria in occhiello, titolo, riassunto e firma; `children` è il resto
     // dell'intestazione (un'introduzione, la foto di copertina) e `style` le proprietà della copertina
@@ -22,18 +23,11 @@
         canShare = "share" in navigator || "clipboard" in navigator;
     });
 
-    async function share() {
+    async function shareArticle() {
         const url = `${organization.url}${article.href}`;
-        try {
-            if (navigator.share) {
-                await navigator.share({ title: article.title, url });
-            } else {
-                await navigator.clipboard.writeText(url);
-                copied = true;
-                setTimeout(() => (copied = false), 3000);
-            }
-        } catch {
-            // Condivisione annullata: niente da fare
+        if ((await share({ title: article.title, url })) === "copied") {
+            copied = true;
+            setTimeout(() => (copied = false), 3000);
         }
     }
 </script>
@@ -66,6 +60,6 @@
         <time itemprop="datePublished" datetime={article.date}>{formatArticleDate(article.date)}</time>
     </p>
     {#if canShare}
-        <p><button type="button" onclick={share} aria-live="polite"><span hidden={copied}>Condividi l'articolo</span><span hidden={!copied}>Link copiato</span></button></p>
+        <p><button type="button" onclick={shareArticle} aria-live="polite"><span hidden={copied}>Condividi l'articolo</span><span hidden={!copied}>Link copiato</span></button></p>
     {/if}
 </header>

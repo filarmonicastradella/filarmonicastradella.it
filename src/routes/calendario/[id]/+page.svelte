@@ -3,6 +3,7 @@
     import EventMicrodata from "$lib/components/EventMicrodata.svelte";
     import FaqItem from "$lib/components/FaqItem.svelte";
     import PostalAddress from "$lib/components/PostalAddress.svelte";
+    import { share } from "$lib/share";
     import { isIos } from "$lib/device";
     import { eventAddress, eventDate, eventPlace, eventTime, eventWhen, googleCalendarHref, hasNotEnded } from "$lib/events";
     import { faq } from "$lib/faq";
@@ -42,18 +43,11 @@
         canShare = "share" in navigator || "clipboard" in navigator;
     });
 
-    async function share() {
+    async function shareEvent() {
         const url = `${organization.url}/calendario/${event.id}`;
-        try {
-            if (navigator.share) {
-                await navigator.share({ title: event.summary, text: [event.summary, date, place].filter(Boolean).join(" · "), url });
-            } else {
-                await navigator.clipboard.writeText(url);
-                copied = true;
-                setTimeout(() => (copied = false), 3000);
-            }
-        } catch {
-            // Condivisione annullata: niente da fare
+        if ((await share({ title: event.summary, text: [event.summary, date, place].filter(Boolean).join(" · "), url })) === "copied") {
+            copied = true;
+            setTimeout(() => (copied = false), 3000);
         }
     }
     // Titoli lunghi senza il nome della Filarmonica, così il titolo resta entro i 70 caratteri che i motori mostrano
@@ -82,7 +76,7 @@
     {/if}
     <h1 itemprop="name">{event.summary}</h1>
     {#if canShare}
-        <p><button type="button" onclick={share} aria-live="polite"><span hidden={copied}>Condividi l'evento</span><span hidden={!copied}>Link copiato</span></button></p>
+        <p><button type="button" onclick={shareEvent} aria-live="polite"><span hidden={copied}>Condividi l'evento</span><span hidden={!copied}>Link copiato</span></button></p>
     {/if}
 </header>
 
