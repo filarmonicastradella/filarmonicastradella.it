@@ -18,7 +18,8 @@ export interface GallerySlide {
 export interface GalleryPost {
     permalink: string;
     anchor: string; // l'ancora del post in Foto e video, per arrivarci dalla galleria in home
-    date: string; // AAAA-MM-GG, per <time datetime> e per le sezioni dei mesi
+    date: string; // AAAA-MM-GG, per le sezioni dei mesi
+    published: string; // data e ora con il fuso (ISO 8601), per <time datetime> e datePublished: Google vuole il fuso (dal 13/11/2026)
     paragraphs: string[]; // la didascalia, senza hashtag
     slides: GallerySlide[];
 }
@@ -52,6 +53,8 @@ export const galleryPosts: GalleryPost[] = Object.values(Object.groupBy(gallery 
             permalink,
             anchor: postAnchor(permalink),
             date: timestamp!.slice(0, 10),
+            // Instagram scrive il fuso senza i due punti (+0000), che Google non accetta
+            published: timestamp!.replace(/([+-]\d{2})(\d{2})$/, "$1:$2"),
             paragraphs: captionParagraphs(caption),
             slides: slides!
         };

@@ -84,13 +84,19 @@
 </svelte:head>
 
 <header itemscope itemtype="https://schema.org/SocialMediaPosting">
-    <h1><time itemprop="datePublished" datetime={post.date}>{date}</time></h1>
+    <h1><time itemprop="datePublished" datetime={post.published}>{date}</time></h1>
     {#each post.paragraphs as paragraph, i (i)}
         <p itemprop="description">{paragraph}</p>
     {/each}
     <link itemprop="url" href={url} />
-    <link itemprop="author" href="{organization.url}/#ente" />
-    <link itemprop="publisher" href="{organization.url}/#ente" />
+    <span itemprop="author" itemscope itemtype="https://schema.org/Organization" itemid="{organization.url}/#ente">
+        <meta itemprop="name" content={organization.name} />
+        <link itemprop="url" href={organization.url} />
+    </span>
+    <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization" itemid="{organization.url}/#ente">
+        <meta itemprop="name" content={organization.name} />
+        <link itemprop="url" href={organization.url} />
+    </span>
     <!-- La foto per l'anteprima dei link (hooks.server.ts): il JPEG apposta, che tutte le app mostrano -->
     {#if slide.previewUrl ?? slide.imageUrl}
         <link itemprop="image" href={organization.url + (slide.previewUrl ?? slide.imageUrl)} />

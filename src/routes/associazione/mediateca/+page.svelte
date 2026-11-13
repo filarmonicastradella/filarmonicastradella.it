@@ -25,7 +25,7 @@
             <article id={post.anchor} itemscope itemtype="https://schema.org/SocialMediaPosting">
                 <div>
                     <!-- La didascalia di Instagram non è un titolo: il titolo del post è la sua data, con l'aspetto delle date -->
-                    <svelte:element this={`h${level}`}><time itemprop="datePublished" datetime={post.date}>{formatArticleDate(post.date)}</time></svelte:element>
+                    <svelte:element this={`h${level}`}><time itemprop="datePublished" datetime={post.published}>{formatArticleDate(post.date)}</time></svelte:element>
                     {#if post.paragraphs.length > 0}
                         <div itemprop="description">
                             {#each post.paragraphs as paragraph, i (i)}
@@ -35,8 +35,14 @@
                     {/if}
                     <link itemprop="url" href={post.permalink} />
                     <!-- Per i motori di ricerca: chi pubblica (la Filarmonica, che è anche l'autrice) e le foto del post -->
-                    <link itemprop="author" href="{organization.url}/#ente" />
-                    <link itemprop="publisher" href="{organization.url}/#ente" />
+                    <span itemprop="author" itemscope itemtype="https://schema.org/Organization" itemid="{organization.url}/#ente">
+                        <meta itemprop="name" content={organization.name} />
+                        <link itemprop="url" href={organization.url} />
+                    </span>
+                    <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization" itemid="{organization.url}/#ente">
+                        <meta itemprop="name" content={organization.name} />
+                        <link itemprop="url" href={organization.url} />
+                    </span>
                     <meta itemprop="inLanguage" content="it-IT" />
                     {#each post.slides as slide (slide.id)}
                         {#if slide.imageUrl}
