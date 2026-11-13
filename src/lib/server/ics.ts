@@ -34,6 +34,8 @@ const eventLines = (event: EventItem) => {
         `DTSTART${date(event.start)}`,
         ...(event.end ? [`DTEND${date(event.end)}`] : []),
         `SUMMARY:${text(event.summary)}`,
+        // Un evento annullato resta nel calendario di chi lo segue, segnato come annullato
+        ...(event.status === "cancelled" ? ["STATUS:CANCELLED"] : []),
         ...(event.location ? [`LOCATION:${text(event.location)}`] : []),
         `DESCRIPTION:${text([event.description, url].filter(Boolean).join("\n\n"))}`,
         `URL:${url}`,

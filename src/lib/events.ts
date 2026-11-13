@@ -13,6 +13,8 @@ export interface EventItem {
      *  il primo per «validFrom» dell'ingresso nei microdati, il secondo per «lastmod» nella sitemap */
     created: string;
     updated: string;
+    /** Annullato o rinviato: lo dice il titolo, che comincia con «Annullato» o «Rinviato» (dal 13/11/2026) */
+    status: "scheduled" | "cancelled" | "postponed";
 }
 
 // Un evento è ancora da mostrare finché non è finito (le date "tutto il giorno" finiscono il giorno dopo).

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { ensembles } from "$lib/ensembles";
+    import { ensembles, imageCrops } from "$lib/ensembles";
     import type { EventItem } from "$lib/events";
     import { organization } from "$lib/organization";
 
@@ -11,14 +11,21 @@
     let { event }: { event: EventItem } = $props();
 
     const pageUrl = $derived(`${organization.url}/calendario/${event.id}`);
-    // L'immagine: la copertina della prima formazione che suona, nell'ordine della pagina Le nostre formazioni; senza, quella del sito
+    // L'immagine: la copertina della prima formazione che suona, nell'ordine della pagina Le nostre formazioni; senza, quella del sito.
+    // In 16:9, 4:3 e 1:1, le proporzioni che Google consiglia (dal 13/11/2026), più la foto intera
     const cover = $derived(ensembles.find(({ slug, coverImage }) => coverImage && event.ensembles.some((ensemble) => ensemble.slug === slug))?.coverImage);
-    const image = $derived(cover ? `${organization.url}${cover.picture.img.src}` : `${organization.url}/anteprima.jpg`);
+    const images = $derived(
+        (cover ? [cover.picture.img.src, ...cover.crops] : ["/anteprima.jpg", ...imageCrops("/static/anteprima.jpg")]).map((src) => organization.url + src)
+    );
+    // Lo stato, dal titolo (src/lib/server/calendar.ts)
+    const status = $derived({ scheduled: "EventScheduled", cancelled: "EventCancelled", postponed: "EventPostponed" }[event.status]);
 </script>
 
-<link itemprop="eventStatus" href="https://schema.org/EventScheduled" />
+<link itemprop="eventStatus" href="https://schema.org/{status}" />
 <link itemprop="eventAttendanceMode" href="https://schema.org/OfflineEventAttendanceMode" />
-<link itemprop="image" href={image} />
+{#each images as src (src)}
+    <link itemprop="image" href={src} />
+{/each}
 <span itemprop="organizer" itemscope itemtype="https://schema.org/Organization" itemid="{organization.url}/#ente">
     <meta itemprop="name" content={organization.name} />
     <link itemprop="url" href={organization.url} />

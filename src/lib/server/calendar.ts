@@ -101,6 +101,17 @@ function eventEnsembles(evt: any) {
     });
 }
 
+/*
+ * Un evento annullato o rinviato resta in calendario, con il titolo che comincia con «Annullato» o «Rinviato» (anche al femminile,
+ * in maiuscolo, tra parentesi o seguito da due punti): chi lo legge lo vede subito, e Google lo mostra come annullato o rinviato
+ * (dal 13/11/2026). Un evento cancellato da Google Calendar invece sparisce dal sito alla build successiva.
+ */
+function eventStatus(summary = ""): EventItem["status"] {
+    if (/^\W*(annullat|cancellat)[oa]\b/i.test(summary)) return "cancelled";
+    if (/^\W*(rinviat|posticipat)[oa]\b/i.test(summary)) return "postponed";
+    return "scheduled";
+}
+
 function toEventItem(evt: any): EventItem {
     const description = evt.description?.replace(HASHTAG, "");
     return {
@@ -113,7 +124,8 @@ function toEventItem(evt: any): EventItem {
         end: evt.end?.dateTime || evt.end?.date || "",
         ensembles: eventEnsembles(evt),
         created: evt.created ?? "",
-        updated: evt.updated ?? ""
+        updated: evt.updated ?? "",
+        status: eventStatus(evt.summary)
     };
 }
 
