@@ -1,6 +1,6 @@
 <script lang="ts">
     import InstagramGrid from "$lib/components/InstagramGrid.svelte";
-    import { postAnchor, type GallerySlide } from "$lib/gallery";
+    import type { GallerySlide } from "$lib/gallery";
 
     // `null` quando il feed non era raggiungibile durante la build.
     let { slides }: { slides: GallerySlide[] | null } = $props();
@@ -15,8 +15,8 @@
 {#if shown.length > 0}
     <section>
         <h2>Momenti in musica</h2>
-        <!-- Ogni foto porta al suo post in Foto e video, con la data e la didascalia -->
-        <InstagramGrid slides={shown} featured placeholders={SHOWN - shown.length} link={(slide) => `/associazione/mediateca#${postAnchor(slide.permalink)}`} />
+        <!-- Ogni foto o video porta alla sua pagina, con la data e la didascalia -->
+        <InstagramGrid slides={shown} featured placeholders={SHOWN - shown.length} />
 
         <!-- Come ogni sezione della home, finisce con il rimando alla pagina che riassume: tutte le foto, per post. Instagram è in Foto e
              video e nel piè di pagina -->

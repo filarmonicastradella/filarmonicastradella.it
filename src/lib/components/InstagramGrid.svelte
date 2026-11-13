@@ -5,14 +5,9 @@
     // La griglia delle foto e dei video di Instagram, per la galleria in home e per Foto e video. Con `featured` (la home) la prima
     // foto è grande e le altre piccole intorno, in tre composizioni secondo la larghezza (nello stile, sotto).
     // `placeholders`: caselle segnaposto dopo le foto, finché non ce ne sono abbastanza per riempire la griglia.
-    // `link`: dove porta ogni casella, foto o video (la home porta al post in Foto e video). Senza (Foto e video), ogni casella porta
-    // alla pagina della sua foto o del suo video (`slidePath`, dal 12/11/2026, al posto della finestra che c'era prima)
-    let {
-        slides,
-        featured = false,
-        placeholders = 0,
-        link
-    }: { slides: GallerySlide[]; featured?: boolean; placeholders?: number; link?: (slide: GallerySlide) => string } = $props();
+    // Ogni casella, foto o video, porta alla pagina della sua foto o del suo video (`slidePath`), anche dalla home (dal 13/11/2026;
+    // prima la home portava al post in Foto e video)
+    let { slides, featured = false, placeholders = 0 }: { slides: GallerySlide[]; featured?: boolean; placeholders?: number } = $props();
 
     // Le foto sono ritagliate in 4:5 (la grande alla misura del suo riquadro): una foto orizzontale riempie l'altezza, quindi serve un
     // file più largo della casella, di quanto è più larga. Senza questo il browser sceglie un file troppo piccolo e la foto si sgrana.
@@ -42,36 +37,21 @@
         <!-- Nella figura, la griglia ha il titolo sopra e tutta la larghezza, come le schede (layout.css) -->
         <li style:background-color={slide.color}>
             <figure>
-                {#if link}
-                    <!-- Anche il video è un'immagine, il suo fotogramma di copertina: si guarda nella pagina dove porta il link -->
-                    <a href={link(slide)}>
-                        <img
-                            src={slide.imageUrl}
-                            srcset={slide.srcset}
-                            sizes={sizes(slide, index)}
-                            width={slide.width}
-                            height={slide.height}
-                            alt={slide.mediaType === "VIDEO" ? `Video: ${slide.alt}` : slide.alt}
-                            loading="lazy"
-                        />
-                    </a>
-                {:else}
-                    <!-- Il link porta alla pagina della foto o del video -->
-                    <a href={slidePath(slide)}>
-                        <img
-                            src={slide.imageUrl}
-                            srcset={slide.srcset}
-                            sizes={sizes(slide, index)}
-                            width={slide.width}
-                            height={slide.height}
-                            alt={slide.alt}
-                            loading="lazy"
-                        />
-                        {#if slide.mediaType === "VIDEO"}
-                            <span><PlayIcon aria-hidden="true" /> Video</span>
-                        {/if}
-                    </a>
-                {/if}
+                <!-- Il link porta alla pagina della foto o del video, dove il video si guarda -->
+                <a href={slidePath(slide)}>
+                    <img
+                        src={slide.imageUrl}
+                        srcset={slide.srcset}
+                        sizes={sizes(slide, index)}
+                        width={slide.width}
+                        height={slide.height}
+                        alt={slide.alt}
+                        loading="lazy"
+                    />
+                    {#if slide.mediaType === "VIDEO"}
+                        <span><PlayIcon aria-hidden="true" /> Video</span>
+                    {/if}
+                </a>
             </figure>
         </li>
     {/each}
