@@ -57,7 +57,7 @@
         identifier: { "@type": "PropertyValue", propertyID: "RUNTS", value: organization.runts.name.replace(/\D/g, "") },
         memberOf: { "@type": "Organization", name: organization.affiliation.name, url: organization.affiliation.href },
         hasMap: organization.mapsProfile,
-        sameAs: [...organization.references, organization.mapsProfile, ...organization.socials.filter(({ profile }) => profile).map(({ href }) => href)]
+        sameAs: [...organization.references, organization.mapsProfile, ...organization.socials.map(({ href }) => href)]
     };
     const structuredData = {
         "@context": "https://schema.org",

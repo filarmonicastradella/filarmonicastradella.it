@@ -30,7 +30,7 @@ export function vcard({ name, email }: { name: string; email: string }) {
         `EMAIL;TYPE=INTERNET,WORK:${email}`,
         `URL:${organization.url}`,
         `ADR;TYPE=WORK:;;${text(street)};${text(city)};${province};${postalCode};Italia`,
-        ...organization.socials.filter(({ profile }) => profile).map(({ name, href }) => `X-SOCIALPROFILE;TYPE=${name.toLowerCase()}:${href}`),
+        ...organization.socials.map(({ name, href }) => `X-SOCIALPROFILE;TYPE=${name.toLowerCase()}:${href}`),
         `PHOTO;ENCODING=b;TYPE=PNG:${icon.replace(/^data:image\/png;base64,/, "")}`,
         "END:VCARD"
     ];

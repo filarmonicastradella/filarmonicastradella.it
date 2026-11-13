@@ -29,12 +29,14 @@ export const organization = {
     references: ["https://it.wikipedia.org/wiki/Filarmonica_Alessandro_Stradella", "https://www.wikidata.org/wiki/Q141869181", "https://my.cesvot.it/151960"],
     // La scheda dell'associazione su Google Maps (profilo dell'attività), con l'indirizzo stabile del suo identificativo
     mapsProfile: "https://maps.google.com/?cid=7810320797399219292",
-    // I profili social; WhatsApp è un contatto, non un profilo, quindi non va tra i "sameAs" dei dati strutturati.
+    // I profili social, anche tra i "sameAs" dei dati strutturati: WhatsApp è il canale della Filarmonica (dal 13/11/2026, al posto della
+    // chat, che ora sta nei recapiti di Contatti: `whatsappChat`)
     socials: [
-        { name: "Instagram", href: "https://instagram.com/filarmonicastradella", profile: true },
-        { name: "Facebook", href: "https://facebook.com/filarmonicastradella", profile: true },
-        { name: "WhatsApp", href: "https://wa.me/393505363110", profile: false },
-        { name: "YouTube", href: "https://youtube.com/@filarmonicastradella", profile: true }
-        // { name: "TikTok", href: "https://tiktok.com/@filarmonicastradella", profile: true } // quando ci sarà il profilo (e l'icona nel footer)
-    ]
+        { name: "Instagram", href: "https://instagram.com/filarmonicastradella" },
+        { name: "Facebook", href: "https://facebook.com/filarmonicastradella" },
+        { name: "WhatsApp", href: "https://whatsapp.com/channel/0029Vb8pMlHL7UVXycPlHa0A" },
+        { name: "YouTube", href: "https://youtube.com/@filarmonicastradella" }
+    ],
+    // La chat WhatsApp con il numero dell'associazione: un contatto, non un profilo, quindi non va tra i "sameAs"
+    whatsappChat: "https://wa.me/393505363110"
 };

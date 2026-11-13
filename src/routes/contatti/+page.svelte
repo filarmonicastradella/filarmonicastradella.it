@@ -32,6 +32,8 @@
     <dl>
         <dt>Telefono</dt>
         <dd><a href="tel:+393505363110">+39&nbsp;350&nbsp;536&nbsp;3110</a></dd>
+        <dt>WhatsApp</dt>
+        <dd><a href={organization.whatsappChat} target="_blank" rel="noopener noreferrer">Scrivici su WhatsApp</a></dd>
         <dt>Email</dt>
         <dd><a href="mailto:info@filarmonicastradella.it?subject=Informazioni">info@filarmonicastradella.it</a></dd>
         <dt>PEC</dt>
