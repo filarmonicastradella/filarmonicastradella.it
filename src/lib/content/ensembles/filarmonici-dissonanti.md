@@ -4,6 +4,10 @@ summary: "Un viaggio nel tempo attraverso la musica medievale, rinascimentale e 
 genre: ["Musica antica", "Musica medievale", "Musica rinascimentale", "Musica barocca"]
 founded: 2026
 order: 4
+cover:
+    alt: "Il diploma settecentesco dell'Accademia de' Filarmonici Dissonanti: in basso la veduta di Fivizzano tra un violino e una chitarra, sul cartiglio il motto «Le dissonanze in un accordo solo»"
+    credit: Newberry Library, Chicago (pubblico dominio)
+    position: center bottom
 lineup:
     - name: Fiati
       instruments:
