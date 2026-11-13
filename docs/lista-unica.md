@@ -6,7 +6,7 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 
 **Tipo.** **D** = serve una tua decisione. **F** = la soluzione è chiara, basta farla.
 
-**Fonti.** R = revisione (R3.6 è la parte 3, punto 6); PA, PB, PC = proposte di design, parti A, B, C (PAc = correzioni, PAm = miglioramenti, PAi = idee); N = riprogettazione; T = `TODO.md`; S = emerso in sessione; BR, BA, FE, MC = siti di altre bande presi a modello il 9/11/2026: Rovato (`bandadirovato.it`), Bagnone (`filarmonicabagnone.it`), Felina (`bandafelina.it`), Musica Cittadina Pontremoli (`musicacittadina.it`), Accademia Nazionale di Santa Cecilia (`santacecilia.it`, SC), Wiener Philharmoniker (`wienerphilharmoniker.at`, WP), Berliner Philharmoniker (`berliner-philharmoniker.de`, BP), Philharmonia Orchestra (`philharmonia.co.uk`, PO), Conservatorio Puccini della Spezia (`conssp.it`, CS), Conservatorio Boccherini di Lucca (`boccherini.it`, LB), Lunigiana International Music Festival (`lunigianamusicfestival.com`, LIMF), Accademia Arti Musicali Sarzana (`accademiadelleartimusicali.it`, AS), Accademia Musicale Andrea Bianchi di Sarzana (`accademiabianchi.it`, AB), SuoniAMO, Domodossola (`associazionesuoniamo.it`, SU).
+**Fonti.** R = revisione (R3.6 è la parte 3, punto 6); PA, PB, PC = proposte di design, parti A, B, C (PAc = correzioni, PAm = miglioramenti, PAi = idee); N = riprogettazione; T = `TODO.md`; S = emerso in sessione; BR, BA, FE, MC = siti di altre bande presi a modello il 9/11/2026: Rovato (`bandadirovato.it`), Bagnone (`filarmonicabagnone.it`), Felina (`bandafelina.it`), Musica Cittadina Pontremoli (`musicacittadina.it`), Accademia Nazionale di Santa Cecilia (`santacecilia.it`, SC), Wiener Philharmoniker (`wienerphilharmoniker.at`, WP), Berliner Philharmoniker (`berliner-philharmoniker.de`, BP), Philharmonia Orchestra (`philharmonia.co.uk`, PO), Conservatorio Puccini della Spezia (`conssp.it`, CS), Conservatorio Boccherini di Lucca (`boccherini.it`, LB), Lunigiana International Music Festival (`lunigianamusicfestival.com`, LIMF), Accademia Arti Musicali Sarzana (`accademiadelleartimusicali.it`, AS), Accademia Musicale Andrea Bianchi di Sarzana (`accademiabianchi.it`, AB), SuoniAMO, Domodossola (`associazionesuoniamo.it`, SU); Accademia de' Dissonanti, Montréal (`accademiadedissonanti.com`, AD, 13/11/2026: stessa tavolozza e stessi titoli in Cormorant, ensemble di musica antica).
 
 **Stato delle voci.** Ho tolto quelle che i report e i commit danno per risolte, e ho ricontrollato sul codice, con ricerche mirate, soprattutto i testi. Non è una verifica riga per riga: se una voce risulta già fatta, si toglie. La modifica ancora aperta a `layout.css` è indicata in 3.1.
 
@@ -50,7 +50,7 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 - [ ] 3.3 **D** — Una sola foto attuale, usata in hero e in Stradella Facendo: servono foto vere o un trattamento che regga le deboli (retino a un inchiostro). (PB2, N)
 - [ ] 3.4 **D** — Lo stesso scheletro su tutte le pagine (titolo a sinistra, testo a destra), ripetuto quattro volte in home. (PB1, PAi6, N)
 - [ ] 3.5 **D** — Home: unire «Chi siamo» e «Momenti in musica»; cosa si vede senza galleria. (R4.13, PB3, T)
-- [ ] 3.6 **D** — Prima schermata: aprire con il prossimo concerto invece che con il nome ripetuto. (N, PAm5)
+- [ ] 3.6 **D** — Prima schermata: aprire con il prossimo concerto invece che con il nome ripetuto. (N, PAm5; AD: in home, dopo la presentazione, il prossimo concerto con data, luogo e link)
 - [ ] 3.7 **D** — Bordeaux quasi assente in molte pagine: un elemento forte per pagina. (PB, PAi2, N)
 - [ ] 3.8 **D** — Maiuscolo spaziato ovunque, freccia su ogni rimando (26 punti), punto a metà: dove tenerli. (PAm5, PB6, PAc9, N)
 - [ ] 3.9 **D** — Parola singola in corsivo nel titolo: tenerla, darle un significato (PAi1) o toglierla. (PB, N)
@@ -84,6 +84,8 @@ Tutto quello che è emerso dalle analisi, una voce per problema, per affrontarli
 - [ ] 3.39 **D** — Formazioni: otto sezioni per pagina; tenere presentazione, prossimi appuntamenti e suona con noi, il resto in un blocco o nelle domande. (A8; con 5.1)
 - [ ] 3.40 **D** — Articoli: i nostri articoli (storia, Stradella, sonetto) hanno lo stesso peso delle uscite di giornale, ma sono i contenuti migliori del sito. (A, Articoli)
 - [ ] 3.41 **D** — Contatti: la sezione «Recapiti» ripete telefono, email e PEC del piè di pagina; tenerli in un posto solo. (A8; con 3.11)
+- [ ] 3.42 **D** — Prima schermata: sotto il titolo una riga in Cormorant corsivo bordeaux che dice cosa siamo (o il motto), come «Historical performance & creative research». (AD; con 3.9)
+- [ ] 3.43 **D** — Un'incisione antica schiarita, a un solo inchiostro, di lato nella prima schermata: dà carattere senza dipendere dalle foto. (AD; con 3.3)
 
 ## 4. Il documento DESIGN.md
 
