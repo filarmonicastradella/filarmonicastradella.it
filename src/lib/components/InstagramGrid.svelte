@@ -109,8 +109,12 @@
             grid-column: 1 / -1;
         }
 
-        & > li:not(:first-child) img {
+        /* Le piccole riempiono la riga intera, ritagliate (object-fit: cover), senza bande del colore di fondo sotto (dal 14/11/2026) */
+        & > li:not(:first-child) :is(figure, a, img) {
             block-size: 100%;
+        }
+
+        & > li:not(:first-child) img {
             aspect-ratio: auto;
         }
     }
